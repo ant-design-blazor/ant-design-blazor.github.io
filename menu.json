@@ -1,0 +1,178 @@
+[
+  {
+    "title": "Ant Design of Blazor",
+    "type": "menuItem",
+    "url": "docs/introduce",
+    "default": true
+  },
+  {
+    "title": "Components",
+    "type": "subMenu",
+    "open": true,
+    "prefix": "components",
+    "children": [
+      {
+        "title": "General",
+        "type": "itemGroup",
+        "children": [
+          {
+            "title": "Button",
+            "type": "menuItem",
+            "url": "button"
+          },
+          {
+            "title": "Icon",
+            "type": "menuItem",
+            "url": "icon"
+          },
+          {
+            "title": "Typography",
+            "type": "menuItem",
+            "url": "typography"
+          }
+        ]
+      },
+      {
+        "title": "Layout",
+        "type": "itemGroup",
+        "children": [
+          {
+            "title": "Grid",
+            "type": "menuItem",
+            "url": "grid"
+          },
+          {
+            "title": "Layout",
+            "type": "menuItem",
+            "url": "layout"
+          }
+        ]
+      },
+      {
+        "title": "Navigation",
+        "type": "itemGroup",
+        "children": [
+          {
+            "title": "Breadcrumb",
+            "type": "menuItem",
+            "url": "breadcrumb"
+          },
+          {
+            "title": "Menu",
+            "type": "menuItem",
+            "url": "menu"
+          },
+          {
+            "title": "Steps",
+            "type": "menuItem",
+            "url": "step"
+          }
+        ]
+      },
+      {
+        "title": "DataEntry",
+        "type": "itemGroup",
+        "children": [
+          {
+            "title": "Checkbox",
+            "type": "menuItem",
+            "url": "checkbox"
+          },
+          {
+            "title": "Switch",
+            "type": "menuItem",
+            "url": "switch"
+          },
+          {
+            "title": "Input",
+            "type": "menuItem",
+            "url": "input"
+          },
+          {
+            "title": "InputNumber",
+            "type": "menuItem",
+            "url": "inputnumber"
+          },
+          {
+            "title": "Radio",
+            "type": "menuItem",
+            "url": "radio"
+          }
+        ]
+      },
+      {
+        "title": "DataDisplay",
+        "type": "itemGroup",
+        "children": [
+          {
+            "title": "Avatar",
+            "type": "menuItem",
+            "url": "avatar"
+          },
+          {
+            "title": "Badge",
+            "type": "menuItem",
+            "url": "badge"
+          },
+          {
+            "title": "Card",
+            "type": "menuItem",
+            "url": "card"
+          },
+          {
+            "title": "Empty",
+            "type": "menuItem",
+            "url": "empty"
+          },
+          {
+            "title": "Tag",
+            "type": "menuItem",
+            "url": "tag"
+          },
+          {
+            "title": "Tabs",
+            "type": "menuItem",
+            "url": "tabs"
+          },
+          {
+            "title": "Timeline",
+            "type": "menuItem",
+            "url": "timeline"
+          }
+        ]
+      },
+      {
+        "title": "Feedback",
+        "type": "itemGroup",
+        "children": [
+          {
+            "title": "Alert",
+            "type": "menuItem",
+            "url": "alert"
+          },
+          {
+            "title": "Drawer",
+            "type": "menuItem",
+            "url": "drawer"
+          }
+        ]
+      },
+      {
+        "title": "Other",
+        "type": "itemGroup",
+        "children": [
+          {
+            "title": "Divider",
+            "type": "menuItem",
+            "url": "divider"
+          },
+          {
+            "title": "BackTop",
+            "type": "menuItem",
+            "url": "backtop"
+          }
+        ]
+      }
+    ]
+  }
+]
