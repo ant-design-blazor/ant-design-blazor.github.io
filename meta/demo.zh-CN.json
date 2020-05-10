@@ -1,0 +1,304 @@
+[
+  {
+    "Title": "Alert",
+    "SubTitle": "警告提示",
+    "Type": "反馈",
+    "Doc": "<p>警告提示，展现需要关注的信息。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当某个页面需要向用户显示警告的信息时。</li>\n<li>非浮层的静态展现形式，始终展现，不会自动消失，用户可以点击关闭。</li>\n</ul>\n",
+    "DemoList": [
+      {
+        "Order": 3,
+        "Name": "description",
+        "Title": "含有辅助性文字介绍",
+        "Description": "<p>含有辅助性文字介绍的警告提示。</p>\n",
+        "Code": "<AntAlert Message=\"Success Text\"\n          Description=\"Success Description Success Description Success Description\"\n          Type=\"@AntAlertType.Success\" />\n\n<AntAlert Message=\"Info Text\"\n          Description=\"Info Description Info Description Info Description Info Description\"\n          Type=\"@AntAlertType.Info\" />\n\n<AntAlert Message=\"Warning Text\"\n          Description=\"Warning Description Warning Description Warning Description Warning Description\"\n          Type=\"@AntAlertType.Warning\" />\n\n<AntAlert Message=\"Error Text\"\n          Description=\"Error Description Error Description Error Description Error Description\"\n          Type=\"@AntAlertType.Error\" />",
+        "Type": "Demos.Alert.demo.Description",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法，适用于简短的警告提示。</p>\n",
+        "Code": "<AntAlert Type=\"@AntAlertType.Success\" Message=\"Success Text\" />\n",
+        "Type": "Demos.Alert.demo.Basic",
+        "Style": "\n.code-box-demo .ant-alert {\n  margin-bottom: 16px;\n}\n\n"
+      },
+      {
+        "Order": 5,
+        "Name": "close_text",
+        "Title": "自定义关闭",
+        "Description": "<p>可以自定义关闭，自定义的内容会替换原先的关闭按钮。</p>\n",
+        "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
+        "Type": "Demos.Alert.demo.Close_text",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "style",
+        "Title": "四种样式",
+        "Description": "<p>共有四种样式 <code>success</code>、<code>info</code>、<code>warning</code>、<code>error</code>。</p>\n",
+        "Code": "<AntAlert Message=\"Success Text\" Type=\"@AntAlertType.Success\" />\n\n<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" />\n\n<AntAlert Message=\"Warning Text\" Type=\"@AntAlertType.Warning\" />\n\n<AntAlert Message=\"Error Text\" Type=\"@AntAlertType.Error\" />",
+        "Type": "Demos.Alert.demo.Style",
+        "Style": ""
+      },
+      {
+        "Order": 4,
+        "Name": "icon",
+        "Title": "图标",
+        "Description": "<p>可口的图标让信息类型更加醒目。</p>\n",
+        "Code": "<AntAlert Type=\"@AntAlertType.Success\"\n          Message=\"Success Tips\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Info\"\n          Message=\"Informational Notes\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Success\"\n          Message=\"Success Tips\"\n          Description=\"Detailed description and advice about successful copywriting.\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Info\"\n          Message=\"Informational Notes\"\n          Description=\"Additional description and information about copywriting.\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning\"\n          Description=\"This is a warning notice about copywriting.\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error\"\n          Description=\"This is an error message about copywriting.\"\n          ShowIcon />",
+        "Type": "Demos.Alert.demo.Icon",
+        "Style": ""
+      },
+      {
+        "Order": 2,
+        "Name": "closable",
+        "Title": "可关闭的警告提示",
+        "Description": "<p>显示关闭按钮，点击可关闭警告提示。</p>\n",
+        "Code": "<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text Warning Text Warning Text Warning Text Warning Text Warning Text Warning Text\"\n          Closable\n          OnClose=\"LogSomething\" />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error Text\"\n          Description=\"Error Description Error Description Error Description Error Description Error Description Error Description\"\n          Closable\n          OnClose=\"LogSomething\" />\n\n@code{\n    private void LogSomething()\n    {\n        Console.WriteLine(\"Logging Something...\");\n    }\n}",
+        "Type": "Demos.Alert.demo.Closable",
+        "Style": ""
+      },
+      {
+        "Order": 6,
+        "Name": "banner",
+        "Title": "顶部公告",
+        "Description": "<p>页面顶部通告形式，默认有图标且 <code>nzType</code> 为 <code>'warning'</code>。</p>\n",
+        "Code": "<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Description=\"Very long warning text warning text text text text text text text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text Without Icon\"\n          Banner\n          ShowIcon=\"false\" />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error Text\"\n          Banner />",
+        "Type": "Demos.Alert.demo.Banner",
+        "Style": ""
+      }
+    ]
+  },
+  {
+    "Title": "Button",
+    "SubTitle": "按钮",
+    "Type": "通用",
+    "Doc": "<p>按钮用于开始一个即时操作。</p>\n<h2>何时使用</h2>\n<p>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</p>\n<p>在 Ant Design 中，我们有四种按钮。</p>\n<ul>\n<li>主按钮：用于主行动点，一个操作区域只能有一个主按钮。</li>\n<li>默认按钮：用于没有主次之分的一组行动点。</li>\n<li>虚线按钮：常用于添加操作。</li>\n<li>链接按钮：用于次要或外链的行动点。</li>\n</ul>\n<p>以及四种状态属性与上面配合使用。</p>\n<ul>\n<li>危险：删除/移动/修改权限等危险操作，一般需要二次确认。</li>\n<li>幽灵：用于背景色比较复杂的地方，常用在首页/产品页等展示场景。</li>\n<li>禁用：行动点不可用的时候，一般需要文案解释。</li>\n<li>加载中：用于异步操作等待反馈的时候，也可以避免多次提交。</li>\n</ul>\n",
+    "DemoList": [
+      {
+        "Order": 99,
+        "Name": "legacy_group",
+        "Title": "废弃的 Block 组",
+        "Description": "<p>Debug usage</p>\n",
+        "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
+        "Type": "Demos.Button.demo.Legacy_group",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "block",
+        "Title": "Block 按钮",
+        "Description": "<p><code>block</code>属性将使按钮适合其父宽度。</p>\n",
+        "Code": "<div>\n    <AntButton Type=\"primary\" Block>Primary</AntButton>\n    <AntButton Block>Default</AntButton>\n    <AntButton Type=\"dashed\" Block>Dashed</AntButton>\n    <AntButton Type=\"link\" Block>Link</AntButton>\n</div>",
+        "Type": "Demos.Button.demo.Block",
+        "Style": ""
+      },
+      {
+        "Order": 3,
+        "Name": "disabled",
+        "Title": "不可用状态",
+        "Description": "<p>添加 <code>disabled</code> 属性即可让按钮处于不可用状态，同时按钮样式也会改变。</p>\n",
+        "Code": "<div>\n    <AntButton Type=\"primary\">Primary</AntButton>\n    <AntButton Type=\"primary\" Disabled>\n        Primary(disabled)\n    </AntButton>\n    <br />\n    <AntButton>Default</AntButton>\n    <AntButton Disabled>Default(disabled)</AntButton>\n    <br />\n    <AntButton Type=\"dashed\">Dashed</AntButton>\n    <AntButton Type=\"dashed\" Disabled>\n        Dashed(disabled)\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\">Link</AntButton>\n    <AntButton Type=\"link\" Disabled>\n        Link(disabled)\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\" Danger>\n        Danger Link\n    </AntButton>\n    <AntButton Type=\"link\" Danger Disabled>\n        Danger Link(disabled)\n    </AntButton>\n    <br />\n    <AntButton Danger>Danger Default</AntButton>\n    <AntButton Danger Disabled>\n        Danger Default(disabled)\n    </AntButton>\n    <div class=\"site-AntButton-Ghost-wrapper\">\n        <AntButton Ghost>Ghost</AntButton>\n        <AntButton Ghost Disabled>\n            Ghost(disabled)\n        </AntButton>\n    </div>\n</div>",
+        "Type": "Demos.Button.demo.Disabled",
+        "Style": ""
+      },
+      {
+        "Order": 8,
+        "Name": "ghost",
+        "Title": "幽灵按钮",
+        "Description": "<p>幽灵按钮将按钮的内容反色，背景变为透明，常用在有色背景上。</p>\n",
+        "Code": "<div class=\"site-AntButton-Ghost-wrapper\">\n    <AntButton Type=\"primary\" Ghost>\n        Primary\n    </AntButton>\n    <AntButton Ghost>Default</AntButton>\n    <AntButton Type=\"dashed\" Ghost>\n        link\n    </AntButton>\n    <AntButton Type=\"link\" Ghost>\n        link\n    </AntButton>\n</div>",
+        "Type": "Demos.Button.demo.Ghost",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "按钮类型",
+        "Description": "<p>按钮有四种类型：主按钮、次按钮、虚线按钮和链接按钮。主按钮在同一个操作区域最多出现一次。</p>\n",
+        "Code": "<div>\n    <AntButton Type=\"primary\">Primary</AntButton>\n    <AntButton>Default</AntButton>\n    <AntButton Type=\"dashed\">Dashed</AntButton>\n    <AntButton Type=\"danger\">Danger</AntButton>\n    <AntButton Type=\"link\">Link</AntButton>\n</div>",
+        "Type": "Demos.Button.demo.Basic",
+        "Style": ""
+      },
+      {
+        "Order": 5,
+        "Name": "multiple",
+        "Title": "多个按钮组合",
+        "Description": "<p>按钮组合使用时，推荐使用 1 个主操作 + n 个次操作，3 个以上操作时把更多操作放到 <code>Dropdown.Button</code> 中组合使用。</p>\n",
+        "Code": "Not implement yet :(",
+        "Type": "Demos.Button.demo.Multiple",
+        "Style": ""
+      },
+      {
+        "Order": 2,
+        "Name": "size",
+        "Title": "按钮尺寸",
+        "Description": "<p>按钮有大、中、小三种尺寸。</p>\n<p>通过设置 <code>size</code> 为 <code>large</code> <code>small</code> 分别把按钮设为大、小尺寸。若不设置 <code>size</code>，则尺寸为中。</p>\n",
+        "Code": "<div>\n    <AntRadioGroup @bind-Value=\"@size\">\n        <AntRadio RadioButton Value=\"large\">Large</AntRadio>\n        <AntRadio RadioButton Value=\"default\">Default</AntRadio>\n        <AntRadio RadioButton Value=\"small\">Small</AntRadio>\n    </AntRadioGroup>\n    <br />\n    <br />\n    <AntButton Type=\"primary\" Size=@size>\n        Primary\n    </AntButton>\n    <AntButton Size=\"@size\">Default</AntButton>\n    <AntButton Type=\"dashed\" Size=@size>\n        Dashed\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\" Size=@size>\n        Link\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"circle\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n</div>\n\n@code\n{\n    string size = \"large\";\n}\n",
+        "Type": "Demos.Button.demo.Size",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "icon",
+        "Title": "图标按钮",
+        "Description": "<p>当需要在 <code>Button</code> 内嵌入 <code>Icon</code> 时，可以设置 <code>icon</code> 属性，或者直接在 <code>Button</code> 内使用 <code>Icon</code> 组件。</p>\n<p>如果想控制 <code>Icon</code> 具体的位置，只能直接使用 <code>Icon</code> 组件，而非 <code>icon</code> 属性。</p>\n",
+        "Code": "<div>\n    @*<Tooltip title=\"search\">\n        <AntButton Type=\"primary\" shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Type=\"primary\" Shape=\"circle\">\n        A\n    </AntButton>\n    <AntButton Type=\"primary\" Icon=\"search\">\n    Search\n    </AntButton>\n    @*<Tooltip title=\"search\">\n        <AntButton shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Icon=\"search\">Search</AntButton>\n    <br />\n    @*<Tooltip title=\"search\">\n        <AntButton shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Icon=\"search\">Search</AntButton>\n    @*<Tooltip title=\"search\">\n        <AntButton Type=\"dashed\" shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Type=\"dashed\" Icon=\"search\">\n    Search\n    </AntButton>\n</div>",
+        "Type": "Demos.Button.demo.Icon",
+        "Style": ""
+      },
+      {
+        "Order": 9,
+        "Name": "danger",
+        "Title": "危险按钮",
+        "Description": "<p>在 4.0 之后，危险成为一种按钮属性而不是按钮类型。</p>\n",
+        "Code": "<div>\n    <AntButton Type=\"primary\" Danger>\n        Primary\n    </AntButton>\n    <AntButton Danger>Default</AntButton>\n    <AntButton Type=\"dashed\" Danger>\n        link\n    </AntButton>\n    <AntButton Type=\"link\" Danger>\n        link\n    </AntButton>\n</div>",
+        "Type": "Demos.Button.demo.Danger",
+        "Style": ""
+      },
+      {
+        "Order": 4,
+        "Name": "loading",
+        "Title": "加载中状态",
+        "Description": "<p>添加 <code>loading</code> 属性即可让按钮处于加载状态，最后两个按钮演示点击后进入加载状态。</p>\n",
+        "Code": "@using System.Timers\n\n<div>\n    <AntButton Type=\"primary\" Loading>\n        Loading\n    </AntButton>\n    <AntButton Type=\"primary\" Size=\"small\" Loading>\n        Loading\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Loading=\"loading\" Onclick=enterLoading>\n        Click me!\n    </AntButton>\n    <AntButton\n        Type=\"primary\"\n        Icon=\"poweroff\"\n    Loading=\"iconLoading\"\n    Onclick=\"enterIconLoading\"\n    >\n    Click me!\n    </AntButton>\n</div>\n\n@code\n{\n    bool loading = false;\n    bool iconLoading = false;\n\n    private void enterLoading()\n    {\n        loading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            loading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n\n    private void enterIconLoading()\n    {\n        iconLoading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            iconLoading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n}\n",
+        "Type": "Demos.Button.demo.Loading",
+        "Style": ""
+      }
+    ]
+  },
+  {
+    "Title": "Badge",
+    "SubTitle": "徽标数",
+    "Type": "数据展示",
+    "Doc": "<p>图标右上角的圆形徽标数字。</p>\n<h2>何时使用</h2>\n<p>一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。</p>\n",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "change",
+        "Title": "动态",
+        "Description": "<p>展示动态变化的效果。</p>\n",
+        "Code": "<div>\n    <div>\n        <AntBadge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </AntBadge>\n        <AntButtonGroup>\n            <AntButton @onclick=\"_=>decline()\">\n                <AntIcon Type=\"minus\"></AntIcon>\n            </AntButton>\n            <AntButton @onclick=\"_=>increase()\">\n                <AntIcon Type=\"plus\"></AntIcon>\n            </AntButton>\n        </AntButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <AntBadge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </AntBadge>\n        <AntSwitch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
+        "Type": "Demos.Badge.demo.Change",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>简单的徽章展示，当 <code>count</code> 为 <code>0</code> 时，默认不显示，但是可以使用 <code>showZero</code> 修改为显示。</p>\n",
+        "Code": "<div>\n    <AntBadge Count=\"5\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"0\" ShowZero>\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    @{\n        RenderFragment count = @<AntIcon Type=\"clock-circle\" Fill=\"#f5222d\"/>;\n    }\n    <AntBadge Count=\"@(count)\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>\n\n",
+        "Type": "Demos.Badge.demo.Basic",
+        "Style": "\n    .ant-badge:not(.ant-badge-not-a-wrapper) {\n        margin-right: 20px;\n    }\n    .ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n        margin-right: 0;\n        margin-left: 20px;\n    }\n    .head-example {\n        width: 42px;\n        height: 42px;\n        border-radius: 2px;\n        background: #eee;\n        display: inline-block;\n        vertical-align: middle;\n    }\n    [data-theme=\"dark\"] .head-example {\n        background: rgba(255,255,255,.12);\n    }\n\n"
+      },
+      {
+        "Order": 2,
+        "Name": "overflow",
+        "Title": "封顶数字",
+        "Description": "<p>超过 <code>overflowCount</code> 的会显示为 <code>${overflowCount}+</code>，默认的 <code>overflowCount</code> 为 <code>99</code>。</p>\n",
+        "Code": "<div>\n    <AntBadge Count=\"99\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"100\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"99\" OverflowCount=\"10\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"1000\" OverflowCount=\"999\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>\n",
+        "Type": "Demos.Badge.demo.Overflow",
+        "Style": ""
+      },
+      {
+        "Order": 8,
+        "Name": "colorful",
+        "Title": "多彩徽标",
+        "Description": "<p>我们添加了多种预设色彩的徽标样式，用作不同场景使用。如果预设值不能满足你的需求，可以设置为具体的色值。</p>\n",
+        "Code": "<div>\n    <h4 style=\"margin-bottom: 16px\">Presets:</h4>\n    <div>\n        @foreach (var color in colors)\n        {\n            <div key=\"@color\">\n                <AntBadge Color=\"@color\" Text=\"@color\" />\n            </div>\n        }\n    </div>\n    <h4 style=\"margin:16px 0;\">Custom:</h4>\n    <div>\n        <AntBadge Color=\"#f50\" Text=\"#f50\" />\n        <br />\n        <AntBadge Color=\"#2db7f5\" Text=\"#2db7f5\" />\n        <br />\n        <AntBadge Color=\"#87d068\" Text=\"#87d068\" />\n        <br />\n        <AntBadge Color=\"#108ee9\" Text=\"#108ee9\" />\n    </div>\n</div>\n\n<style>\n    .ant-tag {\n        margin-bottom: 8px;\n    }\n</style>\n\n@code\n{\n    string[] colors =\n    {\n        \"pink\",\n        \"red\",\n        \"yellow\",\n        \"orange\",\n        \"cyan\",\n        \"green\",\n        \"blue\",\n        \"purple\",\n        \"geekblue\",\n        \"magenta\",\n        \"volcano\",\n        \"gold\",\n        \"lime\",\n    };\n}\n",
+        "Type": "Demos.Badge.demo.Colorful",
+        "Style": ""
+      },
+      {
+        "Order": 3,
+        "Name": "link",
+        "Title": "可点击",
+        "Description": "<p>用 a 标签进行包裹即可。</p>\n",
+        "Code": "<a href=\"#\">\n    <AntBadge Count=\"5\">\n        <span class=\"head-example\" />\n    </AntBadge>\n</a>",
+        "Type": "Demos.Badge.demo.Link",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "no_wrapper",
+        "Title": "独立使用",
+        "Description": "<p>不包裹任何元素即是独立使用，可自定样式展现。</p>\n<blockquote>\n<p>在右上角的 badge 则限定为红色。</p>\n</blockquote>\n",
+        "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
+        "Type": "Demos.Badge.demo.No_wrapper",
+        "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n"
+      },
+      {
+        "Order": 100,
+        "Name": "title",
+        "Title": "自定义标题",
+        "Description": "<p>设置鼠标放在状态点上时显示的文字。</p>\n",
+        "Code": "<div>\n    <AntBadge Count=\"5\" Title=\"Custom hover text\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>",
+        "Type": "Demos.Badge.demo.Title",
+        "Style": "\n.ant-badge:not(.ant-badge-not-a-wrapper) {\n  margin-right: 20px;\n}\n\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n\n.head-example {\n  width: 42px;\n  height: 42px;\n  border-radius: 2px;\n  background: #eee;\n  display: inline-block;\n}\n[data-theme=\"dark\"] .head-example {\n  background: rgba(255,255,255,.12);\n}\n\n"
+      },
+      {
+        "Order": 3,
+        "Name": "dot",
+        "Title": "讨嫌的小红点",
+        "Description": "<p>没有具体的数字。</p>\n",
+        "Code": "<div>\n    <AntBadge Dot>\n        <AntIcon Type=\"notification\"/>\n    </AntBadge>\n    <AntBadge Count=\"0\" Dot>\n        <AntIcon Type=\"notification\" />\n    </AntBadge>\n    <AntBadge Dot>\n        <a href=\"#\">Link something</a>\n    </AntBadge>\n</div>",
+        "Type": "Demos.Badge.demo.Dot",
+        "Style": "\n.anticon-notification {\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  font-size: 16px;\n}\n\n"
+      },
+      {
+        "Order": 6,
+        "Name": "status",
+        "Title": "状态点",
+        "Description": "<p>用于表示状态的小圆点。</p>\n",
+        "Code": "<div>\n    <AntBadge Status=\"success\" />\n    <AntBadge Status=\"error\" />\n    <AntBadge Status=\"default\" />\n    <AntBadge Status=\"processing\" />\n    <AntBadge Status=\"warning\" />\n    <br />\n    <AntBadge Status=\"success\" Text=\"Success\" />\n    <br />\n    <AntBadge Status=\"error\" Text=\"Error\" />\n    <br />\n    <AntBadge Status=\"default\" Text=\"Default\" />\n    <br />\n    <AntBadge Status=\"processing\" Text=\"Processing\" />\n    <br />\n    <AntBadge Status=\"warning\" Text=\"Warning\" />\n</div>",
+        "Type": "Demos.Badge.demo.Status",
+        "Style": ""
+      }
+    ]
+  },
+  {
+    "Title": "Avatar",
+    "SubTitle": "头像",
+    "Type": "数据展示",
+    "Doc": "<p>用来代表用户或事物，支持图片、图标或字符展示。</p>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "dynamic",
+        "Title": "自动调整字符大小",
+        "Description": "<p>对于字符型的头像，当字符串较长时，字体大小可以根据头像宽度自动调整。</p>\n",
+        "Code": "<div>\n    <AntAvatar Style=\"@($\"background-color: {color}; vertical-align: middle;\")\" Size=\"large\">\n        @user\n    </AntAvatar>\n    <AntButton\n        Size=\"small\"\n        Style=\"margin:0 16px; vertical-align: middle;\"\n        Onclick=\"_=>changeUser()\"\n    >\n        Change\n    </AntButton>\n</div>\n\n@code\n{\n    private static string[] userList = {\"U\", \"Lucy\", \"Tom\", \"Edward\"};\n    private static string[] colorList = {\"#f56a00\", \"#7265e6\", \"#ffbf00\", \"#00a2ae\"};\n\n    private string user { get; set; } = userList[0];\n    private string color { get; set; } = colorList[0];\n\n    private void changeUser()\n    {\n        var index = Array.IndexOf(userList, user);\n        user = index < userList.Length - 1 ? userList[index + 1] : userList[0];\n        color = index < colorList.Length - 1 ? colorList[index + 1] : colorList[0];\n    }\n}\n",
+        "Type": "Demos.Avatar.demo.Dynamic",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>头像有三种尺寸，两种形状可选。</p>\n",
+        "Code": "<div>\n    <div>\n        <AntAvatar Size=\"64\" Icon=\"user\" />\n        <AntAvatar Size=\"large\" Icon=\"user\" />\n        <AntAvatar Icon=\"user\" />\n        <AntAvatar Size=\"small\" Icon=\"user\" />\n    </div>\n    <div>\n        <AntAvatar Shape=\"square\" Size=\"64\" Icon=\"user\" />\n        <AntAvatar Shape=\"square\" Size=\"large\" Icon=\"user\" />\n        <AntAvatar Shape=\"square\" Icon=\"user\" />\n        <AntAvatar Shape=\"square\" Size=\"small\" Icon=\"user\" />\n    </div>\n</div>",
+        "Type": "Demos.Avatar.demo.Basic",
+        "Style": ""
+      },
+      {
+        "Order": 3,
+        "Name": "badge",
+        "Title": "带徽标的头像",
+        "Description": "<p>通常用于消息提示。</p>\n",
+        "Code": "<div>\n    <span class=\"avatar-item\">\n        <AntBadge Count=\"1\">\n            <AntAvatar Shape=\"square\" Icon=\"user\" />\n        </AntBadge>\n    </span>\n    <span>\n        <AntBadge Dot>\n            <AntAvatar Shape=\"square\" Icon=\"user\"/>\n        </AntBadge>\n    </span>\n</div>",
+        "Type": "Demos.Avatar.demo.Badge",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "type",
+        "Title": "类型",
+        "Description": "<p>支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。</p>\n",
+        "Code": "<div>\n    <AntAvatar Icon=\"user\" />\n    <AntAvatar>U</AntAvatar>\n    <AntAvatar>USER</AntAvatar>\n    <AntAvatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <AntAvatar Style=\"color: #f56a00; background-color: #fde3cf; \">U</AntAvatar>\n    <AntAvatar Style=\"background-color: #87d068\" Icon=\"user\" />\n</div>",
+        "Type": "Demos.Avatar.demo.Type",
+        "Style": ""
+      }
+    ]
+  }
+]

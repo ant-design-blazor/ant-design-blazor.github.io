@@ -1,0 +1,69 @@
+[
+  {
+    "Order": 0,
+    "Title": "Docs",
+    "Type": "subMenu",
+    "Url": "docs",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "Ant Design of Blazor",
+        "Type": "menuItem",
+        "Url": "docs/introduce"
+      }
+    ]
+  },
+  {
+    "Order": 999,
+    "Title": "Components",
+    "Type": "subMenu",
+    "Url": "components",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "General",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Button",
+            "Type": "menuItem",
+            "Url": "components/button"
+          }
+        ]
+      },
+      {
+        "Order": 4,
+        "Title": "Data Display",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Avatar",
+            "Type": "menuItem",
+            "Url": "components/avatar"
+          }
+        ]
+      },
+      {
+        "Order": 5,
+        "Title": "Feedback",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Alert",
+            "Type": "menuItem",
+            "Url": "components/alert"
+          }
+        ]
+      }
+    ]
+  }
+]

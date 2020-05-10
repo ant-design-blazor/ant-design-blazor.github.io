@@ -1,0 +1,73 @@
+[
+  {
+    "Order": 0,
+    "Title": "文档",
+    "Type": "subMenu",
+    "Url": "docs",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "Ant Design of Blazor",
+        "Type": "menuItem",
+        "Url": "docs/introduce"
+      }
+    ]
+  },
+  {
+    "Order": 999,
+    "Title": "组件",
+    "Type": "subMenu",
+    "Url": "components",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "通用",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Button",
+            "SubTitle": "按钮",
+            "Type": "menuItem",
+            "Url": "components/button"
+          }
+        ]
+      },
+      {
+        "Order": 4,
+        "Title": "数据展示",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "SubTitle": "徽标数",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Avatar",
+            "SubTitle": "头像",
+            "Type": "menuItem",
+            "Url": "components/avatar"
+          }
+        ]
+      },
+      {
+        "Order": 5,
+        "Title": "反馈",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Alert",
+            "SubTitle": "警告提示",
+            "Type": "menuItem",
+            "Url": "components/alert"
+          }
+        ]
+      }
+    ]
+  }
+]

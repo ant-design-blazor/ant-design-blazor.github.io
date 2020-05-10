@@ -1,6 +1,9 @@
-# Ant Design of Blazor [![Github Stars](https://img.shields.io/github/stars/ant-design-blazor/ant-design-blazor?style=social)](https://github.com/ant-design-blazor/ant-design-blazor)
+---
+order: 0
+title: Ant Design of Blazor
+---
 
-这里是 Ant Design 的 Blazor 实现，开发和服务于企业级后台产品。
+Following the Ant Design specification, we developed a Blazor Components library `ant-design-blazor` that contains a set of high quality components and demos for building rich, interactive user interfaces.
 
 <div class="pic-plus">
   <img width="150" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
@@ -20,117 +23,139 @@
 }
 </style>
 
-## ✨ 特性
+## ✨ Features
 
-- 🌈 提炼自企业级中后台产品的交互语言和视觉风格。
-- 📦 开箱即用的高质量 Razor 组件，可在多种托管方式共享。
-- 💕 支持基于 WebAssembly 的客户端和基于 SignalR 的服务端 UI 事件交互。
-- 🎨 支持渐进式 Web 应用（PWA）
-- 🛡 使用 C# 构建，多范式静态语言带来高效的开发体验。
-- ⚙️ 基于 .NET Standard 2.1，可直接引用丰富的 .NET 类库。
-- 🎁 可与已有的 ASP.NET Core MVC、Razor Pages 项目无缝集成。
+- 🌈 Enterprise-class UI interactive language and visual style.
+- 📦 Out-of-the-box, high-quality Razor components that can be shared in a variety of hosting models.
+- 💕 Supports WebAssembly-based client-side and SignalR-based server-side UI event interaction.
+- 🎨 Supports Progressive Web Applications (PWA).
+- 🛡 Build with C#, a multi-paradigm static language for an efficient development experience.
+- ⚙️ NET Standard 2.1 based, with direct reference to the rich .NET ecosystem.
+- 🎁 Seamless integration with existing ASP.NET Core MVC and Razor Pages projects.
 
-## 🌈 在线示例
+## 🌈 Online Examples
 
-由 WebAssembly 构建，托管在 [GitHub Pages](https://ant-design-blazor.github.io/) ([Gitee Pages 镜像](http://ant-design-blazor.gitee.io/))
+WebAssembly static hosting examples:
 
-## 🖥 支持环境
+- [Gitee](https://ant-design-blazor.gitee.io/)
+- [GitHub](https://ant-design-blazor.github.io/)
+
+## 🖥 Environment Support
 
 - .NET Core 3.1
 - Blazor WebAssembly 3.2 RC 1
-- 支持服务端双向绑定
-- 支持 WebAssembly 静态文件部署
-- 主流 4 款现代浏览器，以及 Internet Explorer 11+ （使用 [Blazor Server](https://angular.io/guide/browser-support)）
-- 可直接运行在 [Electron](http://electron.atom.io/) 等基于 Web 标准的环境上
+- Supports two-way binding on the server side
+- Supports WebAssembly static file deployment
+- Support 4 major browsers engines, and Internet Explorer 11+ ([Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/supported-platforms?view=aspnetcore-3.1) only)
+- Run directly on [Electron](http://electron.atom.io/) and other Web standards-based environments
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br> Edge / IE | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Electron |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |                                                                                                 Edge 16 / IE 11†                                                                                                 |                                                                                                        522                                                                                                        |                                                                                                      57                                                                                                       |                                                                                                      11                                                                                                       |                                                                                                    44                                                                                                     |                                                                                                      Chromium 57                                                                                                      |
 
-> 由于 [WebAssembly](https://webassembly.org) 的缘故，Blazor WebAssembly 不支持 IE 浏览器，但 Blazor Server 支持 IE 11†。 [官网说明](https://docs.microsoft.com/en-us/aspnet/core/blazor/supported-platforms?view=aspnetcore-3.1)
+> Due to [WebAssembly](https://webassembly.org) restriction, Blazor WebAssembly doesn't support IE browser, but Blazor Server supports IE 11† with additional polyfills. See [official documentation](https://docs.microsoft.com/en-us/aspnet/core/blazor/supported-platforms?view=aspnetcore-3.1)
 
-## 💿 当前版本
+## 💿 Current Version
 
-- 开发构建： [![AntBlazor](https://img.shields.io/nuget/v/AntBlazor.svg?color=red&style=flat-square)](https://www.nuget.org/packages/AntBlazor/)
+- Development: [![AntBlazor](https://img.shields.io/nuget/v/AntBlazor.svg?color=red&style=flat-square)](https://www.nuget.org/packages/AntBlazor/)
 
-- 0.1.0：基本实现组件后发布
+- 0.1.0：will be released after basic implementation of components
 
-## 🎨 设计规范
+## 🎨 Design Specification
 
-与 Ant Design 设计规范定期同步，你可以在线查看[同步日志](https://github.com/ant-design-blazor/ant-design-blazor/actions?query=workflow%3A%22Style+sync+Bot%22)。
+Regularly synchronize with Official Ant Design specifications, you can check the [sync logs](https://github.com/ant-design-blazor/ant-design-blazor/actions?query=workflow%3A%22Style+sync+Bot%22) online.
 
-## 📦 安装
+## 📦 Installation Guide
 
-- 先安装 [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1) 3.1.201 以上版本
-- 安装 Blazor WebAssembly 模板
-  ```
+- Install [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1) 3.1.201 or later
+- Install Blazor WebAssembly Templates
+
+  ```bash
   $ dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0-rc1.20223.4
   ```
-- 创建 Blazor WebAssembly 项目
-  ```
+
+- Create Blazor WebAssembly Project
+
+  ```bash
   $ dotnet new blazorwasm -o MyAntBlazorApp
   ```
-- 进入应用的项目文件夹，安装 Nuget 包引用
+
+- Go to the project folder of the application and install the Nuget package reference
+
   ```bash
   $ cd MyAntBlazorApp
   $ dotnet add package AntBlazor --version 0.1.0-*
   ```
-- 在项目中注册:
-  ```
+
+- Register the services
+
+  ```csharp
   services.AddAntBlazor();
   ```
-- 在 `wwwroot/index.html`(WebAssembly) 或 `Pages/_Host.razor`(Server) 中引入静态文件:
+
+- Link the static files in `wwwroot/index.html` (WebAssembly) or `Pages/_Host.razor` (Server)
+
+  ```html
+  <link href="_content/AntBlazor/css/ant-design-blazor.css" rel="stylesheet" />
+  <script src="_content/AntBlazor/js/ant-design-blazor.js"></script>
   ```
-    <link href="_content/AntBlazor/css/ant-design-blazor.css" rel="stylesheet">
-    <script src="_content/AntBlazor/js/ant-design-blazor.js"></script>
-  ```
-- 在 `_Imports.razor` 中加入命名空间
-  ```
+
+- Add namespace in `_Imports.razor`
+
+  ```csharp
   @using AntBlazor
   ```
-- 最后就可以在`.razor`组件中引用啦！
-  ```
+
+- Finally, it can be referenced in the `.razor' component!
+
+  ```html
   <AntButton type="primary">Hello World!</AntButton>
   ```
 
-## 🔨 本地开发
+## 🔨 Local Development
 
-- 先安装 [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1) 3.1.201 以上版本
-- 安装 Node.js（只用于样式文件和互操作所需 TS 文件的构建）
-- 克隆到本地开发
+- Install [.NET Core SDK](https://dotnet.microsoft.com/download) 3.1.102 or later.
+- Install Node.js (only for building style files and interoperable TypeScript files)
+- Clone to local development
 
-  ```
+  ```bash
   $ git clone git@github.com:ant-design-blazor/ant-design-blazor.git
   $ cd ant-design-blazor
   $ npm install
   $ npm start
   ```
 
-  打开浏览器访问 https://localhost:5001 ，详情参考[本地开发文档](https://github.com/ant-design-blazor/ant-design-blazor/wiki)。
+- Visit https://localhost:5001 in your supported browser and check [local development documentation](https://github.com/ant-design-blazor/ant-design-blazor/wiki) for details.
 
-  > 推荐使用 Visual Studio 2019 开发，目前需运行 `AntBlazor.Docs.ClientApp` 项目才能进行断点调试。
+  > Visual Studio 2019 is recommended for development. Currently `AntBlazor.Docs.Server` project is required to run for breakpoint debugging.
 
-## 🔗 链接
+## 🔗 Links
 
-- [文档主页](https://ant-design-blazor.gitee.io)
-- [Blazor 官方文档](https://blazor.net)
+- [Ant Design Blazor Documentation](https://ant-design-blazor.gitee.io)
+- [Official Blazor Documentation](https://blazor.net)
 
-## 🗺 开发路线
+## 🗺 Roadmap
 
-查看 [这个 issue](https://github.com/ant-design-blazor/ant-design-blazor/issues/21) 来了解我们 2020 年的开发计划。
+Check out this [issue](https://github.com/ant-design-blazor/ant-design-blazor/issues/21) to learn about our development plans for 2020.
 
-## 🤝 如何贡献
+## 🤝 Contributing
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/ant-design-blazor/ant-design-blazor/pulls)
 
-如果你希望参与贡献，欢迎 [Pull Request](https://github.com/ant-design-blazor/ant-design-blazor/pulls)，或给我们 [报告 Bug](https://github.com/ant-design-blazor/ant-design-blazor/issues/new) 。
+If you would like to contribute, feel free to create a [Pull Request](https://github.com/ant-design-blazor/ant-design-blazor/pulls), or give us [Bug Report](https://github.com/ant-design-blazor/ant-design-blazor/issues/new).
 
-## ❓ 社区互助
+## ❓ Community Support
 
-如果您在使用的过程中碰到问题，可以通过 [钉钉群](https://h5.dingtalk.com/circle/healthCheckin.html?corpId=dingccf128388c3ea40eda055e4784d35b88&2f46=c9b80ba5&origin=11) 寻求帮助，同时我们也鼓励资深用户通过下面的途径给新人提供帮助。
+If you encounter any problems in the process, feel free to ask for help via following channels. We also encourage experienced users to help newcomers.
 
-<img src="/docs/assets/dingtalk.jpg" width="300">
+- [![Slack Group](https://img.shields.io/badge/Slack-AntBlazor-blue.svg?style=flat-square&logo=slack)](https://join.slack.com/t/antblazor/shared_invite/zt-cw1enker-xVw3s93cTf4uhY2lRGRyRw) (Chinese & English)
+- [![Ding Talk Group](https://img.shields.io/badge/DingTalk-AntBlazor-blue.svg?style=flat-square)](https://h5.dingtalk.com/circle/healthCheckin.html?corpId=dingccf128388c3ea40eda055e4784d35b88&2f46=c9b80ba5&origin=11) (Chinese)
 
-## ☀️ 授权协议
+<details>
+  <summary>Scan QR Code with DingTalk</summary>
+  <img src="./docs/assets/dingtalk.jpg" width="300">
+</details>
+
+## ☀️ License
 
 [![AntBlazor](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](https://github.com/ant-design-blazor/ant-design-blazor/blob/master/LICENSE)
