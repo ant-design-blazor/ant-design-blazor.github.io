@@ -1,8 +1,90 @@
 [
   {
+    "Title": "Result",
+    "Type": "Feedback",
+    "Desc": "<p>Used to feed back the results of a series of operational tasks.</p>\n<h2>When To Use</h2>\n<p>Use when important operations need to inform the user to process the results and the feedback is more complicated.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Title</td>\n<td>title string</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>SubTitle</td>\n<td>subTitle string</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Status</td>\n<td>result status,decide icons and colors</td>\n<td><code>success</code> | <code>error</code> | <code>info</code> | <code>warning</code> | <code>404</code> | <code>403</code> | <code>500</code></td>\n<td><code>info</code></td>\n</tr>\n<tr>\n<td>Icon</td>\n<td>custom back icon</td>\n<td>string (<code>{type}-{theme}</code>)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Extra</td>\n<td>operating area</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "warning",
+        "Title": "Warning",
+        "Description": "<p>The result of the warning.</p>\n",
+        "Code": "<Result Status=\"warning\"\n        Title=@(\"There are some problems with your operation.\")\n        Extra=extra />\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Go Console</AntButton>;\n}",
+        "Type": "Demos.Result.demo.Warning",
+        "Style": ""
+      },
+      {
+        "Order": 4,
+        "Name": "403",
+        "Title": "403",
+        "Description": "<p>you are not authorized to access this page.</p>\n",
+        "Code": "<Result Status=\"403\"\n        Title=@(\"403\")\n        SubTitle=@(\"Sorry, you are not authorized to access this page.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Back Home</AntButton>;\n}\n",
+        "Type": "Demos.Result.demo._403",
+        "Style": ""
+      },
+      {
+        "Order": 5,
+        "Name": "404",
+        "Title": "404",
+        "Description": "<p>The page you visited does not exist.</p>\n",
+        "Code": "<Result Status=\"404\"\n        Title=@(\"404\")\n        SubTitle=@(\"Sorry, the page you visited does not exist.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra =@<AntButton Type=\"primary\">Back Home</AntButton>;\n}",
+        "Type": "Demos.Result.demo._404",
+        "Style": ""
+      },
+      {
+        "Order": 8,
+        "Name": "customicon",
+        "Title": "Custom icon",
+        "Description": "<p>Custom icon.</p>\n",
+        "Code": "<Result\n    Icon=\"smile-outline\"\n    Title=@(\"Great, we have done all the operations!\")\n    Extra=\"extra\">\n</Result>\n\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Next</AntButton>;\n}\n",
+        "Type": "Demos.Result.demo.CustomIcon",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "success",
+        "Title": "Success",
+        "Description": "<p>Show successful results.</p>\n",
+        "Code": "<Result Status=\"success\"\n        Title=@(\"Successfully Purchased Cloud Server ECS!\")\n        SubTitle=@(\"Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait.\")\n        Extra=extra />\n\n@code\n{\n    RenderFragment extra =\n    @<Template>\n        <AntButton Type=\"primary\">Go Console</AntButton>\n        <AntButton>Buy Again</AntButton>\n    </Template>\n    ;\n}",
+        "Type": "Demos.Result.demo.Success",
+        "Style": ""
+      },
+      {
+        "Order": 7,
+        "Name": "error",
+        "Title": "Error",
+        "Description": "<p>Complex error feedback.</p>\n",
+        "Code": "<Result\n    Status=\"error\"\n    Title=@(\"Submission Failed\")\n    SubTitle=@(\"Please check and modify the following information before resubmitting.\")\n    Extra=extra\n>\n<div class=\"desc\">\n    <AntParagraph>\n        <AntText Strong Style=\"font-size: 16px;\">\n            The content you submitted has the following error:\n        </AntText>\n    </AntParagraph>\n    <AntParagraph>\n        <AntIcon Type=\"close-circle\" Theme=\"Outline\" Class=\"site-result-demo-error-icon\" /> Your account has been frozen\n        <a>Thaw immediately &gt;</a>\n    </AntParagraph>\n    <AntParagraph>\n        <AntIcon Type=\"close-circle\" Theme=\"Outline\" Class=\"site-result-demo-error-icon\" /> Your account is not yet\n        eligible to apply <a>Apply Unlock &gt;</a>\n    </AntParagraph>\n</div>\n</Result>\n\n@code {\n    RenderFragment extra =\n        @<Template>\n            <AntButton Type=\"primary\">Go Console</AntButton>\n            <AntButton>Buy Again</AntButton>\n        </Template>\n        ;\n}\n",
+        "Type": "Demos.Result.demo.Error",
+        "Style": "\n[data-theme=\"dark\"] .site-result-demo-error-icon {\n  color: #a61d24;\n}\n\n"
+      },
+      {
+        "Order": 6,
+        "Name": "500",
+        "Title": "500",
+        "Description": "<p>Something went wrong on server.</p>\n",
+        "Code": "<Result Status=\"500\"\n        Title=@(\"500\")\n        SubTitle=@(\"Sorry, something went wrong.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra =@<AntButton Type=\"primary\">Back Home</AntButton>;\n}",
+        "Type": "Demos.Result.demo._500",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "info",
+        "Title": "Info",
+        "Description": "<p>Show processing results.</p>\n",
+        "Code": "<Result\n    Title=@(\"Your operation has been executed\")\n    Extra=extra\n/>\n@code {\n\n    RenderFragment extra =\n        @<AntButton Type=\"primary\">\n            Go Console\n        </AntButton>;\n\n}\n",
+        "Type": "Demos.Result.demo.Info",
+        "Style": ""
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "Type": "Feedback",
-    "Doc": "<p>Alert component for feedback.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When you need to show alert messages to users.</li>\n<li>When you need a persistent static container which is closable by user actions.</li>\n</ul>\n",
+    "Desc": "<p>Alert component for feedback.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When you need to show alert messages to users.</li>\n<li>When you need a persistent static container which is closable by user actions.</li>\n</ul>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 3,
@@ -24,7 +106,7 @@
       },
       {
         "Order": 5,
-        "Name": "close_text",
+        "Name": "closetext",
         "Title": "Customized Close Text",
         "Description": "<p>Replace the default icon with customized content.</p>\n",
         "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
@@ -72,11 +154,12 @@
   {
     "Title": "Button",
     "Type": "General",
-    "Doc": "<p>To trigger an operation.</p>\n<h2>When To Use</h2>\n<p>A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.</p>\n<p>In Ant Design we provide 4 types of button.</p>\n<ul>\n<li>Primary button: indicate the main action, one primary button at most in one section.</li>\n<li>Default button: indicate a series of actions without priority.</li>\n<li>Dashed button: used for adding action commonly.</li>\n<li>Link button: used for external links.</li>\n</ul>\n<p>And 4 other properties additionally.</p>\n<ul>\n<li><code>danger</code>: used for actions of risk, like deletion or authorization.</li>\n<li><code>ghost</code>: used in situations with complex background, home pages usually.</li>\n<li><code>disabled</code>: when actions is not available.</li>\n<li><code>loading</code>: add loading spinner in button, avoiding multiple submits too.</li>\n</ul>\n",
+    "Desc": "<p>To trigger an operation.</p>\n<h2>When To Use</h2>\n<p>A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.</p>\n<p>In Ant Design we provide 4 types of button.</p>\n<ul>\n<li>Primary button: indicate the main action, one primary button at most in one section.</li>\n<li>Default button: indicate a series of actions without priority.</li>\n<li>Dashed button: used for adding action commonly.</li>\n<li>Link button: used for external links.</li>\n</ul>\n<p>And 4 other properties additionally.</p>\n<ul>\n<li><code>danger</code>: used for actions of risk, like deletion or authorization.</li>\n<li><code>ghost</code>: used in situations with complex background, home pages usually.</li>\n<li><code>disabled</code>: when actions is not available.</li>\n<li><code>loading</code>: add loading spinner in button, avoiding multiple submits too.</li>\n</ul>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 99,
-        "Name": "legacy_group",
+        "Name": "legacygroup",
         "Title": "Deprecated Button Group",
         "Description": "<p>Debug usage</p>\n",
         "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
@@ -169,7 +252,8 @@
   {
     "Title": "Badge",
     "Type": "Data Display",
-    "Doc": "<p>Small numerical value or status descriptor for UI elements.</p>\n<h2>When To Use</h2>\n<p>Badge normally appears in proximity to notifications or user avatars with eye-catching appeal, typically displaying unread messages count.</p>\n",
+    "Desc": "<p>Small numerical value or status descriptor for UI elements.</p>\n<h2>When To Use</h2>\n<p>Badge normally appears in proximity to notifications or user avatars with eye-catching appeal, typically displaying unread messages count.</p>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 4,
@@ -218,7 +302,7 @@
       },
       {
         "Order": 1,
-        "Name": "no_wrapper",
+        "Name": "nowrapper",
         "Title": "Standalone",
         "Description": "<p>Used in standalone when children is empty.</p>\n",
         "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
@@ -257,7 +341,8 @@
   {
     "Title": "Avatar",
     "Type": "Data Display",
-    "Doc": "<p>Avatars can be used to represent people or objects. It supports images, <code>Icon</code>s, or letters.</p>\n",
+    "Desc": "<p>Avatars can be used to represent people or objects. It supports images, <code>Icon</code>s, or letters.</p>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 2,

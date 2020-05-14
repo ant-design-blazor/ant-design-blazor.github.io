@@ -58,6 +58,12 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Result",
+            "Type": "menuItem",
+            "Url": "components/result"
+          },
+          {
+            "Order": 0,
             "Title": "Alert",
             "Type": "menuItem",
             "Url": "components/alert"

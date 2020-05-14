@@ -61,6 +61,13 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Result",
+            "SubTitle": "结果",
+            "Type": "menuItem",
+            "Url": "components/result"
+          },
+          {
+            "Order": 0,
             "Title": "Alert",
             "SubTitle": "警告提示",
             "Type": "menuItem",

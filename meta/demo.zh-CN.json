@@ -1,9 +1,92 @@
 [
   {
+    "Title": "Result",
+    "SubTitle": "结果",
+    "Type": "反馈",
+    "Desc": "<p>用于反馈一系列操作任务的处理结果。</p>\n<h2>何时使用</h2>\n<p>当有重要操作需告知用户处理结果，且反馈内容较为复杂时使用。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Title</td>\n<td>title 文字</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>SubTitle</td>\n<td>subTitle 文字</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Status</td>\n<td>结果的状态,决定图标和颜色</td>\n<td><code>success</code> | <code>error</code> | <code>info</code> | <code>warning</code> | <code>404</code> | <code>403</code> | <code>500</code></td>\n<td><code>info</code></td>\n</tr>\n<tr>\n<td>Icon</td>\n<td>自定义 icon</td>\n<td>string (<code>{type}-{theme}</code>)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Extra</td>\n<td>操作区</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "warning",
+        "Title": "Warning",
+        "Description": "<p>警告类型的结果。</p>\n",
+        "Code": "<Result Status=\"warning\"\n        Title=@(\"There are some problems with your operation.\")\n        Extra=extra />\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Go Console</AntButton>;\n}",
+        "Type": "Demos.Result.demo.Warning",
+        "Style": ""
+      },
+      {
+        "Order": 4,
+        "Name": "403",
+        "Title": "403",
+        "Description": "<p>你没有此页面的访问权限。</p>\n",
+        "Code": "<Result Status=\"403\"\n        Title=@(\"403\")\n        SubTitle=@(\"Sorry, you are not authorized to access this page.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Back Home</AntButton>;\n}\n",
+        "Type": "Demos.Result.demo._403",
+        "Style": ""
+      },
+      {
+        "Order": 5,
+        "Name": "404",
+        "Title": "404",
+        "Description": "<p>此页面未找到。</p>\n",
+        "Code": "<Result Status=\"404\"\n        Title=@(\"404\")\n        SubTitle=@(\"Sorry, the page you visited does not exist.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra =@<AntButton Type=\"primary\">Back Home</AntButton>;\n}",
+        "Type": "Demos.Result.demo._404",
+        "Style": ""
+      },
+      {
+        "Order": 8,
+        "Name": "customicon",
+        "Title": "自定义 icon",
+        "Description": "<p>自定义 icon。</p>\n",
+        "Code": "<Result\n    Icon=\"smile-outline\"\n    Title=@(\"Great, we have done all the operations!\")\n    Extra=\"extra\">\n</Result>\n\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Next</AntButton>;\n}\n",
+        "Type": "Demos.Result.demo.CustomIcon",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "success",
+        "Title": "Success",
+        "Description": "<p>成功的结果。</p>\n",
+        "Code": "<Result Status=\"success\"\n        Title=@(\"Successfully Purchased Cloud Server ECS!\")\n        SubTitle=@(\"Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait.\")\n        Extra=extra />\n\n@code\n{\n    RenderFragment extra =\n    @<Template>\n        <AntButton Type=\"primary\">Go Console</AntButton>\n        <AntButton>Buy Again</AntButton>\n    </Template>\n    ;\n}",
+        "Type": "Demos.Result.demo.Success",
+        "Style": ""
+      },
+      {
+        "Order": 7,
+        "Name": "error",
+        "Title": "Error",
+        "Description": "<p>复杂的错误反馈。</p>\n",
+        "Code": "<Result\n    Status=\"error\"\n    Title=@(\"Submission Failed\")\n    SubTitle=@(\"Please check and modify the following information before resubmitting.\")\n    Extra=extra\n>\n<div class=\"desc\">\n    <AntParagraph>\n        <AntText Strong Style=\"font-size: 16px;\">\n            The content you submitted has the following error:\n        </AntText>\n    </AntParagraph>\n    <AntParagraph>\n        <AntIcon Type=\"close-circle\" Theme=\"Outline\" Class=\"site-result-demo-error-icon\" /> Your account has been frozen\n        <a>Thaw immediately &gt;</a>\n    </AntParagraph>\n    <AntParagraph>\n        <AntIcon Type=\"close-circle\" Theme=\"Outline\" Class=\"site-result-demo-error-icon\" /> Your account is not yet\n        eligible to apply <a>Apply Unlock &gt;</a>\n    </AntParagraph>\n</div>\n</Result>\n\n@code {\n    RenderFragment extra =\n        @<Template>\n            <AntButton Type=\"primary\">Go Console</AntButton>\n            <AntButton>Buy Again</AntButton>\n        </Template>\n        ;\n}\n",
+        "Type": "Demos.Result.demo.Error",
+        "Style": "\n[data-theme=\"dark\"] .site-result-demo-error-icon {\n  color: #a61d24;\n}\n\n"
+      },
+      {
+        "Order": 6,
+        "Name": "500",
+        "Title": "500",
+        "Description": "<p>服务器发生了错误。</p>\n",
+        "Code": "<Result Status=\"500\"\n        Title=@(\"500\")\n        SubTitle=@(\"Sorry, something went wrong.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra =@<AntButton Type=\"primary\">Back Home</AntButton>;\n}",
+        "Type": "Demos.Result.demo._500",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "info",
+        "Title": "Info",
+        "Description": "<p>展示处理结果。</p>\n",
+        "Code": "<Result\n    Title=@(\"Your operation has been executed\")\n    Extra=extra\n/>\n@code {\n\n    RenderFragment extra =\n        @<AntButton Type=\"primary\">\n            Go Console\n        </AntButton>;\n\n}\n",
+        "Type": "Demos.Result.demo.Info",
+        "Style": ""
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "SubTitle": "警告提示",
     "Type": "反馈",
-    "Doc": "<p>警告提示，展现需要关注的信息。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当某个页面需要向用户显示警告的信息时。</li>\n<li>非浮层的静态展现形式，始终展现，不会自动消失，用户可以点击关闭。</li>\n</ul>\n",
+    "Desc": "<p>警告提示，展现需要关注的信息。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当某个页面需要向用户显示警告的信息时。</li>\n<li>非浮层的静态展现形式，始终展现，不会自动消失，用户可以点击关闭。</li>\n</ul>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 3,
@@ -25,7 +108,7 @@
       },
       {
         "Order": 5,
-        "Name": "close_text",
+        "Name": "closetext",
         "Title": "自定义关闭",
         "Description": "<p>可以自定义关闭，自定义的内容会替换原先的关闭按钮。</p>\n",
         "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
@@ -74,11 +157,12 @@
     "Title": "Button",
     "SubTitle": "按钮",
     "Type": "通用",
-    "Doc": "<p>按钮用于开始一个即时操作。</p>\n<h2>何时使用</h2>\n<p>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</p>\n<p>在 Ant Design 中，我们有四种按钮。</p>\n<ul>\n<li>主按钮：用于主行动点，一个操作区域只能有一个主按钮。</li>\n<li>默认按钮：用于没有主次之分的一组行动点。</li>\n<li>虚线按钮：常用于添加操作。</li>\n<li>链接按钮：用于次要或外链的行动点。</li>\n</ul>\n<p>以及四种状态属性与上面配合使用。</p>\n<ul>\n<li>危险：删除/移动/修改权限等危险操作，一般需要二次确认。</li>\n<li>幽灵：用于背景色比较复杂的地方，常用在首页/产品页等展示场景。</li>\n<li>禁用：行动点不可用的时候，一般需要文案解释。</li>\n<li>加载中：用于异步操作等待反馈的时候，也可以避免多次提交。</li>\n</ul>\n",
+    "Desc": "<p>按钮用于开始一个即时操作。</p>\n<h2>何时使用</h2>\n<p>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</p>\n<p>在 Ant Design 中，我们有四种按钮。</p>\n<ul>\n<li>主按钮：用于主行动点，一个操作区域只能有一个主按钮。</li>\n<li>默认按钮：用于没有主次之分的一组行动点。</li>\n<li>虚线按钮：常用于添加操作。</li>\n<li>链接按钮：用于次要或外链的行动点。</li>\n</ul>\n<p>以及四种状态属性与上面配合使用。</p>\n<ul>\n<li>危险：删除/移动/修改权限等危险操作，一般需要二次确认。</li>\n<li>幽灵：用于背景色比较复杂的地方，常用在首页/产品页等展示场景。</li>\n<li>禁用：行动点不可用的时候，一般需要文案解释。</li>\n<li>加载中：用于异步操作等待反馈的时候，也可以避免多次提交。</li>\n</ul>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 99,
-        "Name": "legacy_group",
+        "Name": "legacygroup",
         "Title": "废弃的 Block 组",
         "Description": "<p>Debug usage</p>\n",
         "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
@@ -172,7 +256,8 @@
     "Title": "Badge",
     "SubTitle": "徽标数",
     "Type": "数据展示",
-    "Doc": "<p>图标右上角的圆形徽标数字。</p>\n<h2>何时使用</h2>\n<p>一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。</p>\n",
+    "Desc": "<p>图标右上角的圆形徽标数字。</p>\n<h2>何时使用</h2>\n<p>一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。</p>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 4,
@@ -221,7 +306,7 @@
       },
       {
         "Order": 1,
-        "Name": "no_wrapper",
+        "Name": "nowrapper",
         "Title": "独立使用",
         "Description": "<p>不包裹任何元素即是独立使用，可自定样式展现。</p>\n<blockquote>\n<p>在右上角的 badge 则限定为红色。</p>\n</blockquote>\n",
         "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
@@ -261,7 +346,8 @@
     "Title": "Avatar",
     "SubTitle": "头像",
     "Type": "数据展示",
-    "Doc": "<p>用来代表用户或事物，支持图片、图标或字符展示。</p>\n",
+    "Desc": "<p>用来代表用户或事物，支持图片、图标或字符展示。</p>\n",
+    "ApiDoc": "",
     "DemoList": [
       {
         "Order": 2,
