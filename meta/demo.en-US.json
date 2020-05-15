@@ -13,7 +13,8 @@
         "Description": "<p>The result of the warning.</p>\n",
         "Code": "<Result Status=\"warning\"\n        Title=@(\"There are some problems with your operation.\")\n        Extra=extra />\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Go Console</AntButton>;\n}",
         "Type": "Demos.Result.demo.Warning",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 4,
@@ -22,7 +23,8 @@
         "Description": "<p>you are not authorized to access this page.</p>\n",
         "Code": "<Result Status=\"403\"\n        Title=@(\"403\")\n        SubTitle=@(\"Sorry, you are not authorized to access this page.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Back Home</AntButton>;\n}\n",
         "Type": "Demos.Result.demo._403",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 5,
@@ -31,7 +33,8 @@
         "Description": "<p>The page you visited does not exist.</p>\n",
         "Code": "<Result Status=\"404\"\n        Title=@(\"404\")\n        SubTitle=@(\"Sorry, the page you visited does not exist.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra =@<AntButton Type=\"primary\">Back Home</AntButton>;\n}",
         "Type": "Demos.Result.demo._404",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 8,
@@ -40,7 +43,8 @@
         "Description": "<p>Custom icon.</p>\n",
         "Code": "<Result\n    Icon=\"smile-outline\"\n    Title=@(\"Great, we have done all the operations!\")\n    Extra=\"extra\">\n</Result>\n\n@code\n{\n    RenderFragment extra = @<AntButton Type=\"primary\">Next</AntButton>;\n}\n",
         "Type": "Demos.Result.demo.CustomIcon",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 0,
@@ -49,7 +53,8 @@
         "Description": "<p>Show successful results.</p>\n",
         "Code": "<Result Status=\"success\"\n        Title=@(\"Successfully Purchased Cloud Server ECS!\")\n        SubTitle=@(\"Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait.\")\n        Extra=extra />\n\n@code\n{\n    RenderFragment extra =\n    @<Template>\n        <AntButton Type=\"primary\">Go Console</AntButton>\n        <AntButton>Buy Again</AntButton>\n    </Template>\n    ;\n}",
         "Type": "Demos.Result.demo.Success",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 7,
@@ -58,7 +63,8 @@
         "Description": "<p>Complex error feedback.</p>\n",
         "Code": "<Result\n    Status=\"error\"\n    Title=@(\"Submission Failed\")\n    SubTitle=@(\"Please check and modify the following information before resubmitting.\")\n    Extra=extra\n>\n<div class=\"desc\">\n    <AntParagraph>\n        <AntText Strong Style=\"font-size: 16px;\">\n            The content you submitted has the following error:\n        </AntText>\n    </AntParagraph>\n    <AntParagraph>\n        <AntIcon Type=\"close-circle\" Theme=\"Outline\" Class=\"site-result-demo-error-icon\" /> Your account has been frozen\n        <a>Thaw immediately &gt;</a>\n    </AntParagraph>\n    <AntParagraph>\n        <AntIcon Type=\"close-circle\" Theme=\"Outline\" Class=\"site-result-demo-error-icon\" /> Your account is not yet\n        eligible to apply <a>Apply Unlock &gt;</a>\n    </AntParagraph>\n</div>\n</Result>\n\n@code {\n    RenderFragment extra =\n        @<Template>\n            <AntButton Type=\"primary\">Go Console</AntButton>\n            <AntButton>Buy Again</AntButton>\n        </Template>\n        ;\n}\n",
         "Type": "Demos.Result.demo.Error",
-        "Style": "\n[data-theme=\"dark\"] .site-result-demo-error-icon {\n  color: #a61d24;\n}\n\n"
+        "Style": "\n[data-theme=\"dark\"] .site-result-demo-error-icon {\n  color: #a61d24;\n}\n\n",
+        "Debug": false
       },
       {
         "Order": 6,
@@ -67,7 +73,8 @@
         "Description": "<p>Something went wrong on server.</p>\n",
         "Code": "<Result Status=\"500\"\n        Title=@(\"500\")\n        SubTitle=@(\"Sorry, something went wrong.\")\n        Extra=\"extra\" />\n\n@code\n{\n    RenderFragment extra =@<AntButton Type=\"primary\">Back Home</AntButton>;\n}",
         "Type": "Demos.Result.demo._500",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 1,
@@ -76,7 +83,8 @@
         "Description": "<p>Show processing results.</p>\n",
         "Code": "<Result\n    Title=@(\"Your operation has been executed\")\n    Extra=extra\n/>\n@code {\n\n    RenderFragment extra =\n        @<AntButton Type=\"primary\">\n            Go Console\n        </AntButton>;\n\n}\n",
         "Type": "Demos.Result.demo.Info",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       }
     ]
   },
@@ -93,7 +101,8 @@
         "Description": "<p>Spin in a container.</p>\n",
         "Code": "<div class=\"example\">\n    <Spin />\n</div>\n\n<style>\n    .example {\n        text-align: center;\n        background: rgba(0, 0, 0, 0.05);\n        border-radius: 4px;\n        margin-bottom: 20px;\n        padding: 30px 50px;\n        margin: 20px 0;\n    }\n</style>",
         "Type": "Demos.Spin.demo.Inside",
-        "Style": "\n  .example {\n    background: rgba(255,255,255,0.08);\n  }\n\n"
+        "Style": "\n  .example {\n    background: rgba(255,255,255,0.08);\n  }\n\n",
+        "Debug": false
       },
       {
         "Order": 5,
@@ -102,7 +111,8 @@
         "Description": "<p>Specifies a delay for loading state. If <code>spinning</code> ends during delay, loading status won't appear.</p>\n",
         "Code": "<div>\n    <Spin Spinning=loading Delay=500>\n        <AntAlert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}\n",
         "Type": "Demos.Spin.demo.DelayAndDebounce",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 4,
@@ -111,7 +121,8 @@
         "Description": "<p>Customized description content.</p>\n",
         "Code": "<Spin Tip=\"Loading...\">\n    <AntAlert\n        Message=\"Alert message title\"\n        Description=\"Further details about the context of this alert.\"\n        Type=\"info\"\n    />\n</Spin>",
         "Type": "Demos.Spin.demo.Tip",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 0,
@@ -120,7 +131,8 @@
         "Description": "<p>A simple loading status.</p>\n",
         "Code": "<Spin />",
         "Type": "Demos.Spin.demo.Basic",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 1,
@@ -129,7 +141,8 @@
         "Description": "<p>A small <code>Spin</code> is used for loading text, default sized <code>Spin</code> for loading a card-level block, and large <code>Spin</code> used for loading a <strong>page</strong>.</p>\n",
         "Code": "<div>\n    <Spin size=\"small\" />\n    <Spin />\n    <Spin size=\"large\" />\n</div>\n",
         "Type": "Demos.Spin.demo.Size",
-        "Style": "\n.ant-spin.ant-spin-spinning {\n  display: inline-block;\n  margin-right: 16px;\n}\n\n"
+        "Style": "\n.ant-spin.ant-spin-spinning {\n  display: inline-block;\n  margin-right: 16px;\n}\n\n",
+        "Debug": false
       },
       {
         "Order": 3,
@@ -138,7 +151,8 @@
         "Description": "<p>Embedding content into <code>Spin</code> will set it into loading state.</p>\n",
         "Code": "<div>\n    <Spin Spinning=loading>\n        <AntAlert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}",
         "Type": "Demos.Spin.demo.Nested",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 6,
@@ -147,7 +161,67 @@
         "Description": "<p>Use custom loading indicator.</p>\n",
         "Code": "<Spin Indicator=antIcon />\n@code{\n    RenderFragment antIcon = @<AntIcon Type=\"loading\" Theme=\"outline\" Style=\"font-size: 24px\" Spin />;\n}",
         "Type": "Demos.Spin.demo.CustomIndicator",
-        "Style": ""
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Space",
+    "Type": "Layout",
+    "Desc": "<p>Set components spacing.</p>\n<h2>When To Use</h2>\n<p>Avoid components clinging together and set a unified space.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>size</td>\n<td>space size</td>\n<td><code>small</code> | <code>middle</code> | <code>large</code> | <code>number</code></td>\n<td><code>small</code></td>\n<td>4.1.0</td>\n</tr>\n<tr>\n<td>direction</td>\n<td>space direction</td>\n<td><code>vertical</code> | <code>horizontal</code></td>\n<td><code>horizontal</code></td>\n<td>4.1.0</td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 99,
+        "Name": "debug",
+        "Title": "Diverse Child",
+        "Description": "<p>Debug usage</p>\n",
+        "Code": "<h3>Debug</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Space.demo.Debug",
+        "Style": "",
+        "Debug": true
+      },
+      {
+        "Order": 2,
+        "Name": "size",
+        "Title": "Space Size",
+        "Description": "<p><code>large</code>, <code>middle</code> and <code>small</code> preset sizes.</p>\n<p>Set the size to <code>large</code> and <code>middle</code> by setting size to large and middle respectively. If <code>size</code> is not set, the spacing is <code>small</code>.</p>\n",
+        "Code": "<AntRadioGroup @bind-Value=@size OnChange=\"e=> setSize(e)\">\n    <AntRadio Value=\"small\">Small</AntRadio>\n    <AntRadio Value=\"middle\">Middle</AntRadio>\n    <AntRadio Value=\"large\">Large</AntRadio>\n</AntRadioGroup>\n<br />\n<br />\n<Space Size=@size>\n    <SpaceItem>\n        <AntButton Type=\"primary\">Primary</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton>Default</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"dashed\">Dashed</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"link\">Link</AntButton>\n    </SpaceItem>\n</Space>\n\n@code {\n    string size = \"small\";\n    void setSize(string value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}\n",
+        "Type": "Demos.Space.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "vertical",
+        "Title": "Vertical Space",
+        "Description": "<p>Crowded components vertical spacing.</p>\n<p>Can set <code>width: 100%</code> fill a row.</p>\n",
+        "Code": "<h3>Vertical</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Space.demo.Vertical",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "base",
+        "Title": "Basic Usage",
+        "Description": "<p>Crowded components horizontal spacing.</p>\n",
+        "Code": "<Space>\n    <SpaceItem>\n        Space\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"primary\">Button</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton>\n            <AntIcon Type=\"upload\" Theme=\"outline\" /> Click to Upload\n        </AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton>Confirm</AntButton>\n    </SpaceItem>\n</Space>\n",
+        "Type": "Demos.Space.demo.Base",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "customize",
+        "Title": "Customize Size",
+        "Description": "<p>Custom spacing size.</p>\n",
+        "Code": "\n<AntSlider Value=size OnChange=\"v=>setSize(v.AsT0)\" />\n<br />\n<br />\n<Space Size=\"@($\"{size}\")\">\n    <SpaceItem>\n        <AntButton Type=\"primary\">Primary</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton>Default</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"dashed\">Dashed</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"link\">Link</AntButton>\n    </SpaceItem>\n</Space>\n\n@code{\n    double size = 8;\n\n    void setSize(double value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}",
+        "Type": "Demos.Space.demo.Customize",
+        "Style": "",
+        "Debug": false
       }
     ]
   },
@@ -164,7 +238,8 @@
         "Description": "<p>Additional description for alert message.</p>\n",
         "Code": "<AntAlert Message=\"Success Text\"\n          Description=\"Success Description Success Description Success Description\"\n          Type=\"@AntAlertType.Success\" />\n\n<AntAlert Message=\"Info Text\"\n          Description=\"Info Description Info Description Info Description Info Description\"\n          Type=\"@AntAlertType.Info\" />\n\n<AntAlert Message=\"Warning Text\"\n          Description=\"Warning Description Warning Description Warning Description Warning Description\"\n          Type=\"@AntAlertType.Warning\" />\n\n<AntAlert Message=\"Error Text\"\n          Description=\"Error Description Error Description Error Description Error Description\"\n          Type=\"@AntAlertType.Error\" />",
         "Type": "Demos.Alert.demo.Description",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 0,
@@ -173,7 +248,8 @@
         "Description": "<p>The simplest usage for short messages.</p>\n",
         "Code": "<AntAlert Type=\"@AntAlertType.Success\" Message=\"Success Text\" />\n",
         "Type": "Demos.Alert.demo.Basic",
-        "Style": "\n.code-box-demo .ant-alert {\n  margin-bottom: 16px;\n}\n\n"
+        "Style": "\n.code-box-demo .ant-alert {\n  margin-bottom: 16px;\n}\n\n",
+        "Debug": false
       },
       {
         "Order": 5,
@@ -182,7 +258,8 @@
         "Description": "<p>Replace the default icon with customized content.</p>\n",
         "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
         "Type": "Demos.Alert.demo.Close_text",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 1,
@@ -191,7 +268,8 @@
         "Description": "<p>There are 4 types of Alert: <code>success</code>, <code>info</code>, <code>warning</code>, <code>error</code>.</p>\n",
         "Code": "<AntAlert Message=\"Success Text\" Type=\"@AntAlertType.Success\" />\n\n<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" />\n\n<AntAlert Message=\"Warning Text\" Type=\"@AntAlertType.Warning\" />\n\n<AntAlert Message=\"Error Text\" Type=\"@AntAlertType.Error\" />",
         "Type": "Demos.Alert.demo.Style",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 4,
@@ -200,7 +278,8 @@
         "Description": "<p>Decent icon make information more clear and more friendly.</p>\n",
         "Code": "<AntAlert Type=\"@AntAlertType.Success\"\n          Message=\"Success Tips\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Info\"\n          Message=\"Informational Notes\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Success\"\n          Message=\"Success Tips\"\n          Description=\"Detailed description and advice about successful copywriting.\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Info\"\n          Message=\"Informational Notes\"\n          Description=\"Additional description and information about copywriting.\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning\"\n          Description=\"This is a warning notice about copywriting.\"\n          ShowIcon />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error\"\n          Description=\"This is an error message about copywriting.\"\n          ShowIcon />",
         "Type": "Demos.Alert.demo.Icon",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 2,
@@ -209,7 +288,8 @@
         "Description": "<p>To show close button.</p>\n",
         "Code": "<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text Warning Text Warning Text Warning Text Warning Text Warning Text Warning Text\"\n          Closable\n          OnClose=\"LogSomething\" />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error Text\"\n          Description=\"Error Description Error Description Error Description Error Description Error Description Error Description\"\n          Closable\n          OnClose=\"LogSomething\" />\n\n@code{\n    private void LogSomething()\n    {\n        Console.WriteLine(\"Logging Something...\");\n    }\n}",
         "Type": "Demos.Alert.demo.Closable",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 6,
@@ -218,7 +298,8 @@
         "Description": "<p>Display Alert as a banner at top of page.</p>\n",
         "Code": "<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Description=\"Very long warning text warning text text text text text text text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text Without Icon\"\n          Banner\n          ShowIcon=\"false\" />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error Text\"\n          Banner />",
         "Type": "Demos.Alert.demo.Banner",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       }
     ]
   },
@@ -235,7 +316,8 @@
         "Description": "<p>Debug usage</p>\n",
         "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
         "Type": "Demos.Button.demo.Legacy_group",
-        "Style": ""
+        "Style": "",
+        "Debug": true
       },
       {
         "Order": 0,
@@ -244,7 +326,8 @@
         "Description": "<p><code>block</code> property will make the button fit to its parent width.</p>\n",
         "Code": "<div>\n    <AntButton Type=\"primary\" Block>Primary</AntButton>\n    <AntButton Block>Default</AntButton>\n    <AntButton Type=\"dashed\" Block>Dashed</AntButton>\n    <AntButton Type=\"link\" Block>Link</AntButton>\n</div>",
         "Type": "Demos.Button.demo.Block",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 3,
@@ -253,7 +336,8 @@
         "Description": "<p>To mark a button as disabled, add the <code>disabled</code> property to the <code>Button</code>.</p>\n",
         "Code": "<div>\n    <AntButton Type=\"primary\">Primary</AntButton>\n    <AntButton Type=\"primary\" Disabled>\n        Primary(disabled)\n    </AntButton>\n    <br />\n    <AntButton>Default</AntButton>\n    <AntButton Disabled>Default(disabled)</AntButton>\n    <br />\n    <AntButton Type=\"dashed\">Dashed</AntButton>\n    <AntButton Type=\"dashed\" Disabled>\n        Dashed(disabled)\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\">Link</AntButton>\n    <AntButton Type=\"link\" Disabled>\n        Link(disabled)\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\" Danger>\n        Danger Link\n    </AntButton>\n    <AntButton Type=\"link\" Danger Disabled>\n        Danger Link(disabled)\n    </AntButton>\n    <br />\n    <AntButton Danger>Danger Default</AntButton>\n    <AntButton Danger Disabled>\n        Danger Default(disabled)\n    </AntButton>\n    <div class=\"site-AntButton-Ghost-wrapper\">\n        <AntButton Ghost>Ghost</AntButton>\n        <AntButton Ghost Disabled>\n            Ghost(disabled)\n        </AntButton>\n    </div>\n</div>",
         "Type": "Demos.Button.demo.Disabled",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 8,
@@ -262,7 +346,8 @@
         "Description": "<p><code>ghost</code> property will make button's background transparent, it is commonly used in colored background.</p>\n",
         "Code": "<div class=\"site-AntButton-Ghost-wrapper\">\n    <AntButton Type=\"primary\" Ghost>\n        Primary\n    </AntButton>\n    <AntButton Ghost>Default</AntButton>\n    <AntButton Type=\"dashed\" Ghost>\n        link\n    </AntButton>\n    <AntButton Type=\"link\" Ghost>\n        link\n    </AntButton>\n</div>",
         "Type": "Demos.Button.demo.Ghost",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 0,
@@ -271,7 +356,8 @@
         "Description": "<p>There are <code>primary</code> button, <code>default</code> button, <code>dashed</code> button and <code>link</code> button in antd.</p>\n",
         "Code": "<div>\n    <AntButton Type=\"primary\">Primary</AntButton>\n    <AntButton>Default</AntButton>\n    <AntButton Type=\"dashed\">Dashed</AntButton>\n    <AntButton Type=\"danger\">Danger</AntButton>\n    <AntButton Type=\"link\">Link</AntButton>\n</div>",
         "Type": "Demos.Button.demo.Basic",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 5,
@@ -280,7 +366,8 @@
         "Description": "<p>If you need several buttons, we recommend that you use 1 primary button + n secondary buttons, and if there are more than three operations, you can group some of them into <code>Dropdown.Button</code>.</p>\n",
         "Code": "Not implement yet :(",
         "Type": "Demos.Button.demo.Multiple",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 2,
@@ -289,7 +376,8 @@
         "Description": "<p>Ant Design supports a default button size as well as a large and small size.</p>\n<p>If a large or small button is desired, set the <code>size</code> property to either <code>large</code> or <code>small</code> respectively. Omit the <code>size</code> property for a button with the default size.</p>\n",
         "Code": "<div>\n    <AntRadioGroup @bind-Value=\"@size\">\n        <AntRadio RadioButton Value=\"large\">Large</AntRadio>\n        <AntRadio RadioButton Value=\"default\">Default</AntRadio>\n        <AntRadio RadioButton Value=\"small\">Small</AntRadio>\n    </AntRadioGroup>\n    <br />\n    <br />\n    <AntButton Type=\"primary\" Size=@size>\n        Primary\n    </AntButton>\n    <AntButton Size=\"@size\">Default</AntButton>\n    <AntButton Type=\"dashed\" Size=@size>\n        Dashed\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\" Size=@size>\n        Link\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"circle\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n</div>\n\n@code\n{\n    string size = \"large\";\n}\n",
         "Type": "Demos.Button.demo.Size",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 1,
@@ -298,7 +386,8 @@
         "Description": "<p><code>Button</code> components can contain an <code>Icon</code>. This is done by setting the <code>icon</code> property or placing an <code>Icon</code> component within the <code>Button</code>.</p>\n<p>If you want specific control over the positioning and placement of the <code>Icon</code>, then that should be done by placing the <code>Icon</code> component within the <code>Button</code> rather than using the <code>icon</code> property.</p>\n",
         "Code": "<div>\n    @*<Tooltip title=\"search\">\n        <AntButton Type=\"primary\" shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Type=\"primary\" Shape=\"circle\">\n        A\n    </AntButton>\n    <AntButton Type=\"primary\" Icon=\"search\">\n    Search\n    </AntButton>\n    @*<Tooltip title=\"search\">\n        <AntButton shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Icon=\"search\">Search</AntButton>\n    <br />\n    @*<Tooltip title=\"search\">\n        <AntButton shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Icon=\"search\">Search</AntButton>\n    @*<Tooltip title=\"search\">\n        <AntButton Type=\"dashed\" shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <AntButton Type=\"dashed\" Icon=\"search\">\n    Search\n    </AntButton>\n</div>",
         "Type": "Demos.Button.demo.Icon",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 9,
@@ -307,7 +396,8 @@
         "Description": "<p><code>danger</code> is a property of button after antd 4.0.</p>\n",
         "Code": "<div>\n    <AntButton Type=\"primary\" Danger>\n        Primary\n    </AntButton>\n    <AntButton Danger>Default</AntButton>\n    <AntButton Type=\"dashed\" Danger>\n        link\n    </AntButton>\n    <AntButton Type=\"link\" Danger>\n        link\n    </AntButton>\n</div>",
         "Type": "Demos.Button.demo.Danger",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 4,
@@ -316,7 +406,8 @@
         "Description": "<p>A loading indicator can be added to a button by setting the <code>loading</code> property on the <code>Button</code>.</p>\n",
         "Code": "@using System.Timers\n\n<div>\n    <AntButton Type=\"primary\" Loading>\n        Loading\n    </AntButton>\n    <AntButton Type=\"primary\" Size=\"small\" Loading>\n        Loading\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Loading=\"loading\" Onclick=enterLoading>\n        Click me!\n    </AntButton>\n    <AntButton\n        Type=\"primary\"\n        Icon=\"poweroff\"\n    Loading=\"iconLoading\"\n    Onclick=\"enterIconLoading\"\n    >\n    Click me!\n    </AntButton>\n</div>\n\n@code\n{\n    bool loading = false;\n    bool iconLoading = false;\n\n    private void enterLoading()\n    {\n        loading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            loading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n\n    private void enterIconLoading()\n    {\n        iconLoading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            iconLoading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n}\n",
         "Type": "Demos.Button.demo.Loading",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       }
     ]
   },
@@ -333,7 +424,8 @@
         "Description": "<p>The count will be animated as it changes.</p>\n",
         "Code": "<div>\n    <div>\n        <AntBadge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </AntBadge>\n        <AntButtonGroup>\n            <AntButton @onclick=\"_=>decline()\">\n                <AntIcon Type=\"minus\"></AntIcon>\n            </AntButton>\n            <AntButton @onclick=\"_=>increase()\">\n                <AntIcon Type=\"plus\"></AntIcon>\n            </AntButton>\n        </AntButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <AntBadge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </AntBadge>\n        <AntSwitch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
         "Type": "Demos.Badge.demo.Change",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 0,
@@ -342,7 +434,8 @@
         "Description": "<p>Simplest Usage. Badge will be hidden when <code>count</code> is <code>0</code>, but we can use <code>showZero</code> to show it.</p>\n",
         "Code": "<div>\n    <AntBadge Count=\"5\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"0\" ShowZero>\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    @{\n        RenderFragment count = @<AntIcon Type=\"clock-circle\" Fill=\"#f5222d\"/>;\n    }\n    <AntBadge Count=\"@(count)\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>\n\n",
         "Type": "Demos.Badge.demo.Basic",
-        "Style": "\n    .ant-badge:not(.ant-badge-not-a-wrapper) {\n        margin-right: 20px;\n    }\n    .ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n        margin-right: 0;\n        margin-left: 20px;\n    }\n    .head-example {\n        width: 42px;\n        height: 42px;\n        border-radius: 2px;\n        background: #eee;\n        display: inline-block;\n        vertical-align: middle;\n    }\n    [data-theme=\"dark\"] .head-example {\n        background: rgba(255,255,255,.12);\n    }\n\n"
+        "Style": "\n    .ant-badge:not(.ant-badge-not-a-wrapper) {\n        margin-right: 20px;\n    }\n    .ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n        margin-right: 0;\n        margin-left: 20px;\n    }\n    .head-example {\n        width: 42px;\n        height: 42px;\n        border-radius: 2px;\n        background: #eee;\n        display: inline-block;\n        vertical-align: middle;\n    }\n    [data-theme=\"dark\"] .head-example {\n        background: rgba(255,255,255,.12);\n    }\n\n",
+        "Debug": false
       },
       {
         "Order": 2,
@@ -351,7 +444,8 @@
         "Description": "<p><code>${overflowCount}+</code> is displayed when count is larger than <code>overflowCount</code>. The default value of <code>overflowCount</code> is <code>99</code>.</p>\n",
         "Code": "<div>\n    <AntBadge Count=\"99\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"100\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"99\" OverflowCount=\"10\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"1000\" OverflowCount=\"999\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>\n",
         "Type": "Demos.Badge.demo.Overflow",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 8,
@@ -360,7 +454,8 @@
         "Description": "<p>We preset a series of colorful Badge styles for use in different situations. You can also set it to a hex color string for custom color.</p>\n",
         "Code": "<div>\n    <h4 style=\"margin-bottom: 16px\">Presets:</h4>\n    <div>\n        @foreach (var color in colors)\n        {\n            <div key=\"@color\">\n                <AntBadge Color=\"@color\" Text=\"@color\" />\n            </div>\n        }\n    </div>\n    <h4 style=\"margin:16px 0;\">Custom:</h4>\n    <div>\n        <AntBadge Color=\"#f50\" Text=\"#f50\" />\n        <br />\n        <AntBadge Color=\"#2db7f5\" Text=\"#2db7f5\" />\n        <br />\n        <AntBadge Color=\"#87d068\" Text=\"#87d068\" />\n        <br />\n        <AntBadge Color=\"#108ee9\" Text=\"#108ee9\" />\n    </div>\n</div>\n\n<style>\n    .ant-tag {\n        margin-bottom: 8px;\n    }\n</style>\n\n@code\n{\n    string[] colors =\n    {\n        \"pink\",\n        \"red\",\n        \"yellow\",\n        \"orange\",\n        \"cyan\",\n        \"green\",\n        \"blue\",\n        \"purple\",\n        \"geekblue\",\n        \"magenta\",\n        \"volcano\",\n        \"gold\",\n        \"lime\",\n    };\n}\n",
         "Type": "Demos.Badge.demo.Colorful",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 3,
@@ -369,7 +464,8 @@
         "Description": "<p>The badge can be wrapped with <code>a</code> tag to make it linkable.</p>\n",
         "Code": "<a href=\"#\">\n    <AntBadge Count=\"5\">\n        <span class=\"head-example\" />\n    </AntBadge>\n</a>",
         "Type": "Demos.Badge.demo.Link",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 1,
@@ -378,7 +474,8 @@
         "Description": "<p>Used in standalone when children is empty.</p>\n",
         "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
         "Type": "Demos.Badge.demo.No_wrapper",
-        "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n"
+        "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n",
+        "Debug": false
       },
       {
         "Order": 100,
@@ -387,7 +484,8 @@
         "Description": "<p>The badge will display <code>title</code> when hovered over, instead of <code>count</code>.</p>\n",
         "Code": "<div>\n    <AntBadge Count=\"5\" Title=\"Custom hover text\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>",
         "Type": "Demos.Badge.demo.Title",
-        "Style": "\n.ant-badge:not(.ant-badge-not-a-wrapper) {\n  margin-right: 20px;\n}\n\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n\n.head-example {\n  width: 42px;\n  height: 42px;\n  border-radius: 2px;\n  background: #eee;\n  display: inline-block;\n}\n[data-theme=\"dark\"] .head-example {\n  background: rgba(255,255,255,.12);\n}\n\n"
+        "Style": "\n.ant-badge:not(.ant-badge-not-a-wrapper) {\n  margin-right: 20px;\n}\n\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n\n.head-example {\n  width: 42px;\n  height: 42px;\n  border-radius: 2px;\n  background: #eee;\n  display: inline-block;\n}\n[data-theme=\"dark\"] .head-example {\n  background: rgba(255,255,255,.12);\n}\n\n",
+        "Debug": true
       },
       {
         "Order": 3,
@@ -396,7 +494,8 @@
         "Description": "<p>This will simply display a red badge, without a specific count. If count equals 0, it won't display the dot.</p>\n",
         "Code": "<div>\n    <AntBadge Dot>\n        <AntIcon Type=\"notification\"/>\n    </AntBadge>\n    <AntBadge Count=\"0\" Dot>\n        <AntIcon Type=\"notification\" />\n    </AntBadge>\n    <AntBadge Dot>\n        <a href=\"#\">Link something</a>\n    </AntBadge>\n</div>",
         "Type": "Demos.Badge.demo.Dot",
-        "Style": "\n.anticon-notification {\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  font-size: 16px;\n}\n\n"
+        "Style": "\n.anticon-notification {\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  font-size: 16px;\n}\n\n",
+        "Debug": false
       },
       {
         "Order": 6,
@@ -405,7 +504,8 @@
         "Description": "<p>Standalone badge with status.</p>\n",
         "Code": "<div>\n    <AntBadge Status=\"success\" />\n    <AntBadge Status=\"error\" />\n    <AntBadge Status=\"default\" />\n    <AntBadge Status=\"processing\" />\n    <AntBadge Status=\"warning\" />\n    <br />\n    <AntBadge Status=\"success\" Text=\"Success\" />\n    <br />\n    <AntBadge Status=\"error\" Text=\"Error\" />\n    <br />\n    <AntBadge Status=\"default\" Text=\"Default\" />\n    <br />\n    <AntBadge Status=\"processing\" Text=\"Processing\" />\n    <br />\n    <AntBadge Status=\"warning\" Text=\"Warning\" />\n</div>",
         "Type": "Demos.Badge.demo.Status",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       }
     ]
   },
@@ -422,7 +522,8 @@
         "Description": "<p>For letter type Avatar, when the letters are too long to display, the font size can be automatically adjusted according to the width of the Avatar.</p>\n",
         "Code": "<div>\n    <AntAvatar Style=\"@($\"background-color: {color}; vertical-align: middle;\")\" Size=\"large\">\n        @user\n    </AntAvatar>\n    <AntButton\n        Size=\"small\"\n        Style=\"margin:0 16px; vertical-align: middle;\"\n        Onclick=\"_=>changeUser()\"\n    >\n        Change\n    </AntButton>\n</div>\n\n@code\n{\n    private static string[] userList = {\"U\", \"Lucy\", \"Tom\", \"Edward\"};\n    private static string[] colorList = {\"#f56a00\", \"#7265e6\", \"#ffbf00\", \"#00a2ae\"};\n\n    private string user { get; set; } = userList[0];\n    private string color { get; set; } = colorList[0];\n\n    private void changeUser()\n    {\n        var index = Array.IndexOf(userList, user);\n        user = index < userList.Length - 1 ? userList[index + 1] : userList[0];\n        color = index < colorList.Length - 1 ? colorList[index + 1] : colorList[0];\n    }\n}\n",
         "Type": "Demos.Avatar.demo.Dynamic",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 0,
@@ -431,7 +532,8 @@
         "Description": "<p>Three sizes and two shapes are available.</p>\n",
         "Code": "<div>\n    <div>\n        <AntAvatar Size=\"64\" Icon=\"user\" />\n        <AntAvatar Size=\"large\" Icon=\"user\" />\n        <AntAvatar Icon=\"user\" />\n        <AntAvatar Size=\"small\" Icon=\"user\" />\n    </div>\n    <div>\n        <AntAvatar Shape=\"square\" Size=\"64\" Icon=\"user\" />\n        <AntAvatar Shape=\"square\" Size=\"large\" Icon=\"user\" />\n        <AntAvatar Shape=\"square\" Icon=\"user\" />\n        <AntAvatar Shape=\"square\" Size=\"small\" Icon=\"user\" />\n    </div>\n</div>",
         "Type": "Demos.Avatar.demo.Basic",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 3,
@@ -440,7 +542,8 @@
         "Description": "<p>Usually used for messages remind.</p>\n",
         "Code": "<div>\n    <span class=\"avatar-item\">\n        <AntBadge Count=\"1\">\n            <AntAvatar Shape=\"square\" Icon=\"user\" />\n        </AntBadge>\n    </span>\n    <span>\n        <AntBadge Dot>\n            <AntAvatar Shape=\"square\" Icon=\"user\"/>\n        </AntBadge>\n    </span>\n</div>",
         "Type": "Demos.Avatar.demo.Badge",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 1,
@@ -449,7 +552,8 @@
         "Description": "<p>Image, Icon and letter are supported, and the latter two kinds avatar can have custom colors and background colors.</p>\n",
         "Code": "<div>\n    <AntAvatar Icon=\"user\" />\n    <AntAvatar>U</AntAvatar>\n    <AntAvatar>USER</AntAvatar>\n    <AntAvatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <AntAvatar Style=\"color: #f56a00; background-color: #fde3cf; \">U</AntAvatar>\n    <AntAvatar Style=\"background-color: #87d068\" Icon=\"user\" />\n</div>",
         "Type": "Demos.Avatar.demo.Type",
-        "Style": ""
+        "Style": "",
+        "Debug": false
       }
     ]
   }

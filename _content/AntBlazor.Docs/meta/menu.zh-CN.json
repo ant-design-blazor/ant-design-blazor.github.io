@@ -34,6 +34,20 @@
         ]
       },
       {
+        "Order": 1,
+        "Title": "布局",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Space",
+            "SubTitle": "间距",
+            "Type": "menuItem",
+            "Url": "components/space"
+          }
+        ]
+      },
+      {
         "Order": 4,
         "Title": "数据展示",
         "Type": "itemGroup",

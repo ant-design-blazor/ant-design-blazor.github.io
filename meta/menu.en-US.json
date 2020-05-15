@@ -33,6 +33,19 @@
         ]
       },
       {
+        "Order": 1,
+        "Title": "Layout",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Space",
+            "Type": "menuItem",
+            "Url": "components/space"
+          }
+        ]
+      },
+      {
         "Order": 4,
         "Title": "Data Display",
         "Type": "itemGroup",
