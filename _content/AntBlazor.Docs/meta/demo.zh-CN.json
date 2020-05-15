@@ -82,6 +82,78 @@
     ]
   },
   {
+    "Title": "Spin",
+    "SubTitle": "加载中",
+    "Type": "反馈",
+    "Desc": "<p>用于页面和区块的加载中状态。</p>\n<h2>何时使用</h2>\n<p>页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Delay</td>\n<td>延迟显示加载效果的时间（防止闪烁）</td>\n<td>number (毫秒)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Indicator</td>\n<td>加载指示符</td>\n<td>ReactNode</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Size</td>\n<td>组件大小，可选值为 <code>small</code> <code>default</code> <code>large</code></td>\n<td>string</td>\n<td>'default'</td>\n</tr>\n<tr>\n<td>Spinning</td>\n<td>是否为加载中状态</td>\n<td>boolean</td>\n<td>true</td>\n</tr>\n<tr>\n<td>Tip</td>\n<td>当作为包裹元素时，可以自定义描述文案</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>WrapperClassName</td>\n<td>包装器的类属性</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3>静态方法</h3>\n<ul>\n<li><p><code>Spin.setDefaultIndicator(indicator: ReactNode)</code></p>\n<p>你可以自定义全局默认 Spin 的元素。</p>\n</li>\n</ul>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "inside",
+        "Title": "容器",
+        "Description": "<p>放入一个容器中。</p>\n",
+        "Code": "<div class=\"example\">\n    <Spin />\n</div>\n\n<style>\n    .example {\n        text-align: center;\n        background: rgba(0, 0, 0, 0.05);\n        border-radius: 4px;\n        margin-bottom: 20px;\n        padding: 30px 50px;\n        margin: 20px 0;\n    }\n</style>",
+        "Type": "Demos.Spin.demo.Inside",
+        "Style": "\n  .example {\n    background: rgba(255,255,255,0.08);\n  }\n\n"
+      },
+      {
+        "Order": 5,
+        "Name": "delayanddebounce",
+        "Title": "延迟",
+        "Description": "<p>延迟显示 loading 效果。当 spinning 状态在 <code>delay</code> 时间内结束，则不显示 loading 状态。</p>\n",
+        "Code": "<div>\n    <Spin Spinning=loading Delay=500>\n        <AntAlert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}\n",
+        "Type": "Demos.Spin.demo.DelayAndDebounce",
+        "Style": ""
+      },
+      {
+        "Order": 4,
+        "Name": "tip",
+        "Title": "自定义描述文案",
+        "Description": "<p>自定义描述文案。</p>\n",
+        "Code": "<Spin Tip=\"Loading...\">\n    <AntAlert\n        Message=\"Alert message title\"\n        Description=\"Further details about the context of this alert.\"\n        Type=\"info\"\n    />\n</Spin>",
+        "Type": "Demos.Spin.demo.Tip",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本用法",
+        "Description": "<p>一个简单的 loading 状态。</p>\n",
+        "Code": "<Spin />",
+        "Type": "Demos.Spin.demo.Basic",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "size",
+        "Title": "各种大小",
+        "Description": "<p>小的用于文本加载，默认用于卡片容器级加载，大的用于<strong>页面级</strong>加载。</p>\n",
+        "Code": "<div>\n    <Spin size=\"small\" />\n    <Spin />\n    <Spin size=\"large\" />\n</div>\n",
+        "Type": "Demos.Spin.demo.Size",
+        "Style": "\n.ant-spin.ant-spin-spinning {\n  display: inline-block;\n  margin-right: 16px;\n}\n\n"
+      },
+      {
+        "Order": 3,
+        "Name": "nested",
+        "Title": "卡片加载中",
+        "Description": "<p>可以直接把内容内嵌到 <code>Spin</code> 中，将现有容器变为加载状态。</p>\n",
+        "Code": "<div>\n    <Spin Spinning=loading>\n        <AntAlert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}",
+        "Type": "Demos.Spin.demo.Nested",
+        "Style": ""
+      },
+      {
+        "Order": 6,
+        "Name": "customindicator",
+        "Title": "自定义指示符",
+        "Description": "<p>使用自定义指示符。</p>\n",
+        "Code": "<Spin Indicator=antIcon />\n@code{\n    RenderFragment antIcon = @<AntIcon Type=\"loading\" Theme=\"outline\" Style=\"font-size: 24px\" Spin />;\n}",
+        "Type": "Demos.Spin.demo.CustomIndicator",
+        "Style": ""
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "SubTitle": "警告提示",
     "Type": "反馈",

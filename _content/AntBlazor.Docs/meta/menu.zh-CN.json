@@ -68,6 +68,13 @@
           },
           {
             "Order": 0,
+            "Title": "Spin",
+            "SubTitle": "加载中",
+            "Type": "menuItem",
+            "Url": "components/spin"
+          },
+          {
+            "Order": 0,
             "Title": "Alert",
             "SubTitle": "警告提示",
             "Type": "menuItem",

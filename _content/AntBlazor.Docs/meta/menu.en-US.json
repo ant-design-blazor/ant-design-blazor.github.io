@@ -64,6 +64,12 @@
           },
           {
             "Order": 0,
+            "Title": "Spin",
+            "Type": "menuItem",
+            "Url": "components/spin"
+          },
+          {
+            "Order": 0,
             "Title": "Alert",
             "Type": "menuItem",
             "Url": "components/alert"

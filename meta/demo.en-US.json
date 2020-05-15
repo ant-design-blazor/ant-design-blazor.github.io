@@ -81,6 +81,77 @@
     ]
   },
   {
+    "Title": "Spin",
+    "Type": "Feedback",
+    "Desc": "<p>A spinner for displaying loading state of a page or a section.</p>\n<h2>When To Use</h2>\n<p>When part of the page is waiting for asynchronous data or during a rendering process, an appropriate loading animation can effectively alleviate users' inquietude.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Delay</td>\n<td>specifies a delay in milliseconds for loading state (prevent flush)</td>\n<td>number (milliseconds)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Indicator</td>\n<td>React node of the spinning indicator</td>\n<td>ReactNode</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Size</td>\n<td>size of Spin, options: <code>small</code>, <code>default</code> and <code>large</code></td>\n<td>string</td>\n<td><code>default</code></td>\n</tr>\n<tr>\n<td>Spinning</td>\n<td>whether Spin is spinning</td>\n<td>boolean</td>\n<td>true</td>\n</tr>\n<tr>\n<td>Tip</td>\n<td>customize description content when Spin has children</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>WrapperClassName</td>\n<td>className of wrapper when Spin has children</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3>Static Method</h3>\n<ul>\n<li><p><code>Spin.setDefaultIndicator(indicator: ReactNode)</code></p>\n<p>You can define default spin element globally.</p>\n</li>\n</ul>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "inside",
+        "Title": "Inside a container",
+        "Description": "<p>Spin in a container.</p>\n",
+        "Code": "<div class=\"example\">\n    <Spin />\n</div>\n\n<style>\n    .example {\n        text-align: center;\n        background: rgba(0, 0, 0, 0.05);\n        border-radius: 4px;\n        margin-bottom: 20px;\n        padding: 30px 50px;\n        margin: 20px 0;\n    }\n</style>",
+        "Type": "Demos.Spin.demo.Inside",
+        "Style": "\n  .example {\n    background: rgba(255,255,255,0.08);\n  }\n\n"
+      },
+      {
+        "Order": 5,
+        "Name": "delayanddebounce",
+        "Title": "delay",
+        "Description": "<p>Specifies a delay for loading state. If <code>spinning</code> ends during delay, loading status won't appear.</p>\n",
+        "Code": "<div>\n    <Spin Spinning=loading Delay=500>\n        <AntAlert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}\n",
+        "Type": "Demos.Spin.demo.DelayAndDebounce",
+        "Style": ""
+      },
+      {
+        "Order": 4,
+        "Name": "tip",
+        "Title": "Customized description",
+        "Description": "<p>Customized description content.</p>\n",
+        "Code": "<Spin Tip=\"Loading...\">\n    <AntAlert\n        Message=\"Alert message title\"\n        Description=\"Further details about the context of this alert.\"\n        Type=\"info\"\n    />\n</Spin>",
+        "Type": "Demos.Spin.demo.Tip",
+        "Style": ""
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "basic Usage",
+        "Description": "<p>A simple loading status.</p>\n",
+        "Code": "<Spin />",
+        "Type": "Demos.Spin.demo.Basic",
+        "Style": ""
+      },
+      {
+        "Order": 1,
+        "Name": "size",
+        "Title": "Size",
+        "Description": "<p>A small <code>Spin</code> is used for loading text, default sized <code>Spin</code> for loading a card-level block, and large <code>Spin</code> used for loading a <strong>page</strong>.</p>\n",
+        "Code": "<div>\n    <Spin size=\"small\" />\n    <Spin />\n    <Spin size=\"large\" />\n</div>\n",
+        "Type": "Demos.Spin.demo.Size",
+        "Style": "\n.ant-spin.ant-spin-spinning {\n  display: inline-block;\n  margin-right: 16px;\n}\n\n"
+      },
+      {
+        "Order": 3,
+        "Name": "nested",
+        "Title": "Embedded mode",
+        "Description": "<p>Embedding content into <code>Spin</code> will set it into loading state.</p>\n",
+        "Code": "<div>\n    <Spin Spinning=loading>\n        <AntAlert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}",
+        "Type": "Demos.Spin.demo.Nested",
+        "Style": ""
+      },
+      {
+        "Order": 6,
+        "Name": "customindicator",
+        "Title": "Custom spinning indicator",
+        "Description": "<p>Use custom loading indicator.</p>\n",
+        "Code": "<Spin Indicator=antIcon />\n@code{\n    RenderFragment antIcon = @<AntIcon Type=\"loading\" Theme=\"outline\" Style=\"font-size: 24px\" Spin />;\n}",
+        "Type": "Demos.Spin.demo.CustomIndicator",
+        "Style": ""
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "Type": "Feedback",
     "Desc": "<p>Alert component for feedback.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When you need to show alert messages to users.</li>\n<li>When you need a persistent static container which is closable by user actions.</li>\n</ul>\n",
