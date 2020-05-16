@@ -201,7 +201,7 @@
         "Name": "vertical",
         "Title": "垂直间距",
         "Description": "<p>相邻组件垂直间距。</p>\n<p>可以设置 <code>width: 100%</code> 独占一行。</p>\n",
-        "Code": "<h3>Vertical</h3>\n\n@code {\n\n}\n",
+        "Code": "<Space Direction=\"vertical\">\n    <SpaceItem>\n        <AntCard Title=@(\"Card\") Style=\"width: 300px;\">\n            <p>Card content</p>\n            <p>Card content</p>\n        </AntCard>\n    </SpaceItem>\n    <SpaceItem>\n        <AntCard Title=@(\"Card\") Style=\"width: 300px;\">\n            <p>Card content</p>\n            <p>Card content</p>\n        </AntCard>\n    </SpaceItem>\n</Space>",
         "Type": "Demos.Space.demo.Vertical",
         "Style": "",
         "Debug": false

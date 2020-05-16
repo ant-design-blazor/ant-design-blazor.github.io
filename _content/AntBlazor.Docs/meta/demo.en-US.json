@@ -198,7 +198,7 @@
         "Name": "vertical",
         "Title": "Vertical Space",
         "Description": "<p>Crowded components vertical spacing.</p>\n<p>Can set <code>width: 100%</code> fill a row.</p>\n",
-        "Code": "<h3>Vertical</h3>\n\n@code {\n\n}\n",
+        "Code": "<Space Direction=\"vertical\">\n    <SpaceItem>\n        <AntCard Title=@(\"Card\") Style=\"width: 300px;\">\n            <p>Card content</p>\n            <p>Card content</p>\n        </AntCard>\n    </SpaceItem>\n    <SpaceItem>\n        <AntCard Title=@(\"Card\") Style=\"width: 300px;\">\n            <p>Card content</p>\n            <p>Card content</p>\n        </AntCard>\n    </SpaceItem>\n</Space>",
         "Type": "Demos.Space.demo.Vertical",
         "Style": "",
         "Debug": false
