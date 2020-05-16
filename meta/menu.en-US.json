@@ -86,6 +86,12 @@
             "Title": "Alert",
             "Type": "menuItem",
             "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Notification",
+            "Type": "menuItem",
+            "Url": "components/notification"
           }
         ]
       }

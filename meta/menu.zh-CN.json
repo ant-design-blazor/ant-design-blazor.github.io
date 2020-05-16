@@ -93,6 +93,13 @@
             "SubTitle": "警告提示",
             "Type": "menuItem",
             "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Notification",
+            "SubTitle": "通知提醒框",
+            "Type": "menuItem",
+            "Url": "components/notification"
           }
         ]
       }
