@@ -90,6 +90,66 @@
     ]
   },
   {
+    "Title": "Empty",
+    "SubTitle": "空状态",
+    "Type": "数据展示",
+    "Desc": "<p>空状态时的展示占位图。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当目前没有数据时，用于显式的用户提示。</li>\n<li>初始化场景时的引导创建流程。</li>\n</ul>\n",
+    "ApiDoc": "",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "description",
+        "Title": "无描述",
+        "Description": "<p>无描述展示。</p>\n",
+        "Code": "<Empty Description=\"@false\" />",
+        "Type": "Demos.Empty.demo.Description",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>简单的展示。</p>\n",
+        "Code": "<Empty />",
+        "Type": "Demos.Empty.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "simple",
+        "Title": "选择图片",
+        "Description": "<p>可以通过设置 <code>image</code> 为 <code>Empty.PRESENTED_IMAGE_SIMPLE</code> 选择另一种风格的图片。</p>\n",
+        "Code": "<Empty Image=\"Empty.PRESENTED_IMAGE_SIMPLE\" />",
+        "Type": "Demos.Empty.demo.Simple",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "configprovider",
+        "Title": "全局化配置 TODO",
+        "Description": "<p>自定义全局组件的 Empty 样式。</p>\n",
+        "Code": "<Empty />",
+        "Type": "Demos.Empty.demo.ConfigProvider",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "customize",
+        "Title": "自定义",
+        "Description": "<p>自定义图片链接、图片大小、描述、附属内容。</p>\n",
+        "Code": "<Empty Image='\"https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg\"'\n          ImageStyle='@(\"height: 60px\")'\n          Description=\"customDescription\">\n    <AntButton type=\"@AntButtonType.Primary\">Create Now</AntButton>\n</Empty>\n\n@code {\n    private RenderFragment customDescription =@<span>Customize <a>Description</a></span>;\n}",
+        "Type": "Demos.Empty.demo.Customize",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Spin",
     "SubTitle": "加载中",
     "Type": "反馈",
@@ -229,12 +289,220 @@
     ]
   },
   {
+    "Title": "Dropdown",
+    "SubTitle": "下拉菜单",
+    "Type": "导航",
+    "Desc": "<p>向下弹出的列表。</p>\n<h2>何时使用</h2>\n<p>当页面上的操作命令过多时，用此组件可以收纳操作元素。点击或移入触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。</p>\n",
+    "ApiDoc": "",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "item",
+        "Title": "其他元素",
+        "Description": "<p>分割线和不可用菜单项。</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem @key=\"0\">\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem @key=\"1\">\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            --- TODO: Need MenuDivider ---\n            <MenuItem @key=\"3\" disabled>\n                3rd menu item（disabled）\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Item",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的下拉菜单。</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "submenu",
+        "Title": "多级菜单",
+        "Description": "<p>传入的菜单里有多个层级。</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItemGroup Title=@(\"Group title\")>\n                <MenuItem>1st menu item</MenuItem>\n                <MenuItem>2nd menu item</MenuItem>\n            </MenuItemGroup>\n            <SubMenu Title=@(\"sub menu\")>\n                <MenuItem>3rd menu item</MenuItem>\n                <MenuItem>4th menu item</MenuItem>\n            </SubMenu>\n            <SubMenu Title=@(\"disabled sub menu\") Disabled>\n                <MenuItem>5d menu item</MenuItem>\n                <MenuItem>6th menu item</MenuItem>\n            </SubMenu>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Cascading menu <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.SubMenuDemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "contextmenu",
+        "Title": "右键菜单 TODO",
+        "Description": "<p>默认是移入触发菜单，可以点击鼠标右键触发。 TODO</p>\n",
+        "Code": "<Dropdown Trigger=\"new TriggerType[] { TriggerType.ContextMenu }\">\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <div style=\"text-align: center; width: 200px; height: 200px; line-height: 200px;background: #f7f7f7;color: #777;\">\n            Right Click on here (TODO)\n        </div>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.ContextMenu",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "placement",
+        "Title": "弹出位置",
+        "Description": "<p>支持 6 个弹出位置。</p>\n",
+        "Code": "<Dropdown Placement=\"@PlacementType.BottomLeft\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>BottomLeft</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.BottomCenter\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>BottomCenter</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.BottomRight\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>BottomRight</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.TopLeft\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>TopLeft</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.TopCenter\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>TopCenter</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.TopRight\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>TopRight</AntButton>\n    </ChildContent>\n</Dropdown>\n\n@code\n{\n    private RenderFragment _overlayMenu =@<Menu>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                1st menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                2nd menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                3rd menu item\n            </a>\n        </MenuItem>\n    </Menu>;\n}",
+        "Type": "Demos.Dropdown.demo.Placement",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "trigger",
+        "Title": "触发方式",
+        "Description": "<p>默认是移入触发菜单，可以点击触发。</p>\n",
+        "Code": "<Dropdown Trigger=\"@(new TriggerType[] { TriggerType.Click })\">\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Click me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Trigger",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "overlayvisible",
+        "Title": "菜单隐藏方式",
+        "Description": "<p>默认是点击关闭菜单，可以关闭此功能。</p>\n",
+        "Code": "<Dropdown OnVisibleChange=\"OnVisibleChange\" Visible=\"_visible\">\n    <Overlay>\n        <Menu OnMenuItemClicked=\"HandleMenuClick\">\n            <MenuItem Id=\"1\">Clicking me will not close the menu.</MenuItem>\n            <MenuItem Id=\"2\">Clicking me will not close the menu also.</MenuItem>\n            <MenuItem Id=\"3\">Clicking me will close the menu.</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>\n\n@code\n{\n    private bool _visible = false;\n\n    private void HandleMenuClick(MenuItem item)\n    {\n        if (item.Id == \"3\")\n        {\n            _visible = false;\n        }\n    }\n\n    private void OnVisibleChange(bool visible)\n    {\n        _visible = visible;\n    }\n}",
+        "Type": "Demos.Dropdown.demo.OverlayVisible",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "event",
+        "Title": "触发事件",
+        "Description": "<p>点击菜单项后会触发事件，用户可以通过相应的菜单项 key 进行不同的操作。</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem @key=\"1\">1st menu item</MenuItem>\n            <MenuItem @key=\"2\">2nd memu item</MenuItem>\n            <MenuItem @key=\"3\">3rd menu item</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me, Click menu item <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Event",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "dropdownbutton",
+        "Title": "带下拉框的按钮",
+        "Description": "<p>左边是按钮，右边是额外的相关功能菜单。可设置 <code>icon</code> 属性来修改右边的图标。</p>\n",
+        "Code": "<DropdownButton OnClick='e => { Console.WriteLine(\"Click on left button.\"); }'>\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        Dropdown\n    </ChildContent>\n</DropdownButton>\n<DropdownButton Icon=\"user\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        Dropdown\n    </ChildContent>\n</DropdownButton>\n<DropdownButton OnClick='e => { Console.WriteLine(\"Click on left button.\"); }' Disabled=\"@true\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        Dropdown\n    </ChildContent>\n</DropdownButton>\n<DropdownButton ButtonsRender=\"ButtonsRender\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        TODO: With ToolTip\n    </ChildContent>\n</DropdownButton>\n<Dropdown>\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>Button <AntIcon Type=\"down\" /></AntButton>\n    </ChildContent>\n</Dropdown>\n\n@code\n{\n    private RenderFragment _overlayMenu =@<Menu>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                1st menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                2nd menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                3rd menu item\n            </a>\n        </MenuItem>\n    </Menu>;\n\n    \n    private RenderFragment ButtonsRender(RenderFragment leftButton, RenderFragment rightButton)\n    {\n        return @<Template>\n            <span>@leftButton</span>@rightButton\n        </Template>;\n    }\n}",
+        "Type": "Demos.Dropdown.demo.DropdownButtonDemo",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "TimePicker",
+    "SubTitle": "时间选择框",
+    "Type": "数据录入",
+    "Desc": "<p>输入或选择时间的控件。</p>\n<h2>何时使用</h2>\n<hr />\n<p>当用户需要输入一个时间，可以点击标准输入框，弹出时间面板进行选择。</p>\n<p>时间选择器完成度较低，暂时只实现了以下功能：\nautoFocus、bordered、className、defaultValue、\ndisabled、format、inputReadOnly、open、placeholder、\npopupStyle、renderExtraFooter、value、onChange、onOpenChange</p>\n",
+    "ApiDoc": "",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "hidecolumn",
+        "Title": "选择时分",
+        "Description": "<p>TimePicker 浮层中的列会随着 <code>format</code> 变化，当略去 <code>format</code> 中的某部分时，浮层中对应的列也会消失。</p>\n",
+        "Code": "<TimePicker Format='@(\"hh:mm\")' />\n",
+        "Type": "Demos.TimePicker.demo.HideColumn",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "disabled",
+        "Title": "禁用",
+        "Description": "<p>禁用时间选择。</p>\n",
+        "Code": "<TimePicker Disabled=\"@true\"\n               Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />",
+        "Type": "Demos.TimePicker.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 13,
+        "Name": "rangepicker",
+        "Title": "范围选择器",
+        "Description": "<p>通过 <code>RangePicker</code> 使用时间范围选择器。</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.TimePicker.demo.RangePickerDemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>点击 TimePicker，然后可以在浮层中选择或者输入某一时间。</p>\n",
+        "Code": "<TimePicker />\n",
+        "Type": "Demos.TimePicker.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "value",
+        "Title": "受控组件",
+        "Description": "<p>value 和 onChange 需要配合使用。</p>\n",
+        "Code": "<TimePicker Value=\"_value\" OnChange=\"OnChange\" />\n\n@code\n{\n    private DateTime _value = DateTime.Now;\n\n    private void OnChange(DateTime value, string dateString)\n    {\n        _value = value;\n    }\n}",
+        "Type": "Demos.TimePicker.demo.Value",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "size",
+        "Title": "三种大小",
+        "Description": "<p>三种大小的输入框，大的用在表单中，中的为默认。</p>\n",
+        "Code": "<TimePicker Size=\"@DatePickerSize.Large\"\n               Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />\n<br />\n<TimePicker Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />\n<br />\n<TimePicker Size=\"@DatePickerSize.Small\"\n               Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />\n",
+        "Type": "Demos.TimePicker.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "addon",
+        "Title": "附加内容",
+        "Description": "<p>在 TimePicker 选择框底部显示自定义的内容。</p>\n",
+        "Code": "<TimePicker RenderExtraFooter=\"ExtraFooter\" />\n\n@code {\n    private RenderFragment ExtraFooter =@<AntButton Type=\"@AntButtonType.Primary\">Ok</AntButton>;\n}",
+        "Type": "Demos.TimePicker.demo.Addon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "hours12",
+        "Title": "12 小时制",
+        "Description": "<p>12 小时制的时间选择器，默认的 format 为 <code>h:mm:ss a</code>。</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.TimePicker.demo.Hours12",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "intervaloptions",
+        "Title": "步长选项",
+        "Description": "<p>可以使用 <code>hourStep</code> <code>minuteStep</code> <code>secondStep</code> 按步长展示可选的时分秒。</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.TimePicker.demo.IntervalOptions",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "SubTitle": "警告提示",
     "Type": "反馈",
     "Desc": "<p>警告提示，展现需要关注的信息。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当某个页面需要向用户显示警告的信息时。</li>\n<li>非浮层的静态展现形式，始终展现，不会自动消失，用户可以点击关闭。</li>\n</ul>\n",
     "ApiDoc": "",
     "DemoList": [
+      {
+        "Order": 5,
+        "Name": "closetext",
+        "Title": "自定义关闭",
+        "Description": "<p>可以自定义关闭，自定义的内容会替换原先的关闭按钮。</p>\n",
+        "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
+        "Type": "Demos.Alert.demo.CloseText",
+        "Style": "",
+        "Debug": false
+      },
       {
         "Order": 3,
         "Name": "description",
@@ -253,16 +521,6 @@
         "Code": "<AntAlert Type=\"@AntAlertType.Success\" Message=\"Success Text\" />\n",
         "Type": "Demos.Alert.demo.Basic",
         "Style": "\n.code-box-demo .ant-alert {\n  margin-bottom: 16px;\n}\n\n",
-        "Debug": false
-      },
-      {
-        "Order": 5,
-        "Name": "closetext",
-        "Title": "自定义关闭",
-        "Description": "<p>可以自定义关闭，自定义的内容会替换原先的关闭按钮。</p>\n",
-        "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
-        "Type": "Demos.Alert.demo.Close_text",
-        "Style": "",
         "Debug": false
       },
       {
@@ -303,6 +561,136 @@
         "Code": "<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Description=\"Very long warning text warning text text text text text text text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text Without Icon\"\n          Banner\n          ShowIcon=\"false\" />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error Text\"\n          Banner />",
         "Type": "Demos.Alert.demo.Banner",
         "Style": "",
+        "Iframe": 250,
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "DatePicker",
+    "SubTitle": "日期选择框",
+    "Type": "数据录入",
+    "Desc": "<p>输入或选择日期的控件。</p>\n<h2>何时使用</h2>\n<p>当用户需要输入一个日期，可以点击标准输入框，弹出日期面板进行选择。</p>\n<p>已实现DatePicker组件：支持date、decade、year、month、quarter、week模式\n已实现：MonthPicker、RangePicker、WeekPicker、YearPicker、QuarterPicker（对应DatePicker的各种模式）</p>\n<p>未实现的通用属性：AllowClear、GetPopupContainer、Locale、Mode(Mode为3.0妥协的功能，不打算支持)\n未实现的DatePicker属性：showTime.defaultValue、onOk\n未实现的RangePicker属性：allowEmpty、ranges、separator、onCalendarChange\n未实现的功能：RangePicker的操作模式和Ant Design不完全一致</p>\n",
+    "ApiDoc": "",
+    "DemoList": [
+      {
+        "Order": 23,
+        "Name": "bordered",
+        "Title": "无边框",
+        "Description": "<p>无边框样式。</p>\n",
+        "Code": "<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Year\" />\n<br />",
+        "Type": "Demos.DatePicker.demo.Bordered",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "disabled",
+        "Title": "禁用",
+        "Description": "<p>选择框的不可用状态。你也可以通过数组单独禁用 RangePicker 的其中一项（TODO）。</p>\n",
+        "Code": "<DatePicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\" />\n<br />\n<MonthPicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\" />\n<br />\n<RangePicker Disabled=\"@true\" DefaultValue=\"new DateTime[] { new DateTime(2015, 6, 6), new DateTime(2015, 6, 6) }\" />\n<br />\n<RangePicker Disabled=\"@true\" \n                DefaultValue=\"new DateTime[] { new DateTime(2019, 9, 3), new DateTime(2019, 11, 12) }\" />",
+        "Type": "Demos.DatePicker.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "rangepicker",
+        "Title": "范围选择器",
+        "Description": "<p>通过设置 <code>picker</code> 属性，指定范围选择器类型。</p>\n",
+        "Code": "<RangePicker />\n<br />\n<RangePicker ShowTime=\"@true\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Week\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Month\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Quarter\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Year\" />",
+        "Type": "Demos.DatePicker.demo.RangePickerDemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法，在浮层中可以选择或者输入日期。</p>\n",
+        "Code": "<DatePicker Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Year\" />\n<br />",
+        "Type": "Demos.DatePicker.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "extrafooter",
+        "Title": "额外的页脚",
+        "Description": "<p>在浮层中加入额外的页脚，以满足某些定制信息的需求。</p>\n",
+        "Code": "<DatePicker RenderExtraFooter=\"extraFooter\" />\n<br />\n<DatePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" RenderExtraFooter=\"extraFooter\" />\n\n@code {\n    private RenderFragment extraFooter =@<span>extra footer</span>;\n}\n",
+        "Type": "Demos.DatePicker.demo.ExtraFooter",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "size",
+        "Title": "三种大小",
+        "Description": "<p>三种大小的输入框，若不设置，则为 <code>default</code>。</p>\n",
+        "Code": "<AntRadioGroup @bind-Value=\"@datePickerSize\">\n    <AntRadio RadioButton Value=\"@DatePickerSize.Large\">Large</AntRadio>\n    <AntRadio RadioButton Value=\"@DatePickerSize.Default\">Default</AntRadio>\n    <AntRadio RadioButton Value=\"@DatePickerSize.Small\">Small</AntRadio>\n</AntRadioGroup>\n<br />\n<DatePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" Size=\"@datePickerSize\" />\n<br />\n<RangePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" Size=\"@datePickerSize\" />\n\n@code {\n    private string datePickerSize = DatePickerSize.Default;\n}",
+        "Type": "Demos.DatePicker.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "disableddate",
+        "Title": "不可选择日期和时间",
+        "Description": "<p>可用 <code>disabledDate</code> 和 <code>disabledTime</code> 分别禁止选择部分日期和时间，其中 <code>disabledTime</code> 需要和 <code>showTime</code> 一起使用。</p>\n",
+        "Code": "<DatePicker ShowTime=\"@true\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 0, 0, 0)\"\n               Format=\"yyyy-MM-dd HH:mm:ss\"\n               DisabledDate=\"date => date <= DateTime.Now\"\n               DisabledTime=\"date => GetDisabledTime(date)\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\"\n               DisabledDate=\"date => date <= DateTime.Now\" />\n<br />\n<RangePicker DisabledDate=\"date => date <= DateTime.Now\" />\n<br />\n<RangePicker ShowTime='@true'\n                DisabledDate=\"date => date <= DateTime.Now\" />\n\n@code {\n    private DatePickerDisabledTime GetDisabledTime(DateTime date)\n    {\n        int[] timeRange = new int[60];\n        for (int i = 0; i < timeRange.Length; i++)\n        {\n            timeRange[i] = i;\n        }\n\n        return new DatePickerDisabledTime(timeRange[4..15], timeRange[20..55], timeRange[3..19]);\n    }\n}",
+        "Type": "Demos.DatePicker.demo.DisabledDate",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "presettedranges",
+        "Title": "预设范围 TODO",
+        "Description": "<p>可以预设常用的日期范围以提高用户体验。 TODO</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.DatePicker.demo.PresettedRanges",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "format",
+        "Title": "日期格式",
+        "Description": "<p>使用 <code>format</code> 属性，可以自定义日期显示格式。</p>\n",
+        "Code": "<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM/dd\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"dd/MM/yyyy\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime[] { new DateTime(2015, 1, 1), new DateTime(2015, 1, 1) }\" Format=\"yyyy/MM/dd\" />",
+        "Type": "Demos.DatePicker.demo.Format",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "selectinrange",
+        "Title": "选择不超过七天的范围 TODO",
+        "Description": "<p>这里举例如何用 <code>onCalendarChange</code> 和 <code>disabledDate</code> 来限制动态的日期区间选择。</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.DatePicker.demo.SelectInRange",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 12,
+        "Name": "daterender",
+        "Title": "定制日期单元格",
+        "Description": "<p>使用 <code>dateRender</code> 可以自定义日期单元格的内容和样式。</p>\n",
+        "Code": "<DatePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\" /><br />\n<RangePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\" />\n\n@code\n{\n    private Func<DateTime, DateTime, RenderFragment> CustomRender = (currentViewDate, today) =>\n    {\n        string style = \"\";\n        if (currentViewDate.Day == 1)\n        {\n            style = \"border: 1px solid #1890ff; borderRadius: 50%\";\n        }\n\n        return @<div class=\"ant-picker-cell-inner\" style=\"@style\">\n            @currentViewDate.Day\n        </div>;\n    };\n}",
+        "Type": "Demos.DatePicker.demo.DateRender",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "time",
+        "Title": "日期时间选择",
+        "Description": "<p>增加选择时间功能，当 <code>showTime</code> 为一个对象时，其属性会传递给内建的 <code>TimePicker</code>。</p>\n",
+        "Code": "<DatePicker ShowTime=\"@true\" OnChange=\"OnChange\" />\n<br />\n<RangePicker ShowTime='@(\"HH:mm\")' OnChange=\"OnChange\" />\n\n@code\n{\n    private void OnChange(DateTime value, string dateString)\n    {\n        Console.WriteLine($\"Selected Time: {value}\");\n        Console.WriteLine($\"Formatted Selected Time: {dateString}\");\n    }\n}",
+        "Type": "Demos.DatePicker.demo.Time",
+        "Style": "",
         "Debug": false
       }
     ]
@@ -314,16 +702,6 @@
     "Desc": "<p>按钮用于开始一个即时操作。</p>\n<h2>何时使用</h2>\n<p>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</p>\n<p>在 Ant Design 中，我们有四种按钮。</p>\n<ul>\n<li>主按钮：用于主行动点，一个操作区域只能有一个主按钮。</li>\n<li>默认按钮：用于没有主次之分的一组行动点。</li>\n<li>虚线按钮：常用于添加操作。</li>\n<li>链接按钮：用于次要或外链的行动点。</li>\n</ul>\n<p>以及四种状态属性与上面配合使用。</p>\n<ul>\n<li>危险：删除/移动/修改权限等危险操作，一般需要二次确认。</li>\n<li>幽灵：用于背景色比较复杂的地方，常用在首页/产品页等展示场景。</li>\n<li>禁用：行动点不可用的时候，一般需要文案解释。</li>\n<li>加载中：用于异步操作等待反馈的时候，也可以避免多次提交。</li>\n</ul>\n",
     "ApiDoc": "",
     "DemoList": [
-      {
-        "Order": 99,
-        "Name": "legacygroup",
-        "Title": "废弃的 Block 组",
-        "Description": "<p>Debug usage</p>\n",
-        "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
-        "Type": "Demos.Button.demo.Legacy_group",
-        "Style": "",
-        "Debug": true
-      },
       {
         "Order": 0,
         "Name": "block",
@@ -405,11 +783,21 @@
         "Debug": false
       },
       {
+        "Order": 99,
+        "Name": "legacygroup",
+        "Title": "废弃的 Block 组",
+        "Description": "<p>Debug usage</p>\n",
+        "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
+        "Type": "Demos.Button.demo.LegacyGroup",
+        "Style": "",
+        "Debug": true
+      },
+      {
         "Order": 4,
         "Name": "loading",
         "Title": "加载中状态",
         "Description": "<p>添加 <code>loading</code> 属性即可让按钮处于加载状态，最后两个按钮演示点击后进入加载状态。</p>\n",
-        "Code": "@using System.Timers\n\n<div>\n    <AntButton Type=\"primary\" Loading>\n        Loading\n    </AntButton>\n    <AntButton Type=\"primary\" Size=\"small\" Loading>\n        Loading\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Loading=\"loading\" Onclick=enterLoading>\n        Click me!\n    </AntButton>\n    <AntButton\n        Type=\"primary\"\n        Icon=\"poweroff\"\n    Loading=\"iconLoading\"\n    Onclick=\"enterIconLoading\"\n    >\n    Click me!\n    </AntButton>\n</div>\n\n@code\n{\n    bool loading = false;\n    bool iconLoading = false;\n\n    private void enterLoading()\n    {\n        loading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            loading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n\n    private void enterIconLoading()\n    {\n        iconLoading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            iconLoading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n}\n",
+        "Code": "@using System.Timers\n\n<div>\n    <AntButton Type=\"primary\" Loading>\n        Loading\n    </AntButton>\n    <AntButton Type=\"primary\" Size=\"small\" Loading>\n        Loading\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Loading=\"loading\" OnClick=enterLoading>\n        Click me!\n    </AntButton>\n    <AntButton\n        Type=\"primary\"\n        Icon=\"poweroff\"\n    Loading=\"iconLoading\"\n    OnClick=\"enterIconLoading\"\n    >\n    Click me!\n    </AntButton>\n</div>\n\n@code\n{\n    bool loading = false;\n    bool iconLoading = false;\n\n    private void enterLoading()\n    {\n        loading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            loading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n\n    private void enterIconLoading()\n    {\n        iconLoading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            iconLoading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n}\n",
         "Type": "Demos.Button.demo.Loading",
         "Style": "",
         "Debug": false
@@ -474,16 +862,6 @@
         "Debug": false
       },
       {
-        "Order": 1,
-        "Name": "nowrapper",
-        "Title": "独立使用",
-        "Description": "<p>不包裹任何元素即是独立使用，可自定样式展现。</p>\n<blockquote>\n<p>在右上角的 badge 则限定为红色。</p>\n</blockquote>\n",
-        "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
-        "Type": "Demos.Badge.demo.No_wrapper",
-        "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n",
-        "Debug": false
-      },
-      {
         "Order": 100,
         "Name": "title",
         "Title": "自定义标题",
@@ -504,12 +882,112 @@
         "Debug": false
       },
       {
+        "Order": 1,
+        "Name": "nowrapper",
+        "Title": "独立使用",
+        "Description": "<p>不包裹任何元素即是独立使用，可自定样式展现。</p>\n<blockquote>\n<p>在右上角的 badge 则限定为红色。</p>\n</blockquote>\n",
+        "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
+        "Type": "Demos.Badge.demo.NoWrapper",
+        "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n",
+        "Debug": false
+      },
+      {
         "Order": 6,
         "Name": "status",
         "Title": "状态点",
         "Description": "<p>用于表示状态的小圆点。</p>\n",
         "Code": "<div>\n    <AntBadge Status=\"success\" />\n    <AntBadge Status=\"error\" />\n    <AntBadge Status=\"default\" />\n    <AntBadge Status=\"processing\" />\n    <AntBadge Status=\"warning\" />\n    <br />\n    <AntBadge Status=\"success\" Text=\"Success\" />\n    <br />\n    <AntBadge Status=\"error\" Text=\"Error\" />\n    <br />\n    <AntBadge Status=\"default\" Text=\"Default\" />\n    <br />\n    <AntBadge Status=\"processing\" Text=\"Processing\" />\n    <br />\n    <AntBadge Status=\"warning\" Text=\"Warning\" />\n</div>",
         "Type": "Demos.Badge.demo.Status",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Menu",
+    "SubTitle": "导航菜单",
+    "Type": "导航",
+    "Desc": "<p>为页面和功能提供导航的菜单列表。</p>\n<h2>何时使用</h2>\n<p>导航菜单是一个网站的灵魂，用户依赖导航在各个页面中进行跳转。一般分为顶部导航和侧边导航，顶部导航提供全局性的类目和功能，侧边导航提供多级结构来收纳和排列网站架构。</p>\n<p>更多布局和导航的使用可以参考：<a href=\"/components/layout\">通用布局</a>。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<pre><code class=\"language-jsx\">&lt;Menu&gt;\n  &lt;Menu.Item&gt;菜单项&lt;/Menu.Item&gt;\n  &lt;SubMenu title=&quot;子菜单&quot;&gt;\n    &lt;Menu.Item&gt;子菜单项&lt;/Menu.Item&gt;\n  &lt;/SubMenu&gt;\n&lt;/Menu&gt;\n</code></pre>\n<h3>Menu</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>defaultOpenKeys</td>\n<td>初始展开的 SubMenu 菜单项 key 数组</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>defaultSelectedKeys</td>\n<td>初始选中的菜单项 key 数组</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>forceSubMenuRender</td>\n<td>在子菜单展示之前就渲染进 DOM</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>inlineCollapsed</td>\n<td>inline 时菜单是否收起状态</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>inlineIndent</td>\n<td>inline 模式的菜单缩进宽度</td>\n<td>number</td>\n<td>24</td>\n<td></td>\n</tr>\n<tr>\n<td>mode</td>\n<td>菜单类型，现在支持垂直、水平、和内嵌模式三种</td>\n<td><code>vertical</code> | <code>horizontal</code> | <code>inline</code></td>\n<td><code>vertical</code></td>\n<td></td>\n</tr>\n<tr>\n<td>multiple</td>\n<td>是否允许多选</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>openKeys</td>\n<td>当前展开的 SubMenu 菜单项 key 数组</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>selectable</td>\n<td>是否允许选中</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>selectedKeys</td>\n<td>当前选中的菜单项 key 数组</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>style</td>\n<td>根节点样式</td>\n<td>object</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>subMenuCloseDelay</td>\n<td>用户鼠标离开子菜单后关闭延时，单位：秒</td>\n<td>number</td>\n<td>0.1</td>\n<td></td>\n</tr>\n<tr>\n<td>subMenuOpenDelay</td>\n<td>用户鼠标进入子菜单后开启延时，单位：秒</td>\n<td>number</td>\n<td>0</td>\n<td></td>\n</tr>\n<tr>\n<td>theme</td>\n<td>主题颜色</td>\n<td><code>light</code> | <code>dark</code></td>\n<td><code>light</code></td>\n<td></td>\n</tr>\n<tr>\n<td>onClick</td>\n<td>点击 MenuItem 调用此函数</td>\n<td>function({ item, key, keyPath, domEvent })</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onDeselect</td>\n<td>取消选中时调用，仅在 multiple 生效</td>\n<td>function({ item, key, keyPath, selectedKeys, domEvent })</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onOpenChange</td>\n<td>SubMenu 展开/关闭的回调</td>\n<td>function(openKeys: string[])</td>\n<td>noop</td>\n<td></td>\n</tr>\n<tr>\n<td>onSelect</td>\n<td>被选中时调用</td>\n<td>function({ item, key, keyPath, selectedKeys, domEvent })</td>\n<td>无 \u00A0</td>\n<td></td>\n</tr>\n<tr>\n<td>overflowedIndicator</td>\n<td>自定义 Menu 折叠时的图标</td>\n<td>ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>More options in <a href=\"https://github.com/react-component/menu#api\">rc-menu</a></p>\n</blockquote>\n<h3>Menu.Item</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>disabled</td>\n<td>是否禁用</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>key</td>\n<td>item 的唯一标志</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>设置收缩时展示的悬浮标题</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Menu.SubMenu</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>popupClassName</td>\n<td>子菜单样式</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>children</td>\n<td>子菜单的菜单项</td>\n<td>Array&lt;MenuItem|SubMenu&gt;</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>disabled</td>\n<td>是否禁用</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>key</td>\n<td>唯一标志</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>子菜单项值</td>\n<td>string|ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>onTitleClick</td>\n<td>点击子菜单标题</td>\n<td>function({ key, domEvent })</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Menu.ItemGroup</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>children</td>\n<td>分组的菜单项</td>\n<td>MenuItem[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>分组标题</td>\n<td>string|ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Menu.Divider</h3>\n<p>菜单项分割线，只用在弹出菜单内。</p>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "theme",
+        "Title": "主题",
+        "Description": "<p>内建了两套主题 <code>light|dark</code>，默认 <code>light</code>。</p>\n",
+        "Code": "<div>\n    <AntSwitch Checked=\"theme == MenuTheme.Dark\" OnChange=changeTheme CheckedChildren=@(\"Dark\") UnCheckedChildren=@(\"Light\") />\n    <br />\n    <br />\n    <Menu Theme=theme\n          OnMenuItemClicked=handleClick\n          Style=\" width: 256px \"\n          DefaultOpenKeys=@(new []{\"sub1\"})\n          SelectedKeys=@(new []{current})\n          Mode=\"MenuMode.Inline\">\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"1\">Option 1</MenuItem>\n            <MenuItem Key=\"2\">Option 2</MenuItem>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"5\">Option 5</MenuItem>\n            <MenuItem Key=\"6\">Option 6</MenuItem>\n            <SubMenu Key=\"sub3\" Title=\"@(\"Submenu\")\">\n                <MenuItem Key=\"7\">Option 7</MenuItem>\n                <MenuItem Key=\"8\">Option 8</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub4\" Title=sub4Title>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n            <MenuItem Key=\"11\">Option 11</MenuItem>\n            <MenuItem Key=\"12\">Option 12</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    MenuTheme theme = MenuTheme.Dark;\n    string current = \"1\";\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n    void handleClick(MenuItem e)\n    {\n        current = e.Key;\n    }\n\n}\n",
+        "Type": "Demos.Menu.demo.Theme",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "inline",
+        "Title": "内嵌菜单",
+        "Description": "<p>垂直菜单，子菜单内嵌在菜单区域。</p>\n",
+        "Code": "<Menu Style=\"width: 256;\"\n      DefaultSelectedKeys=@(new[]{\"1\"})\n      DefaultOpenKeys=@(new[]{\"sub1\"})\n      Mode=@MenuMode.Inline>\n    <SubMenu Key=\"sub1\" Title=sub1Title>\n        <MenuItemGroup Key=\"g1\" Title=@(\"Item 1\")>\n            <MenuItem Key=\"1\">Option 1</MenuItem>\n            <MenuItem Key=\"2\">Option 2</MenuItem>\n        </MenuItemGroup>\n        <MenuItemGroup Key=\"g2\" Title=@(\"Iem 2\")>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n        </MenuItemGroup>\n    </SubMenu>\n    <SubMenu Key=\"sub2\" Title=sub2Title>\n        <MenuItem Key=\"5\">Option 5</MenuItem>\n        <MenuItem Key=\"6\">Option 6</MenuItem>\n        <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n        </SubMenu>\n    </SubMenu>\n    <SubMenu Key=\"sub4\" Title=sub4Title>\n        <MenuItem Key=\"9\">Option 9</MenuItem>\n        <MenuItem Key=\"10\">Option 10</MenuItem>\n        <MenuItem Key=\"11\">Option 11</MenuItem>\n        <MenuItem Key=\"12\">Option 12</MenuItem>\n    </SubMenu>\n</Menu>\n\n@code\n{\n    RenderFragment sub1Title =\n    @<span>\n        <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n        <span>Navigation One</span>\n    </span>;\n\nRenderFragment sub2Title =\n@<span>\n    <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n    <span>Navigation Two</span>\n</span>;\n\nRenderFragment sub4Title =\n@<span>\n    <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n    <span>Navigation Three</span>\n</span>;\n}\n",
+        "Type": "Demos.Menu.demo.Inline",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "inlinecollapsed",
+        "Title": "缩起内嵌菜单",
+        "Description": "<p>内嵌菜单可以被缩起/展开。</p>\n<p>你可以在 <a href=\"/components/layout/#components-layout-demo-side\">Layout</a> 里查看侧边布局结合的完整示例。</p>\n",
+        "Code": "<div style=\"width: 256;\">\n    <AntButton Type=\"primary\" OnClick=\"ToggleCollapsed\" Style=\"margin-bottom: 16px\">\n        @if (collapsed)\n        {\n            <AntIcon  Type=\"menu-unfold\" Theme=\"outline\"></AntIcon>\n        }\n        else\n        {\n            <AntIcon  Type=\"menu-fold\" Theme=\"outline\"></AntIcon>\n        }\n    </AntButton>\n    <Menu\n        DefaultSelectedKeys=@(new[]{\"1\"})\n        DefaultOpenKeys=@(new[]{\"sub1\"})\n        Mode=MenuMode.Inline\n        Theme=MenuTheme.Dark\n        InlineCollapsed=collapsed\n    >\n        <MenuItem Key=\"1\">\n            <AntIcon Type=\"pie-chart\" Theme=\"outline\"></AntIcon>\n            <span>Option 1</span>\n        </MenuItem>\n        <MenuItem Key=\"2\">\n            <AntIcon Type=\"desktop\" Theme=\"outline\"></AntIcon>\n            <span>Option 2</span>\n        </MenuItem>\n        <MenuItem Key=\"3\">\n            <AntIcon Type=\"contaainer\" Theme=\"outline\"></AntIcon>\n            <span>Option 3</span>\n        </MenuItem>\n        <SubMenu Key=\"sub1\" Title=sub1Title >\n        <MenuItem Key=\"5\">Option 5</MenuItem>\n        <MenuItem Key=\"6\">Option 6</MenuItem>\n        <MenuItem Key=\"7\">Option 7</MenuItem>\n        <MenuItem Key=\"8\">Option 8</MenuItem>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n        <MenuItem Key=\"9\">Option 9</MenuItem>\n        <MenuItem Key=\"10\">Option 10</MenuItem>\n        <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n            <MenuItem Key=\"11\">Option 11</MenuItem>\n            <MenuItem Key=\"12\">Option 12</MenuItem>\n        </SubMenu>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n    bool collapsed = false;\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    void ToggleCollapsed()\n    {\n        collapsed = !collapsed;\n    }\n}\n",
+        "Type": "Demos.Menu.demo.InlineCollapsed",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "router",
+        "Title": "配合路由使用",
+        "Description": "<p>自动根据路由激活菜单项，需要结合 <a href=\"https://www.angular.cn/api/router/RouterLink\">MenuLink</a> 一起使用。</p>\n",
+        "Code": "<Menu Mode=\"MenuMode.Horizontal\">\n    <MenuItem>\n        <MenuLink href=\"/en-US/components/menu\" Match=\"NavLinkMatch.All\">English Menu Document</MenuLink>\n    </MenuItem>\n    <MenuItem>\n        <MenuLink href=\"/zh-CN/components/menu\" Match=\"NavLinkMatch.All\">Chinese Menu Document</MenuLink>\n    </MenuItem>\n</Menu>",
+        "Type": "Demos.Menu.demo.Router",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "vertical",
+        "Title": "垂直菜单",
+        "Description": "<p>子菜单是弹出的形式。</p>\n",
+        "Code": "<Menu OnMenuItemClicked=handleClick Style=\" width: 256px\" Mode=MenuMode.Vertical>\n    <SubMenu Key=\"sub1\" Title=sub1Title>\n    <MenuItemGroup Title=@(\"Item 1\")>\n        <MenuItem Key=\"1\">Option 1</MenuItem>\n        <MenuItem Key=\"2\">Option 2</MenuItem>\n    </MenuItemGroup>\n    <MenuItemGroup Title=@(\"Item 2\")>\n        <MenuItem Key=\"3\">Option 3</MenuItem>\n        <MenuItem Key=\"4\">Option 4</MenuItem>\n    </MenuItemGroup>\n    </SubMenu>\n    <SubMenu Key=\"sub2\"  Title=sub2Title >\n    <MenuItem Key=\"5\">Option 5</MenuItem>\n    <MenuItem Key=\"6\">Option 6</MenuItem>\n    <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n        <MenuItem Key=\"7\">Option 7</MenuItem>\n        <MenuItem Key=\"8\">Option 8</MenuItem>\n    </SubMenu>\n    </SubMenu>\n    <SubMenu Key=\"sub4\" Title=sub4Title >\n    <MenuItem Key=\"9\">Option 9</MenuItem>\n    <MenuItem Key=\"10\">Option 10</MenuItem>\n    <MenuItem Key=\"11\">Option 11</MenuItem>\n    <MenuItem Key=\"12\">Option 12</MenuItem>\n    </SubMenu>\n</Menu>\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n\n    void handleClick()\n    {\n\n    }\n}\n",
+        "Type": "Demos.Menu.demo.Vertical",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "horizontal",
+        "Title": "顶部导航",
+        "Description": "<p>水平的顶部导航菜单。</p>\n",
+        "Code": "<Menu Mode=MenuMode.Horizontal>\n    <MenuItem Key=\"mail\">\n        <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n        Navigation One\n    </MenuItem>\n    <MenuItem Key=\"app\" Disabled>\n        <AntIcon Type=\"appstore\" Theme=\"outline\" ></AntIcon>\n        Navigation Two\n    </MenuItem>\n    <SubMenu Title=sub1Title>\n        <MenuItemGroup Title=@(\"Item 1\")>\n            <MenuItem Key=\"setting:1\">Option 1</MenuItem>\n                <MenuItem Key=\"setting:2\">Option 2</MenuItem>\n        </MenuItemGroup>\n        <MenuItemGroup Title=@(\"Item 2\")>\n                <MenuItem Key=\"setting:3\">Option 3</MenuItem>\n                <MenuItem Key=\"setting:4\">Option 4</MenuItem>\n        </MenuItemGroup>\n    </SubMenu>\n    <MenuItem Key=\"alipay\">\n        <MenuLink href=\"https://ant.design\" target=\"_blank\" rel=\"noopener noreferrer\">\n            Navigation Four - Link\n        </MenuLink>\n    </MenuItem>\n</Menu>\n\n@code\n{\n    RenderFragment sub1Title =\n        @<Template>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            Navigation Three - Submenu\n        </Template>;\n}\n",
+        "Type": "Demos.Menu.demo.Horizontal",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "switchmode",
+        "Title": "切换菜单类型",
+        "Description": "<p>展示动态切换模式。</p>\n",
+        "Code": "<div>\n    <AntSwitch OnChange=changeMode /> Change Mode\n    <div class=\"ant-divider ant-divider-vertical\" role=\"separator\"></div>\n    <AntSwitch OnChange=changeTheme/> Change Style\n    <br />\n    <br />\n    <Menu Style=\" width: 256px ;\"\n          DefaultSelectedKeys=@(new[]{\"1\"})\n          DefaultOpenKeys=@(new[]{\"sub1\"})\n          Mode=this.mode\n          Theme=this.theme>\n        <MenuItem Key=\"1\">\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            Navigation One\n        </MenuItem>\n        <MenuItem Key=\"2\">\n            <AntIcon Type=\"calendar\" Theme=\"outline\"></AntIcon>\n            Navigation Two\n        </MenuItem>\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n            <SubMenu Key=\"sub1-2\" Title=@(\"Submenu\")>\n                <MenuItem Key=\"5\">Option 5</MenuItem>\n                <MenuItem Key=\"6\">Option 6</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Four</span>\n        </span>;\n\n    MenuMode mode = MenuMode.Inline;\n    MenuTheme theme = MenuTheme.Light;\n\n    void changeMode(bool value)\n    {\n        this.mode = value ? MenuMode.Vertical : MenuMode.Inline;\n    }\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n}\n",
+        "Type": "Demos.Menu.demo.SwitchMode",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "sidercurrent",
+        "Title": "只展开当前父级菜单",
+        "Description": "<p>点击菜单，收起其他展开的所有菜单，保持菜单聚焦简洁。</p>\n",
+        "Code": "<Menu Mode=\"MenuMode.Inline\"\n      OpenKeys=this.openKeys\n      OnOpenChange=this.onOpenChange\n      Style=\"width:256px ;\">\n    <SubMenu Key=\"sub1\" Title=sub1Title>\n        <MenuItem Key=\"1\">Option 1</MenuItem>\n        <MenuItem Key=\"2\">Option 2</MenuItem>\n        <MenuItem Key=\"3\">Option 3</MenuItem>\n        <MenuItem Key=\"4\">Option 4</MenuItem>\n    </SubMenu>\n    <SubMenu Key=\"sub2\" Title=sub2Title>\n        <MenuItem Key=\"5\">Option 5</MenuItem>\n        <MenuItem Key=\"6\">Option 6</MenuItem>\n        <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n        </SubMenu>\n    </SubMenu>\n    <SubMenu Key=\"sub4\" Title=sub4Title>\n        <MenuItem Key=\"9\">Option 9</MenuItem>\n        <MenuItem Key=\"10\">Option 10</MenuItem>\n        <MenuItem Key=\"11\">Option 11</MenuItem>\n        <MenuItem Key=\"12\">Option 12</MenuItem>\n    </SubMenu>\n</Menu>\n\n@code {\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    // submenu keys of first level\n    string[] rootSubmenuKeys = {\"sub1\", \"sub2\", \"sub4\"};\n\n    string[] openKeys = {\"sub1\"};\n\n    void onOpenChange(string[] openKeys)\n    {\n        var latestOpenKey = openKeys.FirstOrDefault(key => !this.openKeys.Contains(key));\n        if (!rootSubmenuKeys.Contains(latestOpenKey))\n        {\n            this.openKeys = openKeys;\n        }\n        else\n        {\n            this.openKeys = !string.IsNullOrEmpty(latestOpenKey) ? new[] {latestOpenKey} : Array.Empty<string>();\n        }\n    }\n}\n",
+        "Type": "Demos.Menu.demo.SiderCurrent",
         "Style": "",
         "Debug": false
       }
@@ -527,7 +1005,7 @@
         "Name": "duration",
         "Title": "自动关闭的延时",
         "Description": "<p>自定义通知框自动关闭的延时，默认<code>4.5s</code>，取消自动关闭只要将该值设为 <code>0</code> 即可。</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Duration = 0,\n            Description = \"This notification box will not close automatically\"\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Duration = 0,\n            Description = \"This notification box will not close automatically\"\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.Duration",
         "Style": "",
         "Debug": false
@@ -537,7 +1015,7 @@
         "Name": "withbtn",
         "Title": "自定义按钮",
         "Description": "<p>自定义关闭按钮的样式和文字。</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    custom button\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        RenderFragment btn = @<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"() => { _notice.Close(key); }\">\n                                confirm\n                            </AntButton>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"A function will be be called after the notification is closed (automatically after the \\\"duration\\\" time of manually).\",\n            Btn = btn \n        });\n    }\n}\n",
+        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    custom button\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        RenderFragment btn = @<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"() => { _notice.Close(key); }\">\n                                confirm\n                            </AntButton>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"A function will be be called after the notification is closed (automatically after the \\\"duration\\\" time of manually).\",\n            Btn = btn \n        });\n    }\n}\n",
         "Type": "Demos.Notification.demo.WithBtn",
         "Style": "",
         "Debug": false
@@ -547,7 +1025,7 @@
         "Name": "withicon",
         "Title": "带有图标的通知提醒框",
         "Description": "<p>通知提醒框左侧有图标。</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Onclick=\"@OnSuccessClick\">\n    success\n</AntButton>   \n\n <AntButton Onclick=\"@OnInfoClick\">\n    info\n</AntButton>\n\n<AntButton Onclick=\"@OnWarningClick\">\n    warning\n</AntButton>\n\n<AntButton Onclick=\"@OnErrorClick\">\n    error\n</AntButton>\n\n@code{\n    private async Task NoticeWithIcon(NotificationType type)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            NotificationType = type\n        });\n    }\n\n    private async Task OnSuccessClick()\n    {\n        await NoticeWithIcon(NotificationType.Success);\n    }\n\n    private async Task OnInfoClick()\n    {\n        await NoticeWithIcon(NotificationType.Info);\n    }\n\n    private async Task OnWarningClick()\n    {\n        await NoticeWithIcon(NotificationType.Warning);\n    }\n\n    private async Task OnErrorClick()\n    {\n        await NoticeWithIcon(NotificationType.Error);\n    }\n\n}",
+        "Code": "@inject NotificationService _notice\n\n<AntButton OnClick=\"@OnSuccessClick\">\n    success\n</AntButton>   \n\n <AntButton OnClick=\"@OnInfoClick\">\n    info\n</AntButton>\n\n<AntButton OnClick=\"@OnWarningClick\">\n    warning\n</AntButton>\n\n<AntButton OnClick=\"@OnErrorClick\">\n    error\n</AntButton>\n\n@code{\n    private async Task NoticeWithIcon(NotificationType type)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            NotificationType = type\n        });\n    }\n\n    private async Task OnSuccessClick()\n    {\n        await NoticeWithIcon(NotificationType.Success);\n    }\n\n    private async Task OnInfoClick()\n    {\n        await NoticeWithIcon(NotificationType.Info);\n    }\n\n    private async Task OnWarningClick()\n    {\n        await NoticeWithIcon(NotificationType.Warning);\n    }\n\n    private async Task OnErrorClick()\n    {\n        await NoticeWithIcon(NotificationType.Error);\n    }\n\n}",
         "Type": "Demos.Notification.demo.WithIcon",
         "Style": "",
         "Debug": false
@@ -557,7 +1035,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>最简单的用法，4.5 秒后自动关闭。</p>\n",
-        "Code": "@inject NotificationService _notice\n \n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\"\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n \n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\"\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.Basic",
         "Style": "",
         "Debug": false
@@ -567,7 +1045,7 @@
         "Name": "customicon",
         "Title": "自定义图标",
         "Description": "<p>图标可以被自定义。</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        RenderFragment customIcon = @<AntIcon Type=\"smile\" Theme=\"outline\" Style=\"color:#108ee9;\"></AntIcon>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Icon = customIcon\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        RenderFragment customIcon = @<AntIcon Type=\"smile\" Theme=\"outline\" Style=\"color:#108ee9;\"></AntIcon>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Icon = customIcon\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.CustomIcon",
         "Style": "",
         "Debug": false
@@ -577,7 +1055,7 @@
         "Name": "placement",
         "Title": "位置",
         "Description": "<p>通知从右上角、右下角、左下角、左上角弹出。</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnTopLeftClick\">\n        <AntIcon Type=\"Radius-Upleft\" Theme=\"Outline\"></AntIcon>\n        TopLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnTopRightClick\">\n        <AntIcon Type=\"Radius-Upright\" Theme=\"Outline\"></AntIcon>\n        TopRight\n    </AntButton>\n</div>\n\n<br/>\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnBottomLeftClick\">\n        <AntIcon Type=\"Radius-Bottomleft\" Theme=\"Outline\"></AntIcon>\n        BottomLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnBottomRightClick\">\n        <AntIcon Type=\"Radius-Bottomright\" Theme=\"Outline\"></AntIcon>\n        BottomRight\n    </AntButton>\n</div>\n\n@code {\n    private async Task OpenWithPlacement(NotificationPlacement placement)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = $\"Notification {placement}\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Placement = placement\n        });\n    }\n\n    private async Task OnTopLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopLeft);\n    }\n\n    private async Task OnTopRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopRight);\n    }\n\n    private async Task OnBottomLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomLeft);\n    }\n\n    private async Task OnBottomRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomRight);\n    }\n}\n",
+        "Code": "@inject NotificationService _notice\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnTopLeftClick\">\n        <AntIcon Type=\"Radius-Upleft\" Theme=\"Outline\"></AntIcon>\n        TopLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnTopRightClick\">\n        <AntIcon Type=\"Radius-Upright\" Theme=\"Outline\"></AntIcon>\n        TopRight\n    </AntButton>\n</div>\n\n<br/>\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnBottomLeftClick\">\n        <AntIcon Type=\"Radius-Bottomleft\" Theme=\"Outline\"></AntIcon>\n        BottomLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnBottomRightClick\">\n        <AntIcon Type=\"Radius-Bottomright\" Theme=\"Outline\"></AntIcon>\n        BottomRight\n    </AntButton>\n</div>\n\n@code {\n    private async Task OpenWithPlacement(NotificationPlacement placement)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = $\"Notification {placement}\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Placement = placement\n        });\n    }\n\n    private async Task OnTopLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopLeft);\n    }\n\n    private async Task OnTopRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopRight);\n    }\n\n    private async Task OnBottomLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomLeft);\n    }\n\n    private async Task OnBottomRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomRight);\n    }\n}\n",
         "Type": "Demos.Notification.demo.Placement",
         "Style": "",
         "Debug": false
@@ -587,7 +1065,7 @@
         "Name": "update",
         "Title": "更新消息内容",
         "Description": "<p>可以通过唯一的 key 来更新内容。</p>\n",
-        "Code": "@inject NotificationService _notice\n\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n        Open the notification box\n    </AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        var task = _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"description.\",\n        });\n        await Task.Delay(1000);\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"New Title\",\n            Key = key,\n            Description = \"New description.\",\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n        Open the notification box\n    </AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        var task = _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"description.\",\n        });\n        await Task.Delay(1000);\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"New Title\",\n            Key = key,\n            Description = \"New description.\",\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.Update",
         "Style": "",
         "Debug": false
@@ -606,7 +1084,7 @@
         "Name": "dynamic",
         "Title": "自动调整字符大小",
         "Description": "<p>对于字符型的头像，当字符串较长时，字体大小可以根据头像宽度自动调整。</p>\n",
-        "Code": "<div>\n    <AntAvatar Style=\"@($\"background-color: {color}; vertical-align: middle;\")\" Size=\"large\">\n        @user\n    </AntAvatar>\n    <AntButton\n        Size=\"small\"\n        Style=\"margin:0 16px; vertical-align: middle;\"\n        Onclick=\"_=>changeUser()\"\n    >\n        Change\n    </AntButton>\n</div>\n\n@code\n{\n    private static string[] userList = {\"U\", \"Lucy\", \"Tom\", \"Edward\"};\n    private static string[] colorList = {\"#f56a00\", \"#7265e6\", \"#ffbf00\", \"#00a2ae\"};\n\n    private string user { get; set; } = userList[0];\n    private string color { get; set; } = colorList[0];\n\n    private void changeUser()\n    {\n        var index = Array.IndexOf(userList, user);\n        user = index < userList.Length - 1 ? userList[index + 1] : userList[0];\n        color = index < colorList.Length - 1 ? colorList[index + 1] : colorList[0];\n    }\n}\n",
+        "Code": "<div>\n    <AntAvatar Style=\"@($\"background-color: {color}; vertical-align: middle;\")\" Size=\"large\">\n        @user\n    </AntAvatar>\n    <AntButton\n        Size=\"small\"\n        Style=\"margin:0 16px; vertical-align: middle;\"\n        OnClick=\"_=>changeUser()\"\n    >\n        Change\n    </AntButton>\n</div>\n\n@code\n{\n    private static string[] userList = {\"U\", \"Lucy\", \"Tom\", \"Edward\"};\n    private static string[] colorList = {\"#f56a00\", \"#7265e6\", \"#ffbf00\", \"#00a2ae\"};\n\n    private string user { get; set; } = userList[0];\n    private string color { get; set; } = colorList[0];\n\n    private void changeUser()\n    {\n        var index = Array.IndexOf(userList, user);\n        user = index < userList.Length - 1 ? userList[index + 1] : userList[0];\n        color = index < colorList.Length - 1 ? colorList[index + 1] : colorList[0];\n    }\n}\n",
         "Type": "Demos.Avatar.demo.Dynamic",
         "Style": "",
         "Debug": false

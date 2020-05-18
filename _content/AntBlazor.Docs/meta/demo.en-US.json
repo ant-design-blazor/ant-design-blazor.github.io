@@ -89,6 +89,65 @@
     ]
   },
   {
+    "Title": "Empty",
+    "Type": "Data Display",
+    "Desc": "<p>Empty state placeholder.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When there is no data provided, display for friendly tips.</li>\n<li>User tutorial to create something in fresh new situation.</li>\n</ul>\n",
+    "ApiDoc": "",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "description",
+        "Title": "No description",
+        "Description": "<p>Simplest Usage with no description.</p>\n",
+        "Code": "<Empty Description=\"@false\" />",
+        "Type": "Demos.Empty.demo.Description",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Simplest Usage.</p>\n",
+        "Code": "<Empty />",
+        "Type": "Demos.Empty.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "simple",
+        "Title": "Chose image",
+        "Description": "<p>You can choose another style of <code>image</code> by setting image to <code>Empty.PRESENTED_IMAGE_SIMPLE</code>.</p>\n",
+        "Code": "<Empty Image=\"Empty.PRESENTED_IMAGE_SIMPLE\" />",
+        "Type": "Demos.Empty.demo.Simple",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "configprovider",
+        "Title": "ConfigProvider TODO",
+        "Description": "<p>Use ConfigProvider set global Empty style.</p>\n",
+        "Code": "<Empty />",
+        "Type": "Demos.Empty.demo.ConfigProvider",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "customize",
+        "Title": "Customize",
+        "Description": "<p>Customize image source, image size, description and extra content.</p>\n",
+        "Code": "<Empty Image='\"https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg\"'\n          ImageStyle='@(\"height: 60px\")'\n          Description=\"customDescription\">\n    <AntButton type=\"@AntButtonType.Primary\">Create Now</AntButton>\n</Empty>\n\n@code {\n    private RenderFragment customDescription =@<span>Customize <a>Description</a></span>;\n}",
+        "Type": "Demos.Empty.demo.Customize",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Spin",
     "Type": "Feedback",
     "Desc": "<p>A spinner for displaying loading state of a page or a section.</p>\n<h2>When To Use</h2>\n<p>When part of the page is waiting for asynchronous data or during a rendering process, an appropriate loading animation can effectively alleviate users' inquietude.</p>\n",
@@ -226,11 +285,217 @@
     ]
   },
   {
+    "Title": "Dropdown",
+    "Type": "Navigation",
+    "Desc": "<p>A dropdown list.</p>\n<h2>When To Use</h2>\n<p>When there are more than a few options to choose from, you can wrap them in a <code>Dropdown</code>. By hovering or clicking on the trigger, a dropdown menu will appear, which allows you to choose an option and execute the relevant action.</p>\n",
+    "ApiDoc": "",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "item",
+        "Title": "Other elements",
+        "Description": "<p>Divider and disabled menu item.</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem @key=\"0\">\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem @key=\"1\">\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            --- TODO: Need MenuDivider ---\n            <MenuItem @key=\"3\" disabled>\n                3rd menu item（disabled）\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Item",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>The most basic dropdown menu.</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "submenu",
+        "Title": "Cascading menu",
+        "Description": "<p>The menu has multiple levels.</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItemGroup Title=@(\"Group title\")>\n                <MenuItem>1st menu item</MenuItem>\n                <MenuItem>2nd menu item</MenuItem>\n            </MenuItemGroup>\n            <SubMenu Title=@(\"sub menu\")>\n                <MenuItem>3rd menu item</MenuItem>\n                <MenuItem>4th menu item</MenuItem>\n            </SubMenu>\n            <SubMenu Title=@(\"disabled sub menu\") Disabled>\n                <MenuItem>5d menu item</MenuItem>\n                <MenuItem>6th menu item</MenuItem>\n            </SubMenu>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Cascading menu <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.SubMenuDemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "contextmenu",
+        "Title": "Context Menu TODO",
+        "Description": "<p>The default trigger mode is <code>hover</code>, you can change it to <code>contextMenu</code>.</p>\n",
+        "Code": "<Dropdown Trigger=\"new TriggerType[] { TriggerType.ContextMenu }\">\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <div style=\"text-align: center; width: 200px; height: 200px; line-height: 200px;background: #f7f7f7;color: #777;\">\n            Right Click on here (TODO)\n        </div>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.ContextMenu",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "placement",
+        "Title": "Placement",
+        "Description": "<p>Support 6 placements.</p>\n",
+        "Code": "<Dropdown Placement=\"@PlacementType.BottomLeft\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>BottomLeft</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.BottomCenter\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>BottomCenter</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.BottomRight\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>BottomRight</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.TopLeft\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>TopLeft</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.TopCenter\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>TopCenter</AntButton>\n    </ChildContent>\n</Dropdown>\n<Dropdown Placement=\"@PlacementType.TopRight\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>TopRight</AntButton>\n    </ChildContent>\n</Dropdown>\n\n@code\n{\n    private RenderFragment _overlayMenu =@<Menu>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                1st menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                2nd menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                3rd menu item\n            </a>\n        </MenuItem>\n    </Menu>;\n}",
+        "Type": "Demos.Dropdown.demo.Placement",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "trigger",
+        "Title": "Trigger mode",
+        "Description": "<p>The default trigger mode is <code>hover</code>, you can change it to <code>click</code>.</p>\n",
+        "Code": "<Dropdown Trigger=\"@(new TriggerType[] { TriggerType.Click })\">\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Click me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Trigger",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "overlayvisible",
+        "Title": "The way of hiding menu.",
+        "Description": "<p>The default is to close the menu when you click on menu items, this feature can be turned off.</p>\n",
+        "Code": "<Dropdown OnVisibleChange=\"OnVisibleChange\" Visible=\"_visible\">\n    <Overlay>\n        <Menu OnMenuItemClicked=\"HandleMenuClick\">\n            <MenuItem Id=\"1\">Clicking me will not close the menu.</MenuItem>\n            <MenuItem Id=\"2\">Clicking me will not close the menu also.</MenuItem>\n            <MenuItem Id=\"3\">Clicking me will close the menu.</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>\n\n@code\n{\n    private bool _visible = false;\n\n    private void HandleMenuClick(MenuItem item)\n    {\n        if (item.Id == \"3\")\n        {\n            _visible = false;\n        }\n    }\n\n    private void OnVisibleChange(bool visible)\n    {\n        _visible = visible;\n    }\n}",
+        "Type": "Demos.Dropdown.demo.OverlayVisible",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "event",
+        "Title": "Click event",
+        "Description": "<p>An event will be triggered when you click menu items, in which you can make different operations according to item's key.</p>\n",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem @key=\"1\">1st menu item</MenuItem>\n            <MenuItem @key=\"2\">2nd memu item</MenuItem>\n            <MenuItem @key=\"3\">3rd menu item</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me, Click menu item <AntIcon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Type": "Demos.Dropdown.demo.Event",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "dropdownbutton",
+        "Title": "Button with dropdown menu",
+        "Description": "<p>A button is on the left, and a related functional menu is on the right. You can set the icon property to modify the icon of right.</p>\n",
+        "Code": "<DropdownButton OnClick='e => { Console.WriteLine(\"Click on left button.\"); }'>\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        Dropdown\n    </ChildContent>\n</DropdownButton>\n<DropdownButton Icon=\"user\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        Dropdown\n    </ChildContent>\n</DropdownButton>\n<DropdownButton OnClick='e => { Console.WriteLine(\"Click on left button.\"); }' Disabled=\"@true\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        Dropdown\n    </ChildContent>\n</DropdownButton>\n<DropdownButton ButtonsRender=\"ButtonsRender\">\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        TODO: With ToolTip\n    </ChildContent>\n</DropdownButton>\n<Dropdown>\n    <Overlay>\n        @_overlayMenu\n    </Overlay>\n    <ChildContent>\n        <AntButton>Button <AntIcon Type=\"down\" /></AntButton>\n    </ChildContent>\n</Dropdown>\n\n@code\n{\n    private RenderFragment _overlayMenu =@<Menu>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                1st menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                2nd menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                3rd menu item\n            </a>\n        </MenuItem>\n    </Menu>;\n\n    \n    private RenderFragment ButtonsRender(RenderFragment leftButton, RenderFragment rightButton)\n    {\n        return @<Template>\n            <span>@leftButton</span>@rightButton\n        </Template>;\n    }\n}",
+        "Type": "Demos.Dropdown.demo.DropdownButtonDemo",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "TimePicker",
+    "Type": "Data Entry",
+    "Desc": "<p>To select/input a time.</p>\n<h2>When To Use</h2>\n<hr />\n<p>By clicking the input box, you can select a time from a popup panel.</p>\n",
+    "ApiDoc": "",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "hidecolumn",
+        "Title": "Hour and minute",
+        "Description": "<p>While part of <code>format</code> is omitted, the corresponding column in panel will disappear, too.</p>\n",
+        "Code": "<TimePicker Format='@(\"hh:mm\")' />\n",
+        "Type": "Demos.TimePicker.demo.HideColumn",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "disabled",
+        "Title": "disabled",
+        "Description": "<p>A disabled state of the <code>TimePicker</code>.</p>\n",
+        "Code": "<TimePicker Disabled=\"@true\"\n               Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />",
+        "Type": "Demos.TimePicker.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 13,
+        "Name": "rangepicker",
+        "Title": "Range Picker",
+        "Description": "<p>Use time range picker with <code>RangePicker</code>.</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.TimePicker.demo.RangePickerDemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Click <code>TimePicker</code>, and then we could select or input a time in panel.</p>\n",
+        "Code": "<TimePicker />\n",
+        "Type": "Demos.TimePicker.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "value",
+        "Title": "Under Control",
+        "Description": "<p><code>value</code> and <code>onChange</code> should be used together,</p>\n",
+        "Code": "<TimePicker Value=\"_value\" OnChange=\"OnChange\" />\n\n@code\n{\n    private DateTime _value = DateTime.Now;\n\n    private void OnChange(DateTime value, string dateString)\n    {\n        _value = value;\n    }\n}",
+        "Type": "Demos.TimePicker.demo.Value",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "size",
+        "Title": "Three Sizes",
+        "Description": "<p>The input box comes in three sizes. large is used in the form, while the medium size is the default.</p>\n",
+        "Code": "<TimePicker Size=\"@DatePickerSize.Large\"\n               Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />\n<br />\n<TimePicker Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />\n<br />\n<TimePicker Size=\"@DatePickerSize.Small\"\n               Format=\"HH:mm:ss\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 12, 08, 23)\" />\n",
+        "Type": "Demos.TimePicker.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "addon",
+        "Title": "Addon",
+        "Description": "<p>Render addon contents to time picker panel's bottom.</p>\n",
+        "Code": "<TimePicker RenderExtraFooter=\"ExtraFooter\" />\n\n@code {\n    private RenderFragment ExtraFooter =@<AntButton Type=\"@AntButtonType.Primary\">Ok</AntButton>;\n}",
+        "Type": "Demos.TimePicker.demo.Addon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "hours12",
+        "Title": "12 hours",
+        "Description": "<p>TimePicker of 12 hours format, with default format <code>h:mm:ss a</code>.</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.TimePicker.demo.Hours12",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "intervaloptions",
+        "Title": "interval option",
+        "Description": "<p>Show stepped options by <code>hourStep</code> <code>minuteStep</code> <code>secondStep</code>.</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.TimePicker.demo.IntervalOptions",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "Type": "Feedback",
     "Desc": "<p>Alert component for feedback.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When you need to show alert messages to users.</li>\n<li>When you need a persistent static container which is closable by user actions.</li>\n</ul>\n",
     "ApiDoc": "",
     "DemoList": [
+      {
+        "Order": 5,
+        "Name": "closetext",
+        "Title": "Customized Close Text",
+        "Description": "<p>Replace the default icon with customized content.</p>\n",
+        "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
+        "Type": "Demos.Alert.demo.CloseText",
+        "Style": "",
+        "Debug": false
+      },
       {
         "Order": 3,
         "Name": "description",
@@ -249,16 +514,6 @@
         "Code": "<AntAlert Type=\"@AntAlertType.Success\" Message=\"Success Text\" />\n",
         "Type": "Demos.Alert.demo.Basic",
         "Style": "\n.code-box-demo .ant-alert {\n  margin-bottom: 16px;\n}\n\n",
-        "Debug": false
-      },
-      {
-        "Order": 5,
-        "Name": "closetext",
-        "Title": "Customized Close Text",
-        "Description": "<p>Replace the default icon with customized content.</p>\n",
-        "Code": "<AntAlert Message=\"Info Text\" Type=\"@AntAlertType.Info\" CloseText=\"Close Now\"  Closable/>",
-        "Type": "Demos.Alert.demo.Close_text",
-        "Style": "",
         "Debug": false
       },
       {
@@ -299,6 +554,135 @@
         "Code": "<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text\"\n          Description=\"Very long warning text warning text text text text text text text\"\n          Banner\n          Closable />\n\n<AntAlert Type=\"@AntAlertType.Warning\"\n          Message=\"Warning Text Without Icon\"\n          Banner\n          ShowIcon=\"false\" />\n\n<AntAlert Type=\"@AntAlertType.Error\"\n          Message=\"Error Text\"\n          Banner />",
         "Type": "Demos.Alert.demo.Banner",
         "Style": "",
+        "Iframe": 250,
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "DatePicker",
+    "Type": "Data Entry",
+    "Desc": "<p>To select or input a date.</p>\n<h2>When To Use</h2>\n<p>By clicking the input box, you can select a date from a popup calendar.</p>\n",
+    "ApiDoc": "",
+    "DemoList": [
+      {
+        "Order": 23,
+        "Name": "bordered",
+        "Title": "Bordered-less",
+        "Description": "<p>Bordered-less style component.</p>\n",
+        "Code": "<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Year\" />\n<br />",
+        "Type": "Demos.DatePicker.demo.Bordered",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "disabled",
+        "Title": "Disabled",
+        "Description": "<p>A disabled state of the <code>DatePicker</code>. You can also set as array to disable one of input.</p>\n",
+        "Code": "<DatePicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\" />\n<br />\n<MonthPicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\" />\n<br />\n<RangePicker Disabled=\"@true\" DefaultValue=\"new DateTime[] { new DateTime(2015, 6, 6), new DateTime(2015, 6, 6) }\" />\n<br />\n<RangePicker Disabled=\"@true\" \n                DefaultValue=\"new DateTime[] { new DateTime(2019, 9, 3), new DateTime(2019, 11, 12) }\" />",
+        "Type": "Demos.DatePicker.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "rangepicker",
+        "Title": "Range Picker",
+        "Description": "<p>Set range picker type by <code>picker</code> prop.</p>\n",
+        "Code": "<RangePicker />\n<br />\n<RangePicker ShowTime=\"@true\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Week\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Month\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Quarter\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Year\" />",
+        "Type": "Demos.DatePicker.demo.RangePickerDemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Basic use case. Users can select or input a date in panel.</p>\n",
+        "Code": "<DatePicker Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Year\" />\n<br />",
+        "Type": "Demos.DatePicker.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "extrafooter",
+        "Title": "Extra Footer",
+        "Description": "<p>Render extra footer in panel for customized requirements.</p>\n",
+        "Code": "<DatePicker RenderExtraFooter=\"extraFooter\" />\n<br />\n<DatePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" RenderExtraFooter=\"extraFooter\" />\n\n@code {\n    private RenderFragment extraFooter =@<span>extra footer</span>;\n}\n",
+        "Type": "Demos.DatePicker.demo.ExtraFooter",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "size",
+        "Title": "Three Sizes",
+        "Description": "<p>The input box comes in three sizes. <code>default</code> will be used if <code>size</code> is omitted.</p>\n",
+        "Code": "<AntRadioGroup @bind-Value=\"@datePickerSize\">\n    <AntRadio RadioButton Value=\"@DatePickerSize.Large\">Large</AntRadio>\n    <AntRadio RadioButton Value=\"@DatePickerSize.Default\">Default</AntRadio>\n    <AntRadio RadioButton Value=\"@DatePickerSize.Small\">Small</AntRadio>\n</AntRadioGroup>\n<br />\n<DatePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" Size=\"@datePickerSize\" />\n<br />\n<RangePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" Size=\"@datePickerSize\" />\n\n@code {\n    private string datePickerSize = DatePickerSize.Default;\n}",
+        "Type": "Demos.DatePicker.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "disableddate",
+        "Title": "Disabled Date & Time",
+        "Description": "<p>Disabled part of dates and time by <code>disabledDate</code> and <code>disabledTime</code> respectively, and <code>disabledTime</code> only works with <code>showTime</code>.</p>\n",
+        "Code": "<DatePicker ShowTime=\"@true\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 0, 0, 0)\"\n               Format=\"yyyy-MM-dd HH:mm:ss\"\n               DisabledDate=\"date => date <= DateTime.Now\"\n               DisabledTime=\"date => GetDisabledTime(date)\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\"\n               DisabledDate=\"date => date <= DateTime.Now\" />\n<br />\n<RangePicker DisabledDate=\"date => date <= DateTime.Now\" />\n<br />\n<RangePicker ShowTime='@true'\n                DisabledDate=\"date => date <= DateTime.Now\" />\n\n@code {\n    private DatePickerDisabledTime GetDisabledTime(DateTime date)\n    {\n        int[] timeRange = new int[60];\n        for (int i = 0; i < timeRange.Length; i++)\n        {\n            timeRange[i] = i;\n        }\n\n        return new DatePickerDisabledTime(timeRange[4..15], timeRange[20..55], timeRange[3..19]);\n    }\n}",
+        "Type": "Demos.DatePicker.demo.DisabledDate",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "presettedranges",
+        "Title": "Preset Ranges TODO",
+        "Description": "<p>We can set preset ranges to RangePicker to improve user experience. TODO</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.DatePicker.demo.PresettedRanges",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "format",
+        "Title": "Date Format",
+        "Description": "<p>We can set the date format by <code>format</code>.</p>\n",
+        "Code": "<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM/dd\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"dd/MM/yyyy\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime[] { new DateTime(2015, 1, 1), new DateTime(2015, 1, 1) }\" Format=\"yyyy/MM/dd\" />",
+        "Type": "Demos.DatePicker.demo.Format",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "selectinrange",
+        "Title": "Select range dates in 7 days TODO",
+        "Description": "<p>A example shows how to select a dynamic range by using <code>onCalendarChange</code> and <code>disabledDate</code>.</p>\n",
+        "Code": "<div>\n    TODO\n</div>",
+        "Type": "Demos.DatePicker.demo.SelectInRange",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 12,
+        "Name": "daterender",
+        "Title": "Customized Date Rendering",
+        "Description": "<p>We can customize the rendering of date cells in the calendar by providing a <code>dateRender</code> function to <code>DatePicker</code>.</p>\n",
+        "Code": "<DatePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\" /><br />\n<RangePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\" />\n\n@code\n{\n    private Func<DateTime, DateTime, RenderFragment> CustomRender = (currentViewDate, today) =>\n    {\n        string style = \"\";\n        if (currentViewDate.Day == 1)\n        {\n            style = \"border: 1px solid #1890ff; borderRadius: 50%\";\n        }\n\n        return @<div class=\"ant-picker-cell-inner\" style=\"@style\">\n            @currentViewDate.Day\n        </div>;\n    };\n}",
+        "Type": "Demos.DatePicker.demo.DateRender",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "time",
+        "Title": "Choose Time",
+        "Description": "<p>This property provide an additional time selection. When <code>showTime</code> is an Object, its properties will be passed on to built-in <code>TimePicker</code>.</p>\n",
+        "Code": "<DatePicker ShowTime=\"@true\" OnChange=\"OnChange\" />\n<br />\n<RangePicker ShowTime='@(\"HH:mm\")' OnChange=\"OnChange\" />\n\n@code\n{\n    private void OnChange(DateTime value, string dateString)\n    {\n        Console.WriteLine($\"Selected Time: {value}\");\n        Console.WriteLine($\"Formatted Selected Time: {dateString}\");\n    }\n}",
+        "Type": "Demos.DatePicker.demo.Time",
+        "Style": "",
         "Debug": false
       }
     ]
@@ -309,16 +693,6 @@
     "Desc": "<p>To trigger an operation.</p>\n<h2>When To Use</h2>\n<p>A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.</p>\n<p>In Ant Design we provide 4 types of button.</p>\n<ul>\n<li>Primary button: indicate the main action, one primary button at most in one section.</li>\n<li>Default button: indicate a series of actions without priority.</li>\n<li>Dashed button: used for adding action commonly.</li>\n<li>Link button: used for external links.</li>\n</ul>\n<p>And 4 other properties additionally.</p>\n<ul>\n<li><code>danger</code>: used for actions of risk, like deletion or authorization.</li>\n<li><code>ghost</code>: used in situations with complex background, home pages usually.</li>\n<li><code>disabled</code>: when actions is not available.</li>\n<li><code>loading</code>: add loading spinner in button, avoiding multiple submits too.</li>\n</ul>\n",
     "ApiDoc": "",
     "DemoList": [
-      {
-        "Order": 99,
-        "Name": "legacygroup",
-        "Title": "Deprecated Button Group",
-        "Description": "<p>Debug usage</p>\n",
-        "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
-        "Type": "Demos.Button.demo.Legacy_group",
-        "Style": "",
-        "Debug": true
-      },
       {
         "Order": 0,
         "Name": "block",
@@ -400,11 +774,21 @@
         "Debug": false
       },
       {
+        "Order": 99,
+        "Name": "legacygroup",
+        "Title": "Deprecated Button Group",
+        "Description": "<p>Debug usage</p>\n",
+        "Code": "<AntButtonGroup Size=\"small\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup>\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>\n<AntButtonGroup Size=\"large\">\n    <AntButton Type=\"primary\">Button 1</AntButton>\n    <AntButton Type=\"primary\">Button 2</AntButton>\n</AntButtonGroup>",
+        "Type": "Demos.Button.demo.LegacyGroup",
+        "Style": "",
+        "Debug": true
+      },
+      {
         "Order": 4,
         "Name": "loading",
         "Title": "Loading",
         "Description": "<p>A loading indicator can be added to a button by setting the <code>loading</code> property on the <code>Button</code>.</p>\n",
-        "Code": "@using System.Timers\n\n<div>\n    <AntButton Type=\"primary\" Loading>\n        Loading\n    </AntButton>\n    <AntButton Type=\"primary\" Size=\"small\" Loading>\n        Loading\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Loading=\"loading\" Onclick=enterLoading>\n        Click me!\n    </AntButton>\n    <AntButton\n        Type=\"primary\"\n        Icon=\"poweroff\"\n    Loading=\"iconLoading\"\n    Onclick=\"enterIconLoading\"\n    >\n    Click me!\n    </AntButton>\n</div>\n\n@code\n{\n    bool loading = false;\n    bool iconLoading = false;\n\n    private void enterLoading()\n    {\n        loading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            loading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n\n    private void enterIconLoading()\n    {\n        iconLoading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            iconLoading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n}\n",
+        "Code": "@using System.Timers\n\n<div>\n    <AntButton Type=\"primary\" Loading>\n        Loading\n    </AntButton>\n    <AntButton Type=\"primary\" Size=\"small\" Loading>\n        Loading\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Loading=\"loading\" OnClick=enterLoading>\n        Click me!\n    </AntButton>\n    <AntButton\n        Type=\"primary\"\n        Icon=\"poweroff\"\n    Loading=\"iconLoading\"\n    OnClick=\"enterIconLoading\"\n    >\n    Click me!\n    </AntButton>\n</div>\n\n@code\n{\n    bool loading = false;\n    bool iconLoading = false;\n\n    private void enterLoading()\n    {\n        loading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            loading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n\n    private void enterIconLoading()\n    {\n        iconLoading = true;\n        var timer = new Timer(8000);\n        timer.Elapsed += (_, args) =>\n        {\n            iconLoading = false;\n            InvokeAsync(StateHasChanged);\n        };\n        timer.Start();\n    }\n}\n",
         "Type": "Demos.Button.demo.Loading",
         "Style": "",
         "Debug": false
@@ -468,16 +852,6 @@
         "Debug": false
       },
       {
-        "Order": 1,
-        "Name": "nowrapper",
-        "Title": "Standalone",
-        "Description": "<p>Used in standalone when children is empty.</p>\n",
-        "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
-        "Type": "Demos.Badge.demo.No_wrapper",
-        "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n",
-        "Debug": false
-      },
-      {
         "Order": 100,
         "Name": "title",
         "Title": "Title",
@@ -498,12 +872,111 @@
         "Debug": false
       },
       {
+        "Order": 1,
+        "Name": "nowrapper",
+        "Title": "Standalone",
+        "Description": "<p>Used in standalone when children is empty.</p>\n",
+        "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
+        "Type": "Demos.Badge.demo.NoWrapper",
+        "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n",
+        "Debug": false
+      },
+      {
         "Order": 6,
         "Name": "status",
         "Title": "Status",
         "Description": "<p>Standalone badge with status.</p>\n",
         "Code": "<div>\n    <AntBadge Status=\"success\" />\n    <AntBadge Status=\"error\" />\n    <AntBadge Status=\"default\" />\n    <AntBadge Status=\"processing\" />\n    <AntBadge Status=\"warning\" />\n    <br />\n    <AntBadge Status=\"success\" Text=\"Success\" />\n    <br />\n    <AntBadge Status=\"error\" Text=\"Error\" />\n    <br />\n    <AntBadge Status=\"default\" Text=\"Default\" />\n    <br />\n    <AntBadge Status=\"processing\" Text=\"Processing\" />\n    <br />\n    <AntBadge Status=\"warning\" Text=\"Warning\" />\n</div>",
         "Type": "Demos.Badge.demo.Status",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Menu",
+    "Type": "Navigation",
+    "Desc": "<p>A versatile menu for navigation.</p>\n<h2>When To Use</h2>\n<p>Navigation is an important part of any website, as a good navigation setup allows users to move around the site quickly and efficiently. Ant Design offers top and side navigation options. Top navigation provides all the categories and functions of the website. Side navigation provides the multi-level structure of the website.</p>\n<p>More layouts with navigation: <a href=\"/components/layout\">Layout</a>.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<pre><code class=\"language-jsx\">&lt;Menu&gt;\n  &lt;Menu.Item&gt;Menu&lt;/Menu.Item&gt;\n  &lt;SubMenu title=&quot;SubMenu&quot;&gt;\n    &lt;Menu.Item&gt;SubMenuItem&lt;/Menu.Item&gt;\n  &lt;/SubMenu&gt;\n&lt;/Menu&gt;\n</code></pre>\n<h3>Menu</h3>\n<table>\n<thead>\n<tr>\n<th>Param</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default value</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>defaultOpenKeys</td>\n<td>Array with the keys of default opened sub menus</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>defaultSelectedKeys</td>\n<td>Array with the keys of default selected menu items</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>forceSubMenuRender</td>\n<td>Render submenu into DOM before it becomes visible</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>inlineCollapsed</td>\n<td>Specifies the collapsed status when menu is inline mode</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>inlineIndent</td>\n<td>Indent (in pixels) of inline menu items on each level</td>\n<td>number</td>\n<td>24</td>\n<td></td>\n</tr>\n<tr>\n<td>mode</td>\n<td>Type of menu; <code>vertical</code>, <code>horizontal</code>, or <code>inline</code></td>\n<td><code>vertical</code> | <code>horizontal</code> | <code>inline</code></td>\n<td><code>vertical</code></td>\n<td></td>\n</tr>\n<tr>\n<td>multiple</td>\n<td>Allows selection of multiple items</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>openKeys</td>\n<td>Array with the keys of currently opened sub-menus</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>selectable</td>\n<td>Allows selecting menu items</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>selectedKeys</td>\n<td>Array with the keys of currently selected menu items</td>\n<td>string[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>style</td>\n<td>Style of the root node</td>\n<td>object</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>subMenuCloseDelay</td>\n<td>Delay time to hide submenu when mouse leaves (in seconds)</td>\n<td>number</td>\n<td>0.1</td>\n<td></td>\n</tr>\n<tr>\n<td>subMenuOpenDelay</td>\n<td>Delay time to show submenu when mouse enters, (in seconds)</td>\n<td>number</td>\n<td>0</td>\n<td></td>\n</tr>\n<tr>\n<td>theme</td>\n<td>Color theme of the menu</td>\n<td><code>light</code> | <code>dark</code></td>\n<td><code>light</code></td>\n<td></td>\n</tr>\n<tr>\n<td>onClick</td>\n<td>Called when a menu item is clicked</td>\n<td>function({ item, key, keyPath, domEvent })</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onDeselect</td>\n<td>Called when a menu item is deselected (multiple mode only)</td>\n<td>function({ item, key, keyPath, selectedKeys, domEvent })</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onOpenChange</td>\n<td>Called when sub-menus are opened or closed</td>\n<td>function(openKeys: string[])</td>\n<td>noop</td>\n<td></td>\n</tr>\n<tr>\n<td>onSelect</td>\n<td>Called when a menu item is selected</td>\n<td>function({ item, key, keyPath, selectedKeys, domEvent })</td>\n<td>none</td>\n<td></td>\n</tr>\n<tr>\n<td>overflowedIndicator</td>\n<td>Customized icon when menu is collapsed</td>\n<td>ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>More options in <a href=\"https://github.com/react-component/menu#api\">rc-menu</a></p>\n</blockquote>\n<h3>Menu.Item</h3>\n<table>\n<thead>\n<tr>\n<th>Param</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default value</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>disabled</td>\n<td>Whether menu item is disabled</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>key</td>\n<td>Unique ID of the menu item</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>Set display title for collapsed item</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Menu.SubMenu</h3>\n<table>\n<thead>\n<tr>\n<th>Param</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default value</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>popupClassName</td>\n<td>Sub-menu class name</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>children</td>\n<td>Sub-menus or sub-menu items</td>\n<td>Array&lt;MenuItem|SubMenu&gt;</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>disabled</td>\n<td>Whether sub-menu is disabled</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>key</td>\n<td>Unique ID of the sub-menu</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>Title of the sub-menu</td>\n<td>string|ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>onTitleClick</td>\n<td>Callback executed when the sub-menu title is clicked</td>\n<td>function({ key, domEvent })</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Menu.ItemGroup</h3>\n<table>\n<thead>\n<tr>\n<th>Param</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default value</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>children</td>\n<td>sub-menu items</td>\n<td>MenuItem[]</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>title of the group</td>\n<td>string|ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Menu.Divider</h3>\n<p>Divider line in between menu items, only used in vertical popup Menu or Dropdown Menu.</p>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "theme",
+        "Title": "Menu Themes",
+        "Description": "<p>There are two built-in themes: 'light' and 'dark'. The default value is 'light'.</p>\n",
+        "Code": "<div>\n    <AntSwitch Checked=\"theme == MenuTheme.Dark\" OnChange=changeTheme CheckedChildren=@(\"Dark\") UnCheckedChildren=@(\"Light\") />\n    <br />\n    <br />\n    <Menu Theme=theme\n          OnMenuItemClicked=handleClick\n          Style=\" width: 256px \"\n          DefaultOpenKeys=@(new []{\"sub1\"})\n          SelectedKeys=@(new []{current})\n          Mode=\"MenuMode.Inline\">\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"1\">Option 1</MenuItem>\n            <MenuItem Key=\"2\">Option 2</MenuItem>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"5\">Option 5</MenuItem>\n            <MenuItem Key=\"6\">Option 6</MenuItem>\n            <SubMenu Key=\"sub3\" Title=\"@(\"Submenu\")\">\n                <MenuItem Key=\"7\">Option 7</MenuItem>\n                <MenuItem Key=\"8\">Option 8</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub4\" Title=sub4Title>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n            <MenuItem Key=\"11\">Option 11</MenuItem>\n            <MenuItem Key=\"12\">Option 12</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    MenuTheme theme = MenuTheme.Dark;\n    string current = \"1\";\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n    void handleClick(MenuItem e)\n    {\n        current = e.Key;\n    }\n\n}\n",
+        "Type": "Demos.Menu.demo.Theme",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "inline",
+        "Title": "Inline menu",
+        "Description": "<p>Vertical menu with inline submenus.</p>\n",
+        "Code": "<Menu Style=\"width: 256;\"\n      DefaultSelectedKeys=@(new[]{\"1\"})\n      DefaultOpenKeys=@(new[]{\"sub1\"})\n      Mode=@MenuMode.Inline>\n    <SubMenu Key=\"sub1\" Title=sub1Title>\n        <MenuItemGroup Key=\"g1\" Title=@(\"Item 1\")>\n            <MenuItem Key=\"1\">Option 1</MenuItem>\n            <MenuItem Key=\"2\">Option 2</MenuItem>\n        </MenuItemGroup>\n        <MenuItemGroup Key=\"g2\" Title=@(\"Iem 2\")>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n        </MenuItemGroup>\n    </SubMenu>\n    <SubMenu Key=\"sub2\" Title=sub2Title>\n        <MenuItem Key=\"5\">Option 5</MenuItem>\n        <MenuItem Key=\"6\">Option 6</MenuItem>\n        <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n        </SubMenu>\n    </SubMenu>\n    <SubMenu Key=\"sub4\" Title=sub4Title>\n        <MenuItem Key=\"9\">Option 9</MenuItem>\n        <MenuItem Key=\"10\">Option 10</MenuItem>\n        <MenuItem Key=\"11\">Option 11</MenuItem>\n        <MenuItem Key=\"12\">Option 12</MenuItem>\n    </SubMenu>\n</Menu>\n\n@code\n{\n    RenderFragment sub1Title =\n    @<span>\n        <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n        <span>Navigation One</span>\n    </span>;\n\nRenderFragment sub2Title =\n@<span>\n    <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n    <span>Navigation Two</span>\n</span>;\n\nRenderFragment sub4Title =\n@<span>\n    <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n    <span>Navigation Three</span>\n</span>;\n}\n",
+        "Type": "Demos.Menu.demo.Inline",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "inlinecollapsed",
+        "Title": "Collapsed inline menu",
+        "Description": "<p>Inline menu could be collapsed.</p>\n<p>Here is <a href=\"/components/layout/#components-layout-demo-side\">a complete demo</a> with sider layout.</p>\n",
+        "Code": "<div style=\"width: 256;\">\n    <AntButton Type=\"primary\" OnClick=\"ToggleCollapsed\" Style=\"margin-bottom: 16px\">\n        @if (collapsed)\n        {\n            <AntIcon  Type=\"menu-unfold\" Theme=\"outline\"></AntIcon>\n        }\n        else\n        {\n            <AntIcon  Type=\"menu-fold\" Theme=\"outline\"></AntIcon>\n        }\n    </AntButton>\n    <Menu\n        DefaultSelectedKeys=@(new[]{\"1\"})\n        DefaultOpenKeys=@(new[]{\"sub1\"})\n        Mode=MenuMode.Inline\n        Theme=MenuTheme.Dark\n        InlineCollapsed=collapsed\n    >\n        <MenuItem Key=\"1\">\n            <AntIcon Type=\"pie-chart\" Theme=\"outline\"></AntIcon>\n            <span>Option 1</span>\n        </MenuItem>\n        <MenuItem Key=\"2\">\n            <AntIcon Type=\"desktop\" Theme=\"outline\"></AntIcon>\n            <span>Option 2</span>\n        </MenuItem>\n        <MenuItem Key=\"3\">\n            <AntIcon Type=\"contaainer\" Theme=\"outline\"></AntIcon>\n            <span>Option 3</span>\n        </MenuItem>\n        <SubMenu Key=\"sub1\" Title=sub1Title >\n        <MenuItem Key=\"5\">Option 5</MenuItem>\n        <MenuItem Key=\"6\">Option 6</MenuItem>\n        <MenuItem Key=\"7\">Option 7</MenuItem>\n        <MenuItem Key=\"8\">Option 8</MenuItem>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n        <MenuItem Key=\"9\">Option 9</MenuItem>\n        <MenuItem Key=\"10\">Option 10</MenuItem>\n        <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n            <MenuItem Key=\"11\">Option 11</MenuItem>\n            <MenuItem Key=\"12\">Option 12</MenuItem>\n        </SubMenu>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n    bool collapsed = false;\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    void ToggleCollapsed()\n    {\n        collapsed = !collapsed;\n    }\n}\n",
+        "Type": "Demos.Menu.demo.InlineCollapsed",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "router",
+        "Title": "Router",
+        "Description": "<p>Automatically activate menu items based on routing, should work with <a href=\"https://angular.io/api/router/RouterLink\">MenuLink</a>.</p>\n",
+        "Code": "<Menu Mode=\"MenuMode.Horizontal\">\n    <MenuItem>\n        <MenuLink href=\"/en-US/components/menu\" Match=\"NavLinkMatch.All\">English Menu Document</MenuLink>\n    </MenuItem>\n    <MenuItem>\n        <MenuLink href=\"/zh-CN/components/menu\" Match=\"NavLinkMatch.All\">Chinese Menu Document</MenuLink>\n    </MenuItem>\n</Menu>",
+        "Type": "Demos.Menu.demo.Router",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "vertical",
+        "Title": "Vertical menu",
+        "Description": "<p>Submenus open as pop-ups.</p>\n",
+        "Code": "<Menu OnMenuItemClicked=handleClick Style=\" width: 256px\" Mode=MenuMode.Vertical>\n    <SubMenu Key=\"sub1\" Title=sub1Title>\n    <MenuItemGroup Title=@(\"Item 1\")>\n        <MenuItem Key=\"1\">Option 1</MenuItem>\n        <MenuItem Key=\"2\">Option 2</MenuItem>\n    </MenuItemGroup>\n    <MenuItemGroup Title=@(\"Item 2\")>\n        <MenuItem Key=\"3\">Option 3</MenuItem>\n        <MenuItem Key=\"4\">Option 4</MenuItem>\n    </MenuItemGroup>\n    </SubMenu>\n    <SubMenu Key=\"sub2\"  Title=sub2Title >\n    <MenuItem Key=\"5\">Option 5</MenuItem>\n    <MenuItem Key=\"6\">Option 6</MenuItem>\n    <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n        <MenuItem Key=\"7\">Option 7</MenuItem>\n        <MenuItem Key=\"8\">Option 8</MenuItem>\n    </SubMenu>\n    </SubMenu>\n    <SubMenu Key=\"sub4\" Title=sub4Title >\n    <MenuItem Key=\"9\">Option 9</MenuItem>\n    <MenuItem Key=\"10\">Option 10</MenuItem>\n    <MenuItem Key=\"11\">Option 11</MenuItem>\n    <MenuItem Key=\"12\">Option 12</MenuItem>\n    </SubMenu>\n</Menu>\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n\n    void handleClick()\n    {\n\n    }\n}\n",
+        "Type": "Demos.Menu.demo.Vertical",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "horizontal",
+        "Title": "Top Navigation",
+        "Description": "<p>Horizontal top navigation menu.</p>\n",
+        "Code": "<Menu Mode=MenuMode.Horizontal>\n    <MenuItem Key=\"mail\">\n        <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n        Navigation One\n    </MenuItem>\n    <MenuItem Key=\"app\" Disabled>\n        <AntIcon Type=\"appstore\" Theme=\"outline\" ></AntIcon>\n        Navigation Two\n    </MenuItem>\n    <SubMenu Title=sub1Title>\n        <MenuItemGroup Title=@(\"Item 1\")>\n            <MenuItem Key=\"setting:1\">Option 1</MenuItem>\n                <MenuItem Key=\"setting:2\">Option 2</MenuItem>\n        </MenuItemGroup>\n        <MenuItemGroup Title=@(\"Item 2\")>\n                <MenuItem Key=\"setting:3\">Option 3</MenuItem>\n                <MenuItem Key=\"setting:4\">Option 4</MenuItem>\n        </MenuItemGroup>\n    </SubMenu>\n    <MenuItem Key=\"alipay\">\n        <MenuLink href=\"https://ant.design\" target=\"_blank\" rel=\"noopener noreferrer\">\n            Navigation Four - Link\n        </MenuLink>\n    </MenuItem>\n</Menu>\n\n@code\n{\n    RenderFragment sub1Title =\n        @<Template>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            Navigation Three - Submenu\n        </Template>;\n}\n",
+        "Type": "Demos.Menu.demo.Horizontal",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "switchmode",
+        "Title": "Switch the menu type",
+        "Description": "<p>Show the dynamic switching mode (between 'inline' and 'vertical').</p>\n",
+        "Code": "<div>\n    <AntSwitch OnChange=changeMode /> Change Mode\n    <div class=\"ant-divider ant-divider-vertical\" role=\"separator\"></div>\n    <AntSwitch OnChange=changeTheme/> Change Style\n    <br />\n    <br />\n    <Menu Style=\" width: 256px ;\"\n          DefaultSelectedKeys=@(new[]{\"1\"})\n          DefaultOpenKeys=@(new[]{\"sub1\"})\n          Mode=this.mode\n          Theme=this.theme>\n        <MenuItem Key=\"1\">\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            Navigation One\n        </MenuItem>\n        <MenuItem Key=\"2\">\n            <AntIcon Type=\"calendar\" Theme=\"outline\"></AntIcon>\n            Navigation Two\n        </MenuItem>\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n            <SubMenu Key=\"sub1-2\" Title=@(\"Submenu\")>\n                <MenuItem Key=\"5\">Option 5</MenuItem>\n                <MenuItem Key=\"6\">Option 6</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Four</span>\n        </span>;\n\n    MenuMode mode = MenuMode.Inline;\n    MenuTheme theme = MenuTheme.Light;\n\n    void changeMode(bool value)\n    {\n        this.mode = value ? MenuMode.Vertical : MenuMode.Inline;\n    }\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n}\n",
+        "Type": "Demos.Menu.demo.SwitchMode",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "sidercurrent",
+        "Title": "Open current submenu only",
+        "Description": "<p>Click the menu and you will see that all the other menus gets collapsed to keep the entire menu compact.</p>\n",
+        "Code": "<Menu Mode=\"MenuMode.Inline\"\n      OpenKeys=this.openKeys\n      OnOpenChange=this.onOpenChange\n      Style=\"width:256px ;\">\n    <SubMenu Key=\"sub1\" Title=sub1Title>\n        <MenuItem Key=\"1\">Option 1</MenuItem>\n        <MenuItem Key=\"2\">Option 2</MenuItem>\n        <MenuItem Key=\"3\">Option 3</MenuItem>\n        <MenuItem Key=\"4\">Option 4</MenuItem>\n    </SubMenu>\n    <SubMenu Key=\"sub2\" Title=sub2Title>\n        <MenuItem Key=\"5\">Option 5</MenuItem>\n        <MenuItem Key=\"6\">Option 6</MenuItem>\n        <SubMenu Key=\"sub3\" Title=@(\"Submenu\")>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n        </SubMenu>\n    </SubMenu>\n    <SubMenu Key=\"sub4\" Title=sub4Title>\n        <MenuItem Key=\"9\">Option 9</MenuItem>\n        <MenuItem Key=\"10\">Option 10</MenuItem>\n        <MenuItem Key=\"11\">Option 11</MenuItem>\n        <MenuItem Key=\"12\">Option 12</MenuItem>\n    </SubMenu>\n</Menu>\n\n@code {\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    // submenu keys of first level\n    string[] rootSubmenuKeys = {\"sub1\", \"sub2\", \"sub4\"};\n\n    string[] openKeys = {\"sub1\"};\n\n    void onOpenChange(string[] openKeys)\n    {\n        var latestOpenKey = openKeys.FirstOrDefault(key => !this.openKeys.Contains(key));\n        if (!rootSubmenuKeys.Contains(latestOpenKey))\n        {\n            this.openKeys = openKeys;\n        }\n        else\n        {\n            this.openKeys = !string.IsNullOrEmpty(latestOpenKey) ? new[] {latestOpenKey} : Array.Empty<string>();\n        }\n    }\n}\n",
+        "Type": "Demos.Menu.demo.SiderCurrent",
         "Style": "",
         "Debug": false
       }
@@ -520,7 +993,7 @@
         "Name": "duration",
         "Title": "Duration after which the notification box is closed",
         "Description": "<p><code>Duration</code> can be used to specify how long the notification stays open. After the duration time elapses, the notification closes automatically. If not specified, default value is 4.5 seconds. If you set the value to 0, the notification box will never close automatically.</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Duration = 0,\n            Description = \"This notification box will not close automatically\"\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Duration = 0,\n            Description = \"This notification box will not close automatically\"\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.Duration",
         "Style": "",
         "Debug": false
@@ -530,7 +1003,7 @@
         "Name": "withbtn",
         "Title": "Custom close button",
         "Description": "<p>To customize the style or font of the close button.</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    custom button\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        RenderFragment btn = @<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"() => { _notice.Close(key); }\">\n                                confirm\n                            </AntButton>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"A function will be be called after the notification is closed (automatically after the \\\"duration\\\" time of manually).\",\n            Btn = btn \n        });\n    }\n}\n",
+        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    custom button\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        RenderFragment btn = @<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"() => { _notice.Close(key); }\">\n                                confirm\n                            </AntButton>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"A function will be be called after the notification is closed (automatically after the \\\"duration\\\" time of manually).\",\n            Btn = btn \n        });\n    }\n}\n",
         "Type": "Demos.Notification.demo.WithBtn",
         "Style": "",
         "Debug": false
@@ -540,7 +1013,7 @@
         "Name": "withicon",
         "Title": "Notification with icon",
         "Description": "<p>A notification box with a icon at the left side.</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Onclick=\"@OnSuccessClick\">\n    success\n</AntButton>   \n\n <AntButton Onclick=\"@OnInfoClick\">\n    info\n</AntButton>\n\n<AntButton Onclick=\"@OnWarningClick\">\n    warning\n</AntButton>\n\n<AntButton Onclick=\"@OnErrorClick\">\n    error\n</AntButton>\n\n@code{\n    private async Task NoticeWithIcon(NotificationType type)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            NotificationType = type\n        });\n    }\n\n    private async Task OnSuccessClick()\n    {\n        await NoticeWithIcon(NotificationType.Success);\n    }\n\n    private async Task OnInfoClick()\n    {\n        await NoticeWithIcon(NotificationType.Info);\n    }\n\n    private async Task OnWarningClick()\n    {\n        await NoticeWithIcon(NotificationType.Warning);\n    }\n\n    private async Task OnErrorClick()\n    {\n        await NoticeWithIcon(NotificationType.Error);\n    }\n\n}",
+        "Code": "@inject NotificationService _notice\n\n<AntButton OnClick=\"@OnSuccessClick\">\n    success\n</AntButton>   \n\n <AntButton OnClick=\"@OnInfoClick\">\n    info\n</AntButton>\n\n<AntButton OnClick=\"@OnWarningClick\">\n    warning\n</AntButton>\n\n<AntButton OnClick=\"@OnErrorClick\">\n    error\n</AntButton>\n\n@code{\n    private async Task NoticeWithIcon(NotificationType type)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            NotificationType = type\n        });\n    }\n\n    private async Task OnSuccessClick()\n    {\n        await NoticeWithIcon(NotificationType.Success);\n    }\n\n    private async Task OnInfoClick()\n    {\n        await NoticeWithIcon(NotificationType.Info);\n    }\n\n    private async Task OnWarningClick()\n    {\n        await NoticeWithIcon(NotificationType.Warning);\n    }\n\n    private async Task OnErrorClick()\n    {\n        await NoticeWithIcon(NotificationType.Error);\n    }\n\n}",
         "Type": "Demos.Notification.demo.WithIcon",
         "Style": "",
         "Debug": false
@@ -550,7 +1023,7 @@
         "Name": "basic",
         "Title": "Basic",
         "Description": "<p>The simplest usage that close the notification box after 4.5s.</p>\n",
-        "Code": "@inject NotificationService _notice\n \n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\"\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n \n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\"\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.Basic",
         "Style": "",
         "Debug": false
@@ -560,7 +1033,7 @@
         "Name": "customicon",
         "Title": "Customized Icon",
         "Description": "<p>The icon can be customized to any react node.</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        RenderFragment customIcon = @<AntIcon Type=\"smile\" Theme=\"outline\" Style=\"color:#108ee9;\"></AntIcon>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Icon = customIcon\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n\n<AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n    Open the notification box\n</AntButton>\n\n@code{\n\n    private async Task OnClick()\n    {\n        RenderFragment customIcon = @<AntIcon Type=\"smile\" Theme=\"outline\" Style=\"color:#108ee9;\"></AntIcon>;\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Icon = customIcon\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.CustomIcon",
         "Style": "",
         "Debug": false
@@ -570,7 +1043,7 @@
         "Name": "placement",
         "Title": "Placement",
         "Description": "<p>A notification box can appear from the <code>topRight</code>, <code>bottomRight</code>, <code>bottomLeft</code> or <code>topLeft</code> of the viewport.</p>\n",
-        "Code": "@inject NotificationService _notice\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnTopLeftClick\">\n        <AntIcon Type=\"Radius-Upleft\" Theme=\"Outline\"></AntIcon>\n        TopLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnTopRightClick\">\n        <AntIcon Type=\"Radius-Upright\" Theme=\"Outline\"></AntIcon>\n        TopRight\n    </AntButton>\n</div>\n\n<br/>\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnBottomLeftClick\">\n        <AntIcon Type=\"Radius-Bottomleft\" Theme=\"Outline\"></AntIcon>\n        BottomLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnBottomRightClick\">\n        <AntIcon Type=\"Radius-Bottomright\" Theme=\"Outline\"></AntIcon>\n        BottomRight\n    </AntButton>\n</div>\n\n@code {\n    private async Task OpenWithPlacement(NotificationPlacement placement)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = $\"Notification {placement}\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Placement = placement\n        });\n    }\n\n    private async Task OnTopLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopLeft);\n    }\n\n    private async Task OnTopRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopRight);\n    }\n\n    private async Task OnBottomLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomLeft);\n    }\n\n    private async Task OnBottomRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomRight);\n    }\n}\n",
+        "Code": "@inject NotificationService _notice\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnTopLeftClick\">\n        <AntIcon Type=\"Radius-Upleft\" Theme=\"Outline\"></AntIcon>\n        TopLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnTopRightClick\">\n        <AntIcon Type=\"Radius-Upright\" Theme=\"Outline\"></AntIcon>\n        TopRight\n    </AntButton>\n</div>\n\n<br/>\n\n<div>\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnBottomLeftClick\">\n        <AntIcon Type=\"Radius-Bottomleft\" Theme=\"Outline\"></AntIcon>\n        BottomLeft\n    </AntButton>\n\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnBottomRightClick\">\n        <AntIcon Type=\"Radius-Bottomright\" Theme=\"Outline\"></AntIcon>\n        BottomRight\n    </AntButton>\n</div>\n\n@code {\n    private async Task OpenWithPlacement(NotificationPlacement placement)\n    {\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = $\"Notification {placement}\",\n            Description = \"This is the content of the notification. This is the content of the notification. This is the content of the notification.\",\n            Placement = placement\n        });\n    }\n\n    private async Task OnTopLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopLeft);\n    }\n\n    private async Task OnTopRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.TopRight);\n    }\n\n    private async Task OnBottomLeftClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomLeft);\n    }\n\n    private async Task OnBottomRightClick()\n    {\n        await OpenWithPlacement(NotificationPlacement.BottomRight);\n    }\n}\n",
         "Type": "Demos.Notification.demo.Placement",
         "Style": "",
         "Debug": false
@@ -580,7 +1053,7 @@
         "Name": "update",
         "Title": "Update Message Content",
         "Description": "<p>Update content with unique key.</p>\n",
-        "Code": "@inject NotificationService _notice\n\n    <AntButton Type=\"@AntButtonType.Primary\" Onclick=\"@OnClick\">\n        Open the notification box\n    </AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        var task = _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"description.\",\n        });\n        await Task.Delay(1000);\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"New Title\",\n            Key = key,\n            Description = \"New description.\",\n        });\n    }\n}",
+        "Code": "@inject NotificationService _notice\n\n    <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"@OnClick\">\n        Open the notification box\n    </AntButton>\n\n@code{\n    private async Task OnClick()\n    {\n        string key = $\"open{DateTime.Now}\";\n        var task = _notice.Open(new NotificationConfig()\n        {\n            Message = \"Notification Title\",\n            Key = key,\n            Description = \"description.\",\n        });\n        await Task.Delay(1000);\n        await _notice.Open(new NotificationConfig()\n        {\n            Message = \"New Title\",\n            Key = key,\n            Description = \"New description.\",\n        });\n    }\n}",
         "Type": "Demos.Notification.demo.Update",
         "Style": "",
         "Debug": false
@@ -598,7 +1071,7 @@
         "Name": "dynamic",
         "Title": "Autoset Font Size",
         "Description": "<p>For letter type Avatar, when the letters are too long to display, the font size can be automatically adjusted according to the width of the Avatar.</p>\n",
-        "Code": "<div>\n    <AntAvatar Style=\"@($\"background-color: {color}; vertical-align: middle;\")\" Size=\"large\">\n        @user\n    </AntAvatar>\n    <AntButton\n        Size=\"small\"\n        Style=\"margin:0 16px; vertical-align: middle;\"\n        Onclick=\"_=>changeUser()\"\n    >\n        Change\n    </AntButton>\n</div>\n\n@code\n{\n    private static string[] userList = {\"U\", \"Lucy\", \"Tom\", \"Edward\"};\n    private static string[] colorList = {\"#f56a00\", \"#7265e6\", \"#ffbf00\", \"#00a2ae\"};\n\n    private string user { get; set; } = userList[0];\n    private string color { get; set; } = colorList[0];\n\n    private void changeUser()\n    {\n        var index = Array.IndexOf(userList, user);\n        user = index < userList.Length - 1 ? userList[index + 1] : userList[0];\n        color = index < colorList.Length - 1 ? colorList[index + 1] : colorList[0];\n    }\n}\n",
+        "Code": "<div>\n    <AntAvatar Style=\"@($\"background-color: {color}; vertical-align: middle;\")\" Size=\"large\">\n        @user\n    </AntAvatar>\n    <AntButton\n        Size=\"small\"\n        Style=\"margin:0 16px; vertical-align: middle;\"\n        OnClick=\"_=>changeUser()\"\n    >\n        Change\n    </AntButton>\n</div>\n\n@code\n{\n    private static string[] userList = {\"U\", \"Lucy\", \"Tom\", \"Edward\"};\n    private static string[] colorList = {\"#f56a00\", \"#7265e6\", \"#ffbf00\", \"#00a2ae\"};\n\n    private string user { get; set; } = userList[0];\n    private string color { get; set; } = colorList[0];\n\n    private void changeUser()\n    {\n        var index = Array.IndexOf(userList, user);\n        user = index < userList.Length - 1 ? userList[index + 1] : userList[0];\n        color = index < colorList.Length - 1 ? colorList[index + 1] : colorList[0];\n    }\n}\n",
         "Type": "Demos.Avatar.demo.Dynamic",
         "Style": "",
         "Debug": false

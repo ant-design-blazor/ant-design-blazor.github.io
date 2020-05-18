@@ -46,10 +46,54 @@
         ]
       },
       {
+        "Order": 2,
+        "Title": "Navigation",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Dropdown",
+            "Type": "menuItem",
+            "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
+            "Title": "Menu",
+            "Type": "menuItem",
+            "Url": "components/menu"
+          }
+        ]
+      },
+      {
+        "Order": 3,
+        "Title": "Data Entry",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "DatePicker",
+            "Type": "menuItem",
+            "Url": "components/datepicker"
+          }
+        ]
+      },
+      {
         "Order": 4,
         "Title": "Data Display",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "Empty",
+            "Type": "menuItem",
+            "Url": "components/empty"
+          },
           {
             "Order": 0,
             "Title": "Badge",
