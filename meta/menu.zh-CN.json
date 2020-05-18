@@ -145,6 +145,13 @@
           },
           {
             "Order": 0,
+            "Title": "Drawer",
+            "SubTitle": "抽屉",
+            "Type": "menuItem",
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
             "Title": "Notification",
             "SubTitle": "通知提醒框",
             "Type": "menuItem",

@@ -133,6 +133,12 @@
           },
           {
             "Order": 0,
+            "Title": "Drawer",
+            "Type": "menuItem",
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
             "Title": "Notification",
             "Type": "menuItem",
             "Url": "components/notification"
