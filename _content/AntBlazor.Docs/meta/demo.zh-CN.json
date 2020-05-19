@@ -616,6 +616,55 @@
     ]
   },
   {
+    "Title": "Tooltip",
+    "SubTitle": "文字提示",
+    "Type": "数据展示",
+    "Desc": "<p>简单的文字提示气泡框。</p>\n<h2>何时使用</h2>\n<p>鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。</p>\n<p>可用来代替系统默认的 <code>title</code> 提示，提供一个<code>按钮/文字/操作</code>的文案解释。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>title</td>\n<td>提示文字</td>\n<td>string|ReactNode|() =&gt; ReactNode</td>\n<td>无</td>\n</tr>\n</tbody>\n</table>\n<h3>共同的 API</h3>\n<p>以下 API 为 Tooltip、Popconfirm、Popover 共享的 API。</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>arrowPointAtCenter</td>\n<td>箭头是否指向目标元素中心</td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>autoAdjustOverflow</td>\n<td>气泡被遮挡时自动调整位置</td>\n<td>boolean</td>\n<td><code>true</code></td>\n<td></td>\n</tr>\n<tr>\n<td>defaultVisible</td>\n<td>默认是否显隐</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>getPopupContainer</td>\n<td>浮层渲染父节点，默认渲染到 body 上</td>\n<td>Function(triggerNode)</td>\n<td>() =&gt; document.body</td>\n<td></td>\n</tr>\n<tr>\n<td>mouseEnterDelay</td>\n<td>鼠标移入后延时多少才显示 Tooltip，单位：秒</td>\n<td>number</td>\n<td>0.1</td>\n<td></td>\n</tr>\n<tr>\n<td>mouseLeaveDelay</td>\n<td>鼠标移出后延时多少才隐藏 Tooltip，单位：秒</td>\n<td>number</td>\n<td>0.1</td>\n<td></td>\n</tr>\n<tr>\n<td>overlayClassName</td>\n<td>卡片类名</td>\n<td>string</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>overlayStyle</td>\n<td>卡片样式</td>\n<td>object</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>placement</td>\n<td>气泡框位置，可选 <code>top</code> <code>left</code> <code>right</code> <code>bottom</code> <code>topLeft</code> <code>topRight</code> <code>bottomLeft</code> <code>bottomRight</code> <code>leftTop</code> <code>leftBottom</code> <code>rightTop</code> <code>rightBottom</code></td>\n<td>string</td>\n<td>top</td>\n<td></td>\n</tr>\n<tr>\n<td>trigger</td>\n<td>触发行为，可选 <code>hover/focus/click/contextMenu</code>，可使用数组设置多个触发行为</td>\n<td>string | string[]</td>\n<td>hover</td>\n<td></td>\n</tr>\n<tr>\n<td>visible</td>\n<td>用于手动控制浮层显隐</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>onVisibleChange</td>\n<td>显示隐藏的回调</td>\n<td>(visible) =&gt; void</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>align</td>\n<td>该值将合并到 placement 的配置中，设置参考 <a href=\"https://github.com/react-component/tooltip\">rc-tooltip</a></td>\n<td>Object</td>\n<td>无</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>注意</h2>\n<p>请确保 <code>Tooltip</code> 的子元素能接受 <code>onMouseEnter</code>、<code>onMouseLeave</code>、<code>onFocus</code>、<code>onClick</code> 事件。</p>\n",
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法。</p>\n",
+        "Code": "<Tooltip Title=\"prompt text\">\n    <span>Tooltip will show on mouse enter.</span>\n</Tooltip>",
+        "Type": "Demos.Tooltip.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "autoadjustoverflow",
+        "Title": "自动调整位置",
+        "Description": "<p>气泡框不可见时自动调整位置</p>\n",
+        "Code": "<Tooltip Title=\"prompt text\">\n    <span>Tooltip will show on mouse enter.</span>\n</Tooltip>",
+        "Type": "Demos.Tooltip.demo.AutoAdjustOverflow",
+        "Style": "",
+        "Debug": true
+      },
+      {
+        "Order": 1,
+        "Name": "placement",
+        "Title": "位置",
+        "Description": "<p>位置有 12 个方向。</p>\n",
+        "Code": "<div class=\"demo\">\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); white-space: nowrap;\">\n        <Tooltip Placement=\"@PlacementType.TopLeft\" title=\"@Text\">\n            <AntButton>TL</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.TopCenter\" title=\"@Text\">\n            <AntButton>Top</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.TopRight\" title=\"@Text\">\n            <AntButton>TR</AntButton>\n        </Tooltip>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); float: left;\">\n        <Tooltip Placement=\"@PlacementType.LeftTop\" title=\"@Text\" >\n            <AntButton>LT</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.Left\" title=\"@Text\">\n            <AntButton>Left</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.LeftBottom\" title=\"@Text\">\n            <AntButton>LB</AntButton>\n        </Tooltip>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); margin-left: @($\"{ButtonWidth * 4 + 24}px\");\">\n        <Tooltip Placement=\"@PlacementType.RightTop\" title=\"@Text\">\n            <AntButton>RT</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.Right\" title=\"@Text\">\n            <AntButton>Right</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.RightBottom\" title=\"@Text\">\n            <AntButton>RB</AntButton>\n        </Tooltip>\n    </div>\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); clear: both; white-space: nowrap;\">\n        <Tooltip Placement=\"@PlacementType.BottomLeft\" title=\"@Text\">\n            <AntButton>BL</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.BottomCenter\" title=\"@Text\">\n            <AntButton>Bottom</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.BottomRight\" title=\"@Text\">\n            <AntButton>BR</AntButton>\n        </Tooltip>\n    </div>\n</div>\n\n@code\n{\n    public string Text = \"prompt text\";\n    const int ButtonWidth = 70;\n}",
+        "Type": "Demos.Tooltip.demo.Placement",
+        "Style": "\n.code-box-demo .demo {\n  overflow: auto;\n}\n.code-box-demo .ant-btn {\n  margin-right: 8px;\n  margin-bottom: 8px;\n}\n.code-box-demo .ant-btn-rtl {\n  margin-right: 0;\n  margin-left: 8px;\n  margin-bottom: 8px;\n}\n#components-tooltip-demo-placement .ant-btn {\n  width: 70px;\n  text-align: center;\n  padding: 0;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "arrowpointatcenter",
+        "Title": "箭头指向",
+        "Description": "<p>设置了 <code>arrowPointAtCenter</code> 后，箭头将指向目标元素的中心。</p>\n",
+        "Code": "<div>\n    <Tooltip Placement=\"PlacementType.TopLeft\" Title=\"Prompt Text\">\n        <AntButton>Align edge / 边缘对齐</AntButton>\n    </Tooltip>\n    <Tooltip Placement=\"PlacementType.TopLeft\" Title=\"Prompt Text\" ArrowPointAtCenter=\"true\">\n        <AntButton>Arrow points to center / 箭头指向中心</AntButton>\n    </Tooltip>\n</div>",
+        "Type": "Demos.Tooltip.demo.ArrowPointAtCenter",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "SubTitle": "警告提示",
     "Type": "反馈",

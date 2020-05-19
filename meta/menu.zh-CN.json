@@ -110,6 +110,13 @@
           },
           {
             "Order": 0,
+            "Title": "Tooltip",
+            "SubTitle": "文字提示",
+            "Type": "menuItem",
+            "Url": "components/tooltip"
+          },
+          {
+            "Order": 0,
             "Title": "Badge",
             "SubTitle": "徽标数",
             "Type": "menuItem",

@@ -609,6 +609,54 @@
     ]
   },
   {
+    "Title": "Tooltip",
+    "Type": "Data Display",
+    "Desc": "<p>A simple text popup tip.</p>\n<h2>When To Use</h2>\n<ul>\n<li>The tip is shown on mouse enter, and is hidden on mouse leave. The Tooltip doesn't support complex text or operations.</li>\n<li>To provide an explanation of a <code>button/text/operation</code>. It's often used instead of the html <code>title</code> attribute.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>title</td>\n<td>The text shown in the tooltip</td>\n<td>string|ReactNode|() =&gt; ReactNode</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3>Common API</h3>\n<p>The following APIs are shared by Tooltip, Popconfirm, Popover.</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>arrowPointAtCenter</td>\n<td>Whether the arrow is pointed at the center of target</td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>autoAdjustOverflow</td>\n<td>Whether to adjust popup placement automatically when popup is off screen</td>\n<td>boolean</td>\n<td><code>true</code></td>\n<td></td>\n</tr>\n<tr>\n<td>defaultVisible</td>\n<td>Whether the floating tooltip card is visible by default</td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>getPopupContainer</td>\n<td>The DOM container of the tip, the default behavior is to create a <code>div</code> element in <code>body</code></td>\n<td>Function(triggerNode)</td>\n<td>() =&gt; document.body</td>\n<td></td>\n</tr>\n<tr>\n<td>mouseEnterDelay</td>\n<td>Delay in seconds, before tooltip is shown on mouse enter</td>\n<td>number</td>\n<td>0.1</td>\n<td></td>\n</tr>\n<tr>\n<td>mouseLeaveDelay</td>\n<td>Delay in seconds, before tooltip is hidden on mouse leave</td>\n<td>number</td>\n<td>0.1</td>\n<td></td>\n</tr>\n<tr>\n<td>overlayClassName</td>\n<td>Class name of the tooltip card</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>overlayStyle</td>\n<td>Style of the tooltip card</td>\n<td>object</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>placement</td>\n<td>The position of the tooltip relative to the target, which can be one of <code>top</code> <code>left</code> <code>right</code> <code>bottom</code> <code>topLeft</code> <code>topRight</code> <code>bottomLeft</code> <code>bottomRight</code> <code>leftTop</code> <code>leftBottom</code> <code>rightTop</code> <code>rightBottom</code></td>\n<td>string</td>\n<td><code>top</code></td>\n<td></td>\n</tr>\n<tr>\n<td>trigger</td>\n<td>Tooltip trigger mode. Could be multiple by passing an array</td>\n<td><code>hover</code> | <code>focus</code> | <code>click</code> | <code>contextMenu</code> | <code>Array&lt;string&gt;</code></td>\n<td><code>hover</code></td>\n<td></td>\n</tr>\n<tr>\n<td>visible</td>\n<td>Whether the floating tooltip card is visible or not</td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>onVisibleChange</td>\n<td>Callback executed when visibility of the tooltip card is changed</td>\n<td>(visible) =&gt; void</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>align</td>\n<td>this value will be merged into placement's config, please refer to the settings <a href=\"https://github.com/react-component/tooltip\">rc-tooltip</a></td>\n<td>Object</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>Note</h2>\n<p>Please ensure that the child node of <code>Tooltip</code> accepts <code>onMouseEnter</code>, <code>onMouseLeave</code>, <code>onFocus</code>, <code>onClick</code> events.</p>\n",
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>The simplest usage.</p>\n",
+        "Code": "<Tooltip Title=\"prompt text\">\n    <span>Tooltip will show on mouse enter.</span>\n</Tooltip>",
+        "Type": "Demos.Tooltip.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "autoadjustoverflow",
+        "Title": "Adjust placement automatically",
+        "Description": "<p>Adjust placement automatically when tooltip is invisible.</p>\n",
+        "Code": "<Tooltip Title=\"prompt text\">\n    <span>Tooltip will show on mouse enter.</span>\n</Tooltip>",
+        "Type": "Demos.Tooltip.demo.AutoAdjustOverflow",
+        "Style": "",
+        "Debug": true
+      },
+      {
+        "Order": 1,
+        "Name": "placement",
+        "Title": "Placement",
+        "Description": "<p>There are 12 placement options available.</p>\n",
+        "Code": "<div class=\"demo\">\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); white-space: nowrap;\">\n        <Tooltip Placement=\"@PlacementType.TopLeft\" title=\"@Text\">\n            <AntButton>TL</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.TopCenter\" title=\"@Text\">\n            <AntButton>Top</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.TopRight\" title=\"@Text\">\n            <AntButton>TR</AntButton>\n        </Tooltip>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); float: left;\">\n        <Tooltip Placement=\"@PlacementType.LeftTop\" title=\"@Text\" >\n            <AntButton>LT</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.Left\" title=\"@Text\">\n            <AntButton>Left</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.LeftBottom\" title=\"@Text\">\n            <AntButton>LB</AntButton>\n        </Tooltip>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); margin-left: @($\"{ButtonWidth * 4 + 24}px\");\">\n        <Tooltip Placement=\"@PlacementType.RightTop\" title=\"@Text\">\n            <AntButton>RT</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.Right\" title=\"@Text\">\n            <AntButton>Right</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.RightBottom\" title=\"@Text\">\n            <AntButton>RB</AntButton>\n        </Tooltip>\n    </div>\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); clear: both; white-space: nowrap;\">\n        <Tooltip Placement=\"@PlacementType.BottomLeft\" title=\"@Text\">\n            <AntButton>BL</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.BottomCenter\" title=\"@Text\">\n            <AntButton>Bottom</AntButton>\n        </Tooltip>\n        <Tooltip Placement=\"@PlacementType.BottomRight\" title=\"@Text\">\n            <AntButton>BR</AntButton>\n        </Tooltip>\n    </div>\n</div>\n\n@code\n{\n    public string Text = \"prompt text\";\n    const int ButtonWidth = 70;\n}",
+        "Type": "Demos.Tooltip.demo.Placement",
+        "Style": "\n.code-box-demo .demo {\n  overflow: auto;\n}\n.code-box-demo .ant-btn {\n  margin-right: 8px;\n  margin-bottom: 8px;\n}\n.code-box-demo .ant-btn-rtl {\n  margin-right: 0;\n  margin-left: 8px;\n  margin-bottom: 8px;\n}\n#components-tooltip-demo-placement .ant-btn {\n  width: 70px;\n  text-align: center;\n  padding: 0;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "arrowpointatcenter",
+        "Title": "Arrow pointing at the center",
+        "Description": "<p>By specifying <code>arrowPointAtCenter</code> prop, the arrow will point to the center of the target element.</p>\n",
+        "Code": "<div>\n    <Tooltip Placement=\"PlacementType.TopLeft\" Title=\"Prompt Text\">\n        <AntButton>Align edge / 边缘对齐</AntButton>\n    </Tooltip>\n    <Tooltip Placement=\"PlacementType.TopLeft\" Title=\"Prompt Text\" ArrowPointAtCenter=\"true\">\n        <AntButton>Arrow points to center / 箭头指向中心</AntButton>\n    </Tooltip>\n</div>",
+        "Type": "Demos.Tooltip.demo.ArrowPointAtCenter",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "Type": "Feedback",
     "Desc": "<p>Alert component for feedback.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When you need to show alert messages to users.</li>\n<li>When you need a persistent static container which is closable by user actions.</li>\n</ul>\n",
