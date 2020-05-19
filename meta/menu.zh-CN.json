@@ -61,6 +61,13 @@
           },
           {
             "Order": 0,
+            "Title": "Pagination",
+            "SubTitle": "分页",
+            "Type": "menuItem",
+            "Url": "components/pagination"
+          },
+          {
+            "Order": 0,
             "Title": "Menu",
             "SubTitle": "导航菜单",
             "Type": "menuItem",

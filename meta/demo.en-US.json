@@ -924,6 +924,115 @@
     ]
   },
   {
+    "Title": "Pagination",
+    "Type": "Navigation",
+    "Desc": "<p>A long list can be divided into several pages using <code>Pagination</code>, and only one page will be loaded at a time.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When it will take a long time to load/render all items.</li>\n<li>If you want to browse the data by navigating through pages.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<pre><code class=\"language-jsx\">&lt;Pagination onChange={onChange} total={50} /&gt;\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Current</td>\n<td>Current page number</td>\n<td>number</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>DefaultCurrent</td>\n<td>Default initial page number</td>\n<td>number</td>\n<td>1</td>\n<td></td>\n</tr>\n<tr>\n<td>DefaultPageSize</td>\n<td>Default number of data items per page</td>\n<td>number</td>\n<td>10</td>\n<td></td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>Disable pagination</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>HideOnSinglePage</td>\n<td>Whether to hide pager on single page</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>ItemRender</td>\n<td>To customize item's innerHTML</td>\n<td>(page, type: 'page' | 'prev' | 'next', originalElement) =&gt; React.ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>PageSize</td>\n<td>Number of data items per page</td>\n<td>number</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>PageSizeOptions</td>\n<td>Specify the sizeChanger options</td>\n<td>string[]</td>\n<td>['10', '20', '50', '100']</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowLessItems</td>\n<td>Show less page items</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowQuickJumper</td>\n<td>Determine whether you can jump to pages directly</td>\n<td>boolean | <code>{ goButton: ReactNode }</code></td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowSizeChanger</td>\n<td>Determine whether to show <code>pageSize</code> select, it will be <code>true</code> when <code>total&gt;=50</code></td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowTitle</td>\n<td>Show page item's title</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowTotal</td>\n<td>To display the total number and range</td>\n<td>Function(total, range)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Simple</td>\n<td>Whether to use simple mode</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Size</td>\n<td>Specify the size of <code>Pagination</code>, can be set to <code>small</code>.</td>\n<td>'default' | 'small'.</td>\n<td>&quot;&quot;</td>\n<td></td>\n</tr>\n<tr>\n<td>Responsive</td>\n<td>If <code>size</code> is not specified, <code>Pagination</code> would resize according to the width of the window</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Total</td>\n<td>Total number of data items</td>\n<td>number</td>\n<td>0</td>\n<td></td>\n</tr>\n<tr>\n<td>OnChange</td>\n<td>Called when the page number is changed, and it takes the resulting page number and pageSize as its arguments</td>\n<td>Function(page, pageSize)</td>\n<td>noop</td>\n<td></td>\n</tr>\n<tr>\n<td>OnShowSizeChange</td>\n<td>Called when <code>pageSize</code> is changed</td>\n<td>Function(current, size)</td>\n<td>noop</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 1,
+        "Name": "more",
+        "Title": "More",
+        "Description": "<p>More pages.</p>\n",
+        "Code": "<Pagination DefaultCurrent=\"6\" Total=\"500\" />",
+        "Type": "Demos.Pagination.demo.More",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "total",
+        "Title": "Total number",
+        "Description": "<p>You can show the total number of data by setting <code>showTotal</code>.</p>\n",
+        "Code": "<div>\n    <Pagination\n        Total=\"85\"\n        ShowTotal=showTotal\n        PageSize=\"20\"\n        DefaultCurrent=\"1\"\n    />\n    <br />\n    <Pagination\n        Total=\"85\"\n        ShowTotal=showTotal2\n        PageSize=\"20\"\n        DefaultCurrent=\"1\"\n    />\n</div>\n\n@code{\n    Func<PaginationTotalContext, string> showTotal =  ctx => $\"Total {ctx.Total} items\";\n    Func<PaginationTotalContext, string> showTotal2 =  ctx => $\"{ctx.Range.Item1}-{ctx.Range.Item2} of {ctx.Total} items\";\n}",
+        "Type": "Demos.Pagination.demo.Total",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "changer",
+        "Title": "Changer",
+        "Description": "<p>Change <code>pageSize</code>.</p>\n",
+        "Code": "<h3>Changer</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Pagination.demo.Changer",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Basic pagination.</p>\n",
+        "Code": "<Pagination PageIndex=\"1\" Total=\"50\"></Pagination>",
+        "Type": "Demos.Pagination.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "controlled",
+        "Title": "Controlled",
+        "Description": "<p>Controlled page number.</p>\n",
+        "Code": "<Pagination @bind-Current=\"@current\" OnChange=onChange Total=\"50\" />\n\n@code {\n    int current = 3;\n\n    void onChange(int page)\n    {\n        Console.WriteLine(page);\n        current = page;\n    }\n}\n",
+        "Type": "Demos.Pagination.demo.Controlled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "all",
+        "Title": "Show All",
+        "Description": "<p>Show all configured prop.</p>\n",
+        "Code": "<div>\n    <Pagination\n        Total=\"85\"\n        ShowSizeChanger\n        ShowQuickJumper\n        ShowTotal=@showTotal\n    />\n</div>\n\n@code{\n    Func<PaginationTotalContext, string> showTotal =  ctx => $\"Total {ctx.Total} items\";\n}\n",
+        "Type": "Demos.Pagination.demo.All",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "simple",
+        "Title": "Simple mode",
+        "Description": "<p>Simple mode.</p>\n",
+        "Code": "<Pagination Simple DefaultCurrent=\"2\" Total=\"50\" />",
+        "Type": "Demos.Pagination.demo.Simple",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "mini",
+        "Title": "Mini size",
+        "Description": "<p>Mini size pagination.</p>\n",
+        "Code": "<div>\n    <Pagination Size=\"small\" Total=\"50\" />\n    <Pagination Size=\"small\" Total=\"50\" ShowSizeChanger ShowQuickJumper />\n    <Pagination Size=\"small\" Total=\"50\" ShowTotal=showTotal />\n</div>\n\n@code\n{\n    Func<PaginationTotalContext, string> showTotal =  ctx => $\"Total {ctx.Total} items\";\n}\n",
+        "Type": "Demos.Pagination.demo.Mini",
+        "Style": "\n#components-pagination-demo-mini .ant-pagination:not(:last-child) {\n  margin-bottom: 24px;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "jump",
+        "Title": "Jumper",
+        "Description": "<p>Jump to a page directly.</p>\n",
+        "Code": "<div>\n    <Pagination ShowQuickJumper DefaultCurrent=\"2\" Total=\"500\" OnChange=onChange />\n    <br />\n    <Pagination ShowQuickJumper DefaultCurrent=\"2\" Total=\"500\" OnChange=onChange Disabled />\n</div>\n@code{\n\n    void onChange(int pageNumber) {\n        Console.WriteLine($\"Page: {pageNumber}\");\n    }\n\n}\n",
+        "Type": "Demos.Pagination.demo.Jump",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "itemrender",
+        "Title": "Prev and next",
+        "Description": "<p>Use text link for prev and next button.</p>\n",
+        "Code": "<Pagination Total=\"500\" ItemRender=itemRender />\n\n@code {\n\n    RenderFragment<PaginationItemRenderContext> itemRender = ctx =>\n        @<Template>\n            @if (ctx.Type == \"prev\") {\n                <a>Previous</a>\n            }\n            else if (ctx.Type == \"next\") {\n                <a>Next</a>\n            }\n            else\n            {\n                @ctx.DefaultRender(ctx)\n            }\n        </Template>;\n\n}\n",
+        "Type": "Demos.Pagination.demo.ItemRender",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Drawer",
     "Type": "Feedback",
     "Desc": "<p>A panel which slides in from the edge of the screen.</p>\n<h2>When To Use</h2>\n<p>A Drawer is a panel that is typically overlaid on top of a page and slides in from the side.\nIt contains a set of information or actions.<br />\nSince the user can interact with the Drawer without leaving the current page,\ntasks can be achieved more efficiently within thesame context.</p>\n<ul>\n<li>Use a Form to create or edit a set of information.</li>\n<li>Processing subtasks. When subtasks are too heavy for a Popover and we still want to keep the subtasks in the context of the main task,\nDrawer comes very handy.</li>\n<li>When the same Form is needed in multiple places.</li>\n</ul>\n",

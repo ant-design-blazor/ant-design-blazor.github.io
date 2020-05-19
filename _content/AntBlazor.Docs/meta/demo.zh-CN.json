@@ -934,6 +934,116 @@
     ]
   },
   {
+    "Title": "Pagination",
+    "SubTitle": "分页",
+    "Type": "导航",
+    "Desc": "<p>采用分页的形式分隔长列表，每次只加载一个页面。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当加载/渲染所有数据将花费很多时间时；</li>\n<li>可切换页码浏览数据。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<pre><code class=\"language-jsx\">&lt;Pagination onChange={onChange} total={50} /&gt;\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Current</td>\n<td>当前页数</td>\n<td>number</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>DefaultCurrent</td>\n<td>默认的当前页数</td>\n<td>number</td>\n<td>1</td>\n<td></td>\n</tr>\n<tr>\n<td>DefaultPageSize</td>\n<td>默认的每页条数</td>\n<td>number</td>\n<td>10</td>\n<td></td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>禁用分页</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>HideOnSinglePage</td>\n<td>只有一页时是否隐藏分页器</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>ItemRender</td>\n<td>用于自定义页码的结构，可用于优化 SEO</td>\n<td>(page, type: 'page' | 'prev' | 'next', originalElement) =&gt; React.ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>PageSize</td>\n<td>每页条数</td>\n<td>number</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>PageSizeOptions</td>\n<td>指定每页可以显示多少条</td>\n<td>string[]</td>\n<td>['10', '20', '50', '100']</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowLessItems</td>\n<td>是否显示较少页面内容</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowQuickJumper</td>\n<td>是否可以快速跳转至某页</td>\n<td>boolean | <code>{ goButton: ReactNode }</code></td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowSizeChanger</td>\n<td>是否展示 <code>pageSize</code> 切换器，当 <code>total</code> 大于 <code>50</code> 时默认为 <code>true</code></td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowTitle</td>\n<td>是否显示原生 tooltip 页码提示</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowTotal</td>\n<td>用于显示数据总量和当前数据顺序</td>\n<td>Function(total, range)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Simple</td>\n<td>当添加该属性时，显示为简单分页</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Size</td>\n<td>当为「small」时，是小尺寸分页</td>\n<td>'default' | 'small'</td>\n<td>&quot;&quot;</td>\n<td></td>\n</tr>\n<tr>\n<td>Responsive</td>\n<td>当 size 未指定时，根据屏幕宽度自动调整尺寸</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Total</td>\n<td>数据总数</td>\n<td>number</td>\n<td>0</td>\n<td></td>\n</tr>\n<tr>\n<td>OnChange</td>\n<td>页码改变的回调，参数是改变后的页码及每页条数</td>\n<td>Function(page, pageSize)</td>\n<td>noop</td>\n<td></td>\n</tr>\n<tr>\n<td>OnShowSizeChange</td>\n<td>pageSize 变化的回调</td>\n<td>Function(current, size)</td>\n<td>noop</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 1,
+        "Name": "more",
+        "Title": "更多",
+        "Description": "<p>更多分页。</p>\n",
+        "Code": "<Pagination DefaultCurrent=\"6\" Total=\"500\" />",
+        "Type": "Demos.Pagination.demo.More",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "total",
+        "Title": "总数",
+        "Description": "<p>通过设置 <code>showTotal</code> 展示总共有多少数据。</p>\n",
+        "Code": "<div>\n    <Pagination\n        Total=\"85\"\n        ShowTotal=showTotal\n        PageSize=\"20\"\n        DefaultCurrent=\"1\"\n    />\n    <br />\n    <Pagination\n        Total=\"85\"\n        ShowTotal=showTotal2\n        PageSize=\"20\"\n        DefaultCurrent=\"1\"\n    />\n</div>\n\n@code{\n    Func<PaginationTotalContext, string> showTotal =  ctx => $\"Total {ctx.Total} items\";\n    Func<PaginationTotalContext, string> showTotal2 =  ctx => $\"{ctx.Range.Item1}-{ctx.Range.Item2} of {ctx.Total} items\";\n}",
+        "Type": "Demos.Pagination.demo.Total",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "changer",
+        "Title": "改变",
+        "Description": "<p>改变每页显示条目数。</p>\n",
+        "Code": "<h3>Changer</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Pagination.demo.Changer",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>基础分页。</p>\n",
+        "Code": "<Pagination PageIndex=\"1\" Total=\"50\"></Pagination>",
+        "Type": "Demos.Pagination.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "controlled",
+        "Title": "受控",
+        "Description": "<p>受控制的页码。</p>\n",
+        "Code": "<Pagination @bind-Current=\"@current\" OnChange=onChange Total=\"50\" />\n\n@code {\n    int current = 3;\n\n    void onChange(int page)\n    {\n        Console.WriteLine(page);\n        current = page;\n    }\n}\n",
+        "Type": "Demos.Pagination.demo.Controlled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "all",
+        "Title": "全部展示",
+        "Description": "<p>展示所有配置选项。</p>\n",
+        "Code": "<div>\n    <Pagination\n        Total=\"85\"\n        ShowSizeChanger\n        ShowQuickJumper\n        ShowTotal=@showTotal\n    />\n</div>\n\n@code{\n    Func<PaginationTotalContext, string> showTotal =  ctx => $\"Total {ctx.Total} items\";\n}\n",
+        "Type": "Demos.Pagination.demo.All",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "simple",
+        "Title": "简洁",
+        "Description": "<p>简单的翻页。</p>\n",
+        "Code": "<Pagination Simple DefaultCurrent=\"2\" Total=\"50\" />",
+        "Type": "Demos.Pagination.demo.Simple",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "mini",
+        "Title": "迷你",
+        "Description": "<p>迷你版本。</p>\n",
+        "Code": "<div>\n    <Pagination Size=\"small\" Total=\"50\" />\n    <Pagination Size=\"small\" Total=\"50\" ShowSizeChanger ShowQuickJumper />\n    <Pagination Size=\"small\" Total=\"50\" ShowTotal=showTotal />\n</div>\n\n@code\n{\n    Func<PaginationTotalContext, string> showTotal =  ctx => $\"Total {ctx.Total} items\";\n}\n",
+        "Type": "Demos.Pagination.demo.Mini",
+        "Style": "\n#components-pagination-demo-mini .ant-pagination:not(:last-child) {\n  margin-bottom: 24px;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "jump",
+        "Title": "跳转",
+        "Description": "<p>快速跳转到某一页。</p>\n",
+        "Code": "<div>\n    <Pagination ShowQuickJumper DefaultCurrent=\"2\" Total=\"500\" OnChange=onChange />\n    <br />\n    <Pagination ShowQuickJumper DefaultCurrent=\"2\" Total=\"500\" OnChange=onChange Disabled />\n</div>\n@code{\n\n    void onChange(int pageNumber) {\n        Console.WriteLine($\"Page: {pageNumber}\");\n    }\n\n}\n",
+        "Type": "Demos.Pagination.demo.Jump",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "itemrender",
+        "Title": "上一步和下一步",
+        "Description": "<p>修改上一步和下一步为文字链接。</p>\n",
+        "Code": "<Pagination Total=\"500\" ItemRender=itemRender />\n\n@code {\n\n    RenderFragment<PaginationItemRenderContext> itemRender = ctx =>\n        @<Template>\n            @if (ctx.Type == \"prev\") {\n                <a>Previous</a>\n            }\n            else if (ctx.Type == \"next\") {\n                <a>Next</a>\n            }\n            else\n            {\n                @ctx.DefaultRender(ctx)\n            }\n        </Template>;\n\n}\n",
+        "Type": "Demos.Pagination.demo.ItemRender",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Drawer",
     "SubTitle": "抽屉",
     "Type": "反馈",

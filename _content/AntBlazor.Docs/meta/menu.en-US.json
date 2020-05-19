@@ -58,6 +58,12 @@
           },
           {
             "Order": 0,
+            "Title": "Pagination",
+            "Type": "menuItem",
+            "Url": "components/pagination"
+          },
+          {
+            "Order": 0,
             "Title": "Menu",
             "Type": "menuItem",
             "Url": "components/menu"
