@@ -285,6 +285,134 @@
     ]
   },
   {
+    "Title": "Progress",
+    "Type": "Feedback",
+    "Desc": "<p>Display the current progress of an operation flow.</p>\n<h2>When To Use</h2>\n<p>If it will take a long time to complete an operation, you can use <code>Progress</code> to show the current progress and status.</p>\n<ul>\n<li>When an operation will interrupt the current interface, or it needs to run in the background for more than 2 seconds.</li>\n<li>When you need to display the completion percentage of an operation.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>Properties that shared by all types.</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>type</td>\n<td>to set the type, options: <code>line</code> <code>circle</code> <code>dashboard</code></td>\n<td>string</td>\n<td><code>line</code></td>\n</tr>\n<tr>\n<td>format</td>\n<td>template function of the content</td>\n<td>function(percent, successPercent)</td>\n<td><code>percent =&gt; percent + '%'</code></td>\n</tr>\n<tr>\n<td>percent</td>\n<td>to set the completion percentage</td>\n<td>number</td>\n<td>0</td>\n</tr>\n<tr>\n<td>showInfo</td>\n<td>whether to display the progress value and the status icon</td>\n<td>boolean</td>\n<td>true</td>\n</tr>\n<tr>\n<td>status</td>\n<td>to set the status of the Progress, options: <code>success</code> <code>exception</code> <code>normal</code> <code>active</code>(line only)</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>strokeLinecap</td>\n<td>to set the style of the progress linecap</td>\n<td><code>round</code> | <code>square</code></td>\n<td><code>round</code></td>\n</tr>\n<tr>\n<td>strokeColor</td>\n<td>color of progress bar</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>successPercent</td>\n<td>segmented success percent</td>\n<td>number</td>\n<td>0</td>\n</tr>\n<tr>\n<td>trailColor</td>\n<td>color of unfilled part</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3><code>type=&quot;line&quot;</code></h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>strokeWidth</td>\n<td>to set the width of the progress bar, unit: <code>px</code></td>\n<td>number</td>\n<td>10</td>\n</tr>\n<tr>\n<td>strokeColor</td>\n<td>color of progress bar, render <code>linear-gradient</code> when passing an object</td>\n<td>string | { from: string; to: string; direction: string }</td>\n<td>-</td>\n</tr>\n<tr>\n<td>steps</td>\n<td>the total step count</td>\n<td>number</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3><code>type=&quot;circle&quot;</code></h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>width</td>\n<td>to set the canvas width of the circular progress, unit: <code>px</code></td>\n<td>number</td>\n<td>132</td>\n</tr>\n<tr>\n<td>strokeWidth</td>\n<td>to set the width of the circular progress, unit: percentage of the canvas width</td>\n<td>number</td>\n<td>6</td>\n</tr>\n<tr>\n<td>strokeColor</td>\n<td>color of circular progress, render <code>linear-gradient</code> when passing an object</td>\n<td>string | object</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3><code>type=&quot;dashboard&quot;</code></h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>width</td>\n<td>to set the canvas width of the dashboard progress, unit: <code>px</code></td>\n<td>number</td>\n<td>132</td>\n</tr>\n<tr>\n<td>strokeWidth</td>\n<td>to set the width of the dashboard progress, unit: percentage of the canvas width</td>\n<td>number</td>\n<td>6</td>\n</tr>\n<tr>\n<td>gapDegree</td>\n<td>the gap degree of half circle, 0 ~ 360</td>\n<td>number</td>\n<td>0</td>\n</tr>\n<tr>\n<td>gapPosition</td>\n<td>the gap position, options: <code>top</code> <code>bottom</code> <code>left</code> <code>right</code></td>\n<td>string</td>\n<td><code>top</code></td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "circledynamic",
+        "Title": "Dynamic circular progress bar",
+        "Description": "<p>A dynamic progress bar is better.</p>\n",
+        "Code": "<div>\n    <Progress Percent=_percent Type=ProgressType.Circle />\n    <AntButtonGroup>\n        <AntButton OnClick=Decline Icon=Minus />\n        <AntButton OnClick=Increase Icon=Plus />\n    </AntButtonGroup>\n</div>\n\n@code{\n    private int _percent = 0;\n\n    private void Decline()\n    {\n        _percent -= 10;\n        if (_percent < 0)\n        {\n            _percent = 0;\n        }\n    }\n\n    private void Increase()\n    {\n        _percent += 10;\n        if (_percent > 100)\n        {\n            _percent = 100;\n        }\n    }\n}",
+        "Type": "Demos.Progress.demo.CircleDynamic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "dynamic",
+        "Title": "Dynamic",
+        "Description": "<p>A dynamic progress bar is better.</p>\n",
+        "Code": "<div>\n    <Progress Percent=_percent/>\n    <AntButtonGroup>\n        <AntButton OnClick=Decline Icon=Minus />\n        <AntButton OnClick=Increase Icon=Plus />\n    </AntButtonGroup>\n</div>\n\n@code{\n    private int _percent = 0;\n\n    private void Decline()\n    {\n        _percent -= 10;\n        if (_percent < 0)\n        {\n            _percent = 0;\n        }\n    }\n\n    private void Increase()\n    {\n        _percent += 10;\n        if (_percent > 100)\n        {\n            _percent = 100;\n        }\n    }\n}",
+        "Type": "Demos.Progress.demo.Dynamic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "steps",
+        "Title": "Progress bar with steps",
+        "Description": "<p>A progress bar with steps.</p>\n",
+        "Code": "<div>\n    <Progress Percent=50 Steps=3 StrokeColor=_color />\n    <br />\n    <Progress Percent=30 Steps=5 StrokeColor=_color />\n    <br />\n    <Progress Percent=100 Steps=5 Size=ProgressSize.Small StrokeColor=_color />\n</div>\n\n@code{\n    private string _color = \"#1890ff\";\n}",
+        "Type": "Demos.Progress.demo.Steps",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "circlemini",
+        "Title": "Mini size circular progress bar",
+        "Description": "<p>A smaller circular progress bar.</p>\n",
+        "Code": "<div>\n    <Progress Type=ProgressType.Circle Percent=75 Size=ProgressSize.Small />\n    <Progress Type=ProgressType.Circle Percent=70 Size=ProgressSize.Small Status=\"ProgressStatus.Exception\" />\n    <Progress Type=ProgressType.Circle Percent=100 Size=ProgressSize.Small />\n</div>",
+        "Type": "Demos.Progress.demo.CircleMini",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "dashboard",
+        "Title": "Dashboard",
+        "Description": "<p>By setting <code>type=dashboard</code>, you can get a dashboard style of progress easily.</p>\n",
+        "Code": "<Progress Type=ProgressType.Dashboard Percent=75 />\n<Progress Type=\"ProgressType.Dashboard\" Percent=75 GapDegree=30 />",
+        "Type": "Demos.Progress.demo.Dashboard",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "linemini",
+        "Title": "Mini size progress bar",
+        "Description": "<p>Appropriate for a narrow area.</p>\n",
+        "Code": "<div style=\"width: 170px;\">\n    <Progress Percent=\"30\" Size=\"@ProgressSize.Small\" />\n    <Progress Percent=\"50\" Size=\"@ProgressSize.Small\" Status=\"ProgressStatus.Active\" />\n    <Progress Percent=\"70\" Size=\"@ProgressSize.Small\" Status=\"ProgressStatus.Exception\" />\n    <Progress Percent=\"100\" Size=\"@ProgressSize.Small\" />\n</div>",
+        "Type": "Demos.Progress.demo.LineMini",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "gradientline",
+        "Title": "Custom line gradient",
+        "Description": "<p>A package of <code>linear-gradient</code>. It is recommended to only pass two colors.</p>\n",
+        "Code": "<div>\n    <Progress StrokeColor=_gradients Percent=99.9 />\n    <Progress StrokeColor=_gradients Percent=99.9 Status=ProgressStatus.Active />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=90 />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=100 />\n</div>\n\n@code{\n    private Dictionary<int, string> _gradients = new Dictionary<int, string>()\n{\n        { 0,\"#108ee9\"},\n        { 100,\"#87d068\"}\n    };\n}",
+        "Type": "Demos.Progress.demo.GradientLine",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "segment",
+        "Title": "Progress bar with success segment",
+        "Description": "<p>A standard progress bar.</p>\n",
+        "Code": "<div>\n    <Progress Percent=60 SuccessPercent=30 />\n    <Progress Percent=60 SuccessPercent=30 Type=ProgressType.Circle />\n    <Progress Percent=60 SuccessPercent=30 Type=ProgressType.Dashboard />\n</div>",
+        "Type": "Demos.Progress.demo.Segment",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "format",
+        "Title": "Custom text format",
+        "Description": "<p>You can set a custom text by setting the <code>format</code> prop.</p>\n",
+        "Code": "<div>\n    <Progress Type=ProgressType.Circle Percent=75 Format=_fortmat1 />\n    <Progress Type=ProgressType.Circle Percent=100 Format=_fortmat2 />\n\n</div>\n\n@code{\n    private Func<double, string> _fortmat1 = (p) => $\"{p} Days\";\n    private Func<double, string> _fortmat2 = (p) => \"Done\";\n}",
+        "Type": "Demos.Progress.demo.Format",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "line",
+        "Title": "Progress bar",
+        "Description": "<p>A standard progress bar.</p>\n",
+        "Code": "<div>\n    <Progress Percent=30 />\n    <Progress Percent=50 Status=\"@ProgressStatus.Active\" />\n    <Progress Percent=70 Status=\"@ProgressStatus.Exception\" />\n    <Progress Percent=100 />\n    <Progress Percent=50 ShowInfo=\"false\" />\n</div>",
+        "Type": "Demos.Progress.demo.Line",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "linecap",
+        "Title": "Square linecaps",
+        "Description": "<p>By setting <code>strokeLinecap=&quot;square&quot;</code>, you can change the linecaps from round to square.</p>\n",
+        "Code": "<div>\n    <Progress StrokeLinecap=ProgressStrokeLinecap.Square Percent=75 />\n    <Progress StrokeLinecap=ProgressStrokeLinecap.Square Type=ProgressType.Circle Percent=75 />\n    <Progress StrokeLinecap=ProgressStrokeLinecap.Square Type=ProgressType.Dashboard Percent=75 />\n</div>",
+        "Type": "Demos.Progress.demo.Linecap",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "circle",
+        "Title": "Circular progress bar",
+        "Description": "<p>A circular progress bar.</p>\n",
+        "Code": "<style>\n    .ant-progress-circle-wrap,\n    .ant-progress-line-wrap {\n        margin-right: 8px;\n        margin-bottom: 5px;\n    }\n</style>\n\n<div>\n    <Progress Type=\"ProgressType.Circle\" Percent=75 />\n    <Progress Type=\"ProgressType.Circle\" Percent=70 Status=\"ProgressStatus.Exception\" />\n    <Progress Type=\"ProgressType.Circle\" Percent=100 />\n</div>",
+        "Type": "Demos.Progress.demo.Circle",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Dropdown",
     "Type": "Navigation",
     "Desc": "<p>A dropdown list.</p>\n<h2>When To Use</h2>\n<p>When there are more than a few options to choose from, you can wrap them in a <code>Dropdown</code>. By hovering or clicking on the trigger, a dropdown menu will appear, which allows you to choose an option and execute the relevant action.</p>\n",

@@ -127,6 +127,12 @@
           },
           {
             "Order": 0,
+            "Title": "Progress",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
             "Title": "Alert",
             "Type": "menuItem",
             "Url": "components/alert"

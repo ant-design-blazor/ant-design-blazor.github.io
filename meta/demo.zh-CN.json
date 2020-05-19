@@ -289,6 +289,135 @@
     ]
   },
   {
+    "Title": "Progress",
+    "SubTitle": "进度条",
+    "Type": "反馈",
+    "Desc": "<p>展示操作的当前进度。</p>\n<h2>何时使用</h2>\n<p>在操作需要较长时间才能完成时，为用户显示该操作的当前进度和状态。</p>\n<ul>\n<li>当一个操作会打断当前界面，或者需要在后台运行，且耗时可能超过 2 秒时；</li>\n<li>当需要显示一个操作完成的百分比时。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>各类型共用的属性。</p>\n<table>\n<thead>\n<tr>\n<th>属性</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>type</td>\n<td>类型，可选 <code>line</code> <code>circle</code> <code>dashboard</code></td>\n<td>string</td>\n<td><code>line</code></td>\n</tr>\n<tr>\n<td>format</td>\n<td>内容的模板函数</td>\n<td>function(percent, successPercent)</td>\n<td><code>percent =&gt; percent + '%'</code></td>\n</tr>\n<tr>\n<td>percent</td>\n<td>百分比</td>\n<td>number</td>\n<td>0</td>\n</tr>\n<tr>\n<td>showInfo</td>\n<td>是否显示进度数值或状态图标</td>\n<td>boolean</td>\n<td>true</td>\n</tr>\n<tr>\n<td>status</td>\n<td>状态，可选：<code>success</code> <code>exception</code> <code>normal</code> <code>active</code>(仅限 line)</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>strokeLinecap</td>\n<td>-</td>\n<td><code>round</code> | <code>square</code></td>\n<td><code>round</code></td>\n</tr>\n<tr>\n<td>strokeColor</td>\n<td>进度条的色彩</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>successPercent</td>\n<td>已完成的分段百分比</td>\n<td>number</td>\n<td>0</td>\n</tr>\n<tr>\n<td>trailColor</td>\n<td>未完成的分段的颜色</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3><code>type=&quot;line&quot;</code></h3>\n<table>\n<thead>\n<tr>\n<th>属性</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>strokeWidth</td>\n<td>进度条线的宽度，单位 px</td>\n<td>number</td>\n<td>10</td>\n</tr>\n<tr>\n<td>strokeColor</td>\n<td>进度条的色彩，传入 object 时为渐变</td>\n<td>string | { from: string; to: string; direction: string }</td>\n<td>-</td>\n</tr>\n<tr>\n<td>steps</td>\n<td>进度条总共步数</td>\n<td>number</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3><code>type=&quot;circle&quot;</code></h3>\n<table>\n<thead>\n<tr>\n<th>属性</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>width</td>\n<td>圆形进度条画布宽度，单位 px</td>\n<td>number</td>\n<td>132</td>\n</tr>\n<tr>\n<td>strokeWidth</td>\n<td>圆形进度条线的宽度，单位是进度条画布宽度的百分比</td>\n<td>number</td>\n<td>6</td>\n</tr>\n<tr>\n<td>strokeColor</td>\n<td>圆形进度条线的色彩，传入 object 时为渐变</td>\n<td>string | object</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h3><code>type=&quot;dashboard&quot;</code></h3>\n<table>\n<thead>\n<tr>\n<th>属性</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>width</td>\n<td>仪表盘进度条画布宽度，单位 px</td>\n<td>number</td>\n<td>132</td>\n</tr>\n<tr>\n<td>strokeWidth</td>\n<td>仪表盘进度条线的宽度，单位是进度条画布宽度的百分比</td>\n<td>number</td>\n<td>6</td>\n</tr>\n<tr>\n<td>gapDegree</td>\n<td>仪表盘进度条缺口角度，可取值 0 ~ 360</td>\n<td>number</td>\n<td>0</td>\n</tr>\n<tr>\n<td>gapPosition</td>\n<td>仪表盘进度条缺口位置</td>\n<td><code>top</code> | <code>bottom</code> | <code>left</code> | <code>right</code></td>\n<td><code>top</code></td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "circledynamic",
+        "Title": "进度圈动态展示",
+        "Description": "<p>会动的进度条才是好进度条。</p>\n",
+        "Code": "<div>\n    <Progress Percent=_percent Type=ProgressType.Circle />\n    <AntButtonGroup>\n        <AntButton OnClick=Decline Icon=Minus />\n        <AntButton OnClick=Increase Icon=Plus />\n    </AntButtonGroup>\n</div>\n\n@code{\n    private int _percent = 0;\n\n    private void Decline()\n    {\n        _percent -= 10;\n        if (_percent < 0)\n        {\n            _percent = 0;\n        }\n    }\n\n    private void Increase()\n    {\n        _percent += 10;\n        if (_percent > 100)\n        {\n            _percent = 100;\n        }\n    }\n}",
+        "Type": "Demos.Progress.demo.CircleDynamic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "dynamic",
+        "Title": "动态展示",
+        "Description": "<p>会动的进度条才是好进度条。</p>\n",
+        "Code": "<div>\n    <Progress Percent=_percent/>\n    <AntButtonGroup>\n        <AntButton OnClick=Decline Icon=Minus />\n        <AntButton OnClick=Increase Icon=Plus />\n    </AntButtonGroup>\n</div>\n\n@code{\n    private int _percent = 0;\n\n    private void Decline()\n    {\n        _percent -= 10;\n        if (_percent < 0)\n        {\n            _percent = 0;\n        }\n    }\n\n    private void Increase()\n    {\n        _percent += 10;\n        if (_percent > 100)\n        {\n            _percent = 100;\n        }\n    }\n}",
+        "Type": "Demos.Progress.demo.Dynamic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "steps",
+        "Title": "步骤进度条",
+        "Description": "<p>带步骤的进度条。</p>\n",
+        "Code": "<div>\n    <Progress Percent=50 Steps=3 StrokeColor=_color />\n    <br />\n    <Progress Percent=30 Steps=5 StrokeColor=_color />\n    <br />\n    <Progress Percent=100 Steps=5 Size=ProgressSize.Small StrokeColor=_color />\n</div>\n\n@code{\n    private string _color = \"#1890ff\";\n}",
+        "Type": "Demos.Progress.demo.Steps",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "circlemini",
+        "Title": "小型进度圈",
+        "Description": "<p>小一号的圈形进度。</p>\n",
+        "Code": "<div>\n    <Progress Type=ProgressType.Circle Percent=75 Size=ProgressSize.Small />\n    <Progress Type=ProgressType.Circle Percent=70 Size=ProgressSize.Small Status=\"ProgressStatus.Exception\" />\n    <Progress Type=ProgressType.Circle Percent=100 Size=ProgressSize.Small />\n</div>",
+        "Type": "Demos.Progress.demo.CircleMini",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "dashboard",
+        "Title": "仪表盘",
+        "Description": "<p>通过设置 <code>type=dashboard</code>，可以很方便地实现仪表盘样式的进度条。</p>\n",
+        "Code": "<Progress Type=ProgressType.Dashboard Percent=75 />\n<Progress Type=\"ProgressType.Dashboard\" Percent=75 GapDegree=30 />",
+        "Type": "Demos.Progress.demo.Dashboard",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "linemini",
+        "Title": "小型进度条",
+        "Description": "<p>适合放在较狭窄的区域内。</p>\n",
+        "Code": "<div style=\"width: 170px;\">\n    <Progress Percent=\"30\" Size=\"@ProgressSize.Small\" />\n    <Progress Percent=\"50\" Size=\"@ProgressSize.Small\" Status=\"ProgressStatus.Active\" />\n    <Progress Percent=\"70\" Size=\"@ProgressSize.Small\" Status=\"ProgressStatus.Exception\" />\n    <Progress Percent=\"100\" Size=\"@ProgressSize.Small\" />\n</div>",
+        "Type": "Demos.Progress.demo.LineMini",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "gradientline",
+        "Title": "自定义进度条渐变色",
+        "Description": "<p><code>linear-gradient</code> 的封装。推荐只传两种颜色。</p>\n",
+        "Code": "<div>\n    <Progress StrokeColor=_gradients Percent=99.9 />\n    <Progress StrokeColor=_gradients Percent=99.9 Status=ProgressStatus.Active />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=90 />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=100 />\n</div>\n\n@code{\n    private Dictionary<int, string> _gradients = new Dictionary<int, string>()\n{\n        { 0,\"#108ee9\"},\n        { 100,\"#87d068\"}\n    };\n}",
+        "Type": "Demos.Progress.demo.GradientLine",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "segment",
+        "Title": "分段进度条",
+        "Description": "<p>标准的进度条。</p>\n",
+        "Code": "<div>\n    <Progress Percent=60 SuccessPercent=30 />\n    <Progress Percent=60 SuccessPercent=30 Type=ProgressType.Circle />\n    <Progress Percent=60 SuccessPercent=30 Type=ProgressType.Dashboard />\n</div>",
+        "Type": "Demos.Progress.demo.Segment",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "format",
+        "Title": "自定义文字格式",
+        "Description": "<p><code>format</code> 属性指定格式。</p>\n",
+        "Code": "<div>\n    <Progress Type=ProgressType.Circle Percent=75 Format=_fortmat1 />\n    <Progress Type=ProgressType.Circle Percent=100 Format=_fortmat2 />\n\n</div>\n\n@code{\n    private Func<double, string> _fortmat1 = (p) => $\"{p} Days\";\n    private Func<double, string> _fortmat2 = (p) => \"Done\";\n}",
+        "Type": "Demos.Progress.demo.Format",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "line",
+        "Title": "进度条",
+        "Description": "<p>标准的进度条。</p>\n",
+        "Code": "<div>\n    <Progress Percent=30 />\n    <Progress Percent=50 Status=\"@ProgressStatus.Active\" />\n    <Progress Percent=70 Status=\"@ProgressStatus.Exception\" />\n    <Progress Percent=100 />\n    <Progress Percent=50 ShowInfo=\"false\" />\n</div>",
+        "Type": "Demos.Progress.demo.Line",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "linecap",
+        "Title": "圆角/方角边缘",
+        "Description": "<p>通过设定 <code>strokeLinecap=&quot;square|round&quot;</code> 可以调整进度条边缘的形状。</p>\n",
+        "Code": "<div>\n    <Progress StrokeLinecap=ProgressStrokeLinecap.Square Percent=75 />\n    <Progress StrokeLinecap=ProgressStrokeLinecap.Square Type=ProgressType.Circle Percent=75 />\n    <Progress StrokeLinecap=ProgressStrokeLinecap.Square Type=ProgressType.Dashboard Percent=75 />\n</div>",
+        "Type": "Demos.Progress.demo.Linecap",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "circle",
+        "Title": "进度圈",
+        "Description": "<p>圈形的进度。</p>\n",
+        "Code": "<style>\n    .ant-progress-circle-wrap,\n    .ant-progress-line-wrap {\n        margin-right: 8px;\n        margin-bottom: 5px;\n    }\n</style>\n\n<div>\n    <Progress Type=\"ProgressType.Circle\" Percent=75 />\n    <Progress Type=\"ProgressType.Circle\" Percent=70 Status=\"ProgressStatus.Exception\" />\n    <Progress Type=\"ProgressType.Circle\" Percent=100 />\n</div>",
+        "Type": "Demos.Progress.demo.Circle",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Dropdown",
     "SubTitle": "下拉菜单",
     "Type": "导航",
