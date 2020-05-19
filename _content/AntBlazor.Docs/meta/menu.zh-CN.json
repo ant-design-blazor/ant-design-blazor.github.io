@@ -159,6 +159,13 @@
           },
           {
             "Order": 0,
+            "Title": "Message",
+            "SubTitle": "全局提示",
+            "Type": "menuItem",
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
             "Title": "Drawer",
             "SubTitle": "抽屉",
             "Type": "menuItem",

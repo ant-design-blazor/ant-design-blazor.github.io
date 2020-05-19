@@ -145,6 +145,12 @@
           },
           {
             "Order": 0,
+            "Title": "Message",
+            "Type": "menuItem",
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
             "Title": "Drawer",
             "Type": "menuItem",
             "Url": "components/drawer"
