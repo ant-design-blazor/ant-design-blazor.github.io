@@ -54,17 +54,17 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Dropdown",
-            "SubTitle": "下拉菜单",
-            "Type": "menuItem",
-            "Url": "components/dropdown"
-          },
-          {
-            "Order": 0,
             "Title": "Pagination",
             "SubTitle": "分页",
             "Type": "menuItem",
             "Url": "components/pagination"
+          },
+          {
+            "Order": 0,
+            "Title": "Dropdown",
+            "SubTitle": "下拉菜单",
+            "Type": "menuItem",
+            "Url": "components/dropdown"
           },
           {
             "Order": 0,
@@ -82,13 +82,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Input",
-            "SubTitle": "输入框",
-            "Type": "menuItem",
-            "Url": "components/input"
-          },
-          {
-            "Order": 0,
             "Title": "TimePicker",
             "SubTitle": "时间选择框",
             "Type": "menuItem",
@@ -100,6 +93,13 @@
             "SubTitle": "日期选择框",
             "Type": "menuItem",
             "Url": "components/datepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Input",
+            "SubTitle": "输入框",
+            "Type": "menuItem",
+            "Url": "components/input"
           }
         ]
       },
@@ -117,17 +117,17 @@
           },
           {
             "Order": 0,
-            "Title": "Tooltip",
-            "SubTitle": "文字提示",
-            "Type": "menuItem",
-            "Url": "components/tooltip"
-          },
-          {
-            "Order": 0,
             "Title": "Badge",
             "SubTitle": "徽标数",
             "Type": "menuItem",
             "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Tooltip",
+            "SubTitle": "文字提示",
+            "Type": "menuItem",
+            "Url": "components/tooltip"
           },
           {
             "Order": 0,
@@ -152,20 +152,6 @@
           },
           {
             "Order": 0,
-            "Title": "Spin",
-            "SubTitle": "加载中",
-            "Type": "menuItem",
-            "Url": "components/spin"
-          },
-          {
-            "Order": 0,
-            "Title": "Progress",
-            "SubTitle": "进度条",
-            "Type": "menuItem",
-            "Url": "components/progress"
-          },
-          {
-            "Order": 0,
             "Title": "Alert",
             "SubTitle": "警告提示",
             "Type": "menuItem",
@@ -177,6 +163,20 @@
             "SubTitle": "全局提示",
             "Type": "menuItem",
             "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Progress",
+            "SubTitle": "进度条",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
+            "Title": "Spin",
+            "SubTitle": "加载中",
+            "Type": "menuItem",
+            "Url": "components/spin"
           },
           {
             "Order": 0,
