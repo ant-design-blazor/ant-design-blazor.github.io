@@ -77,6 +77,12 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Input",
+            "Type": "menuItem",
+            "Url": "components/input"
+          },
+          {
+            "Order": 0,
             "Title": "TimePicker",
             "Type": "menuItem",
             "Url": "components/timepicker"

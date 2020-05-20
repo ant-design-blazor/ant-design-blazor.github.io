@@ -82,6 +82,13 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Input",
+            "SubTitle": "输入框",
+            "Type": "menuItem",
+            "Url": "components/input"
+          },
+          {
+            "Order": 0,
             "Title": "TimePicker",
             "SubTitle": "时间选择框",
             "Type": "menuItem",

@@ -1,5 +1,83 @@
 [
   {
+    "Title": "Input",
+    "Type": "Data Entry",
+    "Desc": "<p>A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.</p>\n<h2>When To Use</h2>\n<ul>\n<li>A user input in a form field is needed.</li>\n<li>A search input is required.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AddOnBefore</td>\n<td>The label text displayed before (on the left side of) the input field.</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>AddOnAfter</td>\n<td>The label text displayed after (on the right side of) the input field.</td>\n<td>RenderFragment</td>\n<td></td>\n</tr>\n<tr>\n<td>ChildContent</td>\n<td>Child content</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Size</td>\n<td>The size of the input box. Note: in the context of a form, the <code>large</code> size is used. Available: <code>large</code> <code>default</code> <code>small</code></td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Placeholder</td>\n<td>提供可描述输入字段预期值的提示信息</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>DefaultValue</td>\n<td>The initial input content</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>MaxLength</td>\n<td>max length</td>\n<td>int</td>\n<td></td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>Whether the input is disabled.</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>AllowClear</td>\n<td>allow to remove input content with clear icon</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Prefix</td>\n<td>The prefix icon for the Input.</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Suffix</td>\n<td>The suffix icon for the Input.</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Type</td>\n<td>The type of input, see: MDN(use <code>Input.TextArea</code> instead of type=<code>textarea</code>)</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnChange</td>\n<td>callback when the content is change</td>\n<td>function(e)</td>\n<td>0</td>\n</tr>\n<tr>\n<td>OnPressEnter</td>\n<td>The callback function that is triggered when Enter key is pressed.</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnInput</td>\n<td>callback when user input</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "addon",
+        "Title": "Pre / Post tab",
+        "Description": "<p>Using pre &amp; post tabs example.</p>\n",
+        "Code": "<div>\n    <Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n        <AddOnAfter>.com</AddOnAfter>\n    </Input>\n    <br />\n    <br />\n    <Input DefaultValue=\"mysite\">\n        <AddOnAfter><AntIcon type=\"setting\"></AntIcon></AddOnAfter>\n    </Input>\n    <br />\n    <br />\n    <Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n    </Input>\n\n</div>\n",
+        "Type": "Demos.Input.demo.Addon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "group",
+        "Title": "Input Group",
+        "Description": "<p>Input.Group example Note: You don't need Col to control the width in the compact mode.</p>\n",
+        "Code": "<div>\n    <InputGroup Size=\"@InputSize.Large\">\n        <AntRow Gutter=\"8\">\n            <AntCol Span=\"5\">\n                <Input DefaultValue=\"0571\" />\n            </AntCol>\n            <AntCol Span=\"8\">\n                <Input DefaultValue=\"26888888\" />\n            </AntCol>\n        </AntRow>\n    </InputGroup>\n\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <Input DefaultValue=\"26888888\" Style=\"width: 30%;\" />\n    </InputGroup>\n\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <Search DefaultValue=\"26888888\" Style=\"width: 30%;\" />\n    </InputGroup>\n\n    <br />\n    <br />\n\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <DatePicker Size=\"@DatePickerSize.Small\" Style=\"width: 100%\"></DatePicker>\n    </InputGroup>\n</div>\n",
+        "Type": "Demos.Input.demo.Group",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "search",
+        "Title": "Search box with loading",
+        "Description": "<p>Search loading when onSearch.</p>\n",
+        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" />\n</div>\n\n    @code{\n        private void Handle(ChangeEventArgs args)\n        {\n            Console.WriteLine(\"123\");\n            System.Diagnostics.Debug.WriteLine(\"456\");\n        }\n    }\n\n",
+        "Type": "Demos.Input.demo.SearchDemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "prefix",
+        "Title": "prefix and suffix",
+        "Description": "<p>Add prefix or suffix icons inside input.</p>\n",
+        "Code": "<div>\n    <Input Placeholder=\"Prefix and Suffix\" DefaultValue=\"123\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"default size\">\n        <Prefix> ￥ </Prefix>\n        <Suffix>RMB </Suffix>\n    </Input>\n</div>\n",
+        "Type": "Demos.Input.demo.Prefix",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic Usage",
+        "Description": "<p>Basic usage example.</p>\n",
+        "Code": "<div>\n    <Input Placeholder=\"Basic usage\" Value=\"@txtValue\"></Input>\n    <br />\n    <br />\n    <AntText>@txtValue</AntText>\n</div>\n\n@code{\n    string txtValue { get; set; }\n}\n",
+        "Type": "Demos.Input.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "area",
+        "Title": "Autosizing the height to fit the content",
+        "Description": "<p>autoSize prop for a textarea type of Input makes the height to automatically adjust based on the content. An options object can be provided to autoSize to specify the minimum and maximum number of lines the textarea will automatically adjust.\nautosize is deprecated after 1.5.0, please use autoSize.</p>\n",
+        "Code": "<div>\n    <TextArea Placeholder=\"Autosize height based on content lines\" AutoSize=\"true\"></TextArea>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"2\" MaxRows=\"6\"></TextArea>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"3\" MaxRows=\"5\" Value=\"@textValue\"></TextArea>\n</div>\n\n@code{\n    string textValue { get; set; }\n}\n",
+        "Type": "Demos.Input.demo.Area",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "size",
+        "Title": "Three size of input",
+        "Description": "<p>There are three sizes of an Input box: large (40px), default (32px) and small (24px).</p>\n",
+        "Code": "<div>\n    <Input Placeholder=\"large size\" DefaultValue=\"123\" Size=\"@InputSize.Large\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"default size\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"small size\" Size=\"@InputSize.Small\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <InputPassword @bind-Value=\"@_password\" Placeholder=\"large Password\" Size=\"@InputSize.Large\" OnPressEnter=\"(e)=>Submit(e)\" />\n</div>\n@code{\n    private string _password;\n    private void Submit(KeyboardEventArgs args)\n    {\n        Console.WriteLine($\"password: {_password}\");\n    }\n}",
+        "Type": "Demos.Input.demo.Size",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Result",
     "Type": "Feedback",
     "Desc": "<p>Used to feed back the results of a series of operational tasks.</p>\n<h2>When To Use</h2>\n<p>Use when important operations need to inform the user to process the results and the feedback is more complicated.</p>\n",
@@ -1178,7 +1256,7 @@
         "Order": 8,
         "Name": "renderdom",
         "Title": "Render in current dom",
-        "Description": "<p>Render in current dom. custom container, check getContainer.</p>\n",
+        "Description": "<p>Render in current dom. custom container.</p>\n",
         "Code": "<div>\n    <div style=\"height:200px;overflow:hidden;position:relative;border:1px solid #ebedf0; border-radius:2px;padding:48px;text-align:center;background:#fafafa\">\n        Render in this\n        <div style=\"margin-top: 16px\">\n            <AntButton Type=\"primary\" @onclick=\"_=>open()\">Open</AntButton>\n        </div>\n        <Drawer Style=\"position:absolute\" Visible=\"visible\" Placement=\"right\" Title='(\"Basic Drawer\")' OnClose=\"_=>close()\">\n\n            <p>Some contents...</p>\n            <p>Some contents...</p>\n            <p>Some contents...</p>\n        </Drawer>\n    </div>\n</div>\n\n@code{\n\n    bool visible = false;\n\n\n\n    void open()\n    {\n\n        this.visible = true;\n    }\n\n    void close()\n    {\n        this.visible = false;\n    }\n\n}",
         "Type": "Demos.Drawer.demo.Render_dom",
         "Style": "",
