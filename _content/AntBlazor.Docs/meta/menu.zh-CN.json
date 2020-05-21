@@ -40,6 +40,13 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Layout",
+            "SubTitle": "布局",
+            "Type": "menuItem",
+            "Url": "components/layout"
+          },
+          {
+            "Order": 0,
             "Title": "Space",
             "SubTitle": "间距",
             "Type": "menuItem",
@@ -89,17 +96,17 @@
           },
           {
             "Order": 0,
-            "Title": "DatePicker",
-            "SubTitle": "日期选择框",
-            "Type": "menuItem",
-            "Url": "components/datepicker"
-          },
-          {
-            "Order": 0,
             "Title": "Input",
             "SubTitle": "输入框",
             "Type": "menuItem",
             "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "DatePicker",
+            "SubTitle": "日期选择框",
+            "Type": "menuItem",
+            "Url": "components/datepicker"
           }
         ]
       },
@@ -110,17 +117,17 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Badge",
-            "SubTitle": "徽标数",
-            "Type": "menuItem",
-            "Url": "components/badge"
-          },
-          {
-            "Order": 0,
             "Title": "Tooltip",
             "SubTitle": "文字提示",
             "Type": "menuItem",
             "Url": "components/tooltip"
+          },
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "SubTitle": "徽标数",
+            "Type": "menuItem",
+            "Url": "components/badge"
           },
           {
             "Order": 0,
@@ -152,31 +159,10 @@
           },
           {
             "Order": 0,
-            "Title": "Notification",
-            "SubTitle": "通知提醒框",
-            "Type": "menuItem",
-            "Url": "components/notification"
-          },
-          {
-            "Order": 0,
             "Title": "Alert",
             "SubTitle": "警告提示",
             "Type": "menuItem",
             "Url": "components/alert"
-          },
-          {
-            "Order": 0,
-            "Title": "Drawer",
-            "SubTitle": "抽屉",
-            "Type": "menuItem",
-            "Url": "components/drawer"
-          },
-          {
-            "Order": 0,
-            "Title": "Spin",
-            "SubTitle": "加载中",
-            "Type": "menuItem",
-            "Url": "components/spin"
           },
           {
             "Order": 0,
@@ -191,6 +177,27 @@
             "SubTitle": "结果",
             "Type": "menuItem",
             "Url": "components/result"
+          },
+          {
+            "Order": 0,
+            "Title": "Drawer",
+            "SubTitle": "抽屉",
+            "Type": "menuItem",
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
+            "Title": "Notification",
+            "SubTitle": "通知提醒框",
+            "Type": "menuItem",
+            "Url": "components/notification"
+          },
+          {
+            "Order": 0,
+            "Title": "Spin",
+            "SubTitle": "加载中",
+            "Type": "menuItem",
+            "Url": "components/spin"
           }
         ]
       }
