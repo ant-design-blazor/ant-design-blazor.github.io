@@ -77,12 +77,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "TimePicker",
-            "Type": "menuItem",
-            "Url": "components/timepicker"
-          },
-          {
-            "Order": 0,
             "Title": "DatePicker",
             "Type": "menuItem",
             "Url": "components/datepicker"
@@ -92,6 +86,12 @@
             "Title": "Input",
             "Type": "menuItem",
             "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
           }
         ]
       },
@@ -108,9 +108,9 @@
           },
           {
             "Order": 0,
-            "Title": "Badge",
+            "Title": "Avatar",
             "Type": "menuItem",
-            "Url": "components/badge"
+            "Url": "components/avatar"
           },
           {
             "Order": 0,
@@ -120,9 +120,9 @@
           },
           {
             "Order": 0,
-            "Title": "Avatar",
+            "Title": "Badge",
             "Type": "menuItem",
-            "Url": "components/avatar"
+            "Url": "components/badge"
           }
         ]
       },
@@ -133,33 +133,15 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Result",
-            "Type": "menuItem",
-            "Url": "components/result"
-          },
-          {
-            "Order": 0,
-            "Title": "Alert",
-            "Type": "menuItem",
-            "Url": "components/alert"
-          },
-          {
-            "Order": 0,
             "Title": "Message",
             "Type": "menuItem",
             "Url": "components/message"
           },
           {
             "Order": 0,
-            "Title": "Progress",
+            "Title": "Result",
             "Type": "menuItem",
-            "Url": "components/progress"
-          },
-          {
-            "Order": 0,
-            "Title": "Spin",
-            "Type": "menuItem",
-            "Url": "components/spin"
+            "Url": "components/result"
           },
           {
             "Order": 0,
@@ -169,9 +151,27 @@
           },
           {
             "Order": 0,
+            "Title": "Progress",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
+            "Title": "Alert",
+            "Type": "menuItem",
+            "Url": "components/alert"
+          },
+          {
+            "Order": 0,
             "Title": "Notification",
             "Type": "menuItem",
             "Url": "components/notification"
+          },
+          {
+            "Order": 0,
+            "Title": "Spin",
+            "Type": "menuItem",
+            "Url": "components/spin"
           }
         ]
       }

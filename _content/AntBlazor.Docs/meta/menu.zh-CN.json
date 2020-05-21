@@ -82,13 +82,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "TimePicker",
-            "SubTitle": "时间选择框",
-            "Type": "menuItem",
-            "Url": "components/timepicker"
-          },
-          {
-            "Order": 0,
             "Title": "DatePicker",
             "SubTitle": "日期选择框",
             "Type": "menuItem",
@@ -100,6 +93,13 @@
             "SubTitle": "输入框",
             "Type": "menuItem",
             "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "SubTitle": "时间选择框",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
           }
         ]
       },
@@ -117,10 +117,10 @@
           },
           {
             "Order": 0,
-            "Title": "Badge",
-            "SubTitle": "徽标数",
+            "Title": "Avatar",
+            "SubTitle": "头像",
             "Type": "menuItem",
-            "Url": "components/badge"
+            "Url": "components/avatar"
           },
           {
             "Order": 0,
@@ -131,10 +131,10 @@
           },
           {
             "Order": 0,
-            "Title": "Avatar",
-            "SubTitle": "头像",
+            "Title": "Badge",
+            "SubTitle": "徽标数",
             "Type": "menuItem",
-            "Url": "components/avatar"
+            "Url": "components/badge"
           }
         ]
       },
@@ -145,20 +145,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Result",
-            "SubTitle": "结果",
-            "Type": "menuItem",
-            "Url": "components/result"
-          },
-          {
-            "Order": 0,
-            "Title": "Alert",
-            "SubTitle": "警告提示",
-            "Type": "menuItem",
-            "Url": "components/alert"
-          },
-          {
-            "Order": 0,
             "Title": "Message",
             "SubTitle": "全局提示",
             "Type": "menuItem",
@@ -166,17 +152,10 @@
           },
           {
             "Order": 0,
-            "Title": "Progress",
-            "SubTitle": "进度条",
+            "Title": "Result",
+            "SubTitle": "结果",
             "Type": "menuItem",
-            "Url": "components/progress"
-          },
-          {
-            "Order": 0,
-            "Title": "Spin",
-            "SubTitle": "加载中",
-            "Type": "menuItem",
-            "Url": "components/spin"
+            "Url": "components/result"
           },
           {
             "Order": 0,
@@ -187,10 +166,31 @@
           },
           {
             "Order": 0,
+            "Title": "Progress",
+            "SubTitle": "进度条",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
+            "Title": "Alert",
+            "SubTitle": "警告提示",
+            "Type": "menuItem",
+            "Url": "components/alert"
+          },
+          {
+            "Order": 0,
             "Title": "Notification",
             "SubTitle": "通知提醒框",
             "Type": "menuItem",
             "Url": "components/notification"
+          },
+          {
+            "Order": 0,
+            "Title": "Spin",
+            "SubTitle": "加载中",
+            "Type": "menuItem",
+            "Url": "components/spin"
           }
         ]
       }
