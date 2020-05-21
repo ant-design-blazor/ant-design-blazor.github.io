@@ -52,6 +52,12 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Menu",
+            "Type": "menuItem",
+            "Url": "components/menu"
+          },
+          {
+            "Order": 0,
             "Title": "Pagination",
             "Type": "menuItem",
             "Url": "components/pagination"
@@ -61,12 +67,6 @@
             "Title": "Dropdown",
             "Type": "menuItem",
             "Url": "components/dropdown"
-          },
-          {
-            "Order": 0,
-            "Title": "Menu",
-            "Type": "menuItem",
-            "Url": "components/menu"
           }
         ]
       },
@@ -75,6 +75,12 @@
         "Title": "Data Entry",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
+          },
           {
             "Order": 0,
             "Title": "DatePicker",
@@ -86,12 +92,6 @@
             "Title": "Input",
             "Type": "menuItem",
             "Url": "components/input"
-          },
-          {
-            "Order": 0,
-            "Title": "TimePicker",
-            "Type": "menuItem",
-            "Url": "components/timepicker"
           }
         ]
       },
@@ -100,6 +100,18 @@
         "Title": "Data Display",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Tooltip",
+            "Type": "menuItem",
+            "Url": "components/tooltip"
+          },
           {
             "Order": 0,
             "Title": "Empty",
@@ -111,18 +123,6 @@
             "Title": "Avatar",
             "Type": "menuItem",
             "Url": "components/avatar"
-          },
-          {
-            "Order": 0,
-            "Title": "Tooltip",
-            "Type": "menuItem",
-            "Url": "components/tooltip"
-          },
-          {
-            "Order": 0,
-            "Title": "Badge",
-            "Type": "menuItem",
-            "Url": "components/badge"
           }
         ]
       },
@@ -139,21 +139,9 @@
           },
           {
             "Order": 0,
-            "Title": "Result",
+            "Title": "Notification",
             "Type": "menuItem",
-            "Url": "components/result"
-          },
-          {
-            "Order": 0,
-            "Title": "Drawer",
-            "Type": "menuItem",
-            "Url": "components/drawer"
-          },
-          {
-            "Order": 0,
-            "Title": "Progress",
-            "Type": "menuItem",
-            "Url": "components/progress"
+            "Url": "components/notification"
           },
           {
             "Order": 0,
@@ -163,15 +151,27 @@
           },
           {
             "Order": 0,
-            "Title": "Notification",
+            "Title": "Drawer",
             "Type": "menuItem",
-            "Url": "components/notification"
+            "Url": "components/drawer"
           },
           {
             "Order": 0,
             "Title": "Spin",
             "Type": "menuItem",
             "Url": "components/spin"
+          },
+          {
+            "Order": 0,
+            "Title": "Progress",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
+            "Title": "Result",
+            "Type": "menuItem",
+            "Url": "components/result"
           }
         ]
       }
