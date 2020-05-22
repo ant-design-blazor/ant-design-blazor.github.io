@@ -64,15 +64,15 @@
           },
           {
             "Order": 0,
-            "Title": "Pagination",
-            "Type": "menuItem",
-            "Url": "components/pagination"
-          },
-          {
-            "Order": 0,
             "Title": "Dropdown",
             "Type": "menuItem",
             "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
+            "Title": "Pagination",
+            "Type": "menuItem",
+            "Url": "components/pagination"
           }
         ]
       },
@@ -81,6 +81,12 @@
         "Title": "Data Entry",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "DatePicker",
+            "Type": "menuItem",
+            "Url": "components/datepicker"
+          },
           {
             "Order": 0,
             "Title": "TimePicker",
@@ -92,12 +98,6 @@
             "Title": "Input",
             "Type": "menuItem",
             "Url": "components/input"
-          },
-          {
-            "Order": 0,
-            "Title": "DatePicker",
-            "Type": "menuItem",
-            "Url": "components/datepicker"
           }
         ]
       },
@@ -108,15 +108,21 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Badge",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
             "Title": "Tooltip",
             "Type": "menuItem",
             "Url": "components/tooltip"
           },
           {
             "Order": 0,
-            "Title": "Badge",
+            "Title": "Avatar",
             "Type": "menuItem",
-            "Url": "components/badge"
+            "Url": "components/avatar"
           },
           {
             "Order": 0,
@@ -126,9 +132,9 @@
           },
           {
             "Order": 0,
-            "Title": "Avatar",
+            "Title": "List",
             "Type": "menuItem",
-            "Url": "components/avatar"
+            "Url": "components/list"
           }
         ]
       },
@@ -139,33 +145,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Message",
+            "Title": "Spin",
             "Type": "menuItem",
-            "Url": "components/message"
-          },
-          {
-            "Order": 0,
-            "Title": "Alert",
-            "Type": "menuItem",
-            "Url": "components/alert"
-          },
-          {
-            "Order": 0,
-            "Title": "Progress",
-            "Type": "menuItem",
-            "Url": "components/progress"
-          },
-          {
-            "Order": 0,
-            "Title": "Result",
-            "Type": "menuItem",
-            "Url": "components/result"
-          },
-          {
-            "Order": 0,
-            "Title": "Drawer",
-            "Type": "menuItem",
-            "Url": "components/drawer"
+            "Url": "components/spin"
           },
           {
             "Order": 0,
@@ -175,9 +157,33 @@
           },
           {
             "Order": 0,
-            "Title": "Spin",
+            "Title": "Message",
             "Type": "menuItem",
-            "Url": "components/spin"
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Result",
+            "Type": "menuItem",
+            "Url": "components/result"
+          },
+          {
+            "Order": 0,
+            "Title": "Progress",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
+            "Title": "Alert",
+            "Type": "menuItem",
+            "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Drawer",
+            "Type": "menuItem",
+            "Url": "components/drawer"
           }
         ]
       }
