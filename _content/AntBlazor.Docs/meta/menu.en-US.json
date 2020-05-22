@@ -58,15 +58,15 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Menu",
-            "Type": "menuItem",
-            "Url": "components/menu"
-          },
-          {
-            "Order": 0,
             "Title": "Dropdown",
             "Type": "menuItem",
             "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
+            "Title": "Menu",
+            "Type": "menuItem",
+            "Url": "components/menu"
           },
           {
             "Order": 0,
@@ -89,15 +89,15 @@
           },
           {
             "Order": 0,
-            "Title": "TimePicker",
-            "Type": "menuItem",
-            "Url": "components/timepicker"
-          },
-          {
-            "Order": 0,
             "Title": "Input",
             "Type": "menuItem",
             "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
           }
         ]
       },
@@ -145,21 +145,15 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Spin",
-            "Type": "menuItem",
-            "Url": "components/spin"
-          },
-          {
-            "Order": 0,
-            "Title": "Notification",
-            "Type": "menuItem",
-            "Url": "components/notification"
-          },
-          {
-            "Order": 0,
             "Title": "Message",
             "Type": "menuItem",
             "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Drawer",
+            "Type": "menuItem",
+            "Url": "components/drawer"
           },
           {
             "Order": 0,
@@ -169,21 +163,27 @@
           },
           {
             "Order": 0,
+            "Title": "Spin",
+            "Type": "menuItem",
+            "Url": "components/spin"
+          },
+          {
+            "Order": 0,
             "Title": "Progress",
             "Type": "menuItem",
             "Url": "components/progress"
           },
           {
             "Order": 0,
-            "Title": "Alert",
+            "Title": "Notification",
             "Type": "menuItem",
-            "Url": "components/alert"
+            "Url": "components/notification"
           },
           {
             "Order": 0,
-            "Title": "Drawer",
+            "Title": "Alert",
             "Type": "menuItem",
-            "Url": "components/drawer"
+            "Url": "components/alert"
           }
         ]
       }
