@@ -39,15 +39,15 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Layout",
-            "Type": "menuItem",
-            "Url": "components/layout"
-          },
-          {
-            "Order": 0,
             "Title": "Space",
             "Type": "menuItem",
             "Url": "components/space"
+          },
+          {
+            "Order": 0,
+            "Title": "Layout",
+            "Type": "menuItem",
+            "Url": "components/layout"
           }
         ]
       },
@@ -64,15 +64,15 @@
           },
           {
             "Order": 0,
-            "Title": "Menu",
-            "Type": "menuItem",
-            "Url": "components/menu"
-          },
-          {
-            "Order": 0,
             "Title": "Pagination",
             "Type": "menuItem",
             "Url": "components/pagination"
+          },
+          {
+            "Order": 0,
+            "Title": "Menu",
+            "Type": "menuItem",
+            "Url": "components/menu"
           }
         ]
       },
@@ -81,12 +81,6 @@
         "Title": "Data Entry",
         "Type": "itemGroup",
         "Children": [
-          {
-            "Order": 0,
-            "Title": "DatePicker",
-            "Type": "menuItem",
-            "Url": "components/datepicker"
-          },
           {
             "Order": 0,
             "Title": "Input",
@@ -98,6 +92,12 @@
             "Title": "TimePicker",
             "Type": "menuItem",
             "Url": "components/timepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "DatePicker",
+            "Type": "menuItem",
+            "Url": "components/datepicker"
           }
         ]
       },
@@ -108,9 +108,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Badge",
+            "Title": "Empty",
             "Type": "menuItem",
-            "Url": "components/badge"
+            "Url": "components/empty"
           },
           {
             "Order": 0,
@@ -120,21 +120,21 @@
           },
           {
             "Order": 0,
-            "Title": "Avatar",
-            "Type": "menuItem",
-            "Url": "components/avatar"
-          },
-          {
-            "Order": 0,
-            "Title": "Empty",
-            "Type": "menuItem",
-            "Url": "components/empty"
-          },
-          {
-            "Order": 0,
             "Title": "List",
             "Type": "menuItem",
             "Url": "components/list"
+          },
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Avatar",
+            "Type": "menuItem",
+            "Url": "components/avatar"
           }
         ]
       },
@@ -143,18 +143,6 @@
         "Title": "Feedback",
         "Type": "itemGroup",
         "Children": [
-          {
-            "Order": 0,
-            "Title": "Message",
-            "Type": "menuItem",
-            "Url": "components/message"
-          },
-          {
-            "Order": 0,
-            "Title": "Drawer",
-            "Type": "menuItem",
-            "Url": "components/drawer"
-          },
           {
             "Order": 0,
             "Title": "Result",
@@ -175,15 +163,27 @@
           },
           {
             "Order": 0,
-            "Title": "Notification",
-            "Type": "menuItem",
-            "Url": "components/notification"
-          },
-          {
-            "Order": 0,
             "Title": "Alert",
             "Type": "menuItem",
             "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Message",
+            "Type": "menuItem",
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Drawer",
+            "Type": "menuItem",
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
+            "Title": "Notification",
+            "Type": "menuItem",
+            "Url": "components/notification"
           }
         ]
       }
