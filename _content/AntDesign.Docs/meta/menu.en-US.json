@@ -150,6 +150,12 @@
           },
           {
             "Order": 0,
+            "Title": "Table",
+            "Type": "menuItem",
+            "Url": "components/table"
+          },
+          {
+            "Order": 0,
             "Title": "Tooltip",
             "Type": "menuItem",
             "Url": "components/tooltip"

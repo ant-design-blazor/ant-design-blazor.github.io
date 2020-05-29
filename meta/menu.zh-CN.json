@@ -166,6 +166,13 @@
           },
           {
             "Order": 0,
+            "Title": "Table",
+            "SubTitle": "表格",
+            "Type": "menuItem",
+            "Url": "components/table"
+          },
+          {
+            "Order": 0,
             "Title": "Tooltip",
             "SubTitle": "文字提示",
             "Type": "menuItem",
