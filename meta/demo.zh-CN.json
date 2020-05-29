@@ -11,7 +11,7 @@
         "Name": "addon",
         "Title": "前置/后置标签",
         "Description": "<p>用于配置一些固定组合。</p>\n",
-        "Code": "<div>\n    <Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n        <AddOnAfter>.com</AddOnAfter>\n    </Input>\n    <br />\n    <br />\n    <Input DefaultValue=\"mysite\">\n        <AddOnAfter><AntIcon type=\"setting\"></AntIcon></AddOnAfter>\n    </Input>\n    <br />\n    <br />\n    <Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n    </Input>\n\n</div>\n",
+        "Code": "<div>\n    <AntDesign.Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n        <AddOnAfter>.com</AddOnAfter>\n    </AntDesign.Input>\n    <br />\n    <br />\n    <AntDesign.Input DefaultValue=\"mysite\">\n        <AddOnAfter><AntIcon type=\"setting\"></AntIcon></AddOnAfter>\n    </AntDesign.Input>\n    <br />\n    <br />\n    <AntDesign.Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n    </AntDesign.Input>\n\n</div>\n",
         "Type": "Demos.Input.demo.Addon",
         "Style": "",
         "Debug": false
@@ -21,18 +21,8 @@
         "Name": "group",
         "Title": "输入框组合",
         "Description": "<p>输入框的组合展现。\n注意：使用 compact 模式时，不需要通过 Col 来控制宽度。</p>\n",
-        "Code": "<div>\n    <InputGroup Size=\"@InputSize.Large\">\n        <AntRow Gutter=\"8\">\n            <AntCol Span=\"5\">\n                <Input DefaultValue=\"0571\" />\n            </AntCol>\n            <AntCol Span=\"8\">\n                <Input DefaultValue=\"26888888\" />\n            </AntCol>\n        </AntRow>\n    </InputGroup>\n\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <Input DefaultValue=\"26888888\" Style=\"width: 30%;\" />\n    </InputGroup>\n\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <Search DefaultValue=\"26888888\" Style=\"width: 30%;\" />\n    </InputGroup>\n\n    <br />\n    <br />\n\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <DatePicker Size=\"@DatePickerSize.Small\" Style=\"width: 100%\"></DatePicker>\n    </InputGroup>\n</div>\n",
+        "Code": "<div>\n    <InputGroup Size=\"@InputSize.Large\">\n        <AntRow Gutter=\"8\">\n            <AntCol Span=\"5\">\n                <Input DefaultValue=\"0571\"  @bind-Value=\"code\" />\n            </AntCol>\n            <AntCol Span=\"8\">\n                <Input DefaultValue=\"26888888\" @bind-Value=\"phonenumber\" />\n            </AntCol>\n        </AntRow>\n    </InputGroup>\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\"  @bind-Value=\"code\" />\n        <Input DefaultValue=\"26888888\" Style=\"width: 30%;\"  @bind-Value=\"phonenumber\" />\n    </InputGroup>\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" @bind-Value=\"code\" /> \n        <AntDesign.Search DefaultValue=\"26888888\" Style=\"width: 30%;\" @bind-Value=\"phonenumber\" />\n    </InputGroup>\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <DatePicker Size=\"@DatePickerSize.Small\" Style=\"width: 100%\"></DatePicker>\n    </InputGroup>\n</div>\n\n\n@code{\n    private string code { get; set; }\n    private string phonenumber { get; set; }\n}\n",
         "Type": "Demos.Input.demo.Group",
-        "Style": "",
-        "Debug": false
-      },
-      {
-        "Order": 5,
-        "Name": "search",
-        "Title": "搜索框 loading",
-        "Description": "<p>用于 onSearch 的时候展示 loading。</p>\n",
-        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" />\n</div>\n\n    @code{\n        private void Handle(ChangeEventArgs args)\n        {\n            Console.WriteLine(\"123\");\n            System.Diagnostics.Debug.WriteLine(\"456\");\n        }\n    }\n\n",
-        "Type": "Demos.Input.demo.SearchDemo",
         "Style": "",
         "Debug": false
       },
@@ -41,7 +31,7 @@
         "Name": "prefix",
         "Title": "前缀和后缀",
         "Description": "<p>在输入框上添加前缀或后缀图标。</p>\n",
-        "Code": "<div>\n    <Input Placeholder=\"Prefix and Suffix\" DefaultValue=\"123\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"default size\">\n        <Prefix> ￥ </Prefix>\n        <Suffix>RMB </Suffix>\n    </Input>\n</div>\n",
+        "Code": "<div>\n    <AntDesign.Input Placeholder=\"Prefix and Suffix\" DefaultValue=\"123\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </AntDesign.Input>\n    <br />\n    <br />\n    <AntDesign.Input Placeholder=\"default size\" @bind-Value=\"@txtValue\">\n    <Prefix> ￥ </Prefix>\n    <Suffix>RMB </Suffix>\n    </AntDesign.Input>\n</div>\n\n@code {\n    private string txtValue { get; set; }\n}\n",
         "Type": "Demos.Input.demo.Prefix",
         "Style": "",
         "Debug": false
@@ -51,7 +41,7 @@
         "Name": "basic",
         "Title": "基本使用",
         "Description": "<p>基本使用示例。</p>\n",
-        "Code": "<div>\n    <Input Placeholder=\"Basic usage\" Value=\"@txtValue\"></Input>\n    <br />\n    <br />\n    <AntText>@txtValue</AntText>\n</div>\n\n@code{\n    string txtValue { get; set; }\n}\n",
+        "Code": "<div>\n    <AntDesign.Input Placeholder=\"Basic usage\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <AntText>@txtValue</AntText>\n</div>\n@code{\n    string txtValue { get; set; }\n}\n",
         "Type": "Demos.Input.demo.Basic",
         "Style": "",
         "Debug": false
@@ -61,7 +51,7 @@
         "Name": "area",
         "Title": "适应文本高度的文本域",
         "Description": "<p>属性适用于 textarea 节点，并且只有高度会自动变化。另外 autoSize 可以设定为一个对象，指定最小行数和最大行数。\n1.5.0 后 autosize 被废弃，请使用 autoSize</p>\n",
-        "Code": "<div>\n    <TextArea Placeholder=\"Autosize height based on content lines\" AutoSize=\"true\"></TextArea>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"2\" MaxRows=\"6\"></TextArea>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"3\" MaxRows=\"5\" Value=\"@textValue\"></TextArea>\n</div>\n\n@code{\n    string textValue { get; set; }\n}\n",
+        "Code": "<div>\n    <AntDesign.TextArea Placeholder=\"Autosize height based on content lines\" AutoSize=\"true\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <AntDesign.TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"2\" MaxRows=\"6\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <AntDesign.TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"3\" MaxRows=\"5\" @bind-Value=\"@txtValue\"/>\n</div>\n\n@code{\n    string txtValue { get; set; }\n}\n",
         "Type": "Demos.Input.demo.Area",
         "Style": "",
         "Debug": false
@@ -71,8 +61,18 @@
         "Name": "size",
         "Title": "三种大小",
         "Description": "<p>我们为输入框定义了三种尺寸（大、默认、小），高度分别为 40px、32px 和 24px。</p>\n",
-        "Code": "<div>\n    <Input Placeholder=\"large size\" DefaultValue=\"123\" Size=\"@InputSize.Large\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"default size\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"small size\" Size=\"@InputSize.Small\">\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <InputPassword @bind-Value=\"@_password\" Placeholder=\"large Password\" Size=\"@InputSize.Large\" OnPressEnter=\"(e)=>Submit(e)\" />\n</div>\n@code{\n    private string _password;\n    private void Submit(KeyboardEventArgs args)\n    {\n        Console.WriteLine($\"password: {_password}\");\n    }\n}",
+        "Code": "<div>\n    <AntDesign.Input Placeholder=\"large size\"  Size=\"@InputSize.Large\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </AntDesign.Input>\n    <br />\n    <br />\n    <AntDesign.Input Placeholder=\"default size\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </AntDesign.Input>\n    <br />\n    <br />\n    <AntDesign.Input Placeholder=\"small size\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </AntDesign.Input>\n    <br />\n    <br />\n    <InputPassword @bind-Value=\"@txtValue\" Placeholder=\"large Password\" Size=\"@InputSize.Large\" OnPressEnter=\"(e)=>Submit(e)\" />\n</div>\n@code{\n    private string txtValue { get; set; }\n\n    private void Submit(KeyboardEventArgs args)\n    {\n        Console.WriteLine($\"password: {txtValue}\");\n    }\n}",
         "Type": "Demos.Input.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "search1",
+        "Title": "搜索框 loading",
+        "Description": "<p>用于 onSearch 的时候展示 loading。</p>\n",
+        "Code": "<div>\n    <AntDesign.Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <AntDesign.Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <AntDesign.Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" @bind-Value=\"@txtValue\" />\n</div>\n\n    @code{\n\n        private string txtValue { get; set; }\n\n        private void Handle(ChangeEventArgs args)\n        {\n            Console.WriteLine(args.Value.ToString());\n\n        }\n    }\n\n",
+        "Type": "Demos.Input.demo.Search1",
         "Style": "",
         "Debug": false
       }
@@ -308,6 +308,105 @@
     ]
   },
   {
+    "Title": "Slider",
+    "SubTitle": "滑动输入条",
+    "Type": "数据录入",
+    "Desc": "<p>滑动型输入器，展示当前值和可选范围。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当用户需要在数值区间/自定义区间内进行选择时，可为连续或离散值。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>defaultValue</td>\n<td>设置初始取值。当 range 为 false 时，使用 number，否则用 [number, number]</td>\n<td>number</td>\n<td></td>\n</tr>\n<tr>\n<td>disabled</td>\n<td>值为 true 时，滑块为禁用状态</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>dots</td>\n<td>是否只能拖拽到刻度上</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>included</td>\n<td>marks 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>marks</td>\n<td>刻度标记，key 的类型必须为 number 且取值在闭区间 [min, max] 内，每个标签可以单独设置样式</td>\n<td>object</td>\n<td></td>\n</tr>\n<tr>\n<td>max</td>\n<td>最大值</td>\n<td>number</td>\n<td>-</td>\n</tr>\n<tr>\n<td>min</td>\n<td>最小值</td>\n<td>number</td>\n<td>-</td>\n</tr>\n<tr>\n<td>range</td>\n<td>双滑块模式</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>reverse</td>\n<td>反向坐标轴</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>step</td>\n<td>步长，取值必须大于 0，并且可被 (max - min) 整除。当 marks 不为空对象时，可以设置 step 为 null，此时 Slider 的可选值仅有 marks 标出来的部分。</td>\n<td>number</td>\n<td>-</td>\n</tr>\n<tr>\n<td>value</td>\n<td>设置当前取值。当 range 为 false 时，使用 number，否则用 [number, number]</td>\n<td>number</td>\n<td>-</td>\n</tr>\n<tr>\n<td>vertical</td>\n<td>值为 true 时，Slider 为垂直方向</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onAfterChange</td>\n<td>与 onmouseup 触发时机一致，把当前值作为参数传入。</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>当 Slider 的值发生改变时，会触发 onChange 事件，并把改变后的值作为参数传入。</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>tooltipPlacement</td>\n<td>设置 Tooltip 展示位置。参考 Tooltip。</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>tooltipVisible</td>\n<td>值为true时，Tooltip 将会始终显示；否则始终不显示，哪怕在拖拽及移入时。</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>getTooltipPopupContainer</td>\n<td>Tooltip 渲染父节点，默认渲染到 body 上。</td>\n<td>Rendfragment</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 1,
+        "Name": "input",
+        "Title": "带输入框的滑块",
+        "Description": "<p>和 数字输入框 组件保持同步.</p>\n",
+        "Code": "<div>\n    <AntRow>\n        <AntCol Span=\"12\">\n            <Slider Min=\"1\" Max=\"20\" Value=\"@inputValue1\" />\n        </AntCol>\n        <AntCol Span=\"4\">\n            <AntDesign.InputNumber Min=\"1\" Max=\"20\" Style=\"margin:0 16px;\" Value=\"@inputValue1\" ValueChanged=\"(e)=>UpdateValue1(e)\" />\n        </AntCol>\n    </AntRow>\n    <AntRow>\n        <AntCol Span=\"12\">\n            <Slider Min=\"0\" Max=\"1\" Step=\"0.01\" Value=\"@inputValue2\"  />\n        </AntCol>\n        <AntCol Span=\"4\">\n            <AntDesign.InputNumber Min=\"0\" Max=\"10\" Step=\"0.1\" Style=\"margin:0 16px;\" Value=\"@inputValue2\" ValueChanged=\"(e)=>UpdateValue2(e)\" />\n        </AntCol>\n    </AntRow>\n</div>\n\n\n@code\n{\n    private int inputValue1 = 1;\n\n    private void UpdateValue1(double value)\n    {\n        inputValue1 = (int)value;\n    }\n\n\n    private double inputValue2= 0.5;\n\n    private void UpdateValue2(double value)\n    {\n        inputValue2 =value;\n    }\n}\n\n\n",
+        "Type": "Demos.Slider.demo.Input",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "customer",
+        "Title": "自定义提示",
+        "Description": "<p>使用 <code>tipFormatter</code> 可以格式化 <code>Tooltip</code> 的内容，设置 <code>tipFormatter=null</code>，则隐藏 Tooltip。</p>\n",
+        "Code": "<div>\n    <Slider DefaultValue=\"30\" Value=\"@value\" TipFormatter=\"tipFormatter\"  />\n</div>\n\n@code\n{\n\n    private int value { get; set; }\n\n    string tipFormatter()\n    {\n        return $\"{value}%\";\n    }\n}\n\n\n\n",
+        "Type": "Demos.Slider.demo.Customer",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "tooltip",
+        "Title": "控制 ToolTip 的显示",
+        "Description": "<p>当 <code>tooltipVisible</code> 为 true 时，将始终显示 ToolTip；反之则始终不显示，即使在拖动、移入时也是如此。</p>\n",
+        "Code": "<div>\n    <Slider DefaultValue=\"30\" TooltipPlacement=\"top\" TooltipVisible=\"true\" />\n</div>\n",
+        "Type": "Demos.Slider.demo.Tooltip",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>基本滑动条。当 <code>range</code> 为 <code>true</code> 时，渲染为双滑块。当 <code>disabled</code> 为 <code>true</code> 时，滑块处于不可用状态。</p>\n",
+        "Code": "<div>\n    <Slider DefaultValue=\"30\" Disabled=\"@Diabled\"  />\n    <Slider DefaultValue=\"(20, 50)\" Disabled=\"@Diabled\" />\n    Diabled: <Switch Size=\"small\" Checked=\"@Diabled\" OnChange=\"(e)=>OnSwitch(e)\" />\n</div>\n\n@code\n{\n\n    private bool Diabled;\n\n    private void OnSwitch(bool args)\n    {\n        Diabled = args;\n    }\n}\n",
+        "Type": "Demos.Slider.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "graduated",
+        "Title": "带标签的滑块",
+        "Description": "<p>使用 <code>marks</code> 属性标注分段式滑块，使用 <code>value</code> / <code>defaultValue</code> 指定滑块位置。当 <code>included=false</code> 时，表明不同标记间为并列关系。当 <code>step=null</code> 时，Slider 的可选值仅有 <code>marks</code> 标出来的部分。</p>\n",
+        "Code": "<div>\n    <h4>included=true</h4>\n    <Slider Marks=\"@nMarks\" DefaultValue=\"37\" />\n    <Slider Marks=\"@nMarks\" DefaultValue=\"(26, 37)\" />\n\n    <h4>included=false</h4>\n    <Slider Marks=\"@nMarks\" Included=\"false\" DefaultValue=\"37\" />\n\n    <h4>marks & step</h4>\n    <Slider Marks=\"@nMarks\" Step=\"10\" DefaultValue=\"37\" />\n\n    <h4>step=null</h4>\n    <Slider Marks=\"@nMarks\" Step=\"null\" DefaultValue=\"37\" />\n\n</div>\n\n@code\n{\n    private SliderMark[] nMarks =\n     {\n            new SliderMark(0, \"0℃\"),\n            new SliderMark(26, \"26℃\"),\n            new SliderMark(37, \"37℃\"),\n            new SliderMark(100, (b)=>{\n                b.OpenElement(0,\"strong\");\n                b.AddContent(1,\"100℃\");\n                b.CloseElement();\n            }, \"color: #f50;\")\n     };\n}",
+        "Type": "Demos.Slider.demo.Graduated",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "icon",
+        "Title": "带 icon 的滑块",
+        "Description": "<p>滑块左右可以设置图标来表达业务含义。</p>\n",
+        "Code": "<div>\n    <AntIcon Style=\"display: inline-block\" Type=\"Frown\" Theme=\"outline\" />\n    <Slider Style=\"display: inline-block; width: 300px;\" Min=\"0\" Max=\"20\" DefaultValue=\"5\" />\n    <AntIcon Style=\"display: inline-block\" Type=\"Smile\" Theme=\"outline\" />\n</div>\n\n\n",
+        "Type": "Demos.Slider.demo.Icon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "reversed",
+        "Title": "反向",
+        "Description": "<p>设置 <code>reverse</code> 可以将滑动条置反。</p>\n",
+        "Code": "<div>\n    <Slider Reverse=\"@reversed\" DefaultValue=\"30\" />\n    <Slider Reverse=\"@reversed\" DefaultValue=\"(20, 50)\" />\n    Reversed: <Switch Size=\"small\" Checked=\"@reversed\" OnChange=\"(e)=>OnSwitchReverse(e)\" />\n</div>\n\n\n@code\n{\n    private bool reversed = true;\n\n    private void OnSwitchReverse(bool args)\n    {\n        reversed = args;\n    }\n}\n",
+        "Type": "Demos.Slider.demo.Reversed",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "vslider",
+        "Title": "垂直",
+        "Description": "<p>垂直方向的 Slider。</p>\n",
+        "Code": "<div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider Vertical DefaultValue=\"30\" />\n    </div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider Vertical Step=\"10\" DefaultValue=\"(20, 50 )\" />\n    </div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider Vertical Marks=\"@_marks1\" DefaultValue=\"(26, 37 )\" />\n    </div>\n</div>\n\n@code\n{\n        private SliderMark[] _marks1 =\n        {\n            new SliderMark(0, \"0℃\"),\n            new SliderMark(26, \"26℃\"),\n            new SliderMark(37, \"37℃\"),\n            new SliderMark(100, (b)=>{\n                b.OpenElement(0,\"strong\");\n                b.AddContent(1,\"100℃\");\n                b.CloseElement();\n            }, \"color: #f50;\")\n        };\n}\n",
+        "Type": "Demos.Slider.demo.Vslider",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "event",
+        "Title": "事件",
+        "Description": "<p>当 Slider 的值发生改变时，会触发 <code>onChange</code> 事件，并把改变后的值作为参数传入。在 <code>onmouseup</code> 时，会触发 <code>onAfterChange</code> 事件，并把当前值作为参数传入。</p>\n",
+        "Code": "<div>\n    <Slider DefaultValue=\"30\" OnChange=\"(e)=>OnChange1(e.AsT0)\" OnAfterChange=\"(vlaue)=>OnAfterChange1()\" />\n    <Slider Step=\"10\" DefaultValue=\"( 20, 50 )\" OnChange=\"(e)=>OnChange2(e.AsT0)\" OnAfterChange=\"(vlaue)=>OnAfterChange2()\" />\n</div>\n\n\n@code {\n\n    private void OnChange1(double args)\n    {\n    }\n\n    private void OnAfterChange1()\n    {\n    }\n\n    private void OnChange2(double args)\n    {\n    }\n\n    private void OnAfterChange2()\n    {\n    }\n}\n",
+        "Type": "Demos.Slider.demo.Event",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Space",
     "SubTitle": "间距",
     "Type": "布局",
@@ -330,7 +429,7 @@
         "Name": "size",
         "Title": "间距大小",
         "Description": "<p>间距预设大、中、小三种大小。</p>\n<p>通过设置 <code>size</code> 为 <code>large</code> <code>middle</code> 分别把间距设为大、中间距。若不设置 <code>size</code>，则间距为小。</p>\n",
-        "Code": "<AntRadioGroup @bind-Value=@size OnChange=\"e=> setSize(e)\">\n    <AntRadio Value=\"small\">Small</AntRadio>\n    <AntRadio Value=\"middle\">Middle</AntRadio>\n    <AntRadio Value=\"large\">Large</AntRadio>\n</AntRadioGroup>\n<br />\n<br />\n<Space Size=@size>\n    <SpaceItem>\n        <AntButton Type=\"primary\">Primary</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton>Default</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"dashed\">Dashed</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"link\">Link</AntButton>\n    </SpaceItem>\n</Space>\n\n@code {\n    string size = \"small\";\n    void setSize(string value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}\n",
+        "Code": "<RadioGroup @bind-Value=@size OnChange=\"e=> setSize(e)\">\n    <Radio Value=\"small\">Small</Radio>\n    <Radio Value=\"middle\">Middle</Radio>\n    <Radio Value=\"large\">Large</Radio>\n</RadioGroup>\n<br />\n<br />\n<Space Size=@size>\n    <SpaceItem>\n        <AntButton Type=\"primary\">Primary</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton>Default</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"dashed\">Dashed</AntButton>\n    </SpaceItem>\n    <SpaceItem>\n        <AntButton Type=\"link\">Link</AntButton>\n    </SpaceItem>\n</Space>\n\n@code {\n    string size = \"small\";\n    void setSize(string value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}\n",
         "Type": "Demos.Space.demo.Size",
         "Style": "",
         "Debug": false
@@ -491,6 +590,164 @@
         "Description": "<p>圈形的进度。</p>\n",
         "Code": "<style>\n    .ant-progress-circle-wrap,\n    .ant-progress-line-wrap {\n        margin-right: 8px;\n        margin-bottom: 5px;\n    }\n</style>\n\n<div>\n    <Progress Type=\"ProgressType.Circle\" Percent=75 />\n    <Progress Type=\"ProgressType.Circle\" Percent=70 Status=\"ProgressStatus.Exception\" />\n    <Progress Type=\"ProgressType.Circle\" Percent=100 />\n</div>",
         "Type": "Demos.Progress.demo.Circle",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Switch",
+    "SubTitle": "开关",
+    "Type": "数据录入",
+    "Desc": "<p>开关选择器。</p>\n<h2>何时使用</h2>\n<ul>\n<li>需要表示开关状态/两种状态之间的切换时；</li>\n<li>和 <code>checkbox</code>的区别是，切换 <code>switch</code> 会直接触发状态改变，而 checkbox 一般用于状态标记，需要和提交操作配合。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Checked</td>\n<td>指定当前是否选中</td>\n<td>boolean</td>\n<td></td>\n</tr>\n<tr>\n<td>CheckedChildren</td>\n<td>选中时的内容</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>DefaultChecked</td>\n<td>初始是否选中</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>是否禁用</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Loading</td>\n<td>加载中的开关</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Size</td>\n<td>开关大小，可选值：default small</td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>UnCheckedChildren</td>\n<td>非选中时的内容</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnChange</td>\n<td>变化时回调函数</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法。</p>\n",
+        "Code": "<div>\n    <Switch  Checked=\"switchValue\"/>\n</div>\n\n@code\n{\n    bool switchValue { get; set; }\n}\n",
+        "Type": "Demos.Switch.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "icon",
+        "Title": "文字和图标。",
+        "Description": "<p>带有文字和图标。</p>\n",
+        "Code": "<div>\n    <Switch Checked=\"true\" CheckedChildren='@(\"开\")' UnCheckedChildren='@(\"关\")' />\n    <br />\n    <Switch Checked=\"false\" CheckedChildren='@(\"开\")' UnCheckedChildren='@(\"关\")' />\n    <br />\n    <Switch Checked=\"true\"\n               CheckedChildren=\"checkedChildren\"\n               UnCheckedChildren=\"unCheckedChildren\" />\n</div>\n\n\n@code{\n    RenderFragment checkedChildren = @<AntIcon Type=\"check\"></AntIcon>;\n\n    RenderFragment unCheckedChildren = @<AntIcon Type=\"close\"></AntIcon>;\n}\n",
+        "Type": "Demos.Switch.demo.Icon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "size",
+        "Title": "两种大小",
+        "Description": "<p>size=&quot;small&quot; 表示小号开关。</p>\n",
+        "Code": "<div>\n    <Switch Checked=\"true\"/>\n    <br />\n    <Switch Size=\"small\" Checked=\"true\"/>\n</div>\n",
+        "Type": "Demos.Switch.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "disable",
+        "Title": "不可用",
+        "Description": "<p>Switch 失效状态</p>\n",
+        "Code": "<div>\n    <Switch Checked=\"switchValue2\" Disabled=\"isDisabled2\"/>\n    <br />\n    <br />\n    <AntButton Type=\"primary\" @onclick=\"(_)=>isDisabled2 = !isDisabled2\">Toggle disabled</AntButton>\n</div>\n\n\n@code{\n    bool switchValue = false;\n\n    bool switchValue2 = false;\n    bool isDisabled2 = true;\n\n    RenderFragment checkedChildren =@<AntIcon Type=\"check\"></AntIcon>;\n\n    RenderFragment unCheckedChildren = @<AntIcon Type=\"close\"></AntIcon>;\n\n}\n\n\n",
+        "Type": "Demos.Switch.demo.Disable",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "loading",
+        "Title": "加载中",
+        "Description": "<p>标识开关操作仍在执行中。</p>\n",
+        "Code": "<div>\n    <Switch Checked=\"true\" Loading=\"true\"/>\n    <br />\n    <Switch Size=\"small\" Loading=\"true\"/>\n</div>\n\n\n\n",
+        "Type": "Demos.Switch.demo.Loading",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Radio",
+    "SubTitle": "单选框",
+    "Type": "数据录入",
+    "Desc": "<p>单选框。</p>\n<h2>何时使用</h2>\n<p>-用于在多个备选项中选中单个状态。\n-和 <code>Select</code> 的区别是，<code>Radio</code> 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>Radio/Radio.Button</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AutoFocus</td>\n<td>自动获取焦点</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Checked</td>\n<td>指定当前是否选中</td>\n<td>boolean</td>\n<td></td>\n</tr>\n<tr>\n<td>DefaultChecked</td>\n<td>初始是否选中</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>禁用 Radio</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Value</td>\n<td>根据 value 进行比较，判断是否选中</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>RadioGroup</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ButtonStyle</td>\n<td>RadioButton 的风格样式，目前有描边和填色两种风格</td>\n<td><code>outline</code>,<code>solid</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>禁选所有子单选器</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Value</td>\n<td>用于设置当前选中的值</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Name</td>\n<td>RadioGroup 下所有 input[type=&quot;radio&quot;] 的 name 属性</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Size</td>\n<td>大小，只对按钮样式生效</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>选项变化时的回调函数</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "group",
+        "Title": "单选组合",
+        "Description": "<p>一组互斥的 Radio 配合使用。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"@_value\" >\n        <Radio Value=\"1\">A</Radio>\n        <Radio Value=\"2\">B</Radio>\n        <Radio Value=\"3\">C</Radio>\n        <Radio Value=\"4\">D</Radio>\n    </RadioGroup>\n</div>\n@code\n {\n    void onChange(string value)\n    {\n\n    }\n\n    string _value = \"1\";\n}",
+        "Type": "Demos.Radio.demo.Group",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法。</p>\n",
+        "Code": "<div>\n    <Radio >Radio</Radio>\n</div>\n",
+        "Type": "Demos.Radio.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "style",
+        "Title": "按钮样式",
+        "Description": "<p>按钮样式的单选组合。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"radioValue3\">\n        <Radio RadioButton Value=\"A\">Hangzhou</Radio>\n        <Radio RadioButton Value=\"B\">Shanghai</Radio>\n        <Radio RadioButton Value=\"C\">Beijing</Radio>\n        <Radio RadioButton Value=\"D\">Chengdu</Radio>\n    </RadioGroup>\n    <br />\n    <br />\n    <RadioGroup @bind-Value=\"radioValue3\">\n        <Radio RadioButton Value=\"A\">Hangzhou</Radio>\n        <Radio RadioButton Value=\"B\" Disabled>Shanghai</Radio>\n        <Radio RadioButton Value=\"C\">Beijing</Radio>\n        <Radio RadioButton Value=\"D\">Chengdu</Radio>\n    </RadioGroup>\n    <br />\n    <br />\n    <RadioGroup @bind-Value=\"radioValue3\">\n        <Radio RadioButton Value=\"A\" Disabled>Hangzhou</Radio>\n        <Radio RadioButton Value=\"B\" Disabled>Shanghai</Radio>\n        <Radio RadioButton Value=\"C\" Disabled>Beijing</Radio>\n        <Radio RadioButton Value=\"D\" Disabled>Chengdu</Radio>\n    </RadioGroup>\n</div>\n\n@code\n{\n    string radioValue3 = \"A\";\n}\n",
+        "Type": "Demos.Radio.demo.Style",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "name",
+        "Title": "单选组合 - 配合 name 使用",
+        "Description": "<p>可以为 Radio.Group 配置 name 参数，为组合内的 input 元素赋予相同的 name 属性，使浏览器把 Radio.Group 下的 Radio 真正看作是一组（例如可以通过方向键始终在同一组内更改选项）。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"radioValue2\" Name=\"radiogroup\">\n        <Radio Value=\"A\">A</Radio>\n        <Radio Value=\"B\">B</Radio>\n        <Radio Value=\"C\">C</Radio>\n        <Radio Value=\"D\">D</Radio>\n    </RadioGroup>\n</div>\n@code\n{\n    string radioValue2 = \"A\";\n}",
+        "Type": "Demos.Radio.demo.Name",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "size",
+        "Title": "大小",
+        "Description": "<p>大中小三种组合，可以和表单输入框进行对应配合。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"radioValue5\" Size=\"large\">\n        <Radio RadioButton Value=\"A\">Hangzhou</Radio>\n        <Radio RadioButton Value=\"B\">Shanghai</Radio>\n        <Radio RadioButton Value=\"C\">Beijing</Radio>\n        <Radio RadioButton Value=\"D\">Chengdu</Radio>\n    </RadioGroup>\n    <br />\n    <br />\n    <RadioGroup @bind-Value=\"radioValue5\">\n        <Radio RadioButton Value=\"A\">Hangzhou</Radio>\n        <Radio RadioButton Value=\"B\">Shanghai</Radio>\n        <Radio RadioButton Value=\"C\">Beijing</Radio>\n        <Radio RadioButton Value=\"D\">Chengdu</Radio>\n    </RadioGroup>\n    <br />\n    <br />\n    <RadioGroup @bind-Value=\"radioValue5\" Size=\"small\">\n        <Radio RadioButton Value=\"A\">Hangzhou</Radio>\n        <Radio RadioButton Value=\"B\">Shanghai</Radio>\n        <Radio RadioButton Value=\"C\">Beijing</Radio>\n        <Radio RadioButton Value=\"D\">Chengdu</Radio>\n    </RadioGroup>\n\n</div>\n@code\n{\n    string radioValue5 = \"A\";\n}",
+        "Type": "Demos.Radio.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "vgroup",
+        "Title": "Radio.Group 垂直",
+        "Description": "<p>垂直的 Radio.Group，配合更多输入框选项。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"@radioValue\">\n        <Radio Style=\"@style\" Value=\"A\">Option A</Radio>\n        <Radio Style=\"@style\" Value=\"B\">Option B</Radio>\n        <Radio Style=\"@style\" Value=\"C\">Option C</Radio>\n        <Radio Style=\"@style\" Value=\"M\">\n            More...\n            @if (radioValue == \"M\")\n            {\n                <AntDesign.Input type=\"text\" />\n            }\n        </Radio>\n    </RadioGroup>\n</div>\n@code\n{\n    string radioValue = \"A\";\n    string style = \"display: block;height:30px;line-height:30px\";\n}",
+        "Type": "Demos.Radio.demo.Vgroup",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "optional",
+        "Title": "Radio.Group 组合 - 配置方式",
+        "Description": "<p>通过配置 options 参数来渲染单选框。</p>\n",
+        "Code": "<div>\n it will come.\n</div>\n",
+        "Type": "Demos.Radio.demo.Optional",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "button",
+        "Title": "填底的按钮样式",
+        "Description": "<p>实色填底的单选按钮样式。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"radioValue4\" ButtonStyle=\"solid\">\n        <Radio RadioButton Value=\"A\">Hangzhou</Radio>\n        <Radio RadioButton Value=\"B\">Shanghai</Radio>\n        <Radio RadioButton Value=\"C\">Beijing</Radio>\n        <Radio RadioButton Value=\"D\">Chengdu</Radio>\n    </RadioGroup>\n</div>\n@code\n{\n    string radioValue4 = \"A\";\n}",
+        "Type": "Demos.Radio.demo.Button",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "disable",
+        "Title": "不可用",
+        "Description": "<p>Radio 不可用.</p>\n",
+        "Code": "<div>\n    <Radio Checked Disabled=\"@Disabled\">\n        Disabled\n    </Radio>\n    <br />\n    <Radio Disabled=\"@Disabled\">\n        Disabled\n    </Radio>\n    <div style=\"margin-top: 20px\">\n        <AntButton Type=\"primary\" OnClick=\"_=>Disabled=!Disabled\">Toggle Disabled</AntButton>\n    </div>\n</div>\n\n@code\n{\n    bool Disabled = true;\n}\n",
+        "Type": "Demos.Radio.demo.Disable",
         "Style": "",
         "Debug": false
       }
@@ -695,6 +952,75 @@
     ]
   },
   {
+    "Title": "Checkbox",
+    "SubTitle": "多选框",
+    "Type": "数据录入",
+    "Desc": "<p>多选框。</p>\n<h2>何时使用</h2>\n<ul>\n<li>在一组可选项中进行多项选择时；</li>\n<li>单独使用可以表示两种状态之间的切换，和 switch 类似。区别在于切换 switch 会直接触发状态改变，而 checkbox 一般用于状态标记，需要和提交操作配合。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>Checkbox</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AutoFocus</td>\n<td>自动获取焦点</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Checked</td>\n<td>指定当前是否选中</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>失效状态</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Indeterminate</td>\n<td>设置 indeterminate 状态，只负责样式控制</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>CheckedChange</td>\n<td>变化时回调函数</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>Checkbox Group</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>CheckboxItems</td>\n<td>自动获取焦点</td>\n<td>IList<AntCheckbox></td>\n<td>-</td>\n</tr>\n<tr>\n<td>Disable</td>\n<td>整组失效</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Options</td>\n<td>指定可选项</td>\n<td>CheckBoxOption[]</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Value</td>\n<td>选中组的值列表</td>\n<td>IList<string></td>\n<td>Array.Empty<string>()</td>\n</tr>\n<tr>\n<td>ValueChanged</td>\n<td>变化时回调函数</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "group",
+        "Title": "Checkbox组",
+        "Description": "<p>方便的从数组生成 Checkbox 组。</p>\n",
+        "Code": "<div>\n    <CheckboxGroup  Options=\"@plainOptions\" @bind-Value=\"@checkValue1\"  />\n    <br />\n    <br />\n    <CheckboxGroup Options=\"@ckeckAllOptions\"  @bind-Value=\"@checkValue2\"/>\n    <br />\n    <br />\n    <CheckboxGroup Options=\"@OptionsWithDisable\"  @bind-Value=\"@checkValue1\"/> \n</div>\n@code{ \n\n        string[] checkValue1 = { \"Apple\" };\n        string[] checkValue2 = { \"Pear\" };\n\n        CheckBoxOption[] plainOptions = new CheckBoxOption[]\n        {\n        new CheckBoxOption{ Label=\"Apple\",Value=\"Apple\" },\n        new CheckBoxOption{ Label=\"Pear\", Value=\"Pear\" },\n        new CheckBoxOption{ Label=\"Orange\", Value=\"Orange\" },\n        };\n\n        CheckBoxOption[] ckeckAllOptions = new CheckBoxOption[]\n        {\n        new CheckBoxOption{ Label=\"Apple\",Value=\"Apple\" },\n        new CheckBoxOption{ Label=\"Pear\", Value=\"Pear\" ,Checked=true},\n        new CheckBoxOption{ Label=\"Orange\", Value=\"Orange\" },\n        };\n\n        CheckBoxOption[] OptionsWithDisable = new CheckBoxOption[]\n        {\n        new CheckBoxOption{ Label=\"Apple\",Value=\"Apple\" },\n        new CheckBoxOption{ Label=\"Pear\", Value=\"Pear\" },\n        new CheckBoxOption{ Label=\"Orange\", Value=\"Orange\", Disabled=true },\n        };\n\n    private bool checkAll { get; set; } = false;\n\n    void  groupValueChanged()\n    {\n        bool allChecked = checkAll;\n        plainOptions.ForEach(o => o.Checked = !allChecked);\n    }\n\n\n\n\n}",
+        "Type": "Demos.Checkbox.demo.Group",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "controlled",
+        "Title": "受控的Checkbox",
+        "Description": "<p>联动 checkbox。</p>\n",
+        "Code": "<div>\n    <p style=\"margin-bottom: 20px\">\n        <Checkbox Checked=\"@checkValue\"  \n                    Disabled=\"@disableValue\" \n                    CheckedChange=\"CheckChanged\">\n        @label\n        </Checkbox>\n    </p>     \n        <p>\n        <AntButton Type=\"primary\" Size=\"small\"  @onclick=\"@CheckClick\">@checkTitle</AntButton>\n        <AntButton Type=\"primary\" Size=\"small\"  @onclick=\"@DisableClick\">@disableTitle</AntButton>\n      </p>     \n  </div>\n\n  @code{\n\n      private bool checkValue { get; set; } = false;\n      private bool disableValue { get; set; } = false;\n      private string label { get; set; } = \"Check-Enable\";\n      private string checkTitle { get; set; } = \"Check\";\n      private string disableTitle { get; set; } = \"Enable\";\n\n      void CheckChanged()\n      {\n          CheckClick();\n      }\n\n\n\n      void CheckClick()\n      {\n          if (checkValue)\n          {\n              checkTitle = \"Check\";\n              checkValue = false;\n          }\n          else\n          {\n              checkTitle = \"Uncheck\";\n              checkValue = true;\n          }\n\n          label = $\"{checkTitle}-{disableTitle}\";\n      }\n\n\n\n      void DisableClick()\n      {\n          if (disableValue)\n          {\n              disableTitle = \"Enabled\";\n              disableValue = false;\n          }\n          else\n          {\n              disableTitle = \"Disabled\";\n              disableValue = true;\n          }\n          label = $\"{checkTitle}-{disableTitle}\";\n      }\n  }",
+        "Type": "Demos.Checkbox.demo.Controlled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "layout",
+        "Title": "布局",
+        "Description": "<p>Checkbox.Group 内嵌 Checkbox 并与 Grid 组件一起使用，可以实现灵活的布局。</p>\n",
+        "Code": "<div>\n    TO BE Defined\n    @*<CheckboxGroup Style=\"width:100%\"  ValueChanged=\"@OnChange\">\n\n        <AntRow>\n            <AntCol Span=\"8\">\n                <Checkbox Value=\"A\" >A</Checkbox>\n            </AntCol>\n            <AntCol Span=\"8\">\n                <Checkbox Value=\"B\"  >B</Checkbox>\n            </AntCol>\n            <AntCol Span=\"8\">\n                <Checkbox Value=\"C\"  >C</Checkbox>\n            </AntCol>\n            <AntCol Span=\"8\">\n                <Checkbox Value=\"D\" >D</Checkbox>\n            </AntCol>\n            <AntCol Span=\"8\">\n                <Checkbox Value=\"E\" >E</Checkbox>\n            </AntCol>\n        </AntRow>\n    </CheckboxGroup>*@\n\n\n\n</div>\n@code\n{   \n\n    void OnChange()\n    {\n\n    }\n}\n\n",
+        "Type": "Demos.Checkbox.demo.Layout",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本用法",
+        "Description": "<p>简单的 checkbox。</p>\n",
+        "Code": "  <div>\n    <Checkbox Checked=\"@isChecked\" Disabled=\"@disabled\" CheckedChange=\"@ToggleChecked\">\n                @($\"{(isChecked ? \"Check\" : \"Uncheck\")}-{(disabled ? \"Disable\" : \"Enable\")}\")\n    </Checkbox>\n  </div>\n  \n  @code{\n    bool isChecked = true;\n    bool disabled = false;\n    void ToggleChecked()\n    {\n        isChecked = !isChecked;\n    }\n    void ToggleDisable()\n    {\n        disabled = !disabled;\n    }\n}\n\n  ",
+        "Type": "Demos.Checkbox.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "disable",
+        "Title": "不可用",
+        "Description": "<p>checkbox 不可用。</p>\n",
+        "Code": "<div>\n            <Checkbox Disabled=\"true\"/>\n            <br />\n            <Checkbox Checked=\"true\" Disabled=\"true\"/>\n</div>",
+        "Type": "Demos.Checkbox.demo.Disable",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "checkboxall",
+        "Title": "全选",
+        "Description": "<p>在实现全选效果时，你可能会用到 <code>indeterminate</code> 属性。</p>\n",
+        "Code": "<div>\n    <Checkbox Indeterminate=\"@indeterminate\" Checked=\"@checkAll\" CheckedChange=\"@CheckAllChanged\">\n    Check all\n    </Checkbox>\n    <br />\n    <AntDesign.CheckboxGroup Options=\"@ckeckAllOptions\" ValueChanged=\"@OnChanged\"/>\n</div>\n\n@code{\n\n    static CheckBoxOption[] ckeckAllOptions = new CheckBoxOption[]{\n        new CheckBoxOption{ Label=\"Apple\",Value=\"Apple\" ,Checked=true},\n        new CheckBoxOption{ Label=\"Pear\", Value=\"Pear\" },\n        new CheckBoxOption{ Label=\"Orange\", Value=\"Orange\",Checked=true },\n    };\n\n    void CheckAllChanged()\n    {\n        bool allChecked = checkAll;\n        ckeckAllOptions.ForEach(o => o.Checked = !allChecked);\n    }\n\n    void OnChanged()\n    {\n\n    }\n\n    bool indeterminate => ckeckAllOptions.Count(o => o.Checked) > 0 && ckeckAllOptions.Count(o => o.Checked) < ckeckAllOptions.Count();\n\n    bool checkAll => ckeckAllOptions.All(o => o.Checked);\n\n}",
+        "Type": "Demos.Checkbox.demo.CheckboxAll",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Tooltip",
     "SubTitle": "文字提示",
     "Type": "数据展示",
@@ -885,7 +1211,7 @@
         "Name": "size",
         "Title": "三种大小",
         "Description": "<p>三种大小的输入框，若不设置，则为 <code>default</code>。</p>\n",
-        "Code": "<AntRadioGroup @bind-Value=\"@datePickerSize\">\n    <AntRadio RadioButton Value=\"@DatePickerSize.Large\">Large</AntRadio>\n    <AntRadio RadioButton Value=\"@DatePickerSize.Default\">Default</AntRadio>\n    <AntRadio RadioButton Value=\"@DatePickerSize.Small\">Small</AntRadio>\n</AntRadioGroup>\n<br />\n<DatePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" Size=\"@datePickerSize\" />\n<br />\n<RangePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" Size=\"@datePickerSize\" />\n\n@code {\n    private string datePickerSize = DatePickerSize.Default;\n}",
+        "Code": "<RadioGroup @bind-Value=\"@datePickerSize\">\n    <Radio RadioButton Value=\"@DatePickerSize.Large\">Large</Radio>\n    <Radio RadioButton Value=\"@DatePickerSize.Default\">Default</Radio>\n    <Radio RadioButton Value=\"@DatePickerSize.Small\">Small</Radio>\n</RadioGroup>\n<br />\n<DatePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" Size=\"@datePickerSize\" />\n<br />\n<RangePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" Size=\"@datePickerSize\" />\n\n@code {\n    private string datePickerSize = DatePickerSize.Default;\n}",
         "Type": "Demos.DatePicker.demo.Size",
         "Style": "",
         "Debug": false
@@ -1104,7 +1430,7 @@
         "Name": "size",
         "Title": "按钮尺寸",
         "Description": "<p>按钮有大、中、小三种尺寸。</p>\n<p>通过设置 <code>size</code> 为 <code>large</code> <code>small</code> 分别把按钮设为大、小尺寸。若不设置 <code>size</code>，则尺寸为中。</p>\n",
-        "Code": "<div>\n    <AntRadioGroup @bind-Value=\"@size\">\n        <AntRadio RadioButton Value=\"large\">Large</AntRadio>\n        <AntRadio RadioButton Value=\"default\">Default</AntRadio>\n        <AntRadio RadioButton Value=\"small\">Small</AntRadio>\n    </AntRadioGroup>\n    <br />\n    <br />\n    <AntButton Type=\"primary\" Size=@size>\n        Primary\n    </AntButton>\n    <AntButton Size=\"@size\">Default</AntButton>\n    <AntButton Type=\"dashed\" Size=@size>\n        Dashed\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\" Size=@size>\n        Link\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"circle\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n</div>\n\n@code\n{\n    string size = \"large\";\n}\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"@size\">\n        <Radio RadioButton Value=\"large\">Large</Radio>\n        <Radio RadioButton Value=\"default\">Default</Radio>\n        <Radio RadioButton Value=\"small\">Small</Radio>\n    </RadioGroup>\n    <br />\n    <br />\n    <AntButton Type=\"primary\" Size=@size>\n        Primary\n    </AntButton>\n    <AntButton Size=\"@size\">Default</AntButton>\n    <AntButton Type=\"dashed\" Size=@size>\n        Dashed\n    </AntButton>\n    <br />\n    <AntButton Type=\"link\" Size=@size>\n        Link\n    </AntButton>\n    <br />\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"circle\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size />\n    <AntButton Type=\"primary\" Shape=\"round\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n    <AntButton Type=\"primary\" Icon=\"download\" Size=@size>\n    Download\n    </AntButton>\n</div>\n\n@code\n{\n    string size = \"large\";\n}\n",
         "Type": "Demos.Button.demo.Size",
         "Style": "",
         "Debug": false
@@ -1352,7 +1678,7 @@
         "Name": "formindrawer",
         "Title": "抽屉表单",
         "Description": "<p>在抽屉中使用表单。</p>\n",
-        "Code": "<div>\n    <AntButton Icon=\"plus\" Type=\"primary\" @onclick=\"_=>open()\">New account</AntButton>\n    <Drawer Closable=\"true\" Width=\"720\" Visible=\"visible\" Title='(\"Submit from in Drawer\")' OnClose=\"_=>close()\">\n        <Template style=\"height:90%\">\n            <AntRow Gutter=\"16\">\n                <AntCol Span=\"12\">\n                    <AntText>Name</AntText>\n                    <AntInput Placeholder=\"Please enter user name\"></AntInput>\n                </AntCol>\n                <AntCol Span=\"12\">\n                    <AntText>Url</AntText>\n                    <AntInput Placeholder=\"please enter url\">\n                        <AddOnBefore>Http://</AddOnBefore>\n                        <AddOnAfter>.Com</AddOnAfter>\n                    </AntInput>\n                </AntCol>\n            </AntRow>\n            <br />\n            <AntRow Gutter=\"16\">\n                <AntCol Span=\"12\">\n                    <AntText>Owner</AntText>\n                    <AntInput Placeholder=\"Please select a owner\"></AntInput>\n                </AntCol>\n                <AntCol Span=\"12\">\n                    <AntText>Type</AntText>\n                    <AntInput Placeholder=\"please enter url\"></AntInput>\n                </AntCol>\n            </AntRow>\n            <br />\n\n            <AntRow>\n                <AntCol Span=\"24\">\n                    <AntText>Description</AntText>\n                    <AntTextArea Placeholder=\"Please enter your description\">\n\n                    </AntTextArea>\n                </AntCol>\n            </AntRow>\n            <br />\n            <AntRow>\n                <AntCol Span=\"18\">\n\n                </AntCol>\n                <AntCol Span=\"6\">\n                    <AntButton Type=\"default\">Cancel</AntButton>\n                    <AntButton Type=\"primary\">Submit</AntButton>\n                </AntCol>\n            </AntRow>\n        </Template>\n    </Drawer>\n</div>\n\n\n@code{\n    bool visible = false;\n\n    void open()\n    {\n        this.visible = true;\n    }\n\n    void close()\n    {\n        this.visible = false;\n    }\n}",
+        "Code": "<div>\n    <AntButton Icon=\"plus\" Type=\"primary\" @onclick=\"_=>open()\">New account</AntButton>\n    <Drawer Closable=\"true\" Width=\"720\" Visible=\"visible\" Title='(\"Submit from in Drawer\")' OnClose=\"_=>close()\">\n        <Template style=\"height:90%\">\n            <AntRow Gutter=\"16\">\n                <AntCol Span=\"12\">\n                    <AntText>Name</AntText>\n                    <Input Placeholder=\"Please enter user name\"></Input>\n                </AntCol>\n                <AntCol Span=\"12\">\n                    <AntText>Url</AntText>\n                    <AntDesign.Input Placeholder=\"please enter url\">\n                        <AddOnBefore>Http://</AddOnBefore>\n                        <AddOnAfter>.Com</AddOnAfter>\n                    </AntDesign.Input>\n                </AntCol>\n            </AntRow>\n            <br />\n            <AntRow Gutter=\"16\">\n                <AntCol Span=\"12\">\n                    <AntText>Owner</AntText>\n                    <Input Placeholder=\"Please select a owner\"/>\n                </AntCol>\n                <AntCol Span=\"12\">\n                    <AntText>Type</AntText>\n                    <Input Placeholder=\"please enter url\"/>\n                </AntCol>\n            </AntRow>\n            <br />\n\n            <AntRow>\n                <AntCol Span=\"24\">\n                    <AntText>Description</AntText>\n                    <TextArea Placeholder=\"Please enter your description\">\n\n                    </TextArea>\n                </AntCol>\n            </AntRow>\n            <br />\n            <AntRow>\n                <AntCol Span=\"18\">\n\n                </AntCol>\n                <AntCol Span=\"6\">\n                    <AntButton Type=\"default\">Cancel</AntButton>\n                    <AntButton Type=\"primary\">Submit</AntButton>\n                </AntCol>\n            </AntRow>\n        </Template>\n    </Drawer>\n</div>\n\n\n@code{\n    bool visible = false;\n\n    void open()\n    {\n        this.visible = true;\n    }\n\n    void close()\n    {\n        this.visible = false;\n    }\n}",
         "Type": "Demos.Drawer.demo.Formindrawer",
         "Style": "",
         "Debug": false
@@ -1392,7 +1718,7 @@
         "Name": "placement",
         "Title": "自定义位置",
         "Description": "<p>自定义位置，点击触发按钮抽屉从相应的位置滑出，点击遮罩区关闭</p>\n",
-        "Code": "<div>\n    <AntRadioGroup @bind-Value=\"placement\">\n        <AntRadio Value=\"top\">top</AntRadio>\n        <AntRadio Value=\"right\">right</AntRadio>\n        <AntRadio Value=\"bottom\">bottom</AntRadio>\n        <AntRadio Value=\"left\">left</AntRadio>\n    </AntRadioGroup>\n\n    <AntButton Type=\"primary\" @onclick=\"_ => open()\">Open</AntButton>\n    <Drawer Closable=\"true\" Visible=\"@visible\" Placement=\"@placement\" Title='(\"Drawer in different Placement\")' OnClose=\"_ => close()\">\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n    </Drawer>\n</div>  \n\n@code{\n\n    string placement = \"right\";\n\n    bool visible = false;\n\n    void open()\n    {\n        this.visible = true;\n    }\n\n    void close()\n    {\n        this.visible = false;\n    }\n}",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"placement\">\n        <Radio Value=\"top\">top</Radio>\n        <Radio Value=\"right\">right</Radio>\n        <Radio Value=\"bottom\">bottom</Radio>\n        <Radio Value=\"left\">left</Radio>\n    </RadioGroup>\n\n    <AntButton Type=\"primary\" @onclick=\"_ => open()\">Open</AntButton>\n    <Drawer Closable=\"true\" Visible=\"@visible\" Placement=\"@placement\" Title='(\"Drawer in different Placement\")' OnClose=\"_ => close()\">\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n    </Drawer>\n</div>  \n\n@code{\n\n    string placement = \"right\";\n\n    bool visible = false;\n\n    void open()\n    {\n        this.visible = true;\n    }\n\n    void close()\n    {\n        this.visible = false;\n    }\n}",
         "Type": "Demos.Drawer.demo.Placement",
         "Style": "",
         "Debug": false
@@ -1404,14 +1730,14 @@
     "SubTitle": "徽标数",
     "Type": "数据展示",
     "Desc": "<p>图标右上角的圆形徽标数字。</p>\n<h2>何时使用</h2>\n<p>一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。</p>\n",
-    "ApiDoc": "",
+    "ApiDoc": "<h2>API</h2>\n<pre><code class=\"language-jsx\">&lt;Badge count={5}&gt;\n  &lt;a href=&quot;#&quot; className=&quot;head-example&quot; /&gt;\n&lt;/Badge&gt;\n</code></pre>\n<pre><code class=\"language-jsx\">&lt;Badge count={5} /&gt;\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义小圆点的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>展示的数字，大于 overflowCount 时显示为 <code>${overflowCount}+</code>，为 0 时隐藏</td>\n<td>ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Dot</td>\n<td>不展示数字，只有一个小红点</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Offset</td>\n<td>设置状态点的位置偏移，格式为 <code>[x, y]</code></td>\n<td><code>[number, number]</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OverflowCount</td>\n<td>展示封顶的数字值</td>\n<td>number</td>\n<td>99</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowZero</td>\n<td>当数值为 0 时，是否展示 Badge</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>设置 Badge 为状态点</td>\n<td><code>success</code> | <code>processing</code> | <code>default</code> | <code>error</code> | <code>warning</code></td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>在设置了 <code>status</code> 的前提下有效，设置状态点的文本</td>\n<td>string</td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Title</td>\n<td>设置鼠标放在状态点上时显示的文字</td>\n<td>string</td>\n<td><code>count</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
     "DemoList": [
       {
         "Order": 4,
         "Name": "change",
         "Title": "动态",
         "Description": "<p>展示动态变化的效果。</p>\n",
-        "Code": "<div>\n    <div>\n        <AntBadge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </AntBadge>\n        <AntButtonGroup>\n            <AntButton @onclick=\"_=>decline()\">\n                <AntIcon Type=\"minus\"></AntIcon>\n            </AntButton>\n            <AntButton @onclick=\"_=>increase()\">\n                <AntIcon Type=\"plus\"></AntIcon>\n            </AntButton>\n        </AntButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <AntBadge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </AntBadge>\n        <AntSwitch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
+        "Code": "<div>\n    <div>\n        <Badge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <AntButtonGroup>\n            <AntButton @onclick=\"_=>decline()\">\n                <AntIcon Type=\"minus\"></AntIcon>\n            </AntButton>\n            <AntButton @onclick=\"_=>increase()\">\n                <AntIcon Type=\"plus\"></AntIcon>\n            </AntButton>\n        </AntButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <Badge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <AntSwitch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
         "Type": "Demos.Badge.demo.Change",
         "Style": "",
         "Debug": false
@@ -1421,7 +1747,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>简单的徽章展示，当 <code>count</code> 为 <code>0</code> 时，默认不显示，但是可以使用 <code>showZero</code> 修改为显示。</p>\n",
-        "Code": "<div>\n    <AntBadge Count=\"5\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"0\" ShowZero>\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    @{\n        RenderFragment count = @<AntIcon Type=\"clock-circle\" Fill=\"#f5222d\"/>;\n    }\n    <AntBadge Count=\"@(count)\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>\n\n",
+        "Code": "<div>\n    <Badge Count=\"5\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n    <Badge Count=\"0\" ShowZero>\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n    @{\n        RenderFragment count = @<AntIcon Type=\"clock-circle\" Fill=\"#f5222d\"/>;\n    }\n    <Badge Count=\"@(count)\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n</div>\n\n",
         "Type": "Demos.Badge.demo.Basic",
         "Style": "\n    .ant-badge:not(.ant-badge-not-a-wrapper) {\n        margin-right: 20px;\n    }\n    .ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n        margin-right: 0;\n        margin-left: 20px;\n    }\n    .head-example {\n        width: 42px;\n        height: 42px;\n        border-radius: 2px;\n        background: #eee;\n        display: inline-block;\n        vertical-align: middle;\n    }\n    [data-theme=\"dark\"] .head-example {\n        background: rgba(255,255,255,.12);\n    }\n\n",
         "Debug": false
@@ -1431,7 +1757,7 @@
         "Name": "overflow",
         "Title": "封顶数字",
         "Description": "<p>超过 <code>overflowCount</code> 的会显示为 <code>${overflowCount}+</code>，默认的 <code>overflowCount</code> 为 <code>99</code>。</p>\n",
-        "Code": "<div>\n    <AntBadge Count=\"99\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"100\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"99\" OverflowCount=\"10\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n    <AntBadge Count=\"1000\" OverflowCount=\"999\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>\n",
+        "Code": "<div>\n    <Badge Count=\"99\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n    <Badge Count=\"100\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n    <Badge Count=\"99\" OverflowCount=\"10\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n    <Badge Count=\"1000\" OverflowCount=\"999\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n</div>\n",
         "Type": "Demos.Badge.demo.Overflow",
         "Style": "",
         "Debug": false
@@ -1441,7 +1767,7 @@
         "Name": "colorful",
         "Title": "多彩徽标",
         "Description": "<p>我们添加了多种预设色彩的徽标样式，用作不同场景使用。如果预设值不能满足你的需求，可以设置为具体的色值。</p>\n",
-        "Code": "<div>\n    <h4 style=\"margin-bottom: 16px\">Presets:</h4>\n    <div>\n        @foreach (var color in colors)\n        {\n            <div key=\"@color\">\n                <AntBadge Color=\"@color\" Text=\"@color\" />\n            </div>\n        }\n    </div>\n    <h4 style=\"margin:16px 0;\">Custom:</h4>\n    <div>\n        <AntBadge Color=\"#f50\" Text=\"#f50\" />\n        <br />\n        <AntBadge Color=\"#2db7f5\" Text=\"#2db7f5\" />\n        <br />\n        <AntBadge Color=\"#87d068\" Text=\"#87d068\" />\n        <br />\n        <AntBadge Color=\"#108ee9\" Text=\"#108ee9\" />\n    </div>\n</div>\n\n<style>\n    .ant-tag {\n        margin-bottom: 8px;\n    }\n</style>\n\n@code\n{\n    string[] colors =\n    {\n        \"pink\",\n        \"red\",\n        \"yellow\",\n        \"orange\",\n        \"cyan\",\n        \"green\",\n        \"blue\",\n        \"purple\",\n        \"geekblue\",\n        \"magenta\",\n        \"volcano\",\n        \"gold\",\n        \"lime\",\n    };\n}\n",
+        "Code": "<div>\n    <h4 style=\"margin-bottom: 16px\">Presets:</h4>\n    <div>\n        @foreach (var color in colors)\n        {\n            <div key=\"@color\">\n                <Badge Color=\"@color\" Text=\"@color\" />\n            </div>\n        }\n    </div>\n    <h4 style=\"margin:16px 0;\">Custom:</h4>\n    <div>\n        <Badge Color=\"#f50\" Text=\"#f50\" />\n        <br />\n        <Badge Color=\"#2db7f5\" Text=\"#2db7f5\" />\n        <br />\n        <Badge Color=\"#87d068\" Text=\"#87d068\" />\n        <br />\n        <Badge Color=\"#108ee9\" Text=\"#108ee9\" />\n    </div>\n</div>\n\n<style>\n    .ant-tag {\n        margin-bottom: 8px;\n    }\n</style>\n\n@code\n{\n    string[] colors =\n    {\n        \"pink\",\n        \"red\",\n        \"yellow\",\n        \"orange\",\n        \"cyan\",\n        \"green\",\n        \"blue\",\n        \"purple\",\n        \"geekblue\",\n        \"magenta\",\n        \"volcano\",\n        \"gold\",\n        \"lime\",\n    };\n}\n",
         "Type": "Demos.Badge.demo.Colorful",
         "Style": "",
         "Debug": false
@@ -1451,7 +1777,7 @@
         "Name": "link",
         "Title": "可点击",
         "Description": "<p>用 a 标签进行包裹即可。</p>\n",
-        "Code": "<a href=\"#\">\n    <AntBadge Count=\"5\">\n        <span class=\"head-example\" />\n    </AntBadge>\n</a>",
+        "Code": "<a href=\"#\">\n    <Badge Count=\"5\">\n        <span class=\"head-example\" />\n    </Badge>\n</a>",
         "Type": "Demos.Badge.demo.Link",
         "Style": "",
         "Debug": false
@@ -1461,7 +1787,7 @@
         "Name": "title",
         "Title": "自定义标题",
         "Description": "<p>设置鼠标放在状态点上时显示的文字。</p>\n",
-        "Code": "<div>\n    <AntBadge Count=\"5\" Title=\"Custom hover text\">\n        <a href=\"#\" class=\"head-example\" />\n    </AntBadge>\n</div>",
+        "Code": "<div>\n    <Badge Count=\"5\" Title=\"Custom hover text\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n</div>",
         "Type": "Demos.Badge.demo.Title",
         "Style": "\n.ant-badge:not(.ant-badge-not-a-wrapper) {\n  margin-right: 20px;\n}\n\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n\n.head-example {\n  width: 42px;\n  height: 42px;\n  border-radius: 2px;\n  background: #eee;\n  display: inline-block;\n}\n[data-theme=\"dark\"] .head-example {\n  background: rgba(255,255,255,.12);\n}\n\n",
         "Debug": true
@@ -1471,7 +1797,7 @@
         "Name": "dot",
         "Title": "讨嫌的小红点",
         "Description": "<p>没有具体的数字。</p>\n",
-        "Code": "<div>\n    <AntBadge Dot>\n        <AntIcon Type=\"notification\"/>\n    </AntBadge>\n    <AntBadge Count=\"0\" Dot>\n        <AntIcon Type=\"notification\" />\n    </AntBadge>\n    <AntBadge Dot>\n        <a href=\"#\">Link something</a>\n    </AntBadge>\n</div>",
+        "Code": "<div>\n    <Badge Dot>\n        <AntIcon Type=\"notification\"/>\n    </Badge>\n    <Badge Count=\"0\" Dot>\n        <AntIcon Type=\"notification\" />\n    </Badge>\n    <Badge Dot>\n        <a href=\"#\">Link something</a>\n    </Badge>\n</div>",
         "Type": "Demos.Badge.demo.Dot",
         "Style": "\n.anticon-notification {\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  font-size: 16px;\n}\n\n",
         "Debug": false
@@ -1481,7 +1807,7 @@
         "Name": "nowrapper",
         "Title": "独立使用",
         "Description": "<p>不包裹任何元素即是独立使用，可自定样式展现。</p>\n<blockquote>\n<p>在右上角的 badge 则限定为红色。</p>\n</blockquote>\n",
-        "Code": "<div>\n    <AntBadge Count=\"25\" />\n    <AntBadge Count=\"4\" Class=\"site-badge-count-4\" />\n    <AntBadge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
+        "Code": "<div>\n    <Badge Count=\"25\" />\n    <Badge Count=\"4\" Class=\"site-badge-count-4\" />\n    <Badge Class=\"site-badge-count-109\" Count=\"109\" Style=\"background-color: #52c41a\" />\n</div>\n\n<style>\n    .site-badge-count-4 .ant-badge-count {\n        background-color: #fff;\n        color: #999;\n        box-shadow: 0 0 0 1px #d9d9d9 inset;\n    }\n</style>",
         "Type": "Demos.Badge.demo.NoWrapper",
         "Style": "\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  margin-right: 8px;\n}\n.ant-badge.ant-badge-rtl:not(.ant-badge-not-a-wrapper) {\n  margin-right: 0;\n  margin-left: 20px;\n}\n[data-theme=\"dark\"] .site-badge-count-4 .ant-badge-count {\n  background-color: #141414;\n  box-shadow: 0 0 0 1px #434343 inset;\n}\n\n",
         "Debug": false
@@ -1491,7 +1817,7 @@
         "Name": "status",
         "Title": "状态点",
         "Description": "<p>用于表示状态的小圆点。</p>\n",
-        "Code": "<div>\n    <AntBadge Status=\"success\" />\n    <AntBadge Status=\"error\" />\n    <AntBadge Status=\"default\" />\n    <AntBadge Status=\"processing\" />\n    <AntBadge Status=\"warning\" />\n    <br />\n    <AntBadge Status=\"success\" Text=\"Success\" />\n    <br />\n    <AntBadge Status=\"error\" Text=\"Error\" />\n    <br />\n    <AntBadge Status=\"default\" Text=\"Default\" />\n    <br />\n    <AntBadge Status=\"processing\" Text=\"Processing\" />\n    <br />\n    <AntBadge Status=\"warning\" Text=\"Warning\" />\n</div>",
+        "Code": "<div>\n    <Badge Status=\"success\" />\n    <Badge Status=\"error\" />\n    <Badge Status=\"default\" />\n    <Badge Status=\"processing\" />\n    <Badge Status=\"warning\" />\n    <br />\n    <Badge Status=\"success\" Text=\"Success\" />\n    <br />\n    <Badge Status=\"error\" Text=\"Error\" />\n    <br />\n    <Badge Status=\"default\" Text=\"Default\" />\n    <br />\n    <Badge Status=\"processing\" Text=\"Processing\" />\n    <br />\n    <Badge Status=\"warning\" Text=\"Warning\" />\n</div>",
         "Type": "Demos.Badge.demo.Status",
         "Style": "",
         "Debug": false
@@ -1702,6 +2028,65 @@
     ]
   },
   {
+    "Title": "InputNumber",
+    "SubTitle": "数字输入框",
+    "Type": "数据录入",
+    "Desc": "<p>通过鼠标或键盘，输入范围内的数值。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当需要获取标准数值时。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AutoFocus</td>\n<td>自动获取焦点</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>DefaultValue</td>\n<td>初始值</td>\n<td>number</td>\n<td></td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>禁用</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Formatter</td>\n<td>指定输入框展示值的格式</td>\n<td>function(double,string)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Max</td>\n<td>最大值</td>\n<td>number</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Min</td>\n<td>最小值</td>\n<td>number</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Parser</td>\n<td>指定从 <code>formatter</code> 里转换回数字的方式，和 <code>formatter</code> 搭配使用</td>\n<td>function(string, double)</td>\n<td></td>\n</tr>\n<tr>\n<td>Size</td>\n<td>输入框大小</td>\n<td><code>large</code> ,<code>middle</code>,<code>small</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td>Step</td>\n<td>每次改变步数，可以为小数</td>\n<td>double</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Value</td>\n<td>当前值</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>ValueChanged</td>\n<td>输入框内容变化时的回调</td>\n<td>function(double)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>数字输入框。</p>\n",
+        "Code": "<div>\n    <AntDesign.InputNumber @bind-Value=\"myValue\"></AntDesign.InputNumber>\n</div>\n\n@code{\n    private double myValue { get; set; }\n}",
+        "Type": "Demos.InputNumber.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "formatter",
+        "Title": "格式化展示",
+        "Description": "<p>通过 <code>formatter</code> 格式化数字，以展示具有具体含义的数据，往往需要配合 <code>parser</code> 一起使用。</p>\n",
+        "Code": "@using System.Text.RegularExpressions\n<div>\n    <AntDesign.InputNumber Formatter=\"Format1\" Parser=\"Parse1\" DefaultValue=\"1000\" @bind-Value=\"myValue\"/>\n    <AntDesign.InputNumber Formatter=\"Format2\" Parser=\"Parse2\" DefaultValue=\"100\" Min=\"0\" Max=\"100\" @bind-Value=\"myValue\"/>\n</div>\n\n\n@code{\n\n    private double myValue { get; set; }\n\n    private string Format1(double value)\n    {\n        return \"$ \" + value.ToString(\"n0\");\n    }\n\n    private double Parse1(string value)\n    {\n        double val = double.Parse(Regex.Replace(value, @\"\\$\\s?|(,*)\", \"\"));\n\n        return val;\n    }\n\n    private string Format2(double value)\n    {\n        return value.ToString() + \"%\";\n    }\n\n    private double Parse2(string value)\n    {\n        return double.Parse(value.Replace(\"%\", \"\"));\n    }\n}\t\t",
+        "Type": "Demos.InputNumber.demo.Formatter",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "decimal",
+        "Title": "小数",
+        "Description": "<p>和原生的数字输入框一样，value 的精度由 step 的小数位数决定。</p>\n",
+        "Code": "<div>\n    <AntDesign.InputNumber Step=\"0.25\" Min=\"-1\" Max=\"5\" @bind-Value=\"myValue\" />\n</div>\n\n@code{\n    private double myValue { get; set; }\n}",
+        "Type": "Demos.InputNumber.demo.Decimal",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "size",
+        "Title": "三种大小",
+        "Description": "<p>三种大小的数字输入框，当 size 分别为 large 和 small 时，输入框高度为 40px 和 24px ，默认高度为 32px。</p>\n",
+        "Code": "<div>\n    <AntDesign.InputNumber DefaultValue=\"3\" Size=\"@InputSize.Large\" @bind-Value=\"myValue\"/>\n    <AntDesign.InputNumber DefaultValue=\"3\" @bind-Value=\"myValue\"/>\n    <AntDesign.InputNumber DefaultValue=\"3\" Size=\"@InputSize.Small\" @bind-Value=\"myValue\"/>\n</div>\n\t\t\n\n@code{\n    private double myValue { get; set; }\n}",
+        "Type": "Demos.InputNumber.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "disable",
+        "Title": "不可用",
+        "Description": "<p>点击按钮切换可用状态。</p>\n",
+        "Code": "<div>\n    <AntDesign.InputNumber DefaultValue=\"3\" Disabled=\"@disabled\" @bind-Value=\"myValue\" />\n    <div style=\"margin: 20px 0px 20px 0px;\">\n        <AntButton Type=\"@AntButtonType.Primary\" OnClick=\"(e)=> ToggleDisable()\">Toggle disabled</AntButton>\n    </div>\n</div>\n\n@code{\n    private bool disabled = true;\n\n    private double myValue { get; set; }\n\n\n    private void ToggleDisable()\n    {\n        disabled = !disabled;\n    }\n}\t\t",
+        "Type": "Demos.InputNumber.demo.Disable",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Notification",
     "SubTitle": "通知提醒框",
     "Type": "反馈",
@@ -1812,8 +2197,8 @@
         "Name": "badge",
         "Title": "带徽标的头像",
         "Description": "<p>通常用于消息提示。</p>\n",
-        "Code": "<div>\n    <span class=\"avatar-item\">\n        <AntBadge Count=\"1\">\n            <AntAvatar Shape=\"square\" Icon=\"user\" />\n        </AntBadge>\n    </span>\n    <span>\n        <AntBadge Dot>\n            <AntAvatar Shape=\"square\" Icon=\"user\"/>\n        </AntBadge>\n    </span>\n</div>",
-        "Type": "Demos.Avatar.demo.Badge",
+        "Code": "<div>\n    <span class=\"avatar-item\">\n        <Badge Count=\"1\">\n            <AntAvatar Shape=\"square\" Icon=\"user\" />\n        </Badge>\n    </span>\n    <span>\n        <Badge Dot>\n            <AntAvatar Shape=\"square\" Icon=\"user\"/>\n        </Badge>\n    </span>\n</div>",
+        "Type": "Demos.Avatar.demo.Badge_",
         "Style": "",
         "Debug": false
       },
@@ -1824,6 +2209,96 @@
         "Description": "<p>支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。</p>\n",
         "Code": "<div>\n    <AntAvatar Icon=\"user\" />\n    <AntAvatar>U</AntAvatar>\n    <AntAvatar>USER</AntAvatar>\n    <AntAvatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <AntAvatar Style=\"color: #f56a00; background-color: #fde3cf; \">U</AntAvatar>\n    <AntAvatar Style=\"background-color: #87d068\" Icon=\"user\" />\n</div>",
         "Type": "Demos.Avatar.demo.Type",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Transfer",
+    "SubTitle": "穿梭框",
+    "Type": "数据录入",
+    "Desc": "<p>双栏穿梭选择框。</p>\n<h2>何时使用</h2>\n<ul>\n<li>需要在多个可选项中进行多选时。</li>\n<li>比起 Select 和 TreeSelect，穿梭框占据更大的空间，可以展示可选项的更多信息。</li>\n</ul>\n<p>穿梭选择框用直观的方式在两栏中移动元素，完成选择行为。</p>\n<p>选择一个或以上的选项后，点击对应的方向键，可以把选中的选项移动到另一栏。其中，左边一栏为 <code>source</code>，右边一栏为 <code>target</code>，API 的设计也反映了这两个概念。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Transfer</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>DataSource</td>\n<td>数据源，其中的数据将会被渲染到左边一栏中，<code>targetKeys</code> 中指定的除外。</td>\n<td>List&lt;TransferItem&gt;</td>\n<td>null</td>\n<td></td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>是否禁用</td>\n<td>bool</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Footer</td>\n<td>底部渲染函数</td>\n<td>OneOf&lt;string, RenderFragment&gt;</td>\n<td>null</td>\n<td></td>\n</tr>\n<tr>\n<td>Style</td>\n<td>两个穿梭框的自定义样式</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Operations</td>\n<td>操作文案集合，顺序从上至下</td>\n<td>string[]</td>\n<td>['right', 'left']</td>\n<td></td>\n</tr>\n<tr>\n<td>Render</td>\n<td>每行数据渲染函数，该函数的入参为 <code>DataSource</code> 中的项，返回值为 OneOf&lt;string, RenderFragment&gt;。</td>\n<td>Func&lt;TransferItem, OneOf&lt;string, RenderFragment&gt;&gt;</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>SelectedKeys</td>\n<td>设置哪些项应该被选中</td>\n<td>string[]</td>\n<td>[]</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowSearch</td>\n<td>是否显示搜索框</td>\n<td>bool</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowSelectAll</td>\n<td>是否展示全选勾选框</td>\n<td>bool</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>TargetKeys</td>\n<td>显示在右侧框数据的 key 集合</td>\n<td>string[]</td>\n<td>[]</td>\n<td></td>\n</tr>\n<tr>\n<td>Titles</td>\n<td>标题集合，顺序从左至右</td>\n<td>string[]</td>\n<td>['', '']</td>\n<td></td>\n</tr>\n<tr>\n<td>SelectAllLabels</td>\n<td>自定义顶部多选框标题的集合</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>OnChange</td>\n<td>选项在两栏之间转移时的回调函数</td>\n<td>TransferSelectChangeArgs</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>OnScroll</td>\n<td>选项列表滚动时的回调函数</td>\n<td>TransferScrollArgs</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>OnSearch</td>\n<td>搜索框内容时改变时的回调函数</td>\n<td>TransferSearchArgs</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OnSelectChange</td>\n<td>选中项发生改变时的回调函数</td>\n<td>TransferSelectChangeArgs</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Render Props</h3>\n<p>Transfer 支持接收 <code>ChildContent</code> 自定义渲染列表，并返回以下参数：</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>direction</td>\n<td>渲染列表的方向</td>\n<td><code>left</code> | <code>right</code></td>\n<td></td>\n</tr>\n<tr>\n<td>disabled</td>\n<td>是否禁用列表</td>\n<td>bool</td>\n<td></td>\n</tr>\n<tr>\n<td>filteredItems</td>\n<td>过滤后的数据</td>\n<td>List&lt;TransferItem&gt;</td>\n<td></td>\n</tr>\n<tr>\n<td>onItemSelect</td>\n<td>勾选条目</td>\n<td>(key: string, selected: boolean)</td>\n<td></td>\n</tr>\n<tr>\n<td>onItemSelectAll</td>\n<td>勾选一组条目</td>\n<td>(keys: string[], selected: boolean)</td>\n<td></td>\n</tr>\n<tr>\n<td>selectedKeys</td>\n<td>选中的条目</td>\n<td>string[]</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>注意</h2>\n<p>按照 Blazor 的<a href=\"http://facebook.github.io/react/docs/lists-and-keys.html#keys\">规范</a>，所有的组件数组必须绑定 key。在 Transfer 中，<code>DataSource</code>里的数据值需要指定 <code>Key</code> 值。对于 <code>DataSource</code> 默认将每列数据的 <code>Key</code> 属性作为唯一的标识。</p>\n<p>如果你的数据没有这个属性，务必使用 <code>rowKey</code> 来指定数据列的主键。</p>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 3,
+        "Name": "customitem",
+        "Title": "自定义渲染行数据",
+        "Description": "<p>自定义渲染每一个 Transfer Item，可用于渲染复杂数据。</p>\n",
+        "Code": "<div>\n    <Transfer DataSource=\"dataSource\"\n              Disabled=\"Disabled\"\n              TargetKeys=\"targetKeys.ToArray()\"\n              SelectedKeys=\"selectedKeys\"\n              Titles=\"titles\"\n              OnChange=\"OnChange\"\n              OnScroll=\"OnScroll\"\n              OnSelectChange=\"OnSelectChange\"\n              Render=\"Render\"\n              Style=\"width:300px;height:300px;\"></Transfer>\n</div>\n\n@code {\n    private List<TransferItem> dataSource = new List<TransferItem>();\n    private List<string> targetKeys = new List<string>();\n    private string[] selectedKeys = Array.Empty<string>();\n    private string[] titles = { \"Source\", \"Target\" };\n    private bool Disabled = false;\n\n    protected override void OnInitialized()\n    {\n        var random = new Random();\n        for (int i = 0; i < 20; i++)\n        {\n            var data = new TransferItem\n            {\n                Key = i.ToString(),\n                Title = $\"Content{i + 1}\",\n                Description = $\"description of content{i + 1}\",\n                [\"Chosen\"] = random.Next(0, 100) * 2 > 100\n            };\n\n            if (data[\"Chosen\"] is bool _bool && _bool)\n            {\n                targetKeys.Add(data.Key);\n            }\n\n            dataSource.Add(data);\n        }\n        base.OnInitialized();\n    }\n\n\n    private OneOf.OneOf<string, RenderFragment> Render(TransferItem item)\n    {\n        //return new RenderFragment(buildTree);\n        return $\"{item.Title} - {item.Description}\";\n    }\n\n    private void OnChange(TransferChangeArgs e)\n    {\n        Console.WriteLine(e.Direction);\n        Console.WriteLine($\"MoveKeys:{string.Join(',', e.MoveKeys)}\");\n        Console.WriteLine($\"TargetKeys:{string.Join(',', e.TargetKeys)}\");\n    }\n\n    private void OnScroll(TransferScrollArgs e)\n    {\n        Console.WriteLine(e.Direction);\n    }\n\n    private void OnSelectChange(TransferSelectChangeArgs e)\n    {\n        Console.WriteLine($\"SourceSelectedKeys:{string.Join(',', e.SourceSelectedKeys)}\");\n        Console.WriteLine($\"TargetSelectedKeys:{string.Join(',', e.TargetSelectedKeys)}\");\n    }\n}\n",
+        "Type": "Demos.Transfer.demo.CustomItem",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本用法",
+        "Description": "<p>最基本的用法，展示了 <code>dataSource</code>、<code>targetKeys</code>、每行的渲染函数 <code>render</code> 以及回调函数 <code>onChange</code> <code>onSelectChange</code> <code>onScroll</code> 的用法。</p>\n",
+        "Code": "<div>\n    <Transfer DataSource=\"dataSource\"\n              Disabled=\"Disabled\"\n              TargetKeys=\"targetKeys.ToArray()\"\n              SelectedKeys=\"selectedKeys\"\n              Titles=\"titles\"\n              OnChange=\"OnChange\"\n              OnScroll=\"OnScroll\"\n              OnSelectChange=\"OnSelectChange\"></Transfer>\n\n    <AntSwitch Style=\"margin-top: 16px;\" OnChange=\"OnSwitchChange\"></AntSwitch>\n</div>\n\n@code {\n    private List<TransferItem> dataSource = new List<TransferItem>();\n    private List<string> targetKeys = new List<string>();\n    private string[] selectedKeys = Array.Empty<string>();\n    private string[] titles = { \"Source\", \"Target\" };\n    private bool Disabled = false;\n\n    protected override void OnInitialized()\n    {\n        for (int i = 0; i < 20; i++)\n        {\n            dataSource.Add(new TransferItem\n            {\n                Title = $\"Content{i + 1}\",\n                Description = $\"description of content{i + 1}\",\n                Key = i.ToString(),\n                Disabled = i % 3 < 1\n            });\n\n            if (i > 10)\n                targetKeys.Add(i.ToString());\n        }\n        base.OnInitialized();\n    }\n\n    private void OnSwitchChange(bool check)\n    {\n        Disabled = check;\n    }\n\n    private OneOf.OneOf<string, RenderFragment> Render(TransferItem item)\n    {\n        //return new RenderFragment(buildTree);\n        return $\"{item.Title} - {item.Description}\";\n    }\n\n    private void OnChange(TransferChangeArgs e)\n    {\n        Console.WriteLine(e.Direction);\n        Console.WriteLine($\"MoveKeys:{string.Join(',', e.MoveKeys)}\");\n        Console.WriteLine($\"TargetKeys:{string.Join(',', e.TargetKeys)}\");\n    }\n\n    private void OnScroll(TransferScrollArgs e)\n    {\n        Console.WriteLine(e.Direction);\n    }\n\n    private void OnSelectChange(TransferSelectChangeArgs e)\n    {\n        Console.WriteLine($\"SourceSelectedKeys:{string.Join(',', e.SourceSelectedKeys)}\");\n        Console.WriteLine($\"TargetSelectedKeys:{string.Join(',', e.TargetSelectedKeys)}\");\n    }\n}\n",
+        "Type": "Demos.Transfer.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "largedata",
+        "Title": "大数据性能测试",
+        "Description": "<p>2000 条数据。</p>\n",
+        "Code": "<h3>LargeData</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Transfer.demo.LargeData",
+        "Style": "",
+        "Debug": true
+      },
+      {
+        "Order": 6,
+        "Name": "treetransfer",
+        "Title": "树穿梭框",
+        "Description": "<p>使用 Tree 组件作为自定义渲染列表。</p>\n",
+        "Code": "<h3>TreeTransfer</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Transfer.demo.TreeTransfer",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "search",
+        "Title": "带搜索框",
+        "Description": "<p>带搜索框的穿梭框，可以自定义搜索函数。</p>\n",
+        "Code": "<div>\n    <Transfer DataSource=\"dataSource\"\n              TargetKeys=\"targetKeys.ToArray()\"\n              ShowSearch=\"true\"\n              SelectedKeys=\"selectedKeys\"\n              Titles=\"titles\"\n              OnChange=\"OnChange\"\n              OnSearch=\"OnSearch\"\n              OnScroll=\"OnScroll\"\n              OnSelectChange=\"OnSelectChange\"></Transfer>\n</div>\n\n@code {\n    private List<TransferItem> dataSource = new List<TransferItem>();\n    private List<string> targetKeys = new List<string>();\n    private string[] selectedKeys = Array.Empty<string>();\n    private string[] titles = { \"Source\", \"Target\" };\n    private bool Disabled = false;\n\n    protected override void OnInitialized()\n    {\n        var random = new Random();\n        for (int i = 0; i < 20; i++)\n        {\n            var data = new TransferItem\n            {\n                Key = i.ToString(),\n                Title = $\"Content{i + 1}\",\n                Description = $\"description of content{i + 1}\",\n                [\"Chosen\"] = random.Next(0, 100) * 2 > 100\n            };\n\n            if (data[\"Chosen\"] is bool _bool && _bool)\n            {\n                targetKeys.Add(data.Key);\n            }\n\n            dataSource.Add(data);\n        }\n        base.OnInitialized();\n    }\n\n    private OneOf.OneOf<string, RenderFragment> Render(TransferItem item)\n    {\n        //return new RenderFragment(buildTree);\n        return $\"{item.Title} - {item.Description}\";\n    }\n\n    private void OnChange(TransferChangeArgs e)\n    {\n        Console.WriteLine(e.Direction);\n        Console.WriteLine($\"MoveKeys:{string.Join(',', e.MoveKeys)}\");\n        Console.WriteLine($\"TargetKeys:{string.Join(',', e.TargetKeys)}\");\n    }\n\n    private void OnSearch(TransferSearchArgs e)\n    {\n        Console.WriteLine(e.Direction);\n        Console.WriteLine(e.Value);\n    }\n\n    private void OnScroll(TransferScrollArgs e)\n    {\n        Console.WriteLine(e.Direction);\n    }\n\n    private void OnSelectChange(TransferSelectChangeArgs e)\n    {\n        Console.WriteLine($\"SourceSelectedKeys:{string.Join(',', e.SourceSelectedKeys)}\");\n        Console.WriteLine($\"TargetSelectedKeys:{string.Join(',', e.TargetSelectedKeys)}\");\n    }\n}\n",
+        "Type": "Demos.Transfer.demo.Search",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "advanced",
+        "Title": "高级用法",
+        "Description": "<p>穿梭框高级用法，可配置操作文案，可定制宽高，可对底部进行自定义渲染。</p>\n",
+        "Code": "<div>\n    <Transfer DataSource=\"dataSource\"\n              Disabled=\"Disabled\"\n              TargetKeys=\"targetKeys.ToArray()\"\n              SelectedKeys=\"selectedKeys\"\n              Titles=\"titles\"\n              Operations=\"operations\"\n              Footer=\"footer\"\n              OnChange=\"OnChange\"\n              OnScroll=\"OnScroll\"\n              OnSelectChange=\"OnSelectChange\"\n              Render=\"Render\"\n              Style=\"width:300px;height:300px;\"></Transfer>\n</div>\n\n@code {\n    private List<TransferItem> dataSource = new List<TransferItem>();\n    private List<string> targetKeys = new List<string>();\n    private string[] selectedKeys = Array.Empty<string>();\n    private string[] titles = { \"Source\", \"Target\" };\n    private string[] operations = { \"to right\", \"to left\" };\n    private bool Disabled = false;\n    private RenderFragment footer =@<AntButton Type=\"@AntButtonType.Default\" Size=\"@AntButtonSize.Small\" Style=\"float: right; margin: 5px;\">reload</AntButton>;\n\n    protected override void OnInitialized()\n    {\n        var random = new Random();\n        for (int i = 0; i < 20; i++)\n        {\n            var data = new TransferItem\n            {\n                Key = i.ToString(),\n                Title = $\"Content{i + 1}\",\n                Description = $\"description of content{i + 1}\",\n                [\"Chosen\"] = random.Next(0, 100) * 2 > 100\n            };\n          \n            if (data[\"Chosen\"] is bool _bool && _bool)\n            {\n                targetKeys.Add(data.Key);\n            }\n\n            dataSource.Add(data);\n        }\n        base.OnInitialized();\n    }\n\n    private OneOf.OneOf<string, RenderFragment> Render(TransferItem item)\n    {\n        //return new RenderFragment(buildTree);\n        return $\"{item.Title} - {item.Description}\";\n    }\n\n    private void OnChange(TransferChangeArgs e)\n    {\n        Console.WriteLine(e.Direction);\n        Console.WriteLine($\"MoveKeys:{string.Join(',', e.MoveKeys)}\");\n        Console.WriteLine($\"TargetKeys:{string.Join(',', e.TargetKeys)}\");\n    }\n\n    private void OnScroll(TransferScrollArgs e)\n    {\n        Console.WriteLine(e.Direction);\n    }\n\n    private void OnSelectChange(TransferSelectChangeArgs e)\n    {\n        Console.WriteLine($\"SourceSelectedKeys:{string.Join(',', e.SourceSelectedKeys)}\");\n        Console.WriteLine($\"TargetSelectedKeys:{string.Join(',', e.TargetSelectedKeys)}\");\n    }\n}\n",
+        "Type": "Demos.Transfer.demo.Advanced",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 99,
+        "Name": "customselectalllabels",
+        "Title": "自定义全选文字",
+        "Description": "<p>自定义穿梭框全选按钮的文字。</p>\n",
+        "Code": "<h3>CustomSelectAllLabels</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Transfer.demo.CustomSelectAllLabels",
+        "Style": "",
+        "Debug": true
+      },
+      {
+        "Order": 5,
+        "Name": "tabletransfer",
+        "Title": "表格穿梭框",
+        "Description": "<p>使用 Table 组件作为自定义渲染列表。</p>\n",
+        "Code": "<h3>TableTransfer</h3>\n\n@code {\n\n}\n",
+        "Type": "Demos.Transfer.demo.TableTransfer",
         "Style": "",
         "Debug": false
       }

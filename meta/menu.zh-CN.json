@@ -96,6 +96,27 @@
           },
           {
             "Order": 0,
+            "Title": "Slider",
+            "SubTitle": "滑动输入条",
+            "Type": "menuItem",
+            "Url": "components/slider"
+          },
+          {
+            "Order": 0,
+            "Title": "Switch",
+            "SubTitle": "开关",
+            "Type": "menuItem",
+            "Url": "components/switch"
+          },
+          {
+            "Order": 0,
+            "Title": "Radio",
+            "SubTitle": "单选框",
+            "Type": "menuItem",
+            "Url": "components/radio"
+          },
+          {
+            "Order": 0,
             "Title": "TimePicker",
             "SubTitle": "时间选择框",
             "Type": "menuItem",
@@ -103,10 +124,31 @@
           },
           {
             "Order": 0,
+            "Title": "Checkbox",
+            "SubTitle": "多选框",
+            "Type": "menuItem",
+            "Url": "components/checkbox"
+          },
+          {
+            "Order": 0,
             "Title": "DatePicker",
             "SubTitle": "日期选择框",
             "Type": "menuItem",
             "Url": "components/datepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "InputNumber",
+            "SubTitle": "数字输入框",
+            "Type": "menuItem",
+            "Url": "components/inputnumber"
+          },
+          {
+            "Order": 0,
+            "Title": "Transfer",
+            "SubTitle": "穿梭框",
+            "Type": "menuItem",
+            "Url": "components/transfer"
           }
         ]
       },

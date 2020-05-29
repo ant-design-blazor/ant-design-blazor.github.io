@@ -89,15 +89,51 @@
           },
           {
             "Order": 0,
+            "Title": "Slider",
+            "Type": "menuItem",
+            "Url": "components/slider"
+          },
+          {
+            "Order": 0,
+            "Title": "Switch",
+            "Type": "menuItem",
+            "Url": "components/switch"
+          },
+          {
+            "Order": 0,
+            "Title": "Radio",
+            "Type": "menuItem",
+            "Url": "components/radio"
+          },
+          {
+            "Order": 0,
             "Title": "TimePicker",
             "Type": "menuItem",
             "Url": "components/timepicker"
           },
           {
             "Order": 0,
+            "Title": "Checkbox",
+            "Type": "menuItem",
+            "Url": "components/checkbox"
+          },
+          {
+            "Order": 0,
             "Title": "DatePicker",
             "Type": "menuItem",
             "Url": "components/datepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "InputNumber",
+            "Type": "menuItem",
+            "Url": "components/inputnumber"
+          },
+          {
+            "Order": 0,
+            "Title": "Transfer",
+            "Type": "menuItem",
+            "Url": "components/transfer"
           }
         ]
       },
