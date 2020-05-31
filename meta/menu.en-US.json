@@ -125,6 +125,12 @@
           },
           {
             "Order": 0,
+            "Title": "Rate",
+            "Type": "menuItem",
+            "Url": "components/rate"
+          },
+          {
+            "Order": 0,
             "Title": "InputNumber",
             "Type": "menuItem",
             "Url": "components/inputnumber"

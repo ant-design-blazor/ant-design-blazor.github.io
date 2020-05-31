@@ -138,6 +138,13 @@
           },
           {
             "Order": 0,
+            "Title": "Rate",
+            "SubTitle": "评分",
+            "Type": "menuItem",
+            "Url": "components/rate"
+          },
+          {
+            "Order": 0,
             "Title": "InputNumber",
             "SubTitle": "数字输入框",
             "Type": "menuItem",

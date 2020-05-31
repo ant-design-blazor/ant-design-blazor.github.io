@@ -1823,6 +1823,74 @@
     ]
   },
   {
+    "Title": "Rate",
+    "Type": "Data Entry",
+    "Desc": "<p>Rate component.</p>\n<h2>When To Use</h2>\n<ul>\n<li>Show evaluation.</li>\n<li>A quick rating operation on something.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>allowClear</td>\n<td>whether to allow clear when click again</td>\n<td>boolean</td>\n<td>true</td>\n</tr>\n<tr>\n<td>allowHalf</td>\n<td>whether to allow semi selection</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>autoFocus</td>\n<td>get focus when component mounted</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>character</td>\n<td>custom character of rate</td>\n<td>ReactNode</td>\n<td><a href=\"/components/icon/\">&lt;StarFilled /&gt;</a></td>\n</tr>\n<tr>\n<td>className</td>\n<td>custom class name of rate</td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>count</td>\n<td>star count</td>\n<td>number</td>\n<td>5</td>\n</tr>\n<tr>\n<td>defaultValue</td>\n<td>default value</td>\n<td>number</td>\n<td>0</td>\n</tr>\n<tr>\n<td>disabled</td>\n<td>read only, unable to interact</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>style</td>\n<td>custom style object of rate</td>\n<td>CSSProperties</td>\n<td></td>\n</tr>\n<tr>\n<td>tooltips</td>\n<td>Customize tooltip by each character</td>\n<td>string[]</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>current value</td>\n<td>number</td>\n<td></td>\n</tr>\n<tr>\n<td>onBlur</td>\n<td>callback when component lose focus</td>\n<td>Function()</td>\n<td></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>callback when select value</td>\n<td>Function(value: number)</td>\n<td></td>\n</tr>\n<tr>\n<td>onFocus</td>\n<td>callback when component get focus</td>\n<td>Function()</td>\n<td></td>\n</tr>\n<tr>\n<td>onHoverChange</td>\n<td>callback when hover item</td>\n<td>Function(value: number)</td>\n<td></td>\n</tr>\n<tr>\n<td>onKeyDown</td>\n<td>callback when keydown on component</td>\n<td>Function(event)</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>Methods</h2>\n<table>\n<thead>\n<tr>\n<th>Name</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>blur()</td>\n<td>remove focus</td>\n</tr>\n<tr>\n<td>focus()</td>\n<td>get focus</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "text",
+        "Title": "Show copywriting",
+        "Description": "<p>Add copywriting in rate components.</p>\n",
+        "Code": "<Rate @bind-Value=\"value\" Tooltips=\"@desc\" />\n<span class=\"ant-rate-text\">@(desc[(int)value-1])</span>\n\n@code\n{\n    string[] desc = new string[] { \"terrible\", \"bad\", \"normal\", \"good\", \"wonderful\" };\n    decimal value = 3M;\n}\n",
+        "Type": "Demos.Rate.demo.Text",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "disabled",
+        "Title": "Read only",
+        "Description": "<p>Read only, can't use mouse to interact.</p>\n",
+        "Code": "<Rate Disabled DefaultValue=\"2\" />",
+        "Type": "Demos.Rate.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "half",
+        "Title": "Half star",
+        "Description": "<p>Support select half star.</p>\n",
+        "Code": "<Rate AllowHalf=\"true\" DefaultValue=\"3.5M\" />\n",
+        "Type": "Demos.Rate.demo.Half",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "clear",
+        "Title": "Clear star",
+        "Description": "<p>Support set allow to clear star when click again.</p>\n",
+        "Code": "<Rate AllowClear=\"true\" DefaultValue=\"2\" />\n<span class=\"ant-rate-text\">AllowClear: true</span>\n<br />\n<Rate AllowClear=\"false\" DefaultValue=\"3\"></Rate>\n<span class=\"ant-rate-text\">AllowClear: false</span>",
+        "Type": "Demos.Rate.demo.Clear",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>The simplest usage.</p>\n",
+        "Code": "<Rate />\n",
+        "Type": "Demos.Rate.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "character",
+        "Title": "Other Character",
+        "Description": "<p>Replace the default star to other character like alphabet, digit, iconfont or even Chinese word.</p>\n",
+        "Code": "<Rate Character=\"@Character1\" AllowHalf=\"true\" DefaultValue=\"3\" />\n<br />\n<Rate Character=\"@Character2\" AllowHalf=\"true\" DefaultValue=\"3\" />\n<br />\n<Rate Character=\"@Character3\" AllowHalf=\"true\" DefaultValue=\"3\" />\n\n@code\n{\n    RenderFragment<RateItemRenderContext> Character1 = (builder) =>\n    @<Template>\n        <AntIcon Type=\"heart\" Theme=\"fill\" />\n    </Template>;\n\n    RenderFragment<RateItemRenderContext> Character2 = (builder) =>\n    @<Template>\n        A\n    </Template>;\n\n    RenderFragment<RateItemRenderContext> Character3 = (builder) =>\n    @<Template>\n        好\n    </Template>;\n}\n",
+        "Type": "Demos.Rate.demo.Character",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Layout",
     "Type": "Layout",
     "Desc": "<p>Handling the overall layout of a page.</p>\n<h2>Specification</h2>\n<h3>Size</h3>\n<p>The first level navigation is left aligned near a logo, and the secondary menu is right aligned.</p>\n<ul>\n<li>Top Navigation: the height of the first level navigation <code>64px</code>, the second level navigation <code>48px</code>.</li>\n<li>Top Navigation (for landing pages): the height of the first level navigation <code>80px</code>, the second level navigation <code>56px</code>.</li>\n<li>Calculation formula of a top navigation: <code>48+8n</code>.</li>\n<li>Calculation formula of an aside navigation: <code>200+8n</code>.</li>\n</ul>\n<h3>Interaction rules</h3>\n<ul>\n<li>The first level navigation and the last level navigation should be distinguishable by visualization;</li>\n<li>The current item should have the highest priority of visualization;</li>\n<li>When the current navigation item is collapsed, the style of the current navigation item is applied to its parent level;</li>\n<li>The left side navigation bar has support for both the accordion and expanding styles; you can choose the one that fits your case the best.</li>\n</ul>\n<h2>Visualization rules</h2>\n<p>Style of a navigation should conform to its level.</p>\n<ul>\n<li><p><strong>Emphasis by colorblock</strong></p>\n<p>When background color is a deep color, you can use this pattern for the parent level navigation item of the current page.</p>\n</li>\n<li><p><strong>The highlight match stick</strong></p>\n<p>When background color is a light color, you can use this pattern for the current page navigation item; we recommend using it for the last item of the navigation path.</p>\n</li>\n<li><p><strong>Highlighted font</strong></p>\n<p>From the visualization aspect, a highlighted font is stronger than colorblock; this pattern is often used for the parent level of the current item.</p>\n</li>\n<li><p><strong>Enlarge the size of the font</strong></p>\n<p><code>12px</code>, <code>14px</code> is a standard font size of navigations, <code>14px</code> is used for the first and the second level of the navigation. You can choose an appropriate font size regarding the level of your navigation.</p>\n</li>\n</ul>\n<h2>Component Overview</h2>\n<ul>\n<li><code>Layout</code>: The layout wrapper, in which <code>Header</code> <code>Sider</code> <code>Content</code> <code>Footer</code> or <code>Layout</code> itself can be nested, and can be placed in any parent container.</li>\n<li><code>Header</code>: The top layout with the default style, in which any element can be nested, and must be placed in <code>Layout</code>.</li>\n<li><code>Sider</code>: The sidebar with default style and basic functions, in which any element can be nested, and must be placed in <code>Layout</code>.</li>\n<li><code>Content</code>: The content layout with the default style, in which any element can be nested, and must be placed in <code>Layout</code>.</li>\n<li><code>Footer</code>: The bottom layout with the default style, in which any element can be nested, and must be placed in <code>Layout</code>.</li>\n</ul>\n<blockquote>\n<p>Based on <code>flex layout</code>, please pay attention to the <a href=\"http://caniuse.com/#search=flex\">compatibility</a>.</p>\n</blockquote>\n",

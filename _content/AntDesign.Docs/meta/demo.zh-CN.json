@@ -1845,6 +1845,75 @@
     ]
   },
   {
+    "Title": "Rate",
+    "SubTitle": "评分",
+    "Type": "数据录入",
+    "Desc": "<p>评分组件。</p>\n<h2>何时使用</h2>\n<ul>\n<li>对评价进行展示。</li>\n<li>对事物进行快速的评级操作。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>属性</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AllowClear</td>\n<td>是否允许再次点击后清除</td>\n<td>boolean</td>\n<td>true</td>\n</tr>\n<tr>\n<td>AllowHalf</td>\n<td>是否允许半选</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>AutoFocus</td>\n<td>自动获取焦点</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Character</td>\n<td>自定义字符</td>\n<td>ReactNode</td>\n<td><a href=\"/components/icon-cn/\">&lt;StarFilled /&gt;</a></td>\n</tr>\n<tr>\n<td>ClassName</td>\n<td>自定义样式类名</td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>star 总数</td>\n<td>int</td>\n<td>5</td>\n</tr>\n<tr>\n<td>DefaultValue</td>\n<td>默认值</td>\n<td>int</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>只读，无法进行交互</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>自定义样式对象</td>\n<td>CSSProperties</td>\n<td></td>\n</tr>\n<tr>\n<td>Tooltips</td>\n<td>自定义每项的提示信息</td>\n<td>string[]</td>\n<td></td>\n</tr>\n<tr>\n<td>Value</td>\n<td>当前数，受控值</td>\n<td>number</td>\n<td></td>\n</tr>\n<tr>\n<td>OnBlur</td>\n<td>失去焦点时的回调</td>\n<td>Function()</td>\n<td></td>\n</tr>\n<tr>\n<td>OnChange</td>\n<td>选择时的回调</td>\n<td>Function(value: number)</td>\n<td></td>\n</tr>\n<tr>\n<td>OnFocus</td>\n<td>获取焦点时的回调</td>\n<td>Function()</td>\n<td></td>\n</tr>\n<tr>\n<td>OnHoverChange</td>\n<td>鼠标经过时数值变化的回调</td>\n<td>Function(value: number)</td>\n<td></td>\n</tr>\n<tr>\n<td>OnKeyDown</td>\n<td>按键回调</td>\n<td>Function(event)</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>方法</h2>\n<table>\n<thead>\n<tr>\n<th>名称</th>\n<th>描述</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>blur()</td>\n<td>移除焦点</td>\n</tr>\n<tr>\n<td>focus()</td>\n<td>获取焦点</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "text",
+        "Title": "文案展现",
+        "Description": "<p>给评分组件加上文案展示。</p>\n",
+        "Code": "<Rate @bind-Value=\"value\" Tooltips=\"@desc\" />\n<span class=\"ant-rate-text\">@(desc[(int)value-1])</span>\n\n@code\n{\n    string[] desc = new string[] { \"terrible\", \"bad\", \"normal\", \"good\", \"wonderful\" };\n    decimal value = 3M;\n}\n",
+        "Type": "Demos.Rate.demo.Text",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "disabled",
+        "Title": "只读",
+        "Description": "<p>只读，无法进行鼠标交互。</p>\n",
+        "Code": "<Rate Disabled DefaultValue=\"2\" />",
+        "Type": "Demos.Rate.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "half",
+        "Title": "半星",
+        "Description": "<p>支持选中半星。</p>\n",
+        "Code": "<Rate AllowHalf=\"true\" DefaultValue=\"3.5M\" />\n",
+        "Type": "Demos.Rate.demo.Half",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "clear",
+        "Title": "清除",
+        "Description": "<p>支持允许或者禁用清除。</p>\n",
+        "Code": "<Rate AllowClear=\"true\" DefaultValue=\"2\" />\n<span class=\"ant-rate-text\">AllowClear: true</span>\n<br />\n<Rate AllowClear=\"false\" DefaultValue=\"3\"></Rate>\n<span class=\"ant-rate-text\">AllowClear: false</span>",
+        "Type": "Demos.Rate.demo.Clear",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法。</p>\n",
+        "Code": "<Rate />\n",
+        "Type": "Demos.Rate.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "character",
+        "Title": "其他字符",
+        "Description": "<p>可以将星星替换为其他字符，比如字母，数字，字体图标甚至中文。</p>\n",
+        "Code": "<Rate Character=\"@Character1\" AllowHalf=\"true\" DefaultValue=\"3\" />\n<br />\n<Rate Character=\"@Character2\" AllowHalf=\"true\" DefaultValue=\"3\" />\n<br />\n<Rate Character=\"@Character3\" AllowHalf=\"true\" DefaultValue=\"3\" />\n\n@code\n{\n    RenderFragment<RateItemRenderContext> Character1 = (builder) =>\n    @<Template>\n        <AntIcon Type=\"heart\" Theme=\"fill\" />\n    </Template>;\n\n    RenderFragment<RateItemRenderContext> Character2 = (builder) =>\n    @<Template>\n        A\n    </Template>;\n\n    RenderFragment<RateItemRenderContext> Character3 = (builder) =>\n    @<Template>\n        好\n    </Template>;\n}\n",
+        "Type": "Demos.Rate.demo.Character",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Layout",
     "SubTitle": "布局",
     "Type": "布局",
