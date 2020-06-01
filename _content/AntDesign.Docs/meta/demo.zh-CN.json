@@ -596,6 +596,46 @@
     ]
   },
   {
+    "Title": "Form",
+    "SubTitle": "表单",
+    "Type": "数据录入",
+    "Desc": "<p>高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。</p>\n<h2>何时使用</h2>\n<ul>\n<li>用于创建一个实体或收集信息。</li>\n<li>需要对输入的数据类型进行校验时。</li>\n</ul>\n<h2>API(TODO)</h2>\n<style>\n.code-box-demo .ant-form:not(.ant-form-inline):not(.ant-form-vertical) {\n  max-width: 600px;\n}\n.markdown.api-container table td:nth-of-type(4) {\n  white-space: nowrap;\n  word-wrap: break-word;\n}\n</style>\n<style>\n  .site-form-item-icon {\n    color: rgba(0, 0, 0, 0.25);\n  }\n  [data-theme=\"dark\"] .site-form-item-icon {\n    color: rgba(255,255,255,.3);\n  }\n</style>\n",
+    "ApiDoc": "",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本使用",
+        "Description": "<p>基本的表单数据域控制展示，包含布局、初始化、验证、提交。</p>\n",
+        "Code": "@using System.ComponentModel.DataAnnotations;\n@using System.Text.Json;\n\n<Form Model=\"@model\" \n      LabelCol=\"new ColLayoutParam { Span = 8 }\"\n      WrapperCol=\"new ColLayoutParam { Span = 16 }\"\n      OnFinish=\"OnFinish\" \n      OnFinishFailed=\"OnFinishFailed\">\n    <FormItem Label=\"Username\" >\n        <Input @bind-Value=\"@context.Username\"/>\n    </FormItem>\n    <FormItem Label=\"Password\">\n        <InputPassword @bind-Value=\"@context.Password\" />\n    </FormItem>\n    <FormItem WrapperCol=\"new ColLayoutParam{ Offset = 8, Span = 16 }\">\n        <Button Type=\"@ButtonType.Primary\" HtmlType=\"submit\">\n            Submit\n        </Button>\n    </FormItem>\n</Form>\n@code\n{\n    public class Model\n    {\n        [Required]\n        public string Username { get; set; }\n        [Required]\n        public string Password { get; set; }\n    }\n\n    private Model model = new Model();\n\n    private void OnFinish(EditContext editContext)\n    {\n        Console.WriteLine($\"Success:{JsonSerializer.Serialize(model)}\");\n    }\n\n    private void OnFinishFailed(EditContext editContext)\n    {\n        Console.WriteLine($\"Failed:{JsonSerializer.Serialize(model)}\");\n    }\n}",
+        "Type": "Demos.Form.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "layout",
+        "Title": "表单布局",
+        "Description": "<p>表单有三种布局。</p>\n",
+        "Code": "@using System.Text.Json;\n\n<Form Layout=\"@model.Layout\" \n      LabelCol=\"GetFormLabelCol()\"\n      WrapperCol=\"GetFormWrapperCol()\"\n      Model=\"@model\" \n      OnFinish=\"OnFinish\" \n      OnFinishFailed=\"OnFinishFailed\">\n    <FormItem Label=\"Form Layout\" >\n        <RadioGroup @bind-Value=\"@context.Layout\">\n            <Radio RadioButton Value=\"@FormLayout.Horizontal\">Horizontal</Radio>\n            <Radio RadioButton Value=\"@FormLayout.Vertical\">Vertical</Radio>\n            <Radio RadioButton Value=\"@FormLayout.Inline\">Inline</Radio>\n        </RadioGroup>\n    </FormItem>\n\n    <FormItem Label=\"Field A\">\n        <Input @bind-Value=\"@context.FieldA\" />\n    </FormItem>\n\n    <FormItem Label=\"Field B\">\n        <Input @bind-Value=\"@context.FieldB\" />\n    </FormItem>\n\n    <FormItem WrapperCol=\"GetButtonItemLayout()\">\n        <Button Type=\"@ButtonType.Primary\" HtmlType=\"submit\">\n            Submit\n        </Button>\n    </FormItem>\n</Form>\n@code\n{\n    public class Model\n    {\n        public string Layout { get; set; } = FormLayout.Horizontal;\n        public string FieldA { get; set; }\n        public string FieldB { get; set; }\n    }\n\n    private Model model = new Model();\n\n    private ColLayoutParam GetFormLabelCol()\n    {\n        return model.Layout == FormLayout.Horizontal ? new ColLayoutParam { Span = \"4\" } : null;\n    }\n\n    private ColLayoutParam GetFormWrapperCol()\n    {\n        return model.Layout == FormLayout.Horizontal ? new ColLayoutParam { Span = \"14\" } : null;\n    }\n\n    private ColLayoutParam GetButtonItemLayout()\n    {\n        return model.Layout == FormLayout.Horizontal ? new ColLayoutParam { Span = \"14\", Offset = \"4\" } : null;\n    }\n\n    private void OnFinish(EditContext editContext)\n    {\n        Console.WriteLine($\"Success:{JsonSerializer.Serialize(model)}\");\n    }\n\n    private void OnFinishFailed(EditContext editContext)\n    {\n        Console.WriteLine($\"Failed:{JsonSerializer.Serialize(model)}\");\n    }\n}",
+        "Type": "Demos.Form.demo.Layout",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "controlhooks",
+        "Title": "表单方法调用",
+        "Description": "<p>通过 <code>@ref</code> 获取Form引用。</p>\n",
+        "Code": "@using System.ComponentModel.DataAnnotations;\n@using System.Text.Json;\n@using AntDesign.Internal\n\n<Form @ref=\"form\" \n      Model=\"@model\" \n      LabelCol=\"new ColLayoutParam { Span = 8 }\"\n      WrapperCol=\"new ColLayoutParam { Span = 16 }\"\n      OnFinish=\"OnFinish\" \n      OnFinishFailed=\"OnFinishFailed\">\n    <FormItem Label=\"Note\">\n        <Input @bind-Value=\"@model.Note\" />\n    </FormItem>\n\n    <FormItem WrapperCol=\"new ColLayoutParam{ Offset = 8, Span = 16 }\">\n        <Button Type=\"@ButtonType.Primary\" HtmlType=\"submit\">\n            Submit\n        </Button>\n        <Button OnClick=\"Reset\">\n            Reset\n        </Button>\n        <Button Type=\"@ButtonType.Link\" OnClick=\"OnFill\">\n            Fill form\n        </Button>\n    </FormItem>\n</Form>\n@code\n{\n    public class Model\n    {\n        [Required]\n        public string Note { get; set; }\n    }\n\n    private Model model = new Model();\n    private IForm form;\n\n    private void OnFill(MouseEventArgs args)\n    {\n        model.Note = \"Hello world!\";\n\n        Console.WriteLine($\"form ref:{form}\");\n    }\n\n    private void Reset(MouseEventArgs args)\n    {\n        form.Reset();\n    }\n\n    private void OnFinish(EditContext editContext)\n    {\n        Console.WriteLine($\"Success:{JsonSerializer.Serialize(model)}\");\n    }\n\n    private void OnFinishFailed(EditContext editContext)\n    {\n        Console.WriteLine($\"Failed:{JsonSerializer.Serialize(model)}\");\n    }\n}",
+        "Type": "Demos.Form.demo.ControlHooks",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Switch",
     "SubTitle": "开关",
     "Type": "数据录入",

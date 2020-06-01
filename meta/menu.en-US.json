@@ -95,6 +95,12 @@
           },
           {
             "Order": 0,
+            "Title": "Form",
+            "Type": "menuItem",
+            "Url": "components/form"
+          },
+          {
+            "Order": 0,
             "Title": "Switch",
             "Type": "menuItem",
             "Url": "components/switch"

@@ -103,6 +103,13 @@
           },
           {
             "Order": 0,
+            "Title": "Form",
+            "SubTitle": "表单",
+            "Type": "menuItem",
+            "Url": "components/form"
+          },
+          {
+            "Order": 0,
             "Title": "Switch",
             "SubTitle": "开关",
             "Type": "menuItem",
