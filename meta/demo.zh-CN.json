@@ -11,7 +11,7 @@
         "Name": "addon",
         "Title": "前置/后置标签",
         "Description": "<p>用于配置一些固定组合。</p>\n",
-        "Code": "<div>\n    <Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n        <AddOnAfter>.com</AddOnAfter>\n    </Input>\n    <br />\n    <br />\n    <Input DefaultValue=\"mysite\">\n        <AddOnAfter><AntIcon type=\"setting\"></AntIcon></AddOnAfter>\n    </Input>\n    <br />\n    <br />\n    <Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n    </Input>\n\n</div>\n",
+        "Code": "<div>\n    <AntDesign.Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n        <AddOnAfter>.com</AddOnAfter>\n    </AntDesign.Input>    \n    <br />\n    <br />\n    <AntDesign.Input DefaultValue=\"mysite\">\n        <AddOnAfter><AntIcon type=\"setting\"></AntIcon></AddOnAfter>\n    </AntDesign.Input>\n    <br />\n    <br />\n    <AntDesign.Input DefaultValue=\"mysite\">\n        <AddOnBefore>https://</AddOnBefore>\n    </AntDesign.Input>\n\n</div>\n",
         "Type": "Demos.Input.demo.Addon",
         "Style": "",
         "Debug": false
@@ -31,7 +31,7 @@
         "Name": "search",
         "Title": "搜索框 loading",
         "Description": "<p>用于 onSearch 的时候展示 loading。</p>\n",
-        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" @bind-Value=\"@txtValue\" />\n</div>\n\n    @code{\n\n        private string txtValue { get; set; }\n\n        private void Handle(ChangeEventArgs args)\n        {\n            Console.WriteLine(args.Value.ToString());\n\n        }\n    }\n\n",
+        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" @bind-Value=\"@txtValue\" />\n\n\n\n</div>\n\n    @code{\n\n        private string txtValue { get; set; }\n\n        private void Handle(ChangeEventArgs args)\n        {\n            Console.WriteLine(args.Value.ToString());\n\n        }\n    }\n\n",
         "Type": "Demos.Input.demo.Search_",
         "Style": "",
         "Debug": false
@@ -47,12 +47,32 @@
         "Debug": false
       },
       {
+        "Order": 6,
+        "Name": "clear",
+        "Title": "带移除图标",
+        "Description": "<p>带移除图标的输入框，点击图标删除所有内容。</p>\n",
+        "Code": "<div>    \n    <Input Placeholder=\"input with clear icon\" AllowClear=\"true\" OnChange=\"onChange\" />\n    <br />\n    <br />\n    <TextArea Placeholder=\"textarea with clear icon\"  AllowClear=\"true\" OnChange=\"onChange\" />\n</div>\n@code{\n\n    private void onChange()\n    {\n       \n    }\n}",
+        "Type": "Demos.Input.demo.Clear",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 0,
         "Name": "basic",
         "Title": "基本使用",
         "Description": "<p>基本使用示例。</p>\n",
-        "Code": "<div>\n    <Input Placeholder=\"Basic usage\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <AntText>@txtValue</AntText>\n</div>\n@code{\n    string txtValue { get; set; }\n}\n",
+        "Code": "<div>\n    <Input Placeholder=\"Basic usage\" @bind-Value=\"@txtValue\"  />\n    <br />\n    <br />\n    <AntText>@txtValue</AntText>\n</div>\n@code{\n    string txtValue { get; set; }\n}\n",
         "Type": "Demos.Input.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "password",
+        "Title": "密码框",
+        "Description": "<p>密码框。</p>\n",
+        "Code": "<div>\n<InputPassword @bind-Value=\"@txtValue\" Placeholder=\"large Password\" Size=\"@InputSize.Large\" OnPressEnter=\"(e)=>Submit(e)\" />\n</div>\n@code{\n    private string txtValue { get; set; }\n\n    private void Submit(KeyboardEventArgs args)\n    {\n        Console.WriteLine($\"password: {txtValue}\");\n    }\n}\n",
+        "Type": "Demos.Input.demo.Password",
         "Style": "",
         "Debug": false
       },
@@ -71,7 +91,7 @@
         "Name": "size",
         "Title": "三种大小",
         "Description": "<p>我们为输入框定义了三种尺寸（大、默认、小），高度分别为 40px、32px 和 24px。</p>\n",
-        "Code": "<div>\n    <Input Placeholder=\"large size\"  Size=\"@InputSize.Large\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"default size\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"small size\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <InputPassword @bind-Value=\"@txtValue\" Placeholder=\"large Password\" Size=\"@InputSize.Large\" OnPressEnter=\"(e)=>Submit(e)\" />\n</div>\n@code{\n    private string txtValue { get; set; }\n\n    private void Submit(KeyboardEventArgs args)\n    {\n        Console.WriteLine($\"password: {txtValue}\");\n    }\n}",
+        "Code": "<div>\n    <Input Placeholder=\"large size\"  Size=\"@InputSize.Large\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"default size\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"small size\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <AntIcon Type=\"user\" />\n        </Prefix>\n    </Input>\n\n</div>\n@code{\n    private string txtValue { get; set; }\n  \n}",
         "Type": "Demos.Input.demo.Size",
         "Style": "",
         "Debug": false
@@ -250,7 +270,7 @@
         "Name": "delayanddebounce",
         "Title": "延迟",
         "Description": "<p>延迟显示 loading 效果。当 spinning 状态在 <code>delay</code> 时间内结束，则不显示 loading 状态。</p>\n",
-        "Code": "<div>\n    <Spin Spinning=loading Delay=500>\n        <Alert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}\n",
+        "Code": "<div>\n    <Spin Spinning=loading Delay=500>\n        <Alert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <Switch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}\n",
         "Type": "Demos.Spin.demo.DelayAndDebounce",
         "Style": "",
         "Debug": false
@@ -290,7 +310,7 @@
         "Name": "nested",
         "Title": "卡片加载中",
         "Description": "<p>可以直接把内容内嵌到 <code>Spin</code> 中，将现有容器变为加载状态。</p>\n",
-        "Code": "<div>\n    <Spin Spinning=loading>\n        <Alert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <AntSwitch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}",
+        "Code": "<div>\n    <Spin Spinning=loading>\n        <Alert\n            Message=\"Alert message title\"\n            Description=\"Further details about the context of this alert.\"\n            Type=\"info\"\n        />\n    </Spin>\n    <div style=\"margin-top: 16px\">\n        Loading state：\n        <Switch Checked=loading OnChange=toggle />\n    </div>\n</div>\n\n@code {\n    bool loading = false;\n\n    void toggle(bool value) => loading = value;\n}",
         "Type": "Demos.Spin.demo.Nested",
         "Style": "",
         "Debug": false
@@ -459,7 +479,7 @@
         "Name": "customize",
         "Title": "自定义尺寸",
         "Description": "<p>自定义间距大小。</p>\n",
-        "Code": "\n<AntSlider Value=size OnChange=\"v=>setSize(v.AsT0)\" />\n<br />\n<br />\n<Space Size=\"@($\"{size}\")\">\n    <SpaceItem>\n        <Button Type=\"primary\">Primary</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button>Default</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"dashed\">Dashed</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"link\">Link</Button>\n    </SpaceItem>\n</Space>\n\n@code{\n    double size = 8;\n\n    void setSize(double value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}",
+        "Code": "\n<Slider Value=size OnChange=\"v=>setSize(v.AsT0)\" />\n<br />\n<br />\n<Space Size=\"@($\"{size}\")\">\n    <SpaceItem>\n        <Button Type=\"primary\">Primary</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button>Default</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"dashed\">Dashed</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"link\">Link</Button>\n    </SpaceItem>\n</Space>\n\n@code{\n    double size = 8;\n\n    void setSize(double value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}",
         "Type": "Demos.Space.demo.Customize",
         "Style": "",
         "Debug": false
@@ -1075,6 +1095,115 @@
         "Description": "<p>在实现全选效果时，你可能会用到 <code>indeterminate</code> 属性。</p>\n",
         "Code": "<div>\n    <Checkbox Indeterminate=\"@indeterminate\" Checked=\"@checkAll\" CheckedChange=\"@CheckAllChanged\">\n    Check all\n    </Checkbox>\n    <br />\n    <AntDesign.CheckboxGroup Options=\"@ckeckAllOptions\" ValueChanged=\"@OnChanged\"/>\n</div>\n\n@code{\n\n    static CheckboxOption[] ckeckAllOptions = new CheckboxOption[]{\n        new CheckboxOption{ Label=\"Apple\",Value=\"Apple\" ,Checked=true},\n        new CheckboxOption{ Label=\"Pear\", Value=\"Pear\" },\n        new CheckboxOption{ Label=\"Orange\", Value=\"Orange\",Checked=true },\n    };\n\n    void CheckAllChanged()\n    {\n        bool allChecked = checkAll;\n        ckeckAllOptions.ForEach(o => o.Checked = !allChecked);\n    }\n\n    void OnChanged()\n    {\n\n    }\n\n    bool indeterminate => ckeckAllOptions.Count(o => o.Checked) > 0 && ckeckAllOptions.Count(o => o.Checked) < ckeckAllOptions.Count();\n\n    bool checkAll => ckeckAllOptions.All(o => o.Checked);\n\n}",
         "Type": "Demos.Checkbox.demo.CheckboxAll",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Card",
+    "SubTitle": "卡片",
+    "Type": "数据展示",
+    "Desc": "<p>通用卡片容器.</p>\n<h2>何时使用</h2>\n<ul>\n<li>最基础的卡片容器，可承载文字、列表、图片、段落，常用于后台概览页面。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>Card</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Actions</td>\n<td>卡片操作组，位置在卡片底部</td>\n<td>Array(RenderFragment)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Body</td>\n<td>卡片主要区域</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Extra</td>\n<td>卡片右上角的操作区域</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Bordered</td>\n<td>是否有边框</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>BodyStyle</td>\n<td>内容区域自定义样式</td>\n<td>Css Properties</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Cover</td>\n<td>卡片封面</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Loading</td>\n<td>当卡片内容还在加载中时，可以用 loading 展示一个占位</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>size</td>\n<td>card 的尺寸</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Title</td>\n<td>卡片标题</td>\n<td>String or RenderFragement</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Type</td>\n<td>卡片类型，可设置为 inner 或 不设置</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>Card.Grid</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ChildContent</td>\n<td>子容器</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Hoverable</td>\n<td>鼠标移过时可浮起</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>定义网格容器类名的样式</td>\n<td>CSS Properties</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>Card.Meta</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Avatar</td>\n<td>头像和图标</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>ChildContent</td>\n<td>子容器</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Description</td>\n<td>描述内容</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>定义容器类名的样式</td>\n<td>CSS Properties</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Title</td>\n<td>标题内容</td>\n<td>String or RenderFragement</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "column",
+        "Title": "栅格卡片",
+        "Description": "<p>在系统概览页面常常和栅格进行配合。</p>\n",
+        "Code": "<div style=\"background-color: #ececec; padding: 20px;\">\n    <AntRow Gutter=\"16\">\n        <AntCol Span=\"8\">\n            <AntCard Bordered=\"false\" Title=@(\"Card title\")>\n                <Body>\n                    <p>Card content</p>\n                </Body>\n            </AntCard>\n        </AntCol>\n        <AntCol Span=\"8\">\n            <AntCard Bordered=\"false\" Title=@(\"Card title\")>\n                <Body>\n                    <p>Card content</p>\n                </Body>\n            </AntCard>\n        </AntCol>\n        <AntCol Span=\"8\">\n            <AntCard Bordered=\"false\" Title=@(\"Card title\")>\n                <Body>\n                    <p>Card content</p>\n                </Body>\n            </AntCard>\n        </AntCol>\n    </AntRow>\n\n</div>\n\n\n",
+        "Type": "Demos.Card.demo.Column",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "典型卡片",
+        "Description": "<p>包含标题、内容、操作区域。\n可通过设置size为<code>default</code>或者<code>small</code>，控制尺寸</p>\n",
+        "Code": "<div>\n    <AntCard Bordered Title=@(\"Default size card\")>\n        <Extra>\n            <a>More</a>\n        </Extra>\n        <Body>\n            <p>Card content</p>\n            <p>Card content</p>\n            <p>Card content</p>\n        </Body>\n    </AntCard>\n\n    <AntCard Bordered Size=\"small\" Title=@(\"Small size card\")>\n        <Extra>\n            <a>More</a>\n        </Extra>\n        <Body>\n            <p>Card content</p>\n            <p>Card content</p>\n            <p>Card content</p>\n        </Body>\n    </AntCard>\n\n\n</div>\n@code\n{\n    private RenderFragment actionSetting =@<Template>  <AntIcon Type=\"setting\" /></Template>;\n\n    private RenderFragment actionEdit =@<Template><AntIcon Type=\"edit\" /></Template>;\n\n    private RenderFragment actionEllipsis =@<Template> <AntIcon Type=\"ellipsis\" /></Template>;\n\n}\n",
+        "Type": "Demos.Card.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "noborder",
+        "Title": "无边框",
+        "Description": "<p>在灰色背景上使用无边框的卡片。</p>\n",
+        "Code": "<div style=\"background:#ECECEC; padding:30px\">\n    <AntCard  Title=@(\"Card title\") Style=\"width: 300px\"> \n        <Body>\n            <p>Card content</p>\n            <p>Card content</p>\n            <p>Card content</p>\n        </Body>\n    </AntCard>\n</div>\n\n\n",
+        "Type": "Demos.Card.demo.Noborder",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "customized",
+        "Title": "更灵活的内容展示",
+        "Description": "<p>可以利用 Card.Meta 支持更灵活的内容。</p>\n",
+        "Code": "<div>\n    <AntCard Hoverable Style=\"width: 240px\" Cover=\"coverTemplate\">\n        <AntCardMeta>\n            <Title>\n                Europe Street beat\n            </Title>\n            <Description> www.instagram.com</Description>\n        </AntCardMeta>\n    </AntCard>\n</div>\n\n\n@code\n{\n\n    private RenderFragment coverTemplate =@<img alt=\"example\"  src=\"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png\" />;\n\n}\n\n\n",
+        "Type": "Demos.Card.demo.Customized",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "simple",
+        "Title": "简洁卡片",
+        "Description": "<p>只包含内容区域。</p>\n",
+        "Code": "<div>\n    <AntCard Bordered=\"true\" Style=\"width: 300px\">\n        <p>Card content</p>\n        <p>Card content</p>\n        <p>Card content</p>\n    </AntCard>\n</div>\n\n\n  ",
+        "Type": "Demos.Card.demo.Simple",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "grid",
+        "Title": "网格型内嵌卡片",
+        "Description": "<p>一种常见的卡片内容区隔模式。</p>\n",
+        "Code": "<div>\n    <AntCard Title=@(\"Card Title\")>\n        <AntCardGrid Style=\"width:25%;text-align:center\" Hoverable=\"true\">\n            Content\n        </AntCardGrid>\n        <AntCardGrid Style=\"width:25%;text-align:center\" Hoverable=\"false\">\n            Content\n        </AntCardGrid>\n        <AntCardGrid Style=\"width:25%;text-align:center\" Hoverable=\"true\">\n            Content\n        </AntCardGrid>\n        <AntCardGrid Style=\"width:25%;text-align:center\" Hoverable=\"true\">\n            Content\n        </AntCardGrid>\n        <AntCardGrid Style=\"width:25%;text-align:center\" Hoverable=\"true\">\n            Content\n        </AntCardGrid>\n        <AntCardGrid Style=\"width:25%;text-align:center\"Hoverable=\"true\">\n            Content\n        </AntCardGrid>\n        <AntCardGrid Style=\"width:25%;text-align:center\" Hoverable=\"true\">\n            Content\n        </AntCardGrid>\n        <AntCardGrid Style=\"width:25%;text-align:center\" Hoverable=\"true\">\n            Content\n        </AntCardGrid>\n\n    </AntCard>\n</div>\n\n\n  ",
+        "Type": "Demos.Card.demo.Grid",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "inner",
+        "Title": "内部卡片",
+        "Description": "<p>可以放在普通卡片内部，展示多层级结构的信息。</p>\n",
+        "Code": "<div>\n    <AntCard Title=@(\"Card title\")>  \n        <Body>\n\n\n            <AntCard Title=@(\"Inner card title\")>\n                <Extra>   <a slot=\"extra\" href=\"#\">More</a>  </Extra>\n                <Body>                   \n                    Inner Card content\n                </Body>\n              \n            </AntCard>\n            <AntCard Title=@(\"Inner card title\") Style=\"margin-top: 16px\">\n                <Extra> <a slot=\"extra\" href=\"#\">More</a> </Extra>\n                <Body>\n               \n                    Inner Card content\n                </Body>             \n            </AntCard>\n\n        </Body>\n    </AntCard>\n</div>\n\n\n  ",
+        "Type": "Demos.Card.demo.Inner",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "support",
+        "Title": "支持更多内容配置",
+        "Description": "<p>一种支持封面、头像、标题和描述信息的卡片。</p>\n",
+        "Code": "<div>\n    <AntCard Style=\"width:300px;\" Bordered Cover=\"coverTemplate\" Actions=\"new[] { actionSetting, actionEdit, actionEllipsis }\">\n        <AntCardMeta Avatar=\"avatarTemplate\">\n            <Title>Meta Card</Title>\n            <Description>This is the description</Description>\n        </AntCardMeta>\n    </AntCard>\n</div>\n\n@code\n{\n    private RenderFragment actionSetting =@<Template><AntIcon Type=\"setting\" /></Template>;\n\n    private RenderFragment actionEdit =@<Template><AntIcon Type=\"edit\" /></Template>;\n\n    private RenderFragment actionEllipsis =@<Template><AntIcon Type=\"ellipsis\" /></Template>;\n\n    private RenderFragment avatarTemplate = @<Avatar src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\"></Avatar>;\n\n    private RenderFragment coverTemplate = @<img alt=\"example\" src=\"https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png\" />;\n\n}\n\n\n",
+        "Type": "Demos.Card.demo.Support",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "tabs",
+        "Title": "带页签的卡片",
+        "Description": "<p>可承载更多内容。</p>\n",
+        "Code": "<div>\n    <AntCard Style=\"width:100%\" Title=@(\"Card title\")>\n        <Extra>\n            <a>More</a>\n        </Extra>\n        <Body>\n            <AntTabs DefaultActiveKey=\"1\">\n                <AntTabPane Key=\"1\">\n                    <Tab>Tab 1</Tab>\n                    <ChildContent>Content of Tab Pane 1</ChildContent>\n                </AntTabPane>\n                <AntTabPane Key=\"2\">\n                    <Tab>Tab 2</Tab>\n                    <ChildContent>Content of Tab Pane 2</ChildContent>\n                </AntTabPane>\n                <AntTabPane Key=\"3\">\n                    <Tab>Tab 3</Tab>\n                    <ChildContent>Content of Tab Pane 3</ChildContent>\n                </AntTabPane>\n            </AntTabs>\n        </Body>\n    </AntCard>\n\n    <AntCard Style=\"width:100%\" >\n        <Extra>\n            <a>More</a>\n        </Extra>\n        <Body>\n            <AntTabs DefaultActiveKey=\"1\">\n                <AntTabPane Key=\"1\">\n                    <Tab>Article</Tab>\n                    <ChildContent>Content of Tab Pane 1</ChildContent>\n                </AntTabPane>\n                <AntTabPane Key=\"2\">\n                    <Tab>App</Tab>\n                    <ChildContent>Content of Tab Pane 2</ChildContent>\n                </AntTabPane>\n                <AntTabPane Key=\"3\">\n                    <Tab>Project</Tab>\n                    <ChildContent>Content of Tab Pane 3</ChildContent>\n                </AntTabPane>\n            </AntTabs>\n        </Body>\n    </AntCard>\n</div>\n\n\n  ",
+        "Type": "Demos.Card.demo.Tabs",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "loading",
+        "Title": "预加载的卡片",
+        "Description": "<p>数据读入前会有文本块样式。</p>\n",
+        "Code": "<div>\n    <AntCard Loading=\"loading\" Title=@(\"Card title\")>\n        <p>Card content</p>\n        <p>Card content</p>\n        <p>Card content</p>\n    </AntCard>\n    <Button Style=\"margin-top: 16px\"  OnClick=\"handleClick\">\n        Toggle loading\n    </Button>\n</div>\n\n@code\n{\n    bool loading { get; set; } = true;\n    void handleClick()\n    {\n        loading = !loading;\n    }\n}\n\n\n  ",
+        "Type": "Demos.Card.demo.Loading",
         "Style": "",
         "Debug": false
       }
@@ -1797,7 +1926,7 @@
         "Name": "change",
         "Title": "动态",
         "Description": "<p>展示动态变化的效果。</p>\n",
-        "Code": "<div>\n    <div>\n        <Badge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <ButtonGroup>\n            <Button @onclick=\"_=>decline()\">\n                <AntIcon Type=\"minus\"></AntIcon>\n            </Button>\n            <Button @onclick=\"_=>increase()\">\n                <AntIcon Type=\"plus\"></AntIcon>\n            </Button>\n        </ButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <Badge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <AntSwitch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
+        "Code": "<div>\n    <div>\n        <Badge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <ButtonGroup>\n            <Button @onclick=\"_=>decline()\">\n                <AntIcon Type=\"minus\"></AntIcon>\n            </Button>\n            <Button @onclick=\"_=>increase()\">\n                <AntIcon Type=\"plus\"></AntIcon>\n            </Button>\n        </ButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <Badge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <Switch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
         "Type": "Demos.Badge.demo.Change",
         "Style": "",
         "Debug": false
@@ -2079,7 +2208,7 @@
         "Name": "theme",
         "Title": "主题",
         "Description": "<p>内建了两套主题 <code>light|dark</code>，默认 <code>light</code>。</p>\n",
-        "Code": "<div>\n    <AntSwitch Checked=\"theme == MenuTheme.Dark\" OnChange=changeTheme CheckedChildren=@(\"Dark\") UnCheckedChildren=@(\"Light\") />\n    <br />\n    <br />\n    <Menu Theme=theme\n          OnMenuItemClicked=handleClick\n          Style=\" width: 256px \"\n          DefaultOpenKeys=@(new []{\"sub1\"})\n          SelectedKeys=@(new []{current})\n          Mode=\"MenuMode.Inline\">\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"1\">Option 1</MenuItem>\n            <MenuItem Key=\"2\">Option 2</MenuItem>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"5\">Option 5</MenuItem>\n            <MenuItem Key=\"6\">Option 6</MenuItem>\n            <SubMenu Key=\"sub3\" Title=\"@(\"Submenu\")\">\n                <MenuItem Key=\"7\">Option 7</MenuItem>\n                <MenuItem Key=\"8\">Option 8</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub4\" Title=sub4Title>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n            <MenuItem Key=\"11\">Option 11</MenuItem>\n            <MenuItem Key=\"12\">Option 12</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    MenuTheme theme = MenuTheme.Dark;\n    string current = \"1\";\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n    void handleClick(MenuItem e)\n    {\n        current = e.Key;\n    }\n\n}\n",
+        "Code": "<div>\n    <Switch Checked=\"theme == MenuTheme.Dark\" OnChange=changeTheme CheckedChildren=@(\"Dark\") UnCheckedChildren=@(\"Light\") />\n    <br />\n    <br />\n    <Menu Theme=theme\n          OnMenuItemClicked=handleClick\n          Style=\" width: 256px \"\n          DefaultOpenKeys=@(new []{\"sub1\"})\n          SelectedKeys=@(new []{current})\n          Mode=\"MenuMode.Inline\">\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"1\">Option 1</MenuItem>\n            <MenuItem Key=\"2\">Option 2</MenuItem>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"5\">Option 5</MenuItem>\n            <MenuItem Key=\"6\">Option 6</MenuItem>\n            <SubMenu Key=\"sub3\" Title=\"@(\"Submenu\")\">\n                <MenuItem Key=\"7\">Option 7</MenuItem>\n                <MenuItem Key=\"8\">Option 8</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub4\" Title=sub4Title>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n            <MenuItem Key=\"11\">Option 11</MenuItem>\n            <MenuItem Key=\"12\">Option 12</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            <span>Navigation One</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Two</span>\n        </span>;\n\n    RenderFragment sub4Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    MenuTheme theme = MenuTheme.Dark;\n    string current = \"1\";\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n    void handleClick(MenuItem e)\n    {\n        current = e.Key;\n    }\n\n}\n",
         "Type": "Demos.Menu.demo.Theme",
         "Style": "",
         "Debug": false
@@ -2139,7 +2268,7 @@
         "Name": "switchmode",
         "Title": "切换菜单类型",
         "Description": "<p>展示动态切换模式。</p>\n",
-        "Code": "<div>\n    <AntSwitch OnChange=changeMode /> Change Mode\n    <div class=\"ant-divider ant-divider-vertical\" role=\"separator\"></div>\n    <AntSwitch OnChange=changeTheme/> Change Style\n    <br />\n    <br />\n    <Menu Style=\" width: 256px ;\"\n          DefaultSelectedKeys=@(new[]{\"1\"})\n          DefaultOpenKeys=@(new[]{\"sub1\"})\n          Mode=this.mode\n          Theme=this.theme>\n        <MenuItem Key=\"1\">\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            Navigation One\n        </MenuItem>\n        <MenuItem Key=\"2\">\n            <AntIcon Type=\"calendar\" Theme=\"outline\"></AntIcon>\n            Navigation Two\n        </MenuItem>\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n            <SubMenu Key=\"sub1-2\" Title=@(\"Submenu\")>\n                <MenuItem Key=\"5\">Option 5</MenuItem>\n                <MenuItem Key=\"6\">Option 6</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Four</span>\n        </span>;\n\n    MenuMode mode = MenuMode.Inline;\n    MenuTheme theme = MenuTheme.Light;\n\n    void changeMode(bool value)\n    {\n        this.mode = value ? MenuMode.Vertical : MenuMode.Inline;\n    }\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n}\n",
+        "Code": "<div>\n    <Switch OnChange=changeMode /> Change Mode\n    <div class=\"ant-divider ant-divider-vertical\" role=\"separator\"></div>\n    <Switch OnChange=changeTheme/> Change Style\n    <br />\n    <br />\n    <Menu Style=\" width: 256px ;\"\n          DefaultSelectedKeys=@(new[]{\"1\"})\n          DefaultOpenKeys=@(new[]{\"sub1\"})\n          Mode=this.mode\n          Theme=this.theme>\n        <MenuItem Key=\"1\">\n            <AntIcon Type=\"mail\" Theme=\"outline\"></AntIcon>\n            Navigation One\n        </MenuItem>\n        <MenuItem Key=\"2\">\n            <AntIcon Type=\"calendar\" Theme=\"outline\"></AntIcon>\n            Navigation Two\n        </MenuItem>\n        <SubMenu Key=\"sub1\" Title=sub1Title>\n            <MenuItem Key=\"3\">Option 3</MenuItem>\n            <MenuItem Key=\"4\">Option 4</MenuItem>\n            <SubMenu Key=\"sub1-2\" Title=@(\"Submenu\")>\n                <MenuItem Key=\"5\">Option 5</MenuItem>\n                <MenuItem Key=\"6\">Option 6</MenuItem>\n            </SubMenu>\n        </SubMenu>\n        <SubMenu Key=\"sub2\" Title=sub2Title>\n            <MenuItem Key=\"7\">Option 7</MenuItem>\n            <MenuItem Key=\"8\">Option 8</MenuItem>\n            <MenuItem Key=\"9\">Option 9</MenuItem>\n            <MenuItem Key=\"10\">Option 10</MenuItem>\n        </SubMenu>\n    </Menu>\n</div>\n\n@code {\n\n    RenderFragment sub1Title =\n        @<span>\n            <AntIcon Type=\"appstore\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Three</span>\n        </span>;\n\n    RenderFragment sub2Title =\n        @<span>\n            <AntIcon Type=\"setting\" Theme=\"outline\"></AntIcon>\n            <span>Navigation Four</span>\n        </span>;\n\n    MenuMode mode = MenuMode.Inline;\n    MenuTheme theme = MenuTheme.Light;\n\n    void changeMode(bool value)\n    {\n        this.mode = value ? MenuMode.Vertical : MenuMode.Inline;\n    }\n\n    void changeTheme(bool value)\n    {\n        this.theme = value ? MenuTheme.Dark : MenuTheme.Light;\n    }\n\n}\n",
         "Type": "Demos.Menu.demo.SwitchMode",
         "Style": "",
         "Debug": false
@@ -2295,6 +2424,75 @@
     ]
   },
   {
+    "Title": "Tag",
+    "SubTitle": "标签",
+    "Type": "数据展示",
+    "Desc": "<p>进行标记和分类的小标签。</p>\n<h2>何时使用</h2>\n<ul>\n<li>用于标记事物的属性和维度。</li>\n<li>进行分类。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mode</td>\n<td>方式选择 <code>default</code>, <code>closable</code>, <code>checkable</code></td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>Closable</td>\n<td>值标签是否可以关闭</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Checked</td>\n<td>标签是否关闭所对应的值</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>CheckedChange</td>\n<td>点击标签时触发的回调</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Color</td>\n<td>预设标签色</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnClose</td>\n<td>关闭时的回调</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Visible</td>\n<td>是否显示标签</td>\n<td>boolean</td>\n<td></td>\n</tr>\n<tr>\n<td>Icon</td>\n<td>设置图标</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 1,
+        "Name": "checkable",
+        "Title": "可选择",
+        "Description": "<p>可通过 CheckableTag 实现类似 Checkbox 的效果，点击切换选中效果。</p>\n",
+        "Code": "<div>\n    <AntTag  Mode=\"checkable\"  Checked=\"check1\">Tag1</AntTag>\n    <AntTag Mode=\"checkable\" Checked=\"check1\">Tag2</AntTag>\n    <AntTag Mode=\"checkable\" Checked=\"check1\" CheckedChange=\"_checked=>checkChange(_checked)\">Tag3</AntTag>\n    \n</div>\n\n@code{\n    bool check1 { get; set; } = false;\n\n    private void checkChange(bool e)\n    {\n        check1 = !check1;\n    }\n}\n    ",
+        "Type": "Demos.Tag.demo.Checkable",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "dynamic",
+        "Title": "动态添加和删除",
+        "Description": "<p>用数组生成一组标签，可以动态添加和删除。</p>\n",
+        "Code": "<div>\n    <div>\n        @foreach (var item in lstTags)\n        {\n            <AntTag Mode=\"closeable\" OnClose=\"()=>onClose(item)\">@item</AntTag>\n        }\n        @if (inputVisible)\n        {\n            <Input @ref=\"_inputRef\" Style=\"width: 78px\" Size=\"small\" @bind-Value=\"_inputValue\" OnBlur=\"handleInputConfirm\" OnPressEnter=\"handleInputConfirm\" />\n        }\n        else\n        {\n            <AntTag Mode=\"checkable\" Class=\"editable-tag\" OnClick=\"OnChecked\">\n                <AntIcon Type=\"plus\" />New Tag\n            </AntTag>\n        }\n    </div>\n</div>\n<style>\n    .editable-tag {\n        background: rgb(255, 255, 255);\n        border-style: dashed;\n    }\n</style>\n\n@code{\n\n\n    private bool inputVisible { get; set; } = false;\n\n    string _inputValue;\n\n    Input _inputRef;\n\n    List<string> lstTags { get; set; } = new List<string>();\n\n    protected override void OnInitialized()\n    {\n        lstTags.Add(\"Apple\");\n        lstTags.Add(\"Mongo\");\n        lstTags.Add(\"Peach\");\n\n    }\n\n    void ValueChange(ChangeEventArgs value)\n    {\n        lstTags.Add(value.Value.ToString());\n    }\n\n    async Task OnChecked()\n    {\n        inputVisible = !inputVisible;\n        if (_inputRef != null)\n            await _inputRef.Focus();\n    }\n\n    void onClose(string item)\n    {\n        lstTags.Remove(item);\n    }\n\n    void handleInputConfirm()\n    {\n        if (string.IsNullOrEmpty(_inputValue)) return;\n\n        string res = lstTags.Find(s => s == _inputValue);\n\n        if (string.IsNullOrEmpty(res))\n        {\n            lstTags.Add(_inputValue);\n        }\n\n        this._inputValue = \"\";\n        this.inputVisible = false;\n    }\n\n\n}",
+        "Type": "Demos.Tag.demo.Dynamic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "controlled",
+        "Title": "控制关闭状态",
+        "Description": "<p>通过 <code>visible</code> 属性控制关闭状态。</p>\n",
+        "Code": "<div>\n\n    <AntTag Mode=\"closeable\" Visible=\"bVisible\">Movies</AntTag>\n    <br />\n    <br />\n    <Button Size=\"small\" OnClick=\"onClick\">Toggle</Button>\n\n</div>\n\n@code{\n    bool bVisible { get; set; } = true;\n    void onClick()\n    {\n        bVisible = !bVisible;\n    }\n}",
+        "Type": "Demos.Tag.demo.Controlled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本用法",
+        "Description": "<p>基本标签的用法，可以通过添加 closable 变为可关闭标签。可关闭标签具有 close 两个事件。</p>\n",
+        "Code": "<div>\n    <AntTag >Tag 1</AntTag>\n    <AntTag>\n        <a href=\"https://github.com/ant-design-blazor/ant-design-blazor\">Link</a>\n    </AntTag>\n    <AntTag Mode=\"closeable\" OnClose=\"()=>onClose()\">Tag 2</AntTag>\n    <AntTag Mode=\"closeable\" OnClose=\"preventDefault\">Prevent Default</AntTag>\n</div>\n\n@code{\n    void onClose()\n    {\n\n    }\n\n    void preventDefault()\n    {\n\n    }\n}",
+        "Type": "Demos.Tag.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "hot",
+        "Title": "热门标签",
+        "Description": "<p>选择你感兴趣的话题。</p>\n",
+        "Code": "<div>\n    <span style=\"margin-right:8px\">Categories:</span>\n    <AntTag Mode=\"checkable\" Checked=\"lstCheck[0]\">Movies</AntTag>\n    <AntTag Mode=\"checkable\" Checked=\"lstCheck[1]\">Books</AntTag>\n    <AntTag Mode=\"checkable\" Checked=\"lstCheck[2]\">Music</AntTag>\n    <AntTag Mode=\"checkable\" Checked=\"lstCheck[3]\">Sports</AntTag>\n</div>\n\n@code{\n    bool[] lstCheck = new bool[] { false, true, false, true };\n}\n  ",
+        "Type": "Demos.Tag.demo.Hot",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "colorful",
+        "Title": "多彩标签",
+        "Description": "<p>我们添加了多种预设色彩的标签样式，用作不同场景使用。如果预设值不能满足你的需求，可以设置为具体的色值。</p>\n",
+        "Code": "<div>\n\n\n    <div>\n        Presets:\n    </div>\n    <br />\n    <div>\n        <AntTag Color=\"magenta\">magenta</AntTag>\n        <AntTag Color=\"pink\">pink</AntTag>\n        <AntTag Color=\"red\">red</AntTag>\n        <AntTag Color=\"volcano\">volcano</AntTag>\n        <AntTag Color=\"orange\">orange</AntTag>\n        <AntTag Color=\"green\">green</AntTag>\n        <AntTag Color=\"cyan\">cyan</AntTag>\n        <AntTag Color=\"blue\">blue</AntTag>\n        <AntTag Color=\"lime\">lime</AntTag>\n        <AntTag Color=\"geekblue\">geekblue</AntTag>\n        <AntTag Color=\"purple\">purple</AntTag>\n    </div>\n    <br />\n    <div>\n        Inverse:\n    </div>\n    <br />\n    <div>\n        <AntTag Icon=\"taobao\" Color=\"blue-inverse\">blue-inverse</AntTag>\n        <AntTag Color=\"orange-inverse\">orange-inverse</AntTag>\n        <AntTag Icon=\"skype\" Color=\"red-inverse\">red-inverse</AntTag>\n        <AntTag Icon=\"weibo\" Color=\"purple-inverse\">purple-inverse</AntTag>\n    </div>\n    <br />\n    <div>\n        Customs:\n    </div>\n    <br />\n    <div>\n        To Do\n    </div>\n\n\n\n</div>",
+        "Type": "Demos.Tag.demo.Colorful",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Avatar",
     "SubTitle": "头像",
     "Type": "数据展示",
@@ -2366,7 +2564,7 @@
         "Name": "basic",
         "Title": "基本用法",
         "Description": "<p>最基本的用法，展示了 <code>dataSource</code>、<code>targetKeys</code>、每行的渲染函数 <code>render</code> 以及回调函数 <code>onChange</code> <code>onSelectChange</code> <code>onScroll</code> 的用法。</p>\n",
-        "Code": "<div>\n    <Transfer DataSource=\"dataSource\"\n              Disabled=\"Disabled\"\n              TargetKeys=\"targetKeys.ToArray()\"\n              SelectedKeys=\"selectedKeys\"\n              Titles=\"titles\"\n              OnChange=\"OnChange\"\n              OnScroll=\"OnScroll\"\n              OnSelectChange=\"OnSelectChange\"></Transfer>\n\n    <AntSwitch Style=\"margin-top: 16px;\" OnChange=\"OnSwitchChange\"></AntSwitch>\n</div>\n\n@code {\n    private List<TransferItem> dataSource = new List<TransferItem>();\n    private List<string> targetKeys = new List<string>();\n    private string[] selectedKeys = Array.Empty<string>();\n    private string[] titles = { \"Source\", \"Target\" };\n    private bool Disabled = false;\n\n    protected override void OnInitialized()\n    {\n        for (int i = 0; i < 20; i++)\n        {\n            dataSource.Add(new TransferItem\n            {\n                Title = $\"Content{i + 1}\",\n                Description = $\"description of content{i + 1}\",\n                Key = i.ToString(),\n                Disabled = i % 3 < 1\n            });\n\n            if (i > 10)\n                targetKeys.Add(i.ToString());\n        }\n        base.OnInitialized();\n    }\n\n    private void OnSwitchChange(bool check)\n    {\n        Disabled = check;\n    }\n\n    private OneOf.OneOf<string, RenderFragment> Render(TransferItem item)\n    {\n        //return new RenderFragment(buildTree);\n        return $\"{item.Title} - {item.Description}\";\n    }\n\n    private void OnChange(TransferChangeArgs e)\n    {\n        Console.WriteLine(e.Direction);\n        Console.WriteLine($\"MoveKeys:{string.Join(',', e.MoveKeys)}\");\n        Console.WriteLine($\"TargetKeys:{string.Join(',', e.TargetKeys)}\");\n    }\n\n    private void OnScroll(TransferScrollArgs e)\n    {\n        Console.WriteLine(e.Direction);\n    }\n\n    private void OnSelectChange(TransferSelectChangeArgs e)\n    {\n        Console.WriteLine($\"SourceSelectedKeys:{string.Join(',', e.SourceSelectedKeys)}\");\n        Console.WriteLine($\"TargetSelectedKeys:{string.Join(',', e.TargetSelectedKeys)}\");\n    }\n}\n",
+        "Code": "<div>\n    <Transfer DataSource=\"dataSource\"\n              Disabled=\"Disabled\"\n              TargetKeys=\"targetKeys.ToArray()\"\n              SelectedKeys=\"selectedKeys\"\n              Titles=\"titles\"\n              OnChange=\"OnChange\"\n              OnScroll=\"OnScroll\"\n              OnSelectChange=\"OnSelectChange\"></Transfer>\n\n    <Switch Style=\"margin-top: 16px;\" OnChange=\"OnSwitchChange\"></Switch>\n</div>\n\n@code {\n    private List<TransferItem> dataSource = new List<TransferItem>();\n    private List<string> targetKeys = new List<string>();\n    private string[] selectedKeys = Array.Empty<string>();\n    private string[] titles = { \"Source\", \"Target\" };\n    private bool Disabled = false;\n\n    protected override void OnInitialized()\n    {\n        for (int i = 0; i < 20; i++)\n        {\n            dataSource.Add(new TransferItem\n            {\n                Title = $\"Content{i + 1}\",\n                Description = $\"description of content{i + 1}\",\n                Key = i.ToString(),\n                Disabled = i % 3 < 1\n            });\n\n            if (i > 10)\n                targetKeys.Add(i.ToString());\n        }\n        base.OnInitialized();\n    }\n\n    private void OnSwitchChange(bool check)\n    {\n        Disabled = check;\n    }\n\n    private OneOf.OneOf<string, RenderFragment> Render(TransferItem item)\n    {\n        //return new RenderFragment(buildTree);\n        return $\"{item.Title} - {item.Description}\";\n    }\n\n    private void OnChange(TransferChangeArgs e)\n    {\n        Console.WriteLine(e.Direction);\n        Console.WriteLine($\"MoveKeys:{string.Join(',', e.MoveKeys)}\");\n        Console.WriteLine($\"TargetKeys:{string.Join(',', e.TargetKeys)}\");\n    }\n\n    private void OnScroll(TransferScrollArgs e)\n    {\n        Console.WriteLine(e.Direction);\n    }\n\n    private void OnSelectChange(TransferSelectChangeArgs e)\n    {\n        Console.WriteLine($\"SourceSelectedKeys:{string.Join(',', e.SourceSelectedKeys)}\");\n        Console.WriteLine($\"TargetSelectedKeys:{string.Join(',', e.TargetSelectedKeys)}\");\n    }\n}\n",
         "Type": "Demos.Transfer.demo.Basic",
         "Style": "",
         "Debug": false

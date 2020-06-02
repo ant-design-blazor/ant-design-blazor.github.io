@@ -187,6 +187,13 @@
           },
           {
             "Order": 0,
+            "Title": "Card",
+            "SubTitle": "卡片",
+            "Type": "menuItem",
+            "Url": "components/card"
+          },
+          {
+            "Order": 0,
             "Title": "Tooltip",
             "SubTitle": "文字提示",
             "Type": "menuItem",
@@ -205,6 +212,13 @@
             "SubTitle": "徽标数",
             "Type": "menuItem",
             "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Tag",
+            "SubTitle": "标签",
+            "Type": "menuItem",
+            "Url": "components/tag"
           },
           {
             "Order": 0,

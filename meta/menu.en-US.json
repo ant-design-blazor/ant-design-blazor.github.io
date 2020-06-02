@@ -168,6 +168,12 @@
           },
           {
             "Order": 0,
+            "Title": "Card",
+            "Type": "menuItem",
+            "Url": "components/card"
+          },
+          {
+            "Order": 0,
             "Title": "Tooltip",
             "Type": "menuItem",
             "Url": "components/tooltip"
@@ -183,6 +189,12 @@
             "Title": "Badge",
             "Type": "menuItem",
             "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Tag",
+            "Type": "menuItem",
+            "Url": "components/tag"
           },
           {
             "Order": 0,
