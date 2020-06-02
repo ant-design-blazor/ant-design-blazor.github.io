@@ -1279,6 +1279,125 @@
     ]
   },
   {
+    "Title": "Modal",
+    "SubTitle": "对话框",
+    "Type": "反馈",
+    "Desc": "<p>模态对话框。</p>\n<h2>何时使用</h2>\n<p>需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 <code>Modal</code> 在当前页面正中打开一个浮层，承载相应的操作。</p>\n<p>另外当需要一个简洁的确认框询问用户时，可以使用 <code>ModalService.Confirm()</code> 等语法糖方法。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AfterClose</td>\n<td>Modal 完全关闭后的回调</td>\n<td>EventCallback</td>\n<td>-</td>\n</tr>\n<tr>\n<td>BodyStyle</td>\n<td>Modal body 样式</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>CancelText</td>\n<td>取消按钮文字</td>\n<td>string|RenderFragment</td>\n<td>Cancel</td>\n</tr>\n<tr>\n<td>Centered</td>\n<td>垂直居中展示 Modal</td>\n<td>bool</td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td>Closable</td>\n<td>是否显示右上角的关闭按钮</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>CloseIcon</td>\n<td>自定义关闭图标</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>ConfirmLoading</td>\n<td>确定按钮 loading</td>\n<td>bool</td>\n<td>false</td>\n</tr>\n<tr>\n<td>DestroyOnClose</td>\n<td>关闭时销毁 Modal 里的子元素</td>\n<td>bool</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Footer</td>\n<td>底部内容，当不需要默认底部按钮时，可以设为 <code>null</code></td>\n<td>string|RenderFragment</td>\n<td>确定取消按钮</td>\n</tr>\n<tr>\n<td>ForceRender</td>\n<td>强制渲染 Modal</td>\n<td>bool</td>\n<td>false</td>\n</tr>\n<tr>\n<td>GetContainer</td>\n<td>指定 Modal 挂载的 HTML 节点, false 为挂载在当前 dom</td>\n<td>ElementReference?</td>\n<td>document.body</td>\n</tr>\n<tr>\n<td>Keyboard</td>\n<td>是否支持键盘 esc 关闭</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>Mask</td>\n<td>是否展示遮罩</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>MaskClosable</td>\n<td>点击蒙层是否允许关闭</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>MaskStyle</td>\n<td>遮罩样式</td>\n<td>string</td>\n<td>{}</td>\n</tr>\n<tr>\n<td>OkText</td>\n<td>确认按钮文字</td>\n<td>string|RenderFragment</td>\n<td>OK</td>\n</tr>\n<tr>\n<td>OkType</td>\n<td>确认按钮类型</td>\n<td>string</td>\n<td>primary</td>\n</tr>\n<tr>\n<td>OkButtonProps</td>\n<td>ok 按钮 props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>CancelButtonProps</td>\n<td>cancel 按钮 props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>可用于设置浮层的样式，调整浮层位置等</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Title</td>\n<td>标题</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Visible</td>\n<td>对话框是否可见</td>\n<td>bool</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Width</td>\n<td>宽度</td>\n<td>string|number</td>\n<td>520</td>\n</tr>\n<tr>\n<td>WrapClassName</td>\n<td>对话框外层容器的类名</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>ZIndex</td>\n<td>设置 Modal 的 <code>z-index</code></td>\n<td>int</td>\n<td>1000</td>\n</tr>\n<tr>\n<td>OnCancel</td>\n<td>点击遮罩层或右上角叉或取消按钮的回调</td>\n<td>EventCallback<MouseEventArgs></td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnOk</td>\n<td>点击确定回调</td>\n<td>EventCallback<MouseEventArgs></td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h4>注意</h4>\n<blockquote>\n<p><code>&lt;Modal /&gt;</code> 默认关闭后状态不会自动清空, 如果希望每次打开都是新内容，请设置 <code>DestroyOnClose</code>。</p>\n</blockquote>\n<h3>ModalService</h3>\n<p>包括：</p>\n<ul>\n<li><code>ModalService.Info</code></li>\n<li><code>ModalService.Success</code></li>\n<li><code>ModalService.Error</code></li>\n<li><code>ModalService.Warning</code></li>\n<li><code>ModalService.Confirm</code></li>\n</ul>\n<p>以上均为一个函数，参数为 ConfirmOptions，具体属性如下：</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AutoFocusButton</td>\n<td>指定自动获得焦点的按钮</td>\n<td>ConfirmAutoFocusButton</td>\n<td><code>ConfirmAutoFocusButton.Ok</code></td>\n</tr>\n<tr>\n<td>CancelText</td>\n<td>设置 Modal.confirm 取消按钮文字</td>\n<td>string</td>\n<td>Cancel</td>\n</tr>\n<tr>\n<td>Centered</td>\n<td>垂直居中展示 Modal</td>\n<td>bool</td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td>ClassName</td>\n<td>容器类名</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Content</td>\n<td>内容</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Icon</td>\n<td>自定义图标</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>MaskClosable</td>\n<td>点击蒙层是否允许关闭</td>\n<td>bool</td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td>OkText</td>\n<td>确认按钮文字</td>\n<td>string</td>\n<td>确定</td>\n</tr>\n<tr>\n<td>OkType</td>\n<td>确认按钮类型</td>\n<td>string</td>\n<td>primary</td>\n</tr>\n<tr>\n<td>OkButtonProps</td>\n<td>ok 按钮 props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>CancelButtonProps</td>\n<td>cancel 按钮 props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Title</td>\n<td>标题</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Width</td>\n<td>宽度</td>\n<td>string|double</td>\n<td>416</td>\n</tr>\n<tr>\n<td>ZIndex</td>\n<td>设置 Modal 的 <code>z-index</code></td>\n<td>int</td>\n<td>1000</td>\n</tr>\n<tr>\n<td>OnCancel</td>\n<td>取消回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭</td>\n<td>EventCallback<MouseEventArgs>?</td>\n<td>null</td>\n</tr>\n<tr>\n<td>OnOk</td>\n<td>点击确定回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭</td>\n<td>EventCallback<MouseEventArgs>?</td>\n<td>null</td>\n</tr>\n</tbody>\n</table>\n<p>以上函数调用后，会返回一个引用，可以通过该引用更新和关闭弹窗。</p>\n<pre><code class=\"language-c#\">ConfirmOptions config = new ConfirmOptions();\nModalService.Info(config);\n\nModalService.Update(config);\n\nModalService.Destroy(config);\n</code></pre>\n<ul>\n<li><code>ModalService.DestroyAll</code></li>\n</ul>\n<p>使用 <code>ModalService.DestroyAll()</code> 可以销毁弹出的确认窗（即上述的 ModalService.Info、ModalService.Success、ModalService.Error、ModalService.Warning、ModalService.Confirm）。通常用于路由监听当中，处理路由前进、后退不能销毁确认对话框的问题，而不用各处去使用实例的返回值进行关闭（ModalService.Destroy(config) 适用于主动关闭，而不是路由这样被动关闭）</p>\n",
+    "DemoList": [
+      {
+        "Order": 1,
+        "Name": "async",
+        "Title": "异步关闭",
+        "Description": "<p>点击确定后异步关闭对话框，例如提交表单。</p>\n",
+        "Code": "\n<Button Type=\"primary\" OnClick=\"@ShowModal\">\n    Open Modal with async logic\n</Button>\n<Modal Title=\"@(\"Title\")\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\"\n       ConfirmLoading=\"@_confirmLoading\">\n    <p>@_modalText</p>\n</Modal>\n\n\n@code{\n    bool _visible = false;\n    bool _confirmLoading = false;\n    string _modalText = \"Content of the modal\";\n\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n\n    private async Task HandleOk(MouseEventArgs e)\n    {\n        _modalText = \"The modal will be closed after two seconds\";\n        _confirmLoading = true;\n\n        await Task.Delay(2000);\n        _visible = false;\n        _confirmLoading = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        Console.WriteLine(\"Clicked cancel button\");\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.Async",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>第一个对话框。</p>\n",
+        "Code": "<Button Type=\"primary\" OnClick=\"@(()=>{ _visible = true; })\">\n    Open Modal\n</Button>\n<Modal Title=\"@title\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\">\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n</Modal>\n@code{\n    string title = \"BasicModal\";\n    bool _visible = false;\n\n    private void HandleOk(MouseEventArgs e)\n    {\n        Console.WriteLine(e);\n        _visible = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        Console.WriteLine(e);\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "confirmpromise",
+        "Title": "确认对话框",
+        "Description": "<p>使用 <code>confirm()</code> 可以快捷地弹出确认框。onCancel/onOk 返回 promise 可以延迟关闭。</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Button OnClick=\"@ShowConfirm\">Confirm</Button>\n\n@code {\n\n    private Func<MouseEventArgs, Task> OnOkClick = async (e) =>\n    {\n        await Task.Delay(1000);\n    };\n\n    private void ShowConfirm()\n    {\n        RenderFragment icon =@<AntIcon Type=\"exclamation-circle\" Theme=\"outline\"></AntIcon>;\n\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Do you want to delete these items?\",\n            Icon = icon,\n            Content = \"When clicked the OK button, this dialog will be closed after 1 second\",\n            OnOk = new EventCallback<MouseEventArgs>(this, OnOkClick)\n        });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.ConfirmPromise",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "confirm",
+        "Title": "确认对话框",
+        "Description": "<p>使用 <code>confirm()</code> 可以快捷地弹出确认框。</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Space>\n    <SpaceItem>\n        <Button OnClick=\"@ShowConfirm\">Confirm</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"@ShowDeleteConfirm\" Type=\"dashed\">Delete</Button>\n    </SpaceItem>\n\n    <SpaceItem>\n        <Button OnClick=\"@ShowPropsConfirm\" Type=\"dashed\"> With extra props</Button>\n    </SpaceItem>\n</Space>\n@code{\n    Action<MouseEventArgs> onOk = (e) =>\n    {\n        Console.WriteLine(\"Ok\");\n    };\n    Action<MouseEventArgs> onCancel = (e) =>\n    {\n        Console.WriteLine(\"Cancel\");\n    };\n    RenderFragment icon = @<AntIcon Type=\"exclamation-circle\" Theme=\"outline\"></AntIcon>;\n\n    private void ShowConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Do you Want to delete these items?\",\n            Icon = icon,\n            Content = \"Some descriptions\",\n            OnOk = new EventCallback<MouseEventArgs>(this, onOk),\n            OnCancel = new EventCallback<MouseEventArgs>(this, onCancel)\n        });\n    }\n\n    private void ShowDeleteConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Are you sure delete this task?\",\n            Icon = icon,\n            Content = \"Some descriptions\",\n            OnOk = new EventCallback<MouseEventArgs>(this, onOk),\n            OnCancel = new EventCallback<MouseEventArgs>(this, onCancel),\n            OkText = \"Yes\",\n            OkType = \"danger\",\n            CancelText = \"No\",\n\n        });\n    }\n\n    private void ShowPropsConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Are you sure delete this task?\",\n            Icon = icon,\n            Content = \"Some descriptions\",\n            OnOk = new EventCallback<MouseEventArgs>(this, onOk),\n            OnCancel = new EventCallback<MouseEventArgs>(this, onCancel),\n            OkText = \"Yes\",\n            OkType = \"danger\",\n            CancelText = \"No\",\n            OkButtonProps = new AntDesign.ButtonProps()\n            {\n                Disabled = true,\n            }\n        });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Confirm",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "confirmrouter",
+        "Title": "销毁确认对话框",
+        "Description": "<p>使用 <code>Modal.destroyAll()</code> 可以销毁弹出的确认窗。通常用于路由监听当中，处理路由前进、后退不能销毁确认对话框的问题。</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Button OnClick=\"@ShowConfirm\">Confirm</Button>\n\n\n@code {\n\n    private void DestroyAll()\n    {\n        _modalService.DestroyAll();\n    }\n\n    private async Task ShowConfirm()\n    {\n        RenderFragment icon =@<AntIcon Type=\"exclamation-circle\" Theme=\"outline\"></AntIcon>;\n        RenderFragment content = @<Button OnClick=\"DestroyAll\"> Click to destroy all </Button>;\n\n        for (int i = 0; i < 3; i++)\n        {\n\n            _modalService.Confirm(new ConfirmOptions()\n            {\n                Icon = icon,\n                Content = content,\n            });\n            await Task.Delay(500);\n        }\n    }\n}\n",
+        "Type": "Demos.Modal.demo.ConfirmRouter",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "locale",
+        "Title": "国际化",
+        "Description": "<p>设置 <code>okText</code> 与 <code>cancelText</code> 以自定义按钮文字。</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<div>\n    <Button Type=\"primary\" OnClick=\"@ShowModal\">\n        Modal\n    </Button>\n    <Modal Title=\"@(\"Modal\")\"\n           Visible=\"@_visible\"\n           OnOk=\"@HideModal\"\n           OnCancel=\"@HideModal\"\n           OkText=\"@(\"确认\")\"\n           CancelText=\"@(\"取消\")\">\n        <p>Bla bla ...</p>\n        <p>Bla bla ...</p>\n        <p>Bla bla ...</p>\n    </Modal>\n\n    <Button OnClick=\"@HandleConfirm\">Confirm</Button>\n\n</div>\n\n\n@code {\n    private bool _visible = false;\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n    private void HideModal()\n    {\n        _visible = false;\n    }\n\n    private void HandleConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Confirm\",\n            Icon =@<AntIcon Type=\"exclamation-circle\" Theme=\"Outline\"></AntIcon>,\n            Content = \"Bla bla ...\",\n            OkText = \"确认\",\n            CancelText = \"取消\"\n        });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Locale",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "buttonprops",
+        "Title": "自定义页脚按钮属性",
+        "Description": "<p>传入 <code>okButtonProps</code> 和 <code>cancelButtonProps</code> 可分别自定义确定按钮和取消按钮的 props。</p>\n",
+        "Code": "<Button Type=\"primary\" OnClick=\"@ShowModal\">\n    Open Modal with customized button props\n</Button>\n<Modal Title=\"@(\"BasicModal\")\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\"\n       OkButtonProps=\"new AntDesign.ButtonProps(){ Disabled = true }\"\n       CancelButtonProps=\"new AntDesign.ButtonProps(){ Disabled = true }\">\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n</Modal>\n\n@code{\n    bool _visible = false;\n\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n    private void HandleOk(MouseEventArgs e)\n    {\n        Console.WriteLine(\"e\");\n        _visible = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        Console.WriteLine(\"e\");\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.ButtonProps",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "footer",
+        "Title": "自定义页脚",
+        "Description": "<p>更复杂的例子，自定义了页脚的按钮，点击提交后进入 loading 状态，完成后关闭。</p>\n<p>不需要默认确定取消按钮时，你可以把 <code>footer</code> 设为 <code>null</code>。</p>\n",
+        "Code": "\n<Button Type=\"primary\" OnClick=\"@ShowModal\">\n    Open Modal with customized footer\n</Button>\n@{\n    RenderFragment footer = @<Template>\n        <Button OnClick=\"@HandleCancel\" @key=\"@( \"back\" )\">Return</Button>\n        <Button OnClick=\"@HandleOk\" @key=\"@( \"submit\" )\"\n                   Type=\"primary\"\n                   Loading=\"@_loading\">Submit</Button>\n    </Template>;\n}\n\n<Modal Title=\"@(\"Title\")\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\"\n       Footer=\"@footer\">\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n</Modal>\n\n\n@code{\n    bool _visible = false;\n    bool _loading = false;\n\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n\n    private async Task HandleOk(MouseEventArgs e)\n    {\n        _loading = true;\n        await Task.Delay(3000);\n        _visible = false;\n        _loading = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.Footer",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "manual",
+        "Title": "手动更新和移除",
+        "Description": "<p>手动更新和关闭 <code>Modal.method</code> 方式创建的对话框。</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Button OnClick=\"@CountDown\">Open modal to close in 5s</Button>\n\n\n@code {\n\n    private async Task CountDown()\n    {\n        var secondsToGo = 5;\n        var props = new ConfirmOptions()\n        {\n            Title = \"This is a notification message\",\n            Content = $\"This modal will be destroyed after {secondsToGo} second.\"\n        };\n        _modalService.Success(props);\n        while (secondsToGo > 0)\n        {\n            secondsToGo -= 1;\n            await Task.Delay(1000);\n            props.Content = $\"This modal will be destroyed after {secondsToGo} second.\";\n            _modalService.Update(props);\n        }\n\n        _modalService.Destroy(props);\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Manual",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "info",
+        "Title": "信息提示",
+        "Description": "<p>各种类型的信息提示，只提供一个按钮用于关闭。</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Space>\n    <SpaceItem>\n        <Button OnClick=\"HandleInfo\">Info</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"HandleSuccess\">Success</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"HandleError\">Error</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"HandleWarning\">Warning</Button>\n    </SpaceItem>\n</Space>\n@code {\n    private void HandleInfo()\n    {\n        RenderFragment content =@<div>\n                <p>some messages...some messages...</p>\n                <p>some messages...some messages...</p>\n            </div>;\n        _modalService.Info(new ConfirmOptions()\n        {\n            Title = \"This is a notification message\",\n            Content = content\n        });\n    }\n\n    private void HandleSuccess()\n    {\n      _modalService.Success(new ConfirmOptions()\n      {\n          Content = \"some messages...some messages...\"\n      });\n    }\n\n    private void HandleError()\n    {\n      _modalService.Error(new ConfirmOptions()\n      {\n          Title = \"This is an error message\",\n          Content = \"some messages...some messages...\"\n      });\n    }\n\n    private void HandleWarning()\n    {\n      _modalService.Warning(new ConfirmOptions()\n      {\n          Title = \"This is a warning message\",\n          Content = \"some messages...some messages...\"\n      });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Info",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "position",
+        "Title": "自定义位置",
+        "Description": "<p>使用 <code>centered</code> 或类似 <code>style.top</code> 的样式来设置对话框位置。</p>\n",
+        "Code": "<div>\n    <Button Type=\"primary\" OnClick=\"@SetModal1Visible\">\n        Display a modal dialog at 20px to Top\n    </Button>\n    <Modal Title=\"@(\"20px to Top\")\"\n           Style=\"top: 20px\"\n           Visible=\"_visible1\"\n           OnOk=\"@HideModal1\"\n           OnCancel=\"@HideModal1\"\n           >\n        <p>some contents...</p>\n        <p>some contents...</p>\n        <p>some contents...</p>\n    </Modal>\n    <br />\n    <br />\n    <Button Type=\"primary\" OnClick=\"@SetModal2Visible\">\n        Vertically centered modal dialog\n    </Button>\n    <Modal Title=\"@(\"Vertically centered modal dialog\")\"\n           Centered=\"true\"\n           Visible=\"_visible2\"\n           OnOk=\"@HideModal2\"\n           OnCancel=\"@HideModal2\"\n           >\n        <p>some contents...</p>\n        <p>some contents...</p>\n        <p>some contents...</p>\n    </Modal>\n</div>\n@code {\n    string title = \"BasicModal\";\n    bool _visible1 = false;\n    bool _visible2 = false;\n\n    private void HideModal1()\n    {\n        if (_visible1)\n        {\n            _visible1 = false;\n        }\n    }\n\n    private void HideModal2()\n    {\n        if (_visible2)\n        {\n            _visible2 = false;\n        }\n    }\n\n    private void SetModal1Visible()\n    {\n        _visible1 = true;\n    }\n    private void SetModal2Visible()\n    {\n        _visible2 = true;\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Position",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Tooltip",
     "SubTitle": "文字提示",
     "Type": "数据展示",

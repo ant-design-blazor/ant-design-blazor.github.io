@@ -235,6 +235,12 @@
           },
           {
             "Order": 0,
+            "Title": "Modal",
+            "Type": "menuItem",
+            "Url": "components/modal"
+          },
+          {
+            "Order": 0,
             "Title": "Alert",
             "Type": "menuItem",
             "Url": "components/alert"

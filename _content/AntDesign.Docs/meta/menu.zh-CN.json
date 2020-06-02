@@ -264,6 +264,13 @@
           },
           {
             "Order": 0,
+            "Title": "Modal",
+            "SubTitle": "对话框",
+            "Type": "menuItem",
+            "Url": "components/modal"
+          },
+          {
+            "Order": 0,
             "Title": "Alert",
             "SubTitle": "警告提示",
             "Type": "menuItem",

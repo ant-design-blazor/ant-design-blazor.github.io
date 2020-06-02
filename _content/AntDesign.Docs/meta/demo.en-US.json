@@ -1263,6 +1263,124 @@
     ]
   },
   {
+    "Title": "Modal",
+    "Type": "Feedback",
+    "Desc": "<p>Modal dialogs.</p>\n<h2>When To Use</h2>\n<p>When requiring users to interact with the application, but without jumping to a new page and interrupting the user's workflow, you can use <code>Modal</code> to create a new floating layer over the current page to get user feedback or display information. Additionally, if you need show a simple confirmation dialog, you can use <code>ModalService.Confirm()</code>, and so on.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AfterClose</td>\n<td>Specify a function that will  be called when modal is closed completely.</td>\n<td>EventCallback</td>\n<td>-</td>\n</tr>\n<tr>\n<td>BodyStyle</td>\n<td>Body style for modal body  element. Such as height, padding etc.</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>CancelText</td>\n<td>Text of the Cancel button</td>\n<td>string|RenderFragment</td>\n<td>Cancel</td>\n</tr>\n<tr>\n<td>Centered</td>\n<td>Centered Modal</td>\n<td>bool</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Closable</td>\n<td>Whether a close (x) button is  visible on top right of the modal dialog or not</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>CloseIcon</td>\n<td>custom close icon</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>ConfirmLoading</td>\n<td>Whether to apply loading  visual effect for OK button or not</td>\n<td>bool</td>\n<td>false</td>\n</tr>\n<tr>\n<td>DestroyOnClose</td>\n<td>Whether to unmount child  components on onClose</td>\n<td>bool</td>\n<td>false</td>\n</tr>\n<tr>\n<td>Footer</td>\n<td>Footer content, set as  footer={null} when you don't need default buttons</td>\n<td>string|RenderFragment</td>\n<td>确定取消按钮</td>\n</tr>\n<tr>\n<td>ForceRender</td>\n<td>Force render Modal</td>\n<td>bool</td>\n<td>false</td>\n</tr>\n<tr>\n<td>GetContainer</td>\n<td>Return the mount node for  Modal</td>\n<td>ElementReference?</td>\n<td>document.body</td>\n</tr>\n<tr>\n<td>Keyboard</td>\n<td>Whether support press esc to close</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>Mask</td>\n<td>Whether show mask or not.</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>MaskClosable</td>\n<td>Whether to close the modal  dialog when the mask (area outside the modal) is clicked</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>MaskStyle</td>\n<td>Style for modal's mask  element.</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>OkText</td>\n<td>Text of the OK button</td>\n<td>string|RenderFragment</td>\n<td>OK</td>\n</tr>\n<tr>\n<td>OkType</td>\n<td>Button type of the OK button</td>\n<td>string</td>\n<td>primary</td>\n</tr>\n<tr>\n<td>OkButtonProps</td>\n<td>The ok button props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>CancelButtonProps</td>\n<td>The cancel button props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>Style of floating layer,  typically used at least for adjusting the position.</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Title</td>\n<td>The modal dialog's title</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Visible</td>\n<td>Whether the modal dialog is  visible or not</td>\n<td>bool</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Width</td>\n<td>Width of the modal dialog</td>\n<td>string|double</td>\n<td>520</td>\n</tr>\n<tr>\n<td>WrapClassName</td>\n<td>The class name of the  container of the modal dialog</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>ZIndex</td>\n<td>The z-index of the Modal</td>\n<td>int</td>\n<td>1000</td>\n</tr>\n<tr>\n<td>OnCancel</td>\n<td>Specify a function that will  be called when a user clicks mask, close button on top right or Cancel button</td>\n<td>EventCallback<MouseEventArgs></td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnOk</td>\n<td>Specify a function that will  be called when a user clicks the OK button</td>\n<td>EventCallback<MouseEventArgs></td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<h4>Note</h4>\n<blockquote>\n<p>The state of Modal will be preserved at it's component lifecycle by default, if you wish to open it with a brand new state everytime, set <code>DestroyOnClose</code> on it.</p>\n</blockquote>\n<h3>Modal.method()</h3>\n<p>There are five ways to display the information based on the content's nature:</p>\n<ul>\n<li><code>ModalService.Info</code></li>\n<li><code>ModalService.Success</code></li>\n<li><code>ModalService.Error</code></li>\n<li><code>ModalService.Warning</code></li>\n<li><code>ModalService.Confirm</code></li>\n</ul>\n<p>The items listed above are all functions, expecting a settings object as parameter. The properties of the object are follows:</p>\n<table>\n<thead>\n<tr>\n<th>CancelText</th>\n<th>Text  of the Cancel button with Modal.confirm</th>\n<th>string</th>\n<th>Cancel</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Centered</td>\n<td>Centered Modal</td>\n<td>bool</td>\n<td>fasle</td>\n</tr>\n<tr>\n<td>ClassName</td>\n<td>className of container</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Content</td>\n<td>Content</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Icon</td>\n<td>custom icon</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Keyboard</td>\n<td>Whether support press esc to  close</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>Mask</td>\n<td>Whether show mask or not.</td>\n<td>bool</td>\n<td>true</td>\n</tr>\n<tr>\n<td>MaskClosable</td>\n<td>Whether to close the modal  dialog when the mask (area outside the modal) is clicked</td>\n<td>bool</td>\n<td>fasle</td>\n</tr>\n<tr>\n<td>OkText</td>\n<td>Text of the OK button</td>\n<td>string</td>\n<td>OK</td>\n</tr>\n<tr>\n<td>OkType</td>\n<td>Button type of the OK button</td>\n<td>string</td>\n<td>primary</td>\n</tr>\n<tr>\n<td>OkButtonProps</td>\n<td>The ok button props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>CancelButtonProps</td>\n<td>The cancel button props</td>\n<td>ButtonProps</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Title</td>\n<td>Title</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Width</td>\n<td>Width of the modal dialog</td>\n<td>string|double</td>\n<td>416</td>\n</tr>\n<tr>\n<td>ZIndex</td>\n<td>The z-index of the Modal</td>\n<td>int</td>\n<td>1000</td>\n</tr>\n<tr>\n<td>OnCancel</td>\n<td>Specify a function that will  be called when the user clicks the Cancel button. The parameter of this  function is a function whose execution should include closing the dialog. You  can also just return a promise and when the promise is resolved, the modal dialog  will also be closed</td>\n<td>EventCallback<MouseEventArgs>?</td>\n<td>null</td>\n</tr>\n<tr>\n<td>OnOk</td>\n<td>Specify a function that will  be called when the user clicks the OK button. The parameter of this function  is a function whose execution should include closing the dialog. You can also  just return a promise and when the promise is resolved, the modal dialog will  also be closed</td>\n<td>EventCallback<MouseEventArgs>?</td>\n<td>null</td>\n</tr>\n</tbody>\n</table>\n<p>All the <code>ModalService.Method</code>s will return a reference, and then we can update and close the modal dialog by the reference.</p>\n<pre><code class=\"language-jsx\">ConfirmOptions config = new ConfirmOptions();\nModalService.Info(config);\n\nModalService.Update(config);\n\nModalService.Destroy(config);\n</code></pre>\n<ul>\n<li><code>ModalService.DestroyAll</code></li>\n</ul>\n<p><code>ModalService.DestroyAll()</code> could destroy all confirmation modal dialogs(ModalService.Info/ModalService.Success/ModalService.Error/ModalService.Warning/ModalService.Confirm). Usually, you can use it in router change event to destroy confirm modal dialog automatically without use modal reference to close( it's too complex to use for all modal dialogs)</p>\n",
+    "DemoList": [
+      {
+        "Order": 1,
+        "Name": "async",
+        "Title": "Asynchronously close",
+        "Description": "<p>Asynchronously close a modal dialog when a the OK button is pressed. For example, you can use this pattern when you submit a form.</p>\n",
+        "Code": "\n<Button Type=\"primary\" OnClick=\"@ShowModal\">\n    Open Modal with async logic\n</Button>\n<Modal Title=\"@(\"Title\")\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\"\n       ConfirmLoading=\"@_confirmLoading\">\n    <p>@_modalText</p>\n</Modal>\n\n\n@code{\n    bool _visible = false;\n    bool _confirmLoading = false;\n    string _modalText = \"Content of the modal\";\n\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n\n    private async Task HandleOk(MouseEventArgs e)\n    {\n        _modalText = \"The modal will be closed after two seconds\";\n        _confirmLoading = true;\n\n        await Task.Delay(2000);\n        _visible = false;\n        _confirmLoading = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        Console.WriteLine(\"Clicked cancel button\");\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.Async",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Basic modal.</p>\n",
+        "Code": "<Button Type=\"primary\" OnClick=\"@(()=>{ _visible = true; })\">\n    Open Modal\n</Button>\n<Modal Title=\"@title\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\">\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n</Modal>\n@code{\n    string title = \"BasicModal\";\n    bool _visible = false;\n\n    private void HandleOk(MouseEventArgs e)\n    {\n        Console.WriteLine(e);\n        _visible = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        Console.WriteLine(e);\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "confirmpromise",
+        "Title": "Confirmation modal dialog",
+        "Description": "<p>Use <code>confirm()</code> to show a confirmation modal dialog. Let onCancel/onOk function return a promise object to delay closing the dialog.</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Button OnClick=\"@ShowConfirm\">Confirm</Button>\n\n@code {\n\n    private Func<MouseEventArgs, Task> OnOkClick = async (e) =>\n    {\n        await Task.Delay(1000);\n    };\n\n    private void ShowConfirm()\n    {\n        RenderFragment icon =@<AntIcon Type=\"exclamation-circle\" Theme=\"outline\"></AntIcon>;\n\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Do you want to delete these items?\",\n            Icon = icon,\n            Content = \"When clicked the OK button, this dialog will be closed after 1 second\",\n            OnOk = new EventCallback<MouseEventArgs>(this, OnOkClick)\n        });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.ConfirmPromise",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "confirm",
+        "Title": "Confirmation modal dialog",
+        "Description": "<p>Use <code>confirm()</code> to show a confirmation modal dialog.</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Space>\n    <SpaceItem>\n        <Button OnClick=\"@ShowConfirm\">Confirm</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"@ShowDeleteConfirm\" Type=\"dashed\">Delete</Button>\n    </SpaceItem>\n\n    <SpaceItem>\n        <Button OnClick=\"@ShowPropsConfirm\" Type=\"dashed\"> With extra props</Button>\n    </SpaceItem>\n</Space>\n@code{\n    Action<MouseEventArgs> onOk = (e) =>\n    {\n        Console.WriteLine(\"Ok\");\n    };\n    Action<MouseEventArgs> onCancel = (e) =>\n    {\n        Console.WriteLine(\"Cancel\");\n    };\n    RenderFragment icon = @<AntIcon Type=\"exclamation-circle\" Theme=\"outline\"></AntIcon>;\n\n    private void ShowConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Do you Want to delete these items?\",\n            Icon = icon,\n            Content = \"Some descriptions\",\n            OnOk = new EventCallback<MouseEventArgs>(this, onOk),\n            OnCancel = new EventCallback<MouseEventArgs>(this, onCancel)\n        });\n    }\n\n    private void ShowDeleteConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Are you sure delete this task?\",\n            Icon = icon,\n            Content = \"Some descriptions\",\n            OnOk = new EventCallback<MouseEventArgs>(this, onOk),\n            OnCancel = new EventCallback<MouseEventArgs>(this, onCancel),\n            OkText = \"Yes\",\n            OkType = \"danger\",\n            CancelText = \"No\",\n\n        });\n    }\n\n    private void ShowPropsConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Are you sure delete this task?\",\n            Icon = icon,\n            Content = \"Some descriptions\",\n            OnOk = new EventCallback<MouseEventArgs>(this, onOk),\n            OnCancel = new EventCallback<MouseEventArgs>(this, onCancel),\n            OkText = \"Yes\",\n            OkType = \"danger\",\n            CancelText = \"No\",\n            OkButtonProps = new AntDesign.ButtonProps()\n            {\n                Disabled = true,\n            }\n        });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Confirm",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "confirmrouter",
+        "Title": "destroy confirmation modal dialog",
+        "Description": "<p><code>Modal.destroyAll()</code> will destroy all confirmation modal dialogs. Usually, you can use it in router change event to destroy confirm modal dialog automatically.</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Button OnClick=\"@ShowConfirm\">Confirm</Button>\n\n\n@code {\n\n    private void DestroyAll()\n    {\n        _modalService.DestroyAll();\n    }\n\n    private async Task ShowConfirm()\n    {\n        RenderFragment icon =@<AntIcon Type=\"exclamation-circle\" Theme=\"outline\"></AntIcon>;\n        RenderFragment content = @<Button OnClick=\"DestroyAll\"> Click to destroy all </Button>;\n\n        for (int i = 0; i < 3; i++)\n        {\n\n            _modalService.Confirm(new ConfirmOptions()\n            {\n                Icon = icon,\n                Content = content,\n            });\n            await Task.Delay(500);\n        }\n    }\n}\n",
+        "Type": "Demos.Modal.demo.ConfirmRouter",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "locale",
+        "Title": "Internationalization",
+        "Description": "<p>To customize the text of the buttons, you need to set <code>okText</code> and <code>cancelText</code> props.</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<div>\n    <Button Type=\"primary\" OnClick=\"@ShowModal\">\n        Modal\n    </Button>\n    <Modal Title=\"@(\"Modal\")\"\n           Visible=\"@_visible\"\n           OnOk=\"@HideModal\"\n           OnCancel=\"@HideModal\"\n           OkText=\"@(\"确认\")\"\n           CancelText=\"@(\"取消\")\">\n        <p>Bla bla ...</p>\n        <p>Bla bla ...</p>\n        <p>Bla bla ...</p>\n    </Modal>\n\n    <Button OnClick=\"@HandleConfirm\">Confirm</Button>\n\n</div>\n\n\n@code {\n    private bool _visible = false;\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n    private void HideModal()\n    {\n        _visible = false;\n    }\n\n    private void HandleConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Confirm\",\n            Icon =@<AntIcon Type=\"exclamation-circle\" Theme=\"Outline\"></AntIcon>,\n            Content = \"Bla bla ...\",\n            OkText = \"确认\",\n            CancelText = \"取消\"\n        });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Locale",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "buttonprops",
+        "Title": "Customize footer buttons props",
+        "Description": "<p>Passing <code>okButtonProps</code> and <code>cancelButtonProps</code> will customize the OK button and cancel button props.</p>\n",
+        "Code": "<Button Type=\"primary\" OnClick=\"@ShowModal\">\n    Open Modal with customized button props\n</Button>\n<Modal Title=\"@(\"BasicModal\")\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\"\n       OkButtonProps=\"new AntDesign.ButtonProps(){ Disabled = true }\"\n       CancelButtonProps=\"new AntDesign.ButtonProps(){ Disabled = true }\">\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n</Modal>\n\n@code{\n    bool _visible = false;\n\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n    private void HandleOk(MouseEventArgs e)\n    {\n        Console.WriteLine(\"e\");\n        _visible = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        Console.WriteLine(\"e\");\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.ButtonProps",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "footer",
+        "Title": "Customized Footer",
+        "Description": "<p>A more complex example which define a customized footer button bar. The dialog will change to loading state after clicking the submit button, and when the loading is done, the modal dialog will be closed.</p>\n<p>You could set <code>footer</code> to <code>null</code> if you don't need default footer buttons.</p>\n",
+        "Code": "\n<Button Type=\"primary\" OnClick=\"@ShowModal\">\n    Open Modal with customized footer\n</Button>\n@{\n    RenderFragment footer = @<Template>\n        <Button OnClick=\"@HandleCancel\" @key=\"@( \"back\" )\">Return</Button>\n        <Button OnClick=\"@HandleOk\" @key=\"@( \"submit\" )\"\n                   Type=\"primary\"\n                   Loading=\"@_loading\">Submit</Button>\n    </Template>;\n}\n\n<Modal Title=\"@(\"Title\")\"\n       Visible=\"@_visible\"\n       OnOk=\"@HandleOk\"\n       OnCancel=\"@HandleCancel\"\n       Footer=\"@footer\">\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n    <p>Some contents...</p>\n</Modal>\n\n\n@code{\n    bool _visible = false;\n    bool _loading = false;\n\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n\n    private async Task HandleOk(MouseEventArgs e)\n    {\n        _loading = true;\n        await Task.Delay(3000);\n        _visible = false;\n        _loading = false;\n    }\n\n    private void HandleCancel(MouseEventArgs e)\n    {\n        _visible = false;\n    }\n}",
+        "Type": "Demos.Modal.demo.Footer",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "manual",
+        "Title": "Manual to update destroy",
+        "Description": "<p>Manually updating and destroying a modal from <code>Modal.method</code>.</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Button OnClick=\"@CountDown\">Open modal to close in 5s</Button>\n\n\n@code {\n\n    private async Task CountDown()\n    {\n        var secondsToGo = 5;\n        var props = new ConfirmOptions()\n        {\n            Title = \"This is a notification message\",\n            Content = $\"This modal will be destroyed after {secondsToGo} second.\"\n        };\n        _modalService.Success(props);\n        while (secondsToGo > 0)\n        {\n            secondsToGo -= 1;\n            await Task.Delay(1000);\n            props.Content = $\"This modal will be destroyed after {secondsToGo} second.\";\n            _modalService.Update(props);\n        }\n\n        _modalService.Destroy(props);\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Manual",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "info",
+        "Title": "Information modal dialog",
+        "Description": "<p>In the various types of information modal dialog, only one button to close dialog is provided.</p>\n",
+        "Code": "@inject ModalService _modalService\n\n<Space>\n    <SpaceItem>\n        <Button OnClick=\"HandleInfo\">Info</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"HandleSuccess\">Success</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"HandleError\">Error</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button OnClick=\"HandleWarning\">Warning</Button>\n    </SpaceItem>\n</Space>\n@code {\n    private void HandleInfo()\n    {\n        RenderFragment content =@<div>\n                <p>some messages...some messages...</p>\n                <p>some messages...some messages...</p>\n            </div>;\n        _modalService.Info(new ConfirmOptions()\n        {\n            Title = \"This is a notification message\",\n            Content = content\n        });\n    }\n\n    private void HandleSuccess()\n    {\n      _modalService.Success(new ConfirmOptions()\n      {\n          Content = \"some messages...some messages...\"\n      });\n    }\n\n    private void HandleError()\n    {\n      _modalService.Error(new ConfirmOptions()\n      {\n          Title = \"This is an error message\",\n          Content = \"some messages...some messages...\"\n      });\n    }\n\n    private void HandleWarning()\n    {\n      _modalService.Warning(new ConfirmOptions()\n      {\n          Title = \"This is a warning message\",\n          Content = \"some messages...some messages...\"\n      });\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Info",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 7,
+        "Name": "position",
+        "Title": "To customize the position of modal",
+        "Description": "<p>You can use <code>centered</code>,<code>style.top</code> or other styles to set position of modal dialog.</p>\n",
+        "Code": "<div>\n    <Button Type=\"primary\" OnClick=\"@SetModal1Visible\">\n        Display a modal dialog at 20px to Top\n    </Button>\n    <Modal Title=\"@(\"20px to Top\")\"\n           Style=\"top: 20px\"\n           Visible=\"_visible1\"\n           OnOk=\"@HideModal1\"\n           OnCancel=\"@HideModal1\"\n           >\n        <p>some contents...</p>\n        <p>some contents...</p>\n        <p>some contents...</p>\n    </Modal>\n    <br />\n    <br />\n    <Button Type=\"primary\" OnClick=\"@SetModal2Visible\">\n        Vertically centered modal dialog\n    </Button>\n    <Modal Title=\"@(\"Vertically centered modal dialog\")\"\n           Centered=\"true\"\n           Visible=\"_visible2\"\n           OnOk=\"@HideModal2\"\n           OnCancel=\"@HideModal2\"\n           >\n        <p>some contents...</p>\n        <p>some contents...</p>\n        <p>some contents...</p>\n    </Modal>\n</div>\n@code {\n    string title = \"BasicModal\";\n    bool _visible1 = false;\n    bool _visible2 = false;\n\n    private void HideModal1()\n    {\n        if (_visible1)\n        {\n            _visible1 = false;\n        }\n    }\n\n    private void HideModal2()\n    {\n        if (_visible2)\n        {\n            _visible2 = false;\n        }\n    }\n\n    private void SetModal1Visible()\n    {\n        _visible1 = true;\n    }\n    private void SetModal2Visible()\n    {\n        _visible2 = true;\n    }\n}\n",
+        "Type": "Demos.Modal.demo.Position",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Tooltip",
     "Type": "Data Display",
     "Desc": "<p>A simple text popup tip.</p>\n<h2>When To Use</h2>\n<ul>\n<li>The tip is shown on mouse enter, and is hidden on mouse leave. The Tooltip doesn't support complex text or operations.</li>\n<li>To provide an explanation of a <code>button/text/operation</code>. It's often used instead of the html <code>title</code> attribute.</li>\n</ul>\n",
