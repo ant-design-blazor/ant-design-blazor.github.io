@@ -113,6 +113,12 @@
           },
           {
             "Order": 0,
+            "Title": "Cascader",
+            "Type": "menuItem",
+            "Url": "components/cascader"
+          },
+          {
+            "Order": 0,
             "Title": "TimePicker",
             "Type": "menuItem",
             "Url": "components/timepicker"

@@ -124,6 +124,13 @@
           },
           {
             "Order": 0,
+            "Title": "Cascader",
+            "SubTitle": "级联选择",
+            "Type": "menuItem",
+            "Url": "components/cascader"
+          },
+          {
+            "Order": 0,
             "Title": "TimePicker",
             "SubTitle": "时间选择框",
             "Type": "menuItem",
