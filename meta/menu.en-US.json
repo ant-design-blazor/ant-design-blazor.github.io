@@ -58,12 +58,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Dropdown",
-            "Type": "menuItem",
-            "Url": "components/dropdown"
-          },
-          {
-            "Order": 0,
             "Title": "Pagination",
             "Type": "menuItem",
             "Url": "components/pagination"
@@ -73,6 +67,12 @@
             "Title": "Menu",
             "Type": "menuItem",
             "Url": "components/menu"
+          },
+          {
+            "Order": 0,
+            "Title": "Dropdown",
+            "Type": "menuItem",
+            "Url": "components/dropdown"
           }
         ]
       },
@@ -83,15 +83,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Input",
+            "Title": "Transfer",
             "Type": "menuItem",
-            "Url": "components/input"
-          },
-          {
-            "Order": 0,
-            "Title": "Slider",
-            "Type": "menuItem",
-            "Url": "components/slider"
+            "Url": "components/transfer"
           },
           {
             "Order": 0,
@@ -107,33 +101,9 @@
           },
           {
             "Order": 0,
-            "Title": "Radio",
-            "Type": "menuItem",
-            "Url": "components/radio"
-          },
-          {
-            "Order": 0,
-            "Title": "Cascader",
-            "Type": "menuItem",
-            "Url": "components/cascader"
-          },
-          {
-            "Order": 0,
-            "Title": "TimePicker",
-            "Type": "menuItem",
-            "Url": "components/timepicker"
-          },
-          {
-            "Order": 0,
             "Title": "Checkbox",
             "Type": "menuItem",
             "Url": "components/checkbox"
-          },
-          {
-            "Order": 0,
-            "Title": "DatePicker",
-            "Type": "menuItem",
-            "Url": "components/datepicker"
           },
           {
             "Order": 0,
@@ -143,15 +113,45 @@
           },
           {
             "Order": 0,
+            "Title": "Slider",
+            "Type": "menuItem",
+            "Url": "components/slider"
+          },
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
+          },
+          {
+            "Order": 0,
             "Title": "InputNumber",
             "Type": "menuItem",
             "Url": "components/inputnumber"
           },
           {
             "Order": 0,
-            "Title": "Transfer",
+            "Title": "Radio",
             "Type": "menuItem",
-            "Url": "components/transfer"
+            "Url": "components/radio"
+          },
+          {
+            "Order": 0,
+            "Title": "DatePicker",
+            "Type": "menuItem",
+            "Url": "components/datepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Input",
+            "Type": "menuItem",
+            "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "Cascader",
+            "Type": "menuItem",
+            "Url": "components/cascader"
           }
         ]
       },
@@ -162,15 +162,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Empty",
+            "Title": "Avatar",
             "Type": "menuItem",
-            "Url": "components/empty"
-          },
-          {
-            "Order": 0,
-            "Title": "Table",
-            "Type": "menuItem",
-            "Url": "components/table"
+            "Url": "components/avatar"
           },
           {
             "Order": 0,
@@ -180,21 +174,15 @@
           },
           {
             "Order": 0,
-            "Title": "Tooltip",
-            "Type": "menuItem",
-            "Url": "components/tooltip"
-          },
-          {
-            "Order": 0,
             "Title": "List",
             "Type": "menuItem",
             "Url": "components/list"
           },
           {
             "Order": 0,
-            "Title": "Badge",
+            "Title": "Tooltip",
             "Type": "menuItem",
-            "Url": "components/badge"
+            "Url": "components/tooltip"
           },
           {
             "Order": 0,
@@ -204,9 +192,21 @@
           },
           {
             "Order": 0,
-            "Title": "Avatar",
+            "Title": "Badge",
             "Type": "menuItem",
-            "Url": "components/avatar"
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Table",
+            "Type": "menuItem",
+            "Url": "components/table"
+          },
+          {
+            "Order": 0,
+            "Title": "Empty",
+            "Type": "menuItem",
+            "Url": "components/empty"
           }
         ]
       },
@@ -223,15 +223,15 @@
           },
           {
             "Order": 0,
-            "Title": "Spin",
+            "Title": "Notification",
             "Type": "menuItem",
-            "Url": "components/spin"
+            "Url": "components/notification"
           },
           {
             "Order": 0,
-            "Title": "Progress",
+            "Title": "Spin",
             "Type": "menuItem",
-            "Url": "components/progress"
+            "Url": "components/spin"
           },
           {
             "Order": 0,
@@ -241,9 +241,15 @@
           },
           {
             "Order": 0,
-            "Title": "Alert",
+            "Title": "Drawer",
             "Type": "menuItem",
-            "Url": "components/alert"
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
+            "Title": "Progress",
+            "Type": "menuItem",
+            "Url": "components/progress"
           },
           {
             "Order": 0,
@@ -253,15 +259,9 @@
           },
           {
             "Order": 0,
-            "Title": "Drawer",
+            "Title": "Alert",
             "Type": "menuItem",
-            "Url": "components/drawer"
-          },
-          {
-            "Order": 0,
-            "Title": "Notification",
-            "Type": "menuItem",
-            "Url": "components/notification"
+            "Url": "components/alert"
           }
         ]
       }
