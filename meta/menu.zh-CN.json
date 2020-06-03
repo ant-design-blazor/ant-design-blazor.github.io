@@ -61,6 +61,13 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Dropdown",
+            "SubTitle": "下拉菜单",
+            "Type": "menuItem",
+            "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
             "Title": "Pagination",
             "SubTitle": "分页",
             "Type": "menuItem",
@@ -72,13 +79,6 @@
             "SubTitle": "导航菜单",
             "Type": "menuItem",
             "Url": "components/menu"
-          },
-          {
-            "Order": 0,
-            "Title": "Dropdown",
-            "SubTitle": "下拉菜单",
-            "Type": "menuItem",
-            "Url": "components/dropdown"
           }
         ]
       },
@@ -89,10 +89,17 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Transfer",
-            "SubTitle": "穿梭框",
+            "Title": "Input",
+            "SubTitle": "输入框",
             "Type": "menuItem",
-            "Url": "components/transfer"
+            "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "Slider",
+            "SubTitle": "滑动输入条",
+            "Type": "menuItem",
+            "Url": "components/slider"
           },
           {
             "Order": 0,
@@ -110,24 +117,17 @@
           },
           {
             "Order": 0,
-            "Title": "Checkbox",
-            "SubTitle": "多选框",
+            "Title": "Radio",
+            "SubTitle": "单选框",
             "Type": "menuItem",
-            "Url": "components/checkbox"
+            "Url": "components/radio"
           },
           {
             "Order": 0,
-            "Title": "Rate",
-            "SubTitle": "评分",
+            "Title": "Cascader",
+            "SubTitle": "级联选择",
             "Type": "menuItem",
-            "Url": "components/rate"
-          },
-          {
-            "Order": 0,
-            "Title": "Slider",
-            "SubTitle": "滑动输入条",
-            "Type": "menuItem",
-            "Url": "components/slider"
+            "Url": "components/cascader"
           },
           {
             "Order": 0,
@@ -138,17 +138,10 @@
           },
           {
             "Order": 0,
-            "Title": "InputNumber",
-            "SubTitle": "数字输入框",
+            "Title": "Checkbox",
+            "SubTitle": "多选框",
             "Type": "menuItem",
-            "Url": "components/inputnumber"
-          },
-          {
-            "Order": 0,
-            "Title": "Radio",
-            "SubTitle": "单选框",
-            "Type": "menuItem",
-            "Url": "components/radio"
+            "Url": "components/checkbox"
           },
           {
             "Order": 0,
@@ -159,17 +152,24 @@
           },
           {
             "Order": 0,
-            "Title": "Input",
-            "SubTitle": "输入框",
+            "Title": "Rate",
+            "SubTitle": "评分",
             "Type": "menuItem",
-            "Url": "components/input"
+            "Url": "components/rate"
           },
           {
             "Order": 0,
-            "Title": "Cascader",
-            "SubTitle": "级联选择",
+            "Title": "InputNumber",
+            "SubTitle": "数字输入框",
             "Type": "menuItem",
-            "Url": "components/cascader"
+            "Url": "components/inputnumber"
+          },
+          {
+            "Order": 0,
+            "Title": "Transfer",
+            "SubTitle": "穿梭框",
+            "Type": "menuItem",
+            "Url": "components/transfer"
           }
         ]
       },
@@ -180,45 +180,10 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Avatar",
-            "SubTitle": "头像",
+            "Title": "Empty",
+            "SubTitle": "空状态",
             "Type": "menuItem",
-            "Url": "components/avatar"
-          },
-          {
-            "Order": 0,
-            "Title": "Card",
-            "SubTitle": "卡片",
-            "Type": "menuItem",
-            "Url": "components/card"
-          },
-          {
-            "Order": 0,
-            "Title": "List",
-            "SubTitle": "列表",
-            "Type": "menuItem",
-            "Url": "components/list"
-          },
-          {
-            "Order": 0,
-            "Title": "Tooltip",
-            "SubTitle": "文字提示",
-            "Type": "menuItem",
-            "Url": "components/tooltip"
-          },
-          {
-            "Order": 0,
-            "Title": "Tag",
-            "SubTitle": "标签",
-            "Type": "menuItem",
-            "Url": "components/tag"
-          },
-          {
-            "Order": 0,
-            "Title": "Badge",
-            "SubTitle": "徽标数",
-            "Type": "menuItem",
-            "Url": "components/badge"
+            "Url": "components/empty"
           },
           {
             "Order": 0,
@@ -229,10 +194,45 @@
           },
           {
             "Order": 0,
-            "Title": "Empty",
-            "SubTitle": "空状态",
+            "Title": "Card",
+            "SubTitle": "卡片",
             "Type": "menuItem",
-            "Url": "components/empty"
+            "Url": "components/card"
+          },
+          {
+            "Order": 0,
+            "Title": "Tooltip",
+            "SubTitle": "文字提示",
+            "Type": "menuItem",
+            "Url": "components/tooltip"
+          },
+          {
+            "Order": 0,
+            "Title": "List",
+            "SubTitle": "列表",
+            "Type": "menuItem",
+            "Url": "components/list"
+          },
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "SubTitle": "徽标数",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Tag",
+            "SubTitle": "标签",
+            "Type": "menuItem",
+            "Url": "components/tag"
+          },
+          {
+            "Order": 0,
+            "Title": "Avatar",
+            "SubTitle": "头像",
+            "Type": "menuItem",
+            "Url": "components/avatar"
           }
         ]
       },
@@ -250,31 +250,10 @@
           },
           {
             "Order": 0,
-            "Title": "Notification",
-            "SubTitle": "通知提醒框",
-            "Type": "menuItem",
-            "Url": "components/notification"
-          },
-          {
-            "Order": 0,
             "Title": "Spin",
             "SubTitle": "加载中",
             "Type": "menuItem",
             "Url": "components/spin"
-          },
-          {
-            "Order": 0,
-            "Title": "Modal",
-            "SubTitle": "对话框",
-            "Type": "menuItem",
-            "Url": "components/modal"
-          },
-          {
-            "Order": 0,
-            "Title": "Drawer",
-            "SubTitle": "抽屉",
-            "Type": "menuItem",
-            "Url": "components/drawer"
           },
           {
             "Order": 0,
@@ -285,10 +264,10 @@
           },
           {
             "Order": 0,
-            "Title": "Message",
-            "SubTitle": "全局提示",
+            "Title": "Modal",
+            "SubTitle": "对话框",
             "Type": "menuItem",
-            "Url": "components/message"
+            "Url": "components/modal"
           },
           {
             "Order": 0,
@@ -296,6 +275,27 @@
             "SubTitle": "警告提示",
             "Type": "menuItem",
             "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Message",
+            "SubTitle": "全局提示",
+            "Type": "menuItem",
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Drawer",
+            "SubTitle": "抽屉",
+            "Type": "menuItem",
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
+            "Title": "Notification",
+            "SubTitle": "通知提醒框",
+            "Type": "menuItem",
+            "Url": "components/notification"
           }
         ]
       }
