@@ -207,6 +207,12 @@
             "Title": "Avatar",
             "Type": "menuItem",
             "Url": "components/avatar"
+          },
+          {
+            "Order": 0,
+            "Title": "Calendar",
+            "Type": "menuItem",
+            "Url": "components/calendar"
           }
         ]
       },

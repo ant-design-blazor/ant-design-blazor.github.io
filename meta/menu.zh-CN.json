@@ -233,6 +233,13 @@
             "SubTitle": "头像",
             "Type": "menuItem",
             "Url": "components/avatar"
+          },
+          {
+            "Order": 0,
+            "Title": "Calendar",
+            "SubTitle": "日历",
+            "Type": "menuItem",
+            "Url": "components/calendar"
           }
         ]
       },

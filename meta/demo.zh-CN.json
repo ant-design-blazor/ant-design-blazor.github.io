@@ -2828,5 +2828,65 @@
         "Debug": false
       }
     ]
+  },
+  {
+    "Title": "Calendar",
+    "SubTitle": "日历",
+    "Type": "数据展示",
+    "Desc": "<p>按照日历形式展示数据的容器。</p>\n<h2>何时使用</h2>\n<p>当数据是日期或按照日期划分时，例如日程、课表、价格日历等，农历等。目前支持年/月切换。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>**注意：**Calendar 部分 locale 是从 value 中读取，所以请先正确设置 moment 的 locale。</p>\n<pre><code class=\"language-jsx\">// 默认语言为 en-US，所以如果需要使用其他语言，推荐在入口文件全局设置 locale\n// import moment from 'moment';\n// import 'moment/locale/zh-cn';\n// moment.locale('zh-cn');\n\n&lt;Calendar\n  dateCellRender={dateCellRender}\n  monthCellRender={monthCellRender}\n  onPanelChange={onPanelChange}\n  onSelect={onSelect}\n/&gt;\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>dateCellRender</td>\n<td>自定义渲染日期单元格，返回内容会被追加到单元格</td>\n<td>Func(DateTime) =&gt; RenderFragment</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>dateFullCellRender</td>\n<td>自定义渲染日期单元格，返回内容覆盖单元格</td>\n<td>Func(DateTime) =&gt; RenderFragment</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>defaultValue</td>\n<td>默认展示的日期</td>\n<td>DateTime</td>\n<td>默认日期</td>\n<td></td>\n</tr>\n<tr>\n<td>disabledDate</td>\n<td>不可选择的日期</td>\n<td>(DateTime) =&gt; boolean</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>fullscreen</td>\n<td>是否全屏显示</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>locale(TODO)</td>\n<td>国际化配置</td>\n<td>object</td>\n<td><a href=\"https://github.com/ant-design/ant-design/blob/master/components/date-picker/locale/example.json\">默认配置</a></td>\n<td></td>\n</tr>\n<tr>\n<td>mode</td>\n<td>初始模式，<code>DatePickerType.Month/DatePickerType.Year</code></td>\n<td>DatePickerType</td>\n<td>DatePickerType.Month</td>\n<td></td>\n</tr>\n<tr>\n<td>monthCellRender</td>\n<td>自定义渲染月单元格，返回内容会被追加到单元格</td>\n<td>Func(DateTime) =&gt; RenderFragment</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>monthFullCellRender</td>\n<td>自定义渲染月单元格，返回内容覆盖单元格</td>\n<td>Func(DateTime) =&gt; RenderFragment</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>validRange</td>\n<td>设置可以显示的日期</td>\n<td>[DateTime, DateTime]</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>展示日期</td>\n<td>DateTime</td>\n<td>当前日期</td>\n<td></td>\n</tr>\n<tr>\n<td>onPanelChange</td>\n<td>日期面板变化回调</td>\n<td>Func(DateTime date, string mode)</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>onSelect</td>\n<td>点击选择日期回调</td>\n<td>Func(DateTime）</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>日期变化回调</td>\n<td>Func(DateTime）</td>\n<td>无</td>\n<td></td>\n</tr>\n<tr>\n<td>headerRender</td>\n<td>自定义头部内容</td>\n<td>Func(CalendarHeaderRenderArgs)</td>\n<td>无</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "customizeheader",
+        "Title": "自定义头部",
+        "Description": "<p>自定义日历头部内容。</p>\n",
+        "Code": "<div class=\"site-calendar-customize-header-wrapper\">\n    <Calendar\n      FullScreen=\"@false\"\n      HeaderRender=\"HeaderRender\"\n      OnPanelChange=\"OnPanelChange\"\n    />\n  </div>\n\n@code\n{\n    private void OnPanelChange(DateTime value, string mode)\n    {\n        Console.WriteLine($\"{value} {mode}\");\n    }\n\n    private RenderFragment GetMonthOptions()\n    {\n        return @<Template>\n            @for (int index = 1; index <= 12; index++)\n            {\n                <option class=\"month-item\" key=\"@index\" value=\"@index\">\n                    @(index)月\n                </option>\n            }\n\n        </Template>;\n    }\n            \n    private RenderFragment GetYearOptions(int currentYear)\n    {\n        return @<Template>\n            @for (int i = currentYear - 10; i < currentYear + 10; i += 1)\n            {\n                <option class=\"year-item\" key=\"@i\" value=\"@i\">\n                    @(i)年\n                </option>\n            }\n\n        </Template>;\n    }\n\n    private void OnSelectYear(ChangeEventArgs args, CalendarHeaderRenderArgs renderArgs)\n    {\n        int year = Convert.ToInt32(args.Value);\n        renderArgs.OnChange.InvokeAsync(DateHelper.CombineNewDate(renderArgs.Value, year: year));\n    }\n\n    private void OnSelectMonth(ChangeEventArgs args, CalendarHeaderRenderArgs renderArgs)\n    {\n        int month = Convert.ToInt32(args.Value);\n        renderArgs.OnChange.InvokeAsync(DateHelper.CombineNewDate(renderArgs.Value, month: month));\n    }\n\n    private void OnTypeChange()\n    {\n\n    }\n\n    private RenderFragment HeaderRender(CalendarHeaderRenderArgs args) {\n        int start = 0;\n        int end = 12;\n\n        int month = args.Value.Month;\n        int year = args.Value.Year;\n\n        return\n        @<Template>\n            <div style=\"padding: 8px\">\n                <AntTitle Level=\"4\">\n                    Custom header\n                </AntTitle>\n                <AntRow Gutter=\"8\">\n                    <AntCol>\n                        <AntRadioGroup size=\"small\" OnChange=\"value => args.OnTypeChange.InvokeAsync(value)\" Value=\"@args.Type\">\n                            <AntRadio RadioButton Value=\"@DatePickerType.Month\">Month</AntRadio>\n                            <AntRadio RadioButton Value=\"@DatePickerType.Year\">Year</AntRadio>\n                        </AntRadioGroup>\n                    </AntCol>\n                    <AntCol>\n                        <select size=\"small\"\n                                dropdownMatchSelectWidth=\"@false\"\n                                class=\"my-year-select\"\n                                @onchange=\"e => OnSelectYear(e, args)\"\n                                value=\"@year\"\n                            >\n                            @GetYearOptions(year)\n                        </select>\n                    </AntCol>\n                    <AntCol>\n                        <select size=\"small\"\n                                dropdownMatchSelectWidth=\"@false\"\n                                value=\"@month\"\n                                @onchange=\"e => OnSelectMonth(e, args)\"\n                            >\n                            @GetMonthOptions()\n                        </select>\n                    </AntCol>\n                </AntRow>\n            </div>\n        </Template>;\n\n      }\n}\n\n<Style>\n    .site-calendar-customize-header-wrapper {\n        width: 300px;\n        border: 1px solid #f0f0f0;\n        border-radius: 2px;\n    }\n</Style>",
+        "Type": "Demos.Calendar.demo.CustomizeHeader",
+        "Style": "\n  [data-theme=\"dark\"] .site-calendar-customize-header-wrapper {\n    border: 1px solid #303030;\n  }\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>一个通用的日历面板，支持年/月切换。</p>\n",
+        "Code": "<Calendar OnPanelChange=\"OnPanelChange\" />\n\n@code\n{\n    private void OnPanelChange(DateTime value, string mode)\n    {\n        Console.WriteLine($\"{value.ToString(\"yyyy-MM-dd\")} {mode}\");\n    }\n}",
+        "Type": "Demos.Calendar.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "card",
+        "Title": "卡片模式",
+        "Description": "<p>用于嵌套在空间有限的容器中。</p>\n",
+        "Code": "<div class=\"site-calendar-demo-card\">\n    <Calendar FullScreen=\"@false\" OnPanelChange=\"OnPanelChange\" />\n</div>\n\n@code\n{\n    private void OnPanelChange(DateTime value, string mode)\n    {\n        Console.WriteLine($\"{value.ToString(\"YYYY-MM-DD\")} {mode}\");\n    }\n}\n\n<Style>\n    .site-calendar-demo-card {\n        width: 300px;\n        border: 1px solid #f0f0f0;\n        border-radius: 2px;\n    }\n</Style>",
+        "Type": "Demos.Calendar.demo.Card_",
+        "Style": "\n  [data-theme=\"dark\"] .site-calendar-demo-card {\n    border: 1px solid #303030;\n  }\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "noticecalendar",
+        "Title": "通知事项日历",
+        "Description": "<p>一个复杂的应用示例，用 <code>dateCellRender</code> 和 <code>monthCellRender</code> 函数来自定义需要渲染的数据。</p>\n",
+        "Code": " <Calendar DateCellRender=\"DateCellRender\" MonthCellRender=\"MonthCellRender\" />\n\n@code\n{\n    class ListData\n    {\n        public string type;\n        public string content;\n    }\n\n    private List<ListData> GetListData(DateTime value) {\n        List<ListData> listData = null;\n        switch (value.Day) {\n            case 8:\n                listData = new List<ListData>\n                {\n                    new ListData { type = \"warning\", content = \"This is warning event.\" },\n                    new ListData { type = \"success\", content = \"This is usual event.\" },\n                };\n                break;\n            case 10:\n                listData = new List<ListData> {\n                    new ListData { type = \"warning\", content = \"This is warning event.\" },\n                    new ListData { type = \"success\", content = \"This is usual event.\" },\n                    new ListData { type = \"error\", content = \"This is error event.\" },\n                };\n                break;\n            case 15:\n                listData = new List<ListData> {\n                    new ListData { type = \"warning\", content = \"This is warning event\" },\n                    new ListData { type = \"success\", content = \"This is very long usual event。。....\" },\n                    new ListData { type = \"error\", content = \"This is error event 1.\" },\n                    new ListData { type = \"error\", content = \"This is error event 2.\" },\n                    new ListData { type = \"error\", content = \"This is error event 3.\" },\n                    new ListData { type = \"error\", content = \"This is error event 4.\" },\n                };\n                break;\n        }\n\n        return listData ?? new List<ListData>();\n    }\n\n    private RenderFragment DateCellRender(DateTime value) {\n        var listData = GetListData(value);\n        return @<Template>\n                    <ul class=\"events\">\n                        @foreach (var data in listData)\n                        {\n                            <li key=\"@data.content\">\n                                <Badge Status=\"@data.type\" Text=\"@data.content\" />\n                            </li>\n                        }\n                    </ul>\n                </Template>;\n    }\n\n    private int? GetMonthData(DateTime value) {\n        if (value.Month == 8) {\n            return 1394;\n        }\n\n        return null;\n    }\n\n    private RenderFragment MonthCellRender(DateTime value) {\n        int? num = GetMonthData(value);\n\n        if (num == null)\n        {\n            return null;\n        }\n\n        return @<Template>\n                    <div className=\"notes-month\">\n                        <section>@num</section>\n                        <span>Backlog number</span>\n                    </div>\n        </Template>;\n    }\n}\n\n<Style>\n    .events {\n        list-style: none;\n        margin: 0;\n        padding: 0;\n    }\n\n        .events .ant-badge-status {\n            overflow: hidden;\n            white-space: nowrap;\n            width: 100%;\n            text-overflow: ellipsis;\n            font-size: 12px;\n        }\n\n    .notes-month {\n        text-align: center;\n        font-size: 28px;\n    }\n\n        .notes-month section {\n            font-size: 28px;\n        }\n</Style>",
+        "Type": "Demos.Calendar.demo.NoticeCalendar",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "select",
+        "Title": "选择功能",
+        "Description": "<p>一个通用的日历面板，支持年/月切换。</p>\n",
+        "Code": "<div>\n    <Alert Message=@($\"You selected date: {selectedValue.ToString(\"yyyy-MM-dd\")}\") />\n    <Calendar Value=\"@value\" OnSelect=\"OnSelect\" OnPanelChange=\"OnPanelChange\" />\n</div>\n\n@code\n{\n    private DateTime selectedValue = new DateTime(2017, 1, 25);\n    private DateTime value = new DateTime(2017, 1, 25);\n\n    private void OnSelect(DateTime value)\n    {\n        this.value = value;\n        selectedValue = value;\n    }\n\n    private void OnPanelChange(DateTime value, string mode)\n    {\n        this.value = value;\n    }\n}",
+        "Type": "Demos.Calendar.demo.Select_",
+        "Style": "",
+        "Debug": false
+      }
+    ]
   }
 ]
