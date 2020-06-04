@@ -652,6 +652,16 @@
         "Type": "Demos.Form.demo.ControlHooks",
         "Style": "",
         "Debug": false
+      },
+      {
+        "Order": 3.1,
+        "Name": "size",
+        "Title": "表单尺寸",
+        "Description": "<p>设置表单组件尺寸，仅对 antd 组件有效。</p>\n",
+        "Code": "@using System.Text.Json;\n\n<Form Model=\"@model\" \n      LabelCol=\"new ColLayoutParam { Span = 8 }\"\n      WrapperCol=\"new ColLayoutParam { Span = 16 }\"\n      OnFinish=\"OnFinish\" \n      OnFinishFailed=\"OnFinishFailed\">\n    <FormItem Label=\"Form Size\" >\n        <RadioGroup @bind-Value=\"@context.Size\" Size=\"@context.Size\">\n            <Radio RadioButton Value=\"@AntSizeLDSType.Small\">Small</Radio>\n            <Radio RadioButton Value=\"@AntSizeLDSType.Default\">Default</Radio>\n            <Radio RadioButton Value=\"@AntSizeLDSType.Large\">Large</Radio>\n        </RadioGroup>\n    </FormItem>\n\n    <FormItem Label=\"Input\" >\n        <Input @bind-Value=\"@context.Input\" Size=\"@context.Size\"/>\n    </FormItem>\n    <FormItem Label=\"InputNumber\">\n        <AntDesign.InputNumber @bind-Value=\"@context.Number\" Size=\"@context.Size\" />\n    </FormItem>\n    <FormItem WrapperCol=\"new ColLayoutParam{ Offset = 8, Span = 16 }\">\n        <Button Type=\"@ButtonType.Primary\" HtmlType=\"submit\">\n            Submit\n        </Button>\n    </FormItem>\n</Form>\n@code\n{\n    public class Model\n    {\n        public string Size { get; set; } = AntSizeLDSType.Small;\n        public string Input { get; set; }\n        public double Number { get; set; }\n    }\n\n    private Model model = new Model();\n\n    private void OnFinish(EditContext editContext)\n    {\n        Console.WriteLine($\"Success:{JsonSerializer.Serialize(model)}\");\n    }\n\n    private void OnFinishFailed(EditContext editContext)\n    {\n        Console.WriteLine($\"Failed:{JsonSerializer.Serialize(model)}\");\n    }\n}",
+        "Type": "Demos.Form.demo.Size",
+        "Style": "",
+        "Debug": false
       }
     ]
   },
