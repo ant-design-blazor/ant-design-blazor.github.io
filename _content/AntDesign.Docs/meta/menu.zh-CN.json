@@ -47,6 +47,13 @@
           },
           {
             "Order": 0,
+            "Title": "Grid",
+            "SubTitle": "栅格",
+            "Type": "menuItem",
+            "Url": "components/grid"
+          },
+          {
+            "Order": 0,
             "Title": "Layout",
             "SubTitle": "布局",
             "Type": "menuItem",
@@ -191,6 +198,13 @@
             "SubTitle": "表格",
             "Type": "menuItem",
             "Url": "components/table"
+          },
+          {
+            "Order": 0,
+            "Title": "Carousel",
+            "SubTitle": "走马灯",
+            "Type": "menuItem",
+            "Url": "components/carousel"
           },
           {
             "Order": 0,

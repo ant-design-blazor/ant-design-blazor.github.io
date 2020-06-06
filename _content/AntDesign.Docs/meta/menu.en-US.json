@@ -45,6 +45,12 @@
           },
           {
             "Order": 0,
+            "Title": "Grid",
+            "Type": "menuItem",
+            "Url": "components/grid"
+          },
+          {
+            "Order": 0,
             "Title": "Layout",
             "Type": "menuItem",
             "Url": "components/layout"
@@ -171,6 +177,12 @@
             "Title": "Table",
             "Type": "menuItem",
             "Url": "components/table"
+          },
+          {
+            "Order": 0,
+            "Title": "Carousel",
+            "Type": "menuItem",
+            "Url": "components/carousel"
           },
           {
             "Order": 0,
