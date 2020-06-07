@@ -26,10 +26,55 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Typography",
+            "SubTitle": "排版",
+            "Type": "menuItem",
+            "Url": "components/typography"
+          },
+          {
+            "Order": 0,
             "Title": "Button",
             "SubTitle": "按钮",
             "Type": "menuItem",
             "Url": "components/button"
+          }
+        ]
+      },
+      {
+        "Order": 1,
+        "Title": "Layout",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Space",
+            "Type": "menuItem",
+            "Url": "components/space"
+          },
+          {
+            "Order": 0,
+            "Title": "Divider",
+            "Type": "menuItem",
+            "Url": "components/divider"
+          },
+          {
+            "Order": 0,
+            "Title": "Divider",
+            "SubTitle": "分割线",
+            "Type": "menuItem",
+            "Url": "components/divider"
+          },
+          {
+            "Order": 0,
+            "Title": "Grid",
+            "Type": "menuItem",
+            "Url": "components/grid"
+          },
+          {
+            "Order": 0,
+            "Title": "Layout",
+            "Type": "menuItem",
+            "Url": "components/layout"
           }
         ]
       },
@@ -68,10 +113,31 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Affix",
+            "SubTitle": "固钉",
+            "Type": "menuItem",
+            "Url": "components/affix"
+          },
+          {
+            "Order": 0,
+            "Title": "BackTop",
+            "SubTitle": "回到顶部",
+            "Type": "menuItem",
+            "Url": "components/backtop"
+          },
+          {
+            "Order": 0,
             "Title": "Dropdown",
             "SubTitle": "下拉菜单",
             "Type": "menuItem",
             "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
+            "Title": "Breadcrumb",
+            "SubTitle": "面包屑",
+            "Type": "menuItem",
+            "Url": "components/breadcrumb"
           },
           {
             "Order": 0,
@@ -233,6 +299,13 @@
             "SubTitle": "徽标数",
             "Type": "menuItem",
             "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Timeline",
+            "SubTitle": "时间轴",
+            "Type": "menuItem",
+            "Url": "components/timeline"
           },
           {
             "Order": 0,
