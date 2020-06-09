@@ -288,6 +288,55 @@
     ]
   },
   {
+    "Title": "Statistic",
+    "SubTitle": "统计数值",
+    "Type": "数据展示",
+    "Desc": "<p>展示统计数值。</p>\n<h2>何时使用</h2>\n<ul>\n<li>当需要突出某个或某组数字时。</li>\n<li>当需要展示带描述的统计类数据时使用。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<h4>Statistic</h4>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>decimalSeparator</td>\n<td>设置小数点</td>\n<td>string</td>\n<td>.</td>\n<td></td>\n</tr>\n<tr>\n<td>groupSeparator</td>\n<td>设置千分位标识符</td>\n<td>string</td>\n<td>,</td>\n<td></td>\n</tr>\n<tr>\n<td>precision</td>\n<td>数值精度</td>\n<td>int</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>prefix</td>\n<td>设置数值的前缀</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>suffix</td>\n<td>设置数值的后缀</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>数值的标题</td>\n<td>string|RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>数值内容</td>\n<td>decimal|Datetime|TimeSpan</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>valueStyle</td>\n<td>设置数值的样式</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h4>Statistic.Countdown</h4>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>format</td>\n<td>格式化倒计时展示，参考 <a href=\"https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-timespan-format-strings\">TimeSpan</a></td>\n<td>string</td>\n<td>@&quot;hh:mm:ss&quot;</td>\n<td></td>\n</tr>\n<tr>\n<td>onFinish</td>\n<td>倒计时完成时触发</td>\n<td>() =&gt; void</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>prefix</td>\n<td>设置数值的前缀</td>\n<td>string | RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>suffix</td>\n<td>设置数值的后缀</td>\n<td>string | RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>数值的标题</td>\n<td>string | RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>数值内容</td>\n<td>Datetime | TimeSpan</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>valueStyle</td>\n<td>设置数值的样式</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 3,
+        "Name": "countdown",
+        "Title": "倒计时",
+        "Description": "<p>倒计时组件。</p>\n",
+        "Code": "\n<Row Gutter=\"16\">\n    <Col Span=\"12\">\n        <CountDown Title=\"@(\"Countdown\")\" Value=\"@deadline\" OnFinish=\"OnFinish\" />\n    </Col>\n    <Col Span=\"12\">\n        <CountDown Title=\"@(\"Million\")\" Value=\"@deadline\" Format=\"hh\\:mm\\:ss\\:fff\" />\n    </Col>\n    <Col Span=\"24\">\n        <CountDown Title=\"@(\"Day Level\")\" Value=\"@deadline\" Format=\"dd\\ \\天\\ h\\ \\小\\时\\ m\\ \\分\\钟\\ s\\ \\秒\" />\n    </Col>\n</Row>\n\n@code\n{\n    DateTime deadline = DateTime.Now.AddMilliseconds(1000 * 60 * 60 * 24 * 2 + 1000 * 30);\n\n    void OnFinish()\n    {\n        Console.WriteLine(\"finished!\");\n    }\n}\n\n",
+        "Type": "Demos.Statistic.demo.Countdown",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>简单的展示。</p>\n",
+        "Code": "\n<Row Gutter=\"16\">\n    <Col Span=\"12\">\n        <Statistic Title=\"@(\"Active Users\")\" Value=\"112893\" />\n    </Col>\n    <Col Span=\"12\">\n        <Statistic Title=\"@(\"Account Balance (CNY)\")\" Value=\"112893\" Precision=\"2\"/>\n        <Button Style=\"margin-top: 16px;\" Type=\"primary\">\n            Recharge\n        </Button>\n    </Col>\n</Row>\n",
+        "Type": "Demos.Statistic.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "card",
+        "Title": "在卡片中使用",
+        "Description": "<p>在卡片中展示统计数值。</p>\n",
+        "Code": "<div class=\"site-statistic-demo-card\">\n    <Row Gutter=\"16\">\n        <Col Span=\"12\">\n            <Card>\n                <Statistic Title=\"@(\"Active\")\" Value=\"11.28\" Precision=\"2\" ValueStyle=\"color: #3f8600;\" Prefix=\"@prefix1\" Suffix=\"@(\"%\")\" />\n            </Card>\n        </Col>\n        <Col Span=\"12\">\n            <Card>\n                <Statistic Title=\"@(\"Idle\")\" Value=\"9.3\" Precision=\"2\" ValueStyle=\"color: #cf1322;\" Prefix=\"@prefix2\" Suffix=\"@(\"%\")\" />\n            </Card>\n        </Col>\n    </Row>\n</div>\n\n<style>\n    .site-statistic-demo-card {\n        background: #ececec;\n        padding: 30px;\n    }\n</style>\n\n@code\n{\n    RenderFragment prefix1 = @<span><Icon Type=\"arrow-up\"/></span>;\n    RenderFragment prefix2 = @<span><Icon Type=\"arrow-down\"/></span>;\n}\n\n",
+        "Type": "Demos.Statistic.demo.Card_",
+        "Style": "\n  [data-theme=\"dark\"] .site-statistic-demo-card {\n    background: #303030;\n  }\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "unit",
+        "Title": "单位",
+        "Description": "<p>通过前缀和后缀添加单位。</p>\n",
+        "Code": "<Row Gutter=16>\n    <Col Span=12>\n    <Statistic Title=\"@(\"Feedback\")\" Value=\"1128\" Prefix=\"prefix1\" />\n    </Col>\n    <Col Span=12>\n    <Statistic Title=\"@(\"Unmerged\")\" Value=\"93\" Suffix=\"@(\"/ 100\")\" />\n    </Col>\n</Row>\n\n\n@code\n{\n    string title1 = \"Feedback\";\n\n    RenderFragment prefix1 =@<Icon Type=\"like\" />;\n}\n",
+        "Type": "Demos.Statistic.demo.Unit",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Spin",
     "SubTitle": "加载中",
     "Type": "反馈",

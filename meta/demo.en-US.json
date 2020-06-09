@@ -284,6 +284,54 @@
     ]
   },
   {
+    "Title": "Statistic",
+    "Type": "Data Display",
+    "Desc": "<p>Display statistic number.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When want to highlight some data.</li>\n<li>When want to display statistic data with description.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<h4>Statistic</h4>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>decimalSeparator</td>\n<td>decimal separator</td>\n<td>string</td>\n<td>.</td>\n<td></td>\n</tr>\n<tr>\n<td>formatter</td>\n<td>customize value display logic</td>\n<td>(value) =&gt; ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>groupSeparator</td>\n<td>group separator</td>\n<td>string</td>\n<td>,</td>\n<td></td>\n</tr>\n<tr>\n<td>precision</td>\n<td>precision of input value</td>\n<td>number</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>prefix</td>\n<td>prefix node of value</td>\n<td>string | ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>suffix</td>\n<td>suffix node of value</td>\n<td>string | ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>Display title</td>\n<td>string | ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>Display value</td>\n<td>string | number</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>valueStyle</td>\n<td>Set value css style</td>\n<td>CSSProperties</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h4>Statistic.Countdown</h4>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>format</td>\n<td>Format as <a href=\"http://momentjs.com/\">moment</a></td>\n<td>string</td>\n<td>'HH:mm:ss'</td>\n<td></td>\n</tr>\n<tr>\n<td>onFinish</td>\n<td>Trigger when time's up</td>\n<td>() =&gt; void</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>prefix</td>\n<td>prefix node of value</td>\n<td>string | ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>suffix</td>\n<td>suffix node of value</td>\n<td>string | ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>Display title</td>\n<td>string | ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>Set target countdown time</td>\n<td>number | moment</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>valueStyle</td>\n<td>Set value css style</td>\n<td>CSSProperties</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 3,
+        "Name": "countdown",
+        "Title": "Countdown",
+        "Description": "<p>Countdown component.</p>\n",
+        "Code": "\n<Row Gutter=\"16\">\n    <Col Span=\"12\">\n        <CountDown Title=\"@(\"Countdown\")\" Value=\"@deadline\" OnFinish=\"OnFinish\" />\n    </Col>\n    <Col Span=\"12\">\n        <CountDown Title=\"@(\"Million\")\" Value=\"@deadline\" Format=\"hh\\:mm\\:ss\\:fff\" />\n    </Col>\n    <Col Span=\"24\">\n        <CountDown Title=\"@(\"Day Level\")\" Value=\"@deadline\" Format=\"dd\\ \\天\\ h\\ \\小\\时\\ m\\ \\分\\钟\\ s\\ \\秒\" />\n    </Col>\n</Row>\n\n@code\n{\n    DateTime deadline = DateTime.Now.AddMilliseconds(1000 * 60 * 60 * 24 * 2 + 1000 * 30);\n\n    void OnFinish()\n    {\n        Console.WriteLine(\"finished!\");\n    }\n}\n\n",
+        "Type": "Demos.Statistic.demo.Countdown",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Simplest Usage.</p>\n",
+        "Code": "\n<Row Gutter=\"16\">\n    <Col Span=\"12\">\n        <Statistic Title=\"@(\"Active Users\")\" Value=\"112893\" />\n    </Col>\n    <Col Span=\"12\">\n        <Statistic Title=\"@(\"Account Balance (CNY)\")\" Value=\"112893\" Precision=\"2\"/>\n        <Button Style=\"margin-top: 16px;\" Type=\"primary\">\n            Recharge\n        </Button>\n    </Col>\n</Row>\n",
+        "Type": "Demos.Statistic.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "card",
+        "Title": "In Card",
+        "Description": "<p>Display statistic data in Card.</p>\n",
+        "Code": "<div class=\"site-statistic-demo-card\">\n    <Row Gutter=\"16\">\n        <Col Span=\"12\">\n            <Card>\n                <Statistic Title=\"@(\"Active\")\" Value=\"11.28\" Precision=\"2\" ValueStyle=\"color: #3f8600;\" Prefix=\"@prefix1\" Suffix=\"@(\"%\")\" />\n            </Card>\n        </Col>\n        <Col Span=\"12\">\n            <Card>\n                <Statistic Title=\"@(\"Idle\")\" Value=\"9.3\" Precision=\"2\" ValueStyle=\"color: #cf1322;\" Prefix=\"@prefix2\" Suffix=\"@(\"%\")\" />\n            </Card>\n        </Col>\n    </Row>\n</div>\n\n<style>\n    .site-statistic-demo-card {\n        background: #ececec;\n        padding: 30px;\n    }\n</style>\n\n@code\n{\n    RenderFragment prefix1 = @<span><Icon Type=\"arrow-up\"/></span>;\n    RenderFragment prefix2 = @<span><Icon Type=\"arrow-down\"/></span>;\n}\n\n",
+        "Type": "Demos.Statistic.demo.Card_",
+        "Style": "\n  [data-theme=\"dark\"] .site-statistic-demo-card {\n    background: #303030;\n  }\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "unit",
+        "Title": "Unit",
+        "Description": "<p>Add unit through <code>Prefix</code> and <code>Suffix</code>.</p>\n",
+        "Code": "<Row Gutter=16>\n    <Col Span=12>\n    <Statistic Title=\"@(\"Feedback\")\" Value=\"1128\" Prefix=\"prefix1\" />\n    </Col>\n    <Col Span=12>\n    <Statistic Title=\"@(\"Unmerged\")\" Value=\"93\" Suffix=\"@(\"/ 100\")\" />\n    </Col>\n</Row>\n\n\n@code\n{\n    string title1 = \"Feedback\";\n\n    RenderFragment prefix1 =@<Icon Type=\"like\" />;\n}\n",
+        "Type": "Demos.Statistic.demo.Unit",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Spin",
     "Type": "Feedback",
     "Desc": "<p>A spinner for displaying loading state of a page or a section.</p>\n<h2>When To Use</h2>\n<p>When part of the page is waiting for asynchronous data or during a rendering process, an appropriate loading animation can effectively alleviate users' inquietude.</p>\n",

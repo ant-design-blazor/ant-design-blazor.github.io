@@ -260,6 +260,13 @@
           },
           {
             "Order": 0,
+            "Title": "Statistic",
+            "SubTitle": "统计数值",
+            "Type": "menuItem",
+            "Url": "components/statistic"
+          },
+          {
+            "Order": 0,
             "Title": "Table",
             "SubTitle": "表格",
             "Type": "menuItem",
