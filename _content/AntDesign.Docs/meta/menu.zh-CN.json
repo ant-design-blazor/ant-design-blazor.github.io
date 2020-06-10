@@ -267,6 +267,13 @@
           },
           {
             "Order": 0,
+            "Title": "Tabs",
+            "SubTitle": "标签页",
+            "Type": "menuItem",
+            "Url": "components/tabs"
+          },
+          {
+            "Order": 0,
             "Title": "Table",
             "SubTitle": "表格",
             "Type": "menuItem",

@@ -536,6 +536,145 @@
     ]
   },
   {
+    "Title": "Tabs",
+    "Type": "Data Display",
+    "Desc": "<p>Tabs make it easy to switch between different views.</p>\n<h3>When To Use</h3>\n<p>Ant Design has 3 types of Tabs for different situations.</p>\n<ul>\n<li>Card Tabs: for managing too many closeable views.</li>\n<li>Normal Tabs: for functional aspects of a page.</li>\n<li><a href=\"/components/radio/#components-radio-demo-radiobutton\">RadioButton</a>: for secondary tabs.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Tabs</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>activeKey</td>\n<td>Current TabPane's key</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>animated</td>\n<td>Whether to change tabs with animation. Only works while <code>tabPosition=&quot;top&quot;\\|&quot;bottom&quot;</code></td>\n<td>boolean | {inkBar:boolean, tabPane:boolean}</td>\n<td><code>true</code>, <code>false</code> when <code>type=&quot;card&quot;</code></td>\n</tr>\n<tr>\n<td>renderTabBar</td>\n<td>replace the TabBar</td>\n<td>(props: DefaultTabBarProps, DefaultTabBar: React.ComponentClass) =&gt; React.ReactElement</td>\n<td>-</td>\n</tr>\n<tr>\n<td>defaultActiveKey</td>\n<td>Initial active TabPane's key, if <code>activeKey</code> is not set.</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>hideAdd</td>\n<td>Hide plus icon or not. Only works while <code>type=&quot;editable-card&quot;</code></td>\n<td>boolean</td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td>size</td>\n<td>preset tab bar size</td>\n<td><code>large</code> | <code>default</code> | <code>small</code></td>\n<td><code>default</code></td>\n</tr>\n<tr>\n<td>tabBarExtraContent</td>\n<td>Extra content in tab bar</td>\n<td>React.ReactNode</td>\n<td>-</td>\n</tr>\n<tr>\n<td>tabBarGutter</td>\n<td>The gap between tabs</td>\n<td>number</td>\n<td>-</td>\n</tr>\n<tr>\n<td>tabBarStyle</td>\n<td>Tab bar style object</td>\n<td>object</td>\n<td>-</td>\n</tr>\n<tr>\n<td>tabPosition</td>\n<td>Position of tabs</td>\n<td><code>top</code> | <code>right</code> | <code>bottom</code> | <code>left</code></td>\n<td><code>top</code></td>\n</tr>\n<tr>\n<td>type</td>\n<td>Basic style of tabs</td>\n<td><code>line</code> | <code>card</code> | <code>editable-card</code></td>\n<td><code>line</code></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>Callback executed when active tab is changed</td>\n<td>Function(activeKey) {}</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onEdit</td>\n<td>Callback executed when tab is added or removed. Only works while <code>type=&quot;editable-card&quot;</code></td>\n<td>(targetKey, action): void</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onNextClick</td>\n<td>Callback executed when next button is clicked</td>\n<td>Function</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onPrevClick</td>\n<td>Callback executed when prev button is clicked</td>\n<td>Function</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onTabClick</td>\n<td>Callback executed when tab is clicked</td>\n<td>Function(key: string, event: MouseEvent)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>More option at <a href=\"https://github.com/react-component/tabs#tabs\">rc-tabs option</a></p>\n<h3>Tabs.TabPane</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>forceRender</td>\n<td>Forced render of content in tabs, not lazy render after clicking on tabs</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>key</td>\n<td>TabPane's key</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>tab</td>\n<td>Show text in TabPane's head</td>\n<td>string|ReactNode</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>More option at <a href=\"https://github.com/react-component/tabs#tabpane\">rc-tabs option</a></p>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 8,
+        "Name": "Card",
+        "Title": "Card type tab",
+        "Description": "<p>Another type of Tabs, which doesn't support vertical mode.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Card",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "Slide",
+        "Title": "Slide",
+        "Description": "<p>In order to fit in more tabs, they can slide left and right (or up and down).</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"mode\" Style=\"margin-bottom: 8px;\">\n        <Radio RadioButton Value=\"@TabPosition.Top\">Horizontal</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Left\">Vertical</Radio>\n    </RadioGroup>\n    <Tabs DefaultActiveKey=\"0\" TabPosition=\"@mode\" Style=\"height: 220px;\">\n        <TabPane Key=\"0\">\n            <Tab>Tab-0</Tab>\n            <ChildContent>Content of tab Pane 0</ChildContent>\n        </TabPane>\n        <TabPane Key=\"1\">\n            <Tab>Tab-1</Tab>\n            <ChildContent>Content of tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab-2</Tab>\n            <ChildContent>Content of tab Pane 2</ChildContent>\n        </TabPane><TabPane Key=\"3\">\n            <Tab>Tab-3</Tab>\n            <ChildContent>Content of tab Pane 3</ChildContent>\n        </TabPane>\n        <TabPane Key=\"4\">\n            <Tab>Tab-4</Tab>\n            <ChildContent>Content of tab Pane 4</ChildContent>\n        </TabPane><TabPane Key=\"5\">\n            <Tab>Tab-5</Tab>\n            <ChildContent>Content of tab Pane 5</ChildContent>\n        </TabPane>\n        <TabPane Key=\"6\">\n            <Tab>Tab-6</Tab>\n            <ChildContent>Content of tab Pane 6</ChildContent>\n        </TabPane>\n        <TabPane Key=\"7\">\n            <Tab>Tab-7</Tab>\n            <ChildContent>Content of tab Pane 7</ChildContent>\n        </TabPane><TabPane Key=\"8\">\n            <Tab>Tab-8</Tab>\n            <ChildContent>Content of tab Pane 8</ChildContent>\n        </TabPane>\n        <TabPane Key=\"9\">\n            <Tab>Tab-9</Tab>\n            <ChildContent>Content of tab Pane 9</ChildContent>\n        </TabPane>\n        <TabPane Key=\"10\">\n            <Tab>Tab-10</Tab>\n            <ChildContent>Content of tab Pane 10</ChildContent>\n        </TabPane>\n        <TabPane Key=\"11\">\n            <Tab>Tab-11</Tab>\n            <ChildContent>Content of tab Pane 11</ChildContent>\n        </TabPane>\n        <TabPane Key=\"12\">\n            <Tab>Tab-12</Tab>\n            <ChildContent>Content of tab Pane 12</ChildContent>\n        </TabPane>\n        <TabPane Key=\"13\">\n            <Tab>Tab-13</Tab>\n            <ChildContent>Content of tab Pane 13</ChildContent>\n        </TabPane>\n        <TabPane Key=\"14\">\n            <Tab>Tab-14</Tab>\n            <ChildContent>Content of tab Pane 14</ChildContent>\n        </TabPane>\n        <TabPane Key=\"15\">\n            <Tab>Tab-15</Tab>\n            <ChildContent>Content of tab Pane 15</ChildContent>\n        </TabPane>\n        <TabPane Key=\"16\">\n            <Tab>Tab-16</Tab>\n            <ChildContent>Content of tab Pane 16</ChildContent>\n        </TabPane>\n        <TabPane Key=\"17\">\n            <Tab>Tab-17</Tab>\n            <ChildContent>Content of tab Pane 17</ChildContent>\n        </TabPane>\n        <TabPane Key=\"18\">\n            <Tab>Tab-18</Tab>\n            <ChildContent>Content of tab Pane 18</ChildContent>\n        </TabPane>\n        <TabPane Key=\"19\">\n            <Tab>Tab-19</Tab>\n            <ChildContent>Content of tab Pane 19</ChildContent>\n        </TabPane>\n        <TabPane Key=\"20\">\n            <Tab>Tab-20</Tab>\n            <ChildContent>Content of tab Pane 20</ChildContent>\n        </TabPane>\n        <TabPane Key=\"21\">\n            <Tab>Tab-21</Tab>\n            <ChildContent>Content of tab Pane 21</ChildContent>\n        </TabPane>\n        <TabPane Key=\"22\">\n            <Tab>Tab-22</Tab>\n            <ChildContent>Content of tab Pane 22</ChildContent>\n        </TabPane>\n        <TabPane Key=\"23\">\n            <Tab>Tab-23</Tab>\n            <ChildContent>Content of tab Pane 23</ChildContent>\n        </TabPane>\n        <TabPane Key=\"24\">\n            <Tab>Tab-24</Tab>\n            <ChildContent>Content of tab Pane 24</ChildContent>\n        </TabPane>\n        <TabPane Key=\"25\">\n            <Tab>Tab-25</Tab>\n            <ChildContent>Content of tab Pane 25</ChildContent>\n        </TabPane>\n        <TabPane Key=\"26\">\n            <Tab>Tab-26</Tab>\n            <ChildContent>Content of tab Pane 26</ChildContent>\n        </TabPane>\n        <TabPane Key=\"27\">\n            <Tab>Tab-27</Tab>\n            <ChildContent>Content of tab Pane 27</ChildContent>\n        </TabPane>\n        <TabPane Key=\"28\" Disabled>\n            <Tab>Tab-28</Tab>\n            <ChildContent>Content of tab Pane 28</ChildContent>\n        </TabPane>\n        <TabPane Key=\"29\">\n            <Tab>Tab-29</Tab>\n            <ChildContent>Content of tab Pane 29</ChildContent>\n        </TabPane>\n\n        @*@{\n            Enumerable.Range(1, 29).Select<int, RenderFragment>\n                (i => { return template(i); }).Aggregate((r1, r2) => r1 + r2);\n        }*@\n    </Tabs>\n</div>\n\n@code{\n    private string mode = TabPosition.Top;\n\n    RenderFragment<int> template = (i) =>@<TabPane Key=\"@i.ToString()\">\n        <Tab>Tab-@i</Tab>\n        <ChildContent>Content of tab Pane @i</ChildContent>\n    </TabPane>;\n\n}",
+        "Type": "Demos.Tabs.demo.Slide",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "Disabled",
+        "Title": "Disabled",
+        "Description": "<p>Disabled a tab.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\" Disabled>\n        <Tab>Tab 2</Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Tab 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 13,
+        "Name": "CustomTabBarNode",
+        "Title": "Draggable Tabs",
+        "Description": "<p>Use <code>react-dnd</code> to make tabs draggable.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\" Draggable>\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Tab 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.CustomTabBarNode",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "Extra",
+        "Title": "Extra content",
+        "Description": "<p>You can add extra actions to the right of Tabs.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabBarExtraContent>\n        <Button>Extra Action</Button>\n    </TabBarExtraContent>\n    <ChildContent>\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </ChildContent>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Extra",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "Basic",
+        "Title": "Basic",
+        "Description": "<p>Default activate first tab.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "CustomAddTrigger",
+        "Title": "Customized trigger of new tab",
+        "Description": "<p>Hide default plus icon, and bind event for customized trigger.</p>\n",
+        "Code": "<div>\n    <div style=\"margin-bottom: 16px;\">\n        <Button @onclick=\"(e)=>Add()\">ADD</Button>\n    </div>\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.EditableCard\" HideAdd>\n        @foreach (var temp in _panes)\n        {\n            TabPane pane = temp;\n            <TabPane Key=\"@pane.Key\">\n                <Tab>@pane.Tab</Tab>\n                <ChildContent>@pane.ChildContent</ChildContent>\n            </TabPane>\n        }\n    </Tabs>\n</div>\n\n@code{\n    private List<TabPane>\n        _panes = new List<TabPane>\n            ();\n    private static int btnIndex = 1;\n    private void Add()\n    {\n        int index = ++btnIndex;\n        _panes.Add(new TabPane(\n            key: index.ToString(),\n            tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n            childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n        ));\n\n        StateHasChanged();\n    }\n\n    protected override void OnInitialized()\n    {\n        base.OnInitialized();\n        for (int i = 0; i < btnIndex + 1; i++)\n        {\n            int index = i;\n            _panes.Add(new TabPane(\n                key: index.ToString(),\n                tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n                childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n            ));\n        }\n    }\n}",
+        "Type": "Demos.Tabs.demo.CustomAddTrigger",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "Icon",
+        "Title": "Icon",
+        "Description": "<p>The Tab with Icon.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>\n            <span><AntDesign.Icon Type=\"android\" />Tab 1</span>\n        </Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>\n            <span><AntDesign.Icon Type=\"apple\" />Tab 2</span>\n        </Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Icon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "Position",
+        "Title": "Position",
+        "Description": "<p>Tab's position: left, right, top or bottom.</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"position\" Style=\"margin-bottom: 16px;\">\n        <Radio RadioButton Value=\"@TabPosition.Top\">Top</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Left\">Left</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Right\">Right</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Bottom\">Bottom</Radio>\n    </RadioGroup>\n    <Tabs DefaultActiveKey=\"1\" TabPosition=\"@position\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n@code{\n    private string position = TabPosition.Top;\n}",
+        "Type": "Demos.Tabs.demo.Position",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "Size",
+        "Title": "Size",
+        "Description": "<p>Large size tabs are usually used in page header, and small size could be used in Modal.</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"size\" Style=\"margin-bottom: 16px;\">\n        <Radio RadioButton Value=\"@TabSize.Small\">Small</Radio>\n        <Radio RadioButton Value=\"@TabSize.Default\">Default</Radio>\n        <Radio RadioButton Value=\"@TabSize.Large\">Large</Radio>\n    </RadioGroup>\n\n    <Tabs DefaultActiveKey=\"1\" Size=\"@size\" Style=\"margin-bottom: 32px\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\" Size=\"@size\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n@code{\n    private string size = TabSize.Default;\n}",
+        "Type": "Demos.Tabs.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 12,
+        "Name": "CustomTabBar",
+        "Title": "Customized bar of tab",
+        "Description": "<p>Use react-sticky.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.CustomTabBar",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "EditableCard",
+        "Title": "Add & close tab",
+        "Description": "<p>Only card type Tabs support adding &amp; closable. +Use <code>closable={false}</code> to disable close.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\" Type=\"@TabType.EditableCard\" CreateTabPane=\"@Create\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\" Closable=\"false\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>\n\n@code{\n    private static int addedIndex = 3;\n    private readonly Func<TabPane> Create = () =>\n        {\n            addedIndex++;\n            int temp = addedIndex;\n            return new TabPane(\n                key: temp.ToString(),\n                childContent: (b) => { b.AddContent(0, $\"Content of Tab Pane {temp}\"); },\n                tab: (b) => { b.AddContent(0, $\"Tab {temp}\"); }\n            );\n        };\n}",
+        "Type": "Demos.Tabs.demo.EditableCard",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "CardTop",
+        "Title": "Container of card type Tab",
+        "Description": "<p>Should be used at the top of container, needs to override styles.</p>\n",
+        "Code": "<style>\n    [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-content,\n    .card-container > .ant-tabs-card > .ant-tabs-content {\n        height: 120px;\n        margin-top: -16px;\n    }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane,\n        .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {\n            background: #fff;\n            padding: 16px;\n        }\n\n    [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar,\n    .card-container > .ant-tabs-card > .ant-tabs-bar {\n        border-color: #fff;\n    }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab,\n        .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {\n            border-color: transparent;\n            background: transparent;\n        }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active,\n        .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {\n            border-color: #fff;\n            background: #fff;\n        }\n</style>\n\n<div class=\"card-container\">\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\">\n        <TabPane Key=\"1\">\n            <Tab>Tab Title 1</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab Title 2</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab Title 3</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n            </ChildContent>\n        </TabPane>\n    </Tabs>\n</div>",
+        "Type": "Demos.Tabs.demo.CardTop",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Space",
     "Type": "Layout",
     "Desc": "<p>Set components spacing.</p>\n<h2>When To Use</h2>\n<p>Avoid components clinging together and set a unified space.</p>\n",

@@ -544,6 +544,146 @@
     ]
   },
   {
+    "Title": "Tabs",
+    "SubTitle": "标签页",
+    "Type": "数据展示",
+    "Desc": "<p>选项卡切换组件。</p>\n<h2>何时使用</h2>\n<p>提供平级的区域将大块内容进行收纳和展现，保持界面整洁。</p>\n<p>Ant Design 依次提供了三级选项卡，分别用于不同的场景。</p>\n<ul>\n<li>卡片式的页签，提供可关闭的样式，常用于容器顶部。</li>\n<li>既可用于容器顶部，也可用于容器内部，是最通用的 Tabs。</li>\n<li><a href=\"/components/radio/#components-radio-demo-radiobutton\">RadioButton</a> 可作为更次级的页签来使用。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Tabs</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>activeKey</td>\n<td>当前激活 tab 面板的 key</td>\n<td>string</td>\n<td>无</td>\n</tr>\n<tr>\n<td>animated</td>\n<td>是否使用动画切换 Tabs，在 <code>tabPosition=top|bottom</code> 时有效</td>\n<td>boolean | {inkBar:boolean, tabPane:boolean}</td>\n<td>true, 当 type=&quot;card&quot; 时为 false</td>\n</tr>\n<tr>\n<td>renderTabBar</td>\n<td>替换 TabBar，用于二次封装标签头</td>\n<td>(props: DefaultTabBarProps, DefaultTabBar: React.ComponentClass) =&gt; React.ReactElement</td>\n<td>无</td>\n</tr>\n<tr>\n<td>defaultActiveKey</td>\n<td>初始化选中面板的 key，如果没有设置 activeKey</td>\n<td>string</td>\n<td>第一个面板</td>\n</tr>\n<tr>\n<td>hideAdd</td>\n<td>是否隐藏加号图标，在 <code>type=&quot;editable-card&quot;</code> 时有效</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>size</td>\n<td>大小，提供 <code>large</code> <code>default</code> 和 <code>small</code> 三种大小</td>\n<td>string</td>\n<td>'default'</td>\n</tr>\n<tr>\n<td>tabBarExtraContent</td>\n<td>tab bar 上额外的元素</td>\n<td>React.ReactNode</td>\n<td>无</td>\n</tr>\n<tr>\n<td>tabBarGutter</td>\n<td>tabs 之间的间隙</td>\n<td>number</td>\n<td>无</td>\n</tr>\n<tr>\n<td>tabBarStyle</td>\n<td>tab bar 的样式对象</td>\n<td>object</td>\n<td>-</td>\n</tr>\n<tr>\n<td>tabPosition</td>\n<td>页签位置，可选值有 <code>top</code> <code>right</code> <code>bottom</code> <code>left</code></td>\n<td>string</td>\n<td>'top'</td>\n</tr>\n<tr>\n<td>type</td>\n<td>页签的基本样式，可选 <code>line</code>、<code>card</code> <code>editable-card</code> 类型</td>\n<td>string</td>\n<td>'line'</td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>切换面板的回调</td>\n<td>Function(activeKey) {}</td>\n<td>无</td>\n</tr>\n<tr>\n<td>onEdit</td>\n<td>新增和删除页签的回调，在 <code>type=&quot;editable-card&quot;</code> 时有效</td>\n<td>(targetKey, action): void</td>\n<td>无</td>\n</tr>\n<tr>\n<td>onNextClick</td>\n<td>next 按钮被点击的回调</td>\n<td>Function</td>\n<td>无</td>\n</tr>\n<tr>\n<td>onPrevClick</td>\n<td>prev 按钮被点击的回调</td>\n<td>Function</td>\n<td>无</td>\n</tr>\n<tr>\n<td>onTabClick</td>\n<td>tab 被点击的回调</td>\n<td>Function</td>\n<td>无</td>\n</tr>\n</tbody>\n</table>\n<h3>Tabs.TabPane</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>forceRender</td>\n<td>被隐藏时是否渲染 DOM 结构</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n<tr>\n<td>key</td>\n<td>对应 activeKey</td>\n<td>string</td>\n<td>无</td>\n</tr>\n<tr>\n<td>tab</td>\n<td>选项卡头显示文字</td>\n<td>string|ReactNode</td>\n<td>无</td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 8,
+        "Name": "Card",
+        "Title": "卡片式页签",
+        "Description": "<p>另一种样式的页签，不提供对应的垂直样式。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Card",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "Slide",
+        "Title": "滑动",
+        "Description": "<p>可以左右、上下滑动，容纳更多标签。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"mode\" Style=\"margin-bottom: 8px;\">\n        <Radio RadioButton Value=\"@TabPosition.Top\">Horizontal</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Left\">Vertical</Radio>\n    </RadioGroup>\n    <Tabs DefaultActiveKey=\"0\" TabPosition=\"@mode\" Style=\"height: 220px;\">\n        <TabPane Key=\"0\">\n            <Tab>Tab-0</Tab>\n            <ChildContent>Content of tab Pane 0</ChildContent>\n        </TabPane>\n        <TabPane Key=\"1\">\n            <Tab>Tab-1</Tab>\n            <ChildContent>Content of tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab-2</Tab>\n            <ChildContent>Content of tab Pane 2</ChildContent>\n        </TabPane><TabPane Key=\"3\">\n            <Tab>Tab-3</Tab>\n            <ChildContent>Content of tab Pane 3</ChildContent>\n        </TabPane>\n        <TabPane Key=\"4\">\n            <Tab>Tab-4</Tab>\n            <ChildContent>Content of tab Pane 4</ChildContent>\n        </TabPane><TabPane Key=\"5\">\n            <Tab>Tab-5</Tab>\n            <ChildContent>Content of tab Pane 5</ChildContent>\n        </TabPane>\n        <TabPane Key=\"6\">\n            <Tab>Tab-6</Tab>\n            <ChildContent>Content of tab Pane 6</ChildContent>\n        </TabPane>\n        <TabPane Key=\"7\">\n            <Tab>Tab-7</Tab>\n            <ChildContent>Content of tab Pane 7</ChildContent>\n        </TabPane><TabPane Key=\"8\">\n            <Tab>Tab-8</Tab>\n            <ChildContent>Content of tab Pane 8</ChildContent>\n        </TabPane>\n        <TabPane Key=\"9\">\n            <Tab>Tab-9</Tab>\n            <ChildContent>Content of tab Pane 9</ChildContent>\n        </TabPane>\n        <TabPane Key=\"10\">\n            <Tab>Tab-10</Tab>\n            <ChildContent>Content of tab Pane 10</ChildContent>\n        </TabPane>\n        <TabPane Key=\"11\">\n            <Tab>Tab-11</Tab>\n            <ChildContent>Content of tab Pane 11</ChildContent>\n        </TabPane>\n        <TabPane Key=\"12\">\n            <Tab>Tab-12</Tab>\n            <ChildContent>Content of tab Pane 12</ChildContent>\n        </TabPane>\n        <TabPane Key=\"13\">\n            <Tab>Tab-13</Tab>\n            <ChildContent>Content of tab Pane 13</ChildContent>\n        </TabPane>\n        <TabPane Key=\"14\">\n            <Tab>Tab-14</Tab>\n            <ChildContent>Content of tab Pane 14</ChildContent>\n        </TabPane>\n        <TabPane Key=\"15\">\n            <Tab>Tab-15</Tab>\n            <ChildContent>Content of tab Pane 15</ChildContent>\n        </TabPane>\n        <TabPane Key=\"16\">\n            <Tab>Tab-16</Tab>\n            <ChildContent>Content of tab Pane 16</ChildContent>\n        </TabPane>\n        <TabPane Key=\"17\">\n            <Tab>Tab-17</Tab>\n            <ChildContent>Content of tab Pane 17</ChildContent>\n        </TabPane>\n        <TabPane Key=\"18\">\n            <Tab>Tab-18</Tab>\n            <ChildContent>Content of tab Pane 18</ChildContent>\n        </TabPane>\n        <TabPane Key=\"19\">\n            <Tab>Tab-19</Tab>\n            <ChildContent>Content of tab Pane 19</ChildContent>\n        </TabPane>\n        <TabPane Key=\"20\">\n            <Tab>Tab-20</Tab>\n            <ChildContent>Content of tab Pane 20</ChildContent>\n        </TabPane>\n        <TabPane Key=\"21\">\n            <Tab>Tab-21</Tab>\n            <ChildContent>Content of tab Pane 21</ChildContent>\n        </TabPane>\n        <TabPane Key=\"22\">\n            <Tab>Tab-22</Tab>\n            <ChildContent>Content of tab Pane 22</ChildContent>\n        </TabPane>\n        <TabPane Key=\"23\">\n            <Tab>Tab-23</Tab>\n            <ChildContent>Content of tab Pane 23</ChildContent>\n        </TabPane>\n        <TabPane Key=\"24\">\n            <Tab>Tab-24</Tab>\n            <ChildContent>Content of tab Pane 24</ChildContent>\n        </TabPane>\n        <TabPane Key=\"25\">\n            <Tab>Tab-25</Tab>\n            <ChildContent>Content of tab Pane 25</ChildContent>\n        </TabPane>\n        <TabPane Key=\"26\">\n            <Tab>Tab-26</Tab>\n            <ChildContent>Content of tab Pane 26</ChildContent>\n        </TabPane>\n        <TabPane Key=\"27\">\n            <Tab>Tab-27</Tab>\n            <ChildContent>Content of tab Pane 27</ChildContent>\n        </TabPane>\n        <TabPane Key=\"28\" Disabled>\n            <Tab>Tab-28</Tab>\n            <ChildContent>Content of tab Pane 28</ChildContent>\n        </TabPane>\n        <TabPane Key=\"29\">\n            <Tab>Tab-29</Tab>\n            <ChildContent>Content of tab Pane 29</ChildContent>\n        </TabPane>\n\n        @*@{\n            Enumerable.Range(1, 29).Select<int, RenderFragment>\n                (i => { return template(i); }).Aggregate((r1, r2) => r1 + r2);\n        }*@\n    </Tabs>\n</div>\n\n@code{\n    private string mode = TabPosition.Top;\n\n    RenderFragment<int> template = (i) =>@<TabPane Key=\"@i.ToString()\">\n        <Tab>Tab-@i</Tab>\n        <ChildContent>Content of tab Pane @i</ChildContent>\n    </TabPane>;\n\n}",
+        "Type": "Demos.Tabs.demo.Slide",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "Disabled",
+        "Title": "禁用",
+        "Description": "<p>禁用某一项。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\" Disabled>\n        <Tab>Tab 2</Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Tab 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Disabled",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 13,
+        "Name": "CustomTabBarNode",
+        "Title": "可拖拽标签",
+        "Description": "<p>使用 <code>react-dnd</code> 实现标签可拖拽。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\" Draggable>\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Tab 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.CustomTabBarNode",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "Extra",
+        "Title": "附加内容",
+        "Description": "<p>可以在页签右边添加附加操作。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabBarExtraContent>\n        <Button>Extra Action</Button>\n    </TabBarExtraContent>\n    <ChildContent>\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </ChildContent>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Extra",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "Basic",
+        "Title": "基本",
+        "Description": "<p>默认选中第一项。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "CustomAddTrigger",
+        "Title": "自定义新增页签触发器",
+        "Description": "<p>隐藏默认的页签增加图标，给自定义触发器绑定事件。</p>\n",
+        "Code": "<div>\n    <div style=\"margin-bottom: 16px;\">\n        <Button @onclick=\"(e)=>Add()\">ADD</Button>\n    </div>\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.EditableCard\" HideAdd>\n        @foreach (var temp in _panes)\n        {\n            TabPane pane = temp;\n            <TabPane Key=\"@pane.Key\">\n                <Tab>@pane.Tab</Tab>\n                <ChildContent>@pane.ChildContent</ChildContent>\n            </TabPane>\n        }\n    </Tabs>\n</div>\n\n@code{\n    private List<TabPane>\n        _panes = new List<TabPane>\n            ();\n    private static int btnIndex = 1;\n    private void Add()\n    {\n        int index = ++btnIndex;\n        _panes.Add(new TabPane(\n            key: index.ToString(),\n            tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n            childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n        ));\n\n        StateHasChanged();\n    }\n\n    protected override void OnInitialized()\n    {\n        base.OnInitialized();\n        for (int i = 0; i < btnIndex + 1; i++)\n        {\n            int index = i;\n            _panes.Add(new TabPane(\n                key: index.ToString(),\n                tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n                childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n            ));\n        }\n    }\n}",
+        "Type": "Demos.Tabs.demo.CustomAddTrigger",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "Icon",
+        "Title": "图标",
+        "Description": "<p>有图标的标签。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>\n            <span><AntDesign.Icon Type=\"android\" />Tab 1</span>\n        </Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>\n            <span><AntDesign.Icon Type=\"apple\" />Tab 2</span>\n        </Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Icon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "Position",
+        "Title": "位置",
+        "Description": "<p>有四个位置，<code>tabPosition=&quot;left|right|top|bottom&quot;</code>。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"position\" Style=\"margin-bottom: 16px;\">\n        <Radio RadioButton Value=\"@TabPosition.Top\">Top</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Left\">Left</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Right\">Right</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Bottom\">Bottom</Radio>\n    </RadioGroup>\n    <Tabs DefaultActiveKey=\"1\" TabPosition=\"@position\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n@code{\n    private string position = TabPosition.Top;\n}",
+        "Type": "Demos.Tabs.demo.Position",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "Size",
+        "Title": "大小",
+        "Description": "<p>大号页签用在页头区域，小号用在弹出框等较狭窄的容器内。</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"size\" Style=\"margin-bottom: 16px;\">\n        <Radio RadioButton Value=\"@TabSize.Small\">Small</Radio>\n        <Radio RadioButton Value=\"@TabSize.Default\">Default</Radio>\n        <Radio RadioButton Value=\"@TabSize.Large\">Large</Radio>\n    </RadioGroup>\n\n    <Tabs DefaultActiveKey=\"1\" Size=\"@size\" Style=\"margin-bottom: 32px\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\" Size=\"@size\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n@code{\n    private string size = TabSize.Default;\n}",
+        "Type": "Demos.Tabs.demo.Size",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 12,
+        "Name": "CustomTabBar",
+        "Title": "自定义页签头",
+        "Description": "<p>使用 react-sticky 组件实现吸顶效果。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.CustomTabBar",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "EditableCard",
+        "Title": "新增和关闭页签",
+        "Description": "<p>只有卡片样式的页签支持新增和关闭选项。使用 <code>closable={false}</code> 禁止关闭。</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\" Type=\"@TabType.EditableCard\" CreateTabPane=\"@Create\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\" Closable=\"false\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>\n\n@code{\n    private static int addedIndex = 3;\n    private readonly Func<TabPane> Create = () =>\n        {\n            addedIndex++;\n            int temp = addedIndex;\n            return new TabPane(\n                key: temp.ToString(),\n                childContent: (b) => { b.AddContent(0, $\"Content of Tab Pane {temp}\"); },\n                tab: (b) => { b.AddContent(0, $\"Tab {temp}\"); }\n            );\n        };\n}",
+        "Type": "Demos.Tabs.demo.EditableCard",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "CardTop",
+        "Title": "卡片式页签容器",
+        "Description": "<p>用于容器顶部，需要一点额外的样式覆盖。</p>\n",
+        "Code": "<style>\n    [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-content,\n    .card-container > .ant-tabs-card > .ant-tabs-content {\n        height: 120px;\n        margin-top: -16px;\n    }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane,\n        .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {\n            background: #fff;\n            padding: 16px;\n        }\n\n    [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar,\n    .card-container > .ant-tabs-card > .ant-tabs-bar {\n        border-color: #fff;\n    }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab,\n        .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {\n            border-color: transparent;\n            background: transparent;\n        }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active,\n        .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {\n            border-color: #fff;\n            background: #fff;\n        }\n</style>\n\n<div class=\"card-container\">\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\">\n        <TabPane Key=\"1\">\n            <Tab>Tab Title 1</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab Title 2</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab Title 3</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n            </ChildContent>\n        </TabPane>\n    </Tabs>\n</div>",
+        "Type": "Demos.Tabs.demo.CardTop",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Space",
     "SubTitle": "间距",
     "Type": "布局",

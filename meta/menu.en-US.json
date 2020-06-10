@@ -217,6 +217,12 @@
           },
           {
             "Order": 0,
+            "Title": "Tabs",
+            "Type": "menuItem",
+            "Url": "components/tabs"
+          },
+          {
+            "Order": 0,
             "Title": "Table",
             "Type": "menuItem",
             "Url": "components/table"
