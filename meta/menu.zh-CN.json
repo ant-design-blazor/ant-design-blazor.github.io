@@ -37,6 +37,13 @@
             "SubTitle": "按钮",
             "Type": "menuItem",
             "Url": "components/button"
+          },
+          {
+            "Order": 0,
+            "Title": "Icon",
+            "SubTitle": "图标",
+            "Type": "menuItem",
+            "Url": "components/icon"
           }
         ]
       },
@@ -152,6 +159,13 @@
             "SubTitle": "下拉菜单",
             "Type": "menuItem",
             "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
+            "Title": "Steps",
+            "SubTitle": "步骤条",
+            "Type": "menuItem",
+            "Url": "components/steps"
           }
         ]
       },

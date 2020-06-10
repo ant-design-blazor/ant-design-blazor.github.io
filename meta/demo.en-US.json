@@ -528,7 +528,7 @@
         "Name": "Gutterx",
         "Title": "Grid Gutter",
         "Description": "<p>You can use the <code>gutter</code> property of <code>Row</code> as grid spacing, we recommend set it to <code>(16 + 8n) px</code>. (<code>n</code> stands for natural number.)\nYou can set it to a object like <code>{ xs: 8, sm: 16, md: 24, lg: 32 }</code> for responsive design.\nYou can use a array to set vertical spacing, <code>[horizontal, vertical]</code> <code>[16, { xs: 8, sm: 16, md: 24, lg: 32 }]</code>. vertical gutter was supported after <code>3.24.0</code></p>\n",
-        "Code": "<div>\n    <style>\n        .Gutter-box {\n            background: #00a0e9;\n            padding: 5px 0;\n        }\n    </style>\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Horizontal\n    </AntDivider>\n\n    <div class=\"Gutter-example\">\n        <Row Gutter=\"16\">\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n        </Row>\n    </div>\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Responsive\n    </AntDivider>\n    <div class=\"Gutter-example\">\n        <Row Gutter=\"@Gutter1\">\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div>col-6</div>\n            </Col>\n        </Row>\n    </div>\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Vertical\n    </AntDivider>\n    <div class=\"Gutter-example\">\n        <Row Gutter=\"(8,24)\">\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n        </Row>\n    </div>\n</div>\n@code{\n    Dictionary<string, int> Gutter1 = new Dictionary<string, int>()\n    {\n        [\"xs\"] = 8,\n        [\"sm\"] = 16,\n        [\"md\"] = 24,\n        [\"lg\"] = 32,\n        [\"xl\"] = 48,\n        [\"xxl\"] = 64\n    };\n   \n\n}",
+        "Code": "<div>\n    <style>\n        .Gutter-box {\n            background: #00a0e9;\n            padding: 5px 0;\n        }\n    </style>\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Horizontal\n    </Divider>\n\n    <div class=\"Gutter-example\">\n        <Row Gutter=\"16\">\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n        </Row>\n    </div>\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Responsive\n    </Divider>\n    <div class=\"Gutter-example\">\n        <Row Gutter=\"@Gutter1\">\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div>col-6</div>\n            </Col>\n        </Row>\n    </div>\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Vertical\n    </Divider>\n    <div class=\"Gutter-example\">\n        <Row Gutter=\"(8,24)\">\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n            <Col class=\"Gutter-row\" Span=\"6\">\n                <div >col-6</div>\n            </Col>\n        </Row>\n    </div>\n</div>\n@code{\n    Dictionary<string, int> Gutter1 = new Dictionary<string, int>()\n    {\n        [\"xs\"] = 8,\n        [\"sm\"] = 16,\n        [\"md\"] = 24,\n        [\"lg\"] = 32,\n        [\"xl\"] = 48,\n        [\"xxl\"] = 64\n    };\n   \n\n}",
         "Type": "Demos.Grid.demo.Gutterx",
         "Style": "",
         "Debug": false
@@ -558,7 +558,7 @@
         "Name": "Breakpoint",
         "Title": "useBreakpoint Hook",
         "Description": "<p>Use useBreakpoint Hook provide personalized layout.</p>\n",
-        "Code": "<div>\n    <AntText> Current break point:</AntText>\n    <AntTag Color=\"blue\">\n        sm\n    </AntTag>\n    <AntTag Color=\"blue\">\n        md\n    </AntTag>\n    <AntTag Color=\"blue\">\n        lg\n    </AntTag>\n    <AntTag Color=\"blue\">\n        xl\n    </AntTag>\n    <AntTag Color=\"blue\">\n        xxl\n    </AntTag>\n</div>\n@code{\n\n}",
+        "Code": "<div>\n    <Text> Current break point:</Text>\n    <Tag Color=\"blue\">\n        sm\n    </Tag>\n    <Tag Color=\"blue\">\n        md\n    </Tag>\n    <Tag Color=\"blue\">\n        lg\n    </Tag>\n    <Tag Color=\"blue\">\n        xl\n    </Tag>\n    <Tag Color=\"blue\">\n        xxl\n    </Tag>\n</div>\n@code{\n\n}",
         "Type": "Demos.Grid.demo.Breakpoint",
         "Style": "",
         "Debug": false
@@ -618,7 +618,7 @@
         "Name": "Stretch",
         "Title": "Flex Stretch",
         "Description": "<p>Col provides flex prop to support fill rest.</p>\n",
-        "Code": "<div>\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Percentage columns\n    </AntDivider>\n    <p>To do</p>\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Fill rest\n    </AntDivider>\n    <p>To do</p>\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Raw flex style\n    </AntDivider>\n    <p>To do</p>\n</div>\n\n\n@code{\n\n}",
+        "Code": "<div>\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Percentage columns\n    </Divider>\n    <p>To do</p>\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Fill rest\n    </Divider>\n    <p>To do</p>\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Raw flex style\n    </Divider>\n    <p>To do</p>\n</div>\n\n\n@code{\n\n}",
         "Type": "Demos.Grid.demo.Stretch",
         "Style": "",
         "Debug": false
@@ -638,7 +638,7 @@
         "Name": "Alignment",
         "Title": "Alignment",
         "Description": "<p>Child elements vertically aligned.</p>\n",
-        "Code": "<div>\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Align Top\n    </AntDivider>\n\n    <div class=\"flex-demo\">\n        <Row Justify=\"center\" Align=\"top\">\n            <Col Span=\"4\"><p class=\"height-100\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-50\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-120\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-80\">col-4</p></Col>\n        </Row>\n    </div>\n\n\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Align Center\n    </AntDivider>\n    <div class=\"flex-demo\">\n        <Row Justify=\"space-around\" Align=\"middle\">\n            <Col  Span=\"4\"><p class=\"height-100\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-50\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-120\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-80\">col-4</p></Col>\n        </Row>\n    </div>\n\n    <AntDivider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Align Bottom\n    </AntDivider>\n    <div class=\"flex-demo\">\n        <Row Justify=\"space-between\" Align=\"bottom\">\n            <Col Span=\"4\"><p class=\"height-100\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-50\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-120\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-80\">col-4</p></Col>\n        </Row>\n    </div>\n    </div>\n    <style>\n        .flex-demo {\n            background-color: rgba(128, 128, 128, 0.08);\n        }\n    </style>\n\n    @code{\n\n    }\n",
+        "Code": "<div>\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Align Top\n    </Divider>\n\n    <div class=\"flex-demo\">\n        <Row Justify=\"center\" Align=\"top\">\n            <Col Span=\"4\"><p class=\"height-100\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-50\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-120\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-80\">col-4</p></Col>\n        </Row>\n    </div>\n\n\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Align Center\n    </Divider>\n    <div class=\"flex-demo\">\n        <Row Justify=\"space-around\" Align=\"middle\">\n            <Col  Span=\"4\"><p class=\"height-100\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-50\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-120\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-80\">col-4</p></Col>\n        </Row>\n    </div>\n\n    <Divider Orientation=\"left\" Style=\"color: #333; font-weight:normal\">\n        Align Bottom\n    </Divider>\n    <div class=\"flex-demo\">\n        <Row Justify=\"space-between\" Align=\"bottom\">\n            <Col Span=\"4\"><p class=\"height-100\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-50\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-120\">col-4</p></Col>\n            <Col Span=\"4\"><p class=\"height-80\">col-4</p></Col>\n        </Row>\n    </div>\n    </div>\n    <style>\n        .flex-demo {\n            background-color: rgba(128, 128, 128, 0.08);\n        }\n    </style>\n\n    @code{\n\n    }\n",
         "Type": "Demos.Grid.demo.Alignment",
         "Style": "",
         "Debug": false
@@ -1077,7 +1077,7 @@
         "Order": 5,
         "Name": "resposive",
         "Title": "Responsive grid list",
-        "Description": "<p>Responsive grid list. The size property the is as same as <a href=\"/components/grid/#AntDesign.Col\">Layout Grid</a>.</p>\n",
+        "Description": "<p>Responsive grid list. The size property the is as same as <a href=\"/components/grid/#Col\">Layout Grid</a>.</p>\n",
         "Code": "<h3>Resposive</h3>\n\n@code {\n\n}\n",
         "Type": "Demos.List.demo.Resposive",
         "Style": "",
@@ -2036,7 +2036,7 @@
         "Name": "row-selection",
         "Title": "selection",
         "Description": "<p>Rows can be selectable by making first column as a selectable column. You can use <code>rowSelection.type</code> to set selection type. Default is <code>checkbox</code>.</p>\n<blockquote>\n<p>selection happens when clicking checkbox by default. You can see <a href=\"https://codesandbox.io/s/000vqw38rl\">https://codesandbox.io/s/000vqw38rl</a> if you need row-click selection behavior.</p>\n</blockquote>\n",
-        "Code": "<div>\n    <RadioGroup @bind-Value=\"selectionType\">\n        <Radio Value=\"checkbox\">Checkbox</Radio>\n        <Radio Value=\"radio\">radio</Radio>\n    </RadioGroup>\n\n    <h5>\n        selections: \n        @if (selectedRows != null)\n        {\n            @foreach (var selected in selectedRows)\n            {\n                <AntTag>@selected.Name</AntTag>\n            }\n        }\n    </h5>\n\n    <Table DataSource=\"@data\" @bind-SelectedRows=\"selectedRows\" ClientSide>\n        <RowSelection Type=\"@selectionType\" Disabled=\"@(context.Name==\"Disabled User\")\"/>\n        <Column @bind-Field=\"@context.Name\">\n            <a>@context.Name</a>\n        </Column>\n        <Column @bind-Field=\"@context.Age\" />\n        <Column @bind-Field=\"@context.Address\" />\n    </Table>\n</div>\n\n\n@code {\n\n    class Column\n    {\n        public string Name { get; set; }\n\n        public int Age { get; set; }\n\n        public string Address { get; set; }\n    }\n\n    Column[] data =\n    {\n        new Column()\n        {\n            Name = \"John Brown\",\n            Age = 32,\n            Address = \"New York No. 1 Lake Park\",\n        },\n        new Column()\n        {\n            Name = \"Jim Green\",\n            Age = 42,\n            Address = \"London No. 1 Lake Park\",\n        },\n        new Column()\n        {\n            Name = \"Joe Black\",\n            Age = 32,\n            Address = \"Sidney No. 1 Lake Park\",\n        },\n        new Column()\n        {\n            Name = \"Disabled User\",\n            Age = 99,\n            Address = \"Sidney No. 1 Lake Park\",\n        }\n    };\n\n    IEnumerable<Column> selectedRows;\n    string selectionType = \"checkbox\";\n}\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"selectionType\">\n        <Radio Value=\"checkbox\">Checkbox</Radio>\n        <Radio Value=\"radio\">radio</Radio>\n    </RadioGroup>\n\n    <h5>\n        selections: \n        @if (selectedRows != null)\n        {\n            @foreach (var selected in selectedRows)\n            {\n                <Tag>@selected.Name</Tag>\n            }\n        }\n    </h5>\n\n    <Table DataSource=\"@data\" @bind-SelectedRows=\"selectedRows\" ClientSide>\n        <RowSelection Type=\"@selectionType\" Disabled=\"@(context.Name==\"Disabled User\")\"/>\n        <Column @bind-Field=\"@context.Name\">\n            <a>@context.Name</a>\n        </Column>\n        <Column @bind-Field=\"@context.Age\" />\n        <Column @bind-Field=\"@context.Address\" />\n    </Table>\n</div>\n\n\n@code {\n\n    class Column\n    {\n        public string Name { get; set; }\n\n        public int Age { get; set; }\n\n        public string Address { get; set; }\n    }\n\n    Column[] data =\n    {\n        new Column()\n        {\n            Name = \"John Brown\",\n            Age = 32,\n            Address = \"New York No. 1 Lake Park\",\n        },\n        new Column()\n        {\n            Name = \"Jim Green\",\n            Age = 42,\n            Address = \"London No. 1 Lake Park\",\n        },\n        new Column()\n        {\n            Name = \"Joe Black\",\n            Age = 32,\n            Address = \"Sidney No. 1 Lake Park\",\n        },\n        new Column()\n        {\n            Name = \"Disabled User\",\n            Age = 99,\n            Address = \"Sidney No. 1 Lake Park\",\n        }\n    };\n\n    IEnumerable<Column> selectedRows;\n    string selectionType = \"checkbox\";\n}\n",
         "Type": "Demos.Table.demo.RowSelection_",
         "Style": "",
         "Debug": false
@@ -2605,6 +2605,54 @@
     ]
   },
   {
+    "Title": "Icon",
+    "Type": "General",
+    "Desc": "<p>Semantic vector graphics. Before use icons。</p>\n<h2>List of icons</h2>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>Common Icon</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ClassName</td>\n<td>className of Icon</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>Style properties of icon, like fontSize and color</td>\n<td>Css propertities</td>\n<td></td>\n</tr>\n<tr>\n<td>Spin</td>\n<td>Rotate icon with animation</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Rotate</td>\n<td>Rotate by n degrees (not working in IE9)</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>TwoToneColor</td>\n<td>Only supports the two-tone icon. Specify the primary color.</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>We still have three different themes for icons, icon component name is the icon name suffixed by the theme name.</p>\n<p>Custom Icon</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Style</td>\n<td>Style properties of icon, like fontSize and color</td>\n<td>CSSProperties</td>\n<td></td>\n</tr>\n<tr>\n<td>Spin</td>\n<td>Rotate icon with animation</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Rotate</td>\n<td>Rotate degrees (not working in IE9)</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Component</td>\n<td>The component used for the root node.</td>\n<td></td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 1,
+        "Name": "two-tone",
+        "Title": "Two-tone icon and colorful icon",
+        "Description": "<p>You can set <code>twoToneColor</code> prop to specific primary color for two-tone icons.</p>\n",
+        "Code": "<div>\n    <Icon Type=\"smile\" Theme=\"twotone\" Height=\"2em\" Width=\"2em\" />\n    <Icon Type=\"heart\" Theme=\"twotone\" TwotoneColor=\"#eb2f96\" Height=\"2em\" Width=\"2em\" />\n    <Icon Type=\"check-circle\" Theme=\"twotone\" TwotoneColor=\"#52c41a\" Height=\"2em\" Width=\"2em\" />\n</div>\n\n\n",
+        "Type": "Demos.Icon.demo.Twotone",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Import icons from <code>@ant-design/icons</code>, component name of icons with different theme is the icon name suffixed by the theme name. Specific the <code>spin</code> property to show spinning animation.</p>\n",
+        "Code": "<div  class=\"icons-list\">\n    <Icon Type=\"home\" />\n    <Icon Type=\"setting\" Theme=\"fill\" />\n    <Icon Type=\"smile\" Theme=\"outline\" />\n    <Icon Type=\"sync\" Theme=\"outline\" Spin />\n    <Icon Type=\"smile\" Theme=\"outline\" Rotate=\"180\" />\n    <Icon Type=\"loading\" Theme=\"outline\" />\n</div>\n",
+        "Type": "Demos.Icon.demo.Basic",
+        "Style": "\n.icons-list .anticon {\n  margin-right: 6px;\n  font-size: 24px;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "iconfont",
+        "Title": "Use iconfont.cn",
+        "Description": "<p>If you are using <a href=\"http://iconfont.cn/\">iconfont.cn</a>, you can use the icons in your project gracefully.</p>\n",
+        "Code": "@inject IconService iconService;\n\n<div class=\"icons-list\">\n    <Icon IconFont=\"icon-tuichu\" />\n    <Icon IconFont=\"icon-facebook\" />\n    <Icon IconFont=\"icon-twitter\" />\n</div>\n\n@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js\");\n    }\n}\n",
+        "Type": "Demos.Icon.demo.Iconfont",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "custom",
+        "Title": "Custom Icon",
+        "Description": "<p>Create a reusable React component by using <code>&lt;Icon component={...} /&gt;</code>. The property <code>component</code> takes a React component that renders to <code>svg</code> element.</p>\n",
+        "Code": "@{\n    RenderFragment HeartSvg =\n        @<svg width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 1024 1024\">\n            <path d=\"M923 283.6c-13.4-31.1-32.6-58.9-56.9-82.8-24.3-23.8-52.5-42.4-84-55.5-32.5-13.5-66.9-20.3-102.4-20.3-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5-24.4 23.9-43.5 51.7-56.9 82.8-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3 0.1-35.3-7-69.6-20.9-101.9z\"/>\n        </svg>;\n\n    RenderFragment PandaSvg =\n        @<svg viewBox=\"0 0 1024 1024\" width=\"1em\" height=\"1em\" fill=\"currentColor\">\n            <path d=\"M99.096 315.634s-82.58-64.032-82.58-132.13c0-66.064 33.032-165.162 148.646-148.646 83.37 11.91 99.096 165.162 99.096 165.162l-165.162 115.614zM924.906 315.634s82.58-64.032 82.58-132.13c0-66.064-33.032-165.162-148.646-148.646-83.37 11.91-99.096 165.162-99.096 165.162l165.162 115.614z\"\n                  fill=\"#6B676E\"\n                  p-id=\"1143\"/>\n            <path d=\"M1024 561.548c0 264.526-229.23 429.42-512.002 429.42S0 826.076 0 561.548 283.96 66.064 512.002 66.064 1024 297.022 1024 561.548z\"\n                  fill=\"#FFEBD2\"\n                  p-id=\"1144\"/>\n            <path d=\"M330.324 842.126c0 82.096 81.34 148.646 181.678 148.646s181.678-66.55 181.678-148.646H330.324z\"\n                  fill=\"#E9D7C3\"\n                  p-id=\"1145\"/>\n            <path d=\"M644.13 611.098C594.582 528.516 561.55 512 512.002 512c-49.548 0-82.58 16.516-132.13 99.096-42.488 70.814-78.73 211.264-49.548 247.742 66.064 82.58 165.162 33.032 181.678 33.032 16.516 0 115.614 49.548 181.678-33.032 29.18-36.476-7.064-176.93-49.55-247.74z\"\n                  fill=\"#FFFFFF\"\n                  p-id=\"1146\"/>\n            <path d=\"M611.098 495.484c0-45.608 36.974-82.58 82.58-82.58 49.548 0 198.194 99.098 198.194 165.162s-79.934 144.904-148.646 99.096c-49.548-33.032-132.128-148.646-132.128-181.678zM412.904 495.484c0-45.608-36.974-82.58-82.58-82.58-49.548 0-198.194 99.098-198.194 165.162s79.934 144.904 148.646 99.096c49.548-33.032 132.128-148.646 132.128-181.678z\"\n                  fill=\"#6B676E\"\n                  p-id=\"1147\"/>\n            <path d=\"M512.002 726.622c-30.06 0-115.614 5.668-115.614 33.032 0 49.638 105.484 85.24 115.614 82.58 10.128 2.66 115.614-32.944 115.614-82.58-0.002-27.366-85.556-33.032-115.614-33.032z\"\n                  fill=\"#464655\"\n                  p-id=\"1148\"/>\n            <path d=\"M330.324 495.484m-33.032 0a33.032 33.032 0 1 0 66.064 0 33.032 33.032 0 1 0-66.064 0Z\"\n                  fill=\"#464655\"\n                  p-id=\"1149\"/>\n            <path d=\"M693.678 495.484m-33.032 0a33.032 33.032 0 1 0 66.064 0 33.032 33.032 0 1 0-66.064 0Z\"\n                  fill=\"#464655\"\n                  p-id=\"1150\"/>\n        </svg>;\n}\n\n<div className=\"custom-icons-list\">\n    <Icon Component=\"HeartSvg\" Style=\"color: hotpink;\" />\n    <Icon Component=\"PandaSvg\" Style=\"font-size: 32px;\" />\n</div>\n\n<style>\n    .custom-icons-list .anticon {\n        margin-right: 6px;\n    }\n</style>",
+        "Type": "Demos.Icon.demo.Custom",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Radio",
     "Type": "Data Entry",
     "Desc": "<p>Radio</p>\n<h2>When To Use</h2>\n<p>-Used to select a single state from multiple options.\n-The difference from Select is that Radio is visible to the user and can facilitate the comparison of choice, which means there shouldn't be too many of them.</p>\n",
@@ -3108,7 +3156,7 @@
         "Name": "customize-header",
         "Title": "Customize Header",
         "Description": "<p>Customize Calendar header content.</p>\n",
-        "Code": "<div class=\"site-calendar-customize-header-wrapper\">\n    <Calendar FullScreen=\"@false\"\n              HeaderRender=\"HeaderRender\"\n              OnPanelChange=\"OnPanelChange\" />\n</div>\n\n@code\n{\n    void OnPanelChange(DateTime value, string mode)\n    {\n        Console.WriteLine($\"{value} {mode}\");\n    }\n\n    RenderFragment GetMonthOptions()\n    {\n        return@<Template>\n        @for (int index = 1; index <= 12; index++)\n        {\n            <option class=\"month-item\" key=\"@index\" value=\"@index\">\n                @(index)月\n            </option>\n        }\n\n    </Template>;\n}\n\nRenderFragment GetYearOptions(int currentYear)\n{\nreturn @<Template>\n    @for (int i = currentYear - 10; i < currentYear + 10; i += 1)\n    {\n        <option class=\"year-item\" key=\"@i\" value=\"@i\">\n            @(i)年\n        </option>\n    }\n\n</Template>;\n}\n\nvoid OnSelectYear(ChangeEventArgs args, CalendarHeaderRenderArgs renderArgs)\n{\nint year = Convert.ToInt32(args.Value);\nrenderArgs.OnChange.InvokeAsync(DateHelper.CombineNewDate(renderArgs.Value, year: year));\n}\n\nvoid OnSelectMonth(ChangeEventArgs args, CalendarHeaderRenderArgs renderArgs)\n{\nint month = Convert.ToInt32(args.Value);\nrenderArgs.OnChange.InvokeAsync(DateHelper.CombineNewDate(renderArgs.Value, month: month));\n}\n\nvoid OnTypeChange()\n{\n\n}\n\nRenderFragment HeaderRender(CalendarHeaderRenderArgs args)\n{\nint start = 0;\nint end = 12;\n\nint month = args.Value.Month;\nint year = args.Value.Year;\n\nreturn @<Template>\n    <div style=\"padding: 8px\">\n        <AntTitle Level=\"4\">\n            Custom header\n        </AntTitle>\n        <Row Gutter=\"8\">\n            <AntDesign.Col>\n                <RadioGroup size=\"small\" OnChange=\"value => args.OnTypeChange.InvokeAsync(value)\" Value=\"@args.Type\">\n                    <Radio RadioButton Value=\"@DatePickerType.Month\">Month</Radio>\n                    <Radio RadioButton Value=\"@DatePickerType.Year\">Year</Radio>\n                </RadioGroup>\n            </AntDesign.Col>\n            <AntDesign.Col>\n                <select size=\"small\"\n                        dropdownMatchSelectWidth=\"@false\"\n                        class=\"my-year-select\"\n                        @onchange=\"e => OnSelectYear(e, args)\"\n                        value=\"@year\">\n                    @GetYearOptions(year)\n                </select>\n            </AntDesign.Col>\n            <AntDesign.Col>\n                <select size=\"small\"\n                        dropdownMatchSelectWidth=\"@false\"\n                        value=\"@month\"\n                        @onchange=\"e => OnSelectMonth(e, args)\">\n                    @GetMonthOptions()\n                </select>\n            </AntDesign.Col>\n        </Row>\n\n    </div>\n\n</Template>;\n\n}\n}\n\n<Style>\n    .site-calendar-customize-header-wrapper {\n        width: 300px;\n        border: 1px solid #f0f0f0;\n        border-radius: 2px;\n    }\n</Style>\n",
+        "Code": "<div class=\"site-calendar-customize-header-wrapper\">\n    <Calendar FullScreen=\"@false\"\n              HeaderRender=\"HeaderRender\"\n              OnPanelChange=\"OnPanelChange\" />\n</div>\n\n@code\n{\n    private void OnPanelChange(DateTime value, string mode)\n    {\n        Console.WriteLine($\"{value} {mode}\");\n    }\n\n    private RenderFragment GetMonthOptions()\n    {\n        return@<Template>\n                  @for (int index = 1; index <= 12; index++)\n                  {\n                      <option class=\"month-item\" key=\"@index\" value=\"@index\">\n                          @(index)月\n                      </option>\n                  }\n\n              </Template>;\n    }\n\n    private RenderFragment GetYearOptions(int currentYear)\n    {\n        return @<Template>\n                   @for (int i = currentYear - 10; i < currentYear + 10; i += 1)\n                   {\n                       <option class=\"year-item\" key=\"@i\" value=\"@i\">\n                           @(i)年\n                       </option>\n                   }\n\n               </Template>;\n    }\n\n    private void OnSelectYear(ChangeEventArgs args, CalendarHeaderRenderArgs renderArgs)\n    {\n        int year = Convert.ToInt32(args.Value);\n        renderArgs.OnChange.InvokeAsync(DateHelper.CombineNewDate(renderArgs.Value, year: year));\n    }\n\n    private void OnSelectMonth(ChangeEventArgs args, CalendarHeaderRenderArgs renderArgs)\n    {\n        int month = Convert.ToInt32(args.Value);\n        renderArgs.OnChange.InvokeAsync(DateHelper.CombineNewDate(renderArgs.Value, month: month));\n    }\n\n    private void OnTypeChange()\n    {\n\n    }\n\n    private RenderFragment HeaderRender(CalendarHeaderRenderArgs args)\n    {\n        int start = 0;\n        int end = 12;\n\n        int month = args.Value.Month;\n        int year = args.Value.Year;\n\n        return\n            @<Template>\n                <div style=\"padding: 8px\">\n                    <Title Level=\"4\">\n                        Custom header\n                    </Title>\n                    <Row Gutter=\"8\">\n                        <AntDesign.Col>\n                            <RadioGroup size=\"small\" OnChange=\"value => args.OnTypeChange.InvokeAsync(value)\" Value=\"@args.Type\">\n                                <Radio RadioButton Value=\"@DatePickerType.Month\">Month</Radio>\n                                <Radio RadioButton Value=\"@DatePickerType.Year\">Year</Radio>\n                            </RadioGroup>\n                        </AntDesign.Col>\n                        <AntDesign.Col>\n                            <select size=\"small\"\n                                    dropdownMatchSelectWidth=\"@false\"\n                                    class=\"my-year-select\"\n                                    @onchange=\"e => OnSelectYear(e, args)\"\n                                    value=\"@year\">\n                                @GetYearOptions(year)\n                            </select>\n                        </AntDesign.Col>\n                        <AntDesign.Col>\n                            <select size=\"small\"\n                                    dropdownMatchSelectWidth=\"@false\"\n                                    value=\"@month\"\n                                    @onchange=\"e => OnSelectMonth(e, args)\">\n                                @GetMonthOptions()\n                            </select>\n                        </AntDesign.Col>\n                    </Row>\n                </div>\n            </Template>;\n    }\n}\n\n<Style>\n    .site-calendar-customize-header-wrapper {\n        width: 300px;\n        border: 1px solid #f0f0f0;\n        border-radius: 2px;\n    }\n</Style>\n",
         "Type": "Demos.Calendar.demo.CustomizeHeader",
         "Style": "\n  [data-theme=\"dark\"] .site-calendar-customize-header-wrapper {\n    border: 1px solid #303030;\n  }\n\n",
         "Debug": false
@@ -3124,7 +3172,7 @@
     "DemoList": [
       {
         "Order": 1,
-        "Name": "Disabled",
+        "Name": "disabled",
         "Title": "Disabled",
         "Description": "<p>Disabled a tab.</p>\n",
         "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\" Disabled>\n        <Tab>Tab 2</Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Tab 3</ChildContent>\n    </TabPane>\n</Tabs>",
@@ -3133,88 +3181,78 @@
         "Debug": false
       },
       {
-        "Order": 8,
-        "Name": "Card",
-        "Title": "Card type tab",
-        "Description": "<p>Another type of Tabs, which doesn't support vertical mode.</p>\n",
-        "Code": "<Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
-        "Type": "Demos.Tabs.demo.Card",
-        "Style": "",
-        "Debug": false
-      },
-      {
-        "Order": 13,
-        "Name": "CustomTabBarNode",
-        "Title": "Draggable Tabs",
-        "Description": "<p>Use <code>react-dnd</code> to make tabs draggable.</p>\n",
-        "Code": "<Tabs DefaultActiveKey=\"1\" Draggable>\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Tab 3</ChildContent>\n    </TabPane>\n</Tabs>",
-        "Type": "Demos.Tabs.demo.CustomTabBarNode",
-        "Style": "",
-        "Debug": false
-      },
-      {
-        "Order": 4,
-        "Name": "Extra",
-        "Title": "Extra content",
-        "Description": "<p>You can add extra actions to the right of Tabs.</p>\n",
-        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabBarExtraContent>\n        <Button>Extra Action</Button>\n    </TabBarExtraContent>\n    <ChildContent>\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </ChildContent>\n</Tabs>",
-        "Type": "Demos.Tabs.demo.Extra",
-        "Style": "",
-        "Debug": false
-      },
-      {
         "Order": 12,
-        "Name": "CustomTabBar",
+        "Name": "custom-tab-bar",
         "Title": "Customized bar of tab",
         "Description": "<p>Use react-sticky.</p>\n",
         "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
         "Type": "Demos.Tabs.demo.CustomTabBar",
-        "Style": "",
+        "Style": "\n  [data-theme=\"dark\"] .site-custom-tab-bar {\n    background: #141414;\n  }\n\n",
         "Debug": false
       },
       {
-        "Order": 2,
-        "Name": "Icon",
-        "Title": "Icon",
-        "Description": "<p>The Tab with Icon.</p>\n",
-        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>\n            <span><AntDesign.Icon Type=\"android\" />Tab 1</span>\n        </Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>\n            <span><AntDesign.Icon Type=\"apple\" />Tab 2</span>\n        </Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n</Tabs>",
-        "Type": "Demos.Tabs.demo.Icon",
+        "Order": 99,
+        "Name": "nest",
+        "Title": "Nest",
+        "Description": "<p>Default activate first tab.</p>\n",
+        "Code": "<h3>Nest</h3>\n\nWaitting for implementing Select.\n\n@code {\n\n}\n",
+        "Type": "Demos.Tabs.demo.Nest",
         "Style": "",
-        "Debug": false
+        "Debug": true
       },
       {
         "Order": 11,
-        "Name": "CustomAddTrigger",
+        "Name": "custom-add-trigger",
         "Title": "Customized trigger of new tab",
         "Description": "<p>Hide default plus icon, and bind event for customized trigger.</p>\n",
-        "Code": "<div>\n    <div style=\"margin-bottom: 16px;\">\n        <Button @onclick=\"(e)=>Add()\">ADD</Button>\n    </div>\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.EditableCard\" HideAdd>\n        @foreach (var temp in _panes)\n        {\n            TabPane pane = temp;\n            <TabPane Key=\"@pane.Key\">\n                <Tab>@pane.Tab</Tab>\n                <ChildContent>@pane.ChildContent</ChildContent>\n            </TabPane>\n        }\n    </Tabs>\n</div>\n\n@code{\n    private List<TabPane>\n        _panes = new List<TabPane>\n            ();\n    private static int btnIndex = 1;\n    private void Add()\n    {\n        int index = ++btnIndex;\n        _panes.Add(new TabPane(\n            key: index.ToString(),\n            tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n            childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n        ));\n\n        StateHasChanged();\n    }\n\n    protected override void OnInitialized()\n    {\n        base.OnInitialized();\n        for (int i = 0; i < btnIndex + 1; i++)\n        {\n            int index = i;\n            _panes.Add(new TabPane(\n                key: index.ToString(),\n                tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n                childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n            ));\n        }\n    }\n}",
+        "Code": "<div>\n    <div style=\"margin-bottom: 16px;\">\n        <Button @onclick=\"(e)=>Add()\">ADD</Button>\n    </div>\n    <Tabs Type=\"@TabType.EditableCard\" HideAdd>\n        @foreach (var temp in _panes)\n        {\n            TabPane pane = temp;\n            <TabPane Key=\"@pane.Key\">\n                <Tab>@pane.Tab</Tab>\n                <ChildContent>@pane.ChildContent</ChildContent>\n            </TabPane>\n        }\n    </Tabs>\n</div>\n\n@code{\n    private List<TabPane> _panes = new List<TabPane>();\n    private static int btnIndex = 1;\n    private void Add()\n    {\n        int index = ++btnIndex;\n        _panes.Add(new TabPane(\n            key: index.ToString(),\n            tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n            childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n        ));\n\n        StateHasChanged();\n    }\n\n    protected override void OnInitialized()\n    {\n        base.OnInitialized();\n        for (int i = 0; i < btnIndex + 1; i++)\n        {\n            int index = i;\n            _panes.Add(new TabPane(\n                key: index.ToString(),\n                tab: (b) => b.AddContent(0, $\"Tab {index}\"),\n                childContent: (b) => b.AddContent(0, $\"Content of Tab Pane {index}\")\n            ));\n        }\n    }\n}",
         "Type": "Demos.Tabs.demo.CustomAddTrigger",
         "Style": "",
         "Debug": false
       },
       {
-        "Order": 0,
-        "Name": "Basic",
-        "Title": "Basic",
-        "Description": "<p>Default activate first tab.</p>\n",
-        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
-        "Type": "Demos.Tabs.demo.Basic",
+        "Order": 4,
+        "Name": "extra",
+        "Title": "Extra content",
+        "Description": "<p>You can add extra actions to the right of Tabs.</p>\n",
+        "Code": "<Tabs>\n    <TabBarExtraContent>\n        <Button>Extra Action</Button>\n    </TabBarExtraContent>\n    <ChildContent>\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </ChildContent>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Extra",
         "Style": "",
         "Debug": false
       },
       {
         "Order": 3,
-        "Name": "Slide",
+        "Name": "slide",
         "Title": "Slide",
         "Description": "<p>In order to fit in more tabs, they can slide left and right (or up and down).</p>\n",
-        "Code": "<div>\n    <RadioGroup @bind-Value=\"mode\" Style=\"margin-bottom: 8px;\">\n        <Radio RadioButton Value=\"@TabPosition.Top\">Horizontal</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Left\">Vertical</Radio>\n    </RadioGroup>\n    <Tabs DefaultActiveKey=\"0\" TabPosition=\"@mode\" Style=\"height: 220px;\">\n        <TabPane Key=\"0\">\n            <Tab>Tab-0</Tab>\n            <ChildContent>Content of tab Pane 0</ChildContent>\n        </TabPane>\n        <TabPane Key=\"1\">\n            <Tab>Tab-1</Tab>\n            <ChildContent>Content of tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab-2</Tab>\n            <ChildContent>Content of tab Pane 2</ChildContent>\n        </TabPane><TabPane Key=\"3\">\n            <Tab>Tab-3</Tab>\n            <ChildContent>Content of tab Pane 3</ChildContent>\n        </TabPane>\n        <TabPane Key=\"4\">\n            <Tab>Tab-4</Tab>\n            <ChildContent>Content of tab Pane 4</ChildContent>\n        </TabPane><TabPane Key=\"5\">\n            <Tab>Tab-5</Tab>\n            <ChildContent>Content of tab Pane 5</ChildContent>\n        </TabPane>\n        <TabPane Key=\"6\">\n            <Tab>Tab-6</Tab>\n            <ChildContent>Content of tab Pane 6</ChildContent>\n        </TabPane>\n        <TabPane Key=\"7\">\n            <Tab>Tab-7</Tab>\n            <ChildContent>Content of tab Pane 7</ChildContent>\n        </TabPane><TabPane Key=\"8\">\n            <Tab>Tab-8</Tab>\n            <ChildContent>Content of tab Pane 8</ChildContent>\n        </TabPane>\n        <TabPane Key=\"9\">\n            <Tab>Tab-9</Tab>\n            <ChildContent>Content of tab Pane 9</ChildContent>\n        </TabPane>\n        <TabPane Key=\"10\">\n            <Tab>Tab-10</Tab>\n            <ChildContent>Content of tab Pane 10</ChildContent>\n        </TabPane>\n        <TabPane Key=\"11\">\n            <Tab>Tab-11</Tab>\n            <ChildContent>Content of tab Pane 11</ChildContent>\n        </TabPane>\n        <TabPane Key=\"12\">\n            <Tab>Tab-12</Tab>\n            <ChildContent>Content of tab Pane 12</ChildContent>\n        </TabPane>\n        <TabPane Key=\"13\">\n            <Tab>Tab-13</Tab>\n            <ChildContent>Content of tab Pane 13</ChildContent>\n        </TabPane>\n        <TabPane Key=\"14\">\n            <Tab>Tab-14</Tab>\n            <ChildContent>Content of tab Pane 14</ChildContent>\n        </TabPane>\n        <TabPane Key=\"15\">\n            <Tab>Tab-15</Tab>\n            <ChildContent>Content of tab Pane 15</ChildContent>\n        </TabPane>\n        <TabPane Key=\"16\">\n            <Tab>Tab-16</Tab>\n            <ChildContent>Content of tab Pane 16</ChildContent>\n        </TabPane>\n        <TabPane Key=\"17\">\n            <Tab>Tab-17</Tab>\n            <ChildContent>Content of tab Pane 17</ChildContent>\n        </TabPane>\n        <TabPane Key=\"18\">\n            <Tab>Tab-18</Tab>\n            <ChildContent>Content of tab Pane 18</ChildContent>\n        </TabPane>\n        <TabPane Key=\"19\">\n            <Tab>Tab-19</Tab>\n            <ChildContent>Content of tab Pane 19</ChildContent>\n        </TabPane>\n        <TabPane Key=\"20\">\n            <Tab>Tab-20</Tab>\n            <ChildContent>Content of tab Pane 20</ChildContent>\n        </TabPane>\n        <TabPane Key=\"21\">\n            <Tab>Tab-21</Tab>\n            <ChildContent>Content of tab Pane 21</ChildContent>\n        </TabPane>\n        <TabPane Key=\"22\">\n            <Tab>Tab-22</Tab>\n            <ChildContent>Content of tab Pane 22</ChildContent>\n        </TabPane>\n        <TabPane Key=\"23\">\n            <Tab>Tab-23</Tab>\n            <ChildContent>Content of tab Pane 23</ChildContent>\n        </TabPane>\n        <TabPane Key=\"24\">\n            <Tab>Tab-24</Tab>\n            <ChildContent>Content of tab Pane 24</ChildContent>\n        </TabPane>\n        <TabPane Key=\"25\">\n            <Tab>Tab-25</Tab>\n            <ChildContent>Content of tab Pane 25</ChildContent>\n        </TabPane>\n        <TabPane Key=\"26\">\n            <Tab>Tab-26</Tab>\n            <ChildContent>Content of tab Pane 26</ChildContent>\n        </TabPane>\n        <TabPane Key=\"27\">\n            <Tab>Tab-27</Tab>\n            <ChildContent>Content of tab Pane 27</ChildContent>\n        </TabPane>\n        <TabPane Key=\"28\" Disabled>\n            <Tab>Tab-28</Tab>\n            <ChildContent>Content of tab Pane 28</ChildContent>\n        </TabPane>\n        <TabPane Key=\"29\">\n            <Tab>Tab-29</Tab>\n            <ChildContent>Content of tab Pane 29</ChildContent>\n        </TabPane>\n\n        @*@{\n            Enumerable.Range(1, 29).Select<int, RenderFragment>\n                (i => { return template(i); }).Aggregate((r1, r2) => r1 + r2);\n        }*@\n    </Tabs>\n</div>\n\n@code{\n    private string mode = TabPosition.Top;\n\n    RenderFragment<int> template = (i) =>@<TabPane Key=\"@i.ToString()\">\n        <Tab>Tab-@i</Tab>\n        <ChildContent>Content of tab Pane @i</ChildContent>\n    </TabPane>;\n\n}",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"mode\" Style=\"margin-bottom: 8px;\">\n        <Radio RadioButton Value=\"@TabPosition.Top\">Horizontal</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Left\">Vertical</Radio>\n    </RadioGroup>\n    <Tabs DefaultActiveKey=\"0\" TabPosition=\"@mode\" Style=\"height: 220px;\">\n        @for (int i = 0; i < 30; i++)\n        {\n            <TabPane Key=\"@($\"{i}\")\">\n                <Tab>Tab-@i</Tab>\n                <ChildContent>Content of tab Pane @i</ChildContent>\n            </TabPane>\n        }\n    </Tabs>\n</div>\n\n@code{\n    private string mode = TabPosition.Top;\n\n    RenderFragment<int> template = (i) =>@<TabPane Key=\"@i.ToString()\">\n        <Tab>Tab-@i</Tab>\n        <ChildContent>Content of tab Pane @i</ChildContent>\n    </TabPane>;\n\n}",
         "Type": "Demos.Tabs.demo.Slide",
         "Style": "",
         "Debug": false
       },
       {
+        "Order": 2,
+        "Name": "icon",
+        "Title": "Icon",
+        "Description": "<p>The Tab with Icon.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"2\">\n    <TabPane Key=\"1\">\n        <Tab>\n            <span><Icon Type=\"android\" />Tab 1</span>\n        </Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>\n            <span><Icon Type=\"apple\" />Tab 2</span>\n        </Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Icon_",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "card",
+        "Title": "Card type tab",
+        "Description": "<p>Another type of Tabs, which doesn't support vertical mode.</p>\n",
+        "Code": "<Tabs Type=\"@TabType.Card\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Card",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 6,
-        "Name": "Position",
+        "Name": "position",
         "Title": "Position",
         "Description": "<p>Tab's position: left, right, top or bottom.</p>\n",
         "Code": "<div>\n    <RadioGroup @bind-Value=\"position\" Style=\"margin-bottom: 16px;\">\n        <Radio RadioButton Value=\"@TabPosition.Top\">Top</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Left\">Left</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Right\">Right</Radio>\n        <Radio RadioButton Value=\"@TabPosition.Bottom\">Bottom</Radio>\n    </RadioGroup>\n    <Tabs DefaultActiveKey=\"1\" TabPosition=\"@position\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n@code{\n    private string position = TabPosition.Top;\n}",
@@ -3223,32 +3261,52 @@
         "Debug": false
       },
       {
-        "Order": 5,
-        "Name": "Size",
-        "Title": "Size",
-        "Description": "<p>Large size tabs are usually used in page header, and small size could be used in Modal.</p>\n",
-        "Code": "<div>\n    <RadioGroup @bind-Value=\"size\" Style=\"margin-bottom: 16px;\">\n        <Radio RadioButton Value=\"@TabSize.Small\">Small</Radio>\n        <Radio RadioButton Value=\"@TabSize.Default\">Default</Radio>\n        <Radio RadioButton Value=\"@TabSize.Large\">Large</Radio>\n    </RadioGroup>\n\n    <Tabs DefaultActiveKey=\"1\" Size=\"@size\" Style=\"margin-bottom: 32px\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\" Size=\"@size\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n@code{\n    private string size = TabSize.Default;\n}",
-        "Type": "Demos.Tabs.demo.Size",
+        "Order": 10,
+        "Name": "card-top",
+        "Title": "Container of card type Tab",
+        "Description": "<p>Should be used at the top of container, needs to override styles.</p>\n",
+        "Code": "<div class=\"card-container\">\n    <Tabs Type=\"@TabType.Card\">\n        <TabPane Key=\"1\">\n            <Tab>Tab Title 1</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab Title 2</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab Title 3</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n            </ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n<style>\n    [data-theme='compact'] .card-container .ant-tabs-card .ant-tabs-content,\n    .card-container .ant-tabs-card .ant-tabs-content {\n        height: 120px;\n        margin-top: -16px;\n    }\n\n        [data-theme='compact'] .card-container .ant-tabs-card .ant-tabs-content .ant-tabs-tabpane,\n        .card-container .ant-tabs-card .ant-tabs-content .ant-tabs-tabpane {\n            background: #fff;\n            padding: 16px;\n        }\n\n    [data-theme='compact'] .card-container .ant-tabs-card .ant-tabs-bar,\n    .card-container .ant-tabs-card .ant-tabs-bar {\n        border-color: #fff;\n    }\n\n        [data-theme='compact'] .card-container .ant-tabs-card .ant-tabs-bar .ant-tabs-tab,\n        .card-container .ant-tabs-card .ant-tabs-bar .ant-tabs-tab {\n            border-color: transparent;\n            background: transparent;\n        }\n\n        [data-theme='compact'] .card-container .ant-tabs-card .ant-tabs-bar .ant-tabs-tab-active,\n        .card-container .ant-tabs-card .ant-tabs-bar .ant-tabs-tab-active {\n            border-color: #fff;\n            background: #fff;\n        }\n</style>\n",
+        "Type": "Demos.Tabs.demo.CardTop",
+        "Style": "\n#components-tabs-demo-card-top .code-box-demo {\n  background: #F5F5F5;\n  overflow: hidden;\n  padding: 24px;\n}\n[data-theme=\"dark\"] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {\n  border-color: transparent;\n  background: transparent;\n}\n[data-theme=\"dark\"] #components-tabs-demo-card-top .code-box-demo {\n  background: #000;\n}\n[data-theme=\"dark\"] .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {\n  background: #141414;\n}\n[data-theme=\"dark\"] .card-container > .ant-tabs-card > .ant-tabs-bar {\n  border-color: #141414;\n}\n[data-theme=\"dark\"] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {\n  border-color: #141414;\n  background: #141414;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Default activate first tab.</p>\n",
+        "Code": "<Tabs DefaultActiveKey=\"1\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.Basic",
         "Style": "",
         "Debug": false
       },
       {
-        "Order": 10,
-        "Name": "CardTop",
-        "Title": "Container of card type Tab",
-        "Description": "<p>Should be used at the top of container, needs to override styles.</p>\n",
-        "Code": "<style>\n    [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-content,\n    .card-container > .ant-tabs-card > .ant-tabs-content {\n        height: 120px;\n        margin-top: -16px;\n    }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane,\n        .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {\n            background: #fff;\n            padding: 16px;\n        }\n\n    [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar,\n    .card-container > .ant-tabs-card > .ant-tabs-bar {\n        border-color: #fff;\n    }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab,\n        .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {\n            border-color: transparent;\n            background: transparent;\n        }\n\n        [data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active,\n        .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {\n            border-color: #fff;\n            background: #fff;\n        }\n</style>\n\n<div class=\"card-container\">\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\">\n        <TabPane Key=\"1\">\n            <Tab>Tab Title 1</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n                <p>Content of Tab Pane 1</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab Title 2</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n                <p>Content of Tab Pane 2</p>\n            </ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab Title 3</Tab>\n            <ChildContent>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n                <p>Content of Tab Pane 3</p>\n            </ChildContent>\n        </TabPane>\n    </Tabs>\n</div>",
-        "Type": "Demos.Tabs.demo.CardTop",
+        "Order": 13,
+        "Name": "custom-tab-bar-node",
+        "Title": "Draggable Tabs",
+        "Description": "<p>Use <code>react-dnd</code> to make tabs draggable.</p>\n",
+        "Code": "<Tabs Draggable>\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Tab 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Tab 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Tab 3</ChildContent>\n    </TabPane>\n</Tabs>",
+        "Type": "Demos.Tabs.demo.CustomTabBarNode",
         "Style": "",
         "Debug": false
       },
       {
         "Order": 9,
-        "Name": "EditableCard",
+        "Name": "editable-card",
         "Title": "Add & close tab",
         "Description": "<p>Only card type Tabs support adding &amp; closable. +Use <code>closable={false}</code> to disable close.</p>\n",
         "Code": "<Tabs DefaultActiveKey=\"1\" Type=\"@TabType.EditableCard\" CreateTabPane=\"@Create\">\n    <TabPane Key=\"1\">\n        <Tab>Tab 1</Tab>\n        <ChildContent>Content of Tab Pane 1</ChildContent>\n    </TabPane>\n    <TabPane Key=\"2\">\n        <Tab>Tab 2</Tab>\n        <ChildContent>Content of Tab Pane 2</ChildContent>\n    </TabPane>\n    <TabPane Key=\"3\" Closable=\"false\">\n        <Tab>Tab 3</Tab>\n        <ChildContent>Content of Tab Pane 3</ChildContent>\n    </TabPane>\n</Tabs>\n\n@code{\n    private static int addedIndex = 3;\n    private readonly Func<TabPane> Create = () =>\n        {\n            addedIndex++;\n            int temp = addedIndex;\n            return new TabPane(\n                key: temp.ToString(),\n                childContent: (b) => { b.AddContent(0, $\"Content of Tab Pane {temp}\"); },\n                tab: (b) => { b.AddContent(0, $\"Tab {temp}\"); }\n            );\n        };\n}",
         "Type": "Demos.Tabs.demo.EditableCard",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "size",
+        "Title": "Size",
+        "Description": "<p>Large size tabs are usually used in page header, and small size could be used in Modal.</p>\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"size\" Style=\"margin-bottom: 16px;\">\n        <Radio RadioButton Value=\"@TabSize.Small\">Small</Radio>\n        <Radio RadioButton Value=\"@TabSize.Default\">Default</Radio>\n        <Radio RadioButton Value=\"@TabSize.Large\">Large</Radio>\n    </RadioGroup>\n\n    <Tabs DefaultActiveKey=\"1\" Size=\"@size\" Style=\"margin-bottom: 32px\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n\n    <Tabs DefaultActiveKey=\"1\" Type=\"@TabType.Card\" Size=\"@size\">\n        <TabPane Key=\"1\">\n            <Tab>Tab 1</Tab>\n            <ChildContent>Content of Tab Pane 1</ChildContent>\n        </TabPane>\n        <TabPane Key=\"2\">\n            <Tab>Tab 2</Tab>\n            <ChildContent>Content of Tab Pane 2</ChildContent>\n        </TabPane>\n        <TabPane Key=\"3\">\n            <Tab>Tab 3</Tab>\n            <ChildContent>Content of Tab Pane 3</ChildContent>\n        </TabPane>\n    </Tabs>\n</div>\n\n@code{\n    private string size = TabSize.Default;\n}",
+        "Type": "Demos.Tabs.demo.Size",
         "Style": "",
         "Debug": false
       }
@@ -3324,7 +3382,7 @@
         "Order": 7,
         "Name": "Group",
         "Title": "Input Group",
-        "Description": "<p>Input.Group example Note: You don't need AntDesign.Col to control the width in the compact mode.</p>\n",
+        "Description": "<p>Input.Group example Note: You don't need Col to control the width in the compact mode.</p>\n",
         "Code": "<div>\n    <InputGroup Size=\"@InputSize.Large\">\n        <Row Gutter=\"8\">\n            <Col Span=\"5\">\n                <Input DefaultValue=\"0571\"  @bind-Value=\"code\" />\n            </Col>\n            <Col Span=\"8\">\n                <Input DefaultValue=\"26888888\" @bind-Value=\"phonenumber\" />\n            </Col>\n        </Row>\n    </InputGroup>\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\"  @bind-Value=\"code\" />\n        <Input DefaultValue=\"26888888\" Style=\"width: 30%;\"  @bind-Value=\"phonenumber\" />\n    </InputGroup>\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" @bind-Value=\"code\" /> \n        <Search DefaultValue=\"26888888\" Style=\"width: 30%;\" @bind-Value=\"phonenumber\" />\n    </InputGroup>\n    <br />\n    <br />\n    <InputGroup Compact>\n        <Input DefaultValue=\"0571\" Style=\"width: 20%;\" />\n        <DatePicker Size=\"@DatePickerSize.Small\" Style=\"width: 100%\"></DatePicker>\n    </InputGroup>\n</div>\n\n\n@code{\n    private string code { get; set; }\n    private string phonenumber { get; set; }\n}\n",
         "Type": "Demos.Input.demo.Group",
         "Style": "",
@@ -3347,6 +3405,125 @@
         "Description": "<p>There are three sizes of an Input box: large (40px), default (32px) and small (24px).</p>\n",
         "Code": "<div>\n    <Input Placeholder=\"large size\"  Size=\"@InputSize.Large\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <Icon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"default size\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <Icon Type=\"user\" />\n        </Prefix>\n    </Input>\n    <br />\n    <br />\n    <Input Placeholder=\"small size\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" >\n        <Prefix>\n            <Icon Type=\"user\" />\n        </Prefix>\n    </Input>\n\n</div>\n@code{\n    private string txtValue { get; set; }\n  \n}",
         "Type": "Demos.Input.demo.Size",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Steps",
+    "Type": "Navigation",
+    "Desc": "<p><code>Steps</code> is a navigation bar that guides users through the steps of a task.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When a given task is complicated or has a certain sequence in the series of subtasks, we can decompose it into several steps to make things easier.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<p>Steps\nThe whole of the step bar.</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ClassName</td>\n<td>Additional class to Steps</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Type</td>\n<td>Type of steps, can be set to one of the following values: <code>default</code>, <code>navigation</code></td>\n<td>string</td>\n<td><code>default</code></td>\n</tr>\n<tr>\n<td>Current</td>\n<td>To set the current step, counting from 0. You can overwrite this state by using status of Step</td>\n<td>int</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Direction</td>\n<td>To specify the direction of the step bar, <code>horizontal</code> or <code>vertical</code></td>\n<td>string</td>\n<td><code>horizontal</code></td>\n</tr>\n<tr>\n<td>LabelPlacement</td>\n<td>Place title and description with <code>horizontal</code> or <code>vertical</code> direction</td>\n<td>string</td>\n<td><code>horizontal</code></td>\n</tr>\n<tr>\n<td>ProgressDot</td>\n<td>Steps with progress dot style, customize the progress dot by setting it to a function. labelPlacement will be <code>vertical</code></td>\n<td>string</td>\n<td><code>default</code></td>\n</tr>\n<tr>\n<td>Size</td>\n<td>To specify the size of the step bar, <code>default</code> and <code>small</code> are currently supported</td>\n<td>string</td>\n<td><code>default</code></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>To specify the status of current step, can be set to one of the following values: <code>wait</code> <code>process</code> <code>finish</code> <code>error</code></td>\n<td>string</td>\n<td><code>process</code></td>\n</tr>\n<tr>\n<td>Initial</td>\n<td>Set the initial step, counting from 0</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnChange</td>\n<td>Trigger when Step is changed</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>Steps.Step\nA single step in the step bar.</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Description</td>\n<td>Description of the step, optional property</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Icon</td>\n<td>Icon of the step, optional property</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Dtatus</td>\n<td>To specify the status. It will be automatically set by current of Steps if not configured. Optional values are: wait process finish error</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Title</td>\n<td>Title of the step</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>SubTitle</td>\n<td>Subtitle of the step</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Disabled</td>\n<td>Disable click</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 6,
+        "Name": "error",
+        "Title": "Error status",
+        "Description": "<p>By using <code>status</code> of <code>Steps</code>, you can specify the state for current step.</p>\n",
+        "Code": "<div>\n    <Steps Current=\"1\" Status=\"error\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Type": "Demos.Steps.demo.Error",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 11,
+        "Name": "nav",
+        "Title": "Navigation Steps",
+        "Description": "<p>Navigation steps.</p>\n",
+        "Code": "<div>\n    <Steps Type=\"navigation\" Size=\"small\" Current=@current Class=\"site-navigation-steps\">\n        <Step Title=\"Step 1\" Subtitle=\"00:00:05\" Status=\"finish\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Subtitle=\"00:01:02\" Status=\"process\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Subtitle=\"waiting for longlong time\" Status=\"wait\" Description=\"This is a description.\" />\n    </Steps>\n    <Steps Type=\"navigation\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"Step 1\" />\n        <Step Status=\"process\" Title=\"Step 2\" />\n        <Step Status=\"wait\" Title=\"Step 3\" />\n        <Step Status=\"wait\" Title=\"Step 4\" />\n    </Steps>\n    <Steps Type=\"navigation\" Size=\"small\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"finish 1\" />\n        <Step Status=\"finish\" Title=\"finish 2\" />\n        <Step Status=\"process\" Title=\"current process\" />\n        <Step Status=\"wait\" Title=\"wait\" Disabled />\n    </Steps>\n</div>\n\n\n@code {\n    int current;\n}",
+        "Type": "Demos.Steps.demo.Nav",
+        "Style": "\n[data-theme=\"dark\"] .site-navigation-steps {\n  border-bottom: 1px solid #303030;\n  margin-bottom: 60px;\n  box-shadow: none;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "small-size",
+        "Title": "Mini version",
+        "Description": "<p>By setting like this: <code>&lt;Steps size=&quot;small&quot;&gt;</code>, you can get a mini version.</p>\n",
+        "Code": "<div>\n    <Steps Size=\"small\" Current=1>\n        <Step Title=\"Finished\" />\n        <Step Title=\"In Progress\" />\n        <Step Title=\"Waiting\" />\n    </Steps>\n</div>",
+        "Type": "Demos.Steps.demo.SmallSize",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "step-next",
+        "Title": "Switch Step",
+        "Description": "<p>Cooperate with the content and buttons, to represent the progress of a process.</p>\n",
+        "Code": "<div>\n    <Steps Current=\"current\">\n        @foreach (var item in steps)\n        {\n            <Step Title=\"@item.Title\" Subtitle=\"@item.Content\" />\n        }\n    </Steps>\n\n    <div class=\"steps-content\">\n        @steps[current].Content\n    </div>\n    <div class=\"steps-action\">\n        @if (current < steps.Length - 1)\n        {\n            <Button Type=\"primary\" OnClick=\"OnNextClick\">Next</Button>\n        }\n        @if (current == steps.Length - 1)\n        {\n            <Button Type=\"primary\" OnClick=@(() => message.Success(\"Processing complete!\"))>\n                Done\n            </Button>\n        }\n        @if (current > 0)\n        {\n            <Button Type=\"primary\" OnClick=\"OnPreClick\">Previous</Button>\n        }\n    </div>\n</div>\n\n<style>\n    .steps-content {\n        margin-top: 16px;\n        border: 1px dashed #e9e9e9;\n        border-radius: 6px;\n        background-color: #fafafa;\n        min-height: 200px;\n        text-align: center;\n        padding-top: 80px;\n    }\n\n    .steps-action {\n        margin-top: 24px;\n    }\n</style>\n\n@inject MessageService message\n@code {\n\n    public class StepItem\n    {\n        public string Title { get; set; }\n        public string Content { get; set; }\n    }\n\n    public int current { get; set; } = 0;\n\n    public StepItem[] steps =\n    {\n        new StepItem {Title = \"First\", Content = \"First-content\"},\n        new StepItem {Title = \"Second\", Content = \"Second-content\"},\n        new StepItem {Title = \"Third\", Content = \"Third-content\"},\n        new StepItem {Title = \"Last\", Content = \"Last-content\"}\n    };\n\n    void OnPreClick()\n    {\n        current--;\n    }\n\n    void OnNextClick()\n    {\n        current++;\n    }\n}\n",
+        "Type": "Demos.Steps.demo.StepNext",
+        "Style": "\n[data-theme=\"dark\"] .steps-content {\n  margin-top: 16px;\n  border: 1px dashed #303030;\n  background-color: rgba(255,255,255,0.04);\n  color: rgba(255,255,255,0.65);\n  padding-top: 80px;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "icon",
+        "Title": "With icon",
+        "Description": "<p>You can use your own custom icons by setting the property <code>icon</code> for <code>Steps.Step</code>.</p>\n",
+        "Code": "<div>\n    <Steps>\n        <Step Status=\"finish\" Title=\"Login\" Icon=\"user\" />\n        <Step Status=\"finish\" Title=\"Verification\" Icon=\"solution\"  />\n        <Step Status=\"process\" Title=\"Pay\" Icon=\"loading\" />\n        <Step Status=\"wait\" Title=\"Done\" Icon=\"smile\"/>\n    </Steps>\n</div>",
+        "Type": "Demos.Steps.demo.Icon_",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "customized-progress-dot",
+        "Title": "Customized Dot Style",
+        "Description": "<p>(WIP) You can customize the display for Steps with progress dot style.</p>\n",
+        "Code": "<Steps Current=1 ProgressDot=customDot>\n    <Step Title=\"Finished\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"In Progress\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"Waiting\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"Waiting\" Description=\"You can hover on the dot.\" />\n</Steps>\n\n@code\n{\n    RenderFragment customDot = @<span>\n                                   step {index} status: {status}\n                               </span>;\n}\n",
+        "Type": "Demos.Steps.demo.CustomizedProgressDot",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 10,
+        "Name": "clickable",
+        "Title": "Clickable",
+        "Description": "<p>Setting <code>onChange</code> makes Steps clickable.</p>\n",
+        "Code": "<div>\n    <Steps Current=current OnChange=onChange>\n        <Step Title=\"Step 1\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Description=\"This is a description.\" />\n    </Steps>\n\n    <Divider />\n\n    <Steps Current=current OnChange=onChange Direction=\"vertical\">\n        <Step Title=\"Step 1\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Description=\"This is a description.\" />\n    </Steps>\n</div>\n\n@code{\n    int current;\n\n    void onChange(int current)\n    {\n        this.current = current;\n    }\n}",
+        "Type": "Demos.Steps.demo.Clickable",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "vertical-small",
+        "Title": "Vertical mini version",
+        "Description": "<p>A simple mini version step bar in the vertical direction.</p>\n",
+        "Code": "<div>\n    <Steps Direction=\"vertical\" Size=\"small\" Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Type": "Demos.Steps.demo.VerticalSmall",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "simple",
+        "Title": "Basic",
+        "Description": "<p>The most basic step bar.</p>\n",
+        "Code": "<div>\n    <Steps Current=\"1\" Class=\"site-navigation-steps\">\n        <Step Title=\"Finished\" Description=\"This is a description.\"/>\n        <Step Title=\"In Progress\" Subtitle=\"Left 00:00:08\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>\n",
+        "Type": "Demos.Steps.demo.Simple",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "vertical",
+        "Title": "Vertical",
+        "Description": "<p>A simple step bar in the vertical direction.</p>\n",
+        "Code": "<div>\n    <Steps Direction=\"vertical\" Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Type": "Demos.Steps.demo.Vertical",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "progress-dot",
+        "Title": "Dot Style",
+        "Description": "<p>Steps with progress dot style.</p>\n",
+        "Code": "<div>\n    <Steps ShowProgressDot Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n    <Divider />\n    <Steps ShowProgressDot Current=\"1\" Direction=\"vertical\">\n        <Step Title=\"Finished\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"Finished\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Type": "Demos.Steps.demo.ProgressDot",
         "Style": "",
         "Debug": false
       }

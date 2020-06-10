@@ -35,6 +35,12 @@
             "Title": "Button",
             "Type": "menuItem",
             "Url": "components/button"
+          },
+          {
+            "Order": 0,
+            "Title": "Icon",
+            "Type": "menuItem",
+            "Url": "components/icon"
           }
         ]
       },
@@ -116,6 +122,12 @@
             "Title": "Dropdown",
             "Type": "menuItem",
             "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
+            "Title": "Steps",
+            "Type": "menuItem",
+            "Url": "components/steps"
           }
         ]
       },
