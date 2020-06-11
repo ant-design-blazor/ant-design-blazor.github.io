@@ -666,7 +666,7 @@
         "Name": "Basic",
         "Title": "Basic",
         "Description": "<p>Basic usage.</p>\n",
-        "Code": "<div>\n    <Carousel>\n    <CarouselSlick>\n        <h3>1</h3>\n    </CarouselSlick>\n    <CarouselSlick>\n        <h3>2</h3>\n    </CarouselSlick>\n    <CarouselSlick>\n        <h3>3</h3>\n    </CarouselSlick>\n    <CarouselSlick>\n        <h3>4</h3>\n    </CarouselSlick>\n</Carousel>\n</div>\n\n<style>\n    .ant-carousel .slick-slide \n    {\n        text-align: center;\n        height: 160px;\n        line-height: 160px;\n        background: #364d79;\n        overflow: hidden;\n    }\n\n    .ant-carousel .slick-slide h3\n    {\n        color: #fff;\n    }\n</style>",
+        "Code": "<div>\n    <Carousel>\n        <CarouselSlick>\n            <h3>1</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>2</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>3</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>4</h3>\n        </CarouselSlick>\n    </Carousel>\n</div>\n\n<style>\n    .ant-carousel .slick-slide {\n        text-align: center;\n        height: 160px;\n        line-height: 160px;\n        background: #364d79;\n        overflow: hidden;\n    }\n\n        .ant-carousel .slick-slide h3 {\n            color: #fff;\n        }\n</style>",
         "Type": "Demos.Carousel.demo.Basic",
         "Style": "",
         "Debug": false
@@ -676,7 +676,7 @@
         "Name": "Position",
         "Title": "Position",
         "Description": "<p>There are 4 position options available.</p>\n",
-        "Code": " <div>\n        <RadioGroup @bind-Value=\"_position\" Style=\"margin-bottom: 8px;\">\n            <Radio RadioButton Value=\"@CarouselDotPosition.Top\">Top</Radio>\n            <Radio RadioButton Value=\"@CarouselDotPosition.Bottom\">Bottom</Radio>\n            <Radio RadioButton Value=\"@CarouselDotPosition.Left\">Left</Radio>\n            <Radio RadioButton Value=\"@CarouselDotPosition.Right\">Right</Radio>\n        </RadioGroup>\n        <Carousel DotPosition=\"@_position\">\n            <CarouselSlick>\n                <h3>1</h3>\n            </CarouselSlick>\n            <CarouselSlick>\n                <h3>2</h3>\n            </CarouselSlick>\n            <CarouselSlick>\n                <h3>3</h3>\n            </CarouselSlick>\n            <CarouselSlick>\n                <h3>4</h3>\n            </CarouselSlick>\n        </Carousel>\n </div>\n\n@code{\n    private string _position = CarouselDotPosition.Bottom;\n}\n",
+        "Code": "<div>\n    <RadioGroup @bind-Value=\"_position\" Style=\"margin-bottom: 8px;\">\n        <Radio RadioButton Value=\"@CarouselDotPosition.Top\">Top</Radio>\n        <Radio RadioButton Value=\"@CarouselDotPosition.Bottom\">Bottom</Radio>\n        <Radio RadioButton Value=\"@CarouselDotPosition.Left\">Left</Radio>\n        <Radio RadioButton Value=\"@CarouselDotPosition.Right\">Right</Radio>\n    </RadioGroup>\n    <Carousel DotPosition=\"@_position\">\n        <CarouselSlick>\n            <h3>1</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>2</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>3</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>4</h3>\n        </CarouselSlick>\n    </Carousel>\n</div>\n\n@code{\n    private string _position = CarouselDotPosition.Bottom;\n}",
         "Type": "Demos.Carousel.demo.Position",
         "Style": "",
         "Debug": false
@@ -686,7 +686,7 @@
         "Name": "Automatic",
         "Title": "Scroll automatically",
         "Description": "<p>Timing of scrolling to the next card/picture.</p>\n",
-        "Code": "<div>\n <Carousel Autoplay=\"TimeSpan.FromSeconds(2)\" >\n        <CarouselSlick>\n            <h3>1</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>2</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>3</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>4</h3>\n        </CarouselSlick>\n </Carousel>\n</div>\n",
+        "Code": "<div>\n    <Carousel Autoplay=\"TimeSpan.FromSeconds(2)\">\n        <CarouselSlick>\n            <h3>1</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>2</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>3</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>4</h3>\n        </CarouselSlick>\n    </Carousel>\n</div>",
         "Type": "Demos.Carousel.demo.Automatic",
         "Style": "",
         "Debug": false
