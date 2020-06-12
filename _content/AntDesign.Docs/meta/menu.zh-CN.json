@@ -127,6 +127,13 @@
           },
           {
             "Order": 0,
+            "Title": "PageHeader",
+            "SubTitle": "页头",
+            "Type": "menuItem",
+            "Url": "components/pageheader"
+          },
+          {
+            "Order": 0,
             "Title": "Pagination",
             "SubTitle": "分页",
             "Type": "menuItem",

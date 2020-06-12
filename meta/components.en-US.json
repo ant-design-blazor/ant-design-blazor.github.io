@@ -646,6 +646,75 @@
     ]
   },
   {
+    "Title": "PageHeader",
+    "Type": "Navigation",
+    "Desc": "<p>A header with common actions and design elements built in.</p>\n<h2>When To Use</h2>\n<p>PageHeader can be used to highlight the page topic, display important information about the page, and carry the action items related to the current page (including page-level operations, inter-page navigation, etc.) It can also be used as inter-page navigation.</p>\n",
+    "ApiDoc": "",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 3,
+        "Name": "page-header-breadcrumb",
+        "Title": "Use with breadcrumbs",
+        "Description": "<p>With breadcrumbs, it is suitable for deeper pages, allowing users to navigate quickly.</p>\n",
+        "Code": "<PageHeader Class=\"site-page-header\" Title=\"@_title\" Subtitle=\"@_subtitle\">\n    <PageHeaderBreadcrumb>\n        <Breadcrumb>\n            <BreadcrumbItem>First-level Menu</BreadcrumbItem>\n            <BreadcrumbItem>\n                <a>Second-level Menu</a>\n            </BreadcrumbItem>\n            <BreadcrumbItem>Third-level Menu</BreadcrumbItem>\n        </Breadcrumb>\n    </PageHeaderBreadcrumb>\n</PageHeader>\n\n@code{\n\n    private string _title = \"Title\";\n\n    private string _subtitle = \"This is a subtitle\";\n\n}",
+        "Type": "Demos.PageHeader.demo.PageHeaderBreadcrumb",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "responsive",
+        "Title": "responsive",
+        "Description": "<p>Under different screen sizes, there should be different performance</p>\n",
+        "Code": "<PageHeader Class=\"site-page-header\">\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        <div class=\"content\">\n            <div class=\"main\">\n                todo:Descriptions\n                @*<nz-descriptions nzSize=\"small\" [nzColumn]=\"2\">\n                        <nz-descriptions-item nzTitle=\"Created\" [nzSpan]=\"1\">Lili Qu</nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Association\" [nzSpan]=\"1\"><a>421421</a></nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Creation Time\" [nzSpan]=\"1\">2017-01-10</nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Effective Time\" [nzSpan]=\"1\">2017-10-10</nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Remarks\" [nzSpan]=\"2\">\n                            Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n                        </nz-descriptions-item>\n                    </nz-descriptions>*@\n            </div>\n            <div class=\"extra\">\n                <div>\n                    <Statistic Title=\"@(\"Status\")\" Value=\"@(\"Pending\")\"></Statistic>\n                    <Statistic Title=\"@(\"Price\")\" Value=\"568.08\" Prefix=\"@(\"$\")\" Style=\"margin: 0 32px\"></Statistic>\n                </div>\n            </div>\n        </div>\n    </PageHeaderContent>\n    <PageHeaderFooter>\n        <Tabs DefaultActiveKey=\"1\">\n            <TabPane Key=\"1\">\n                <Tab>Details</Tab>\n            </TabPane>\n            <TabPane Key=\"2\">\n                <Tab>Rule</Tab>\n            </TabPane>\n        </Tabs>\n    </PageHeaderFooter>\n</PageHeader>\n\n<style>\n    .content {\n        display: flex;\n    }\n\n    .extra div {\n        display: flex;\n        width: max-content;\n        justify-content: flex-end;\n    }\n\n    @@media (max-width: 576px) {\n        .content {\n            display: block;\n        }\n\n        .main {\n            width: 100%;\n            margin-bottom: 12px;\n        }\n\n        .extra {\n            width: 100%;\n            margin-left: 0;\n            text-align: left;\n        }\n    }\n</style>",
+        "Type": "Demos.PageHeader.demo.Responsive",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "actions",
+        "Title": "Various forms of PageHeader",
+        "Description": "<p>Use the operating area and customize the sub-nodes, suitable for use in the need to display some complex information to help users quickly understand the information and operations of this page.</p>\n",
+        "Code": "<PageHeader Class=\"site-page-header\">\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        todo:Descriptions\n        @*<Descriptions nzSize=\"small\" [nzColumn]=\"3\">\n            <DescriptionsItem nzTitle=\"Created\" [nzSpan]=\"1\">Lili Qu</DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Association\" [nzSpan]=\"1\"><a>421421</a></DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Creation Time\" [nzSpan]=\"1\">2017-01-10</DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Effective Time\" [nzSpan]=\"1\">2017-10-10</DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Remarks\" [nzSpan]=\"2\">\n                Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n            </DescriptionsItem>\n        </Descriptions>*@\n    </PageHeaderContent>\n</PageHeader>\n<br />\n<PageHeader>\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderTags>\n        <Tag Color=\"blue\">Running</Tag>\n    </PageHeaderTags>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        <Row Type=\"flex\">\n            <Statistic Title=\"@(\"Status\")\" Value=@(\"Pending\")></Statistic>\n            <Statistic Title=\"@(\"Price\")\" Value=\"568.08\" Prefix=\"@(\"$\")\" Style=\"margin: 0 32px\"></Statistic>\n            <Statistic Title=\"@(\"Balance\")\" Value=\"3345.08\" Prefix=\"@(\"$\")\"></Statistic>\n        </Row>\n    </PageHeaderContent>\n</PageHeader>",
+        "Type": "Demos.PageHeader.demo.Actions",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "ghost",
+        "Title": "white background mode",
+        "Description": "<p>The default PageHeader is a transparent background. In some cases, PageHeader needs its own background color.</p>\n",
+        "Code": "<div class=\"site-page-header-ghost-wrapper\">\n    <PageHeader Ghost>\n        <PageHeaderTitle>Title</PageHeaderTitle>\n        <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n        <PageHeaderExtra>\n            <Button>Operation</Button>\n            <Button>Operation</Button>\n            <Button Type=\"@ButtonType.Primary\">Primary</Button>\n        </PageHeaderExtra>\n        <PageHeaderContent>\n            todo:Description\n            @*<Description Size=\"small\" Column=\"3\">\n            <DescriptionsItem Title=\"Created\" Span=\"1\">Lili Qu</DescriptionsItem>\n            <DescriptionsItem Title=\"Association\" Span=\"1\"><a>421421</a></DescriptionsItem>\n            <DescriptionsItem Title=\"Creation Time\" Span=\"1\">2017-01-10</DescriptionsItem>\n            <DescriptionsItem Title=\"Effective Time\" Span=\"1\">2017-10-10</DescriptionsItem>\n            <Descriptions-item Title=\"Remarks\" Span=\"2\">\n                Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n            </Descriptions-item>\n        </Descriptions>*@\n        </PageHeaderContent>\n    </PageHeader>\n</div>",
+        "Type": "Demos.PageHeader.demo.Ghost",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "content",
+        "Title": "Complete example",
+        "Description": "<p>Used all the capabilities provided by PageHeader.</p>\n",
+        "Code": "<PageHeader Class=\"site-page-header\">\n    <!--breadcrumb-->\n    <PageHeaderBreadcrumb>\n        <Breadcrumb>\n            <BreadcrumbItem>First-level Menu</BreadcrumbItem>\n            <BreadcrumbItem>\n                <a>Second-level Menu</a>\n            </BreadcrumbItem>\n            <BreadcrumbItem>Third-level Menu</BreadcrumbItem>\n        </Breadcrumb>\n    </PageHeaderBreadcrumb>\n\n    <!--avatar-->\n    <PageHeaderAvatar>\n        <Avatar Src=\"https://avatars0.githubusercontent.com/u/22736418?s=88&v=4\" />\n    </PageHeaderAvatar>\n    <!--title-->\n    <PageHeaderTitle>Title</PageHeaderTitle>\n\n    <!--subtitle-->\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n\n    <!--tags-->\n    <PageHeaderTags>\n        <Tag Color=\"blue\">Running</Tag>\n    </PageHeaderTags>\n\n    <!--extra-->\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n        <Dropdown Placement=\"@PlacementType.BottomRight\">\n            <Overlay>\n                <Menu>\n                    <MenuItem>\n                        1st menu item\n                    </MenuItem>\n                    <MenuItem>\n                        2nd menu item\n                    </MenuItem>\n                    <MenuItem>\n                        3rd menu item\n                    </MenuItem>\n                </Menu>\n            </Overlay>\n            <ChildContent>\n                <Button><Icon Type=\"ellipsis\" /></Button>\n            </ChildContent>\n        </Dropdown>\n    </PageHeaderExtra>\n\n    <!--content-->\n    <PageHeaderContent>\n        <Row>\n            <div class=\"content\">\n                <Paragraph>\n                    Ant Design interprets the color system into two levels: a system-level color system and a product-level color system.\n                </Paragraph>\n                <Paragraph>\n                    Ant Design's design team preferred to design with the HSB color model, which makes it easier for designers to have a clear\n                    psychological expectation of color when adjusting colors, as well as facilitate communication in teams.\n                </Paragraph>\n                <div class=\"content-link\">\n                    <a> <img src=\"https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg\" alt=\"start\" />Quick Start </a>\n                    <a> <img src=\"https://gw.alipayobjects.com/zos/rmsportal/NbuDUAuBlIApFuDvWiND.svg\" alt=\"info\" />Product Info </a>\n                    <a> <img src=\"https://gw.alipayobjects.com/zos/rmsportal/ohOEPSYdDTNnyMbGuyLb.svg\" alt=\"doc\" />Product Doc </a>\n                </div>\n            </div>\n            <div class=\"content-image\">\n                <img src=\"https://gw.alipayobjects.com/zos/antfincdn/K%24NnlsB%26hz/pageHeader.svg\" alt=\"content\" />\n            </div>\n        </Row>\n    </PageHeaderContent>\n</PageHeader>\n\n<style>\n    .content {\n        flex: 1;\n    }\n\n        .content p {\n            margin-bottom: 1em;\n        }\n\n    .content-link a {\n        margin-right: 16px;\n    }\n\n        .content-link a img {\n            margin-right: 8px;\n        }\n\n    .content-image {\n        margin: 0 0 0 60px;\n        display: flex;\n        align-items: center;\n    }\n\n        .content-image img {\n            width: 100%;\n        }\n</style>",
+        "Type": "Demos.PageHeader.demo.Content",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "basic",
+        "Title": "Basic Page Header",
+        "Description": "<p>Standard header, suitable for use in scenarios that require a brief description.</p>\n",
+        "Code": "<PageHeader Class=\"site-page-header\" Title=\"@_title\" Subtitle=\"@_subtitle\"/>\n\n\n@code{\n\n    private string _title = \"Title\";\n\n    private string _subtitle = \"This is a subtitle\";\n\n    void OnBack()\n    {\n        Console.WriteLine(\"onBack\");\n        // OnBack=\"OnBack\"\n    }\n\n}",
+        "Type": "Demos.PageHeader.demo.Basic",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Carousel",
     "Type": "Data Display",
     "Desc": "<p>A carousel component. Scales with its container.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When there is a group of content on the same level.</li>\n<li>When there is insufficient content space, it can be used to save space in the form of a revolving door.</li>\n<li>Commonly used for a group of pictures/cards.</li>\n</ul>\n",

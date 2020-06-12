@@ -95,6 +95,12 @@
           },
           {
             "Order": 0,
+            "Title": "PageHeader",
+            "Type": "menuItem",
+            "Url": "components/pageheader"
+          },
+          {
+            "Order": 0,
             "Title": "Pagination",
             "Type": "menuItem",
             "Url": "components/pagination"
