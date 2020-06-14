@@ -232,6 +232,13 @@
           },
           {
             "Order": 0,
+            "Title": "Select",
+            "SubTitle": "选择器",
+            "Type": "menuItem",
+            "Url": "components/select"
+          },
+          {
+            "Order": 0,
             "Title": "InputNumber",
             "SubTitle": "数字输入框",
             "Type": "menuItem",

@@ -186,6 +186,12 @@
           },
           {
             "Order": 0,
+            "Title": "Select",
+            "Type": "menuItem",
+            "Url": "components/select"
+          },
+          {
+            "Order": 0,
             "Title": "InputNumber",
             "Type": "menuItem",
             "Url": "components/inputnumber"
