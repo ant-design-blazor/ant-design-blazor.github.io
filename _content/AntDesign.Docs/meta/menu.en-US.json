@@ -265,6 +265,12 @@
           },
           {
             "Order": 0,
+            "Title": "Descriptions",
+            "Type": "menuItem",
+            "Url": "components/descriptions"
+          },
+          {
+            "Order": 0,
             "Title": "Tooltip",
             "Type": "menuItem",
             "Url": "components/tooltip"

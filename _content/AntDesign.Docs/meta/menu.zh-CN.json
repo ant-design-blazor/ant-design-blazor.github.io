@@ -323,6 +323,13 @@
           },
           {
             "Order": 0,
+            "Title": "Descriptions",
+            "SubTitle": "描述列表",
+            "Type": "menuItem",
+            "Url": "components/descriptions"
+          },
+          {
+            "Order": 0,
             "Title": "Tooltip",
             "SubTitle": "文字提示",
             "Type": "menuItem",

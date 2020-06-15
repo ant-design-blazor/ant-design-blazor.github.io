@@ -677,7 +677,7 @@
         "Name": "responsive",
         "Title": "响应式",
         "Description": "<p>在不同大小的屏幕下，应该有不同的表现</p>\n",
-        "Code": "<PageHeader Class=\"site-page-header\">\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        <div class=\"content\">\n            <div class=\"main\">\n                todo:Descriptions\n                @*<nz-descriptions nzSize=\"small\" [nzColumn]=\"2\">\n                        <nz-descriptions-item nzTitle=\"Created\" [nzSpan]=\"1\">Lili Qu</nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Association\" [nzSpan]=\"1\"><a>421421</a></nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Creation Time\" [nzSpan]=\"1\">2017-01-10</nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Effective Time\" [nzSpan]=\"1\">2017-10-10</nz-descriptions-item>\n                        <nz-descriptions-item nzTitle=\"Remarks\" [nzSpan]=\"2\">\n                            Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n                        </nz-descriptions-item>\n                    </nz-descriptions>*@\n            </div>\n            <div class=\"extra\">\n                <div>\n                    <Statistic Title=\"@(\"Status\")\" Value=\"@(\"Pending\")\"></Statistic>\n                    <Statistic Title=\"@(\"Price\")\" Value=\"568.08\" Prefix=\"@(\"$\")\" Style=\"margin: 0 32px\"></Statistic>\n                </div>\n            </div>\n        </div>\n    </PageHeaderContent>\n    <PageHeaderFooter>\n        <Tabs DefaultActiveKey=\"1\">\n            <TabPane Key=\"1\">\n                <Tab>Details</Tab>\n            </TabPane>\n            <TabPane Key=\"2\">\n                <Tab>Rule</Tab>\n            </TabPane>\n        </Tabs>\n    </PageHeaderFooter>\n</PageHeader>\n\n<style>\n    .content {\n        display: flex;\n    }\n\n    .extra div {\n        display: flex;\n        width: max-content;\n        justify-content: flex-end;\n    }\n\n    @@media (max-width: 576px) {\n        .content {\n            display: block;\n        }\n\n        .main {\n            width: 100%;\n            margin-bottom: 12px;\n        }\n\n        .extra {\n            width: 100%;\n            margin-left: 0;\n            text-align: left;\n        }\n    }\n</style>",
+        "Code": "<PageHeader Class=\"site-page-header\">\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        <div class=\"content\">\n            <div class=\"main\">\n                <Descriptions Size=\"small\" Column=\"2\">\n                    <DescriptionsItem Title=\"@(\"Created\")\" Span=\"1\">Lili Qu</DescriptionsItem>\n                    <DescriptionsItem Title=\"@(\"Association\")\" Span=\"1\"><a>421421</a></DescriptionsItem>\n                    <DescriptionsItem Title=\"@(\"Creation Time\")\" Span=\"1\">2017-01-10</DescriptionsItem>\n                    <DescriptionsItem Title=\"@(\"Effective Time\")\" Span=\"1\">2017-10-10</DescriptionsItem>\n                    <DescriptionsItem Title=\"@(\"Remarks\")\" Span=\"2\">\n                        Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n                    </DescriptionsItem>\n                </Descriptions>\n            </div>\n            <div class=\"extra\">\n                <div>\n                    <Statistic Title=\"@(\"Status\")\" Value=\"@(\"Pending\")\"></Statistic>\n                    <Statistic Title=\"@(\"Price\")\" Value=\"568.08\" Prefix=\"@(\"$\")\" Style=\"margin: 0 32px\"></Statistic>\n                </div>\n            </div>\n        </div>\n    </PageHeaderContent>\n    <PageHeaderFooter>\n        <Tabs DefaultActiveKey=\"1\">\n            <TabPane Key=\"1\">\n                <Tab>Details</Tab>\n            </TabPane>\n            <TabPane Key=\"2\">\n                <Tab>Rule</Tab>\n            </TabPane>\n        </Tabs>\n    </PageHeaderFooter>\n</PageHeader>\n\n<style>\n    .content {\n        display: flex;\n    }\n\n    .extra div {\n        display: flex;\n        width: max-content;\n        justify-content: flex-end;\n    }\n\n    @@media (max-width: 576px) {\n        .content {\n            display: block;\n        }\n\n        .main {\n            width: 100%;\n            margin-bottom: 12px;\n        }\n\n        .extra {\n            width: 100%;\n            margin-left: 0;\n            text-align: left;\n        }\n    }\n</style>",
         "Type": "Demos.PageHeader.demo.Responsive",
         "Style": "",
         "Debug": false
@@ -687,7 +687,7 @@
         "Name": "actions",
         "Title": "多种形态的 PageHeader",
         "Description": "<p>使用操作区，并自定义子节点，适合使用在需要展示一些复杂的信息，帮助用户快速了解这个页面的信息和操作。</p>\n",
-        "Code": "<PageHeader Class=\"site-page-header\">\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        todo:Descriptions\n        @*<Descriptions nzSize=\"small\" [nzColumn]=\"3\">\n            <DescriptionsItem nzTitle=\"Created\" [nzSpan]=\"1\">Lili Qu</DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Association\" [nzSpan]=\"1\"><a>421421</a></DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Creation Time\" [nzSpan]=\"1\">2017-01-10</DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Effective Time\" [nzSpan]=\"1\">2017-10-10</DescriptionsItem>\n            <DescriptionsItem nzTitle=\"Remarks\" [nzSpan]=\"2\">\n                Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n            </DescriptionsItem>\n        </Descriptions>*@\n    </PageHeaderContent>\n</PageHeader>\n<br />\n<PageHeader>\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderTags>\n        <Tag Color=\"blue\">Running</Tag>\n    </PageHeaderTags>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        <Row Type=\"flex\">\n            <Statistic Title=\"@(\"Status\")\" Value=@(\"Pending\")></Statistic>\n            <Statistic Title=\"@(\"Price\")\" Value=\"568.08\" Prefix=\"@(\"$\")\" Style=\"margin: 0 32px\"></Statistic>\n            <Statistic Title=\"@(\"Balance\")\" Value=\"3345.08\" Prefix=\"@(\"$\")\"></Statistic>\n        </Row>\n    </PageHeaderContent>\n</PageHeader>",
+        "Code": "<PageHeader Class=\"site-page-header\">\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        <Descriptions Size=\"small\" Column=\"3\">\n            <DescriptionsItem Title=\"@(\"Created\")\" Span=\"1\">Lili Qu</DescriptionsItem>\n            <DescriptionsItem Title=\"@(\"Association\")\" Span=\"1\"><a>421421</a></DescriptionsItem>\n            <DescriptionsItem Title=\"@(\"Creation Time\")\" Span=\"1\">2017-01-10</DescriptionsItem>\n            <DescriptionsItem Title=\"@(\"Effective Time\")\" Span=\"1\">2017-10-10</DescriptionsItem>\n            <DescriptionsItem Title=\"@(\"Remarks\")\" Span=\"2\">\n                Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n            </DescriptionsItem>\n        </Descriptions>\n    </PageHeaderContent>\n</PageHeader>\n<br />\n<PageHeader>\n    <PageHeaderTitle>Title</PageHeaderTitle>\n    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n    <PageHeaderTags>\n        <Tag Color=\"blue\">Running</Tag>\n    </PageHeaderTags>\n    <PageHeaderExtra>\n        <Button>Operation</Button>\n        <Button>Operation</Button>\n        <Button Type=\"@ButtonType.Primary\">Primary</Button>\n    </PageHeaderExtra>\n    <PageHeaderContent>\n        <Row Type=\"flex\">\n            <Statistic Title=\"@(\"Status\")\" Value=@(\"Pending\")></Statistic>\n            <Statistic Title=\"@(\"Price\")\" Value=\"568.08\" Prefix=\"@(\"$\")\" Style=\"margin: 0 32px\"></Statistic>\n            <Statistic Title=\"@(\"Balance\")\" Value=\"3345.08\" Prefix=\"@(\"$\")\"></Statistic>\n        </Row>\n    </PageHeaderContent>\n</PageHeader>",
         "Type": "Demos.PageHeader.demo.Actions",
         "Style": "",
         "Debug": false
@@ -697,7 +697,7 @@
         "Name": "ghost",
         "Title": "白底模式",
         "Description": "<p>默认 PageHeader 是透明底色的。在某些情况下，PageHeader 需要自己的背景颜色。</p>\n",
-        "Code": "<div class=\"site-page-header-ghost-wrapper\">\n    <PageHeader Ghost>\n        <PageHeaderTitle>Title</PageHeaderTitle>\n        <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n        <PageHeaderExtra>\n            <Button>Operation</Button>\n            <Button>Operation</Button>\n            <Button Type=\"@ButtonType.Primary\">Primary</Button>\n        </PageHeaderExtra>\n        <PageHeaderContent>\n            todo:Description\n            @*<Description Size=\"small\" Column=\"3\">\n            <DescriptionsItem Title=\"Created\" Span=\"1\">Lili Qu</DescriptionsItem>\n            <DescriptionsItem Title=\"Association\" Span=\"1\"><a>421421</a></DescriptionsItem>\n            <DescriptionsItem Title=\"Creation Time\" Span=\"1\">2017-01-10</DescriptionsItem>\n            <DescriptionsItem Title=\"Effective Time\" Span=\"1\">2017-10-10</DescriptionsItem>\n            <Descriptions-item Title=\"Remarks\" Span=\"2\">\n                Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n            </Descriptions-item>\n        </Descriptions>*@\n        </PageHeaderContent>\n    </PageHeader>\n</div>",
+        "Code": "<div class=\"site-page-header-ghost-wrapper\">\n    <PageHeader Ghost>\n        <PageHeaderTitle>Title</PageHeaderTitle>\n        <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>\n        <PageHeaderExtra>\n            <Button>Operation</Button>\n            <Button>Operation</Button>\n            <Button Type=\"@ButtonType.Primary\">Primary</Button>\n        </PageHeaderExtra>\n        <PageHeaderContent>\n            <Descriptions Size=\"small\" Column=\"3\">\n                <DescriptionsItem Title=\"@(\"Created\")\" Span=\"1\">Lili Qu</DescriptionsItem>\n                <DescriptionsItem Title=\"@(\"Association\")\" Span=\"1\"><a>421421</a></DescriptionsItem>\n                <DescriptionsItem Title=\"@(\"Creation Time\")\" Span=\"1\">2017-01-10</DescriptionsItem>\n                <DescriptionsItem Title=\"@(\"Effective Time\")\" Span=\"1\">2017-10-10</DescriptionsItem>\n                <DescriptionsItem Title=\"@(\"Remarks\")\" Span=\"2\">\n                    Gonghu Road, Xihu District, Hangzhou, Zhejiang, China\n                </DescriptionsItem>\n            </Descriptions>\n        </PageHeaderContent>\n    </PageHeader>\n</div>",
         "Type": "Demos.PageHeader.demo.Ghost",
         "Style": "",
         "Debug": false
@@ -1244,6 +1244,76 @@
         "Description": "<p>内容在时间轴两侧轮流出现。</p>\n",
         "Code": "<div>\n<Timeline Mode=\"alternate\"  >\n    <TimelineItem>Create a services site 2015-09-01</TimelineItem>\n    <TimelineItem Color=\"green\">Solve initial network problems 2015-09-01</TimelineItem>\n    <TimelineItem Dot=\"dotTemplate\">\n        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa\n        quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\n    </TimelineItem>\n    <TimelineItem Color=\"red\">Network problems being solved 2015-09-01</TimelineItem>\n    <TimelineItem>Create a services site 2015-09-01</TimelineItem>\n    <TimelineItem Dot=\"dotTemplate\">Technical testing 2015-09-01</TimelineItem>\n</Timeline>\n</div>\n\n@code {\n    RenderFragment dotTemplate =\n    @<Template>\n        <Icon Type=\"clock-circle\" Style=\"font-size: 16px;\" />\n    </Template>;\n }\n\n",
         "Type": "Demos.Timeline.demo.Alternate",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
+    "Title": "Descriptions",
+    "SubTitle": "描述列表",
+    "Type": "数据展示",
+    "Desc": "<p>成组显示多个只读字段。</p>\n<h2>何时使用</h2>\n<p>常见于详情页的信息展示。</p>\n",
+    "ApiDoc": "",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "custom-size",
+        "Title": "自定义尺寸",
+        "Description": "<p>自定义尺寸，适应在各种容器中展示。</p>\n",
+        "Code": "<RadioGroup @bind-Value=\"@size\">\n    <Radio Value=\"default\">default</Radio>\n    <Radio Value=\"middle\">middle</Radio>\n    <Radio Value=\"small\">small</Radio>\n</RadioGroup>\n<br />\n<br />\n<Descriptions Title=\"@(\"Custom Size\")\" Bordered Size=\"@size\">\n    <DescriptionsItem Title=\"@(\"Product\")\">\n        Cloud Database\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Billing\")\">Prepaid</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"time\")\">18:00:00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Amount\")\">$80.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Discount\")\">$20.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Official\")\">$60.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Config Info\")\">\n        Data disk type: MongoDB\n        <br />\n        Database version: 3.4\n        <br />\n        Package: dds.mongo.mid\n        <br />\n        Storage space: 10 GB\n        <br />\n        Replication_factor:3\n        <br />\n        Region: East China 1\n        <br />\n    </DescriptionsItem>\n</Descriptions>\n\n@code{\n    private string size = DescriptionsSize.Default;\n}",
+        "Type": "Demos.Descriptions.demo.CustomSize",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "responsive",
+        "Title": "响应式",
+        "Description": "<p>通过响应式的配置可以实现在小屏幕设备上的完美呈现。</p>\n",
+        "Code": "<Descriptions Title=\"@(\"Responsive Descriptions\")\" Bordered Column=\"@column\">\n    <DescriptionsItem Title=\"@(\"Product\")\">\n        Cloud Database\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Billing\")\">Prepaid</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"time\")\">18:00:00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Amount\")\">$80.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Discount\")\">$20.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Official\")\">$60.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Config Info\")\">\n        Data disk type: MongoDB\n        <br />\n        Database version: 3.4\n        <br />\n        Package: dds.mongo.mid\n        <br />\n        Storage space: 10 GB\n        <br />\n        Replication_factor:3\n        <br />\n        Region: East China 1\n        <br />\n    </DescriptionsItem>\n</Descriptions>\n\n@code{\n\n    private Dictionary<string, int> column = new Dictionary<string, int> {\n            { \"xxl\", 3 },\n            { \"xl\", 2},\n            { \"lg\", 1},\n            { \"md\", 1},\n            { \"sm\", 1},\n            { \"xs\", 1}\n        };\n\n}",
+        "Type": "Demos.Descriptions.demo.Responsive",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "border",
+        "Title": "带边框的",
+        "Description": "<p>带边框和背景颜色列表。</p>\n",
+        "Code": "<Descriptions Title=\"@(\"User Info\")\" Bordered>\n    <DescriptionsItem Title=\"@(\"Product\")\">Cloud Database</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Billing Mode\")\">Prepaid</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Automatic Renewal\")\">YES</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Order Time\")\">\n        2018-04-24 18:00:00\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Usage Time\")\" Span=\"2\">\n        2018-04-24 18:00:00 To 2019-04-24 18:00:00\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Status\")\" Span=\"3\">\n        <Badge Status=\"@BadgeStatus.Processing\" Text=\"Running\"></Badge>\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Negotiated Amount\")\">$80.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Discount\")\">$20.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Official Receipts\")\">$60.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Config Info\")\">\n        Data disk type: MongoDB\n        <br />\n        Database version: 3.4\n        <br />\n        Package: dds.mongo.mid\n        <br />\n        Storage space: 10 GB\n        <br />\n        Replication_factor:3\n        <br />\n        Region: East China 1<br />\n    </DescriptionsItem>\n</Descriptions>",
+        "Type": "Demos.Descriptions.demo.Border",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "vertical-border",
+        "Title": "垂直边框",
+        "Description": "<p>垂直且带边框。</p>\n",
+        "Code": "<Descriptions Title=\"@(\"User Info\")\" Bordered Layout=\"@DescriptionsLayout.Vertical\">\n    <DescriptionsItem Title=\"@(\"Product\")\">Cloud Database</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Billing Mode\")\">Prepaid</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Automatic Renewal\")\">YES</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Order Time\")\">\n        2018-04-24 18:00:00\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Usage Time\")\" Span=\"2\">\n        2018-04-24 18:00:00 To 2019-04-24 18:00:00\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Status\")\" Span=\"3\">\n        <Badge Status=\"processing\" Text=\"Running\"></Badge>\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Negotiated Amount\")\">$80.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Discount\")\">$20.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Official Receipts\")\">$60.00</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Config Info\")\">\n        Data disk type: MongoDB\n        <br />\n        Database version: 3.4\n        <br />\n        Package: dds.mongo.mid\n        <br />\n        Storage space: 10 GB\n        <br />\n        Replication_factor:3\n        <br />\n        Region: East China 1<br />\n    </DescriptionsItem>\n</Descriptions>",
+        "Type": "Demos.Descriptions.demo.VerticalBorder",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>简单的展示。</p>\n",
+        "Code": "<Descriptions Title=\"@(\"User Info\")\">\n    <DescriptionsItem Title=\"@(\"UserName\")\">Zhou Maomao</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Telephone\")\">18100000000</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Live\")\">Hangzhou, Zhejiang</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Remark\")\">Empty</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Address\")\">\n        No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China\n    </DescriptionsItem>\n</Descriptions>",
+        "Type": "Demos.Descriptions.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "vertical",
+        "Title": "垂直",
+        "Description": "<p>Vertical usage.</p>\n",
+        "Code": "<Descriptions Title=\"@(\"User Info\")\" Layout=\"@DescriptionsLayout.Vertical\">\n    <DescriptionsItem Title=\"@(\"UserName\")\">Zhou Maomao</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Telephone\")\">18100000000</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Live\")\">Hangzhou, Zhejiang</DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Address\")\" Span=\"2\">\n        No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China\n    </DescriptionsItem>\n    <DescriptionsItem Title=\"@(\"Remark\")\">Empty</DescriptionsItem>\n</Descriptions>",
+        "Type": "Demos.Descriptions.demo.Vertical",
         "Style": "",
         "Debug": false
       }
