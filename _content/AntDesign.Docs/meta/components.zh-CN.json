@@ -2986,6 +2986,16 @@
     "ApiDoc": "<h2>API</h2>\n<p>Common Icon</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ClassName</td>\n<td>设置图标的样式名</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>设置图标的样式，例如 fontSize 和 color</td>\n<td>Css propertities</td>\n<td></td>\n</tr>\n<tr>\n<td>Spin</td>\n<td>是否有旋转动画</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Rotate</td>\n<td>图标旋转角度（IE9 无效）</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>TwoToneColor</td>\n<td>仅适用双色图标。设置双色图标的主要颜色</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>We still have three different themes for icons, icon component name is the icon name suffixed by the theme name.</p>\n<p>Custom Icon</p>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Style</td>\n<td>设置图标的样式，例如 fontSize 和 color</td>\n<td>CSSProperties</td>\n<td></td>\n</tr>\n<tr>\n<td>Spin</td>\n<td>是否有旋转动画</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Rotate</td>\n<td>图标旋转角度（IE9 无效）</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Component</td>\n<td>控制如何渲染图标，通常是一个渲染根标签为 <svg> 的 React 组件</td>\n<td></td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
     "DemoList": [
       {
+        "Order": 4,
+        "Name": "scriptUrl",
+        "Title": "使用 iconfont.cn 的多个资源",
+        "Description": "<p><code>@ant-design/icons@4.1.0</code> 以后，<code>scriptUrl</code> 可引用多个资源，用户可灵活的管理 <a href=\"http://iconfont.cn/\">iconfont.cn</a> 图标。如果资源的图标出现重名，会按照数组顺序进行覆盖。</p>\n",
+        "Code": "@inject IconService iconService;\n\n<div class=\"icons-list\">\n    <IconFont Type=\"icon-javascript\" />\n    <IconFont Type=\"icon-java\" />\n    <IconFont Type=\"icon-shoppingcart\" />\n    <IconFont Type=\"icon-python\" />\n</div>\n\n@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js\");\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_1788592_a5xf2bdic3u.js\");\n    }\n}",
+        "Type": "Demos.Icon.demo.ScriptUrl",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 1,
         "Name": "two-tone",
         "Title": "多色图标",
@@ -3010,7 +3020,7 @@
         "Name": "iconfont",
         "Title": "使用 iconfont.cn",
         "Description": "<p>对于使用 <a href=\"http://iconfont.cn/\">iconfont.cn</a> 的用户，通过设置 <code>createFromIconfontCN</code> 方法参数对象中的 <code>scriptUrl</code> 字段， 即可轻松地使用已有项目中的图标。</p>\n",
-        "Code": "@inject IconService iconService;\n\n<div class=\"icons-list\">\n    <Icon IconFont=\"icon-tuichu\" />\n    <Icon IconFont=\"icon-facebook\" />\n    <Icon IconFont=\"icon-twitter\" />\n</div>\n\n@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js\");\n    }\n}\n",
+        "Code": "@inject IconService iconService;\n\n<div class=\"icons-list\">\n    <IconFont Type=\"icon-tuichu\" />\n    <IconFont Type=\"icon-facebook\" />\n    <IconFont Type=\"icon-twitter\" />\n</div>\n\n@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js\");\n    }\n}\n",
         "Type": "Demos.Icon.demo.Iconfont",
         "Style": "",
         "Debug": false

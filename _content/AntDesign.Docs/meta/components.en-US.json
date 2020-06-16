@@ -2947,6 +2947,16 @@
     "ApiDoc": "<h2>API</h2>\n<p>Common Icon</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ClassName</td>\n<td>className of Icon</td>\n<td>string</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Style</td>\n<td>Style properties of icon, like fontSize and color</td>\n<td>Css propertities</td>\n<td></td>\n</tr>\n<tr>\n<td>Spin</td>\n<td>Rotate icon with animation</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Rotate</td>\n<td>Rotate by n degrees (not working in IE9)</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>TwoToneColor</td>\n<td>Only supports the two-tone icon. Specify the primary color.</td>\n<td>string</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>We still have three different themes for icons, icon component name is the icon name suffixed by the theme name.</p>\n<p>Custom Icon</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Style</td>\n<td>Style properties of icon, like fontSize and color</td>\n<td>CSSProperties</td>\n<td></td>\n</tr>\n<tr>\n<td>Spin</td>\n<td>Rotate icon with animation</td>\n<td>boolean</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Rotate</td>\n<td>Rotate degrees (not working in IE9)</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>Component</td>\n<td>The component used for the root node.</td>\n<td></td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
     "DemoList": [
       {
+        "Order": 4,
+        "Name": "scriptUrl",
+        "Title": "Multiple resources from iconfont.cn",
+        "Description": "<p>You can use <code>scriptUrl</code> as an array after <code>@ant-design/icons@4.1.0</code>, manage icons in one <code>&lt;Icon /&gt;</code> from multiple <a href=\"http://iconfont.cn/\">iconfont.cn</a> resources. If icon with a duplicate name in resources, it will overrided in array order.</p>\n",
+        "Code": "@inject IconService iconService;\n\n<div class=\"icons-list\">\n    <IconFont Type=\"icon-javascript\" />\n    <IconFont Type=\"icon-java\" />\n    <IconFont Type=\"icon-shoppingcart\" />\n    <IconFont Type=\"icon-python\" />\n</div>\n\n@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js\");\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_1788592_a5xf2bdic3u.js\");\n    }\n}",
+        "Type": "Demos.Icon.demo.ScriptUrl",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 1,
         "Name": "two-tone",
         "Title": "Two-tone icon and colorful icon",
@@ -2971,7 +2981,7 @@
         "Name": "iconfont",
         "Title": "Use iconfont.cn",
         "Description": "<p>If you are using <a href=\"http://iconfont.cn/\">iconfont.cn</a>, you can use the icons in your project gracefully.</p>\n",
-        "Code": "@inject IconService iconService;\n\n<div class=\"icons-list\">\n    <Icon IconFont=\"icon-tuichu\" />\n    <Icon IconFont=\"icon-facebook\" />\n    <Icon IconFont=\"icon-twitter\" />\n</div>\n\n@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js\");\n    }\n}\n",
+        "Code": "@inject IconService iconService;\n\n<div class=\"icons-list\">\n    <IconFont Type=\"icon-tuichu\" />\n    <IconFont Type=\"icon-facebook\" />\n    <IconFont Type=\"icon-twitter\" />\n</div>\n\n@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await iconService.CreateFromIconfontCN(\"//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js\");\n    }\n}\n",
         "Type": "Demos.Icon.demo.Iconfont",
         "Style": "",
         "Debug": false
