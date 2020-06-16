@@ -285,6 +285,7 @@
   "Demos.Dropdown.demo.OverlayVisible",
   "Demos.DatePicker.demo.DisabledDate",
   "Demos.DatePicker.demo.ExtraFooter",
+  "Demos.DatePicker.demo.Globalization",
   "Demos.DatePicker.demo.Time",
   "Demos.DatePicker.demo.Disabled",
   "Demos.DatePicker.demo.DateRender",

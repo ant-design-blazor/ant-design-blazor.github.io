@@ -3195,7 +3195,7 @@
         "Name": "disabled-date",
         "Title": "Disabled Date & Time",
         "Description": "<p>Disabled part of dates and time by <code>disabledDate</code> and <code>disabledTime</code> respectively, and <code>disabledTime</code> only works with <code>showTime</code>.</p>\n",
-        "Code": "<DatePicker ShowTime=\"@true\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 0, 0, 0)\"\n               Format=\"yyyy-MM-dd HH:mm:ss\"\n               DisabledDate=\"date => date <= DateTime.Now\"\n               DisabledTime=\"date => GetDisabledTime(date)\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\"\n               DisabledDate=\"date => date <= DateTime.Now\" />\n<br />\n<RangePicker DisabledDate=\"date => date <= DateTime.Now\" />\n<br />\n<RangePicker ShowTime='@true'\n                DisabledDate=\"date => date <= DateTime.Now\" />\n\n@code {\n    private DatePickerDisabledTime GetDisabledTime(DateTime date)\n    {\n        int[] timeRange = new int[60];\n        for (int i = 0; i < timeRange.Length; i++)\n        {\n            timeRange[i] = i;\n        }\n\n        return new DatePickerDisabledTime(timeRange[4..15], timeRange[20..55], timeRange[3..19]);\n    }\n}",
+        "Code": "<DatePicker ShowTime=\"@true\"\n               DefaultValue=\"new DateTime(2020, 05, 11, 0, 0, 0)\"\n               Format=\"yyyy-MM-dd HH:mm:ss\"\n               DisabledDate=\"date => date <= DateTime.Now\"\n               DisabledTime=\"date => GetDisabledTime(date)\" \n               />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\"\n               DisabledDate=\"date => date <= DateTime.Now\"\n                />\n<br />\n<RangePicker DisabledDate=\"date => date <= DateTime.Now\"/>\n<br />\n<RangePicker ShowTime='@true'\n                DisabledDate=\"date => date <= DateTime.Now\" \n                />\n\n@code {\n    private DatePickerDisabledTime GetDisabledTime(DateTime date)\n    {\n        int[] timeRange = new int[60];\n        for (int i = 0; i < timeRange.Length; i++)\n        {\n            timeRange[i] = i;\n        }\n\n        return new DatePickerDisabledTime(timeRange[4..15], timeRange[20..55], timeRange[3..19]);\n    }\n}",
         "Type": "Demos.DatePicker.demo.DisabledDate",
         "Style": "",
         "Debug": false
@@ -3205,8 +3205,18 @@
         "Name": "extra-footer",
         "Title": "Extra Footer",
         "Description": "<p>Render extra footer in panel for customized requirements.</p>\n",
-        "Code": "<DatePicker RenderExtraFooter=\"extraFooter\" />\n<br />\n<DatePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" RenderExtraFooter=\"extraFooter\" />\n\n@code {\n    private RenderFragment extraFooter =@<span>extra footer</span>;\n}\n",
+        "Code": "<DatePicker RenderExtraFooter=\"extraFooter\"/>\n<br />\n<DatePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<RangePicker RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" RenderExtraFooter=\"extraFooter\"/>\n\n@code {\n    private RenderFragment extraFooter =@<span>extra footer</span>;\n}\n",
         "Type": "Demos.DatePicker.demo.ExtraFooter",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 13,
+        "Name": "globalization",
+        "Title": "Globalization",
+        "Description": "<p>We can set the default globalization formatting with <code>CultureInfo</code> Property. The default is <code>CultureInfo.CuurrentCulture</code>.</p>\n",
+        "Code": "@using System.Globalization\n<Row>\n    <Col Span=\"12\">\n        <Text>en-US</Text>\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Date\" CultureInfo=\"@EN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Week\" CultureInfo=\"@EN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Month\" CultureInfo=\"@EN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Quarter\" CultureInfo=\"@EN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Year\" CultureInfo=\"@EN\" />\n        <br />\n    </Col>\n    <Col Span=\"12\">\n        <Text>zh-CN</Text>\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Date\" CultureInfo=\"@CN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Week\" CultureInfo=\"@CN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Month\" CultureInfo=\"@CN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Quarter\" CultureInfo=\"@CN\" />\n        <br />\n        <DatePicker Picker=\"@DatePickerType.Year\" CultureInfo=\"@CN\" />\n        <br />\n    </Col>\n</Row>\n\n@code{\n    CultureInfo EN = CultureInfo.GetCultureInfo(\"en-US\");\n    CultureInfo CN = CultureInfo.GetCultureInfo(\"zh-CN\");\n}",
+        "Type": "Demos.DatePicker.demo.Globalization",
         "Style": "",
         "Debug": false
       },
@@ -3215,7 +3225,7 @@
         "Name": "time",
         "Title": "Choose Time",
         "Description": "<p>This property provide an additional time selection. When <code>showTime</code> is an Object, its properties will be passed on to built-in <code>TimePicker</code>.</p>\n",
-        "Code": "<DatePicker ShowTime=\"@true\" OnChange=\"OnChange\" />\n<br />\n<RangePicker ShowTime='@(\"HH:mm\")' OnChange=\"OnChange\" />\n\n@code\n{\n    private void OnChange(DateTime value, string dateString)\n    {\n        Console.WriteLine($\"Selected Time: {value}\");\n        Console.WriteLine($\"Formatted Selected Time: {dateString}\");\n    }\n}",
+        "Code": "<DatePicker ShowTime=\"@true\" OnChange=\"OnChange\"/>\n<br />\n<RangePicker ShowTime='@(\"HH:mm\")' OnChange=\"OnChange\"/>\n\n@code\n{\n    private void OnChange(DateTime value, string dateString)\n    {\n        Console.WriteLine($\"Selected Time: {value}\");\n        Console.WriteLine($\"Formatted Selected Time: {dateString}\");\n    }\n}",
         "Type": "Demos.DatePicker.demo.Time",
         "Style": "",
         "Debug": false
@@ -3225,7 +3235,7 @@
         "Name": "disabled",
         "Title": "Disabled",
         "Description": "<p>A disabled state of the <code>DatePicker</code>. You can also set as array to disable one of input.</p>\n",
-        "Code": "<DatePicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\" />\n<br />\n<MonthPicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\" />\n<br />\n<RangePicker Disabled=\"@true\" DefaultValue=\"new DateTime[] { new DateTime(2015, 6, 6), new DateTime(2015, 6, 6) }\" />\n<br />\n<RangePicker Disabled=\"@true\" \n                DefaultValue=\"new DateTime[] { new DateTime(2019, 9, 3), new DateTime(2019, 11, 12) }\" />",
+        "Code": "<DatePicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\"/>\n<br />\n<MonthPicker Disabled=\"@true\" DefaultValue=\"new DateTime(2015, 6, 6)\" />\n<br />\n<RangePicker Disabled=\"@true\" DefaultValue=\"new DateTime[] { new DateTime(2015, 6, 6), new DateTime(2015, 6, 6) }\" />\n<br />\n<RangePicker Disabled=\"@true\" \n                DefaultValue=\"new DateTime[] { new DateTime(2019, 9, 3), new DateTime(2019, 11, 12) }\"  />",
         "Type": "Demos.DatePicker.demo.Disabled",
         "Style": "",
         "Debug": false
@@ -3235,7 +3245,7 @@
         "Name": "date-render",
         "Title": "Customized Date Rendering",
         "Description": "<p>We can customize the rendering of date cells in the calendar by providing a <code>dateRender</code> function to <code>DatePicker</code>.</p>\n",
-        "Code": "<DatePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\" /><br />\n<RangePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\" />\n\n@code\n{\n    private Func<DateTime, DateTime, RenderFragment> CustomRender = (currentViewDate, today) =>\n    {\n        string style = \"\";\n        if (currentViewDate.Day == 1)\n        {\n            style = \"border: 1px solid #1890ff; borderRadius: 50%\";\n        }\n\n        return @<div class=\"ant-picker-cell-inner\" style=\"@style\">\n            @currentViewDate.Day\n        </div>;\n    };\n}",
+        "Code": "<DatePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\"/><br />\n<RangePicker Picker=\"@DatePickerType.Date\" DateRender=\"CustomRender\" />\n\n@code\n{\n    private Func<DateTime, DateTime, RenderFragment> CustomRender = (currentViewDate, today) =>\n    {\n        string style = \"\";\n        if (currentViewDate.Day == 1)\n        {\n            style = \"border: 1px solid #1890ff; borderRadius: 50%\";\n        }\n\n        return @<div class=\"ant-picker-cell-inner\" style=\"@style\">\n            @currentViewDate.Day\n        </div>;\n    };\n}",
         "Type": "Demos.DatePicker.demo.DateRender",
         "Style": "",
         "Debug": false
@@ -3245,7 +3255,7 @@
         "Name": "format",
         "Title": "Date Format",
         "Description": "<p>We can set the date format by <code>format</code>.</p>\n",
-        "Code": "<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM/dd\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"dd/MM/yyyy\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime[] { new DateTime(2015, 1, 1), new DateTime(2015, 1, 1) }\" Format=\"yyyy/MM/dd\" />",
+        "Code": "<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM/dd\"/>\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"dd/MM/yyyy\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime(2015, 1, 1)\" Format=\"yyyy/MM\" />\n<br />\n<DatePicker DefaultValue=\"new DateTime[] { new DateTime(2015, 1, 1), new DateTime(2015, 1, 1) }\" Format=\"yyyy/MM/dd\" />",
         "Type": "Demos.DatePicker.demo.Format",
         "Style": "",
         "Debug": false
@@ -3255,7 +3265,7 @@
         "Name": "range-picker",
         "Title": "Range Picker",
         "Description": "<p>Set range picker type by <code>picker</code> prop.</p>\n",
-        "Code": "<RangePicker />\n<br />\n<RangePicker ShowTime=\"@true\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Week\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Month\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Quarter\" />\n<br />\n<RangePicker Picker=\"@DatePickerType.Year\" />",
+        "Code": "<RangePicker/>\n<br />\n<RangePicker ShowTime=\"@true\"/>\n<br />\n<RangePicker Picker=\"@DatePickerType.Week\"/>\n<br />\n<RangePicker Picker=\"@DatePickerType.Month\"/>\n<br />\n<RangePicker Picker=\"@DatePickerType.Quarter\"/>\n<br />\n<RangePicker Picker=\"@DatePickerType.Year\"/>",
         "Type": "Demos.DatePicker.demo.RangePickerDemo",
         "Style": "",
         "Debug": false
@@ -3265,7 +3275,7 @@
         "Name": "basic",
         "Title": "Basic",
         "Description": "<p>Basic use case. Users can select or input a date in panel.</p>\n",
-        "Code": "<DatePicker Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Year\" />\n<br />",
+        "Code": "@inject ILanguageService LS;\n\n<DatePicker Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Year\"/>\n<br />",
         "Type": "Demos.DatePicker.demo.Basic",
         "Style": "",
         "Debug": false
@@ -3295,7 +3305,7 @@
         "Name": "size",
         "Title": "Three Sizes",
         "Description": "<p>The input box comes in three sizes. <code>default</code> will be used if <code>size</code> is omitted.</p>\n",
-        "Code": "<RadioGroup @bind-Value=\"@datePickerSize\">\n    <Radio RadioButton Value=\"@DatePickerSize.Large\">Large</Radio>\n    <Radio RadioButton Value=\"@DatePickerSize.Default\">Default</Radio>\n    <Radio RadioButton Value=\"@DatePickerSize.Small\">Small</Radio>\n</RadioGroup>\n<br />\n<DatePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" Size=\"@datePickerSize\" />\n<br />\n<RangePicker Size=\"@datePickerSize\" />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" Size=\"@datePickerSize\" />\n\n@code {\n    private string datePickerSize = DatePickerSize.Default;\n}",
+        "Code": "<RadioGroup @bind-Value=\"@datePickerSize\">\n    <Radio RadioButton Value=\"@DatePickerSize.Large\">Large</Radio>\n    <Radio RadioButton Value=\"@DatePickerSize.Default\">Default</Radio>\n    <Radio RadioButton Value=\"@DatePickerSize.Small\">Small</Radio>\n</RadioGroup>\n<br />\n<DatePicker Size=\"@datePickerSize\"   />\n<br />\n<DatePicker Picker=\"@DatePickerType.Month\" Size=\"@datePickerSize\"  />\n<br />\n<RangePicker Size=\"@datePickerSize\"  />\n<br />\n<DatePicker Picker=\"@DatePickerType.Week\" Size=\"@datePickerSize\"  />\n\n@code {\n    private string datePickerSize = DatePickerSize.Default;\n}",
         "Type": "Demos.DatePicker.demo.Size",
         "Style": "",
         "Debug": false
@@ -3305,7 +3315,7 @@
         "Name": "bordered",
         "Title": "Bordered-less",
         "Description": "<p>Bordered-less style component.</p>\n",
-        "Code": "<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Year\" />\n<br />",
+        "Code": "<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Week\"  />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Month\"  />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Quarter\"  />\n<br />\n<DatePicker Bordered=\"@false\" Picker=\"@DatePickerType.Year\"  />\n<br />",
         "Type": "Demos.DatePicker.demo.Bordered",
         "Style": "",
         "Debug": false
