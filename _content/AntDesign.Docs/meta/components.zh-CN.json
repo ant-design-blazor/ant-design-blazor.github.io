@@ -725,6 +725,86 @@
     ]
   },
   {
+    "Title": "Collapse",
+    "SubTitle": "折叠面板",
+    "Type": "数据展示",
+    "Desc": "<p>可以折叠/展开的内容区域。</p>\n<h2>何时使用</h2>\n<ul>\n<li>对复杂区域进行分组和隐藏，保持页面的整洁。</li>\n<li><code>手风琴</code> 是一种特殊的折叠面板，只允许单个内容区域展开。</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Collapse</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Accordion</code></td>\n<td>是否每次只打开一个tab</td>\n<td><code>boolean</code></td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td><code>Bordered</code></td>\n<td>是否有边框</td>\n<td><code>boolean</code></td>\n<td><code>true</code></td>\n</tr>\n<tr>\n<td><code>ExpandIconPosition</code></td>\n<td>设置图标位置</td>\n<td><code>'left' \\| 'right'</code></td>\n<td><code>left</code></td>\n</tr>\n</tbody>\n</table>\n<h3>Panel</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Disabled</code></td>\n<td>禁用后的面板展开与否将无法通过用户交互改变</td>\n<td><code>boolean</code></td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td><code>Header</code></td>\n<td>面板头内容</td>\n<td><code>string \\| RenderFragment</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>ExpandedIcon</code></td>\n<td>自定义切换图标</td>\n<td><code>string \\| RenderFragment</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>Extra</code></td>\n<td>自定义渲染每个面板右上角的内容</td>\n<td><code>string \\| RenderFragment</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>ShowArrow</code></td>\n<td>是否展示箭头</td>\n<td><code>boolean</code></td>\n<td><code>true</code></td>\n</tr>\n<tr>\n<td><code>Active</code></td>\n<td>面板是否展开，可双向绑定</td>\n<td><code>boolean</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>ActiveChange</code></td>\n<td>面板展开回调</td>\n<td><code>EventCallback&lt;boolean&gt;</code></td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "noarrow",
+        "Title": "隐藏箭头",
+        "Description": "<p>你可以通过 <code>[ShowArrow]=&quot;false&quot;</code> 隐藏 <code>Panel</code> 组件的箭头图标。</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" OnChange=\"Callback\">\n    <Panel Header=@(\"This is panel header with arrow icon\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel ShowArrow=\"false\" Header=@(\"This is panel header with no arrow icon\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}",
+        "Type": "Demos.Collapse.demo.Noarrow",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "mix",
+        "Title": "面板嵌套",
+        "Description": "<p>嵌套折叠面板。</p>\n",
+        "Code": "<Collapse OnChange=\"Callback\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <Collapse DefaultActiveKey=@(new[]{\"1\"})>\n            <Panel Header=@(\"This is panel nest panel\") Key=\"1\">\n                <p>@text</p>\n            </Panel>\n        </Collapse>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}",
+        "Type": "Demos.Collapse.demo.Mix",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "borderless",
+        "Title": "简洁风格",
+        "Description": "<p>一套没有边框的简洁样式。</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" Bordered=\"false\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n}",
+        "Type": "Demos.Collapse.demo.Borderless",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "Basic",
+        "Title": "折叠面板",
+        "Description": "<p>可以同时展开多个面板，这个例子默认展开了第一个。</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" OnChange=\"Callback\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\" Disabled>\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}\n\n",
+        "Type": "Demos.Collapse.demo.Basic",
+        "Style": "\n[data-theme=\"compact\"] p, p {\n  margin: 0;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "extra",
+        "Title": "额外节点",
+        "Description": "<p>你可以通过 <code>Extra</code> 来指定面板右上角的额外内容。</p>\n",
+        "Code": "<div>\n    <Collapse \n        DefaultActiveKey=\"@(new[]{\"1\"})\" \n        OnChange=\"Callback\"\n        ExpandIconPosition=\"@expandIconPosition\"\n        >\n        <Panel Header=@(\"This is panel header 1\") Key=\"1\" Extra=\"@extra\">\n            <div>@text</div>\n        </Panel>\n        <Panel Header=@(\"This is panel header 2\") Key=\"2\" Extra=\"@extra\">\n            <div>@text</div>\n        </Panel>\n        <Panel Header=@(\"This is panel header 3\") Key=\"3\" Extra=\"@extra\">\n            <div>@text</div>\n        </Panel>\n    </Collapse>\n</div>\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    RenderFragment extra =@<div @onclick:stopPropagation><Icon Type=\"setting\"></Icon></div>;\n\n    string expandIconPosition = \"left\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}\n\n",
+        "Type": "Demos.Collapse.demo.Extra",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "accordion",
+        "Title": "手风琴",
+        "Description": "<p>手风琴，每次只打开一个 tab 。</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" Accordion>\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n}",
+        "Type": "Demos.Collapse.demo.Accordion",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "custom",
+        "Title": "自定义面板",
+        "Description": "<p>自定义各个面板的背景色、圆角、边距和图标。</p>\n",
+        "Code": "<Collapse\n    Bordered=\"false\"\n    DefaultActiveKey=\"@(new[]{\"1\"})\" \n    ExpandIcon=\"expandIcon\"\n    Class=\"site-collapse-custom-collapse\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\"\n           Class=\"site-collapse-custom-panel\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\"\n           Class=\"site-collapse-custom-panel\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\" \n           Class=\"site-collapse-custom-panel\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    RenderFragment<bool> expandIcon = isActive => @<Icon Type=\"caret-right\" Rotate=\"@(isActive ? 90 : 0)\"></Icon>;\n\n}\n\n<style>\n    [data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,\n    .site-collapse-custom-collapse .site-collapse-custom-panel {\n        background: #f7f7f7;\n        border-radius: 2px;\n        margin-bottom: 24px;\n        border: 0px;\n        overflow: hidden;\n    }\n</style>",
+        "Type": "Demos.Collapse.demo.Custom",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Carousel",
     "SubTitle": "走马灯",
     "Type": "数据展示",

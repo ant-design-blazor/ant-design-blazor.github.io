@@ -241,6 +241,12 @@
           },
           {
             "Order": 0,
+            "Title": "Collapse",
+            "Type": "menuItem",
+            "Url": "components/collapse"
+          },
+          {
+            "Order": 0,
             "Title": "Carousel",
             "Type": "menuItem",
             "Url": "components/carousel"

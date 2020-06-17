@@ -295,6 +295,13 @@
           },
           {
             "Order": 0,
+            "Title": "Collapse",
+            "SubTitle": "折叠面板",
+            "Type": "menuItem",
+            "Url": "components/collapse"
+          },
+          {
+            "Order": 0,
             "Title": "Carousel",
             "SubTitle": "走马灯",
             "Type": "menuItem",

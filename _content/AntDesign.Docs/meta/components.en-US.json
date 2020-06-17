@@ -715,6 +715,85 @@
     ]
   },
   {
+    "Title": "Collapse",
+    "Type": "Data Display",
+    "Desc": "<p>A content area which can be collapsed and expanded.</p>\n<h2>When To Use</h2>\n<ul>\n<li>Can be used to group or hide complex regions to keep the page clean.</li>\n<li><code>Accordion</code> is a special kind of <code>Collapse</code>, which allows only one panel to be expanded at a time.</li>\n</ul>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Collapse</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Accordion</code></td>\n<td>Accordion mode</td>\n<td><code>boolean</code></td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td><code>Bordered</code></td>\n<td>Set border style</td>\n<td><code>boolean</code></td>\n<td><code>true</code></td>\n</tr>\n<tr>\n<td><code>ExpandIconPosition</code></td>\n<td>Set expand icon position</td>\n<td><code>'left' \\| 'right'</code></td>\n<td><code>left</code></td>\n</tr>\n</tbody>\n</table>\n<h3>Panel</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Disabled</code></td>\n<td>If <code>true</code>, panel cannot be opened or closed</td>\n<td><code>boolean</code></td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td><code>Header</code></td>\n<td>Title of the panel</td>\n<td><code>string \\| RenderFragment</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>ExpandedIcon</code></td>\n<td>Customize an icon for toggle</td>\n<td><code>string \\| RenderFragment</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>Extra</code></td>\n<td>Extra element in the corner</td>\n<td><code>string \\| RenderFragment</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>ShowArrow</code></td>\n<td>Display arrow or not</td>\n<td><code>boolean</code></td>\n<td><code>true</code></td>\n</tr>\n<tr>\n<td><code>Active</code></td>\n<td>Active status of panel, double binding</td>\n<td><code>boolean</code></td>\n<td>-</td>\n</tr>\n<tr>\n<td><code>ActiveChange</code></td>\n<td>Callback function of the active status</td>\n<td><code>EventCallback&lt;boolean&gt;</code></td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "noarrow",
+        "Title": "No arrow",
+        "Description": "<p>You can disable showing arrow icon by passing <code>[ShowArrow]=&quot;false&quot;</code> to <code>Panel</code> component.</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" OnChange=\"Callback\">\n    <Panel Header=@(\"This is panel header with arrow icon\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel ShowArrow=\"false\" Header=@(\"This is panel header with no arrow icon\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}",
+        "Type": "Demos.Collapse.demo.Noarrow",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "mix",
+        "Title": "Nested panel",
+        "Description": "<p><code>Collapse</code> is nested inside the <code>Collapse</code>.</p>\n",
+        "Code": "<Collapse OnChange=\"Callback\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <Collapse DefaultActiveKey=@(new[]{\"1\"})>\n            <Panel Header=@(\"This is panel nest panel\") Key=\"1\">\n                <p>@text</p>\n            </Panel>\n        </Collapse>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}",
+        "Type": "Demos.Collapse.demo.Mix",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "borderless",
+        "Title": "Borderless",
+        "Description": "<p>A borderless style of Collapse.</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" Bordered=\"false\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n}",
+        "Type": "Demos.Collapse.demo.Borderless",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "Basic",
+        "Title": "Collapse",
+        "Description": "<p>More than one panel can be expanded at a time, the first panel is initialized to be active in this case.</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" OnChange=\"Callback\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\" Disabled>\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}\n\n",
+        "Type": "Demos.Collapse.demo.Basic",
+        "Style": "\n[data-theme=\"compact\"] p, p {\n  margin: 0;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "extra",
+        "Title": "Extra Node",
+        "Description": "<p>You can use <code>Extra</code> to put extra elements in the top right corner.</p>\n",
+        "Code": "<div>\n    <Collapse \n        DefaultActiveKey=\"@(new[]{\"1\"})\" \n        OnChange=\"Callback\"\n        ExpandIconPosition=\"@expandIconPosition\"\n        >\n        <Panel Header=@(\"This is panel header 1\") Key=\"1\" Extra=\"@extra\">\n            <div>@text</div>\n        </Panel>\n        <Panel Header=@(\"This is panel header 2\") Key=\"2\" Extra=\"@extra\">\n            <div>@text</div>\n        </Panel>\n        <Panel Header=@(\"This is panel header 3\") Key=\"3\" Extra=\"@extra\">\n            <div>@text</div>\n        </Panel>\n    </Collapse>\n</div>\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    RenderFragment extra =@<div @onclick:stopPropagation><Icon Type=\"setting\"></Icon></div>;\n\n    string expandIconPosition = \"left\";\n\n    void Callback(string[] key)\n    {\n        Console.WriteLine(key);\n    }\n}\n\n",
+        "Type": "Demos.Collapse.demo.Extra",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "accordion",
+        "Title": "Accordion",
+        "Description": "<p>Accordion mode, only one panel can be expanded at a time.</p>\n",
+        "Code": "<Collapse DefaultActiveKey=\"@(new[]{\"1\"})\" Accordion>\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n}",
+        "Type": "Demos.Collapse.demo.Accordion",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "custom",
+        "Title": "Custom Panel",
+        "Description": "<p>Customize the background, border, margin and icon styles for each panel.</p>\n",
+        "Code": "<Collapse\n    Bordered=\"false\"\n    DefaultActiveKey=\"@(new[]{\"1\"})\" \n    ExpandIcon=\"expandIcon\"\n    Class=\"site-collapse-custom-collapse\">\n    <Panel Header=@(\"This is panel header 1\") Key=\"1\"\n           Class=\"site-collapse-custom-panel\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 2\") Key=\"2\"\n           Class=\"site-collapse-custom-panel\">\n        <p>@text</p>\n    </Panel>\n    <Panel Header=@(\"This is panel header 3\") Key=\"3\" \n           Class=\"site-collapse-custom-panel\">\n        <p>@text</p>\n    </Panel>\n</Collapse>\n\n@code{\n\n    string text = @\"\nA dog is a type of domesticated animal.\nKnown for its loyalty and faithfulness,\nit can be found as a welcome guest in many households across the world.\n\";\n\n    RenderFragment<bool> expandIcon = isActive => @<Icon Type=\"caret-right\" Rotate=\"@(isActive ? 90 : 0)\"></Icon>;\n\n}\n\n<style>\n    [data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,\n    .site-collapse-custom-collapse .site-collapse-custom-panel {\n        background: #f7f7f7;\n        border-radius: 2px;\n        margin-bottom: 24px;\n        border: 0px;\n        overflow: hidden;\n    }\n</style>",
+        "Type": "Demos.Collapse.demo.Custom",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Carousel",
     "Type": "Data Display",
     "Desc": "<p>A carousel component. Scales with its container.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When there is a group of content on the same level.</li>\n<li>When there is insufficient content space, it can be used to save space in the form of a revolving door.</li>\n<li>Commonly used for a group of pictures/cards.</li>\n</ul>\n",
