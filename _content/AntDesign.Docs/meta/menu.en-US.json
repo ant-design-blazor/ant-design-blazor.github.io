@@ -26,12 +26,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Typography",
-            "Type": "menuItem",
-            "Url": "components/typography"
-          },
-          {
-            "Order": 0,
             "Title": "Button",
             "Type": "menuItem",
             "Url": "components/button"
@@ -41,6 +35,12 @@
             "Title": "Icon",
             "Type": "menuItem",
             "Url": "components/icon"
+          },
+          {
+            "Order": 0,
+            "Title": "Typography",
+            "Type": "menuItem",
+            "Url": "components/typography"
           }
         ]
       },
@@ -51,22 +51,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Divider",
-            "SubTitle": "分割线",
+            "Title": "Layout",
             "Type": "menuItem",
-            "Url": "components/divider"
-          },
-          {
-            "Order": 0,
-            "Title": "Divider",
-            "Type": "menuItem",
-            "Url": "components/divider"
-          },
-          {
-            "Order": 0,
-            "Title": "Grid",
-            "Type": "menuItem",
-            "Url": "components/grid"
+            "Url": "components/layout"
           },
           {
             "Order": 0,
@@ -76,9 +63,22 @@
           },
           {
             "Order": 0,
-            "Title": "Layout",
+            "Title": "Divider",
             "Type": "menuItem",
-            "Url": "components/layout"
+            "Url": "components/divider"
+          },
+          {
+            "Order": 0,
+            "Title": "Divider",
+            "SubTitle": "分割线",
+            "Type": "menuItem",
+            "Url": "components/divider"
+          },
+          {
+            "Order": 0,
+            "Title": "Grid",
+            "Type": "menuItem",
+            "Url": "components/grid"
           }
         ]
       },
@@ -89,27 +89,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Breadcrumb",
+            "Title": "Dropdown",
             "Type": "menuItem",
-            "Url": "components/breadcrumb"
-          },
-          {
-            "Order": 0,
-            "Title": "PageHeader",
-            "Type": "menuItem",
-            "Url": "components/pageheader"
-          },
-          {
-            "Order": 0,
-            "Title": "Pagination",
-            "Type": "menuItem",
-            "Url": "components/pagination"
-          },
-          {
-            "Order": 0,
-            "Title": "Menu",
-            "Type": "menuItem",
-            "Url": "components/menu"
+            "Url": "components/dropdown"
           },
           {
             "Order": 0,
@@ -119,15 +101,33 @@
           },
           {
             "Order": 0,
+            "Title": "PageHeader",
+            "Type": "menuItem",
+            "Url": "components/pageheader"
+          },
+          {
+            "Order": 0,
+            "Title": "Menu",
+            "Type": "menuItem",
+            "Url": "components/menu"
+          },
+          {
+            "Order": 0,
             "Title": "Affix",
             "Type": "menuItem",
             "Url": "components/affix"
           },
           {
             "Order": 0,
-            "Title": "Dropdown",
+            "Title": "Breadcrumb",
             "Type": "menuItem",
-            "Url": "components/dropdown"
+            "Url": "components/breadcrumb"
+          },
+          {
+            "Order": 0,
+            "Title": "Pagination",
+            "Type": "menuItem",
+            "Url": "components/pagination"
           },
           {
             "Order": 0,
@@ -144,69 +144,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Transfer",
-            "Type": "menuItem",
-            "Url": "components/transfer"
-          },
-          {
-            "Order": 0,
             "Title": "Form",
             "Type": "menuItem",
             "Url": "components/form"
-          },
-          {
-            "Order": 0,
-            "Title": "Switch",
-            "Type": "menuItem",
-            "Url": "components/switch"
-          },
-          {
-            "Order": 0,
-            "Title": "Checkbox",
-            "Type": "menuItem",
-            "Url": "components/checkbox"
-          },
-          {
-            "Order": 0,
-            "Title": "Rate",
-            "Type": "menuItem",
-            "Url": "components/rate"
-          },
-          {
-            "Order": 0,
-            "Title": "Slider",
-            "Type": "menuItem",
-            "Url": "components/slider"
-          },
-          {
-            "Order": 0,
-            "Title": "TimePicker",
-            "Type": "menuItem",
-            "Url": "components/timepicker"
-          },
-          {
-            "Order": 0,
-            "Title": "Select",
-            "Type": "menuItem",
-            "Url": "components/select"
-          },
-          {
-            "Order": 0,
-            "Title": "InputNumber",
-            "Type": "menuItem",
-            "Url": "components/inputnumber"
-          },
-          {
-            "Order": 0,
-            "Title": "Radio",
-            "Type": "menuItem",
-            "Url": "components/radio"
-          },
-          {
-            "Order": 0,
-            "Title": "DatePicker",
-            "Type": "menuItem",
-            "Url": "components/datepicker"
           },
           {
             "Order": 0,
@@ -216,9 +156,69 @@
           },
           {
             "Order": 0,
+            "Title": "Select",
+            "Type": "menuItem",
+            "Url": "components/select"
+          },
+          {
+            "Order": 0,
+            "Title": "Radio",
+            "Type": "menuItem",
+            "Url": "components/radio"
+          },
+          {
+            "Order": 0,
+            "Title": "Rate",
+            "Type": "menuItem",
+            "Url": "components/rate"
+          },
+          {
+            "Order": 0,
+            "Title": "DatePicker",
+            "Type": "menuItem",
+            "Url": "components/datepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Transfer",
+            "Type": "menuItem",
+            "Url": "components/transfer"
+          },
+          {
+            "Order": 0,
+            "Title": "Slider",
+            "Type": "menuItem",
+            "Url": "components/slider"
+          },
+          {
+            "Order": 0,
+            "Title": "InputNumber",
+            "Type": "menuItem",
+            "Url": "components/inputnumber"
+          },
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Checkbox",
+            "Type": "menuItem",
+            "Url": "components/checkbox"
+          },
+          {
+            "Order": 0,
             "Title": "Cascader",
             "Type": "menuItem",
             "Url": "components/cascader"
+          },
+          {
+            "Order": 0,
+            "Title": "Switch",
+            "Type": "menuItem",
+            "Url": "components/switch"
           }
         ]
       },
@@ -229,69 +229,9 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Statistic",
-            "Type": "menuItem",
-            "Url": "components/statistic"
-          },
-          {
-            "Order": 0,
             "Title": "Avatar",
             "Type": "menuItem",
             "Url": "components/avatar"
-          },
-          {
-            "Order": 0,
-            "Title": "Collapse",
-            "Type": "menuItem",
-            "Url": "components/collapse"
-          },
-          {
-            "Order": 0,
-            "Title": "Carousel",
-            "Type": "menuItem",
-            "Url": "components/carousel"
-          },
-          {
-            "Order": 0,
-            "Title": "Card",
-            "Type": "menuItem",
-            "Url": "components/card"
-          },
-          {
-            "Order": 0,
-            "Title": "List",
-            "Type": "menuItem",
-            "Url": "components/list"
-          },
-          {
-            "Order": 0,
-            "Title": "Timeline",
-            "Type": "menuItem",
-            "Url": "components/timeline"
-          },
-          {
-            "Order": 0,
-            "Title": "Descriptions",
-            "Type": "menuItem",
-            "Url": "components/descriptions"
-          },
-          {
-            "Order": 0,
-            "Title": "Tooltip",
-            "Type": "menuItem",
-            "Url": "components/tooltip"
-          },
-          {
-            "Order": 0,
-            "Title": "Tag",
-            "Type": "menuItem",
-            "Url": "components/tag"
-          },
-          {
-            "Order": 0,
-            "Title": "Badge",
-            "Type": "menuItem",
-            "Url": "components/badge"
           },
           {
             "Order": 0,
@@ -301,9 +241,33 @@
           },
           {
             "Order": 0,
-            "Title": "Empty",
+            "Title": "Collapse",
             "Type": "menuItem",
-            "Url": "components/empty"
+            "Url": "components/collapse"
+          },
+          {
+            "Order": 0,
+            "Title": "Timeline",
+            "Type": "menuItem",
+            "Url": "components/timeline"
+          },
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Card",
+            "Type": "menuItem",
+            "Url": "components/card"
+          },
+          {
+            "Order": 0,
+            "Title": "Descriptions",
+            "Type": "menuItem",
+            "Url": "components/descriptions"
           },
           {
             "Order": 0,
@@ -313,9 +277,45 @@
           },
           {
             "Order": 0,
+            "Title": "Statistic",
+            "Type": "menuItem",
+            "Url": "components/statistic"
+          },
+          {
+            "Order": 0,
+            "Title": "Tag",
+            "Type": "menuItem",
+            "Url": "components/tag"
+          },
+          {
+            "Order": 0,
+            "Title": "Tooltip",
+            "Type": "menuItem",
+            "Url": "components/tooltip"
+          },
+          {
+            "Order": 0,
             "Title": "Tabs",
             "Type": "menuItem",
             "Url": "components/tabs"
+          },
+          {
+            "Order": 0,
+            "Title": "List",
+            "Type": "menuItem",
+            "Url": "components/list"
+          },
+          {
+            "Order": 0,
+            "Title": "Carousel",
+            "Type": "menuItem",
+            "Url": "components/carousel"
+          },
+          {
+            "Order": 0,
+            "Title": "Empty",
+            "Type": "menuItem",
+            "Url": "components/empty"
           }
         ]
       },
@@ -324,6 +324,30 @@
         "Title": "Feedback",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "Skeleton",
+            "Type": "menuItem",
+            "Url": "components/skeleton"
+          },
+          {
+            "Order": 0,
+            "Title": "Message",
+            "Type": "menuItem",
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Modal",
+            "Type": "menuItem",
+            "Url": "components/modal"
+          },
+          {
+            "Order": 0,
+            "Title": "Spin",
+            "Type": "menuItem",
+            "Url": "components/spin"
+          },
           {
             "Order": 0,
             "Title": "Result",
@@ -338,33 +362,15 @@
           },
           {
             "Order": 0,
-            "Title": "Spin",
-            "Type": "menuItem",
-            "Url": "components/spin"
-          },
-          {
-            "Order": 0,
-            "Title": "Modal",
-            "Type": "menuItem",
-            "Url": "components/modal"
-          },
-          {
-            "Order": 0,
-            "Title": "Drawer",
-            "Type": "menuItem",
-            "Url": "components/drawer"
-          },
-          {
-            "Order": 0,
             "Title": "Progress",
             "Type": "menuItem",
             "Url": "components/progress"
           },
           {
             "Order": 0,
-            "Title": "Message",
+            "Title": "Drawer",
             "Type": "menuItem",
-            "Url": "components/message"
+            "Url": "components/drawer"
           },
           {
             "Order": 0,
