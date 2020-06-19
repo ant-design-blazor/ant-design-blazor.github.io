@@ -103,21 +103,20 @@ Regularly synchronize with Official Ant Design specifications, you can check the
 
 - To display the pop-up component dynamically, you need to add the `<AntContainer />` component in `App.razor`. 
 
-```
-<Router AppAssembly="@typeof(MainLayout).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="routeData" DefaultLayout="@typeof(MainLayout)" />
-    </Found>
-    <NotFound>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <Result Status="404" />
-        </LayoutView>
-    </NotFound>
-</Router>
+  ```
+  <Router AppAssembly="@typeof(MainLayout).Assembly">
+      <Found Context="routeData">
+          <RouteView RouteData="routeData" DefaultLayout="@typeof(MainLayout)" />
+      </Found>
+      <NotFound>
+          <LayoutView Layout="@typeof(MainLayout)">
+              <Result Status="404" />
+          </LayoutView>
+      </NotFound>
+  </Router>
 
-<AntContainer />   <-- add this component ✨
-
-```
+  <AntContainer />   <-- add this component ✨
+  ```
 
 - Finally, it can be referenced in the `.razor' component!
 
