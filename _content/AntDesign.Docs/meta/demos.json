@@ -281,6 +281,7 @@
   "Demos.Drawer.demo.Basic",
   "Demos.Drawer.demo.Userprofile",
   "Demos.Drawer.demo.Placement",
+  "Demos.Drawer.demo.Drawer_service",
   "Demos.Drawer.demo.Formindrawer",
   "Demos.Drawer.demo.Multiple",
   "Demos.Slider.demo.Icon1",
