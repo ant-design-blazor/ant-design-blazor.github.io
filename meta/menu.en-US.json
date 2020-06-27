@@ -204,6 +204,12 @@
           },
           {
             "Order": 0,
+            "Title": "AutoComplete",
+            "Type": "menuItem",
+            "Url": "components/autocomplete"
+          },
+          {
+            "Order": 0,
             "Title": "Checkbox",
             "Type": "menuItem",
             "Url": "components/checkbox"

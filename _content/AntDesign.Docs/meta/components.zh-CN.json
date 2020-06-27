@@ -528,7 +528,7 @@
         "Name": "Search",
         "Title": "搜索框 loading",
         "Description": "<p>用于 onSearch 的时候展示 loading。</p>\n",
-        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" @bind-Value=\"@txtValue\" />\n\n\n\n</div>\n\n    @code{\n\n        private string txtValue { get; set; }\n\n        private void Handle(ChangeEventArgs args)\n        {\n            Console.WriteLine(args.Value.ToString());\n\n        }\n    }\n\n",
+        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" @bind-Value=\"@txtValue\" />\n\n\n\n</div>\n\n    @code{\n\n        private string txtValue { get; set; }\n\n        private void Handle(string value)\n        {\n            Console.WriteLine(value);\n\n        }\n    }\n\n",
         "Type": "Demos.Input.demo.Search_",
         "Style": "",
         "Debug": false
@@ -935,7 +935,7 @@
         "Name": "custom-dropdown-menu",
         "Title": "扩展菜单",
         "Description": "<p>使用 <code>dropdownRender</code> 对下拉菜单进行自由扩展。</p>\n",
-        "Code": "<Select Style=\"width:240px\"\n        Placeholder=\"custom dropdown render\"\n        DropdownRender=\"@OnDropdownRender\">\n    @foreach (var item in _items)\n    {\n        <SelectOption Value=\"@item\">@item</SelectOption>\n    }\n</Select>\n\n@code{\n    private int _index = 0;\n    private string _name = \"\";\n    private List<string> _items = new List<string> { \"jack\", \"lucy\" };\n\n    private void AddItem(MouseEventArgs args)\n    {\n        Console.WriteLine(\"Add item\");\n        _name = null;\n        var newItem = !string.IsNullOrWhiteSpace(_name) ? _name : $\"New Item {_index++}\";\n        _items.Add(newItem);\n    }\n\n    private void OnNameChange(ChangeEventArgs args)\n    {\n        _name = args.Value.ToString();\n    }\n\n    private RenderFragment OnDropdownRender(RenderFragment originNode, Properties props)\n    {\n        RenderFragment customDropdownRender =\n        @<Template>\n            <div>\n                @originNode\n                <Divider Style=\"margin:4px 0\"></Divider>\n                <div style=\"display:flex;flex-wrap:nowrap;padding:8px\">\n                    <Input Style=\"flex:auto\" @bind-Value=\"@_name\" OnChange=\"OnNameChange\" />\n                    <a style=\"flex:none;padding:8px;display:block;cursor:pointer\" @onclick=\"AddItem\">\n                        <Icon Type=\"plus\" Theme=\"outline\"></Icon>\n                        Add Item\n                    </a>\n                </div>\n            </div>\n        </Template>;\n        return customDropdownRender;\n    }\n}\n",
+        "Code": "<Select Style=\"width:240px\"\n        Placeholder=\"custom dropdown render\"\n        DropdownRender=\"@OnDropdownRender\">\n    @foreach (var item in _items)\n    {\n        <SelectOption Value=\"@item\">@item</SelectOption>\n    }\n</Select>\n\n@code{\n    private int _index = 0;\n    private string _name = \"\";\n    private List<string> _items = new List<string> { \"jack\", \"lucy\" };\n\n    private void AddItem(MouseEventArgs args)\n    {\n        Console.WriteLine(\"Add item\");\n        _name = null;\n        var newItem = !string.IsNullOrWhiteSpace(_name) ? _name : $\"New Item {_index++}\";\n        _items.Add(newItem);\n    }\n\n    private RenderFragment OnDropdownRender(RenderFragment originNode, Properties props)\n    {\n        RenderFragment customDropdownRender =\n        @<Template>\n            <div>\n                @originNode\n                <Divider Style=\"margin:4px 0\"></Divider>\n                <div style=\"display:flex;flex-wrap:nowrap;padding:8px\">\n                    <Input Style=\"flex:auto\" @bind-Value=\"@_name\"/>\n                    <a style=\"flex:none;padding:8px;display:block;cursor:pointer\" @onclick=\"AddItem\">\n                        <Icon Type=\"plus\" Theme=\"outline\"></Icon>\n                        Add Item\n                    </a>\n                </div>\n            </div>\n        </Template>;\n        return customDropdownRender;\n    }\n}\n",
         "Type": "Demos.Select.demo.CustomDropdownMenu",
         "Style": "",
         "Debug": false
@@ -3925,6 +3925,75 @@
     ]
   },
   {
+    "Title": "AutoComplete",
+    "SubTitle": "自动完成",
+    "Type": "数据录入",
+    "Desc": "<p>输入框自动完成功能。</p>\n<h2>何时使用</h2>\n<p>需要自动完成时。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>allowClear</td>\n<td>支持清除, 单选模式有效</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>autoFocus</td>\n<td>自动获取焦点</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>backfill</td>\n<td>使用键盘选择选项的时候把选中项回填到输入框中</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>children (自定义输入框)</td>\n<td>自定义输入框</td>\n<td>HTMLInputElement <br /><br /> HTMLTextAreaElement <br /><br /> <code>React.ReactElement&lt;InputProps&gt;</code></td>\n<td><code>&lt;Input /&gt;</code></td>\n<td></td>\n</tr>\n<tr>\n<td>children (自动完成的数据源)</td>\n<td>自动完成的数据源</td>\n<td><code>React.ReactElement&lt;OptionProps&gt;</code> <br /><br /> <code>Array&lt;React.ReactElement&lt;OptionProps&gt;&gt;</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>defaultActiveFirstOption</td>\n<td>是否默认高亮第一个选项。</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>defaultValue</td>\n<td>指定默认选中的条目</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>disabled</td>\n<td>是否禁用</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>filterOption</td>\n<td>是否根据输入项进行筛选。当其为一个函数时，会接收 <code>inputValue</code> <code>option</code> 两个参数，当 <code>option</code> 符合筛选条件时，应返回 <code>true</code>，反之则返回 <code>false</code>。</td>\n<td>boolean or function(inputValue, option)</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>getPopupContainer</td>\n<td>菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。<a href=\"https://codesandbox.io/s/4j168r7jw0\">示例</a></td>\n<td>Function(triggerNode)</td>\n<td>() =&gt; document.body</td>\n<td></td>\n</tr>\n<tr>\n<td>placeholder</td>\n<td>输入框提示</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>指定当前选中的条目</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onBlur</td>\n<td>失去焦点时的回调</td>\n<td>function()</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>选中 option，或 input 的 value 变化时，调用此函数</td>\n<td>function(value)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onFocus</td>\n<td>获得焦点时的回调</td>\n<td>function()</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onSearch</td>\n<td>搜索补全项的时候调用</td>\n<td>function(value)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onSelect</td>\n<td>被选中时调用，参数为选中项的 value 值</td>\n<td>function(value, option)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>defaultOpen</td>\n<td>是否默认展开下拉菜单</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>open</td>\n<td>是否展开下拉菜单</td>\n<td>boolean</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>onDropdownVisibleChange</td>\n<td>展开下拉菜单的回调</td>\n<td>function(open)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>notFoundContent</td>\n<td>当下拉列表为空时显示的内容</td>\n<td>ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>方法</h2>\n<table>\n<thead>\n<tr>\n<th>名称</th>\n<th>描述</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>blur()</td>\n<td>移除焦点</td>\n<td></td>\n</tr>\n<tr>\n<td>focus()</td>\n<td>获取焦点</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>基本使用。通过 options 设置自动完成的数据源</p>\n",
+        "Code": "<div>\n    <AutoComplete @ref=\"@_autoComplete\" OnChange=\"OnChange\"></AutoComplete>\n</div>\n\n@code\n{\n    private AutoComplete _autoComplete;\n\n    private void OnChange(string value)\n    {\n        if (string.IsNullOrWhiteSpace(value))\n        {\n            _autoComplete.LoadData(null);\n            return;\n        }\n\n        var list = new List<string>()\n        {\n            value, value + value, value + value + value\n        };\n        _autoComplete.LoadData(list);\n    }\n}",
+        "Type": "Demos.AutoComplete.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "uncertain-category",
+        "Title": "查询模式 - 不确定类目",
+        "Description": "<p><a href=\"https://ant.design/docs/spec/reaction#Lookup-Patterns\">查询模式: 不确定类目</a> 示例。</p>\n",
+        "Code": "",
+        "Type": "Demos.AutoComplete.demo.UncertainCategory",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "non-case-sensitive",
+        "Title": "不区分大小写",
+        "Description": "<p>不区分大小写的 AutoComplete</p>\n",
+        "Code": "<div>\n    <AutoComplete Options=\"@options\" PlaceHolder=\"try to type 'b'\" FilterOption=\"(value,option)=>option.Contains(value,StringComparison.InvariantCultureIgnoreCase)\"></AutoComplete>\n</div>\n\n@code\n{\n    private List<string> options = new List<string>() { \"Burns Bay Road\", \"Downing Street\", \"Wall Street\" };\n}",
+        "Type": "Demos.AutoComplete.demo.NonCaseSensitive",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "custom",
+        "Title": "自定义输入组件",
+        "Description": "<p>自定义输入组件。</p>\n",
+        "Code": "@using Microsoft.Extensions.Primitives\n<div>\n    <AutoComplete @ref=\"@_autoComplete\">\n        <CustomInput>\n            <TextArea Placeholder=\"input here\" AutoSize=\"true\" OnChange=\"OnChange\" @bind-Value=\"@txtValue\" />\n        </CustomInput>\n    </AutoComplete>\n</div>\n\n@code\n{\n    private AutoComplete _autoComplete;\n    private string txtValue;\n\n    private void OnChange(string value)\n    {\n        var list = string.IsNullOrWhiteSpace(value) ? Array.Empty<string>() : new[]\n        {\n            value,\n            value + value,\n            value + value + value\n        };\n        _autoComplete.LoadData(list);\n    }\n}",
+        "Type": "Demos.AutoComplete.demo.Custom",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "certain-category",
+        "Title": "查询模式 - 确定类目",
+        "Description": "<p><a href=\"https://ant.design/docs/spec/reaction#Lookup-Patterns\">查询模式: 确定类目</a> 示例。</p>\n",
+        "Code": "",
+        "Type": "Demos.AutoComplete.demo.CertainCategory",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "options",
+        "Title": "自定义选项",
+        "Description": "",
+        "Code": "<div>\n    <AutoComplete FormatList=\"@_formatList\" @bind-Value=\"_value\"></AutoComplete>\n</div>\n\n@code\n{\n    private string _value;\n\n    private List<string> _formatList = new List<string>() { \"{0}@gmail.com\", \"{0}@163.com\", \"{0}@qq.com\" };\n}",
+        "Type": "Demos.AutoComplete.demo.Options",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Carousel",
     "SubTitle": "走马灯",
     "Type": "数据展示",
@@ -4104,7 +4173,7 @@
         "Name": "size",
         "Title": "大小",
         "Description": "<p>不同大小的级联选择器。</p>\n",
-        "Code": "<div>\n    <Cascader Options=\"@sizeNodes\" Size=\"large\" Style=\"margin:15px 0;\"></Cascader>\n    <Cascader Options=\"@sizeNodes\" Size=\"middle\" Style=\"margin:15px 0\"></Cascader>\n    <Cascader Options=\"@sizeNodes\" Size=\"small\" Style=\"margin:15px 0\"></Cascader>\n</div>\n\n@code {\n    List<CascaderNode> sizeNodes = GetSizeNodes();\n\n    private static List<CascaderNode> GetSizeNodes()\n    {\n        List<CascaderNode> list = new List<CascaderNode>() {\n        new CascaderNode()\n        {\n            Value = \"1\",\n            Label = \"Large1\",\n            Children = new CascaderNode[] {\n                    new CascaderNode{ Value = \"11\", Label=\"Large11\", Children = new CascaderNode[]{\n                        new CascaderNode{ Value = \"111\", Label=\"Large111\" },\n                        new CascaderNode{ Value = \"112\", Label=\"Large112\"}\n                    } },\n                    new CascaderNode{ Value = \"12\", Label=\"Large12\"},\n                    new CascaderNode{ Value = \"13\", Label=\"Large13\"}\n                }\n        }, new CascaderNode()\n        {\n            Value = \"2\",\n            Label = \"Large2\",\n            Children = new CascaderNode[] {\n                    new CascaderNode{ Value = \"21\", Label=\"Large21\"},\n                    new CascaderNode{ Value = \"22\", Label=\"Large22\"}\n                }\n        }, new CascaderNode()\n        {\n            Value = \"3\",\n            Label = \"Large3\",\n        }};\n        return list;\n    }\n}\n",
+        "Code": "<div>\n    <Cascader Options=\"@sizeNodes\" Size=\"large\" Style=\"margin:15px 0;\"></Cascader>\n    <Cascader Options=\"@sizeNodes\" Size=\"middle\" Style=\"margin:15px 0\"></Cascader>\n    <Cascader Options=\"@sizeNodes\" Size=\"small\" Style=\"margin:15px 0\"></Cascader>\n</div>\n\n@code {\n    List<CascaderNode> sizeNodes = GetSizeNodes();\n\n    private static List<CascaderNode> GetSizeNodes()\n    {\n        List<CascaderNode> list = new List<CascaderNode>() {\n        new CascaderNode()\n        {\n            Value = \"1\",\n            Label = \"Size1\",\n            Children = new CascaderNode[] {\n                    new CascaderNode{ Value = \"11\", Label=\"Size11\", Children = new CascaderNode[]{\n                        new CascaderNode{ Value = \"111\", Label=\"Size111\" },\n                        new CascaderNode{ Value = \"112\", Label=\"Size112\"}\n                    } },\n                    new CascaderNode{ Value = \"12\", Label=\"Size12\"},\n                    new CascaderNode{ Value = \"13\", Label=\"Size13\"}\n                }\n        }, new CascaderNode()\n        {\n            Value = \"2\",\n            Label = \"Size2\",\n            Children = new CascaderNode[] {\n                    new CascaderNode{ Value = \"21\", Label=\"Size21\"},\n                    new CascaderNode{ Value = \"22\", Label=\"Size22\"}\n                }\n        }, new CascaderNode()\n        {\n            Value = \"3\",\n            Label = \"Size3\",\n        }};\n        return list;\n    }\n}\n",
         "Type": "Demos.Cascader.demo.Size",
         "Style": "",
         "Debug": false

@@ -253,6 +253,13 @@
           },
           {
             "Order": 0,
+            "Title": "AutoComplete",
+            "SubTitle": "自动完成",
+            "Type": "menuItem",
+            "Url": "components/autocomplete"
+          },
+          {
+            "Order": 0,
             "Title": "Checkbox",
             "SubTitle": "多选框",
             "Type": "menuItem",
