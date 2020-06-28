@@ -3765,6 +3765,75 @@
     ]
   },
   {
+    "Title": "Popover",
+    "SubTitle": "气泡卡片",
+    "Type": "数据展示",
+    "Desc": "<p>点击/鼠标移入元素，弹出气泡式的卡片浮层。</p>\n<h2>何时使用</h2>\n<p>当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现。</p>\n<p>和 <code>Tooltip</code> 的区别是，用户可以对浮层上的元素进行操作，因此它可以承载更复杂的内容，比如链接或按钮等。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>content</td>\n<td>卡片内容</td>\n<td>string|ReactNode|() =&gt; ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>卡片标题</td>\n<td>string|ReactNode|() =&gt; ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<p>更多属性请参考 <a href=\"/components/tooltip/#API\">Tooltip</a>。</p>\n<h2>注意</h2>\n<p>请确保 <code>Popover</code> 的子元素能接受 <code>onMouseEnter</code>、<code>onMouseLeave</code>、<code>onFocus</code>、<code>onClick</code> 事件。</p>\n",
+    "DemoList": [
+      {
+        "Order": 2,
+        "Name": "placement",
+        "Title": "位置",
+        "Description": "<p>位置有十二个方向。</p>\n",
+        "Code": "<div class=\"demo\">\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); white-space: nowrap;\">\n        <Popover Placement=\"@PlacementType.TopLeft\" Title=\"_text\" Content=\"_content\">\n            <Button>TL</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.Top\" Title=\"_text\" Content=\"_content\">\n            <Button>Top</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.TopRight\" Title=\"_text\" Content=\"_content\">\n            <Button>TR</Button>\n        </Popover>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); float: left;\">\n        <Popover Placement=\"@PlacementType.LeftTop\" Title=\"_text\" Content=\"_content\">\n            <Button>LT</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.Left\" Title=\"_text\" Content=\"_content\">\n            <Button>Left</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.LeftBottom\" Title=\"_text\" Content=\"_content\">\n            <Button>LB</Button>\n        </Popover>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); margin-left: @($\"{ButtonWidth * 4 + 24}px\");\">\n        <Popover Placement=\"@PlacementType.RightTop\" Title=\"_text\" Content=\"_content\">\n            <Button>RT</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.Right\" Title=\"_text\" Content=\"_content\">\n            <Button>Right</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.RightBottom\" Title=\"_text\" Content=\"_content\">\n            <Button>RB</Button>\n        </Popover>\n    </div>\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); clear: both; white-space: nowrap;\">\n        <Popover Placement=\"@PlacementType.BottomLeft\" Title=\"_text\" Content=\"_content\">\n            <Button>BL</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.Bottom\" Title=\"_text\" Content=\"_content\">\n            <Button>Bottom</Button>\n        </Popover>\n        <Popover Placement=\"@PlacementType.BottomRight\" Title=\"_text\" Content=\"_content\">\n            <Button>BR</Button>\n        </Popover>\n    </div>\n</div>\n\n@code\n{\n    private RenderFragment _text =@<span>Title</span>;\n        \n    const int ButtonWidth = 70;\n\n    private RenderFragment _content =\n        @<div>\n            <p>Content</p>\n            <p>Content</p>\n        </div>;\n}",
+        "Type": "Demos.Popover.demo.Placement",
+        "Style": "\n.code-box-demo .demo {\n  overflow: auto;\n}\n.code-box-demo .ant-btn {\n  margin-right: 8px;\n  margin-bottom: 8px;\n}\n.code-box-demo .ant-btn-rtl {\n  margin-right: 0;\n  margin-left: 8px;\n  margin-bottom: 8px;\n}\n#components-popover-demo-placement .ant-btn {\n  width: 70px;\n  text-align: center;\n  padding: 0;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "control",
+        "Title": "从浮层内关闭",
+        "Description": "<p>使用 <code>visible</code> 属性控制浮层显示。</p>\n",
+        "Code": "<Popover OnVisibleChange=\"OnVisibleChange\" Visible=\"_visible\" Content=\"_content\" Title=\"@(\"Title\")\" Trigger=\"@(new AntDesign.TriggerType[] { AntDesign.TriggerType.Click})\">\n  <Button type=\"primary\">Click me</Button>\n</Popover>\n\n\n@code{\n\n    private RenderFragment _content =>\n        @<a @onclick=\"_=>this._visible = false\">Close</a>;\n\n    private bool _visible = false;\n\n    private void OnVisibleChange(bool visible)\n    {\n        _visible = visible;\n    }\n}",
+        "Type": "Demos.Popover.demo.Control",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法，浮层的大小由内容区域决定。</p>\n",
+        "Code": "<Popover Content=\"_content\" Title=\"@(\"Title\")\">\n    <Button type=\"primary\">Hover me</Button>\n</Popover>\n\n@code{\n    RenderFragment _content =\n    @<div>\n        <p>Content</p>\n        <p>Content</p>\n    </div>;\n}",
+        "Type": "Demos.Popover.demo.Basic",
+        "Style": "\n.ant-popover-content p {\n  margin: 0;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "arrow-point-at-center",
+        "Title": "箭头指向",
+        "Description": "<p>设置了 <code>arrowPointAtCenter</code> 后，箭头将指向目标元素的中心。</p>\n",
+        "Code": "<div>\n    <Popover Placement=\"PlacementType.TopLeft\" Title=\"_text\" Content=\"_content\">\n        <Button>Align edge / 边缘对齐</Button>\n    </Popover>\n    <Popover Placement=\"PlacementType.TopLeft\" Title=\"_text\" Content=\"_content\" ArrowPointAtCenter=\"true\">\n        <Button>Arrow points to center / 箭头指向中心</Button>\n    </Popover>\n</div>\n\n@code\n{\n    private RenderFragment _text =@<span>Title</span>;\n    \n    private RenderFragment _content =\n        @<div>\n            <p>Content</p>\n            <p>Content</p>\n        </div>;\n}",
+        "Type": "Demos.Popover.demo.ArrowPointAtCenter",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "triggerType",
+        "Title": "三种触发方式",
+        "Description": "<p>鼠标移入、聚集、点击。</p>\n",
+        "Code": "<div>\n    <Popover Content=\"_content\" Title=\"@(\"Title\")\" Trigger=\"@(new AntDesign.TriggerType[] { AntDesign.TriggerType.Hover})\">\n        <AntDesign.Button>Hover me</AntDesign.Button>\n    </Popover>\n    <Popover Content=\"_content\" Title=\"@(\"Title\")\" Trigger=\"@(new AntDesign.TriggerType[] { AntDesign.TriggerType.Focus})\">\n        <AntDesign.Button>Focus me</AntDesign.Button>\n    </Popover>\n    <Popover Content=\"_content\" Title=\"@(\"Title\")\" Trigger=\"@(new AntDesign.TriggerType[] { AntDesign.TriggerType.Click})\">\n        <AntDesign.Button>Click me</AntDesign.Button>\n    </Popover>\n</div>\n\n@code{\n    private RenderFragment _content =\n    @<div>\n        <p>Content</p>\n        <p>Content</p>\n    </div>;\n}",
+        "Type": "Demos.Popover.demo.TriggerType",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "hover-with-click",
+        "Title": "悬停点击弹出窗口",
+        "Description": "<p>以下示例显示如何创建可悬停和单击的弹出窗口。</p>\n",
+        "Code": "<Popover Style=\"{width: 500}\" OnVisibleChange=\"OnHoverVisibleChange\" Visible=\"_hoverVisible\" Content=\"_hoverContent\" Title=\"@(\"Hover title\")\" Trigger=\"@(new AntDesign.TriggerType[] { AntDesign.TriggerType.Hover})\">\n    <Popover OnVisibleChange=\"OnClickVisibleChange\" Visible=\"_clickVisible\" Content=\"_clickContent\" Title=\"@(\"Click title\")\" Trigger=\"@(new AntDesign.TriggerType[] { AntDesign.TriggerType.Click})\">\n        <Button>Hover and click / 悬停并单击</Button>\n    </Popover>\n</Popover>\n\n@code{\n\n    private RenderFragment _hoverContent =@<div> This is hover content.</div>;\n    private RenderFragment _clickContent => \n        @<div>\n            <div>This is click content.</div>\n            <a @onclick=\"_=>Close()\">Close</a>\n        </div>;\n\n    private bool _hoverVisible = false;\n    private bool _clickVisible = false;\n\n    private void OnHoverVisibleChange(bool visible)\n    {\n        _hoverVisible = visible;\n    }\n\n    private void OnClickVisibleChange(bool visible)\n    {\n        _clickVisible = visible;\n        _hoverVisible = false;\n    }\n\n    private void Close()\n    {\n        _hoverVisible = false;\n        _clickVisible = false;\n    }\n}\n",
+        "Type": "Demos.Popover.demo.HoverWithClick",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Alert",
     "SubTitle": "警告提示",
     "Type": "反馈",

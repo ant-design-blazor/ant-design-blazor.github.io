@@ -307,6 +307,12 @@
           },
           {
             "Order": 0,
+            "Title": "Popover",
+            "Type": "menuItem",
+            "Url": "components/popover"
+          },
+          {
+            "Order": 0,
             "Title": "List",
             "Type": "menuItem",
             "Url": "components/list"
