@@ -70,6 +70,7 @@
   "Demos.Dropdown.demo.ContextMenu",
   "Demos.Select.demo.Search",
   "Demos.Select.demo.SearchBox",
+  "Demos.Select.demo.ClearValues",
   "Demos.Select.demo.Suffix",
   "Demos.Select.demo.SelectUsers",
   "Demos.Select.demo.Basic",
