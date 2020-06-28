@@ -608,7 +608,7 @@
         "Name": "Clear",
         "Title": "带移除图标",
         "Description": "<p>带移除图标的输入框，点击图标删除所有内容。</p>\n",
-        "Code": "<div>    \n    <Input Placeholder=\"input with clear icon\" AllowClear=\"true\" OnChange=\"onChange\" TValue=\"string\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"textarea with clear icon\"  AllowClear=\"true\" OnChange=\"onChange\" />\n</div>\n@code{\n\n    private void onChange()\n    {\n       \n    }\n}",
+        "Code": "<div>    \n    <Input Placeholder=\"input with clear icon\" AllowClear=\"true\" OnChange=\"onChange\" TValue=\"string\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"textarea with clear icon\"  AllowClear=\"true\" OnChange=\"onChange\" />\n</div>\n@code{\n\n    private void onChange(string value)\n    {\n        Console.WriteLine(\"onChange =>\" + value);\n    }\n}",
         "Type": "Demos.Input.demo.Clear",
         "Style": "",
         "Debug": false
