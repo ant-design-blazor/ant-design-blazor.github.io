@@ -1,5 +1,73 @@
 [
   {
+    "Title": "Tree",
+    "Type": "Data Display",
+    "Desc": "<p>A hierarchical list structure component.</p>\n<h2>When To Use</h2>\n<p>Almost anything can be represented in a tree structure. Examples include directories, organization hierarchies, biological classifications, countries, etc. The <code>Tree</code> component is a way of representing the hierarchical relationship between these things. You can also expand, collapse, and select a treeNode within a <code>Tree</code>.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Tree props</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 3,
+        "Name": "dynamic",
+        "Title": "load data asynchronously",
+        "Description": "<p>To load data asynchronously when click to expand a treeNode.</p>\n",
+        "Code": "\n<div>\n    <Tree Nodes=\"TreeNodes\" OnNodeLoadDelay=\"NodeLoadDelayAsync\"></Tree>\n</div>\n\n@code{\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>(){\n                new TreeNode{Text = \"Expand to load\",LoadDelay = true},\n                new TreeNode{Text = \"Expand to load\",LoadDelay = true},\n                new TreeNode{Text = \"Tree Node\"}\n            };\n\n            return _treeNodes;\n        }\n    }\n\n    async Task NodeLoadDelayAsync(TreeEventArgs args)\n    {\n        await Task.Delay(300);\n        args.Node.Nodes.Add(new TreeNode { Text = \"Child Node\", LoadDelay = true });\n        args.Node.Nodes.Add(new TreeNode { Text = \"Child Node\", LoadDelay = true });\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Dynamic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>The most basic usage, tell you how to use checkable, selectable, disabled, defaultExpandKeys, and etc.</p>\n",
+        "Code": "\n<div>\n    <Tree Checkable=\"true\" Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>(){\n                new TreeNode\n                {\n                    Text = \"parent 1\",IsExpanded = true,\n                    Nodes ={\n                        new TreeNode\n                        {\n                            Text=\"parent 1-0\",IsDisabled=true,IsExpanded=true,IsChecked=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\",IsDisabled=true }\n                                ,\n                                new TreeNode{ Text=\"leaf\" }\n                            }\n                        },\n                        new TreeNode\n                        {\n                            Text=\"parent 1-1\",IsExpanded=true,\n                            Nodes={\n                                new TreeNode{ Text=\"sss\"},\n                            }\n                        }\n                    }\n                }\n            };\n\n            return _treeNodes;\n        }\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "customized-icon",
+        "Title": "Customize Icon",
+        "Description": "<p>You can customize icons for different nodes.</p>\n",
+        "Code": "\n<div>\n    <Tree ShowIcon=\"true\" Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>()\n            {\n                new TreeNode\n                {\n                    Text=\"parent 1\",IsExpanded=true,\n                    IconTemplate=(node)=>@<Icon Type=\"smile\" />,\n                    Nodes =\n                    {\n                        new TreeNode\n                        {\n                            Text=\"leaf\"\n                            ,\n                            IconTemplate=(node)=>@<Icon Type=\"smile\" />\n                        }\n                        ,\n                        new TreeNode\n                        {\n                            Text=\"leaf\",IsSelected=true\n                            ,\n                            IconTemplate=(node)=> node.IsSelected?(RenderFragment)(@<Icon Type=\"frown\" Theme=\"fill\" />):(@<Icon Type=\"frown\" Theme=\"outline\" />)\n                        }\n                    }\n                }\n            };\n\n            return _treeNodes;\n        }\n    }\n\n\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Customizedicon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "line",
+        "Title": "Tree with line",
+        "Description": "<p>Tree with connected line between nodes, turn on by <code>showLine</code>, customize the preseted icon by <code>switcherIcon</code>.</p>\n",
+        "Code": "\n<div>\n    ShowLine <Switch Checked=\"_showLine\" OnChange=\"(v)=>_showLine = v\" />\n    <br />\n    ShowIcon <Switch Checked=\"_showIcon\" OnChange=\"(v)=>_showIcon = v\" />\n    <br />\n    <Tree ShowLine=\"_showLine\" ShowIcon=\"_showIcon\" IconType=\"carry-out\" Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n    bool _showLine { get; set; } = true;\n    bool _showIcon { get; set; }\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>(){\n                new TreeNode\n                {\n                    Text = \"parent 1\",IsExpanded = true,\n                    Nodes ={\n                        new TreeNode\n                        {\n                            Text=\"parent 1-0\",IsDisabled=true,IsExpanded=true,IsChecked=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\" }\n                                ,\n                                new TreeNode{ Text=\"leaf\" }\n                                ,\n                                new TreeNode{ Text=\"leaf\" }\n                            }\n                        },\n                        new TreeNode\n                        {\n                            Text=\"parent 1-1\",IsExpanded=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\"},\n                            }\n                        },\n                        new TreeNode\n                        {\n                            Text=\"parent 1-2\",IsExpanded=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\",SwitcherIcon=\"form\"},\n                            }\n                        }\n                    }\n                }\n            };\n\n            return _treeNodes;\n        }\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Line",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "searchdemo",
+        "Title": "Searchable",
+        "Description": "<p>Searchable Tree.</p>\n",
+        "Code": "\n<div>\n    <Search Value=\"@searchKey\" Placeholder=\"Search..\" ValueChanged=\"PrcessSearch\" />\n    <Tree Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n    string searchKey;\n\n    void PrcessSearch(string newval)\n    {\n        searchKey = newval.Trim();\n        CheckNodesRecursive(TreeNodes);\n    }\n\n    bool CheckNodesRecursive(List<TreeNode> nodes)\n    {\n        int matches = 0;\n\n        foreach (TreeNode node in nodes)\n        {\n            if (!string.IsNullOrEmpty(searchKey) && node.Text.Contains(searchKey, StringComparison.OrdinalIgnoreCase))\n                matches++;\n\n            if (!node.HasChildNodes)\n                continue;\n\n            node.IsExpanded = CheckNodesRecursive(node.Nodes);\n            if (node.IsExpanded)\n                matches++;\n        }\n\n        return matches != 0;\n    }\n\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>();\n            MakeSampleData(_treeNodes, \"0\", 0);\n\n            return _treeNodes;\n        }\n    }\n\n    RenderFragment RenderNodeTemplate(TreeNode node)\n    {\n        int index = string.IsNullOrEmpty(searchKey) ? -1 : node.Text.IndexOf(searchKey, StringComparison.OrdinalIgnoreCase);\n        if (index == -1)\n            return (b) => { b.AddContent(0, node.Text); };\n        return (b) =>\n        {\n            if (index != 0)\n                b.AddContent(0, node.Text.Substring(0, index));\n            b.AddMarkupContent(1, \"<span class='site-tree-search-value' style='color:orange'>\" + searchKey + \"</span>\");\n            if (index + searchKey.Length < node.Text.Length)\n                b.AddContent(2, node.Text.Substring(index + searchKey.Length));\n        };\n    }\n\n\n    void MakeSampleData(List<TreeNode> nodes, string ptext, int level)\n    {\n        for (int index = 0; index < 3; index++)\n        {\n            TreeNode subnode = new TreeNode();\n            subnode.Text = ptext + \"-\" + index;\n            subnode.NodeTemplate = this.RenderNodeTemplate;\n            nodes.Add(subnode);\n\n            if (index < 2 && level < 2)\n            {\n                MakeSampleData(subnode.Nodes, subnode.Text, level + 1);\n            }\n        }\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Searchdemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "switcher-icon",
+        "Title": "Customize collapse/expand icon",
+        "Description": "<p>customize collapse/expand icon of tree node</p>\n",
+        "Code": "\n<div>\n    @* or use template *@\n    @*\n        <SwitcherIconTemplate Context=\"node\">\n            <Icon Type=\"down\" Class=\"{PREFIX_CLS}-switcher-icon\" />\n        </SwitcherIconTemplate>\n    *@\n    <Tree Nodes=\"TreeNodes\" SwitcherIcon=\"down\"></Tree>\n</div>\n\n\n@code{\n\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>()\n{\n                new TreeNode\n                {\n                    Text=\"parent 1\",IsExpanded=true,\n                    IconTemplate=(node)=>@<Icon Type=\"smile\" />,\n                    Nodes =\n                    {\n                        new TreeNode\n                        {\n                            Text=\"leaf\"\n                            ,\n                            IconTemplate=(node)=>@<Icon Type=\"smile\" />\n                        }\n                        ,\n                        new TreeNode\n                        {\n                            Text=\"leaf\"\n                            ,\n                            IconTemplate=(node)=> node.IsSelected?(RenderFragment)(@<Icon Type=\"frown\" Theme=\"fill\" />):(@<Icon Type=\"frown\" Theme=\"outline\" />)\n                        }\n                    }\n                }\n            };\n\n                return _treeNodes;\n            }\n        }\n\n\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Switchericon",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Skeleton",
     "Type": "Feedback",
     "Desc": "<p>Provide a placeholder while you wait for content to load, or to visualise content that doesn't exist yet.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When resource need long time loading, like low network speed.</li>\n<li>The component contains much information, such as List or Card.</li>\n<li>Only works when loading data for the first time.</li>\n<li>Could be replaced by Spin in any situation, but can provide a better user experience.</li>\n</ul>\n",

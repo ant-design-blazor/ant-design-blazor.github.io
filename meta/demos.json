@@ -1,4 +1,10 @@
 [
+  "Demos.Tree.demo.Dynamic",
+  "Demos.Tree.demo.Basic",
+  "Demos.Tree.demo.Customizedicon",
+  "Demos.Tree.demo.Line",
+  "Demos.Tree.demo.Searchdemo",
+  "Demos.Tree.demo.Switchericon",
   "Demos.Skeleton.demo.Children",
   "Demos.Skeleton.demo.Basic",
   "Demos.Skeleton.demo.Element",

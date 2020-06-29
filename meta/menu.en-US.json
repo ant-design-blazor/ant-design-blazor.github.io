@@ -235,6 +235,12 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Tree",
+            "Type": "menuItem",
+            "Url": "components/tree"
+          },
+          {
+            "Order": 0,
             "Title": "Avatar",
             "Type": "menuItem",
             "Url": "components/avatar"

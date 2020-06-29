@@ -288,6 +288,13 @@
         "Children": [
           {
             "Order": 0,
+            "Title": "Tree",
+            "SubTitle": "树形控件",
+            "Type": "menuItem",
+            "Url": "components/tree"
+          },
+          {
+            "Order": 0,
             "Title": "Avatar",
             "SubTitle": "头像",
             "Type": "menuItem",

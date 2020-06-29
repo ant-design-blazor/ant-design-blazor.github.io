@@ -1,5 +1,74 @@
 [
   {
+    "Title": "Tree",
+    "SubTitle": "树形控件",
+    "Type": "数据展示",
+    "Desc": "<p>多层次的结构列表。</p>\n<h2>何时使用</h2>\n<p>文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用 <code>树控件</code> 可以完整展现其中的层级关系，并具有展开收起选择等交互功能。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Tree props</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 3,
+        "Name": "dynamic",
+        "Title": "异步数据加载",
+        "Description": "<p>点击展开节点，动态加载数据。</p>\n",
+        "Code": "\n<div>\n    <Tree Nodes=\"TreeNodes\" OnNodeLoadDelay=\"NodeLoadDelayAsync\"></Tree>\n</div>\n\n@code{\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>(){\n                new TreeNode{Text = \"Expand to load\",LoadDelay = true},\n                new TreeNode{Text = \"Expand to load\",LoadDelay = true},\n                new TreeNode{Text = \"Tree Node\"}\n            };\n\n            return _treeNodes;\n        }\n    }\n\n    async Task NodeLoadDelayAsync(TreeEventArgs args)\n    {\n        await Task.Delay(300);\n        args.Node.Nodes.Add(new TreeNode { Text = \"Child Node\", LoadDelay = true });\n        args.Node.Nodes.Add(new TreeNode { Text = \"Child Node\", LoadDelay = true });\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Dynamic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法，展示可勾选，可选中，禁用，默认展开等功能。</p>\n",
+        "Code": "\n<div>\n    <Tree Checkable=\"true\" Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>(){\n                new TreeNode\n                {\n                    Text = \"parent 1\",IsExpanded = true,\n                    Nodes ={\n                        new TreeNode\n                        {\n                            Text=\"parent 1-0\",IsDisabled=true,IsExpanded=true,IsChecked=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\",IsDisabled=true }\n                                ,\n                                new TreeNode{ Text=\"leaf\" }\n                            }\n                        },\n                        new TreeNode\n                        {\n                            Text=\"parent 1-1\",IsExpanded=true,\n                            Nodes={\n                                new TreeNode{ Text=\"sss\"},\n                            }\n                        }\n                    }\n                }\n            };\n\n            return _treeNodes;\n        }\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "customized-icon",
+        "Title": "自定义图标",
+        "Description": "<p>可以针对不同的节点定制图标。</p>\n",
+        "Code": "\n<div>\n    <Tree ShowIcon=\"true\" Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>()\n            {\n                new TreeNode\n                {\n                    Text=\"parent 1\",IsExpanded=true,\n                    IconTemplate=(node)=>@<Icon Type=\"smile\" />,\n                    Nodes =\n                    {\n                        new TreeNode\n                        {\n                            Text=\"leaf\"\n                            ,\n                            IconTemplate=(node)=>@<Icon Type=\"smile\" />\n                        }\n                        ,\n                        new TreeNode\n                        {\n                            Text=\"leaf\",IsSelected=true\n                            ,\n                            IconTemplate=(node)=> node.IsSelected?(RenderFragment)(@<Icon Type=\"frown\" Theme=\"fill\" />):(@<Icon Type=\"frown\" Theme=\"outline\" />)\n                        }\n                    }\n                }\n            };\n\n            return _treeNodes;\n        }\n    }\n\n\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Customizedicon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "line",
+        "Title": "连接线",
+        "Description": "<p>节点之间带连接线的树，常用于文件目录结构展示。使用 <code>showLine</code> 开启，可以用 <code>switcherIcon</code> 修改默认图标。</p>\n",
+        "Code": "\n<div>\n    ShowLine <Switch Checked=\"_showLine\" OnChange=\"(v)=>_showLine = v\" />\n    <br />\n    ShowIcon <Switch Checked=\"_showIcon\" OnChange=\"(v)=>_showIcon = v\" />\n    <br />\n    <Tree ShowLine=\"_showLine\" ShowIcon=\"_showIcon\" IconType=\"carry-out\" Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n    bool _showLine { get; set; } = true;\n    bool _showIcon { get; set; }\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>(){\n                new TreeNode\n                {\n                    Text = \"parent 1\",IsExpanded = true,\n                    Nodes ={\n                        new TreeNode\n                        {\n                            Text=\"parent 1-0\",IsDisabled=true,IsExpanded=true,IsChecked=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\" }\n                                ,\n                                new TreeNode{ Text=\"leaf\" }\n                                ,\n                                new TreeNode{ Text=\"leaf\" }\n                            }\n                        },\n                        new TreeNode\n                        {\n                            Text=\"parent 1-1\",IsExpanded=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\"},\n                            }\n                        },\n                        new TreeNode\n                        {\n                            Text=\"parent 1-2\",IsExpanded=true,\n                            Nodes={\n                                new TreeNode{ Text=\"leaf\",SwitcherIcon=\"form\"},\n                            }\n                        }\n                    }\n                }\n            };\n\n            return _treeNodes;\n        }\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Line",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "searchdemo",
+        "Title": "可搜索",
+        "Description": "<p>可搜索的树。</p>\n",
+        "Code": "\n<div>\n    <Search Value=\"@searchKey\" Placeholder=\"Search..\" ValueChanged=\"PrcessSearch\" />\n    <Tree Nodes=\"TreeNodes\"></Tree>\n</div>\n\n@code{\n\n    string searchKey;\n\n    void PrcessSearch(string newval)\n    {\n        searchKey = newval.Trim();\n        CheckNodesRecursive(TreeNodes);\n    }\n\n    bool CheckNodesRecursive(List<TreeNode> nodes)\n    {\n        int matches = 0;\n\n        foreach (TreeNode node in nodes)\n        {\n            if (!string.IsNullOrEmpty(searchKey) && node.Text.Contains(searchKey, StringComparison.OrdinalIgnoreCase))\n                matches++;\n\n            if (!node.HasChildNodes)\n                continue;\n\n            node.IsExpanded = CheckNodesRecursive(node.Nodes);\n            if (node.IsExpanded)\n                matches++;\n        }\n\n        return matches != 0;\n    }\n\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>();\n            MakeSampleData(_treeNodes, \"0\", 0);\n\n            return _treeNodes;\n        }\n    }\n\n    RenderFragment RenderNodeTemplate(TreeNode node)\n    {\n        int index = string.IsNullOrEmpty(searchKey) ? -1 : node.Text.IndexOf(searchKey, StringComparison.OrdinalIgnoreCase);\n        if (index == -1)\n            return (b) => { b.AddContent(0, node.Text); };\n        return (b) =>\n        {\n            if (index != 0)\n                b.AddContent(0, node.Text.Substring(0, index));\n            b.AddMarkupContent(1, \"<span class='site-tree-search-value' style='color:orange'>\" + searchKey + \"</span>\");\n            if (index + searchKey.Length < node.Text.Length)\n                b.AddContent(2, node.Text.Substring(index + searchKey.Length));\n        };\n    }\n\n\n    void MakeSampleData(List<TreeNode> nodes, string ptext, int level)\n    {\n        for (int index = 0; index < 3; index++)\n        {\n            TreeNode subnode = new TreeNode();\n            subnode.Text = ptext + \"-\" + index;\n            subnode.NodeTemplate = this.RenderNodeTemplate;\n            nodes.Add(subnode);\n\n            if (index < 2 && level < 2)\n            {\n                MakeSampleData(subnode.Nodes, subnode.Text, level + 1);\n            }\n        }\n    }\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Searchdemo",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 8,
+        "Name": "switcher-icon",
+        "Title": "自定义展开/折叠图标",
+        "Description": "<p>自定义展开/折叠图标。</p>\n",
+        "Code": "\n<div>\n    @* or use template *@\n    @*\n        <SwitcherIconTemplate Context=\"node\">\n            <Icon Type=\"down\" Class=\"{PREFIX_CLS}-switcher-icon\" />\n        </SwitcherIconTemplate>\n    *@\n    <Tree Nodes=\"TreeNodes\" SwitcherIcon=\"down\"></Tree>\n</div>\n\n\n@code{\n\n\n    List<TreeNode> _treeNodes;\n\n    public List<TreeNode> TreeNodes\n    {\n        get\n        {\n            if (_treeNodes != null)\n                return _treeNodes;\n\n            _treeNodes = new List<TreeNode>()\n{\n                new TreeNode\n                {\n                    Text=\"parent 1\",IsExpanded=true,\n                    IconTemplate=(node)=>@<Icon Type=\"smile\" />,\n                    Nodes =\n                    {\n                        new TreeNode\n                        {\n                            Text=\"leaf\"\n                            ,\n                            IconTemplate=(node)=>@<Icon Type=\"smile\" />\n                        }\n                        ,\n                        new TreeNode\n                        {\n                            Text=\"leaf\"\n                            ,\n                            IconTemplate=(node)=> node.IsSelected?(RenderFragment)(@<Icon Type=\"frown\" Theme=\"fill\" />):(@<Icon Type=\"frown\" Theme=\"outline\" />)\n                        }\n                    }\n                }\n            };\n\n                return _treeNodes;\n            }\n        }\n\n\n}\n\n\n",
+        "Type": "Demos.Tree.demo.Switchericon",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Skeleton",
     "SubTitle": "骨架屏",
     "Type": "反馈",
