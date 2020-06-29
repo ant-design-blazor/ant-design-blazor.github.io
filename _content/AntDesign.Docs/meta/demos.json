@@ -29,6 +29,8 @@
   "Demos.Table.demo.FixedColumns",
   "Demos.Table.demo.Basic",
   "Demos.Table.demo.FixedHeader",
+  "Demos.Table.demo.Bordered",
+  "Demos.Table.demo.Size",
   "Demos.Table.demo.RowSelection_",
   "Demos.Form.demo.ControlHooks",
   "Demos.Form.demo.Basic",
