@@ -403,6 +403,19 @@
             "Url": "components/alert"
           }
         ]
+      },
+      {
+        "Order": 7,
+        "Title": "Other",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Anchor",
+            "Type": "menuItem",
+            "Url": "components/anchor"
+          }
+        ]
       }
     ]
   }

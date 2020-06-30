@@ -483,6 +483,20 @@
             "Url": "components/alert"
           }
         ]
+      },
+      {
+        "Order": 7,
+        "Title": "其他",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Anchor",
+            "SubTitle": "锚点",
+            "Type": "menuItem",
+            "Url": "components/anchor"
+          }
+        ]
       }
     ]
   }

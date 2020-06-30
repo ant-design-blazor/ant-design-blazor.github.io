@@ -2187,6 +2187,76 @@
     ]
   },
   {
+    "Title": "Anchor",
+    "SubTitle": "锚点",
+    "Type": "其他",
+    "Desc": "<p>用于跳转到页面指定位置。</p>\n<h2>何时使用</h2>\n<p>需要展现当前页面上可供跳转的锚点链接，以及快速在锚点之间跳转。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Anchor Props</h3>\n<table>\n<thead>\n<tr>\n<th>成员</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>affix</td>\n<td>固定模式</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>bounds</td>\n<td>锚点区域边界</td>\n<td>number</td>\n<td>5(px)</td>\n<td></td>\n</tr>\n<tr>\n<td>getContainer</td>\n<td>指定滚动的容器</td>\n<td>() =&gt; HTMLElement</td>\n<td>() =&gt; window</td>\n<td></td>\n</tr>\n<tr>\n<td>offsetBottom</td>\n<td>距离窗口底部达到指定偏移量后触发</td>\n<td>number</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>offsetTop</td>\n<td>距离窗口顶部达到指定偏移量后触发</td>\n<td>number</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>showInkInFixed</td>\n<td>固定模式是否显示小圆点</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>onClick</td>\n<td><code>click</code> 事件的 handler</td>\n<td>Function(e: Event, link: Object)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>getCurrentAnchor</td>\n<td>自定义高亮的锚点</td>\n<td>() =&gt; string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>targetOffset</td>\n<td>锚点滚动偏移量，默认与 offsetTop 相同，<a href=\"#components-anchor-demo-targetOffset\">例子</a></td>\n<td>number</td>\n<td><code>offsetTop</code></td>\n<td></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>监听锚点链接改变</td>\n<td>(currentActiveLink: string) =&gt; void</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Link Props</h3>\n<table>\n<thead>\n<tr>\n<th>成员</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>href</td>\n<td>锚点链接</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>文字内容</td>\n<td>string|ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>target</td>\n<td>该属性指定在何处显示链接的资源。</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 2,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "customizeHighlight",
+        "Title": "自定义锚点高亮",
+        "Description": "<p>自定义锚点高亮。</p>\n",
+        "Code": "<Anchor Affix=\"false\" GetCurrentAnchor=\"GetHref\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>\n\n@code{\n    public string GetHref()\n    {\n        return \"/en-US/components/anchor#components-anchor-demo-onClick\";\n    }\n}",
+        "Type": "Demos.Anchor.demo.CustomizeHighlight",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本",
+        "Description": "<p>最简单的用法。</p>\n",
+        "Code": "@*<Affix>\n        <Anchor>\n            <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n            <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-static\" Title=\"@(\"Static demo\")\" />\n            <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo with Target\")\" />\n            <AnchorLink Href=\"/en-US/components/anchor#API\" Title=\"@(\"API\")\">\n                <AnchorLink Href=\"/en-US/components/anchor#Anchor-Props\" Title=\"@(\"Anchor Props\")\" />\n                <AnchorLink Href=\"/en-US/components/anchor#Link-Props\" Title=\"@(\"Link Props\")\" />\n            </AnchorLink>\n        </Anchor>\n    </Affix>*@\n\n<Affix>\n    <Anchor>\n        <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n        <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n        <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n    </Anchor>\n</Affix>",
+        "Type": "Demos.Anchor.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "onClick",
+        "Title": "自定义 onClick 事件",
+        "Description": "<p>点击锚点不记录历史。</p>\n",
+        "Code": "<Anchor OnClick=\"(e)=>OnLinkClick(e)\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>\n\n@code{\n    public void OnLinkClick(Tuple<MouseEventArgs, AnchorLink> tuple)\n    {\n        Console.WriteLine($\"OnClick {tuple.Item2.Href}\");\n    }\n}",
+        "Type": "Demos.Anchor.demo.OnClick",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "static",
+        "Title": "静态位置",
+        "Description": "<p>不浮动，状态不随页面滚动变化。</p>\n",
+        "Code": "@*<Anchor Affix=\"false\">\n        <AnchorLink Href=\"#components-anchor-demo-basic\" Title=\"Basic demo\" />\n        <AnchorLink Href=\"#components-anchor-demo-static\" Title=\"Static demo\" />\n        <AnchorLink Href=\"#API\" Title=\"API\">\n            <AnchorLink Href=\"#Anchor-Props\" Title=\"Anchor Props\" />\n            <AnchorLink Href=\"#Link-Props\" Title=\"Link Props\" />\n        </AnchorLink>\n    </Anchor>*@\n\n<Anchor Affix=\"false\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>",
+        "Type": "Demos.Anchor.demo.Static",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "onChange",
+        "Title": "监听锚点链接改变",
+        "Description": "<p>监听锚点链接改变</p>\n",
+        "Code": "<Anchor OnChange=\"(e)=>OnLinkChange(e)\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>\n\n@code{\n    public void OnLinkChange(string href)\n    {\n        Console.WriteLine($\"changed to {href}\");\n    }\n}",
+        "Type": "Demos.Anchor.demo.OnChange",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "targetOffset",
+        "Title": "设置锚点滚动偏移量",
+        "Description": "<p>锚点目标滚动到屏幕正中间。</p>\n",
+        "Code": "<Anchor OffsetTop=\"200\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>",
+        "Type": "Demos.Anchor.demo.TargetOffset",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Spin",
     "SubTitle": "加载中",
     "Type": "反馈",

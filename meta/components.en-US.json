@@ -2161,6 +2161,75 @@
     ]
   },
   {
+    "Title": "Anchor",
+    "Type": "Other",
+    "Desc": "<p>Hyperlinks to scroll on one page.</p>\n<h2>When To Use</h2>\n<p>For displaying anchor hyperlinks on page and jumping between them.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Anchor Props</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>affix</td>\n<td>Fixed mode of Anchor</td>\n<td>boolean</td>\n<td>true</td>\n<td></td>\n</tr>\n<tr>\n<td>bounds</td>\n<td>Bounding distance of anchor area</td>\n<td>number</td>\n<td>5(px)</td>\n<td></td>\n</tr>\n<tr>\n<td>getContainer</td>\n<td>Scrolling container</td>\n<td>() =&gt; HTMLElement</td>\n<td>() =&gt; window</td>\n<td></td>\n</tr>\n<tr>\n<td>offsetBottom</td>\n<td>Pixels to offset from bottom when calculating position of scroll</td>\n<td>number</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>offsetTop</td>\n<td>Pixels to offset from top when calculating position of scroll</td>\n<td>number</td>\n<td>0</td>\n<td></td>\n</tr>\n<tr>\n<td>showInkInFixed</td>\n<td>Whether show ink-balls in Fixed mode</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>onClick</td>\n<td>set the handler to handle <code>click</code> event</td>\n<td>Function(e: Event, link: Object)</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>getCurrentAnchor</td>\n<td>Customize the anchor highlight</td>\n<td>() =&gt; string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>targetOffset</td>\n<td>Anchor scroll offset, default as <code>offsetTop</code>, <a href=\"#components-anchor-demo-targetOffset\">example</a></td>\n<td>number</td>\n<td><code>offsetTop</code></td>\n<td></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>Listening for anchor link change</td>\n<td>(currentActiveLink: string) =&gt; void</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Link Props</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>href</td>\n<td>target of hyperlink</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>title</td>\n<td>content of hyperlink</td>\n<td>string|ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>target</td>\n<td>Specifies where to display the linked URL</td>\n<td>string</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 2,
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "customizeHighlight",
+        "Title": "Customize the anchor highlight",
+        "Description": "<p>Customize the anchor highlight.</p>\n",
+        "Code": "<Anchor Affix=\"false\" GetCurrentAnchor=\"GetHref\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>\n\n@code{\n    public string GetHref()\n    {\n        return \"/en-US/components/anchor#components-anchor-demo-onClick\";\n    }\n}",
+        "Type": "Demos.Anchor.demo.CustomizeHighlight",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>The simplest usage.</p>\n",
+        "Code": "@*<Affix>\n        <Anchor>\n            <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n            <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-static\" Title=\"@(\"Static demo\")\" />\n            <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo with Target\")\" />\n            <AnchorLink Href=\"/en-US/components/anchor#API\" Title=\"@(\"API\")\">\n                <AnchorLink Href=\"/en-US/components/anchor#Anchor-Props\" Title=\"@(\"Anchor Props\")\" />\n                <AnchorLink Href=\"/en-US/components/anchor#Link-Props\" Title=\"@(\"Link Props\")\" />\n            </AnchorLink>\n        </Anchor>\n    </Affix>*@\n\n<Affix>\n    <Anchor>\n        <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n        <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n        <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n    </Anchor>\n</Affix>",
+        "Type": "Demos.Anchor.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "onClick",
+        "Title": "Customize the onClick event",
+        "Description": "<p>Clicking on an anchor does not record history.</p>\n",
+        "Code": "<Anchor OnClick=\"(e)=>OnLinkClick(e)\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>\n\n@code{\n    public void OnLinkClick(Tuple<MouseEventArgs, AnchorLink> tuple)\n    {\n        Console.WriteLine($\"OnClick {tuple.Item2.Href}\");\n    }\n}",
+        "Type": "Demos.Anchor.demo.OnClick",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "static",
+        "Title": "Static Anchor",
+        "Description": "<p>Do not change state when page is scrolling.</p>\n",
+        "Code": "@*<Anchor Affix=\"false\">\n        <AnchorLink Href=\"#components-anchor-demo-basic\" Title=\"Basic demo\" />\n        <AnchorLink Href=\"#components-anchor-demo-static\" Title=\"Static demo\" />\n        <AnchorLink Href=\"#API\" Title=\"API\">\n            <AnchorLink Href=\"#Anchor-Props\" Title=\"Anchor Props\" />\n            <AnchorLink Href=\"#Link-Props\" Title=\"Link Props\" />\n        </AnchorLink>\n    </Anchor>*@\n\n<Anchor Affix=\"false\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>",
+        "Type": "Demos.Anchor.demo.Static",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "onChange",
+        "Title": "Listening for anchor link change",
+        "Description": "<p>Listening for anchor link change.</p>\n",
+        "Code": "<Anchor OnChange=\"(e)=>OnLinkChange(e)\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>\n\n@code{\n    public void OnLinkChange(string href)\n    {\n        Console.WriteLine($\"changed to {href}\");\n    }\n}",
+        "Type": "Demos.Anchor.demo.OnChange",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "targetOffset",
+        "Title": "Set Anchor scroll offset",
+        "Description": "<p>Anchor target scroll to screen center.</p>\n",
+        "Code": "<Anchor OffsetTop=\"200\">\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-basic\" Title=\"@(\"Basic demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-onClick\" Title=\"@(\"OnClick demo\")\" />\n    <AnchorLink Href=\"/en-US/components/anchor#components-anchor-demo-targetOffset\" Title=\"@(\"TargetOffset demo\")\" />\n</Anchor>",
+        "Type": "Demos.Anchor.demo.TargetOffset",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Spin",
     "Type": "Feedback",
     "Desc": "<p>A spinner for displaying loading state of a page or a section.</p>\n<h2>When To Use</h2>\n<p>When part of the page is waiting for asynchronous data or during a rendering process, an appropriate loading animation can effectively alleviate users' inquietude.</p>\n",
