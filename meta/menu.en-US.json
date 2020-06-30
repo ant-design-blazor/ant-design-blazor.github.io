@@ -204,6 +204,12 @@
           },
           {
             "Order": 0,
+            "Title": "Upload",
+            "Type": "menuItem",
+            "Url": "components/upload"
+          },
+          {
+            "Order": 0,
             "Title": "AutoComplete",
             "Type": "menuItem",
             "Url": "components/autocomplete"

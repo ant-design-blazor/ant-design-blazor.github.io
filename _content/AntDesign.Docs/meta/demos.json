@@ -347,6 +347,8 @@
   "Demos.Tabs.demo.EditableCard",
   "Demos.Tabs.demo.CustomTabBarNode",
   "Demos.Tabs.demo.CardTop",
+  "Demos.Upload.demo.Basic",
+  "Demos.Upload.demo.DefaultFileList",
   "Demos.Typography.demo.Level",
   "Demos.Typography.demo.Ellipsis",
   "Demos.Typography.demo.Suffix",

@@ -253,6 +253,13 @@
           },
           {
             "Order": 0,
+            "Title": "Upload",
+            "SubTitle": "上传",
+            "Type": "menuItem",
+            "Url": "components/upload"
+          },
+          {
+            "Order": 0,
             "Title": "AutoComplete",
             "SubTitle": "自动完成",
             "Type": "menuItem",
