@@ -358,6 +358,13 @@
           },
           {
             "Order": 0,
+            "Title": "Comment",
+            "SubTitle": "评论",
+            "Type": "menuItem",
+            "Url": "components/comment"
+          },
+          {
+            "Order": 0,
             "Title": "Tag",
             "SubTitle": "标签",
             "Type": "menuItem",

@@ -2951,6 +2951,56 @@
     ]
   },
   {
+    "Title": "Comment",
+    "SubTitle": "评论",
+    "Type": "数据展示",
+    "Desc": "<p>对网站内容的反馈、评价和讨论。</p>\n<h2>何时使用</h2>\n<p>评论组件可用于对事物的讨论，例如页面、博客文章、问题等等。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>actions</td>\n<td>在评论内容下面呈现的操作项列表</td>\n<td>Array<ReactNode></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>author</td>\n<td>要显示为注释作者的元素</td>\n<td>string|ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>avatar</td>\n<td>要显示为评论头像的元素 - 通常是 antd <code>Avatar</code> 或者 src</td>\n<td>string|ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>children</td>\n<td>嵌套注释应作为注释的子项提供</td>\n<td>ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>content</td>\n<td>评论的主要内容</td>\n<td>string|ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>datetime</td>\n<td>展示时间描述</td>\n<td>string|ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "Cols": 1,
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本评论",
+        "Description": "<p>一个基本的评论组件，带有作者、头像、时间和操作。</p>\n",
+        "Code": "<Comment Actions=\"@(new []{likeAction,dislikeAction,replyAction})\"\n         Author=\"@(\"Han Solo\")\"\n         Avatar=\"@(@\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\")\"\n         Content=\"@(\"We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.\")\"\n         Datetime=\"dateTime\">\n</Comment>\n\n@code\n{\n    bool like = false;\n    bool dislike = false;\n\n    RenderFragment likeAction=>\n        @<span>\n            <Tooltip Title=\"@(\"Like\")\">\n                <Icon Type=\"like\" Theme=\"@(like ? \"fill\" : \"outline\")\" OnClick=\"SetLike\" />\n            </Tooltip>\n            <span>@(like ? 1 : 0)</span>\n        </span>;\n\n    RenderFragment dislikeAction=>\n        @<span>\n            <Tooltip Title=\"@(\"Dislike\")\">\n                <Icon Type=\"dislike\" Theme=\"@(dislike ? \"fill\" : \"outline\")\" OnClick=\"SetDislike\" />\n            </Tooltip>\n            <span>@(dislike ? 1:0)</span>\n        </span>;\n\n    RenderFragment replyAction =@<span>Reply to</span>;\n\n    RenderFragment dateTime =\n        @<Tooltip Title=\"@(DateTime.Now.ToString(\"yyyy-MM-dd HH:mm:ss\"))\">\n            <span>\n                @(MomentHelper.FromNow(DateTime.Now))\n            </span>\n        </Tooltip>;\n\n    void SetLike()\n    {\n        like = true;\n        dislike = false;\n    }\n\n    void SetDislike()\n    {\n        like = false;\n        dislike = true;\n    }\n}\n",
+        "Type": "Demos.Comment.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "list",
+        "Title": "配合 List 组件",
+        "Description": "<p>配合 List 组件展现评论列表。</p>\n",
+        "Code": "<AntList DataSource=\"@datas\" TItem=\"Data\" Header=\"header\" ClassName=\"comment-list\">\n    <Item Context=\"item\">\n        <Comment Actions=\"item.Actions\" Avatar=\"item.Avatar\" Author=\"item.Author\" Datetime=\"item.Datetime\" Content=\"item.Content\"></Comment>\n    </Item>\n</AntList>\n\n@code{\n\n    List<Data> datas => new List<Data>()\n    {\n        new Data()\n        {\n            Author = \"Han Solo\",\n            Avatar = @\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\",\n            Content = \"We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.\",\n            Datetime = @<Tooltip Title=\"@(DateTime.Now.AddDays(-1).ToString(\"yyyy-MM-dd HH:mm:ss\"))\">\n                               <span>\n                                   @(MomentHelper.FromNow(DateTime.Now.AddDays(-1)))\n                               </span>\n                            </Tooltip>,\n                Actions = new List<RenderFragment>() {replyAction}\n            },\n            new Data()\n            {\n                Author = \"Han Solo\",\n                Avatar = @\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\",\n                Content = \"We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.\",\n                Datetime = @<Tooltip Title=\"@(DateTime.Now.AddDays(-2).ToString(\"yyyy-MM-dd HH:mm:ss\"))\">\n                               <span>\n                                   @(MomentHelper.FromNow(DateTime.Now.AddDays(-2)))\n                               </span>\n                            </Tooltip>,\n                Actions = new List<RenderFragment>() {replyAction}\n            }\n        };\n\n    RenderFragment replyAction =@<span>Reply to</span>;\n\n\n    RenderFragment header =>\n        @<div>\n            @if (datas.Any())\n            {\n                <span>\n                    @($\"{datas.Count} {(datas.Count > 1 ? \"replies\" : \"reply\")}\")\n                </span>\n            }\n        </div>;\n\n    class Data\n    {\n        public string Author { get; set; }\n        public string Avatar { get; set; }\n        public string Content { get; set; }\n        public List<RenderFragment> Actions;\n        public RenderFragment Datetime;\n    }\n}\n\n",
+        "Type": "Demos.Comment.demo.List",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "editor",
+        "Title": "回复框",
+        "Description": "<p>评论编辑器组件提供了相同样式的封装以支持自定义评论编辑器。</p>\n",
+        "Code": "<div>\n    @if (datas.Count > 0)\n    {\n        <AntList DataSource=\"datas\" TItem=\"Data\" Header=\"@header\">\n            <Item Context=\"item\">\n                <Comment Avatar=\"item.Avatar\" Author=\"item.Author\" Datetime=\"item.Datetime\" Content=\"item.Content\"></Comment>\n            </Item>\n        </AntList>\n    }\n    <Comment Avatar=\"@(@\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\")\" Content=\"@(GetEditor(@onSubmit))\"></Comment>\n</div>\n\n\n@code{\n    List<Data> datas=new List<Data>();\n    RenderFragment replyAction =@<span>Reply to</span>;\n\n    RenderFragment header =>\n        @<div>\n            @if (datas.Any())\n            {\n                <span>\n                    @($\"{datas.Count} {(datas.Count > 1 ? \"replies\" : \"reply\")}\")\n                </span>\n            }\n        </div>;\n\n    async void onSubmit()\n    {\n        submitting = true;\n\n        await Task.Delay(1000);\n        this.datas.Add(new Data()\n        {\n            Author = \"Han Solo\",\n            Avatar = @\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\",\n            Content = _value,\n            Datetime = DateTime.Now.ToString(\"yyyy-MM-dd HH:mm:ss\"),\n        });\n        submitting = false;\n        _value = \"\";\n        await InvokeAsync(StateHasChanged);\n    }\n\n    bool submitting=false;\n    string _value = \"\";\n\n    //TODO::Form\n    RenderFragment GetEditor(Action onSubmit)\n    {\n        return\n            @<div>\n                <TextArea MinRows=\"4\" @bind-Value=\"@_value\" />\n                <br/>\n                <br/>\n                <Button Loading=\"@submitting\" OnClick=\"onSubmit \" type=\"primary\">\n                    Add Comment\n                </Button>\n            </div>;\n    }\n\n\n    class Data\n    {\n        public string Author { get; set; }\n        public string Avatar { get; set; }\n        public string Content { get; set; }\n        public string Datetime;\n    }\n}",
+        "Type": "Demos.Comment.demo.Editor",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "nested",
+        "Title": "嵌套评论",
+        "Description": "<p>评论可以嵌套。</p>\n",
+        "Code": "<Comment Author=\"author\" Avatar=\"avatar\" Content=\"content\" Actions=\"@(new []{replyAction})\">\n    <Comment Author=\"author\" Avatar=\"avatar\" Content=\"content\" Actions=\"@(new []{replyAction})\">\n        <Comment Author=\"author\" Avatar=\"avatar\" Content=\"content\" Actions=\"@(new []{replyAction})\"/>\n        <Comment Author=\"author\" Avatar=\"avatar\" Content=\"content\" Actions=\"@(new []{replyAction})\"/>\n    </Comment>\n</Comment>\n\n\n@code{\n    string author = \"Han Solo\";\n    string avatar = @\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\";\n    string content = \"We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.\";\n    RenderFragment replyAction =@<span>Reply to</span>;\n}",
+        "Type": "Demos.Comment.demo.Nested",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "DatePicker",
     "SubTitle": "日期选择框",
     "Type": "数据录入",

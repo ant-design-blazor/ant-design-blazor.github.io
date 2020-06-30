@@ -295,6 +295,12 @@
           },
           {
             "Order": 0,
+            "Title": "Comment",
+            "Type": "menuItem",
+            "Url": "components/comment"
+          },
+          {
+            "Order": 0,
             "Title": "Tag",
             "Type": "menuItem",
             "Url": "components/tag"
