@@ -488,6 +488,13 @@
             "SubTitle": "警告提示",
             "Type": "menuItem",
             "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Popconfirm",
+            "SubTitle": "气泡确认框",
+            "Type": "menuItem",
+            "Url": "components/popconfirm"
           }
         ]
       },

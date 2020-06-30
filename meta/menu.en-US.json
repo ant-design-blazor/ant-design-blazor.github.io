@@ -407,6 +407,12 @@
             "Title": "Alert",
             "Type": "menuItem",
             "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Popconfirm",
+            "Type": "menuItem",
+            "Url": "components/popconfirm"
           }
         ]
       },

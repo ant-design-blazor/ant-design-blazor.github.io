@@ -4512,6 +4512,64 @@
     ]
   },
   {
+    "Title": "Popconfirm",
+    "Type": "Feedback",
+    "Desc": "<p>A simple and compact confirmation dialog of an action.</p>\n<h2>When To Use</h2>\n<p>A simple and compact dialog used for asking for user confirmation.</p>\n<p>The difference with the <code>confirm</code> modal dialog is that it's more lightweight than the static popped full-screen confirm modal.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<table>\n<thead>\n<tr>\n<th>Param</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>cancelText</td>\n<td>text of the Cancel button</td>\n<td>string</td>\n<td><code>Cancel</code></td>\n</tr>\n<tr>\n<td>okText</td>\n<td>text of the Confirm button</td>\n<td>string</td>\n<td><code>OK</code></td>\n</tr>\n<tr>\n<td>okType</td>\n<td>Button <code>type</code> of the Confirm button</td>\n<td>string</td>\n<td><code>primary</code></td>\n</tr>\n<tr>\n<td>okButtonProps</td>\n<td>The ok button props</td>\n<td><a href=\"/components/button/#API\">ButtonProps</a></td>\n<td>-</td>\n</tr>\n<tr>\n<td>cancelButtonProps</td>\n<td>The cancel button props</td>\n<td><a href=\"/components/button/#API\">ButtonProps</a></td>\n<td>-</td>\n</tr>\n<tr>\n<td>title</td>\n<td>title of the confirmation box</td>\n<td>string|ReactNode|() =&gt; ReactNode</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onCancel</td>\n<td>callback of cancel</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>onConfirm</td>\n<td>callback of confirmation</td>\n<td>function(e)</td>\n<td>-</td>\n</tr>\n<tr>\n<td>icon</td>\n<td>customize icon of confirmation</td>\n<td>ReactNode</td>\n<td><code>&lt;ExclamationCircle /&gt;</code></td>\n</tr>\n<tr>\n<td>disabled</td>\n<td>is show popconfirm when click its childrenNode</td>\n<td>boolean</td>\n<td>false</td>\n</tr>\n</tbody>\n</table>\n<p>Consult <a href=\"/components/tooltip/#API\">Tooltip's documentation</a> to find more APIs.</p>\n<h2>Note</h2>\n<p>Please ensure that the child node of <code>Popconfirm</code> accepts <code>onMouseEnter</code>, <code>onMouseLeave</code>, <code>onFocus</code>, <code>onClick</code> events.</p>\n",
+    "DemoList": [
+      {
+        "Order": 4,
+        "Name": "icon",
+        "Title": "Customize icon",
+        "Description": "<p>Set <code>icon</code> props to customize the icon.</p>\n",
+        "Code": "<Popconfirm Title=\"@(\"Are you sure��\")\" \n            Icon=\"_icon\">\n    <a>Delete</a>\n</Popconfirm>\n\n@code{\n\n    private RenderFragment _icon = @<AntDesign.Icon Type=\"question-circle\" Fill=\"outline\" Style=\"@(\"color: 'red'\")\"/>;\n\n}",
+        "Type": "Demos.Popconfirm.demo.Icon",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "dynamic-trigger",
+        "Title": "Conditional trigger",
+        "Description": "<p>Make it pop up under some conditions.</p>\n",
+        "Code": "@inject MessageService _message\n\n<div>\n    <Popconfirm Title=\"@(\"Are you sure delete this task?\")\"\n                Visible=\"_visible\"\n                OnVisibleChange=\"OnVisibleChange\"\n                OnConfirm=\"Confirm\"\n                OnCancel=\"Cancel\"\n                OkText=\"Yes\"\n                CancelText=\"No\">\n        <a>Delete a task</a>\n    </Popconfirm>\n    <br />\n    <br />\n    Whether directly execute��\n    <Switch Checked=\"_condition\" OnChange=\"OnConditionChange\" />\n</div>\n\n@code{\n    private void Confirm()\n    {\n        _visible = false;\n        _message.Success(\"Next step.\");\n    }\n\n    private void Cancel()\n    {\n        _visible = false;\n        _message.Error(\"Click on cancel.\");\n    }\n\n    private bool _visible = false;\n    private void OnVisibleChange(bool visible)\n    {\n        if (!visible)\n        {\n            _visible = visible;\n            return;\n        }\n        if (_condition)\n        {\n            Confirm();\n        }\n        else\n        {\n            _visible = visible;\n        }\n    }\n\n    private bool _condition = true;\n    private void OnConditionChange(bool condition)\n    {\n        _condition = condition;\n    }\n}",
+        "Type": "Demos.Popconfirm.demo.DynamicTrigger",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "placement",
+        "Title": "Placement",
+        "Description": "<p>There are 12 <code>placement</code> options available. Use <code>arrowPointAtCenter</code> if you want the arrow to point at the center of target.</p>\n",
+        "Code": "@inject MessageService _message\n\n<div class=\"demo\">\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); white-space: nowrap;\">\n        <Popconfirm Placement=\"@PlacementType.TopLeft\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>TL</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.Top\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>Top</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.TopRight\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>TR</Button>\n        </Popconfirm>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); float: left;\">\n        <Popconfirm Placement=\"@PlacementType.LeftTop\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>LT</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.Left\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>Left</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.LeftBottom\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>LB</Button>\n        </Popconfirm>\n    </div>\n    <div style=\"width: @($\"{ButtonWidth}px\"); margin-left: @($\"{ButtonWidth * 4 + 24}px\");\">\n        <Popconfirm Placement=\"@PlacementType.RightTop\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>RT</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.Right\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>Right</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.RightBottom\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>RB</Button>\n        </Popconfirm>\n    </div>\n    <div style=\"margin-left: @($\"{ButtonWidth}px\"); clear: both; white-space: nowrap;\">\n        <Popconfirm Placement=\"@PlacementType.BottomLeft\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>BL</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.Bottom\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>Bottom</Button>\n        </Popconfirm>\n        <Popconfirm Placement=\"@PlacementType.BottomRight\" Title=\"_title\" OkText=\"@_okText\" CancelText=\"@_cancelText\" OnConfirm=\"Confirm\">\n            <Button>BR</Button>\n        </Popconfirm>\n    </div>\n</div>\n\n@code\n{\n\n    const int ButtonWidth = 70;\n\n    private string _cancelText = \"No\";\n    private string _okText = \"Yes\";\n    private string _title = \"Are you sure to delete this task?\";\n    private void Confirm()\n    {\n        _message.Info(\"Clicked on Yes\");\n    }\n}",
+        "Type": "Demos.Popconfirm.demo.Placement",
+        "Style": "\n.code-box-demo .demo {\n  overflow: auto;\n}\n.code-box-demo .ant-popover-wrap > a {\n  margin-right: 8px;\n}\n.code-box-demo .ant-btn {\n  margin-right: 8px;\n  margin-bottom: 8px;\n}\n#components-popconfirm-demo-placement .ant-btn {\n  width: 70px;\n  text-align: center;\n  padding: 0;\n}\n\n",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "locale",
+        "Title": "Locale text",
+        "Description": "<p>Set <code>okText</code> and <code>cancelText</code> props to customize the button's labels.</p>\n",
+        "Code": "<Popconfirm Title=\"@(\"Are you sure��\")\" OkText=\"Yes\" CancelText=\"No\">\n    <a>Delete</a>\n</Popconfirm>",
+        "Type": "Demos.Popconfirm.demo.Locale",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>The basic example.</p>\n",
+        "Code": "@inject MessageService _message\n\n<Popconfirm Title=\"@(\"Are you sure delete this task?\")\"\n            OnConfirm=\"Confirm\"\n            OnCancel=\"Cancel\"\n            OkText=\"Yes\"\n            CancelText=\"No\">\n    <a>Delete</a>\n</Popconfirm>\n\n@code{\n\n    private void Confirm()\n    {\n        _message.Success(\"Clicked on Yes\");\n    }\n\n    private void Cancel()\n    {\n        _message.Error(\"Clicked on No\");\n    }\n\n}",
+        "Type": "Demos.Popconfirm.demo.Basic",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Steps",
     "Type": "Navigation",
     "Desc": "<p><code>Steps</code> is a navigation bar that guides users through the steps of a task.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When a given task is complicated or has a certain sequence in the series of subtasks, we can decompose it into several steps to make things easier.</li>\n</ul>\n",
