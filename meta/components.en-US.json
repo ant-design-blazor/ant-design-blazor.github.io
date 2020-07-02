@@ -195,8 +195,8 @@
         "Name": "icon",
         "Title": "Icon",
         "Description": "<p><code>Button</code> components can contain an <code>Icon</code>. This is done by setting the <code>icon</code> property or placing an <code>Icon</code> component within the <code>Button</code>.</p>\n<p>If you want specific control over the positioning and placement of the <code>Icon</code>, then that should be done by placing the <code>Icon</code> component within the <code>Button</code> rather than using the <code>icon</code> property.</p>\n",
-        "Code": "<div>\n    @*<Tooltip title=\"search\">\n        <Button Type=\"primary\" shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <Button Type=\"primary\" Shape=\"circle\">\n        A\n    </Button>\n    <Button Type=\"primary\" Icon=\"search\">\n    Search\n    </Button>\n    @*<Tooltip title=\"search\">\n        <Button shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <Button Icon=\"search\">Search</Button>\n    <br />\n    @*<Tooltip title=\"search\">\n        <Button shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <Button Icon=\"search\">Search</Button>\n    @*<Tooltip title=\"search\">\n        <Button Type=\"dashed\" shape=\"circle\" icon={<SearchOutlined />} />\n    </Tooltip>*@\n    <Button Type=\"dashed\" Icon=\"search\">\n    Search\n    </Button>\n</div>",
-        "Type": "Demos.Button.demo.Icon",
+        "Code": "<div>\n    <Tooltip Title=@(\"search\")>\n        <Button Type=\"primary\" Shape=\"circle\" Icon=\"search\" />\n    </Tooltip>\n    <Button Type=\"primary\" Shape=\"circle\">\n        A\n    </Button>\n    <Button Type=\"primary\" Icon=\"search\">\n    Search\n    </Button>\n    <Tooltip Title=@(\"search\")>\n        <Button Shape=\"circle\" Icon=\"search\" />\n    </Tooltip>\n    <Button Icon=\"search\">Search</Button>\n    <br />\n    <Tooltip Title=@(\"search\")>\n        <Button Shape=\"circle\" Icon=\"search\" />\n    </Tooltip>\n    <Button Icon=\"search\">Search</Button>\n    <Tooltip Title=@(\"search\")>\n        <Button Type=\"dashed\" Shape=\"circle\" Icon=\"search\" />\n    </Tooltip>\n    <Button Type=\"dashed\" Icon=\"search\">\n    Search\n    </Button>\n</div>",
+        "Type": "Demos.Button.demo.Icon_",
         "Style": "",
         "Debug": false
       },
@@ -255,7 +255,7 @@
         "Name": "ghost",
         "Title": "Ghost Button",
         "Description": "<p><code>ghost</code> property will make button's background transparent, it is commonly used in colored background.</p>\n",
-        "Code": "<div class=\"site-Button-Ghost-wrapper\">\n    <Button Type=\"primary\" Ghost>\n        Primary\n    </Button>\n    <Button Ghost>Default</Button>\n    <Button Type=\"dashed\" Ghost>\n        link\n    </Button>\n    <Button Type=\"link\" Ghost>\n        link\n    </Button>\n</div>",
+        "Code": "<div class=\"site-button-ghost-wrapper\">\n    <Button Type=\"primary\" Ghost>\n        Primary\n    </Button>\n    <Button Ghost>Default</Button>\n    <Button Type=\"dashed\" Ghost>\n        link\n    </Button>\n    <Button Type=\"link\" Ghost>\n        link\n    </Button>\n</div>\n\n<style>\n    .site-button-ghost-wrapper {\n        background: rgb(190, 200, 200);\n        padding: 26px 16px 16px;\n    }\n</style>",
         "Type": "Demos.Button.demo.Ghost",
         "Style": "",
         "Debug": false
@@ -285,7 +285,7 @@
         "Name": "multiple",
         "Title": "Multiple Buttons",
         "Description": "<p>If you need several buttons, we recommend that you use 1 primary button + n secondary buttons, and if there are more than three operations, you can group some of them into <code>Dropdown.Button</code>.</p>\n",
-        "Code": "Not implement yet :(",
+        "Code": "@{\n    RenderFragment menu = @<Menu>\n        <MenuItem Key=\"1\">1st item</MenuItem>\n        <MenuItem Key=\"2\">2nd item</MenuItem>\n        <MenuItem Key=\"3\">3rd item</MenuItem>\n    </Menu>;\n}\n\n<Button Type=\"primary\">primary</Button>\n<Button>secondary</Button>\n<Dropdown Overlay=@menu>\n    <Button>\n        Actions <Icon Type=\"down\" />\n    </Button>\n</Dropdown>",
         "Type": "Demos.Button.demo.Multiple",
         "Style": "",
         "Debug": false
