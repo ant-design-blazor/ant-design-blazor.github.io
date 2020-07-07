@@ -627,7 +627,7 @@
         "Name": "Area",
         "Title": "适应文本高度的文本域",
         "Description": "<p>属性适用于 textarea 节点，并且只有高度会自动变化。另外 autoSize 可以设定为一个对象，指定最小行数和最大行数。\n1.5.0 后 autosize 被废弃，请使用 autoSize</p>\n",
-        "Code": "<div>\n    <TextArea Placeholder=\"Autosize height based on content lines\" AutoSize=\"true\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"2\" MaxRows=\"6\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"3\" MaxRows=\"5\" @bind-Value=\"@txtValue\"/>\n</div>\n\n@code{\n    string txtValue { get; set; }\n}\n",
+        "Code": "@using AntDesign;\n\n<div>\n    <TextArea Placeholder=\"Autosize height based on content lines\" AutoSize=\"true\" OnResize=\"OnResize\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"2\" MaxRows=\"6\" OnResize=\"OnResize\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"3\" MaxRows=\"5\" OnResize=\"OnResize\" @bind-Value=\"@txtValue\"/>\n</div>\n\n@code{\n    string txtValue { get; set; }\n\n    private void OnResize(OnResizeEventArgs args)\n    {\n        Console.WriteLine($\"OnResizeEvent width:{args.Width},height:{args.Height}\");\n    }\n}\n",
         "Type": "Demos.Input.demo.Area",
         "Style": "",
         "Debug": false

@@ -618,7 +618,7 @@
         "Name": "Area",
         "Title": "Autosizing the height to fit the content",
         "Description": "<p>autoSize prop for a textarea type of Input makes the height to automatically adjust based on the content. An options object can be provided to autoSize to specify the minimum and maximum number of lines the textarea will automatically adjust.\nautosize is deprecated after 1.5.0, please use autoSize.</p>\n",
-        "Code": "<div>\n    <TextArea Placeholder=\"Autosize height based on content lines\" AutoSize=\"true\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"2\" MaxRows=\"6\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"3\" MaxRows=\"5\" @bind-Value=\"@txtValue\"/>\n</div>\n\n@code{\n    string txtValue { get; set; }\n}\n",
+        "Code": "@using AntDesign;\n\n<div>\n    <TextArea Placeholder=\"Autosize height based on content lines\" AutoSize=\"true\" OnResize=\"OnResize\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"2\" MaxRows=\"6\" OnResize=\"OnResize\" @bind-Value=\"@txtValue\"/>\n    <br />\n    <br />\n    <TextArea Placeholder=\"Autosize height based on content lines\" MinRows=\"3\" MaxRows=\"5\" OnResize=\"OnResize\" @bind-Value=\"@txtValue\"/>\n</div>\n\n@code{\n    string txtValue { get; set; }\n\n    private void OnResize(OnResizeEventArgs args)\n    {\n        Console.WriteLine($\"OnResizeEvent width:{args.Width},height:{args.Height}\");\n    }\n}\n",
         "Type": "Demos.Input.demo.Area",
         "Style": "",
         "Debug": false
