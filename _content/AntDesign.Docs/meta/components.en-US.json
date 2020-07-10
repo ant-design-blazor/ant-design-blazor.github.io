@@ -4581,7 +4581,7 @@
         "Name": "error",
         "Title": "Error status",
         "Description": "<p>By using <code>status</code> of <code>Steps</code>, you can specify the state for current step.</p>\n",
-        "Code": "<div>\n    <Steps Current=\"1\" Status=\"error\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Current=\"1\" Status=\"error\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.Error",
         "Style": "",
         "Debug": false
@@ -4591,7 +4591,7 @@
         "Name": "small-size",
         "Title": "Mini version",
         "Description": "<p>By setting like this: <code>&lt;Steps size=&quot;small&quot;&gt;</code>, you can get a mini version.</p>\n",
-        "Code": "<div>\n    <Steps Size=\"small\" Current=1>\n        <Step Title=\"Finished\" />\n        <Step Title=\"In Progress\" />\n        <Step Title=\"Waiting\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Size=\"small\" Current=1>\n        <Step Title=\"@(\"Finished\")\" />\n        <Step Title=\"@(\"In Progress\")\" />\n        <Step Title=\"@(\"Waiting\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.SmallSize",
         "Style": "",
         "Debug": false
@@ -4601,7 +4601,7 @@
         "Name": "icon",
         "Title": "With icon",
         "Description": "<p>You can use your own custom icons by setting the property <code>icon</code> for <code>Steps.Step</code>.</p>\n",
-        "Code": "<div>\n    <Steps>\n        <Step Status=\"finish\" Title=\"Login\" Icon=\"user\" />\n        <Step Status=\"finish\" Title=\"Verification\" Icon=\"solution\"  />\n        <Step Status=\"process\" Title=\"Pay\" Icon=\"loading\" />\n        <Step Status=\"wait\" Title=\"Done\" Icon=\"smile\"/>\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps>\n        <Step Status=\"finish\" Title=\"@(\"Login\")\" Icon=\"user\" />\n        <Step Status=\"finish\" Title=\"@(\"Verification\")\" Icon=\"solution\"  />\n        <Step Status=\"process\" Title=\"@(\"Pay\")\" Icon=\"loading\" />\n        <Step Status=\"wait\" Title=\"@(\"Done\")\" Icon=\"smile\"/>\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.Icon_",
         "Style": "",
         "Debug": false
@@ -4611,7 +4611,7 @@
         "Name": "vertical",
         "Title": "Vertical",
         "Description": "<p>A simple step bar in the vertical direction.</p>\n",
-        "Code": "<div>\n    <Steps Direction=\"vertical\" Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Direction=\"vertical\" Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.Vertical",
         "Style": "",
         "Debug": false
@@ -4621,7 +4621,7 @@
         "Name": "simple",
         "Title": "Basic",
         "Description": "<p>The most basic step bar.</p>\n",
-        "Code": "<div>\n    <Steps Current=\"1\" Class=\"site-navigation-steps\">\n        <Step Title=\"Finished\" Description=\"This is a description.\"/>\n        <Step Title=\"In Progress\" Subtitle=\"Left 00:00:08\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>\n",
+        "Code": "<div>\n    <Steps Current=\"1\" Class=\"site-navigation-steps\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Subtitle=\"@(\"Left 00:00:08\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>\n",
         "Type": "Demos.Steps.demo.Simple",
         "Style": "",
         "Debug": false
@@ -4631,7 +4631,7 @@
         "Name": "vertical-small",
         "Title": "Vertical mini version",
         "Description": "<p>A simple mini version step bar in the vertical direction.</p>\n",
-        "Code": "<div>\n    <Steps Direction=\"vertical\" Size=\"small\" Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Direction=\"vertical\" Size=\"small\" Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.VerticalSmall",
         "Style": "",
         "Debug": false
@@ -4641,7 +4641,7 @@
         "Name": "customized-progress-dot",
         "Title": "Customized Dot Style",
         "Description": "<p>(WIP) You can customize the display for Steps with progress dot style.</p>\n",
-        "Code": "<Steps Current=1 ProgressDot=customDot>\n    <Step Title=\"Finished\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"In Progress\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"Waiting\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"Waiting\" Description=\"You can hover on the dot.\" />\n</Steps>\n\n@code\n{\n    RenderFragment customDot = @<span>\n                                   step {index} status: {status}\n                               </span>;\n}\n",
+        "Code": "<Steps Current=1 ProgressDot=customDot>\n    <Step Title=\"@(\"Finished\")\" Description=\"@(\"You can hover on the dot.\")\" />\n    <Step Title=\"@(\"In Progress\")\" Description=\"@(\"You can hover on the dot.\")\" />\n    <Step Title=\"@(\"Waiting\")\" Description=\"@(\"You can hover on the dot.\")\" />\n    <Step Title=\"@(\"Waiting\")\" Description=\"@(\"You can hover on the dot.\")\" />\n</Steps>\n\n@code\n{\n    RenderFragment customDot = @<span>\n                                   step {index} status: {status}\n                               </span>;\n}\n",
         "Type": "Demos.Steps.demo.CustomizedProgressDot",
         "Style": "",
         "Debug": false
@@ -4651,7 +4651,7 @@
         "Name": "progress-dot",
         "Title": "Dot Style",
         "Description": "<p>Steps with progress dot style.</p>\n",
-        "Code": "<div>\n    <Steps ShowProgressDot Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n    <Divider />\n    <Steps ShowProgressDot Current=\"1\" Direction=\"vertical\">\n        <Step Title=\"Finished\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"Finished\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps ShowProgressDot Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n    <Divider />\n    <Steps ShowProgressDot Current=\"1\" Direction=\"vertical\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description. This is a description.\")\" />\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description. This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description. This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.ProgressDot",
         "Style": "",
         "Debug": false
@@ -4661,7 +4661,7 @@
         "Name": "nav",
         "Title": "Navigation Steps",
         "Description": "<p>Navigation steps.</p>\n",
-        "Code": "<div>\n    <Steps Type=\"navigation\" Size=\"small\" Current=@current Class=\"site-navigation-steps\">\n        <Step Title=\"Step 1\" Subtitle=\"00:00:05\" Status=\"finish\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Subtitle=\"00:01:02\" Status=\"process\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Subtitle=\"waiting for longlong time\" Status=\"wait\" Description=\"This is a description.\" />\n    </Steps>\n    <Steps Type=\"navigation\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"Step 1\" />\n        <Step Status=\"process\" Title=\"Step 2\" />\n        <Step Status=\"wait\" Title=\"Step 3\" />\n        <Step Status=\"wait\" Title=\"Step 4\" />\n    </Steps>\n    <Steps Type=\"navigation\" Size=\"small\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"finish 1\" />\n        <Step Status=\"finish\" Title=\"finish 2\" />\n        <Step Status=\"process\" Title=\"current process\" />\n        <Step Status=\"wait\" Title=\"wait\" Disabled />\n    </Steps>\n</div>\n\n\n@code {\n    int current;\n}",
+        "Code": "<div>\n    <Steps Type=\"navigation\" Size=\"small\" Current=@current Class=\"site-navigation-steps\">\n        <Step Title=\"@(\"Step 1\")\" Subtitle=\"@(\"00:00:05\")\" Status=\"finish\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 2\")\" Subtitle=\"@(\"00:01:02\")\" Status=\"process\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 3\")\" Subtitle=\"@(\"waiting for longlong time\")\" Status=\"wait\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n    <Steps Type=\"navigation\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"@(\"Step 1\")\" />\n        <Step Status=\"process\" Title=\"@(\"Step 2\")\" />\n        <Step Status=\"wait\" Title=\"@(\"Step 3\")\" />\n        <Step Status=\"wait\" Title=\"@(\"Step 4\")\" />\n    </Steps>\n    <Steps Type=\"navigation\" Size=\"small\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"@(\"finish 1\")\" />\n        <Step Status=\"finish\" Title=\"@(\"finish 2\")\" />\n        <Step Status=\"process\" Title=\"@(\"current process\")\" />\n        <Step Status=\"wait\" Title=\"@(\"wait\")\" Disabled />\n    </Steps>\n</div>\n\n\n@code {\n    int current;\n}",
         "Type": "Demos.Steps.demo.Nav",
         "Style": "\n[data-theme=\"dark\"] .site-navigation-steps {\n  border-bottom: 1px solid #303030;\n  margin-bottom: 60px;\n  box-shadow: none;\n}\n\n",
         "Debug": false
@@ -4681,7 +4681,7 @@
         "Name": "clickable",
         "Title": "Clickable",
         "Description": "<p>Setting <code>onChange</code> makes Steps clickable.</p>\n",
-        "Code": "<div>\n    <Steps Current=current OnChange=onChange>\n        <Step Title=\"Step 1\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Description=\"This is a description.\" />\n    </Steps>\n\n    <Divider />\n\n    <Steps Current=current OnChange=onChange Direction=\"vertical\">\n        <Step Title=\"Step 1\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Description=\"This is a description.\" />\n    </Steps>\n</div>\n\n@code{\n    int current;\n\n    void onChange(int current)\n    {\n        this.current = current;\n    }\n}",
+        "Code": "<div>\n    <Steps Current=current OnChange=onChange>\n        <Step Title=\"@(\"Step 1\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 2\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 3\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n\n    <Divider />\n\n    <Steps Current=current OnChange=onChange Direction=\"vertical\">\n        <Step Title=\"@(\"Step 1\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 2\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 3\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>\n\n@code{\n    int current;\n\n    void onChange(int current)\n    {\n        this.current = current;\n    }\n}",
         "Type": "Demos.Steps.demo.Clickable",
         "Style": "",
         "Debug": false

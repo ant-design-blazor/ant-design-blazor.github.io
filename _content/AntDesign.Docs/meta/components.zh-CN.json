@@ -4639,7 +4639,7 @@
         "Name": "error",
         "Title": "步骤运行错误",
         "Description": "<p>使用 Steps 的 <code>status</code> 属性来指定当前步骤的状态。</p>\n",
-        "Code": "<div>\n    <Steps Current=\"1\" Status=\"error\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Current=\"1\" Status=\"error\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.Error",
         "Style": "",
         "Debug": false
@@ -4649,7 +4649,7 @@
         "Name": "small-size",
         "Title": "迷你版",
         "Description": "<p>迷你版的步骤条，通过设置 <code>&lt;Steps size=&quot;small&quot;&gt;</code> 启用.</p>\n",
-        "Code": "<div>\n    <Steps Size=\"small\" Current=1>\n        <Step Title=\"Finished\" />\n        <Step Title=\"In Progress\" />\n        <Step Title=\"Waiting\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Size=\"small\" Current=1>\n        <Step Title=\"@(\"Finished\")\" />\n        <Step Title=\"@(\"In Progress\")\" />\n        <Step Title=\"@(\"Waiting\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.SmallSize",
         "Style": "",
         "Debug": false
@@ -4659,7 +4659,7 @@
         "Name": "icon",
         "Title": "带图标的步骤条",
         "Description": "<p>通过设置 <code>Steps.Step</code> 的 <code>icon</code> 属性，可以启用自定义图标。</p>\n",
-        "Code": "<div>\n    <Steps>\n        <Step Status=\"finish\" Title=\"Login\" Icon=\"user\" />\n        <Step Status=\"finish\" Title=\"Verification\" Icon=\"solution\"  />\n        <Step Status=\"process\" Title=\"Pay\" Icon=\"loading\" />\n        <Step Status=\"wait\" Title=\"Done\" Icon=\"smile\"/>\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps>\n        <Step Status=\"finish\" Title=\"@(\"Login\")\" Icon=\"user\" />\n        <Step Status=\"finish\" Title=\"@(\"Verification\")\" Icon=\"solution\"  />\n        <Step Status=\"process\" Title=\"@(\"Pay\")\" Icon=\"loading\" />\n        <Step Status=\"wait\" Title=\"@(\"Done\")\" Icon=\"smile\"/>\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.Icon_",
         "Style": "",
         "Debug": false
@@ -4669,7 +4669,7 @@
         "Name": "vertical",
         "Title": "竖直方向的步骤条",
         "Description": "<p>简单的竖直方向的步骤条。</p>\n",
-        "Code": "<div>\n    <Steps Direction=\"vertical\" Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Direction=\"vertical\" Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.Vertical",
         "Style": "",
         "Debug": false
@@ -4679,7 +4679,7 @@
         "Name": "simple",
         "Title": "基本用法",
         "Description": "<p>简单的步骤条。</p>\n",
-        "Code": "<div>\n    <Steps Current=\"1\" Class=\"site-navigation-steps\">\n        <Step Title=\"Finished\" Description=\"This is a description.\"/>\n        <Step Title=\"In Progress\" Subtitle=\"Left 00:00:08\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>\n",
+        "Code": "<div>\n    <Steps Current=\"1\" Class=\"site-navigation-steps\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Subtitle=\"@(\"Left 00:00:08\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>\n",
         "Type": "Demos.Steps.demo.Simple",
         "Style": "",
         "Debug": false
@@ -4689,7 +4689,7 @@
         "Name": "vertical-small",
         "Title": "竖直方向的小型步骤条",
         "Description": "<p>简单的竖直方向的小型步骤条。</p>\n",
-        "Code": "<div>\n    <Steps Direction=\"vertical\" Size=\"small\" Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps Direction=\"vertical\" Size=\"small\" Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.VerticalSmall",
         "Style": "",
         "Debug": false
@@ -4699,7 +4699,7 @@
         "Name": "customized-progress-dot",
         "Title": "自定义点状步骤条",
         "Description": "<p>(暂未实现) 为点状步骤条增加自定义展示。</p>\n",
-        "Code": "<Steps Current=1 ProgressDot=customDot>\n    <Step Title=\"Finished\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"In Progress\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"Waiting\" Description=\"You can hover on the dot.\" />\n    <Step Title=\"Waiting\" Description=\"You can hover on the dot.\" />\n</Steps>\n\n@code\n{\n    RenderFragment customDot = @<span>\n                                   step {index} status: {status}\n                               </span>;\n}\n",
+        "Code": "<Steps Current=1 ProgressDot=customDot>\n    <Step Title=\"@(\"Finished\")\" Description=\"@(\"You can hover on the dot.\")\" />\n    <Step Title=\"@(\"In Progress\")\" Description=\"@(\"You can hover on the dot.\")\" />\n    <Step Title=\"@(\"Waiting\")\" Description=\"@(\"You can hover on the dot.\")\" />\n    <Step Title=\"@(\"Waiting\")\" Description=\"@(\"You can hover on the dot.\")\" />\n</Steps>\n\n@code\n{\n    RenderFragment customDot = @<span>\n                                   step {index} status: {status}\n                               </span>;\n}\n",
         "Type": "Demos.Steps.demo.CustomizedProgressDot",
         "Style": "",
         "Debug": false
@@ -4709,7 +4709,7 @@
         "Name": "progress-dot",
         "Title": "点状步骤条",
         "Description": "<p>包含步骤点的进度条。</p>\n",
-        "Code": "<div>\n    <Steps ShowProgressDot Current=\"1\">\n        <Step Title=\"Finished\" Description=\"This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n    <Divider />\n    <Steps ShowProgressDot Current=\"1\" Direction=\"vertical\">\n        <Step Title=\"Finished\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"Finished\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"In Progress\" Description=\"This is a description. This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n        <Step Title=\"Waiting\" Description=\"This is a description.\" />\n    </Steps>\n</div>",
+        "Code": "<div>\n    <Steps ShowProgressDot Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n    <Divider />\n    <Steps ShowProgressDot Current=\"1\" Direction=\"vertical\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description. This is a description.\")\" />\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description. This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description. This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
         "Type": "Demos.Steps.demo.ProgressDot",
         "Style": "",
         "Debug": false
@@ -4719,7 +4719,7 @@
         "Name": "nav",
         "Title": "导航步骤",
         "Description": "<p>导航类型的步骤条。</p>\n",
-        "Code": "<div>\n    <Steps Type=\"navigation\" Size=\"small\" Current=@current Class=\"site-navigation-steps\">\n        <Step Title=\"Step 1\" Subtitle=\"00:00:05\" Status=\"finish\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Subtitle=\"00:01:02\" Status=\"process\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Subtitle=\"waiting for longlong time\" Status=\"wait\" Description=\"This is a description.\" />\n    </Steps>\n    <Steps Type=\"navigation\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"Step 1\" />\n        <Step Status=\"process\" Title=\"Step 2\" />\n        <Step Status=\"wait\" Title=\"Step 3\" />\n        <Step Status=\"wait\" Title=\"Step 4\" />\n    </Steps>\n    <Steps Type=\"navigation\" Size=\"small\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"finish 1\" />\n        <Step Status=\"finish\" Title=\"finish 2\" />\n        <Step Status=\"process\" Title=\"current process\" />\n        <Step Status=\"wait\" Title=\"wait\" Disabled />\n    </Steps>\n</div>\n\n\n@code {\n    int current;\n}",
+        "Code": "<div>\n    <Steps Type=\"navigation\" Size=\"small\" Current=@current Class=\"site-navigation-steps\">\n        <Step Title=\"@(\"Step 1\")\" Subtitle=\"@(\"00:00:05\")\" Status=\"finish\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 2\")\" Subtitle=\"@(\"00:01:02\")\" Status=\"process\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 3\")\" Subtitle=\"@(\"waiting for longlong time\")\" Status=\"wait\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n    <Steps Type=\"navigation\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"@(\"Step 1\")\" />\n        <Step Status=\"process\" Title=\"@(\"Step 2\")\" />\n        <Step Status=\"wait\" Title=\"@(\"Step 3\")\" />\n        <Step Status=\"wait\" Title=\"@(\"Step 4\")\" />\n    </Steps>\n    <Steps Type=\"navigation\" Size=\"small\" Current=\"@current\" Class=\"site-navigation-steps\">\n        <Step Status=\"finish\" Title=\"@(\"finish 1\")\" />\n        <Step Status=\"finish\" Title=\"@(\"finish 2\")\" />\n        <Step Status=\"process\" Title=\"@(\"current process\")\" />\n        <Step Status=\"wait\" Title=\"@(\"wait\")\" Disabled />\n    </Steps>\n</div>\n\n\n@code {\n    int current;\n}",
         "Type": "Demos.Steps.demo.Nav",
         "Style": "\n[data-theme=\"dark\"] .site-navigation-steps {\n  border-bottom: 1px solid #303030;\n  margin-bottom: 60px;\n  box-shadow: none;\n}\n\n",
         "Debug": false
@@ -4739,7 +4739,7 @@
         "Name": "clickable",
         "Title": "可点击",
         "Description": "<p>设置 <code>onChange</code> 后，Steps 变为可点击状态。</p>\n",
-        "Code": "<div>\n    <Steps Current=current OnChange=onChange>\n        <Step Title=\"Step 1\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Description=\"This is a description.\" />\n    </Steps>\n\n    <Divider />\n\n    <Steps Current=current OnChange=onChange Direction=\"vertical\">\n        <Step Title=\"Step 1\" Description=\"This is a description.\" />\n        <Step Title=\"Step 2\" Description=\"This is a description.\" />\n        <Step Title=\"Step 3\" Description=\"This is a description.\" />\n    </Steps>\n</div>\n\n@code{\n    int current;\n\n    void onChange(int current)\n    {\n        this.current = current;\n    }\n}",
+        "Code": "<div>\n    <Steps Current=current OnChange=onChange>\n        <Step Title=\"@(\"Step 1\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 2\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 3\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n\n    <Divider />\n\n    <Steps Current=current OnChange=onChange Direction=\"vertical\">\n        <Step Title=\"@(\"Step 1\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 2\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Step 3\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>\n\n@code{\n    int current;\n\n    void onChange(int current)\n    {\n        this.current = current;\n    }\n}",
         "Type": "Demos.Steps.demo.Clickable",
         "Style": "",
         "Debug": false
