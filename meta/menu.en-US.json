@@ -222,6 +222,12 @@
           },
           {
             "Order": 0,
+            "Title": "Mentions",
+            "Type": "menuItem",
+            "Url": "components/mentions"
+          },
+          {
+            "Order": 0,
             "Title": "Cascader",
             "Type": "menuItem",
             "Url": "components/cascader"

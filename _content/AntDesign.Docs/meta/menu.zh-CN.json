@@ -274,6 +274,13 @@
           },
           {
             "Order": 0,
+            "Title": "Mentions",
+            "SubTitle": "提及",
+            "Type": "menuItem",
+            "Url": "components/mentions"
+          },
+          {
+            "Order": 0,
             "Title": "Cascader",
             "SubTitle": "级联选择",
             "Type": "menuItem",

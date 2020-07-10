@@ -4439,6 +4439,75 @@
     ]
   },
   {
+    "Title": "Mentions",
+    "SubTitle": "提及",
+    "Type": "数据录入",
+    "Desc": "<p>提及组件。</p>\n<h2>何时使用</h2>\n<p>用于在输入中提及某人或某事，常用于发布、聊天或评论功能。</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Mentions</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>autoFocus</td>\n<td>自动获得焦点</td>\n<td>boolean</td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td>defaultValue</td>\n<td>默认值</td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>filterOption</td>\n<td>自定义过滤逻辑</td>\n<td>false | (input: string, option: OptionProps) =&gt; boolean</td>\n<td></td>\n</tr>\n<tr>\n<td>notFoundContent</td>\n<td>当下拉列表为空时显示的内容</td>\n<td>ReactNode</td>\n<td>'Not Found'</td>\n</tr>\n<tr>\n<td>placement</td>\n<td>弹出层展示位置</td>\n<td><code>top</code> | <code>bottom</code></td>\n<td><code>bottom</code></td>\n</tr>\n<tr>\n<td>prefix</td>\n<td>设置触发关键字</td>\n<td>string | string[]</td>\n<td>'@'</td>\n</tr>\n<tr>\n<td>split</td>\n<td>设置选中项前后分隔符</td>\n<td>string</td>\n<td>' '</td>\n</tr>\n<tr>\n<td>validateSearch</td>\n<td>自定义触发验证逻辑</td>\n<td>(text: string, props: MentionsProps) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>设置值</td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>值改变时触发</td>\n<td>(text: string) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onSelect</td>\n<td>选择选项时触发</td>\n<td>(option: OptionProps, prefix: string) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onSearch</td>\n<td>搜索时触发</td>\n<td>(text: string, prefix: string) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onFocus</td>\n<td>获得焦点时触发</td>\n<td>() =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onBlur</td>\n<td>失去焦点时触发</td>\n<td>() =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>getPopupContainer</td>\n<td>指定建议框挂载的 HTML 节点</td>\n<td>() =&gt; HTMLElement</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Mentions 方法</h3>\n<table>\n<thead>\n<tr>\n<th>名称</th>\n<th>描述</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>blur()</td>\n<td>移除焦点</td>\n</tr>\n<tr>\n<td>focus()</td>\n<td>获取焦点</td>\n</tr>\n</tbody>\n</table>\n<h3>Option</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>children</td>\n<td>选项内容</td>\n<td>ReactNode</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>选择时填充的值</td>\n<td>string</td>\n<td>''</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 5,
+        "Name": "placement",
+        "Title": "向上展开",
+        "Description": "<p>向上展开建议。</p>\n",
+        "Code": "<div>\n\n     To do\n    @*<Mentions Placement=\"top\" Placeholder=\"placement on bottom\">\n        <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n        <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n        <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n    </Mentions>\n\n    <br />\n\n    <Mentions Placement=\"bottom\" Placeholder=\"placement on bottom\">\n        <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n        <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n        <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n    </Mentions>\n\n    <br />*@\n</div>",
+        "Type": "Demos.Mentions.demo.Placement",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "async",
+        "Title": "异步加载",
+        "Description": "<p>匹配内容列表为异步返回时。</p>\n",
+        "Code": "<div>\n    <Mentions Style=\"width:100%\" Loading=\"true\">\n        <MentionsOption Value=\"afc163\">\n            <Icon Type=\"setting\" Theme=\"fill\" />\n            <span>afc163</span>\n            <span>zombieJ</span>\n        </MentionsOption>     \n    </Mentions>\n</div>",
+        "Type": "Demos.Mentions.demo.Async",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本使用",
+        "Description": "<p>基本使用</p>\n",
+        "Code": "<div>\n    <Mentions Placeholder=\"please enter @@\">\n        <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n        <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n        <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n    </Mentions>\n</div>",
+        "Type": "Demos.Mentions.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "form",
+        "Title": "配合 Form 使用",
+        "Description": "<p>受控模式，例如配合 Form 使用。</p>\n",
+        "Code": "<div>\n    <div style=\"margin-bottom: 10px\">\n            <Mentions>\n                <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n                <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n                <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n            </Mentions>\n    </div>\n\n    <div style=\"margin-bottom: 10px\">\n        <Mentions Rows=\"6\" Placeholder=\"You can use  to ref user here\">\n            <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n            <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n            <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n        </Mentions>\n    </div>\n\n    <Button Type=\"primary\">Submit</Button>\n    <Button>Reset</Button>\n</div>\n\n\n@code{\n\n    private class FormData\n    {\n        public string data1 { get; set; }\n        public string data2 { get; set; }\n    }\n\n\n    private FormData frmData = new FormData();\n\n}\n",
+        "Type": "Demos.Mentions.demo.Form",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "readonly",
+        "Title": "无效或只读",
+        "Description": "<p>通过 <code>disabled</code> 属性设置是否生效。通过 <code>readOnly</code> 属性设置是否只读。</p>\n",
+        "Code": "<div>\n    <div style=\"margin-bottom: 10px\">\n        <Mentions Placeholder=\"this is disabled Mentions\" Disable=\"true\">\n            <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n            <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n            <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n        </Mentions>\n    </div>\n        <div style=\"margin-bottom: 10px\">\n            <Mentions Placeholder=\"this is readOnly Mentions\" Readonly=\"true\">\n                <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n                <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n                <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n            </Mentions>\n        </div>\n    </div>\n",
+        "Type": "Demos.Mentions.demo.Readonly",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "prefix",
+        "Title": "自定义触发字符",
+        "Description": "<p>通过 <code>prefix</code> 属性自定义触发字符。默认为 <code>@</code>, 可以定义为数组。</p>\n",
+        "Code": "<div>\n    To do\n</div>",
+        "Type": "Demos.Mentions.demo.Prefix",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Cascader",
     "SubTitle": "级联选择",
     "Type": "数据录入",

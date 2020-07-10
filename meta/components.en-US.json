@@ -4385,6 +4385,74 @@
     ]
   },
   {
+    "Title": "Mentions",
+    "Type": "Data Entry",
+    "Desc": "<p>Mention component.</p>\n<h2>When To Use</h2>\n<p>When need to mention someone or something.</p>\n",
+    "ApiDoc": "<h2>API</h2>\n<h3>Mention</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>autoFocus</td>\n<td>Auto get focus when component mounted</td>\n<td>boolean</td>\n<td><code>false</code></td>\n</tr>\n<tr>\n<td>defaultValue</td>\n<td>Default value</td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>filterOption</td>\n<td>Customize filter option logic</td>\n<td>false | (input: string, option: OptionProps) =&gt; boolean</td>\n<td></td>\n</tr>\n<tr>\n<td>notFoundContent</td>\n<td>Set mentions content when not match</td>\n<td>ReactNode</td>\n<td>'Not Found'</td>\n</tr>\n<tr>\n<td>placement</td>\n<td>Set popup placement</td>\n<td><code>top</code> | <code>bottom</code></td>\n<td><code>bottom</code></td>\n</tr>\n<tr>\n<td>prefix</td>\n<td>Set trigger prefix keyword</td>\n<td>string | string[]</td>\n<td>'@'</td>\n</tr>\n<tr>\n<td>split</td>\n<td>Set split string before and after selected mention</td>\n<td>string</td>\n<td>' '</td>\n</tr>\n<tr>\n<td>validateSearch</td>\n<td>Customize trigger search logic</td>\n<td>(text: string, props: MentionsProps) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>Set value of mentions</td>\n<td>string</td>\n<td></td>\n</tr>\n<tr>\n<td>onChange</td>\n<td>Trigger when value changed</td>\n<td>(text: string) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onSelect</td>\n<td>Trigger when user select the option</td>\n<td>(option: OptionProps, prefix: string) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onSearch</td>\n<td>Trigger when prefix hit</td>\n<td>(text: string, prefix: string) =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onFocus</td>\n<td>Trigger when mentions get focus</td>\n<td>() =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>onBlur</td>\n<td>Trigger when mentions lose focus</td>\n<td>() =&gt; void</td>\n<td></td>\n</tr>\n<tr>\n<td>getPopupContainer</td>\n<td>Set the mount HTML node for suggestions</td>\n<td>() =&gt; HTMLElement</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Mention methods</h3>\n<table>\n<thead>\n<tr>\n<th>Name</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>blur()</td>\n<td>remove focus</td>\n</tr>\n<tr>\n<td>focus()</td>\n<td>get focus</td>\n</tr>\n</tbody>\n</table>\n<h3>Option</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>children</td>\n<td>suggestion content</td>\n<td>ReactNode</td>\n<td></td>\n</tr>\n<tr>\n<td>value</td>\n<td>value of suggestion, the value will insert into input filed while selected</td>\n<td>string</td>\n<td>''</td>\n</tr>\n</tbody>\n</table>\n",
+    "DemoList": [
+      {
+        "Order": 5,
+        "Name": "placement",
+        "Title": "Placement",
+        "Description": "<p>Change the suggestions placement.</p>\n",
+        "Code": "<div>\n\n     To do\n    @*<Mentions Placement=\"top\" Placeholder=\"placement on bottom\">\n        <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n        <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n        <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n    </Mentions>\n\n    <br />\n\n    <Mentions Placement=\"bottom\" Placeholder=\"placement on bottom\">\n        <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n        <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n        <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n    </Mentions>\n\n    <br />*@\n</div>",
+        "Type": "Demos.Mentions.demo.Placement",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "async",
+        "Title": "Asynchronous loading",
+        "Description": "<p>async</p>\n",
+        "Code": "<div>\n    <Mentions Style=\"width:100%\" Loading=\"true\">\n        <MentionsOption Value=\"afc163\">\n            <Icon Type=\"setting\" Theme=\"fill\" />\n            <span>afc163</span>\n            <span>zombieJ</span>\n        </MentionsOption>     \n    </Mentions>\n</div>",
+        "Type": "Demos.Mentions.demo.Async",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "Basic",
+        "Description": "<p>Basic usage.</p>\n",
+        "Code": "<div>\n    <Mentions Placeholder=\"please enter @@\">\n        <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n        <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n        <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n    </Mentions>\n</div>",
+        "Type": "Demos.Mentions.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 2,
+        "Name": "form",
+        "Title": "With Form",
+        "Description": "<p>Controlled mode, for example, to work with <code>Form</code>.</p>\n",
+        "Code": "<div>\n    <div style=\"margin-bottom: 10px\">\n            <Mentions>\n                <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n                <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n                <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n            </Mentions>\n    </div>\n\n    <div style=\"margin-bottom: 10px\">\n        <Mentions Rows=\"6\" Placeholder=\"You can use  to ref user here\">\n            <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n            <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n            <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n        </Mentions>\n    </div>\n\n    <Button Type=\"primary\">Submit</Button>\n    <Button>Reset</Button>\n</div>\n\n\n@code{\n\n    private class FormData\n    {\n        public string data1 { get; set; }\n        public string data2 { get; set; }\n    }\n\n\n    private FormData frmData = new FormData();\n\n}\n",
+        "Type": "Demos.Mentions.demo.Form",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "readonly",
+        "Title": "disabled or readOnly",
+        "Description": "<p>Configurate <code>disabled</code> and <code>readOnly</code>.</p>\n",
+        "Code": "<div>\n    <div style=\"margin-bottom: 10px\">\n        <Mentions Placeholder=\"this is disabled Mentions\" Disable=\"true\">\n            <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n            <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n            <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n        </Mentions>\n    </div>\n        <div style=\"margin-bottom: 10px\">\n            <Mentions Placeholder=\"this is readOnly Mentions\" Readonly=\"true\">\n                <MentionsOption Value=\"afc163\">afc163</MentionsOption>\n                <MentionsOption Value=\"zombieJ\">zombieJ</MentionsOption>\n                <MentionsOption Value=\"yesmeck\">yesmeck</MentionsOption>\n            </Mentions>\n        </div>\n    </div>\n",
+        "Type": "Demos.Mentions.demo.Readonly",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "prefix",
+        "Title": "Customize Trigger Token",
+        "Description": "<p>Customize Trigger Token by <code>prefix</code> props. Default to <code>@</code>, <code>Array&lt;string&gt;</code> also supported.</p>\n",
+        "Code": "<div>\n    To do\n</div>",
+        "Type": "Demos.Mentions.demo.Prefix",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Cascader",
     "Type": "Data Entry",
     "Desc": "<p>Cascade selection box.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When you need to select from a set of associated data set. Such as province/city/district, company level, things classification.</li>\n<li>When selecting from a large data set, with multi-stage classification separated for easy selection.</li>\n<li>Chooses cascade items in one float layer for better user experience.</li>\n</ul>\n",
