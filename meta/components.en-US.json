@@ -419,6 +419,16 @@
         "Debug": false
       },
       {
+        "Order": 6,
+        "Name": "FormContext",
+        "Title": "Check if the form has been modified",
+        "Description": "<p>Check if the form has been modified by using <code>IForm.IsModified</code>.</p>\n",
+        "Code": "@using System.ComponentModel.DataAnnotations;\n@using System.Text.Json;\n\n    <Form @ref=\"form\" Model=\"@model\"\n          LabelCol=\"new ColLayoutParam { Span = 8 }\"\n          WrapperCol=\"new ColLayoutParam { Span = 16 }\"\n          OnFinish=\"OnFinish\"\n          OnFinishFailed=\"OnFinishFailed\">\n        <FormItem Label=\"Username\">\n            <Input @bind-Value=\"@context.Username\" />\n        </FormItem>\n        <FormItem Label=\"Password\">\n            <InputPassword @bind-Value=\"@context.Password\" />\n        </FormItem>\n        <FormItem WrapperCol=\"new ColLayoutParam{ Offset = 8, Span = 16 }\">\n            <Checkbox @bind-Value=\"context.RememberMe\">Remember me</Checkbox>\n        </FormItem>\n        <FormItem WrapperCol=\"new ColLayoutParam{ Offset = 8, Span = 16 }\">\n            <Button Type=\"@ButtonType.Primary\" HtmlType=\"submit\" Disabled=\"!form.IsModified\">\n                Submit\n            </Button>\n        </FormItem>\n    </Form>\n@code\n{\n    public class Model\n    {\n        [Required]\n        public string Username { get; set; }\n        [Required]\n        public string Password { get; set; }\n        public bool RememberMe { get; set; } = true;\n    }\n\n    Form<Model> form;\n\n    private Model model = new Model();\n\n    private void OnFinish(EditContext editContext)\n    {\n        Console.WriteLine($\"Success:{JsonSerializer.Serialize(model)}\");\n    }\n\n    private void OnFinishFailed(EditContext editContext)\n    {\n        Console.WriteLine($\"Failed:{JsonSerializer.Serialize(model)}\");\n    }\n}",
+        "Type": "Demos.Form.demo.FormContext",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 0,
         "Name": "loading",
         "Title": "Form Loading",

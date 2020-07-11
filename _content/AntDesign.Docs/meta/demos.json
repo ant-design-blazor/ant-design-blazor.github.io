@@ -36,6 +36,7 @@
   "Demos.Form.demo.Basic",
   "Demos.Form.demo.Size",
   "Demos.Form.demo.Layout",
+  "Demos.Form.demo.FormContext",
   "Demos.Form.demo.Loading",
   "Demos.Collapse.demo.Extra",
   "Demos.Collapse.demo.Accordion",
