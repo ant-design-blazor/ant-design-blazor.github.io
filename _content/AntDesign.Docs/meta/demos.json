@@ -141,6 +141,7 @@
   "Demos.Modal.demo.ConfirmPromise",
   "Demos.Modal.demo.Position",
   "Demos.Modal.demo.Footer",
+  "Demos.Modal.demo.Modal_service",
   "Demos.Modal.demo.ButtonProps",
   "Demos.Modal.demo.ConfirmRouter",
   "Demos.Layout.demo.Fixed",
