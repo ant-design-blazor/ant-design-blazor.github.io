@@ -38,6 +38,7 @@
   "Demos.Form.demo.Layout",
   "Demos.Form.demo.FormContext",
   "Demos.Form.demo.Loading",
+  "Demos.Form.demo.ComplexFormControl",
   "Demos.Collapse.demo.Extra",
   "Demos.Collapse.demo.Accordion",
   "Demos.Collapse.demo.Custom",

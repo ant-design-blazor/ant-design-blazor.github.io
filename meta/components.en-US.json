@@ -437,6 +437,16 @@
         "Type": "Demos.Form.demo.Loading",
         "Style": "",
         "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "complex-form-control",
+        "Title": "complex form control",
+        "Description": "<p>Help Wanted</p>\n",
+        "Code": "@using System.ComponentModel.DataAnnotations;\n@using System.Text.Json;\n\n<Form Model=\"@model\"\n      LabelCol=\"new ColLayoutParam { Span = 8 }\"\n      WrapperCol=\"new ColLayoutParam { Span = 16 }\"\n      OnFinish=\"OnFinish\"\n      OnFinishFailed=\"OnFinishFailed\">\n    <FormItem Label=\"Username\">\n        <Input @bind-Value=\"context.Username\" Style=\"width: 160px\" Placeholder=\"Please input\" />\n        <Tooltip Title=@(\"Useful information\")>\n            <a href=\"#API\" Style=\"margin: 0 8px\" }>\n                Need Help?\n            </a>\n        </Tooltip>\n    </FormItem>\n    <FormItem label=\"Address\">\n        <InputGroup Compact>\n            <FormItem NoStyle>\n                <Input @bind-Value=\"context.Address.Province\" Placeholder=\"Select is not yet\" />\n            </FormItem>\n\n            <FormItem NoStyle>\n                <Input @bind-Value=\"context.Address.Street\" Style=\"width: 50%\" Placeholder=\"Input street\" />\n            </FormItem>\n        </InputGroup>\n    </FormItem>\n     <FormItem Label=\"BirthDate\" style=\"margin-bottom: 0\">\n        <FormItem Style=\"display: inline-block; width: calc(50% - 10px)\">\n          <Input @bind-Value=\"context.Year\" Placeholder=\"Input birth year\" />\n        </FormItem> \n         <FormItem Style=\"display: inline-block; width: calc(50% - 10px); margin: 0 8px\">\n          <Input @bind-Value=\"context.Month\" Placeholder=\"Input birth month\" />\n        </FormItem>\n      </FormItem>\n    <FormItem WrapperCol=\"new ColLayoutParam{ Offset = 8, Span = 16 }\">\n        <Button HtmlType=\"submit\">\n            Submit\n        </Button>\n    </FormItem>\n</Form>\n\n@code\n{\n    public class Address\n    {\n        [Required]\n        public string Province { get; set; }\n        [Required]\n        public string Street { get; set; }\n    }\n    public class Model\n    {\n        [Required]\n        public string Username { get; set; }\n        [ValidateComplexType]\n        public Address Address { get; set; } = new Address();\n        [Required]\n        public string Year { get; set; }\n        [Required]\n        public string Month { get; set; }\n    }\n\n    private Model model = new Model();\n\n    private void OnFinish(EditContext editContext)\n    {\n        Console.WriteLine($\"Success:{JsonSerializer.Serialize(model)}\");\n    }\n\n    private void OnFinishFailed(EditContext editContext)\n    {\n        Console.WriteLine($\"Failed:{JsonSerializer.Serialize(model)}\");\n    }\n\n}",
+        "Type": "Demos.Form.demo.ComplexFormControl",
+        "Style": "",
+        "Debug": false
       }
     ]
   },
