@@ -34,6 +34,7 @@
   "Demos.Table.demo.RowSelection_",
   "Demos.Form.demo.ControlHooks",
   "Demos.Form.demo.Basic",
+  "Demos.Form.demo.CustomizedFormControls",
   "Demos.Form.demo.Size",
   "Demos.Form.demo.Layout",
   "Demos.Form.demo.FormContext",
