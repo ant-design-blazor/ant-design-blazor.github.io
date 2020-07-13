@@ -177,7 +177,7 @@
         "Name": "badge",
         "Title": "With Badge",
         "Description": "<p>Usually used for messages remind.</p>\n",
-        "Code": "<div>\n    <span class=\"avatar-item\">\n        <Badge Count=\"1\">\n            <Avatar Shape=\"square\" Icon=\"user\" />\n        </Badge>\n    </span>\n    <span>\n        <Badge Dot>\n            <Avatar Shape=\"square\" Icon=\"user\"/>\n        </Badge>\n    </span>\n</div>",
+        "Code": "<div>\n    <span class=\"avatar-item\">\n        <Badge Count=\"1\">\n            <Avatar Shape=\"square\" Icon=\"user\" />\n        </Badge>\n    </span>\n    <span>\n        <Badge Dot>\n            <Avatar Shape=\"square\" Icon=\"user\"/>\n        </Badge>\n    </span>\n</div>\n<style>\n    /* tile uploaded pictures */\n    .avatar-item {\n        margin-right: 24px;\n    }\n\n    [class*='-col-rtl'] .avatar-item {\n        margin-right: 0;\n        margin-left: 24px;\n    }\n</style>",
         "Type": "Demos.Avatar.demo.Badge_",
         "Style": "",
         "Debug": false
