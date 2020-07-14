@@ -2162,8 +2162,8 @@
         "Order": 6,
         "Name": "router",
         "Title": "Router",
-        "Description": "<p>Automatically activate menu items based on routing, should work with <a href=\"https://angular.io/api/router/RouterLink\">MenuLink</a>.</p>\n",
-        "Code": "<Menu Mode=\"MenuMode.Horizontal\">\n    <MenuItem>\n        <MenuLink href=\"/en-US/components/menu\" Match=\"NavLinkMatch.All\">English Menu Document</MenuLink>\n    </MenuItem>\n    <MenuItem>\n        <MenuLink href=\"/zh-CN/components/menu\" Match=\"NavLinkMatch.All\">Chinese Menu Document</MenuLink>\n    </MenuItem>\n</Menu>",
+        "Description": "<p>Automatically activate menu items based on routing, use <code>MenuLink</code> property.</p>\n",
+        "Code": "<Menu Mode=\"MenuMode.Horizontal\">\n    <MenuItem RouterLink=\"/en-US/components/menu\" RouterMatch=\"NavLinkMatch.All\">English Menu Document</MenuItem>\n    <MenuItem RouterLink=\"/zh-CN/components/menu\" RouterMatch=\"NavLinkMatch.All\">Chinese Menu Document</MenuItem>\n</Menu>",
         "Type": "Demos.Menu.demo.Router",
         "Style": "",
         "Debug": false

@@ -2188,8 +2188,8 @@
         "Order": 6,
         "Name": "router",
         "Title": "配合路由使用",
-        "Description": "<p>自动根据路由激活菜单项，需要结合 <a href=\"https://www.angular.cn/api/router/RouterLink\">MenuLink</a> 一起使用。</p>\n",
-        "Code": "<Menu Mode=\"MenuMode.Horizontal\">\n    <MenuItem>\n        <MenuLink href=\"/en-US/components/menu\" Match=\"NavLinkMatch.All\">English Menu Document</MenuLink>\n    </MenuItem>\n    <MenuItem>\n        <MenuLink href=\"/zh-CN/components/menu\" Match=\"NavLinkMatch.All\">Chinese Menu Document</MenuLink>\n    </MenuItem>\n</Menu>",
+        "Description": "<p>自动根据路由激活菜单项，使用 <code>RouterLink</code> 属性。</p>\n",
+        "Code": "<Menu Mode=\"MenuMode.Horizontal\">\n    <MenuItem RouterLink=\"/en-US/components/menu\" RouterMatch=\"NavLinkMatch.All\">English Menu Document</MenuItem>\n    <MenuItem RouterLink=\"/zh-CN/components/menu\" RouterMatch=\"NavLinkMatch.All\">Chinese Menu Document</MenuItem>\n</Menu>",
         "Type": "Demos.Menu.demo.Router",
         "Style": "",
         "Debug": false
