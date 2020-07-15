@@ -1792,7 +1792,7 @@
         "Name": "customize",
         "Title": "Customize Size",
         "Description": "<p>Custom spacing size.</p>\n",
-        "Code": "\n<Slider Value=size OnChange=\"v=>setSize(v.AsT0)\" />\n<br />\n<br />\n<Space Size=\"@($\"{size}\")\">\n    <SpaceItem>\n        <Button Type=\"primary\">Primary</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button>Default</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"dashed\">Dashed</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"link\">Link</Button>\n    </SpaceItem>\n</Space>\n\n@code{\n    double size = 8;\n\n    void setSize(double value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}",
+        "Code": "\n<Slider Type=\"double\" Value=size OnChange=\"v=>setSize(v)\" />\n<br />\n<br />\n<Space Size=\"@($\"{size}\")\">\n    <SpaceItem>\n        <Button Type=\"primary\">Primary</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button>Default</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"dashed\">Dashed</Button>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"link\">Link</Button>\n    </SpaceItem>\n</Space>\n\n@code{\n    double size = 8;\n\n    void setSize(double value)\n    {\n        size = value;\n        StateHasChanged();\n    }\n}",
         "Type": "Demos.Space.demo.Customize",
         "Style": "",
         "Debug": false
@@ -3457,7 +3457,7 @@
         "Name": "Icon1",
         "Title": "Slider with icon",
         "Description": "<p>You can add an icon beside the slider to make it meaningful.</p>\n",
-        "Code": "<div>\n    <Icon Style=\"display: inline-block\" Type=\"Frown\" Theme=\"outline\" />\n    <Slider Style=\"display: inline-block; width: 300px;\" Min=\"0\" Max=\"20\" DefaultValue=\"5\" />\n    <Icon Style=\"display: inline-block\" Type=\"Smile\" Theme=\"outline\" />\n</div>\n\n\n",
+        "Code": "<div>\n    <Icon Style=\"display: inline-block\" Type=\"Frown\" Theme=\"outline\" />\n    <Slider TValue=\"double\" Style=\"display: inline-block; width: 300px;\" Min=\"0\" Max=\"20\" DefaultValue=\"5\" />\n    <Icon Style=\"display: inline-block\" Type=\"Smile\" Theme=\"outline\" />\n</div>\n\n\n",
         "Type": "Demos.Slider.demo.Icon1",
         "Style": "",
         "Debug": false
@@ -3467,7 +3467,7 @@
         "Name": "Input",
         "Title": "Slider with InputNumber",
         "Description": "<p>Synchronize with InputNumber component.</p>\n",
-        "Code": "<div>\n    <Row>\n        <Col Span=\"12\">\n            <Slider Min=\"1\" Max=\"20\" Value=\"@inputValue1\" />\n        </Col>\n        <Col Span=\"4\">\n            <AntDesign.InputNumber Min=\"1\" Max=\"20\" Style=\"margin:0 16px;\" Value=\"@inputValue1\" ValueChanged=\"(e)=>UpdateValue1(e)\" TValue=\"int\" />\n        </Col>\n    </Row>\n    <Row>\n        <Col Span=\"12\">\n            <Slider Min=\"0\" Max=\"1\" Step=\"0.01\" Value=\"@inputValue2\"  />\n        </Col>\n        <Col Span=\"4\">\n            <AntDesign.InputNumber Min=\"0\" Max=\"10\" Step=\"0.1\" Style=\"margin:0 16px;\" Value=\"@inputValue2\" ValueChanged=\"(e)=>UpdateValue2(e)\" TValue=\"double\" />\n        </Col>\n    </Row>\n</div>\n\n\n@code\n{\n    private int inputValue1 = 1;\n\n    private void UpdateValue1(int value)\n    {\n        inputValue1 = value;\n    }\n\n\n    private double inputValue2= 0.5;\n\n    private void UpdateValue2(double value)\n    {\n        inputValue2 =value;\n    }\n}\n\n\n",
+        "Code": "<div>\n    <Row>\n        <Col Span=\"12\">\n        <Slider TValue=\"double\" Min=\"1\" Max=\"20\" @bind-Value=\"@inputValue1\" />\n        </Col>\n        <Col Span=\"4\">\n        <AntDesign.InputNumber Min=\"1\" Max=\"20\" Style=\"margin:0 16px;\" @bind-Value=\"@inputValue1\" TValue=\"double\" />\n        </Col>\n    </Row>\n    <Row>\n        <Col Span=\"12\">\n        <Slider TValue=\"double\" Min=\"0\" Max=\"1\" Step=\"0.01\" @bind-Value=\"@inputValue2\" />\n        </Col>\n        <Col Span=\"4\">\n        <AntDesign.InputNumber Min=\"0\" Max=\"10\" Step=\"0.1\" Style=\"margin:0 16px;\" @bind-Value=\"@inputValue2\" TValue=\"double\" />\n        </Col>\n    </Row>\n</div>\n\n\n@code\n{\n    private double inputValue1 = 1;\n\n    private double inputValue2 = 0.5;\n}\n\n\n",
         "Type": "Demos.Slider.demo.Input",
         "Style": "",
         "Debug": false
@@ -3477,7 +3477,7 @@
         "Name": "Graduated",
         "Title": "Graduated slider",
         "Description": "<p>Using <code>marks</code> property to mark a graduated slider, use <code>value</code> or <code>defaultValue</code> to specify the position of thumb. When <code>included is false</code>, means that different thumbs are coordinative. when <code>step is null</code>, users can only slide the thumbs onto <code>marks</code>.</p>\n",
-        "Code": "<div>\n    <h4>included=true</h4>\n    <Slider Marks=\"@nMarks\" DefaultValue=\"37\" />\n    <Slider Marks=\"@nMarks\" DefaultValue=\"(26, 37)\" />\n\n    <h4>included=false</h4>\n    <Slider Marks=\"@nMarks\" Included=\"false\" DefaultValue=\"37\" />\n\n    <h4>marks & step</h4>\n    <Slider Marks=\"@nMarks\" Step=\"10\" DefaultValue=\"37\" />\n\n    <h4>step=null</h4>\n    <Slider Marks=\"@nMarks\" Step=\"null\" DefaultValue=\"37\" />\n\n</div>\n\n@code\n{\n    private SliderMark[] nMarks =\n     {\n            new SliderMark(0, \"0℃\"),\n            new SliderMark(26, \"26℃\"),\n            new SliderMark(37, \"37℃\"),\n            new SliderMark(100, (b)=>{\n                b.OpenElement(0,\"strong\");\n                b.AddContent(1,\"100℃\");\n                b.CloseElement();\n            }, \"color: #f50;\")\n     };\n}",
+        "Code": "<div>\n    <h4>included=true</h4>\n    <Slider TValue=\"double\" Marks=\"@nMarks\" DefaultValue=\"37\" />\n    <Slider TValue=\"(double, double)\" Marks=\"@nMarks\" DefaultValue=\"(26, 37)\" />\n\n    <h4>included=false</h4>\n    <Slider TValue=\"double\" Marks=\"@nMarks\" Included=\"false\" DefaultValue=\"37\" />\n\n    <h4>marks & step</h4>\n    <Slider TValue=\"double\" Marks=\"@nMarks\" Step=\"10\" DefaultValue=\"37\" />\n\n    <h4>step=null</h4>\n    <Slider TValue=\"double\" Marks=\"@nMarks\" Step=\"null\" DefaultValue=\"37\" />\n\n</div>\n\n@code\n{\n    private SliderMark[] nMarks =\n     {\n            new SliderMark(0, \"0℃\"),\n            new SliderMark(26, \"26℃\"),\n            new SliderMark(37, \"37℃\"),\n            new SliderMark(100, (b)=>{\n                b.OpenElement(0,\"strong\");\n                b.AddContent(1,\"100℃\");\n                b.CloseElement();\n            }, \"color: #f50;\")\n     };\n}",
         "Type": "Demos.Slider.demo.Graduated",
         "Style": "",
         "Debug": false
@@ -3487,7 +3487,7 @@
         "Name": "Basic",
         "Title": "Basic",
         "Description": "<p>Basic slider. When <code>range</code> is <code>true</code>, display as dual thumb mode. When <code>disable</code> is <code>true</code>, the slider will not be interactable.</p>\n",
-        "Code": "<div>\n    <Slider DefaultValue=\"30\" Disabled=\"@Diabled\"  />\n    <Slider DefaultValue=\"(20, 50)\" Disabled=\"@Diabled\" />\n    Diabled: <Switch Size=\"small\" Checked=\"@Diabled\" OnChange=\"(e)=>OnSwitch(e)\" />\n</div>\n\n@code\n{\n\n    private bool Diabled;\n\n    private void OnSwitch(bool args)\n    {\n        Diabled = args;\n    }\n}\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"35\" Disabled=\"@Diabled\"  />\n    <Slider TValue=\"(double, double)\" DefaultValue=\"(20, 50)\" Disabled=\"@Diabled\" />\n    Diabled: <Switch Size=\"small\" Checked=\"@Diabled\" OnChange=\"(e)=>OnSwitch(e)\" />\n</div>\n\n@code\n{\n\n    private bool Diabled;\n\n    private void OnSwitch(bool args)\n    {\n        Diabled = args;\n    }\n}\n",
         "Type": "Demos.Slider.demo.Basic",
         "Style": "",
         "Debug": false
@@ -3497,7 +3497,7 @@
         "Name": "Customer",
         "Title": "Customize tooltip",
         "Description": "<p>Use <code>tipFormatter</code> to format content of Tooltip. If <code>tipFormatter is null</code>, hide it.</p>\n",
-        "Code": "<div>\n    <Slider DefaultValue=\"30\" Value=\"@value\" TipFormatter=\"tipFormatter\"  />\n</div>\n\n@code\n{\n\n    private int value { get; set; }\n\n    string tipFormatter()\n    {\n        return $\"{value}%\";\n    }\n}\n\n\n\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"34\" Value=\"@value\" TipFormatter=\"tipFormatter\"  />\n</div>\n\n@code\n{\n\n    private int value { get; set; }\n\n    string tipFormatter()\n    {\n        return $\"{value}%\";\n    }\n}\n\n\n\n",
         "Type": "Demos.Slider.demo.Customer",
         "Style": "",
         "Debug": false
@@ -3507,7 +3507,7 @@
         "Name": "Event",
         "Title": "Event",
         "Description": "<p>The <code>onChange</code> callback function will fire when the user changes the slider's value. The <code>onAfterChange</code> callback function will fire when <code>onmouseup</code> fired.</p>\n",
-        "Code": "<div>\n    <Slider DefaultValue=\"30\" OnChange=\"(e)=>OnChange1(e.AsT0)\" OnAfterChange=\"(vlaue)=>OnAfterChange1()\" />\n    <Slider Step=\"10\" DefaultValue=\"( 20, 50 )\" OnChange=\"(e)=>OnChange2(e.AsT0)\" OnAfterChange=\"(vlaue)=>OnAfterChange2()\" />\n</div>\n\n\n@code {\n\n    private void OnChange1(double args)\n    {\n    }\n\n    private void OnAfterChange1()\n    {\n    }\n\n    private void OnChange2(double args)\n    {\n    }\n\n    private void OnAfterChange2()\n    {\n    }\n}\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"30.5\" OnChange=\"(e)=>OnChange1(e)\" OnAfterChange=\"(e)=>OnAfterChange1(e)\" />\n    <Slider TValue=\"(double, double)\" Step=\"10\" DefaultValue=\"( 20.3, 50.3 )\" OnChange=\"(e)=>OnChange2(e)\" OnAfterChange=\"(e)=>OnAfterChange2(e)\" />\n</div>\n\n\n@code {\n\n    private void OnChange1(double args)\n    {\n    }\n\n    private void OnAfterChange1(double args)\n    {\n    }\n\n    private void OnChange2((double, double) args)\n    {\n    }\n\n    private void OnAfterChange2((double, double) args)\n    {\n    }\n}\n",
         "Type": "Demos.Slider.demo.Event",
         "Style": "",
         "Debug": false
@@ -3517,7 +3517,7 @@
         "Name": "Vslider",
         "Title": "vertical",
         "Description": "<p>The vertical Slider.</p>\n",
-        "Code": "<div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider Vertical DefaultValue=\"30\" />\n    </div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider Vertical Step=\"10\" DefaultValue=\"(20, 50 )\" />\n    </div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider Vertical Marks=\"@_marks1\" DefaultValue=\"(26, 37 )\" />\n    </div>\n</div>\n\n@code\n{\n        private SliderMark[] _marks1 =\n        {\n            new SliderMark(0, \"0℃\"),\n            new SliderMark(26, \"26℃\"),\n            new SliderMark(37, \"37℃\"),\n            new SliderMark(100, (b)=>{\n                b.OpenElement(0,\"strong\");\n                b.AddContent(1,\"100℃\");\n                b.CloseElement();\n            }, \"color: #f50;\")\n        };\n}\n",
+        "Code": "<div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider TValue=\"double\" Vertical DefaultValue=\"31\" />\n    </div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider TValue=\"(double, double)\" Vertical Step=\"10\" DefaultValue=\"(20, 50 )\" />\n    </div>\n    <div style=\"height: 300px; margin-left: 70px; display: inline-block;\">\n        <Slider TValue=\"(double, double)\" Vertical Marks=\"@_marks1\" DefaultValue=\"(26, 37 )\" />\n    </div>\n</div>\n\n@code\n{\n        private SliderMark[] _marks1 =\n        {\n            new SliderMark(0, \"0℃\"),\n            new SliderMark(26, \"26℃\"),\n            new SliderMark(37, \"37℃\"),\n            new SliderMark(100, (b)=>{\n                b.OpenElement(0,\"strong\");\n                b.AddContent(1,\"100℃\");\n                b.CloseElement();\n            }, \"color: #f50;\")\n        };\n}\n",
         "Type": "Demos.Slider.demo.Vslider",
         "Style": "",
         "Debug": false
@@ -3527,7 +3527,7 @@
         "Name": "Reversed",
         "Title": "Reverse",
         "Description": "<p>Using <code>reverse</code> to render slider reversely.</p>\n",
-        "Code": "<div>\n    <Slider Reverse=\"@reversed\" DefaultValue=\"30\" />\n    <Slider Reverse=\"@reversed\" DefaultValue=\"(20, 50)\" />\n    Reversed: <Switch Size=\"small\" Checked=\"@reversed\" OnChange=\"(e)=>OnSwitchReverse(e)\" />\n</div>\n\n\n@code\n{\n    private bool reversed = true;\n\n    private void OnSwitchReverse(bool args)\n    {\n        reversed = args;\n    }\n}\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" Reverse=\"@reversed\" DefaultValue=\"33\" />\n    <Slider TValue=\"(double, double)\" Reverse=\"@reversed\" DefaultValue=\"(20, 50)\" />\n    Reversed: <Switch Size=\"small\" Checked=\"@reversed\" OnChange=\"(e)=>OnSwitchReverse(e)\" />\n</div>\n\n\n@code\n{\n    private bool reversed = true;\n\n    private void OnSwitchReverse(bool args)\n    {\n        reversed = args;\n    }\n}\n",
         "Type": "Demos.Slider.demo.Reversed",
         "Style": "",
         "Debug": false
@@ -3537,7 +3537,7 @@
         "Name": "Tooltip",
         "Title": "Control visible of ToolTip",
         "Description": "<p>When <code>tooltipVisible</code> is true, ToolTip will show always, or ToolTip will not show anyway, even if dragging or hovering.</p>\n",
-        "Code": "<div>\n    <Slider DefaultValue=\"30\" TooltipPlacement=\"top\" TooltipVisible=\"true\" />\n</div>\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"32\" TooltipPlacement=\"top\" TooltipVisible=\"true\" />\n</div>\n",
         "Type": "Demos.Slider.demo.Tooltip",
         "Style": "",
         "Debug": false
