@@ -69,13 +69,6 @@
           },
           {
             "Order": 0,
-            "Title": "Divider",
-            "SubTitle": "分割线",
-            "Type": "menuItem",
-            "Url": "components/divider"
-          },
-          {
-            "Order": 0,
             "Title": "Grid",
             "Type": "menuItem",
             "Url": "components/grid"
@@ -92,12 +85,6 @@
             "Title": "Dropdown",
             "Type": "menuItem",
             "Url": "components/dropdown"
-          },
-          {
-            "Order": 0,
-            "Title": "BackTop",
-            "Type": "menuItem",
-            "Url": "components/backtop"
           },
           {
             "Order": 0,
@@ -427,6 +414,12 @@
         "Title": "Other",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "BackTop",
+            "Type": "menuItem",
+            "Url": "components/backtop"
+          },
           {
             "Order": 0,
             "Title": "Anchor",

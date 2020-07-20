@@ -1734,7 +1734,7 @@
   },
   {
     "Title": "BackTop",
-    "Type": "Navigation",
+    "Type": "Other",
     "Desc": "<p><code>BackTop</code> makes it easy to go back to the top of the page.</p>\n<h2>When To Use</h2>\n<ul>\n<li>When the page content is very long.</li>\n<li>When you need to go back to the top very frequently in order to view the contents.</li>\n</ul>\n",
     "ApiDoc": "<h2>API</h2>\n<p>BackTop</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Target</td>\n<td>specifies the scrollable area dom node</td>\n<td>RenderFragment</td>\n<td>-</td>\n</tr>\n<tr>\n<td>VisibilityHeight</td>\n<td>the <code>BackTop</code> button will not show until the scroll height reaches this value</td>\n<td>int</td>\n<td>-</td>\n</tr>\n<tr>\n<td>OnClick</td>\n<td>a callback function, which can be executed when you click the button</td>\n<td>function</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n",
     "DemoList": [

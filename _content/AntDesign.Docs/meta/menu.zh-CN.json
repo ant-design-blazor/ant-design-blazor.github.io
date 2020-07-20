@@ -49,44 +49,6 @@
       },
       {
         "Order": 1,
-        "Title": "Layout",
-        "Type": "itemGroup",
-        "Children": [
-          {
-            "Order": 0,
-            "Title": "Layout",
-            "Type": "menuItem",
-            "Url": "components/layout"
-          },
-          {
-            "Order": 0,
-            "Title": "Space",
-            "Type": "menuItem",
-            "Url": "components/space"
-          },
-          {
-            "Order": 0,
-            "Title": "Divider",
-            "Type": "menuItem",
-            "Url": "components/divider"
-          },
-          {
-            "Order": 0,
-            "Title": "Divider",
-            "SubTitle": "分割线",
-            "Type": "menuItem",
-            "Url": "components/divider"
-          },
-          {
-            "Order": 0,
-            "Title": "Grid",
-            "Type": "menuItem",
-            "Url": "components/grid"
-          }
-        ]
-      },
-      {
-        "Order": 1,
         "Title": "布局",
         "Type": "itemGroup",
         "Children": [
@@ -103,6 +65,13 @@
             "SubTitle": "间距",
             "Type": "menuItem",
             "Url": "components/space"
+          },
+          {
+            "Order": 0,
+            "Title": "Divider",
+            "SubTitle": "分割线",
+            "Type": "menuItem",
+            "Url": "components/divider"
           },
           {
             "Order": 0,
@@ -124,13 +93,6 @@
             "SubTitle": "下拉菜单",
             "Type": "menuItem",
             "Url": "components/dropdown"
-          },
-          {
-            "Order": 0,
-            "Title": "BackTop",
-            "SubTitle": "回到顶部",
-            "Type": "menuItem",
-            "Url": "components/backtop"
           },
           {
             "Order": 0,
@@ -510,6 +472,13 @@
         "Title": "其他",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "BackTop",
+            "SubTitle": "回到顶部",
+            "Type": "menuItem",
+            "Url": "components/backtop"
+          },
           {
             "Order": 0,
             "Title": "Anchor",
