@@ -26,13 +26,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Typography",
-            "SubTitle": "排版",
-            "Type": "menuItem",
-            "Url": "components/typography"
-          },
-          {
-            "Order": 0,
             "Title": "Button",
             "SubTitle": "按钮",
             "Type": "menuItem",
@@ -44,6 +37,13 @@
             "SubTitle": "图标",
             "Type": "menuItem",
             "Url": "components/icon"
+          },
+          {
+            "Order": 0,
+            "Title": "Typography",
+            "SubTitle": "排版",
+            "Type": "menuItem",
+            "Url": "components/typography"
           }
         ]
       },
@@ -54,20 +54,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Grid",
-            "SubTitle": "栅格",
-            "Type": "menuItem",
-            "Url": "components/grid"
-          },
-          {
-            "Order": 0,
-            "Title": "Space",
-            "SubTitle": "间距",
-            "Type": "menuItem",
-            "Url": "components/space"
-          },
-          {
-            "Order": 0,
             "Title": "Divider",
             "SubTitle": "分割线",
             "Type": "menuItem",
@@ -75,10 +61,24 @@
           },
           {
             "Order": 0,
+            "Title": "Grid",
+            "SubTitle": "栅格",
+            "Type": "menuItem",
+            "Url": "components/grid"
+          },
+          {
+            "Order": 0,
             "Title": "Layout",
             "SubTitle": "布局",
             "Type": "menuItem",
             "Url": "components/layout"
+          },
+          {
+            "Order": 0,
+            "Title": "Space",
+            "SubTitle": "间距",
+            "Type": "menuItem",
+            "Url": "components/space"
           }
         ]
       },
@@ -96,13 +96,6 @@
           },
           {
             "Order": 0,
-            "Title": "Steps",
-            "SubTitle": "步骤条",
-            "Type": "menuItem",
-            "Url": "components/steps"
-          },
-          {
-            "Order": 0,
             "Title": "Breadcrumb",
             "SubTitle": "面包屑",
             "Type": "menuItem",
@@ -110,10 +103,10 @@
           },
           {
             "Order": 0,
-            "Title": "PageHeader",
-            "SubTitle": "页头",
+            "Title": "Dropdown",
+            "SubTitle": "下拉菜单",
             "Type": "menuItem",
-            "Url": "components/pageheader"
+            "Url": "components/dropdown"
           },
           {
             "Order": 0,
@@ -131,10 +124,17 @@
           },
           {
             "Order": 0,
-            "Title": "Dropdown",
-            "SubTitle": "下拉菜单",
+            "Title": "PageHeader",
+            "SubTitle": "页头",
             "Type": "menuItem",
-            "Url": "components/dropdown"
+            "Url": "components/pageheader"
+          },
+          {
+            "Order": 0,
+            "Title": "Steps",
+            "SubTitle": "步骤条",
+            "Type": "menuItem",
+            "Url": "components/steps"
           }
         ]
       },
@@ -145,13 +145,6 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Checkbox",
-            "SubTitle": "多选框",
-            "Type": "menuItem",
-            "Url": "components/checkbox"
-          },
-          {
-            "Order": 0,
             "Title": "AutoComplete",
             "SubTitle": "自动完成",
             "Type": "menuItem",
@@ -159,73 +152,10 @@
           },
           {
             "Order": 0,
-            "Title": "DatePicker",
-            "SubTitle": "日期选择框",
+            "Title": "Checkbox",
+            "SubTitle": "多选框",
             "Type": "menuItem",
-            "Url": "components/datepicker"
-          },
-          {
-            "Order": 0,
-            "Title": "Radio",
-            "SubTitle": "单选框",
-            "Type": "menuItem",
-            "Url": "components/radio"
-          },
-          {
-            "Order": 0,
-            "Title": "TimePicker",
-            "SubTitle": "时间选择框",
-            "Type": "menuItem",
-            "Url": "components/timepicker"
-          },
-          {
-            "Order": 0,
-            "Title": "Select",
-            "SubTitle": "选择器",
-            "Type": "menuItem",
-            "Url": "components/select"
-          },
-          {
-            "Order": 0,
-            "Title": "Upload",
-            "SubTitle": "上传",
-            "Type": "menuItem",
-            "Url": "components/upload"
-          },
-          {
-            "Order": 0,
-            "Title": "Form",
-            "SubTitle": "表单",
-            "Type": "menuItem",
-            "Url": "components/form"
-          },
-          {
-            "Order": 0,
-            "Title": "Mentions",
-            "SubTitle": "提及",
-            "Type": "menuItem",
-            "Url": "components/mentions"
-          },
-          {
-            "Order": 0,
-            "Title": "Slider",
-            "SubTitle": "滑动输入条",
-            "Type": "menuItem",
-            "Url": "components/slider"
-          },
-          {
-            "Order": 0,
-            "Title": "Switch",
-            "SubTitle": "开关",
-            "Type": "menuItem",
-            "Url": "components/switch"
-          },
-          {
-            "Order": 0,
-            "Title": "Input",
-            "SubTitle": "输入框",
-            "Type": "menuItem",
-            "Url": "components/input"
+            "Url": "components/checkbox"
           },
           {
             "Order": 0,
@@ -236,10 +166,17 @@
           },
           {
             "Order": 0,
-            "Title": "Transfer",
-            "SubTitle": "穿梭框",
+            "Title": "DatePicker",
+            "SubTitle": "日期选择框",
             "Type": "menuItem",
-            "Url": "components/transfer"
+            "Url": "components/datepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Form",
+            "SubTitle": "表单",
+            "Type": "menuItem",
+            "Url": "components/form"
           },
           {
             "Order": 0,
@@ -250,10 +187,73 @@
           },
           {
             "Order": 0,
+            "Title": "Input",
+            "SubTitle": "输入框",
+            "Type": "menuItem",
+            "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "Mentions",
+            "SubTitle": "提及",
+            "Type": "menuItem",
+            "Url": "components/mentions"
+          },
+          {
+            "Order": 0,
             "Title": "Rate",
             "SubTitle": "评分",
             "Type": "menuItem",
             "Url": "components/rate"
+          },
+          {
+            "Order": 0,
+            "Title": "Radio",
+            "SubTitle": "单选框",
+            "Type": "menuItem",
+            "Url": "components/radio"
+          },
+          {
+            "Order": 0,
+            "Title": "Switch",
+            "SubTitle": "开关",
+            "Type": "menuItem",
+            "Url": "components/switch"
+          },
+          {
+            "Order": 0,
+            "Title": "Slider",
+            "SubTitle": "滑动输入条",
+            "Type": "menuItem",
+            "Url": "components/slider"
+          },
+          {
+            "Order": 0,
+            "Title": "Select",
+            "SubTitle": "选择器",
+            "Type": "menuItem",
+            "Url": "components/select"
+          },
+          {
+            "Order": 0,
+            "Title": "Transfer",
+            "SubTitle": "穿梭框",
+            "Type": "menuItem",
+            "Url": "components/transfer"
+          },
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "SubTitle": "时间选择框",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Upload",
+            "SubTitle": "上传",
+            "Type": "menuItem",
+            "Url": "components/upload"
           }
         ]
       },
@@ -264,59 +264,10 @@
         "Children": [
           {
             "Order": 0,
-            "Title": "Tag",
-            "SubTitle": "标签",
+            "Title": "Avatar",
+            "SubTitle": "头像",
             "Type": "menuItem",
-            "Url": "components/tag"
-          },
-          {
-            "Order": 0,
-            "Title": "Popover",
-            "SubTitle": "气泡卡片",
-            "Type": "menuItem",
-            "Url": "components/popover"
-          },
-          {
-            "Order": 0,
-            "Title": "Timeline",
-            "SubTitle": "时间轴",
-            "Type": "menuItem",
-            "Url": "components/timeline"
-          },
-          {
-            "Order": 0,
-            "Title": "Comment",
-            "SubTitle": "评论",
-            "Type": "menuItem",
-            "Url": "components/comment"
-          },
-          {
-            "Order": 0,
-            "Title": "Statistic",
-            "SubTitle": "统计数值",
-            "Type": "menuItem",
-            "Url": "components/statistic"
-          },
-          {
-            "Order": 0,
-            "Title": "Card",
-            "SubTitle": "卡片",
-            "Type": "menuItem",
-            "Url": "components/card"
-          },
-          {
-            "Order": 0,
-            "Title": "Descriptions",
-            "SubTitle": "描述列表",
-            "Type": "menuItem",
-            "Url": "components/descriptions"
-          },
-          {
-            "Order": 0,
-            "Title": "Tooltip",
-            "SubTitle": "文字提示",
-            "Type": "menuItem",
-            "Url": "components/tooltip"
+            "Url": "components/avatar"
           },
           {
             "Order": 0,
@@ -327,6 +278,55 @@
           },
           {
             "Order": 0,
+            "Title": "Comment",
+            "SubTitle": "评论",
+            "Type": "menuItem",
+            "Url": "components/comment"
+          },
+          {
+            "Order": 0,
+            "Title": "Collapse",
+            "SubTitle": "折叠面板",
+            "Type": "menuItem",
+            "Url": "components/collapse"
+          },
+          {
+            "Order": 0,
+            "Title": "Carousel",
+            "SubTitle": "走马灯",
+            "Type": "menuItem",
+            "Url": "components/carousel"
+          },
+          {
+            "Order": 0,
+            "Title": "Card",
+            "SubTitle": "卡片",
+            "Type": "menuItem",
+            "Url": "components/card"
+          },
+          {
+            "Order": 0,
+            "Title": "Calendar",
+            "SubTitle": "日历",
+            "Type": "menuItem",
+            "Url": "components/calendar"
+          },
+          {
+            "Order": 0,
+            "Title": "Descriptions",
+            "SubTitle": "描述列表",
+            "Type": "menuItem",
+            "Url": "components/descriptions"
+          },
+          {
+            "Order": 0,
+            "Title": "Empty",
+            "SubTitle": "空状态",
+            "Type": "menuItem",
+            "Url": "components/empty"
+          },
+          {
+            "Order": 0,
             "Title": "List",
             "SubTitle": "列表",
             "Type": "menuItem",
@@ -334,10 +334,17 @@
           },
           {
             "Order": 0,
-            "Title": "Avatar",
-            "SubTitle": "头像",
+            "Title": "Popover",
+            "SubTitle": "气泡卡片",
             "Type": "menuItem",
-            "Url": "components/avatar"
+            "Url": "components/popover"
+          },
+          {
+            "Order": 0,
+            "Title": "Statistic",
+            "SubTitle": "统计数值",
+            "Type": "menuItem",
+            "Url": "components/statistic"
           },
           {
             "Order": 0,
@@ -348,10 +355,24 @@
           },
           {
             "Order": 0,
-            "Title": "Empty",
-            "SubTitle": "空状态",
+            "Title": "Tooltip",
+            "SubTitle": "文字提示",
             "Type": "menuItem",
-            "Url": "components/empty"
+            "Url": "components/tooltip"
+          },
+          {
+            "Order": 0,
+            "Title": "Timeline",
+            "SubTitle": "时间轴",
+            "Type": "menuItem",
+            "Url": "components/timeline"
+          },
+          {
+            "Order": 0,
+            "Title": "Tag",
+            "SubTitle": "标签",
+            "Type": "menuItem",
+            "Url": "components/tag"
           },
           {
             "Order": 0,
@@ -366,27 +387,6 @@
             "SubTitle": "表格",
             "Type": "menuItem",
             "Url": "components/table"
-          },
-          {
-            "Order": 0,
-            "Title": "Calendar",
-            "SubTitle": "日历",
-            "Type": "menuItem",
-            "Url": "components/calendar"
-          },
-          {
-            "Order": 0,
-            "Title": "Carousel",
-            "SubTitle": "走马灯",
-            "Type": "menuItem",
-            "Url": "components/carousel"
-          },
-          {
-            "Order": 0,
-            "Title": "Collapse",
-            "SubTitle": "折叠面板",
-            "Type": "menuItem",
-            "Url": "components/collapse"
           }
         ]
       },
@@ -395,6 +395,62 @@
         "Title": "反馈",
         "Type": "itemGroup",
         "Children": [
+          {
+            "Order": 0,
+            "Title": "Alert",
+            "SubTitle": "警告提示",
+            "Type": "menuItem",
+            "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Drawer",
+            "SubTitle": "抽屉",
+            "Type": "menuItem",
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
+            "Title": "Modal",
+            "SubTitle": "对话框",
+            "Type": "menuItem",
+            "Url": "components/modal"
+          },
+          {
+            "Order": 0,
+            "Title": "Message",
+            "SubTitle": "全局提示",
+            "Type": "menuItem",
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Notification",
+            "SubTitle": "通知提醒框",
+            "Type": "menuItem",
+            "Url": "components/notification"
+          },
+          {
+            "Order": 0,
+            "Title": "Progress",
+            "SubTitle": "进度条",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
+            "Title": "Popconfirm",
+            "SubTitle": "气泡确认框",
+            "Type": "menuItem",
+            "Url": "components/popconfirm"
+          },
+          {
+            "Order": 0,
+            "Title": "Result",
+            "SubTitle": "结果",
+            "Type": "menuItem",
+            "Url": "components/result"
+          },
           {
             "Order": 0,
             "Title": "Spin",
@@ -408,62 +464,6 @@
             "SubTitle": "骨架屏",
             "Type": "menuItem",
             "Url": "components/skeleton"
-          },
-          {
-            "Order": 0,
-            "Title": "Progress",
-            "SubTitle": "进度条",
-            "Type": "menuItem",
-            "Url": "components/progress"
-          },
-          {
-            "Order": 0,
-            "Title": "Message",
-            "SubTitle": "全局提示",
-            "Type": "menuItem",
-            "Url": "components/message"
-          },
-          {
-            "Order": 0,
-            "Title": "Result",
-            "SubTitle": "结果",
-            "Type": "menuItem",
-            "Url": "components/result"
-          },
-          {
-            "Order": 0,
-            "Title": "Notification",
-            "SubTitle": "通知提醒框",
-            "Type": "menuItem",
-            "Url": "components/notification"
-          },
-          {
-            "Order": 0,
-            "Title": "Modal",
-            "SubTitle": "对话框",
-            "Type": "menuItem",
-            "Url": "components/modal"
-          },
-          {
-            "Order": 0,
-            "Title": "Drawer",
-            "SubTitle": "抽屉",
-            "Type": "menuItem",
-            "Url": "components/drawer"
-          },
-          {
-            "Order": 0,
-            "Title": "Popconfirm",
-            "SubTitle": "气泡确认框",
-            "Type": "menuItem",
-            "Url": "components/popconfirm"
-          },
-          {
-            "Order": 0,
-            "Title": "Alert",
-            "SubTitle": "警告提示",
-            "Type": "menuItem",
-            "Url": "components/alert"
           }
         ]
       },
