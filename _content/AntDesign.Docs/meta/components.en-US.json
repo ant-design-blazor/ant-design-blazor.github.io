@@ -2017,6 +2017,16 @@
         "Type": "Demos.Upload.demo.DefaultFileList",
         "Style": "",
         "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "directory",
+        "Title": "Upload directory",
+        "Description": "<p>You can select and upload a whole directory.\nhe thumbnail can be shown. <code>IE8/9</code> do not support local thumbnail show. Please use <code>thumbUrl</code> instead.</p>\n",
+        "Code": "@inject MessageService _message\n\n<Upload Action=\"https://www.mocky.io/v2/5cc8019d300000980a055e76\" Directory>\n    <Button Icon=\"upload\">\n        <span>点击上传</span>\n    </Button>\n</Upload>\n",
+        "Type": "Demos.Upload.demo.Directory",
+        "Style": "",
+        "Debug": false
       }
     ]
   },

@@ -2040,6 +2040,16 @@
         "Type": "Demos.Upload.demo.DefaultFileList",
         "Style": "",
         "Debug": false
+      },
+      {
+        "Order": 6,
+        "Name": "directory",
+        "Title": "文件夹上传",
+        "Description": "<p>支持上传一个文件夹里的所有文件。</p>\n",
+        "Code": "@inject MessageService _message\n\n<Upload Action=\"https://www.mocky.io/v2/5cc8019d300000980a055e76\" Directory>\n    <Button Icon=\"upload\">\n        <span>点击上传</span>\n    </Button>\n</Upload>\n",
+        "Type": "Demos.Upload.demo.Directory",
+        "Style": "",
+        "Debug": false
       }
     ]
   },

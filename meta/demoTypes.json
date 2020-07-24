@@ -182,6 +182,7 @@
   "Demos.Upload.demo.Basic",
   "Demos.Upload.demo.FileList",
   "Demos.Upload.demo.DefaultFileList",
+  "Demos.Upload.demo.Directory",
   "Demos.Descriptions.demo.Vertical",
   "Demos.Descriptions.demo.CustomSize",
   "Demos.Descriptions.demo.VerticalBorder",
