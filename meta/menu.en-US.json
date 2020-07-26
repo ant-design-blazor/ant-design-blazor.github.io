@@ -1,0 +1,445 @@
+[
+  {
+    "Order": 0,
+    "Title": "Docs",
+    "Type": "subMenu",
+    "Url": "docs",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "Ant Design of Blazor",
+        "Type": "menuItem",
+        "Url": "docs/introduce"
+      },
+      {
+        "Order": 1,
+        "Title": "Getting Started",
+        "Type": "menuItem",
+        "Url": "docs/getting-started"
+      },
+      {
+        "Order": 11,
+        "Title": "How to Contribute",
+        "Type": "menuItem",
+        "Url": "docs/contributing"
+      }
+    ]
+  },
+  {
+    "Order": 999,
+    "Title": "Components",
+    "Type": "subMenu",
+    "Url": "components",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "General",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Button",
+            "Type": "menuItem",
+            "Url": "components/button"
+          },
+          {
+            "Order": 0,
+            "Title": "Icon",
+            "Type": "menuItem",
+            "Url": "components/icon"
+          },
+          {
+            "Order": 0,
+            "Title": "Typography",
+            "Type": "menuItem",
+            "Url": "components/typography"
+          }
+        ]
+      },
+      {
+        "Order": 1,
+        "Title": "Layout",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Divider",
+            "Type": "menuItem",
+            "Url": "components/divider"
+          },
+          {
+            "Order": 0,
+            "Title": "Grid",
+            "Type": "menuItem",
+            "Url": "components/grid"
+          },
+          {
+            "Order": 0,
+            "Title": "Layout",
+            "Type": "menuItem",
+            "Url": "components/layout"
+          },
+          {
+            "Order": 0,
+            "Title": "Space",
+            "Type": "menuItem",
+            "Url": "components/space"
+          }
+        ]
+      },
+      {
+        "Order": 2,
+        "Title": "Navigation",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Affix",
+            "Type": "menuItem",
+            "Url": "components/affix"
+          },
+          {
+            "Order": 0,
+            "Title": "Breadcrumb",
+            "Type": "menuItem",
+            "Url": "components/breadcrumb"
+          },
+          {
+            "Order": 0,
+            "Title": "Dropdown",
+            "Type": "menuItem",
+            "Url": "components/dropdown"
+          },
+          {
+            "Order": 0,
+            "Title": "Menu",
+            "Type": "menuItem",
+            "Url": "components/menu"
+          },
+          {
+            "Order": 0,
+            "Title": "Pagination",
+            "Type": "menuItem",
+            "Url": "components/pagination"
+          },
+          {
+            "Order": 0,
+            "Title": "PageHeader",
+            "Type": "menuItem",
+            "Url": "components/pageheader"
+          },
+          {
+            "Order": 0,
+            "Title": "Steps",
+            "Type": "menuItem",
+            "Url": "components/steps"
+          }
+        ]
+      },
+      {
+        "Order": 3,
+        "Title": "Data Entry",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "AutoComplete",
+            "Type": "menuItem",
+            "Url": "components/autocomplete"
+          },
+          {
+            "Order": 0,
+            "Title": "Checkbox",
+            "Type": "menuItem",
+            "Url": "components/checkbox"
+          },
+          {
+            "Order": 0,
+            "Title": "Cascader",
+            "Type": "menuItem",
+            "Url": "components/cascader"
+          },
+          {
+            "Order": 0,
+            "Title": "DatePicker",
+            "Type": "menuItem",
+            "Url": "components/datepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Form",
+            "Type": "menuItem",
+            "Url": "components/form"
+          },
+          {
+            "Order": 0,
+            "Title": "InputNumber",
+            "Type": "menuItem",
+            "Url": "components/inputnumber"
+          },
+          {
+            "Order": 0,
+            "Title": "Input",
+            "Type": "menuItem",
+            "Url": "components/input"
+          },
+          {
+            "Order": 0,
+            "Title": "Mentions",
+            "Type": "menuItem",
+            "Url": "components/mentions"
+          },
+          {
+            "Order": 0,
+            "Title": "Rate",
+            "Type": "menuItem",
+            "Url": "components/rate"
+          },
+          {
+            "Order": 0,
+            "Title": "Radio",
+            "Type": "menuItem",
+            "Url": "components/radio"
+          },
+          {
+            "Order": 0,
+            "Title": "Switch",
+            "Type": "menuItem",
+            "Url": "components/switch"
+          },
+          {
+            "Order": 0,
+            "Title": "Slider",
+            "Type": "menuItem",
+            "Url": "components/slider"
+          },
+          {
+            "Order": 0,
+            "Title": "Select",
+            "Type": "menuItem",
+            "Url": "components/select"
+          },
+          {
+            "Order": 0,
+            "Title": "Transfer",
+            "Type": "menuItem",
+            "Url": "components/transfer"
+          },
+          {
+            "Order": 0,
+            "Title": "TimePicker",
+            "Type": "menuItem",
+            "Url": "components/timepicker"
+          },
+          {
+            "Order": 0,
+            "Title": "Upload",
+            "Type": "menuItem",
+            "Url": "components/upload"
+          }
+        ]
+      },
+      {
+        "Order": 4,
+        "Title": "Data Display",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Avatar",
+            "Type": "menuItem",
+            "Url": "components/avatar"
+          },
+          {
+            "Order": 0,
+            "Title": "Badge",
+            "Type": "menuItem",
+            "Url": "components/badge"
+          },
+          {
+            "Order": 0,
+            "Title": "Comment",
+            "Type": "menuItem",
+            "Url": "components/comment"
+          },
+          {
+            "Order": 0,
+            "Title": "Collapse",
+            "Type": "menuItem",
+            "Url": "components/collapse"
+          },
+          {
+            "Order": 0,
+            "Title": "Carousel",
+            "Type": "menuItem",
+            "Url": "components/carousel"
+          },
+          {
+            "Order": 0,
+            "Title": "Card",
+            "Type": "menuItem",
+            "Url": "components/card"
+          },
+          {
+            "Order": 0,
+            "Title": "Calendar",
+            "Type": "menuItem",
+            "Url": "components/calendar"
+          },
+          {
+            "Order": 0,
+            "Title": "Descriptions",
+            "Type": "menuItem",
+            "Url": "components/descriptions"
+          },
+          {
+            "Order": 0,
+            "Title": "Empty",
+            "Type": "menuItem",
+            "Url": "components/empty"
+          },
+          {
+            "Order": 0,
+            "Title": "List",
+            "Type": "menuItem",
+            "Url": "components/list"
+          },
+          {
+            "Order": 0,
+            "Title": "Popover",
+            "Type": "menuItem",
+            "Url": "components/popover"
+          },
+          {
+            "Order": 0,
+            "Title": "Statistic",
+            "Type": "menuItem",
+            "Url": "components/statistic"
+          },
+          {
+            "Order": 0,
+            "Title": "Tree",
+            "Type": "menuItem",
+            "Url": "components/tree"
+          },
+          {
+            "Order": 0,
+            "Title": "Tooltip",
+            "Type": "menuItem",
+            "Url": "components/tooltip"
+          },
+          {
+            "Order": 0,
+            "Title": "Timeline",
+            "Type": "menuItem",
+            "Url": "components/timeline"
+          },
+          {
+            "Order": 0,
+            "Title": "Tag",
+            "Type": "menuItem",
+            "Url": "components/tag"
+          },
+          {
+            "Order": 0,
+            "Title": "Tabs",
+            "Type": "menuItem",
+            "Url": "components/tabs"
+          },
+          {
+            "Order": 0,
+            "Title": "Table",
+            "Type": "menuItem",
+            "Url": "components/table"
+          }
+        ]
+      },
+      {
+        "Order": 5,
+        "Title": "Feedback",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Alert",
+            "Type": "menuItem",
+            "Url": "components/alert"
+          },
+          {
+            "Order": 0,
+            "Title": "Drawer",
+            "Type": "menuItem",
+            "Url": "components/drawer"
+          },
+          {
+            "Order": 0,
+            "Title": "Modal",
+            "Type": "menuItem",
+            "Url": "components/modal"
+          },
+          {
+            "Order": 0,
+            "Title": "Message",
+            "Type": "menuItem",
+            "Url": "components/message"
+          },
+          {
+            "Order": 0,
+            "Title": "Notification",
+            "Type": "menuItem",
+            "Url": "components/notification"
+          },
+          {
+            "Order": 0,
+            "Title": "Progress",
+            "Type": "menuItem",
+            "Url": "components/progress"
+          },
+          {
+            "Order": 0,
+            "Title": "Popconfirm",
+            "Type": "menuItem",
+            "Url": "components/popconfirm"
+          },
+          {
+            "Order": 0,
+            "Title": "Result",
+            "Type": "menuItem",
+            "Url": "components/result"
+          },
+          {
+            "Order": 0,
+            "Title": "Spin",
+            "Type": "menuItem",
+            "Url": "components/spin"
+          },
+          {
+            "Order": 0,
+            "Title": "Skeleton",
+            "Type": "menuItem",
+            "Url": "components/skeleton"
+          }
+        ]
+      },
+      {
+        "Order": 7,
+        "Title": "Other",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Anchor",
+            "Type": "menuItem",
+            "Url": "components/anchor"
+          },
+          {
+            "Order": 0,
+            "Title": "BackTop",
+            "Type": "menuItem",
+            "Url": "components/backtop"
+          }
+        ]
+      }
+    ]
+  }
+]
