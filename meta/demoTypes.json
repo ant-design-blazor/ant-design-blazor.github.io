@@ -228,6 +228,7 @@
   "Demos.PageHeader.demo.Ghost",
   "Demos.PageHeader.demo.Actions",
   "Demos.PageHeader.demo.Basic",
+  "Demos.Overview.demo.Overview",
   "Demos.Space.demo.Base",
   "Demos.Space.demo.Vertical",
   "Demos.Space.demo.Customize",
