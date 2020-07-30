@@ -12,6 +12,7 @@
   "Demos.Upload.demo.FileList",
   "Demos.Upload.demo.Avatar",
   "Demos.Upload.demo.PictureStyle",
+  "Demos.Upload.demo.PictureCard",
   "Demos.Upload.demo.DefaultFileList",
   "Demos.Upload.demo.Directory",
   "Demos.Upload.demo.Basic",
