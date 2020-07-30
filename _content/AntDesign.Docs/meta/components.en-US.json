@@ -3544,7 +3544,7 @@
         "Name": "Search",
         "Title": "Search box with loading",
         "Description": "<p>Search loading when onSearch.</p>\n",
-        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" @bind-Value=\"@txtValue\" />\n\n\n\n</div>\n\n    @code{\n\n        private string txtValue { get; set; }\n\n        private void Handle(string value)\n        {\n            Console.WriteLine(value);\n\n        }\n    }\n\n",
+        "Code": "<div>\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Small\" @bind-Value=\"@txtValue\" OnPressEnter=\"OnSearch\"  />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" OnChange=\"(e)=>Handle(e)\" EnterButton=\"true\" @bind-Value=\"@txtValue\" />\n    <br />\n    <br />\n    <Search Placeholder=\"input search text\" Size=\"@InputSize.Large\" EnterButton=\"@(\"Search\")\" @bind-Value=\"@txtValue\" OnSearch=\"OnSearch\"/>\n</div>\n\n@inject MessageService message;\n\n@code{\n\n    private string txtValue { get; set; }\n\n    private void Handle(string value)\n    {\n        Console.WriteLine(value);\n    }\n\n    public async Task OnSearch()\n    {\n        await message.Loading($\"searching {txtValue}\", 2);\n    }\n\n}\n\n",
         "Type": "Demos.Input.demo.Search_",
         "Style": "",
         "Debug": false
