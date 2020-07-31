@@ -2221,7 +2221,7 @@
         "Name": "custom",
         "Title": "自定义输入组件",
         "Description": "<p>自定义输入组件。</p>\n",
-        "Code": "@using Microsoft.Extensions.Primitives\n<div>\n    <AutoComplete @ref=\"@_autoComplete\">\n        <CustomInput>\n            <TextArea Placeholder=\"input here\" AutoSize=\"true\" OnChange=\"OnChange\" @bind-Value=\"@txtValue\" />\n        </CustomInput>\n    </AutoComplete>\n</div>\n\n@code\n{\n    private AutoComplete _autoComplete;\n    private string txtValue;\n\n    private void OnChange(string value)\n    {\n        var list = string.IsNullOrWhiteSpace(value) ? Array.Empty<string>() : new[]\n        {\n            value,\n            value + value,\n            value + value + value\n        };\n        _autoComplete.LoadData(list);\n    }\n}",
+        "Code": "@using Microsoft.Extensions.Primitives\n<div>\n    <AutoComplete @ref=\"@_autoComplete\" @bind-Value=\"@txtValue\">\n        <CustomInput>\n            <TextArea Placeholder=\"input here\" AutoSize=\"true\" OnChange=\"OnChange\" @bind-Value=\"@txtValue\" @onkeydown=\"(e)=>_autoComplete.OnKeyDown(e)\"/>\n        </CustomInput>\n    </AutoComplete>\n</div>\n\n@code\n{\n    private AutoComplete _autoComplete;\n    private string txtValue;\n\n    private void OnChange(string value)\n    {\n        var list = string.IsNullOrWhiteSpace(value) ? Array.Empty<string>() : new[]\n        {\n            value,\n            value + value,\n            value + value + value\n        };\n        _autoComplete.LoadData(list);\n    }\n}",
         "Type": "Demos.AutoComplete.demo.Custom",
         "Style": "",
         "Debug": false
@@ -2231,7 +2231,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>基本使用。通过 options 设置自动完成的数据源</p>\n",
-        "Code": "<div>\n    <AutoComplete @ref=\"@_autoComplete\" OnChange=\"OnChange\"></AutoComplete>\n</div>\n\n@code\n{\n    private AutoComplete _autoComplete;\n\n    private void OnChange(string value)\n    {\n        if (string.IsNullOrWhiteSpace(value))\n        {\n            _autoComplete.LoadData(null);\n            return;\n        }\n\n        var list = new List<string>()\n        {\n            value, value + value, value + value + value\n        };\n        _autoComplete.LoadData(list);\n    }\n}",
+        "Code": "<div>\n    <AutoComplete @ref=\"@_autoComplete\" OnChange=\"OnChange\" @bind-Value=\"@value\"></AutoComplete>\n</div>\n<br />\n<span>bind-Value:@value</span>\n\n@code\n{\n    private AutoComplete _autoComplete;\n\n    private string value;\n\n    private void OnChange(string value)\n    {\n        if (string.IsNullOrWhiteSpace(value))\n        {\n            _autoComplete.LoadData(null);\n            return;\n        }\n\n        var list = new List<string>()\n        {\n            value, value + value, value + value + value\n        };\n        _autoComplete.LoadData(list);\n    }\n}",
         "Type": "Demos.AutoComplete.demo.Basic",
         "Style": "",
         "Debug": false
