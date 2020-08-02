@@ -27,6 +27,7 @@
   "Demos.Mentions.demo.Async",
   "Demos.Mentions.demo.Basic",
   "Demos.Table.demo.RowSelection_",
+  "Demos.Table.demo.RouterPagging",
   "Demos.Table.demo.FixedColumns",
   "Demos.Table.demo.Blazor",
   "Demos.Table.demo.Basic",
