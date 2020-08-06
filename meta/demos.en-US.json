@@ -1,132 +1,5 @@
 [
   {
-    "Order": 8,
-    "Title": "Charts",
-    "Type": "itemGroup",
-    "Children": [
-      {
-        "Order": 0,
-        "Title": "Area",
-        "Type": "menuItem",
-        "Url": "Charts/area"
-      },
-      {
-        "Order": 0,
-        "Title": "Bullet",
-        "Type": "menuItem",
-        "Url": "Charts/bullet"
-      },
-      {
-        "Order": 0,
-        "Title": "Bubble",
-        "Type": "menuItem",
-        "Url": "Charts/bubble"
-      },
-      {
-        "Order": 0,
-        "Title": "Bar",
-        "Type": "menuItem",
-        "Url": "Charts/bar"
-      },
-      {
-        "Order": 0,
-        "Title": "Combo",
-        "Type": "menuItem",
-        "Url": "Charts/combo"
-      },
-      {
-        "Order": 0,
-        "Title": "Column",
-        "Type": "menuItem",
-        "Url": "Charts/column"
-      },
-      {
-        "Order": 0,
-        "Title": "CalendarChart",
-        "Type": "menuItem",
-        "Url": "Charts/calendarchart"
-      },
-      {
-        "Order": 0,
-        "Title": "Funnel",
-        "Type": "menuItem",
-        "Url": "Charts/funnel"
-      },
-      {
-        "Order": 0,
-        "Title": "GeneralConfigration",
-        "Type": "menuItem",
-        "Url": "Charts/generalconfigration"
-      },
-      {
-        "Order": 0,
-        "Title": "Gauge",
-        "Type": "menuItem",
-        "Url": "Charts/gauge"
-      },
-      {
-        "Order": 0,
-        "Title": "Heatmap",
-        "Type": "menuItem",
-        "Url": "Charts/heatmap"
-      },
-      {
-        "Order": 0,
-        "Title": "Liquid",
-        "Type": "menuItem",
-        "Url": "Charts/liquid"
-      },
-      {
-        "Order": 0,
-        "Title": "Line",
-        "Type": "menuItem",
-        "Url": "Charts/line"
-      },
-      {
-        "Order": 0,
-        "Title": "Pie",
-        "Type": "menuItem",
-        "Url": "Charts/pie"
-      },
-      {
-        "Order": 0,
-        "Title": "Rose",
-        "Type": "menuItem",
-        "Url": "Charts/rose"
-      },
-      {
-        "Order": 0,
-        "Title": "Radar",
-        "Type": "menuItem",
-        "Url": "Charts/radar"
-      },
-      {
-        "Order": 0,
-        "Title": "Step",
-        "Type": "menuItem",
-        "Url": "Charts/step"
-      },
-      {
-        "Order": 0,
-        "Title": "Sparkline",
-        "Type": "menuItem",
-        "Url": "Charts/sparkline"
-      },
-      {
-        "Order": 0,
-        "Title": "Scatter",
-        "Type": "menuItem",
-        "Url": "Charts/scatter"
-      },
-      {
-        "Order": 0,
-        "Title": "Treemap",
-        "Type": "menuItem",
-        "Url": "Charts/treemap"
-      }
-    ]
-  },
-  {
     "Order": -1,
     "Title": "Overview",
     "Type": "itemGroup",
@@ -605,6 +478,133 @@
         "Type": "menuItem",
         "Url": "Components/backtop",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/tJZ5jbTwX/BackTop.svg"
+      }
+    ]
+  },
+  {
+    "Order": 8,
+    "Title": "Charts",
+    "Type": "itemGroup",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "Area",
+        "Type": "menuItem",
+        "Url": "Charts/area"
+      },
+      {
+        "Order": 0,
+        "Title": "Bullet",
+        "Type": "menuItem",
+        "Url": "Charts/bullet"
+      },
+      {
+        "Order": 0,
+        "Title": "Bubble",
+        "Type": "menuItem",
+        "Url": "Charts/bubble"
+      },
+      {
+        "Order": 0,
+        "Title": "Bar",
+        "Type": "menuItem",
+        "Url": "Charts/bar"
+      },
+      {
+        "Order": 0,
+        "Title": "Combo",
+        "Type": "menuItem",
+        "Url": "Charts/combo"
+      },
+      {
+        "Order": 0,
+        "Title": "Column",
+        "Type": "menuItem",
+        "Url": "Charts/column"
+      },
+      {
+        "Order": 0,
+        "Title": "CalendarChart",
+        "Type": "menuItem",
+        "Url": "Charts/calendarchart"
+      },
+      {
+        "Order": 0,
+        "Title": "Funnel",
+        "Type": "menuItem",
+        "Url": "Charts/funnel"
+      },
+      {
+        "Order": 0,
+        "Title": "GeneralConfigration",
+        "Type": "menuItem",
+        "Url": "Charts/generalconfigration"
+      },
+      {
+        "Order": 0,
+        "Title": "Gauge",
+        "Type": "menuItem",
+        "Url": "Charts/gauge"
+      },
+      {
+        "Order": 0,
+        "Title": "Heatmap",
+        "Type": "menuItem",
+        "Url": "Charts/heatmap"
+      },
+      {
+        "Order": 0,
+        "Title": "Liquid",
+        "Type": "menuItem",
+        "Url": "Charts/liquid"
+      },
+      {
+        "Order": 0,
+        "Title": "Line",
+        "Type": "menuItem",
+        "Url": "Charts/line"
+      },
+      {
+        "Order": 0,
+        "Title": "Pie",
+        "Type": "menuItem",
+        "Url": "Charts/pie"
+      },
+      {
+        "Order": 0,
+        "Title": "Rose",
+        "Type": "menuItem",
+        "Url": "Charts/rose"
+      },
+      {
+        "Order": 0,
+        "Title": "Radar",
+        "Type": "menuItem",
+        "Url": "Charts/radar"
+      },
+      {
+        "Order": 0,
+        "Title": "Step",
+        "Type": "menuItem",
+        "Url": "Charts/step"
+      },
+      {
+        "Order": 0,
+        "Title": "Sparkline",
+        "Type": "menuItem",
+        "Url": "Charts/sparkline"
+      },
+      {
+        "Order": 0,
+        "Title": "Scatter",
+        "Type": "menuItem",
+        "Url": "Charts/scatter"
+      },
+      {
+        "Order": 0,
+        "Title": "Treemap",
+        "Type": "menuItem",
+        "Url": "Charts/treemap"
       }
     ]
   }

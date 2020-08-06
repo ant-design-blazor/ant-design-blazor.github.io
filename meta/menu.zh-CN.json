@@ -26,161 +26,6 @@
     ]
   },
   {
-    "Order": 2,
-    "Title": "图表",
-    "Type": "subMenu",
-    "Url": "Charts",
-    "Children": [
-      {
-        "Order": 8,
-        "Title": "图表",
-        "Type": "itemGroup",
-        "Children": [
-          {
-            "Order": 0,
-            "Title": "Area",
-            "SubTitle": "面积图",
-            "Type": "menuItem",
-            "Url": "Charts/area"
-          },
-          {
-            "Order": 0,
-            "Title": "Bullet",
-            "SubTitle": "子弹图",
-            "Type": "menuItem",
-            "Url": "Charts/bullet"
-          },
-          {
-            "Order": 0,
-            "Title": "Bubble",
-            "SubTitle": "气泡图",
-            "Type": "menuItem",
-            "Url": "Charts/bubble"
-          },
-          {
-            "Order": 0,
-            "Title": "Bar",
-            "SubTitle": "基础条形图",
-            "Type": "menuItem",
-            "Url": "Charts/bar"
-          },
-          {
-            "Order": 0,
-            "Title": "Combo",
-            "SubTitle": "混合图表",
-            "Type": "menuItem",
-            "Url": "Charts/combo"
-          },
-          {
-            "Order": 0,
-            "Title": "Column",
-            "SubTitle": "柱状图",
-            "Type": "menuItem",
-            "Url": "Charts/column"
-          },
-          {
-            "Order": 0,
-            "Title": "CalendarChart",
-            "SubTitle": "日历图",
-            "Type": "menuItem",
-            "Url": "Charts/calendarchart"
-          },
-          {
-            "Order": 0,
-            "Title": "Funnel",
-            "SubTitle": "漏斗图",
-            "Type": "menuItem",
-            "Url": "Charts/funnel"
-          },
-          {
-            "Order": 0,
-            "Title": "GeneralConfigration",
-            "SubTitle": "图表通用配置",
-            "Type": "menuItem",
-            "Url": "Charts/generalconfigration"
-          },
-          {
-            "Order": 0,
-            "Title": "Gauge",
-            "SubTitle": "仪表盘",
-            "Type": "menuItem",
-            "Url": "Charts/gauge"
-          },
-          {
-            "Order": 0,
-            "Title": "Heatmap",
-            "SubTitle": "热力图",
-            "Type": "menuItem",
-            "Url": "Charts/heatmap"
-          },
-          {
-            "Order": 0,
-            "Title": "Liquid",
-            "SubTitle": "水波图",
-            "Type": "menuItem",
-            "Url": "Charts/liquid"
-          },
-          {
-            "Order": 0,
-            "Title": "Line",
-            "SubTitle": "折线图",
-            "Type": "menuItem",
-            "Url": "Charts/line"
-          },
-          {
-            "Order": 0,
-            "Title": "Pie",
-            "SubTitle": "饼图",
-            "Type": "menuItem",
-            "Url": "Charts/pie"
-          },
-          {
-            "Order": 0,
-            "Title": "Rose",
-            "SubTitle": "玫瑰图",
-            "Type": "menuItem",
-            "Url": "Charts/rose"
-          },
-          {
-            "Order": 0,
-            "Title": "Radar",
-            "SubTitle": "雷达图",
-            "Type": "menuItem",
-            "Url": "Charts/radar"
-          },
-          {
-            "Order": 0,
-            "Title": "Step",
-            "SubTitle": "阶梯折线图",
-            "Type": "menuItem",
-            "Url": "Charts/step"
-          },
-          {
-            "Order": 0,
-            "Title": "Sparkline",
-            "SubTitle": "迷你图",
-            "Type": "menuItem",
-            "Url": "Charts/sparkline"
-          },
-          {
-            "Order": 0,
-            "Title": "Scatter",
-            "SubTitle": "散点图",
-            "Type": "menuItem",
-            "Url": "Charts/scatter"
-          },
-          {
-            "Order": 0,
-            "Title": "Treemap",
-            "SubTitle": "树图",
-            "Type": "menuItem",
-            "Url": "Charts/treemap"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "Order": 1,
     "Title": "组件",
     "Type": "subMenu",
@@ -726,6 +571,161 @@
             "Type": "menuItem",
             "Url": "Components/backtop",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/tJZ5jbTwX/BackTop.svg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Order": 2,
+    "Title": "图表",
+    "Type": "subMenu",
+    "Url": "Charts",
+    "Children": [
+      {
+        "Order": 8,
+        "Title": "图表",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Area",
+            "SubTitle": "面积图",
+            "Type": "menuItem",
+            "Url": "Charts/area"
+          },
+          {
+            "Order": 0,
+            "Title": "Bullet",
+            "SubTitle": "子弹图",
+            "Type": "menuItem",
+            "Url": "Charts/bullet"
+          },
+          {
+            "Order": 0,
+            "Title": "Bubble",
+            "SubTitle": "气泡图",
+            "Type": "menuItem",
+            "Url": "Charts/bubble"
+          },
+          {
+            "Order": 0,
+            "Title": "Bar",
+            "SubTitle": "基础条形图",
+            "Type": "menuItem",
+            "Url": "Charts/bar"
+          },
+          {
+            "Order": 0,
+            "Title": "Combo",
+            "SubTitle": "混合图表",
+            "Type": "menuItem",
+            "Url": "Charts/combo"
+          },
+          {
+            "Order": 0,
+            "Title": "Column",
+            "SubTitle": "柱状图",
+            "Type": "menuItem",
+            "Url": "Charts/column"
+          },
+          {
+            "Order": 0,
+            "Title": "CalendarChart",
+            "SubTitle": "日历图",
+            "Type": "menuItem",
+            "Url": "Charts/calendarchart"
+          },
+          {
+            "Order": 0,
+            "Title": "Funnel",
+            "SubTitle": "漏斗图",
+            "Type": "menuItem",
+            "Url": "Charts/funnel"
+          },
+          {
+            "Order": 0,
+            "Title": "GeneralConfigration",
+            "SubTitle": "图表通用配置",
+            "Type": "menuItem",
+            "Url": "Charts/generalconfigration"
+          },
+          {
+            "Order": 0,
+            "Title": "Gauge",
+            "SubTitle": "仪表盘",
+            "Type": "menuItem",
+            "Url": "Charts/gauge"
+          },
+          {
+            "Order": 0,
+            "Title": "Heatmap",
+            "SubTitle": "热力图",
+            "Type": "menuItem",
+            "Url": "Charts/heatmap"
+          },
+          {
+            "Order": 0,
+            "Title": "Liquid",
+            "SubTitle": "水波图",
+            "Type": "menuItem",
+            "Url": "Charts/liquid"
+          },
+          {
+            "Order": 0,
+            "Title": "Line",
+            "SubTitle": "折线图",
+            "Type": "menuItem",
+            "Url": "Charts/line"
+          },
+          {
+            "Order": 0,
+            "Title": "Pie",
+            "SubTitle": "饼图",
+            "Type": "menuItem",
+            "Url": "Charts/pie"
+          },
+          {
+            "Order": 0,
+            "Title": "Rose",
+            "SubTitle": "玫瑰图",
+            "Type": "menuItem",
+            "Url": "Charts/rose"
+          },
+          {
+            "Order": 0,
+            "Title": "Radar",
+            "SubTitle": "雷达图",
+            "Type": "menuItem",
+            "Url": "Charts/radar"
+          },
+          {
+            "Order": 0,
+            "Title": "Step",
+            "SubTitle": "阶梯折线图",
+            "Type": "menuItem",
+            "Url": "Charts/step"
+          },
+          {
+            "Order": 0,
+            "Title": "Sparkline",
+            "SubTitle": "迷你图",
+            "Type": "menuItem",
+            "Url": "Charts/sparkline"
+          },
+          {
+            "Order": 0,
+            "Title": "Scatter",
+            "SubTitle": "散点图",
+            "Type": "menuItem",
+            "Url": "Charts/scatter"
+          },
+          {
+            "Order": 0,
+            "Title": "Treemap",
+            "SubTitle": "树图",
+            "Type": "menuItem",
+            "Url": "Charts/treemap"
           }
         ]
       }
