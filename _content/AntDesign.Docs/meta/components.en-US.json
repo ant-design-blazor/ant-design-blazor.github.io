@@ -3625,6 +3625,16 @@
         "Type": "Demos.Components.Carousel.demo.Position",
         "Style": "",
         "Debug": false
+      },
+      {
+        "Order": 4,
+        "Name": "CustomButtons",
+        "Title": "Custom Buttons",
+        "Description": "<p>User provides custom buttons for navigation</p>\n",
+        "Code": "<div>\n    <Carousel @ref=\"_carousel\">\n        <CarouselSlick>\n            <h3>1</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>2</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>3</h3>\n        </CarouselSlick>\n        <CarouselSlick>\n            <h3>4</h3>\n        </CarouselSlick>\n    </Carousel>\n</div>\n<div class=\"button-container\">\n    <Button OnClick=\"@( _=>_carousel.Previous())\" Size=\"small\">Prev</Button>\n    <div>\n        @foreach (int i in Enumerable.Range(0, 4))\n        {\n            <Button OnClick=\"@( _=>_carousel.GoTo(i))\" Size=\"small\">@(i+1)</Button>\n        }\n    </div>\n    <Button OnClick=\"@( _=>_carousel.Next())\" Size=\"small\">Next</Button>\n\n</div>\n\n<style>\n    .button-container {\n        display: flex;\n        justify-content: space-between;\n        padding-top:4px;\n    }\n\n    .ant-carousel .slick-slide {\n        text-align: center;\n        height: 160px;\n        line-height: 160px;\n        background: #364d79;\n        overflow: hidden;\n    }\n\n    .ant-carousel .slick-slide h3 {\n        color: #fff;\n    }\n</style>\n\n@code{\n    Carousel _carousel;\n}",
+        "Type": "Demos.Components.Carousel.demo.CustomButtons",
+        "Style": "",
+        "Debug": false
       }
     ]
   },
