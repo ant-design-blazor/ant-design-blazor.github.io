@@ -613,6 +613,16 @@
         "Debug": false
       },
       {
+        "Order": 13,
+        "Name": "progress",
+        "Title": "带有进度的步骤",
+        "Description": "<p>带有进度的步骤。</p>\n",
+        "Code": "<div>\n    <Steps Percent=\"60\" Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
+        "Type": "Demos.Components.Steps.demo.Progress",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 8,
         "Name": "progress-dot",
         "Title": "点状步骤条",

@@ -605,6 +605,16 @@
         "Debug": false
       },
       {
+        "Order": 13,
+        "Name": "progress",
+        "Title": "Steps with progress",
+        "Description": "<p>Steps with progress.</p>\n",
+        "Code": "<div>\n    <Steps Percent=\"60\" Current=\"1\">\n        <Step Title=\"@(\"Finished\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"In Progress\")\" Description=\"@(\"This is a description.\")\" />\n        <Step Title=\"@(\"Waiting\")\" Description=\"@(\"This is a description.\")\" />\n    </Steps>\n</div>",
+        "Type": "Demos.Components.Steps.demo.Progress",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 8,
         "Name": "progress-dot",
         "Title": "Dot Style",

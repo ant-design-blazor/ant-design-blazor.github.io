@@ -52,6 +52,7 @@
   "Demos.Components.Steps.demo.Error",
   "Demos.Components.Steps.demo.SmallSize",
   "Demos.Components.Steps.demo.Icon_",
+  "Demos.Components.Steps.demo.Progress",
   "Demos.Components.Steps.demo.ProgressDot",
   "Demos.Components.Steps.demo.Simple",
   "Demos.Components.Steps.demo.CustomizedProgressDot",
