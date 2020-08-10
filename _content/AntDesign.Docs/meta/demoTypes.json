@@ -104,6 +104,7 @@
   "Demos.Components.Badge.demo.Dot",
   "Demos.Components.Badge.demo.Basic",
   "Demos.Components.Badge.demo.Link",
+  "Demos.Components.Badge.demo.Ribbon",
   "Demos.Components.Badge.demo.NoWrapper",
   "Demos.Components.Badge.demo.Change",
   "Demos.Components.Badge.demo.Status",

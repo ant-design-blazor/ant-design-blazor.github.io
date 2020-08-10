@@ -1131,7 +1131,7 @@
     "SubTitle": "徽标数",
     "Type": "数据展示",
     "Desc": "<p>图标右上角的圆形徽标数字。</p>\n<h2>何时使用</h2>\n<p>一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。</p>\n",
-    "ApiDoc": "<h2 id=\"API\"><span>API</span><a href=\"zh-CN/components/badge#API\" class=\"anchor\">#</a></h2>\n<pre><code class=\"language-jsx\">&lt;Badge count={5}&gt;\n  &lt;a href=&quot;#&quot; className=&quot;head-example&quot; /&gt;\n&lt;/Badge&gt;\n</code></pre>\n<pre><code class=\"language-jsx\">&lt;Badge count={5} /&gt;\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义小圆点的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>展示的数字，大于 overflowCount 时显示为 <code>${overflowCount}+</code>，为 0 时隐藏</td>\n<td>ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Dot</td>\n<td>不展示数字，只有一个小红点</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Offset</td>\n<td>设置状态点的位置偏移，格式为 <code>[x, y]</code></td>\n<td><code>[number, number]</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OverflowCount</td>\n<td>展示封顶的数字值</td>\n<td>number</td>\n<td>99</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowZero</td>\n<td>当数值为 0 时，是否展示 Badge</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>设置 Badge 为状态点</td>\n<td><code>success</code> | <code>processing</code> | <code>default</code> | <code>error</code> | <code>warning</code></td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>在设置了 <code>status</code> 的前提下有效，设置状态点的文本</td>\n<td>string</td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Title</td>\n<td>设置鼠标放在状态点上时显示的文字</td>\n<td>string</td>\n<td><code>count</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "ApiDoc": "<h2 id=\"API\"><span>API</span><a href=\"zh-CN/components/badge#API\" class=\"anchor\">#</a></h2>\n<h3>Badge</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义小圆点的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>展示的数字，大于 overflowCount 时显示为 <code>${overflowCount}+</code>，为 0 时隐藏</td>\n<td>ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Dot</td>\n<td>不展示数字，只有一个小红点</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Offset</td>\n<td>设置状态点的位置偏移，格式为 <code>[x, y]</code></td>\n<td><code>[number, number]</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OverflowCount</td>\n<td>展示封顶的数字值</td>\n<td>number</td>\n<td>99</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowZero</td>\n<td>当数值为 0 时，是否展示 Badge</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>设置 Badge 为状态点</td>\n<td><code>success</code> | <code>processing</code> | <code>default</code> | <code>error</code> | <code>warning</code></td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>在设置了 <code>status</code> 的前提下有效，设置状态点的文本</td>\n<td>string</td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Title</td>\n<td>设置鼠标放在状态点上时显示的文字</td>\n<td>string</td>\n<td><code>count</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Badge.Ribbon</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义缎带的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Placement</td>\n<td>缎带的位置</td>\n<td><code>start</code> | <code>end</code></td>\n<td><code>end</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>缎带中填入的内容</td>\n<td>ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
     "Cover": "https://gw.alipayobjects.com/zos/antfincdn/6%26GF9WHwvY/Badge.svg",
     "DemoList": [
       {
@@ -1191,6 +1191,16 @@
         "Description": "<p>用 a 标签进行包裹即可。</p>\n",
         "Code": "<a href=\"#\">\n    <Badge Count=\"5\">\n        <span class=\"head-example\" />\n    </Badge>\n</a>",
         "Type": "Demos.Components.Badge.demo.Link",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 15,
+        "Name": "ribbon",
+        "Title": "缎带",
+        "Description": "<p>使用缎带型的徽标。</p>\n",
+        "Code": "<BadgeRibbon Text=@(\"Pushes open the window\")>\n    <Card Bordered>And raises the spyglass.</Card>\n</BadgeRibbon>",
+        "Type": "Demos.Components.Badge.demo.Ribbon",
         "Style": "",
         "Debug": false
       },
