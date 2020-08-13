@@ -29,7 +29,7 @@
     "Order": 1,
     "Title": "组件",
     "Type": "subMenu",
-    "Url": "Components",
+    "Url": "components",
     "Children": [
       {
         "Order": -1,
@@ -41,7 +41,7 @@
             "Title": "Overview",
             "SubTitle": "组件总览",
             "Type": "menuItem",
-            "Url": "Components/overview"
+            "Url": "components/overview"
           }
         ]
       },
@@ -55,7 +55,7 @@
             "Title": "Button",
             "SubTitle": "按钮",
             "Type": "menuItem",
-            "Url": "Components/button",
+            "Url": "components/button",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg"
           },
           {
@@ -63,7 +63,7 @@
             "Title": "Icon",
             "SubTitle": "图标",
             "Type": "menuItem",
-            "Url": "Components/icon",
+            "Url": "components/icon",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/rrwbSt3FQ/Icon.svg"
           },
           {
@@ -71,7 +71,7 @@
             "Title": "Typography",
             "SubTitle": "排版",
             "Type": "menuItem",
-            "Url": "Components/typography",
+            "Url": "components/typography",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/GOM1KQ24O/Typography.svg"
           }
         ]
@@ -86,7 +86,7 @@
             "Title": "Divider",
             "SubTitle": "分割线",
             "Type": "menuItem",
-            "Url": "Components/divider",
+            "Url": "components/divider",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/5swjECahe/Divider.svg"
           },
           {
@@ -94,7 +94,7 @@
             "Title": "Grid",
             "SubTitle": "栅格",
             "Type": "menuItem",
-            "Url": "Components/grid",
+            "Url": "components/grid",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/5rWLU27so/Grid.svg"
           },
           {
@@ -102,7 +102,7 @@
             "Title": "Layout",
             "SubTitle": "布局",
             "Type": "menuItem",
-            "Url": "Components/layout",
+            "Url": "components/layout",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/hzEndUVEx/Layout.svg"
           },
           {
@@ -110,7 +110,7 @@
             "Title": "Space",
             "SubTitle": "间距",
             "Type": "menuItem",
-            "Url": "Components/space",
+            "Url": "components/space",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/wc6%263gJ0Y8/Space.svg"
           }
         ]
@@ -125,7 +125,7 @@
             "Title": "Affix",
             "SubTitle": "固钉",
             "Type": "menuItem",
-            "Url": "Components/affix",
+            "Url": "components/affix",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/tX6-md4H6/Affix.svg"
           },
           {
@@ -133,7 +133,7 @@
             "Title": "Breadcrumb",
             "SubTitle": "面包屑",
             "Type": "menuItem",
-            "Url": "Components/breadcrumb",
+            "Url": "components/breadcrumb",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/9Ltop8JwH/Breadcrumb.svg"
           },
           {
@@ -141,7 +141,7 @@
             "Title": "Dropdown",
             "SubTitle": "下拉菜单",
             "Type": "menuItem",
-            "Url": "Components/dropdown",
+            "Url": "components/dropdown",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/eedWN59yJ/Dropdown.svg"
           },
           {
@@ -149,7 +149,7 @@
             "Title": "Menu",
             "SubTitle": "导航菜单",
             "Type": "menuItem",
-            "Url": "Components/menu",
+            "Url": "components/menu",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/3XZcjGpvK/Menu.svg"
           },
           {
@@ -157,7 +157,7 @@
             "Title": "Pagination",
             "SubTitle": "分页",
             "Type": "menuItem",
-            "Url": "Components/pagination",
+            "Url": "components/pagination",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/1vqv2bj68/Pagination.svg"
           },
           {
@@ -165,7 +165,7 @@
             "Title": "PageHeader",
             "SubTitle": "页头",
             "Type": "menuItem",
-            "Url": "Components/pageheader",
+            "Url": "components/pageheader",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/6bKE0Cq0R/PageHeader.svg"
           },
           {
@@ -173,7 +173,7 @@
             "Title": "Steps",
             "SubTitle": "步骤条",
             "Type": "menuItem",
-            "Url": "Components/steps",
+            "Url": "components/steps",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/UZYqMizXHaj/Steps.svg"
           }
         ]
@@ -188,7 +188,7 @@
             "Title": "AutoComplete",
             "SubTitle": "自动完成",
             "Type": "menuItem",
-            "Url": "Components/autocomplete",
+            "Url": "components/autocomplete",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/qtJm4yt45/AutoComplete.svg"
           },
           {
@@ -196,7 +196,7 @@
             "Title": "Checkbox",
             "SubTitle": "多选框",
             "Type": "menuItem",
-            "Url": "Components/checkbox",
+            "Url": "components/checkbox",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/8nbVbHEm_/CheckBox.svg"
           },
           {
@@ -204,7 +204,7 @@
             "Title": "Cascader",
             "SubTitle": "级联选择",
             "Type": "menuItem",
-            "Url": "Components/cascader",
+            "Url": "components/cascader",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/UdS8y8xyZ/Cascader.svg"
           },
           {
@@ -212,7 +212,7 @@
             "Title": "DatePicker",
             "SubTitle": "日期选择框",
             "Type": "menuItem",
-            "Url": "Components/datepicker",
+            "Url": "components/datepicker",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/RT_USzA48/DatePicker.svg"
           },
           {
@@ -220,7 +220,7 @@
             "Title": "Form",
             "SubTitle": "表单",
             "Type": "menuItem",
-            "Url": "Components/form",
+            "Url": "components/form",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/ORmcdeaoO/Form.svg"
           },
           {
@@ -228,7 +228,7 @@
             "Title": "InputNumber",
             "SubTitle": "数字输入框",
             "Type": "menuItem",
-            "Url": "Components/inputnumber",
+            "Url": "components/inputnumber",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/XOS8qZ0kU/InputNumber.svg"
           },
           {
@@ -236,7 +236,7 @@
             "Title": "Input",
             "SubTitle": "输入框",
             "Type": "menuItem",
-            "Url": "Components/input",
+            "Url": "components/input",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/xS9YEJhfe/Input.svg"
           },
           {
@@ -244,7 +244,7 @@
             "Title": "Mentions",
             "SubTitle": "提及",
             "Type": "menuItem",
-            "Url": "Components/mentions",
+            "Url": "components/mentions",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/jPE-itMFM/Mentions.svg"
           },
           {
@@ -252,7 +252,7 @@
             "Title": "Rate",
             "SubTitle": "评分",
             "Type": "menuItem",
-            "Url": "Components/rate",
+            "Url": "components/rate",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/R5uiIWmxe/Rate.svg"
           },
           {
@@ -260,7 +260,7 @@
             "Title": "Radio",
             "SubTitle": "单选框",
             "Type": "menuItem",
-            "Url": "Components/radio",
+            "Url": "components/radio",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/8cYb5seNB/Radio.svg"
           },
           {
@@ -268,7 +268,7 @@
             "Title": "Switch",
             "SubTitle": "开关",
             "Type": "menuItem",
-            "Url": "Components/switch",
+            "Url": "components/switch",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/zNdJQMhfm/Switch.svg"
           },
           {
@@ -276,7 +276,7 @@
             "Title": "Slider",
             "SubTitle": "滑动输入条",
             "Type": "menuItem",
-            "Url": "Components/slider",
+            "Url": "components/slider",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/HZ3meFc6W/Silder.svg"
           },
           {
@@ -284,7 +284,7 @@
             "Title": "Select",
             "SubTitle": "选择器",
             "Type": "menuItem",
-            "Url": "Components/select",
+            "Url": "components/select",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/_0XzgOis7/Select.svg"
           },
           {
@@ -292,7 +292,7 @@
             "Title": "Transfer",
             "SubTitle": "穿梭框",
             "Type": "menuItem",
-            "Url": "Components/transfer",
+            "Url": "components/transfer",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/QAXskNI4G/Transfer.svg"
           },
           {
@@ -300,7 +300,7 @@
             "Title": "TimePicker",
             "SubTitle": "时间选择框",
             "Type": "menuItem",
-            "Url": "Components/timepicker",
+            "Url": "components/timepicker",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/h04Zsl98I/TimePicker.svg"
           },
           {
@@ -308,7 +308,7 @@
             "Title": "Upload",
             "SubTitle": "上传",
             "Type": "menuItem",
-            "Url": "Components/upload",
+            "Url": "components/upload",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/QaeBt_ZMg/Upload.svg"
           }
         ]
@@ -323,7 +323,7 @@
             "Title": "Avatar",
             "SubTitle": "头像",
             "Type": "menuItem",
-            "Url": "Components/avatar",
+            "Url": "components/avatar",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/aBcnbw68hP/Avatar.svg"
           },
           {
@@ -331,7 +331,7 @@
             "Title": "Badge",
             "SubTitle": "徽标数",
             "Type": "menuItem",
-            "Url": "Components/badge",
+            "Url": "components/badge",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/6%26GF9WHwvY/Badge.svg"
           },
           {
@@ -339,7 +339,7 @@
             "Title": "Comment",
             "SubTitle": "评论",
             "Type": "menuItem",
-            "Url": "Components/comment",
+            "Url": "components/comment",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/ILhxpGzBO/Comment.svg"
           },
           {
@@ -347,7 +347,7 @@
             "Title": "Collapse",
             "SubTitle": "折叠面板",
             "Type": "menuItem",
-            "Url": "Components/collapse",
+            "Url": "components/collapse",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/IxH16B9RD/Collapse.svg"
           },
           {
@@ -355,7 +355,7 @@
             "Title": "Carousel",
             "SubTitle": "走马灯",
             "Type": "menuItem",
-            "Url": "Components/carousel",
+            "Url": "components/carousel",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/%24C9tmj978R/Carousel.svg"
           },
           {
@@ -363,7 +363,7 @@
             "Title": "Card",
             "SubTitle": "卡片",
             "Type": "menuItem",
-            "Url": "Components/card",
+            "Url": "components/card",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/NqXt8DJhky/Card.svg"
           },
           {
@@ -371,7 +371,7 @@
             "Title": "Calendar",
             "SubTitle": "日历",
             "Type": "menuItem",
-            "Url": "Components/calendar",
+            "Url": "components/calendar",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/dPQmLq08DI/Calendar.svg"
           },
           {
@@ -379,7 +379,7 @@
             "Title": "Descriptions",
             "SubTitle": "描述列表",
             "Type": "menuItem",
-            "Url": "Components/descriptions",
+            "Url": "components/descriptions",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/MjtG9_FOI/Descriptions.svg"
           },
           {
@@ -387,7 +387,7 @@
             "Title": "Empty",
             "SubTitle": "空状态",
             "Type": "menuItem",
-            "Url": "Components/empty",
+            "Url": "components/empty",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/MNbKfLBVb/Empty.svg"
           },
           {
@@ -395,7 +395,7 @@
             "Title": "List",
             "SubTitle": "列表",
             "Type": "menuItem",
-            "Url": "Components/list",
+            "Url": "components/list",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/5FrZKStG_/List.svg"
           },
           {
@@ -403,7 +403,7 @@
             "Title": "Popover",
             "SubTitle": "气泡卡片",
             "Type": "menuItem",
-            "Url": "Components/popover",
+            "Url": "components/popover",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/1PNL1p_cO/Popover.svg"
           },
           {
@@ -411,7 +411,7 @@
             "Title": "Statistic",
             "SubTitle": "统计数值",
             "Type": "menuItem",
-            "Url": "Components/statistic",
+            "Url": "components/statistic",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/rcBNhLBrKbE/Statistic.svg"
           },
           {
@@ -419,7 +419,7 @@
             "Title": "Tree",
             "SubTitle": "树形控件",
             "Type": "menuItem",
-            "Url": "Components/tree",
+            "Url": "components/tree",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/Xh-oWqg9k/Tree.svg"
           },
           {
@@ -427,7 +427,7 @@
             "Title": "Tooltip",
             "SubTitle": "文字提示",
             "Type": "menuItem",
-            "Url": "Components/tooltip",
+            "Url": "components/tooltip",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/Vyyeu8jq2/Tooltp.svg"
           },
           {
@@ -435,7 +435,7 @@
             "Title": "Timeline",
             "SubTitle": "时间轴",
             "Type": "menuItem",
-            "Url": "Components/timeline",
+            "Url": "components/timeline",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/vJmo00mmgR/Timeline.svg"
           },
           {
@@ -443,7 +443,7 @@
             "Title": "Tag",
             "SubTitle": "标签",
             "Type": "menuItem",
-            "Url": "Components/tag",
+            "Url": "components/tag",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/cH1BOLfxC/Tag.svg"
           },
           {
@@ -451,7 +451,7 @@
             "Title": "Tabs",
             "SubTitle": "标签页",
             "Type": "menuItem",
-            "Url": "Components/tabs",
+            "Url": "components/tabs",
             "Cover": "https://gw.alipayobjects.com/zos/antfincdn/lkI2hNEDr2V/Tabs.svg"
           },
           {
@@ -459,7 +459,7 @@
             "Title": "Table",
             "SubTitle": "表格",
             "Type": "menuItem",
-            "Url": "Components/table",
+            "Url": "components/table",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/f-SbcX2Lx/Table.svg"
           }
         ]
@@ -474,7 +474,7 @@
             "Title": "Alert",
             "SubTitle": "警告提示",
             "Type": "menuItem",
-            "Url": "Components/alert",
+            "Url": "components/alert",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/8emPa3fjl/Alert.svg"
           },
           {
@@ -482,7 +482,7 @@
             "Title": "Drawer",
             "SubTitle": "抽屉",
             "Type": "menuItem",
-            "Url": "Components/drawer",
+            "Url": "components/drawer",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/7z8NJQhFb/Drawer.svg"
           },
           {
@@ -490,7 +490,7 @@
             "Title": "Modal",
             "SubTitle": "对话框",
             "Type": "menuItem",
-            "Url": "Components/modal",
+            "Url": "components/modal",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg"
           },
           {
@@ -498,7 +498,7 @@
             "Title": "Message",
             "SubTitle": "全局提示",
             "Type": "menuItem",
-            "Url": "Components/message",
+            "Url": "components/message",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/hAkKTIW0K/Message.svg"
           },
           {
@@ -506,7 +506,7 @@
             "Title": "Notification",
             "SubTitle": "通知提醒框",
             "Type": "menuItem",
-            "Url": "Components/notification",
+            "Url": "components/notification",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/Jxm5nw61w/Notification.svg"
           },
           {
@@ -514,7 +514,7 @@
             "Title": "Progress",
             "SubTitle": "进度条",
             "Type": "menuItem",
-            "Url": "Components/progress",
+            "Url": "components/progress",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/xqsDu4ZyR/Progress.svg"
           },
           {
@@ -522,7 +522,7 @@
             "Title": "Popconfirm",
             "SubTitle": "气泡确认框",
             "Type": "menuItem",
-            "Url": "Components/popconfirm",
+            "Url": "components/popconfirm",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/fjMCD9xRq/Popconfirm.svg"
           },
           {
@@ -530,7 +530,7 @@
             "Title": "Result",
             "SubTitle": "结果",
             "Type": "menuItem",
-            "Url": "Components/result",
+            "Url": "components/result",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/9nepwjaLa/Result.svg"
           },
           {
@@ -538,7 +538,7 @@
             "Title": "Spin",
             "SubTitle": "加载中",
             "Type": "menuItem",
-            "Url": "Components/spin",
+            "Url": "components/spin",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/LBcJqCPRv/Spin.svg"
           },
           {
@@ -546,7 +546,7 @@
             "Title": "Skeleton",
             "SubTitle": "骨架屏",
             "Type": "menuItem",
-            "Url": "Components/skeleton",
+            "Url": "components/skeleton",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/KpcciCJgv/Skeleton.svg"
           }
         ]
@@ -561,7 +561,7 @@
             "Title": "Anchor",
             "SubTitle": "锚点",
             "Type": "menuItem",
-            "Url": "Components/anchor",
+            "Url": "components/anchor",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/_1-C1JwsC/Anchor.svg"
           },
           {
@@ -569,7 +569,7 @@
             "Title": "BackTop",
             "SubTitle": "回到顶部",
             "Type": "menuItem",
-            "Url": "Components/backtop",
+            "Url": "components/backtop",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/tJZ5jbTwX/BackTop.svg"
           }
         ]
@@ -580,7 +580,7 @@
     "Order": 2,
     "Title": "图表",
     "Type": "subMenu",
-    "Url": "Charts",
+    "Url": "charts",
     "Children": [
       {
         "Order": 8,
@@ -592,140 +592,140 @@
             "Title": "Area",
             "SubTitle": "面积图",
             "Type": "menuItem",
-            "Url": "Charts/area"
+            "Url": "charts/area"
           },
           {
             "Order": 0,
             "Title": "Bullet",
             "SubTitle": "子弹图",
             "Type": "menuItem",
-            "Url": "Charts/bullet"
+            "Url": "charts/bullet"
           },
           {
             "Order": 0,
             "Title": "Bubble",
             "SubTitle": "气泡图",
             "Type": "menuItem",
-            "Url": "Charts/bubble"
+            "Url": "charts/bubble"
           },
           {
             "Order": 0,
             "Title": "Bar",
             "SubTitle": "基础条形图",
             "Type": "menuItem",
-            "Url": "Charts/bar"
+            "Url": "charts/bar"
           },
           {
             "Order": 0,
             "Title": "Combo",
             "SubTitle": "混合图表",
             "Type": "menuItem",
-            "Url": "Charts/combo"
+            "Url": "charts/combo"
           },
           {
             "Order": 0,
             "Title": "Column",
             "SubTitle": "柱状图",
             "Type": "menuItem",
-            "Url": "Charts/column"
+            "Url": "charts/column"
           },
           {
             "Order": 0,
             "Title": "CalendarChart",
             "SubTitle": "日历图",
             "Type": "menuItem",
-            "Url": "Charts/calendarchart"
+            "Url": "charts/calendarchart"
           },
           {
             "Order": 0,
             "Title": "Funnel",
             "SubTitle": "漏斗图",
             "Type": "menuItem",
-            "Url": "Charts/funnel"
+            "Url": "charts/funnel"
           },
           {
             "Order": 0,
             "Title": "GeneralConfigration",
             "SubTitle": "图表通用配置",
             "Type": "menuItem",
-            "Url": "Charts/generalconfigration"
+            "Url": "charts/generalconfigration"
           },
           {
             "Order": 0,
             "Title": "Gauge",
             "SubTitle": "仪表盘",
             "Type": "menuItem",
-            "Url": "Charts/gauge"
+            "Url": "charts/gauge"
           },
           {
             "Order": 0,
             "Title": "Heatmap",
             "SubTitle": "热力图",
             "Type": "menuItem",
-            "Url": "Charts/heatmap"
+            "Url": "charts/heatmap"
           },
           {
             "Order": 0,
             "Title": "Liquid",
             "SubTitle": "水波图",
             "Type": "menuItem",
-            "Url": "Charts/liquid"
+            "Url": "charts/liquid"
           },
           {
             "Order": 0,
             "Title": "Line",
             "SubTitle": "折线图",
             "Type": "menuItem",
-            "Url": "Charts/line"
+            "Url": "charts/line"
           },
           {
             "Order": 0,
             "Title": "Pie",
             "SubTitle": "饼图",
             "Type": "menuItem",
-            "Url": "Charts/pie"
+            "Url": "charts/pie"
           },
           {
             "Order": 0,
             "Title": "Rose",
             "SubTitle": "玫瑰图",
             "Type": "menuItem",
-            "Url": "Charts/rose"
+            "Url": "charts/rose"
           },
           {
             "Order": 0,
             "Title": "Radar",
             "SubTitle": "雷达图",
             "Type": "menuItem",
-            "Url": "Charts/radar"
+            "Url": "charts/radar"
           },
           {
             "Order": 0,
             "Title": "Step",
             "SubTitle": "阶梯折线图",
             "Type": "menuItem",
-            "Url": "Charts/step"
+            "Url": "charts/step"
           },
           {
             "Order": 0,
             "Title": "Sparkline",
             "SubTitle": "迷你图",
             "Type": "menuItem",
-            "Url": "Charts/sparkline"
+            "Url": "charts/sparkline"
           },
           {
             "Order": 0,
             "Title": "Scatter",
             "SubTitle": "散点图",
             "Type": "menuItem",
-            "Url": "Charts/scatter"
+            "Url": "charts/scatter"
           },
           {
             "Order": 0,
             "Title": "Treemap",
             "SubTitle": "树图",
             "Type": "menuItem",
-            "Url": "Charts/treemap"
+            "Url": "charts/treemap"
           }
         ]
       }

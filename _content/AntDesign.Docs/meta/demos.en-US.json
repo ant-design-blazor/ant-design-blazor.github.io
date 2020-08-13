@@ -8,7 +8,7 @@
         "Order": 0,
         "Title": "Overview",
         "Type": "menuItem",
-        "Url": "Components/overview"
+        "Url": "components/overview"
       }
     ]
   },
@@ -21,21 +21,21 @@
         "Order": 0,
         "Title": "Button",
         "Type": "menuItem",
-        "Url": "Components/button",
+        "Url": "components/button",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg"
       },
       {
         "Order": 0,
         "Title": "Icon",
         "Type": "menuItem",
-        "Url": "Components/icon",
+        "Url": "components/icon",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/rrwbSt3FQ/Icon.svg"
       },
       {
         "Order": 0,
         "Title": "Typography",
         "Type": "menuItem",
-        "Url": "Components/typography",
+        "Url": "components/typography",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/GOM1KQ24O/Typography.svg"
       }
     ]
@@ -49,28 +49,28 @@
         "Order": 0,
         "Title": "Divider",
         "Type": "menuItem",
-        "Url": "Components/divider",
+        "Url": "components/divider",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/5swjECahe/Divider.svg"
       },
       {
         "Order": 0,
         "Title": "Grid",
         "Type": "menuItem",
-        "Url": "Components/grid",
+        "Url": "components/grid",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/5rWLU27so/Grid.svg"
       },
       {
         "Order": 0,
         "Title": "Layout",
         "Type": "menuItem",
-        "Url": "Components/layout",
+        "Url": "components/layout",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/hzEndUVEx/Layout.svg"
       },
       {
         "Order": 0,
         "Title": "Space",
         "Type": "menuItem",
-        "Url": "Components/space",
+        "Url": "components/space",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/wc6%263gJ0Y8/Space.svg"
       }
     ]
@@ -84,49 +84,49 @@
         "Order": 0,
         "Title": "Affix",
         "Type": "menuItem",
-        "Url": "Components/affix",
+        "Url": "components/affix",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/tX6-md4H6/Affix.svg"
       },
       {
         "Order": 0,
         "Title": "Breadcrumb",
         "Type": "menuItem",
-        "Url": "Components/breadcrumb",
+        "Url": "components/breadcrumb",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/9Ltop8JwH/Breadcrumb.svg"
       },
       {
         "Order": 0,
         "Title": "Dropdown",
         "Type": "menuItem",
-        "Url": "Components/dropdown",
+        "Url": "components/dropdown",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/eedWN59yJ/Dropdown.svg"
       },
       {
         "Order": 0,
         "Title": "Menu",
         "Type": "menuItem",
-        "Url": "Components/menu",
+        "Url": "components/menu",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/3XZcjGpvK/Menu.svg"
       },
       {
         "Order": 0,
         "Title": "Pagination",
         "Type": "menuItem",
-        "Url": "Components/pagination",
+        "Url": "components/pagination",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/1vqv2bj68/Pagination.svg"
       },
       {
         "Order": 0,
         "Title": "PageHeader",
         "Type": "menuItem",
-        "Url": "Components/pageheader",
+        "Url": "components/pageheader",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/6bKE0Cq0R/PageHeader.svg"
       },
       {
         "Order": 0,
         "Title": "Steps",
         "Type": "menuItem",
-        "Url": "Components/steps",
+        "Url": "components/steps",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/UZYqMizXHaj/Steps.svg"
       }
     ]
@@ -140,112 +140,112 @@
         "Order": 0,
         "Title": "AutoComplete",
         "Type": "menuItem",
-        "Url": "Components/autocomplete",
+        "Url": "components/autocomplete",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/qtJm4yt45/AutoComplete.svg"
       },
       {
         "Order": 0,
         "Title": "Checkbox",
         "Type": "menuItem",
-        "Url": "Components/checkbox",
+        "Url": "components/checkbox",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/8nbVbHEm_/CheckBox.svg"
       },
       {
         "Order": 0,
         "Title": "Cascader",
         "Type": "menuItem",
-        "Url": "Components/cascader",
+        "Url": "components/cascader",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/UdS8y8xyZ/Cascader.svg"
       },
       {
         "Order": 0,
         "Title": "DatePicker",
         "Type": "menuItem",
-        "Url": "Components/datepicker",
+        "Url": "components/datepicker",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/RT_USzA48/DatePicker.svg"
       },
       {
         "Order": 0,
         "Title": "Form",
         "Type": "menuItem",
-        "Url": "Components/form",
+        "Url": "components/form",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/ORmcdeaoO/Form.svg"
       },
       {
         "Order": 0,
         "Title": "InputNumber",
         "Type": "menuItem",
-        "Url": "Components/inputnumber",
+        "Url": "components/inputnumber",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/XOS8qZ0kU/InputNumber.svg"
       },
       {
         "Order": 0,
         "Title": "Input",
         "Type": "menuItem",
-        "Url": "Components/input",
+        "Url": "components/input",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/xS9YEJhfe/Input.svg"
       },
       {
         "Order": 0,
         "Title": "Mentions",
         "Type": "menuItem",
-        "Url": "Components/mentions",
+        "Url": "components/mentions",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/jPE-itMFM/Mentions.svg"
       },
       {
         "Order": 0,
         "Title": "Rate",
         "Type": "menuItem",
-        "Url": "Components/rate",
+        "Url": "components/rate",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/R5uiIWmxe/Rate.svg"
       },
       {
         "Order": 0,
         "Title": "Radio",
         "Type": "menuItem",
-        "Url": "Components/radio",
+        "Url": "components/radio",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/8cYb5seNB/Radio.svg"
       },
       {
         "Order": 0,
         "Title": "Switch",
         "Type": "menuItem",
-        "Url": "Components/switch",
+        "Url": "components/switch",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/zNdJQMhfm/Switch.svg"
       },
       {
         "Order": 0,
         "Title": "Slider",
         "Type": "menuItem",
-        "Url": "Components/slider",
+        "Url": "components/slider",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/HZ3meFc6W/Silder.svg"
       },
       {
         "Order": 0,
         "Title": "Select",
         "Type": "menuItem",
-        "Url": "Components/select",
+        "Url": "components/select",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/_0XzgOis7/Select.svg"
       },
       {
         "Order": 0,
         "Title": "Transfer",
         "Type": "menuItem",
-        "Url": "Components/transfer",
+        "Url": "components/transfer",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/QAXskNI4G/Transfer.svg"
       },
       {
         "Order": 0,
         "Title": "TimePicker",
         "Type": "menuItem",
-        "Url": "Components/timepicker",
+        "Url": "components/timepicker",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/h04Zsl98I/TimePicker.svg"
       },
       {
         "Order": 0,
         "Title": "Upload",
         "Type": "menuItem",
-        "Url": "Components/upload",
+        "Url": "components/upload",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/QaeBt_ZMg/Upload.svg"
       }
     ]
@@ -259,126 +259,126 @@
         "Order": 0,
         "Title": "Avatar",
         "Type": "menuItem",
-        "Url": "Components/avatar",
+        "Url": "components/avatar",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/aBcnbw68hP/Avatar.svg"
       },
       {
         "Order": 0,
         "Title": "Badge",
         "Type": "menuItem",
-        "Url": "Components/badge",
+        "Url": "components/badge",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/6%26GF9WHwvY/Badge.svg"
       },
       {
         "Order": 0,
         "Title": "Comment",
         "Type": "menuItem",
-        "Url": "Components/comment",
+        "Url": "components/comment",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/ILhxpGzBO/Comment.svg"
       },
       {
         "Order": 0,
         "Title": "Collapse",
         "Type": "menuItem",
-        "Url": "Components/collapse",
+        "Url": "components/collapse",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/IxH16B9RD/Collapse.svg"
       },
       {
         "Order": 0,
         "Title": "Carousel",
         "Type": "menuItem",
-        "Url": "Components/carousel",
+        "Url": "components/carousel",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/%24C9tmj978R/Carousel.svg"
       },
       {
         "Order": 0,
         "Title": "Card",
         "Type": "menuItem",
-        "Url": "Components/card",
+        "Url": "components/card",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/NqXt8DJhky/Card.svg"
       },
       {
         "Order": 0,
         "Title": "Calendar",
         "Type": "menuItem",
-        "Url": "Components/calendar",
+        "Url": "components/calendar",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/dPQmLq08DI/Calendar.svg"
       },
       {
         "Order": 0,
         "Title": "Descriptions",
         "Type": "menuItem",
-        "Url": "Components/descriptions",
+        "Url": "components/descriptions",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/MjtG9_FOI/Descriptions.svg"
       },
       {
         "Order": 0,
         "Title": "Empty",
         "Type": "menuItem",
-        "Url": "Components/empty",
+        "Url": "components/empty",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/MNbKfLBVb/Empty.svg"
       },
       {
         "Order": 0,
         "Title": "List",
         "Type": "menuItem",
-        "Url": "Components/list",
+        "Url": "components/list",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/5FrZKStG_/List.svg"
       },
       {
         "Order": 0,
         "Title": "Popover",
         "Type": "menuItem",
-        "Url": "Components/popover",
+        "Url": "components/popover",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/1PNL1p_cO/Popover.svg"
       },
       {
         "Order": 0,
         "Title": "Statistic",
         "Type": "menuItem",
-        "Url": "Components/statistic",
+        "Url": "components/statistic",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/rcBNhLBrKbE/Statistic.svg"
       },
       {
         "Order": 0,
         "Title": "Tree",
         "Type": "menuItem",
-        "Url": "Components/tree",
+        "Url": "components/tree",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/Xh-oWqg9k/Tree.svg"
       },
       {
         "Order": 0,
         "Title": "Tooltip",
         "Type": "menuItem",
-        "Url": "Components/tooltip",
+        "Url": "components/tooltip",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/Vyyeu8jq2/Tooltp.svg"
       },
       {
         "Order": 0,
         "Title": "Timeline",
         "Type": "menuItem",
-        "Url": "Components/timeline",
+        "Url": "components/timeline",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/vJmo00mmgR/Timeline.svg"
       },
       {
         "Order": 0,
         "Title": "Tag",
         "Type": "menuItem",
-        "Url": "Components/tag",
+        "Url": "components/tag",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/cH1BOLfxC/Tag.svg"
       },
       {
         "Order": 0,
         "Title": "Tabs",
         "Type": "menuItem",
-        "Url": "Components/tabs",
+        "Url": "components/tabs",
         "Cover": "https://gw.alipayobjects.com/zos/antfincdn/lkI2hNEDr2V/Tabs.svg"
       },
       {
         "Order": 0,
         "Title": "Table",
         "Type": "menuItem",
-        "Url": "Components/table",
+        "Url": "components/table",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/f-SbcX2Lx/Table.svg"
       }
     ]
@@ -392,70 +392,70 @@
         "Order": 0,
         "Title": "Alert",
         "Type": "menuItem",
-        "Url": "Components/alert",
+        "Url": "components/alert",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/8emPa3fjl/Alert.svg"
       },
       {
         "Order": 0,
         "Title": "Drawer",
         "Type": "menuItem",
-        "Url": "Components/drawer",
+        "Url": "components/drawer",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/7z8NJQhFb/Drawer.svg"
       },
       {
         "Order": 0,
         "Title": "Modal",
         "Type": "menuItem",
-        "Url": "Components/modal",
+        "Url": "components/modal",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg"
       },
       {
         "Order": 0,
         "Title": "Message",
         "Type": "menuItem",
-        "Url": "Components/message",
+        "Url": "components/message",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/hAkKTIW0K/Message.svg"
       },
       {
         "Order": 0,
         "Title": "Notification",
         "Type": "menuItem",
-        "Url": "Components/notification",
+        "Url": "components/notification",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/Jxm5nw61w/Notification.svg"
       },
       {
         "Order": 0,
         "Title": "Progress",
         "Type": "menuItem",
-        "Url": "Components/progress",
+        "Url": "components/progress",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/xqsDu4ZyR/Progress.svg"
       },
       {
         "Order": 0,
         "Title": "Popconfirm",
         "Type": "menuItem",
-        "Url": "Components/popconfirm",
+        "Url": "components/popconfirm",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/fjMCD9xRq/Popconfirm.svg"
       },
       {
         "Order": 0,
         "Title": "Result",
         "Type": "menuItem",
-        "Url": "Components/result",
+        "Url": "components/result",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/9nepwjaLa/Result.svg"
       },
       {
         "Order": 0,
         "Title": "Spin",
         "Type": "menuItem",
-        "Url": "Components/spin",
+        "Url": "components/spin",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/LBcJqCPRv/Spin.svg"
       },
       {
         "Order": 0,
         "Title": "Skeleton",
         "Type": "menuItem",
-        "Url": "Components/skeleton",
+        "Url": "components/skeleton",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/KpcciCJgv/Skeleton.svg"
       }
     ]
@@ -469,14 +469,14 @@
         "Order": 0,
         "Title": "Anchor",
         "Type": "menuItem",
-        "Url": "Components/anchor",
+        "Url": "components/anchor",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/_1-C1JwsC/Anchor.svg"
       },
       {
         "Order": 0,
         "Title": "BackTop",
         "Type": "menuItem",
-        "Url": "Components/backtop",
+        "Url": "components/backtop",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/tJZ5jbTwX/BackTop.svg"
       }
     ]
@@ -490,121 +490,121 @@
         "Order": 0,
         "Title": "Area",
         "Type": "menuItem",
-        "Url": "Charts/area"
+        "Url": "charts/area"
       },
       {
         "Order": 0,
         "Title": "Bullet",
         "Type": "menuItem",
-        "Url": "Charts/bullet"
+        "Url": "charts/bullet"
       },
       {
         "Order": 0,
         "Title": "Bubble",
         "Type": "menuItem",
-        "Url": "Charts/bubble"
+        "Url": "charts/bubble"
       },
       {
         "Order": 0,
         "Title": "Bar",
         "Type": "menuItem",
-        "Url": "Charts/bar"
+        "Url": "charts/bar"
       },
       {
         "Order": 0,
         "Title": "Combo",
         "Type": "menuItem",
-        "Url": "Charts/combo"
+        "Url": "charts/combo"
       },
       {
         "Order": 0,
         "Title": "Column",
         "Type": "menuItem",
-        "Url": "Charts/column"
+        "Url": "charts/column"
       },
       {
         "Order": 0,
         "Title": "CalendarChart",
         "Type": "menuItem",
-        "Url": "Charts/calendarchart"
+        "Url": "charts/calendarchart"
       },
       {
         "Order": 0,
         "Title": "Funnel",
         "Type": "menuItem",
-        "Url": "Charts/funnel"
+        "Url": "charts/funnel"
       },
       {
         "Order": 0,
         "Title": "GeneralConfigration",
         "Type": "menuItem",
-        "Url": "Charts/generalconfigration"
+        "Url": "charts/generalconfigration"
       },
       {
         "Order": 0,
         "Title": "Gauge",
         "Type": "menuItem",
-        "Url": "Charts/gauge"
+        "Url": "charts/gauge"
       },
       {
         "Order": 0,
         "Title": "Heatmap",
         "Type": "menuItem",
-        "Url": "Charts/heatmap"
+        "Url": "charts/heatmap"
       },
       {
         "Order": 0,
         "Title": "Liquid",
         "Type": "menuItem",
-        "Url": "Charts/liquid"
+        "Url": "charts/liquid"
       },
       {
         "Order": 0,
         "Title": "Line",
         "Type": "menuItem",
-        "Url": "Charts/line"
+        "Url": "charts/line"
       },
       {
         "Order": 0,
         "Title": "Pie",
         "Type": "menuItem",
-        "Url": "Charts/pie"
+        "Url": "charts/pie"
       },
       {
         "Order": 0,
         "Title": "Rose",
         "Type": "menuItem",
-        "Url": "Charts/rose"
+        "Url": "charts/rose"
       },
       {
         "Order": 0,
         "Title": "Radar",
         "Type": "menuItem",
-        "Url": "Charts/radar"
+        "Url": "charts/radar"
       },
       {
         "Order": 0,
         "Title": "Step",
         "Type": "menuItem",
-        "Url": "Charts/step"
+        "Url": "charts/step"
       },
       {
         "Order": 0,
         "Title": "Sparkline",
         "Type": "menuItem",
-        "Url": "Charts/sparkline"
+        "Url": "charts/sparkline"
       },
       {
         "Order": 0,
         "Title": "Scatter",
         "Type": "menuItem",
-        "Url": "Charts/scatter"
+        "Url": "charts/scatter"
       },
       {
         "Order": 0,
         "Title": "Treemap",
         "Type": "menuItem",
-        "Url": "Charts/treemap"
+        "Url": "charts/treemap"
       }
     ]
   }
