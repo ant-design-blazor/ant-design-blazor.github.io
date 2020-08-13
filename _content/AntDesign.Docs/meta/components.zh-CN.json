@@ -1085,6 +1085,16 @@
         "Debug": false
       },
       {
+        "Order": 4,
+        "Name": "icon",
+        "Title": "图标",
+        "Description": "<p>可口的图标让信息类型更加醒目。</p>\n",
+        "Code": "<Alert Type=\"@AlertType.Success\"\n          Message=\"Success Tips\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Info\"\n          Message=\"Informational Notes\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Warning\"\n          Message=\"Warning\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Error\"\n          Message=\"Error\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Success\"\n          Message=\"Success Tips\"\n          Description=\"Detailed description and advice about successful copywriting.\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Info\"\n          Message=\"Informational Notes\"\n          Description=\"Additional description and information about copywriting.\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Warning\"\n          Message=\"Warning\"\n          Description=\"This is a warning notice about copywriting.\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Error\"\n          Message=\"Error\"\n          Description=\"This is an error message about copywriting.\"\n          ShowIcon />",
+        "Type": "Demos.Components.Alert.demo.Icon_",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 0,
         "Name": "basic",
         "Title": "基本",
@@ -1115,12 +1125,12 @@
         "Debug": false
       },
       {
-        "Order": 4,
-        "Name": "icon",
-        "Title": "图标",
-        "Description": "<p>可口的图标让信息类型更加醒目。</p>\n",
-        "Code": "<Alert Type=\"@AlertType.Success\"\n          Message=\"Success Tips\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Info\"\n          Message=\"Informational Notes\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Warning\"\n          Message=\"Warning\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Error\"\n          Message=\"Error\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Success\"\n          Message=\"Success Tips\"\n          Description=\"Detailed description and advice about successful copywriting.\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Info\"\n          Message=\"Informational Notes\"\n          Description=\"Additional description and information about copywriting.\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Warning\"\n          Message=\"Warning\"\n          Description=\"This is a warning notice about copywriting.\"\n          ShowIcon />\n\n<Alert Type=\"@AlertType.Error\"\n          Message=\"Error\"\n          Description=\"This is an error message about copywriting.\"\n          ShowIcon />",
-        "Type": "Demos.Components.Alert.demo.Icon",
+        "Order": 7,
+        "Name": "smooth-closed",
+        "Title": "平滑地卸载",
+        "Description": "<p>平滑、自然的卸载提示。</p>\n",
+        "Code": "<div>\n    @if (visible)\n    {\n        <Alert Message=\"Alert Message Text\" Type=\"success\" Closable AfterClose=\"handleClose\" />\n    }\n    <p>placeholder text here</p>\n</div>\n\n@code{\n    bool visible = true;\n\n    void handleClose()\n    {\n        visible = false;\n    }\n}",
+        "Type": "Demos.Components.Alert.demo.SmoothClosed",
         "Style": "",
         "Debug": false
       }
