@@ -68,6 +68,7 @@
   "Demos.Components.Modal.demo.ConfirmPromise",
   "Demos.Components.Modal.demo.Locale",
   "Demos.Components.Modal.demo.Confirm",
+  "Demos.Components.Modal.demo.Confirm_Service",
   "Demos.Components.Modal.demo.Footer",
   "Demos.Components.Modal.demo.Async",
   "Demos.Components.Modal.demo.Info",
