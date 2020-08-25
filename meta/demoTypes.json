@@ -61,6 +61,7 @@
   "Demos.Components.Steps.demo.Vertical",
   "Demos.Components.Steps.demo.Nav",
   "Demos.Components.Modal.demo.Position",
+  "Demos.Components.Modal.demo.DraggableModal",
   "Demos.Components.Modal.demo.ConfirmRouter",
   "Demos.Components.Modal.demo.ButtonProps",
   "Demos.Components.Modal.demo.Basic",
