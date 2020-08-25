@@ -70,7 +70,7 @@ Regularly synchronize with Official Ant Design specifications, you can check the
 
 ### Create a new project from the dotnet new template
 
-We provide the Dotnet New template to create a [Boilerplate](https://github.com/ant-design-blazor/ant-design-pro-blazor) project out of the box：
+We have provided the `dotnet new` template to create a [Boilerplate](https://github.com/ant-design-blazor/ant-design-pro-blazor) project out of the box：
 
 - Install the template
 
@@ -88,9 +88,9 @@ Options for the template：
 
 | Options          | Description                                         | Type     | Default    |
 | ---------------- | -------------------------------------------- | ------ |  --------- |
-| `-f` \| `--full`  | Generate all pages or not | bool  |  false    |
+| `-f` \| `--full`  | If specified, generates all pages of ant design pro | bool  |  false    |
 | `-ho` \| `--host`   | Specify the hosting model  | 'wasm' \| 'server' \| 'hosted'    |'wasm'      |
-| `--no-restore` | Whether to automatically restore package references  | bool    | true |
+| `--no-restore` |  If specified, skips the automatic restore of the project on create  | bool    | false |
 
 
 
