@@ -1,11 +1,5 @@
 [
   {
-    "Order": 11,
-    "Title": "贡献指南",
-    "Type": "menuItem",
-    "Url": "docs/contributing"
-  },
-  {
     "Order": 0,
     "Title": "Ant Design of Blazor",
     "Type": "menuItem",
@@ -16,5 +10,11 @@
     "Title": "快速上手",
     "Type": "menuItem",
     "Url": "docs/getting-started"
+  },
+  {
+    "Order": 11,
+    "Title": "贡献指南",
+    "Type": "menuItem",
+    "Url": "docs/contributing"
   }
 ]

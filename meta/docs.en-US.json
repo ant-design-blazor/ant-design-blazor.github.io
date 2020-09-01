@@ -1,15 +1,15 @@
 [
   {
-    "Order": 0,
-    "Title": "Ant Design of Blazor",
-    "Type": "menuItem",
-    "Url": "docs/introduce"
-  },
-  {
     "Order": 11,
     "Title": "How to Contribute",
     "Type": "menuItem",
     "Url": "docs/contributing"
+  },
+  {
+    "Order": 0,
+    "Title": "Ant Design of Blazor",
+    "Type": "menuItem",
+    "Url": "docs/introduce"
   },
   {
     "Order": 1,
