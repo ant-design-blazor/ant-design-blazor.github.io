@@ -3439,7 +3439,7 @@
         "Name": "Style",
         "Title": "Text and Link Component",
         "Description": "<p>Provides multiple types of text and link.</p>\n",
-        "Code": "<div>\n\t<Text>Ant Design</Text>\n\t<br />\n\t<Text Type=\"secondary\">Ant Design</Text>\n\t<br />\n\t<Text Type=\"warning\">Ant Design</Text>\n\t<br />\n\t<Text Type=\"danger\">Ant Design</Text>\n\t<br />\n\t<Text Disabled>Ant Design</Text>\n\t<br />\n\t<Text Mark>Ant Design</Text>\n\t<br />\n\t<Text Code>Ant Design</Text>\n\t<br />\n\t<Text Underline>Ant Design</Text>\n\t<br />\n\t<Text Delete>Ant Design</Text>\n\t<br />\n\t<Text Strong>Ant Design</Text>\n</div>\n\n",
+        "Code": "<div>\n    <Text>Ant Design</Text>\n    <br />\n    <Text Type=\"secondary\">Ant Design</Text>\n    <br />\n    <Text Type=\"success\">Ant Design</Text>\n    <br />\n    <Text Type=\"warning\">Ant Design</Text>\n    <br />\n    <Text Type=\"danger\">Ant Design</Text>\n    <br />\n    <Text Disabled>Ant Design</Text>\n    <br />\n    <Text Mark>Ant Design</Text>\n    <br />\n    <Text Code>Ant Design</Text>\n    <br />\n    <Text Keyboard>Ant Design</Text>\n    <br />\n    <Text Underline>Ant Design</Text>\n    <br />\n    <Text Delete>Ant Design</Text>\n    <br />\n    <Text Strong>Ant Design</Text>\n</div>\n\n",
         "Type": "Demos.Components.Typography.demo.Style",
         "Style": "",
         "Debug": false
