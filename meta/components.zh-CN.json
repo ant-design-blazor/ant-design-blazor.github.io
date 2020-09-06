@@ -1943,7 +1943,7 @@
         "Name": "countdown",
         "Title": "倒计时",
         "Description": "<p>倒计时组件。</p>\n",
-        "Code": "\n<Row Gutter=\"16\">\n    <Col Span=\"12\">\n        <CountDown Title=\"@(\"Countdown\")\" Value=\"@deadline\" OnFinish=\"OnFinish\" />\n    </Col>\n    <Col Span=\"12\">\n        <CountDown Title=\"@(\"Million\")\" Value=\"@deadline\" Format=\"hh:mm:ss:fff\" />\n    </Col>\n    <Col Span=\"24\">\n        <CountDown Title=\"@(\"Day Level\")\" Value=\"@deadline\" Format=\"dd 天  h 小时 m 分钟 s 秒\" />\n    </Col>\n</Row>\n\n@code\n{\n    DateTime deadline = DateTime.Now.AddMilliseconds(1000 * 60 * 60 * 24 * 2 + 1000 * 30);\n\n    void OnFinish()\n    {\n        Console.WriteLine(\"finished!\");\n    }\n}\n\n",
+        "Code": "<Row Gutter=\"16\">\n    <Col Span=\"12\">\n    <CountDown Title=\"@(\"Countdown\")\" Value=\"@deadline\" OnFinish=\"OnFinish\" />\n    </Col>\n    <Col Span=\"12\">\n    <CountDown Title=\"@(\"Million\")\" Value=\"@deadline\" Format=\"hh:mm:ss:fff\" />\n    </Col>\n    <Col Span=\"24\">\n    <CountDown Title=\"@(\"Day Level\")\" Value=\"@deadline\" Format=\"dd 天 h 时 m 分 s 秒\" />\n    </Col>\n</Row>\n\n@code\n{\n    DateTime deadline = DateTime.Now.AddMilliseconds(1000 * 60 * 60 * 24 * 2 + 1000 * 30);\n\n    void OnFinish()\n    {\n        Console.WriteLine(\"finished!\");\n    }\n}",
         "Type": "Demos.Components.Statistic.demo.Countdown",
         "Style": "",
         "Debug": false
