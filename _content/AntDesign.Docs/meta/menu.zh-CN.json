@@ -18,6 +18,12 @@
         "Url": "docs/getting-started"
       },
       {
+        "Order": 4,
+        "Title": "国际化",
+        "Type": "menuItem",
+        "Url": "docs/i18n"
+      },
+      {
         "Order": 11,
         "Title": "贡献指南",
         "Type": "menuItem",

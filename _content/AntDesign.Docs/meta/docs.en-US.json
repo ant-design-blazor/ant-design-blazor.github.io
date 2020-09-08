@@ -16,5 +16,11 @@
     "Title": "Getting Started",
     "Type": "menuItem",
     "Url": "docs/getting-started"
+  },
+  {
+    "Order": 4,
+    "Title": "Internationalization",
+    "Type": "menuItem",
+    "Url": "docs/i18n"
   }
 ]
