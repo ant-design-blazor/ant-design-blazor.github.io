@@ -2049,6 +2049,16 @@
         "Debug": false
       },
       {
+        "Order": 20,
+        "Name": "popup-container",
+        "Title": "fix popup container",
+        "Description": "<p>Fix popup container.</p>\n",
+        "Code": "<div style=\"margin: 10px; overflow: scroll; height: 200px\">\n    <div style=\"padding: 100px; height: 1000px; background: #eee; position: relative \" id=\"area\">\n        <Dropdown PopupContainerSelector=\"#area\" Placement=\"@PlacementType.BottomLeft\">\n            <Overlay>\n                @_overlayMenu\n            </Overlay>\n            <ChildContent>\n                <Button>BottomLeft</Button>\n            </ChildContent>\n        </Dropdown>\n        <Dropdown PopupContainerSelector=\"#area\" Placement=\"@PlacementType.BottomCenter\">\n            <Overlay>\n                @_overlayMenu\n            </Overlay>\n            <ChildContent>\n                <Button>BottomCenter</Button>\n            </ChildContent>\n        </Dropdown>\n        <Dropdown PopupContainerSelector=\"#area\" Placement=\"@PlacementType.BottomRight\">\n            <Overlay>\n                @_overlayMenu\n            </Overlay>\n            <ChildContent>\n                <Button>BottomRight</Button>\n            </ChildContent>\n        </Dropdown>\n        <Dropdown PopupContainerSelector=\"#area\" Placement=\"@PlacementType.TopLeft\">\n            <Overlay>\n                @_overlayMenu\n            </Overlay>\n            <ChildContent>\n                <Button>TopLeft</Button>\n            </ChildContent>\n        </Dropdown>\n        <Dropdown PopupContainerSelector=\"#area\" Placement=\"@PlacementType.TopCenter\">\n            <Overlay>\n                @_overlayMenu\n            </Overlay>\n            <ChildContent>\n                <Button>TopCenter</Button>\n            </ChildContent>\n        </Dropdown>\n        <Dropdown PopupContainerSelector=\"#area\" Placement=\"@PlacementType.TopRight\">\n            <Overlay>\n                @_overlayMenu\n            </Overlay>\n            <ChildContent>\n                <Button>TopRight</Button>\n            </ChildContent>\n        </Dropdown>\n    </div>\n</div>\n\n@code\n{\n    private RenderFragment _overlayMenu =@<Menu>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                1st menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                2nd menu item\n            </a>\n        </MenuItem>\n        <MenuItem>\n            <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                3rd menu item\n            </a>\n        </MenuItem>\n    </Menu>;\n}",
+        "Type": "Demos.Components.Dropdown.demo.PopupContainer",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 2,
         "Name": "item",
         "Title": "Other elements",
@@ -2323,6 +2333,16 @@
         "Description": "<p>Demonstration of <a href=\"https://ant.design/docs/spec/reaction#Lookup-Patterns\">Lookup Patterns: Uncertain Category</a>.</p>\n",
         "Code": "<AutoComplete OnInput=\"OnInput\">\n    <ChildContent>\n        <AutoCompleteSearch Placeholder=\"input here\" @bind-Value=\"@value\" />\n    </ChildContent>\n    <AutoCompleteOptions>\n        @foreach (var option in options)\n        {\n            <AutoCompleteOption Style=\"display: flex;\" Value=\"@option.category\">\n                Found @option.value on\n                <a style=\" flex: auto; text-overflow: ellipsis; overflow: hidden;\"\n                   href=\"https://s.taobao.com/search?q=@(option.value)\"\n                   target=\"_blank\"\n                   rel=\"noopener noreferrer\">\n                    @option.category\n                </a>\n                <span style=\"flex: none;\">@option.count results</span>\n            </AutoCompleteOption>\n        }\n    </AutoCompleteOptions>\n</AutoComplete>\n\n@code{\n    private string value;\n\n    List<UncertainCategoryOption> options = new List<UncertainCategoryOption>();\n\n\n    void OnInput(ChangeEventArgs e)\n    {\n        var v = e.Value.ToString();\n\n        var r = new Random();\n        var i = 0;\n        this.options = new int[7].Select(x => new UncertainCategoryOption()\n        {\n            value = v,\n            category = $\"{v}{i++}\",\n            count = r.Next(100, 200),\n        }).ToList();\n    }\n\n    public class UncertainCategoryOption\n    {\n        public string value { get; set; }\n\n        public string category { get; set; }\n        public int count { get; set; }\n    }\n}",
         "Type": "Demos.Components.AutoComplete.demo.UncertainCategory",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 30,
+        "Name": "popup-container",
+        "Title": "fix popup container",
+        "Description": "<p>Fix popup container.</p>\n",
+        "Code": "<div style=\"margin: 10px; overflow: scroll; height: 200px\">\n    <div style=\"padding: 100px; height: 1000px; background: #eee; position: relative \" id=\"area\">\n        <AutoComplete PopupContainerSelector=\"#area\"\n                      @bind-Value=\"@value\" \n                      Options=\"@options\" \n                      OnInput=\"OnInput\" \n                      OnSelectionChange=\"OnSelectionChange\" \n                      OnActiveChange=\"OnActiveChange\" />\n    </div>\n</div>\n\n@code\n{\n    private string value;\n\n    List<string> options = new List<string>();\n\n\n    void OnInput(ChangeEventArgs e)\n    {\n        var v = e.Value.ToString();\n        if (string.IsNullOrWhiteSpace(v))\n            options = new List<string>();\n        else\n            options = new List<string>()\n            {\n                v, v + \"1\", v + \"2\"\n            };\n    }\n\n    private AutoCompleteOption selectItem;\n\n    void OnSelectionChange(AutoCompleteOption item)\n    {\n        selectItem = item;\n    }\n\n    private AutoCompleteOption activeItem;\n\n    void OnActiveChange(AutoCompleteOption item)\n    {\n        activeItem = item;\n    }\n}",
+        "Type": "Demos.Components.AutoComplete.demo.PopupContainer",
         "Style": "",
         "Debug": false
       },
@@ -3568,6 +3588,16 @@
         "Type": "Demos.Components.Select.demo.Suffix",
         "Style": "",
         "Debug": true
+      },
+      {
+        "Order": 30,
+        "Name": "popup-container",
+        "Title": "fix popup container",
+        "Description": "<p>Fix popup container.</p>\n",
+        "Code": "<div style=\"margin: 10px; overflow: scroll; height: 200px\">\n    <div style=\"padding: 100px; height: 1000px; background: #eee; position: relative \" id=\"area\">\n        <Select PopupContainerSelector=\"#area\" DefaultValue=@(\"lucy\") Style=\"width:120px\">\n            <SelectOption Value=\"jack\">Jack</SelectOption>\n            <SelectOption Value=\"lucy\">Lucy</SelectOption>\n            <SelectOption Value=\"disabled\" Disabled>Disabled</SelectOption>\n            <SelectOption Value=\"yaoming\">YaoMing</SelectOption>\n        </Select>\n    </div>\n</div>",
+        "Type": "Demos.Components.Select.demo.PopupContainer",
+        "Style": "",
+        "Debug": false
       },
       {
         "Order": 3,
