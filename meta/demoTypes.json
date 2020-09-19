@@ -172,6 +172,7 @@
   "Demos.Components.Modal.demo.DraggableModal",
   "Demos.Components.Modal.demo.Locale",
   "Demos.Components.Modal.demo.Manual",
+  "Demos.Components.Modal.demo.DropdownInModal",
   "Demos.Components.Dropdown.demo.Basic",
   "Demos.Components.Dropdown.demo.OverlayVisible",
   "Demos.Components.Dropdown.demo.ContextMenu",
