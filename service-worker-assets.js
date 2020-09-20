@@ -165,7 +165,7 @@
       "url": "_content\/AntDesign.Docs\/chartsdata\/subsales.json"
     },
     {
-      "hash": "sha256-ej6gJ5EN1RcgpqAcVDJGlyzaqDv7G2EUiJPw0bdLN4Q=",
+      "hash": "sha256-k6apCqVFNklU5hZClFiQTLMTg6WlgDqOKM1jjIdwWaQ=",
       "url": "_content\/AntDesign.Docs\/css\/docs.css"
     },
     {
@@ -269,7 +269,7 @@
       "url": "_content\/AntDesign.Docs\/meta\/menu.zh-CN.json"
     },
     {
-      "hash": "sha256-EbziPHS71K9SzGURmHdeA9RYOFTwhwXJX6UjnvSKdx4=",
+      "hash": "sha256-5lrWabC9cWhnDaTZMbSLvHF7qQEoDHLO\/gBnG0PZgvY=",
       "url": "_content\/AntDesign\/css\/ant-design-blazor.css"
     },
     {
@@ -3561,7 +3561,7 @@
       "url": "_content\/AntDesign\/less\/button\/style\/entry.less"
     },
     {
-      "hash": "sha256-XYNP22XjXqhO4Ba2wsRVW9n9cpoROVEgOJ+HdxkgPfA=",
+      "hash": "sha256-PnWwu406LlmexC\/mloZZK\/y8O6Tc7qC2k+7Ei1fiRJE=",
       "url": "_content\/AntDesign\/less\/button\/style\/index.less"
     },
     {
@@ -3697,7 +3697,7 @@
       "url": "_content\/AntDesign\/less\/date-picker\/style\/MonthPicker.less"
     },
     {
-      "hash": "sha256-xY6+K4jIBH\/YJQr3Eal08GepE08Kk30Qt+0pYa2zZKE=",
+      "hash": "sha256-TbjK2nQU164+dLdBqG2RLR4ljWSrJwpZKvR6hBp4Jjg=",
       "url": "_content\/AntDesign\/less\/date-picker\/style\/panel.less"
     },
     {
@@ -3729,7 +3729,7 @@
       "url": "_content\/AntDesign\/less\/descriptions\/style\/entry.less"
     },
     {
-      "hash": "sha256-K8DqLvrGec5WW+BdJhkaUTMV7pJ0iA+kPDLZ6bsTCvM=",
+      "hash": "sha256-1Ssn9jo3D+C0WICOCS2NST8Jp2wTSRxOC9qOcSnnDME=",
       "url": "_content\/AntDesign\/less\/descriptions\/style\/index.less"
     },
     {
@@ -3913,7 +3913,7 @@
       "url": "_content\/AntDesign\/less\/layout\/style\/entry.less"
     },
     {
-      "hash": "sha256-GlPnNw5nXLaiBit7wLjg7U\/YBHryiH6JAHhvh3EfwL8=",
+      "hash": "sha256-LhjlPGl7iJ4zUs3sW94MFxhmHTCPSCHqbvcgafKidLc=",
       "url": "_content\/AntDesign\/less\/layout\/style\/index.less"
     },
     {
@@ -3977,7 +3977,7 @@
       "url": "_content\/AntDesign\/less\/menu\/style\/entry.less"
     },
     {
-      "hash": "sha256-0fzHPYYpFRa8F8SAin1TQ\/ObwpbY06uPWJB4QlbEOU0=",
+      "hash": "sha256-7b08tdwkmHop9PhQUZnLRlHKQ609JXnLnWEO7jVF3qU=",
       "url": "_content\/AntDesign\/less\/menu\/style\/index.less"
     },
     {
@@ -4189,7 +4189,7 @@
       "url": "_content\/AntDesign\/less\/space\/style\/entry.less"
     },
     {
-      "hash": "sha256-DIOjkoO\/ltR8C9doXi6bZ79pRrbeBBr3BwJnu8BCHKY=",
+      "hash": "sha256-hwRS01e1M1fgOPW3BRplfBjEQQvSIRAkcxSCtSl3xRo=",
       "url": "_content\/AntDesign\/less\/space\/style\/index.less"
     },
     {
@@ -4397,7 +4397,7 @@
       "url": "_content\/AntDesign\/less\/style\/themes\/dark.less"
     },
     {
-      "hash": "sha256-EUtGznd09XB3nQ0mBsg7covqo1egbpBAQd1i+nozRJo=",
+      "hash": "sha256-w1tuHX39o1egMbc67hHYOmQXgmN2TOWk\/VJu1e7FlOY=",
       "url": "_content\/AntDesign\/less\/style\/themes\/default.less"
     },
     {
@@ -4429,7 +4429,7 @@
       "url": "_content\/AntDesign\/less\/table\/style\/entry.less"
     },
     {
-      "hash": "sha256-bfFhSsjmQa3DhTkFlhBuJbo\/\/EJXzjnWogJKEeZg\/Ik=",
+      "hash": "sha256-YV1lgIgnQ\/z2FsxvKsCRZhc2bbhESzOgZnVxO7dJxcw=",
       "url": "_content\/AntDesign\/less\/table\/style\/index.less"
     },
     {
@@ -4797,5 +4797,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "n3tg0i5q"
+  "version": "QxzPQc7q"
 };
