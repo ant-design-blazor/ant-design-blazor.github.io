@@ -1732,7 +1732,7 @@
     "SubTitle": "徽标数",
     "Type": "数据展示",
     "Desc": "<p>图标右上角的圆形徽标数字。</p>\n<h2>何时使用</h2>\n<p>一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。</p>\n",
-    "ApiDoc": "<h2 id=\"API\"><span>API</span><a href=\"zh-CN/components/badge#API\" class=\"anchor\">#</a></h2>\n<h3>Badge</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义小圆点的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>展示的数字，大于 overflowCount 时显示为 <code>${overflowCount}+</code>，为 0 时隐藏</td>\n<td>ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Dot</td>\n<td>不展示数字，只有一个小红点</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Offset</td>\n<td>设置状态点的位置偏移，格式为 <code>[x, y]</code></td>\n<td><code>[number, number]</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OverflowCount</td>\n<td>展示封顶的数字值</td>\n<td>number</td>\n<td>99</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowZero</td>\n<td>当数值为 0 时，是否展示 Badge</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>设置 Badge 为状态点</td>\n<td><code>success</code> | <code>processing</code> | <code>default</code> | <code>error</code> | <code>warning</code></td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>在设置了 <code>status</code> 的前提下有效，设置状态点的文本</td>\n<td>string</td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Title</td>\n<td>设置鼠标放在状态点上时显示的文字</td>\n<td>string</td>\n<td><code>count</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Badge.Ribbon</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义缎带的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Placement</td>\n<td>缎带的位置</td>\n<td><code>start</code> | <code>end</code></td>\n<td><code>end</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>缎带中填入的内容</td>\n<td>ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "ApiDoc": "<h2 id=\"API\"><span>API</span><a href=\"zh-CN/components/badge#API\" class=\"anchor\">#</a></h2>\n<h3>Badge</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义小圆点的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>展示的数字，大于 overflowCount 时显示为 <code>${overflowCount}+</code>，为 0 时隐藏</td>\n<td>ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Dot</td>\n<td>不展示数字，只有一个小红点</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Offset</td>\n<td>设置状态点的位置偏移，格式为 <code>[x, y]</code></td>\n<td><code>[number, number]</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OverflowCount</td>\n<td>展示封顶的数字值</td>\n<td>number</td>\n<td>99</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowZero</td>\n<td>当数值为 0 时，是否展示 Badge</td>\n<td>boolean</td>\n<td>false</td>\n<td></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>设置 Badge 为状态点</td>\n<td><code>success</code> | <code>processing</code> | <code>default</code> | <code>error</code> | <code>warning</code></td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Size</td>\n<td>在设置了 <code>count</code> 的前提下有效，设置小圆点的大小</td>\n<td><code>default</code> | <code>small</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>在设置了 <code>status</code> 的前提下有效，设置状态点的文本</td>\n<td>string</td>\n<td>''</td>\n<td></td>\n</tr>\n<tr>\n<td>Title</td>\n<td>设置鼠标放在状态点上时显示的文字</td>\n<td>string</td>\n<td><code>count</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Badge.Ribbon</h3>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>自定义缎带的颜色</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Placement</td>\n<td>缎带的位置</td>\n<td><code>start</code> | <code>end</code></td>\n<td><code>end</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>缎带中填入的内容</td>\n<td>ReactNode</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
     "Cover": "https://gw.alipayobjects.com/zos/antfincdn/6%26GF9WHwvY/Badge.svg",
     "DemoList": [
       {
@@ -1760,7 +1760,7 @@
         "Name": "dot",
         "Title": "讨嫌的小红点",
         "Description": "<p>没有具体的数字。</p>\n",
-        "Code": "<div>\n    <Badge Dot>\n        <Icon Type=\"notification\"/>\n    </Badge>\n    <Badge Count=\"0\" Dot>\n        <Icon Type=\"notification\" />\n    </Badge>\n    <Badge Dot>\n        <a href=\"#\">Link something</a>\n    </Badge>\n</div>",
+        "Code": "<div>\n    <Badge Dot>\n        <Icon Type=\"notification\"/>\n    </Badge>\n    <Badge Count=\"0\" Dot>\n        <Icon Type=\"notification\" />\n    </Badge>\n    <Badge Dot>\n        <a href=\"#\">Link something</a>\n    </Badge>\n    <Badge Dot Status=\"warning\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n</div>",
         "Type": "Demos.Components.Badge.demo.Dot",
         "Style": "\n.anticon-notification {\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  font-size: 16px;\n}\n\n",
         "Debug": false
@@ -1806,6 +1806,16 @@
         "Debug": false
       },
       {
+        "Order": 5,
+        "Name": "offset",
+        "Title": "自定义位置偏移",
+        "Description": "<p>设置状态点的位置偏移，格式为 <code>[left, top]</code>，表示状态点距默认位置左侧、上方的偏移量。</p>\n",
+        "Code": "<Badge Count=\"5\" Offset=\"(10, 10)\">\n    <a href=\"#\" class=\"head-example\" />\n</Badge>",
+        "Type": "Demos.Components.Badge.demo.Offset",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 100,
         "Name": "title",
         "Title": "自定义标题",
@@ -1832,6 +1842,16 @@
         "Description": "<p>展示动态变化的效果。</p>\n",
         "Code": "<div>\n    <div>\n        <Badge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <ButtonGroup>\n            <Button @onclick=\"_=>decline()\">\n                <Icon Type=\"minus\"></Icon>\n            </Button>\n            <Button @onclick=\"_=>increase()\">\n                <Icon Type=\"plus\"></Icon>\n            </Button>\n        </ButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <Badge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <Switch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
         "Type": "Demos.Components.Badge.demo.Change",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "size",
+        "Title": "大小",
+        "Description": "<p>可以设置有数字徽标的大小。</p>\n",
+        "Code": "<Badge Size=\"default\" Count=\"5\">\n    <a href=\"#\" class=\"head-example\" />\n</Badge>\n<Badge Size=\"small\" Count=\"5\">\n    <a href=\"#\" class=\"head-example\" />\n</Badge>",
+        "Type": "Demos.Components.Badge.demo.Size",
         "Style": "",
         "Debug": false
       }

@@ -1708,7 +1708,7 @@
     "Title": "Badge",
     "Type": "Data Display",
     "Desc": "<p>Small numerical value or status descriptor for UI elements.</p>\n<h2>When To Use</h2>\n<p>Badge normally appears in proximity to notifications or user avatars with eye-catching appeal, typically displaying unread messages count.</p>\n",
-    "ApiDoc": "<h2 id=\"API\"><span>API</span><a href=\"en-US/components/badge#API\" class=\"anchor\">#</a></h2>\n<h3>Badge</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>Customize Badge dot color</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>Number to show in badge</td>\n<td>ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Dot</td>\n<td>Whether to display a red dot instead of <code>count</code></td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Offset</td>\n<td>set offset of the badge dot, like<code>[x, y]</code></td>\n<td><code>[number, number]</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OverflowCount</td>\n<td>Max count to show</td>\n<td>number</td>\n<td>99</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowZero</td>\n<td>Whether to show badge when <code>count</code> is zero</td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>Set Badge as a status dot</td>\n<td><code>success</code> | <code>processing</code> | <code>default</code> | <code>error</code> | <code>warning</code></td>\n<td><code>''</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>If <code>status</code> is set, <code>text</code> sets the display text of the status <code>dot</code></td>\n<td>string</td>\n<td><code>''</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Title</td>\n<td>Text to show when hovering over the badge</td>\n<td>string</td>\n<td><code>count</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Badge.Ribbon</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>Customize Ribbon color</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Placement</td>\n<td>The placement of the Ribbon</td>\n<td><code>start</code> | <code>end</code></td>\n<td><code>end</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>Content inside the Ribbon</td>\n<td>String or RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+    "ApiDoc": "<h2 id=\"API\"><span>API</span><a href=\"en-US/components/badge#API\" class=\"anchor\">#</a></h2>\n<h3>Badge</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>Customize Badge dot color</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Count</td>\n<td>Number to show in badge</td>\n<td>ReactNode</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Dot</td>\n<td>Whether to display a red dot instead of <code>count</code></td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Offset</td>\n<td>set offset of the badge dot, like<code>[x, y]</code></td>\n<td><code>[number, number]</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>OverflowCount</td>\n<td>Max count to show</td>\n<td>number</td>\n<td>99</td>\n<td></td>\n</tr>\n<tr>\n<td>ShowZero</td>\n<td>Whether to show badge when <code>count</code> is zero</td>\n<td>boolean</td>\n<td><code>false</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Status</td>\n<td>Set Badge as a status dot</td>\n<td><code>success</code> | <code>processing</code> | <code>default</code> | <code>error</code> | <code>warning</code></td>\n<td><code>''</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Size</td>\n<td>If <code>count</code> is set, <code>size</code> sets the size of badge</td>\n<td><code>default</code> | <code>small</code></td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>If <code>status</code> is set, <code>text</code> sets the display text of the status <code>dot</code></td>\n<td>string</td>\n<td><code>''</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Title</td>\n<td>Text to show when hovering over the badge</td>\n<td>string</td>\n<td><code>count</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h3>Badge.Ribbon</h3>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n<th>Default</th>\n<th>Version</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Color</td>\n<td>Customize Ribbon color</td>\n<td>string</td>\n<td>-</td>\n<td></td>\n</tr>\n<tr>\n<td>Placement</td>\n<td>The placement of the Ribbon</td>\n<td><code>start</code> | <code>end</code></td>\n<td><code>end</code></td>\n<td></td>\n</tr>\n<tr>\n<td>Text</td>\n<td>Content inside the Ribbon</td>\n<td>String or RenderFragment</td>\n<td>-</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
     "Cover": "https://gw.alipayobjects.com/zos/antfincdn/6%26GF9WHwvY/Badge.svg",
     "DemoList": [
       {
@@ -1736,7 +1736,7 @@
         "Name": "dot",
         "Title": "Red badge",
         "Description": "<p>This will simply display a red badge, without a specific count. If count equals 0, it won't display the dot.</p>\n",
-        "Code": "<div>\n    <Badge Dot>\n        <Icon Type=\"notification\"/>\n    </Badge>\n    <Badge Count=\"0\" Dot>\n        <Icon Type=\"notification\" />\n    </Badge>\n    <Badge Dot>\n        <a href=\"#\">Link something</a>\n    </Badge>\n</div>",
+        "Code": "<div>\n    <Badge Dot>\n        <Icon Type=\"notification\"/>\n    </Badge>\n    <Badge Count=\"0\" Dot>\n        <Icon Type=\"notification\" />\n    </Badge>\n    <Badge Dot>\n        <a href=\"#\">Link something</a>\n    </Badge>\n    <Badge Dot Status=\"warning\">\n        <a href=\"#\" class=\"head-example\" />\n    </Badge>\n</div>",
         "Type": "Demos.Components.Badge.demo.Dot",
         "Style": "\n.anticon-notification {\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  font-size: 16px;\n}\n\n",
         "Debug": false
@@ -1782,6 +1782,16 @@
         "Debug": false
       },
       {
+        "Order": 5,
+        "Name": "offset",
+        "Title": "Offset",
+        "Description": "<p>Set offset of the badge dot, the format is <code>[left, top]</code>, which represents the offset of the status dot from the left and top of the default position.</p>\n",
+        "Code": "<Badge Count=\"5\" Offset=\"(10, 10)\">\n    <a href=\"#\" class=\"head-example\" />\n</Badge>",
+        "Type": "Demos.Components.Badge.demo.Offset",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 100,
         "Name": "title",
         "Title": "Title",
@@ -1808,6 +1818,16 @@
         "Description": "<p>The count will be animated as it changes.</p>\n",
         "Code": "<div>\n    <div>\n        <Badge Count=\"@count\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <ButtonGroup>\n            <Button @onclick=\"_=>decline()\">\n                <Icon Type=\"minus\"></Icon>\n            </Button>\n            <Button @onclick=\"_=>increase()\">\n                <Icon Type=\"plus\"></Icon>\n            </Button>\n        </ButtonGroup>\n    </div>\n    <div style=\"margin-top: 10px\">\n        <Badge Dot=\"@show\">\n            <a href=\"#\" class=\"head-example\" />\n        </Badge>\n        <Switch OnChange=\"onChange\" Checked=\"@show\" />\n    </div>\n</div>\n\n@code {\n    int count = 5;\n    bool show = true;\n\n    void increase()\n    {\n        count++;\n    }\n\n    void decline()\n    {\n        count--;\n        if (count < 0)\n        {\n            count = 0;\n        }\n    }\n\n    void onChange(bool show)\n    {\n        this.show = show;\n    }\n}\n",
         "Type": "Demos.Components.Badge.demo.Change",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 9,
+        "Name": "size",
+        "Title": "Size",
+        "Description": "<p>Set size of numeral Badge.</p>\n",
+        "Code": "<Badge Size=\"default\" Count=\"5\">\n    <a href=\"#\" class=\"head-example\" />\n</Badge>\n<Badge Size=\"small\" Count=\"5\">\n    <a href=\"#\" class=\"head-example\" />\n</Badge>",
+        "Type": "Demos.Components.Badge.demo.Size",
         "Style": "",
         "Debug": false
       }
