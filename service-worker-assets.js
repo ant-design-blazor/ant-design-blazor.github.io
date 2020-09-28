@@ -77,7 +77,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-+fXsc1qG+qdgFGq208qEVWQ+KGUOyUU0hO\/qvZt5bvw=",
+      "hash": "sha256-zE0zlqpa+l2qEVucrXpirBYdfrzE7KhxMUAkOiz\/yoE=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -885,11 +885,11 @@
       "url": "_framework\/dotnet.5.0.0-rc.1.20451.14.js"
     },
     {
-      "hash": "sha256-FlvxrkZJIJpSWdd3kpo7Bo0Gjq2to3Xma3BHPoAUils=",
+      "hash": "sha256-jo651Aw1niwZsAXj7HhXw3gufbi7Zz0gTNC3QBejl6s=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-fmCww\/wyyDzhB4gFB5pu9hYaO8LYghC9YtcPkyNKYQg=",
+      "hash": "sha256-VbvLl68RlKF+J1TVUNWMDfM6epQJsU1VZsxAuHWJpIo=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
@@ -1021,11 +1021,11 @@
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
     },
     {
-      "hash": "sha256-MZDA2MYUa59xm7CSNF14uMeGKTVqhJwSfGpV+9BCTZ4=",
+      "hash": "sha256-B5BScf+0KKJsRvo\/Tc47SbCApwmAkW+Q4ki79+CC25Q=",
       "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
     },
     {
-      "hash": "sha256-qE0ZCYV8oearmGud9CQ8OQrHXtytSgNbHmYl\/4G2eFs=",
+      "hash": "sha256-fynniU2Z7dGG8I0iwDvXdoZUn1xd+iJfse\/jCKjZJIw=",
       "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
     },
     {
@@ -1037,7 +1037,7 @@
       "url": "_content\/AntDesign.Docs\/meta\/demos.zh-CN.json"
     },
     {
-      "hash": "sha256-PM9+PPjZSNkt8aBIA9FK1I8PviCX7Fi5POm05yX1VcE=",
+      "hash": "sha256-CRHHHk6UUcb6+aJNE+Xsc9j136d5ZU4og11RctrAayw=",
       "url": "_content\/AntDesign.Docs\/meta\/demoTypes.json"
     },
     {
@@ -5381,7 +5381,7 @@
       "url": "_content\/AntDesign\/less\/upload\/style\/rtl.less"
     },
     {
-      "hash": "sha256-5lU1zh8UeWyTkPYzRskj3poblZ+qYnEuAhXafL2a2lQ=",
+      "hash": "sha256-nVpscpkys9DsgTtnnWoY66z2bS6v446pox2ZmnzoCTk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -5389,5 +5389,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "916P5sBv"
+  "version": "qAWWOKc4"
 };
