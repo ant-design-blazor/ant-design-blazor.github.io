@@ -589,6 +589,20 @@
     "Url": "charts",
     "Children": [
       {
+        "Order": -2,
+        "Title": "文档",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Introduce",
+            "SubTitle": "介绍",
+            "Type": "menuItem",
+            "Url": "charts/introduce"
+          }
+        ]
+      },
+      {
         "Order": 8,
         "Title": "图表",
         "Type": "itemGroup",

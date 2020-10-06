@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "AntDesign.Docs.Wasm.dll": "sha256-K4Duhvna+eA6nmEDK7QdBPMVbhrrUlNEuYe4kIMfMpw=",
+      "AntDesign.Docs.Wasm.dll": "sha256-4h3F9FojNSbyY7MNVZO0MN9GlW3C16Hxg9Mk1ucATxU=",
       "Microsoft.CSharp.dll": "sha256-4vI1VhYQc3ciMcVyDcfzkVClS6PSWXwcP7v34AJMyvM=",
       "Microsoft.VisualBasic.Core.dll": "sha256-7Y7+jlT7RAMqJ4OVIVOmjHDW47YBouX+8j4xPgj0HF4=",
       "Microsoft.VisualBasic.dll": "sha256-WRonNAetUVTfocDv0pXB6JfzfEuBtDAqRBDGrFXoePE=",
@@ -174,7 +174,7 @@
       "mscorlib.dll": "sha256-MnGj0NFUgq1mgRaI5NxJeVdytpQ+ySVcTqaVqkQaK3g=",
       "netstandard.dll": "sha256-3Qhsar4m+S8zONXKRtm0Ed8LYelvp8CZO+aYG3Fc5Ic=",
       "System.Private.CoreLib.dll": "sha256-AomJLnt9weR\/4vASb0AKez9KBT2OVT25VHage7ALusM=",
-      "AntDesign.Charts.dll": "sha256-YKXV6idIXUO1pvAK2ZOtBZBp2ge6uiH0gpy43m2adxk=",
+      "AntDesign.Charts.dll": "sha256-6+tCT1cY4tdRz6r1nJhUBVqoCrunjnSWVWCdqHNsBVY=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-xob8OHPCv6+l8IRtMl1vilJConUulvOR1RBpCn8WoII=",
       "Microsoft.AspNetCore.Components.dll": "sha256-3ro0aegZ0A+j\/98fzM03Mbhqg+0ZfQELVnyrQAdSlHw=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-C7LzxclAr2Bin9c1if9ztNI7ThM0bFL6C3EDoCGzvT0=",
@@ -202,7 +202,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-6z1vxU4raENLPFk1ghEkwHnVizUygcEr\/6mne4pzGRc=",
       "OneOf.dll": "sha256-K99lDyL6VrtTDYGRk5o+Q3caW25Uogee\/1e7aIvpgLY=",
       "AntDesign.dll": "sha256-1d2ijUMzvI+o7jezjFa2csf5xwtwKrEDUopglJO+eTs=",
-      "AntDesign.Docs.dll": "sha256-Nm5nNhN7tAuJ0bU+irTlwjIrgE9HOESnappOUNGdtT0="
+      "AntDesign.Docs.dll": "sha256-jZgpi4nymPGX\/q1T4TdhQk+QK77tjcoNUCW1a3cK7dg="
     },
     "lazyAssembly": null,
     "pdb": null,

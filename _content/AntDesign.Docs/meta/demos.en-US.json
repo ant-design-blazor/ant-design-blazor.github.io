@@ -482,6 +482,19 @@
     ]
   },
   {
+    "Order": -2,
+    "Title": "Docs",
+    "Type": "itemGroup",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "Introduce",
+        "Type": "menuItem",
+        "Url": "charts/introduce"
+      }
+    ]
+  },
+  {
     "Order": 8,
     "Title": "Charts",
     "Type": "itemGroup",
