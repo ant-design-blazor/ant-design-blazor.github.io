@@ -1,26 +1,26 @@
 [
   {
-    "Order": 4,
-    "Title": "Internationalization",
-    "Type": "menuItem",
-    "Url": "docs/i18n"
-  },
-  {
     "Order": 1,
     "Title": "Getting Started",
     "Type": "menuItem",
     "Url": "docs/getting-started"
   },
   {
-    "Order": 11,
-    "Title": "How to Contribute",
+    "Order": 4,
+    "Title": "Internationalization",
     "Type": "menuItem",
-    "Url": "docs/contributing"
+    "Url": "docs/i18n"
   },
   {
     "Order": 0,
     "Title": "Ant Design of Blazor",
     "Type": "menuItem",
     "Url": "docs/introduce"
+  },
+  {
+    "Order": 11,
+    "Title": "How to Contribute",
+    "Type": "menuItem",
+    "Url": "docs/contributing"
   }
 ]
