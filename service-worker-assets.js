@@ -77,7 +77,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-x3g8TcxeOGDTs0KfN7G\/Py9PVWwypZzd5LbOA1WmLto=",
+      "hash": "sha256-fY03bPl4c7PqYPQ3xM9nbuES6h14xb28KsCCnbt8+3A=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -885,11 +885,11 @@
       "url": "_framework\/dotnet.5.0.0-rc.1.20451.14.js"
     },
     {
-      "hash": "sha256-NnfGgPzLe6X8cmCl06TRKcfx3IFOf0H3+QWHOW89tJk=",
+      "hash": "sha256-cd6cB3FhpQApGTpW8k3QZ9K\/yDC1VwkYTf2t5Keu\/KY=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-5Y5Zf\/Fjl3LtlB5xqHj3m0C8\/2aPd2aAsJnQm7NWOow=",
+      "hash": "sha256-qC3FNRbHwuQG7xYVp5NsChGWU+3TenNg9nRlWE6VQhc=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
@@ -1021,11 +1021,11 @@
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
     },
     {
-      "hash": "sha256-w163NCdcDSRyBSnclLUFGBXUFGaOgDsiXN\/J5LfNBRU=",
+      "hash": "sha256-E8CB7A8ufBe1UdQ+IkYo\/zPjvMlVzsNuYddSZZ+\/Ql8=",
       "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
     },
     {
-      "hash": "sha256-iB9cXRK9nZyomCsK4UfOcFOUH4blAjtmhR+6X+RUr+Q=",
+      "hash": "sha256-U+yTvAPLXX19jszyf3\/XAoBblbvpQlwmhsZBCNf0fkc=",
       "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
     },
     {
@@ -1037,7 +1037,7 @@
       "url": "_content\/AntDesign.Docs\/meta\/demos.zh-CN.json"
     },
     {
-      "hash": "sha256-a2byN4+DEGwBthVPaphWajABRLw1iLmKpojQ\/djN6O8=",
+      "hash": "sha256-eVK0VGM6umLZWAjgv7BxF5AFfl09ntUUjCwhddi9OCQ=",
       "url": "_content\/AntDesign.Docs\/meta\/demoTypes.json"
     },
     {
@@ -5381,7 +5381,7 @@
       "url": "_content\/AntDesign\/less\/upload\/style\/rtl.less"
     },
     {
-      "hash": "sha256-AMjVQKjxkEH7tDpa920uNByOfDwdEuVkn2w+quT8UfY=",
+      "hash": "sha256-H2sOZF44juHlc93RRgmfnWzBD3TkAeElSrPKewtkNNw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -5389,5 +5389,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "5bC+IgDr"
+  "version": "h3A76WmK"
 };
