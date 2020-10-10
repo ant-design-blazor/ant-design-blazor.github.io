@@ -77,7 +77,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-UvwvotPOIFCf3czgvKInpfGC2PRfujtcUtpuG6RSOV0=",
+      "hash": "sha256-FNVNe2h7QkKcpMB6eOLz27ZE50dtOtd6r037eU2vTlI=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -885,11 +885,11 @@
       "url": "_framework\/dotnet.5.0.0-rc.1.20451.14.js"
     },
     {
-      "hash": "sha256-v7g188JOWDOfqoiKgtX+jZsz4l8GULa8lXP8tx6VQWo=",
+      "hash": "sha256-kSIHqw9lAJdTUq\/8bGzHwsC976SLxMeqiT9Nk\/X022w=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-NWlWuVPDVMz0IZoiY+GghRAmD4mf64y92vaB9oSm1fY=",
+      "hash": "sha256-clGHmOBXksrHpttZ0S7oKBOm2iCi8iDX0b5c91uKtEg=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
@@ -1021,11 +1021,11 @@
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
     },
     {
-      "hash": "sha256-vkAxkpzQiuKkvfYOgBqOc0kpbMEKsoRhKFrpkXeWhaY=",
+      "hash": "sha256-5mAejA6clYmTFywmkQoDzIKObX8pJoZOtulEKuP41sI=",
       "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
     },
     {
-      "hash": "sha256-YUgp7J82IU5sJsfMneAiZdamgnNuGY8OTGeMuas4IvQ=",
+      "hash": "sha256-ahkqsMj02OzoLQ9JR9\/6i214IsodJEJZuftqheHS78c=",
       "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
     },
     {
@@ -1037,7 +1037,7 @@
       "url": "_content\/AntDesign.Docs\/meta\/demos.zh-CN.json"
     },
     {
-      "hash": "sha256-eVK0VGM6umLZWAjgv7BxF5AFfl09ntUUjCwhddi9OCQ=",
+      "hash": "sha256-fwIDZJVTpqIr+Nx\/TkKe\/C4qoKywkjd9zXM2a0S+Lkc=",
       "url": "_content\/AntDesign.Docs\/meta\/demoTypes.json"
     },
     {
@@ -5381,7 +5381,7 @@
       "url": "_content\/AntDesign\/less\/upload\/style\/rtl.less"
     },
     {
-      "hash": "sha256-D\/BVPe+W+Lj5vsTpz246\/vwzMUaiomjLjA68jPVN3oo=",
+      "hash": "sha256-CbN796CrbsAz3G7W8BADwmU5tWWKeSAHoYLZ6aCM6pk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -5389,5 +5389,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "dbJB\/ObI"
+  "version": "+L1hgZXJ"
 };

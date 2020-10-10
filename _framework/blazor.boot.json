@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "AntDesign.Docs.Wasm.dll": "sha256-UvwvotPOIFCf3czgvKInpfGC2PRfujtcUtpuG6RSOV0=",
+      "AntDesign.Docs.Wasm.dll": "sha256-FNVNe2h7QkKcpMB6eOLz27ZE50dtOtd6r037eU2vTlI=",
       "Microsoft.CSharp.dll": "sha256-4vI1VhYQc3ciMcVyDcfzkVClS6PSWXwcP7v34AJMyvM=",
       "Microsoft.VisualBasic.Core.dll": "sha256-7Y7+jlT7RAMqJ4OVIVOmjHDW47YBouX+8j4xPgj0HF4=",
       "Microsoft.VisualBasic.dll": "sha256-WRonNAetUVTfocDv0pXB6JfzfEuBtDAqRBDGrFXoePE=",
@@ -201,8 +201,8 @@
       "Microsoft.JSInterop.dll": "sha256-ZrledyUokUeWjowH1XeGCxZXL\/CaMO7misWst57Q1U0=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-6z1vxU4raENLPFk1ghEkwHnVizUygcEr\/6mne4pzGRc=",
       "OneOf.dll": "sha256-K99lDyL6VrtTDYGRk5o+Q3caW25Uogee\/1e7aIvpgLY=",
-      "AntDesign.dll": "sha256-v7g188JOWDOfqoiKgtX+jZsz4l8GULa8lXP8tx6VQWo=",
-      "AntDesign.Docs.dll": "sha256-NWlWuVPDVMz0IZoiY+GghRAmD4mf64y92vaB9oSm1fY="
+      "AntDesign.dll": "sha256-kSIHqw9lAJdTUq\/8bGzHwsC976SLxMeqiT9Nk\/X022w=",
+      "AntDesign.Docs.dll": "sha256-clGHmOBXksrHpttZ0S7oKBOm2iCi8iDX0b5c91uKtEg="
     },
     "lazyAssembly": null,
     "pdb": null,

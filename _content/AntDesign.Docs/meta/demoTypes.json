@@ -136,6 +136,7 @@
   "Demos.Components.Drawer.demo.Drawer_service",
   "Demos.Components.Drawer.demo.Render_dom",
   "Demos.Components.Drawer.demo.Placement",
+  "Demos.Components.Drawer.demo.Drawer_event",
   "Demos.Components.Tabs.demo.CardTop",
   "Demos.Components.Tabs.demo.CustomAddTrigger",
   "Demos.Components.Tabs.demo.Card",
