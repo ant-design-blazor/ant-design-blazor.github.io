@@ -3645,6 +3645,16 @@
         "Debug": false
       },
       {
+        "Order": 4,
+        "Name": "group",
+        "Title": "Avatar.Group",
+        "Description": "<p>Avatar group display.</p>\n",
+        "Code": "<AvatarGroup>\n    <Avatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <Avatar Style=\"background-color: #f56a00\">K</Avatar>\n    <Tooltip Title=@(\"Ant User\") Placement=\"PlacementType.Top\">\n        <Avatar Style=\"background-color: #87d068;\" Icon=\"user\" />\n    </Tooltip>\n    <Avatar Style=\"background-color: #1890ff;\" Icon=\"ant-design\" />\n</AvatarGroup>\n<Divider />\n<AvatarGroup MaxCount=\"2\" MaxStyle=\"color: #f56a00; background-color:#fde3cf;\">\n    <Avatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <Avatar Style=\"background-color: #f56a00\">K</Avatar>\n    <Tooltip Title=@(\"Ant User\") Placement=\"PlacementType.Top\">\n        <Avatar Style=\"background-color: #87d068;\" Icon=\"user\" />\n    </Tooltip>\n    <Avatar Style=\"background-color: #1890ff;\" Icon=\"ant-design\" />\n</AvatarGroup>",
+        "Type": "Demos.Components.Avatar.demo.Group",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 1,
         "Name": "type",
         "Title": "Type",
