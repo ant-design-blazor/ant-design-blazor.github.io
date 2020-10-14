@@ -4322,11 +4322,11 @@
     "DemoList": [
       {
         "Order": 13,
-        "Name": "modal_service",
-        "Title": "Template",
+        "Name": "modal_service_for_modal",
+        "Title": "ModalTemplate",
         "Description": "",
-        "Code": "@inject ModalService ModalService\n\n<Input @bind-Value=\"@value\" />\n<br />\n<br />\n<Button OnClick=\"OpenTemplate\" Type=\"primary\">Use Template</Button>\n<Button OnClick=\"OpenComponent\" Type=\"primary\">Use Component</Button>\n\n@code{\n\n    private string value = \"blazor\";\n\n    private ModalRef _drawerRef;\n\n    private async Task OpenTemplate()\n    {\n        RenderFragment content =@<div>value: @value <br /><Button OnClick=\"CloseModal\">close</Button></div>;\n\n            var options = new ConfirmOptions()\n            {\n                Title = \"Modal\",\n                Width = 350,\n                Content = content,\n                OnOk = e => { Console.WriteLine(\"OnOk\"); return Task.CompletedTask; },\n                OnCancel = e => { Console.WriteLine(\"OnCancel\"); return Task.CompletedTask; }\n            };\n\n            _drawerRef = await ModalService.CreateAsync(options);\n\n            _drawerRef.OnOpen = () =>\n            {\n                Console.WriteLine(\"Open Modal\");\n                return Task.CompletedTask;\n            };\n\n            _drawerRef.OnClose = () =>\n            {\n                Console.WriteLine(\"Close Modal\");\n                return Task.CompletedTask;\n            };\n        }\n\n        private async Task CloseModal()\n        {\n            if (_drawerRef != null)\n            {\n                await _drawerRef.CloseAsync();\n            }\n        }\n\n        private async Task OpenComponent()\n        {\n            var options = new ConfirmOptions()\n            {\n                Title = \"Component\",\n\n            };\n\n            var drawerRef = await ModalService.CreateAsync<ModalTemplateDemo, string, string>(options, value);\n\n            drawerRef.OnOpen = () =>\n            {\n                Console.WriteLine(\"OnOpen\");\n                return Task.CompletedTask;\n            };\n\n            drawerRef.OnClose = () =>\n            {\n                Console.WriteLine(\"OnClose\");\n                return Task.CompletedTask;\n            };\n\n            drawerRef.OnOk = (result) =>\n            {\n                Console.WriteLine($\"OnOk:{result}\");\n                return Task.CompletedTask;\n            };\n\n        }\n\n\n    }",
-        "Type": "Demos.Components.Modal.demo.Modal_service",
+        "Code": "@inject ModalService ModalService\n\n<Input @bind-Value=\"@value\" placeholder=\"user name\" />\n<br />\n<br />\n<Button OnClick=\"OpenTemplate\" Type=\"primary\">Use Template</Button>\n\n@code{\n\n    private string value = \"AntDesignBlazor\";\n\n    private ModalRef _modalRef;\n\n    private async Task OpenTemplate()\n    {\n        var templateOptions = new Form.demo.Basic.Model();\n        templateOptions.Username = value;\n\n        var modalConfig = new ModalOptions();\n        modalConfig.Title = \"Basic Form\";\n        modalConfig.OnCancel = async (e) =>\n        {\n            Console.WriteLine(\"OnCancel\");\n            await _modalRef.CloseAsync();\n        };\n\n        modalConfig.AfterClose = () =>\n        {\n            Console.WriteLine(\"AfterClose\");\n            value = templateOptions.Username;\n            InvokeAsync(StateHasChanged);\n            return Task.CompletedTask;\n        };\n\n        _modalRef = await ModalService\n            .CreateModalAsync<ModalTemplateDemo, Form.demo.Basic.Model>\n            (modalConfig, templateOptions);\n\n    }\n\n}",
+        "Type": "Demos.Components.Modal.demo.Modal_service_for_modal",
         "Style": "",
         "Debug": false
       },
@@ -4411,7 +4411,7 @@
         "Debug": false
       },
       {
-        "Order": 12,
+        "Order": 14,
         "Name": "confirm_service",
         "Title": "ConfirmService",
         "Description": "<p>Use <code>ConfirmService.Show</code> to show a built-in confirm dialog, similar to Windows MessageBox.</p>\n",
@@ -4427,6 +4427,16 @@
         "Description": "<p>To customize the text of the buttons, you need to set <code>okText</code> and <code>cancelText</code> props.</p>\n",
         "Code": "@inject ModalService _modalService\n\n<div>\n    <Button Type=\"primary\" OnClick=\"@ShowModal\">\n        Modal\n    </Button>\n    <Modal Title=\"@(\"Modal\")\"\n           Visible=\"@_visible\"\n           OnOk=\"@HideModal\"\n           OnCancel=\"@HideModal\"\n           OkText=\"@(\"确认\")\"\n           CancelText=\"@(\"取消\")\">\n        <p>Bla bla ...</p>\n        <p>Bla bla ...</p>\n        <p>Bla bla ...</p>\n    </Modal>\n\n    <Button OnClick=\"@HandleConfirm\">Confirm</Button>\n\n</div>\n\n\n@code {\n    private bool _visible = false;\n    private void ShowModal()\n    {\n        _visible = true;\n    }\n\n    private void HideModal()\n    {\n        _visible = false;\n    }\n\n    private void HandleConfirm()\n    {\n        _modalService.Confirm(new ConfirmOptions()\n        {\n            Title = \"Confirm\",\n            Icon =@<Icon Type=\"exclamation-circle\" Theme=\"Outline\"></Icon>,\n            Content = \"Bla bla ...\",\n            OkText = \"确认\",\n            CancelText = \"取消\"\n        });\n    }\n}\n",
         "Type": "Demos.Components.Modal.demo.Locale",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 12,
+        "Name": "modal_service_for_confirm",
+        "Title": "ConfirmTemplate",
+        "Description": "",
+        "Code": "@inject ModalService ModalService\n\n<Input @bind-Value=\"@value\" />\n<br />\n<br />\n<Button OnClick=\"OpenTemplate\" Type=\"primary\">Use Template</Button>\n<Button OnClick=\"OpenComponent\" Type=\"primary\">Use Component</Button>\n\n@code{\n\n    private string value = \"blazor\";\n\n    private ConfirmRef _confirmRef;\n\n    private async Task OpenTemplate()\n    {\n        RenderFragment content =@<div>value: @value <br /><Button OnClick=\"CloseModal\">close</Button></div>;\n\n        var options = new ConfirmOptions()\n        {\n            Title = \"Modal\",\n            Width = 350,\n            Content = content,\n            OnOk = e => { Console.WriteLine(\"OnOk\"); return Task.CompletedTask; },\n            OnCancel = e => { Console.WriteLine(\"OnCancel\"); return Task.CompletedTask; }\n        };\n\n        _confirmRef = await ModalService.CreateAsync(options);\n\n        _confirmRef.OnOpen = () =>\n        {\n            Console.WriteLine(\"Open Modal\");\n            return Task.CompletedTask;\n        };\n\n        _confirmRef.OnClose = () =>\n        {\n            Console.WriteLine(\"Close Modal\");\n            return Task.CompletedTask;\n        };\n    }\n\n    private async Task CloseModal()\n    {\n        if (_confirmRef != null)\n        {\n            await _confirmRef.CloseAsync();\n        }\n    }\n\n    private async Task OpenComponent()\n    {\n        var options = new ConfirmOptions()\n        {\n            Title = \"Component\",\n\n        };\n\n        var confirmRef = await ModalService.CreateAsync<ConfirmTemplateDemo, string, string>(options, value);\n\n        confirmRef.OnOpen = () =>\n        {\n            Console.WriteLine(\"OnOpen\");\n            return Task.CompletedTask;\n        };\n\n        confirmRef.OnClose = () =>\n        {\n            Console.WriteLine(\"OnClose\");\n            return Task.CompletedTask;\n        };\n\n        confirmRef.OnOk = (result) =>\n        {\n            Console.WriteLine($\"OnOk:{result}\");\n            return Task.CompletedTask;\n        };\n    }\n}",
+        "Type": "Demos.Components.Modal.demo.Modal_service_for_confirm",
         "Style": "",
         "Debug": false
       },
