@@ -21,6 +21,10 @@
       "url": "404.html"
     },
     {
+      "hash": "sha256-aWKYEdfzV2EGBPQRK0\/a0MCKOky8jXvIv\/HHEiG5lng=",
+      "url": "decode.min.js"
+    },
+    {
       "hash": "sha256-RWvqG2KKLEd9\/EP0GcBjyfiew3zXNZbzWhuxGxVe8Ek=",
       "url": "docs\/assets\/blazor.svg"
     },
@@ -65,7 +69,7 @@
       "url": "docs\/introduce.zh-CN.md"
     },
     {
-      "hash": "sha256-UBjDHO0e3jLz3npm\/rnyHO0jBQu42u3jgysNRdNBofI=",
+      "hash": "sha256-nfdRhCG4UGfYuDt0PUN84eS+h+nTzvZzl\/EET\/TfkXY=",
       "url": "index.html"
     },
     {
@@ -4801,5 +4805,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "e96wuZCP"
+  "version": "kbR4DjrX"
 };
