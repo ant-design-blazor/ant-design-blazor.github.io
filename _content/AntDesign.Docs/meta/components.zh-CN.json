@@ -871,6 +871,16 @@
         "Debug": false
       },
       {
+        "Order": 99,
+        "Name": "performance",
+        "Title": "性能",
+        "Description": "<p>演示控件的性能</p>\n",
+        "Code": "\n    @for (int i = 0; i < 100; i++)\n    {\n        var count = i;\n        <AutoComplete @bind-Value=\"@value\" CompareWith=\"CompareWith\" OnSelectionChange=\"OnSelectionChange\" Placeholder=\"@($\"第{count}个\")\">\n            <AutoCompleteOptions>\n                @foreach (var option in options)\n                {\n                    <AutoCompleteOption Value=\"@option\" Label=\"@option.label\">\n                    </AutoCompleteOption>\n                }\n            </AutoCompleteOptions>\n        </AutoComplete>\n    }\n\n<Divider></Divider>\n<span>bind-Value:@value</span>\n<br />\n<span>SelectedValue:@(System.Text.Json.JsonSerializer.Serialize(selectItem?.Value))</span>\n\n\n\n@code\n{\n    protected override void OnInitialized()\n    {\n        for (int i = 0; i < 20; i++)\n        {\n            options.Add(new ObjectValueOption() { label = $\"Lucy{i}\", value = $\"lucy{i}\", age = 20 });\n            options.Add(new ObjectValueOption() { label = $\"Jack{i}\", value = $\"jack{i}\", age = 22 });\n        }\n\n        base.OnInitialized();\n    }\n\n\n    private string value;\n\n    List<ObjectValueOption> options = new List<ObjectValueOption>();\n\n\n    Func<object, object, bool> CompareWith = (a, b) =>\n    {\n        if (a is ObjectValueOption o1 && b is ObjectValueOption o2)\n        {\n            return o1.value == o2.value;\n        }\n        else\n        {\n            return false;\n        }\n    };\n\n    private AutoCompleteOption selectItem;\n\n    void OnSelectionChange(AutoCompleteOption item)\n    {\n        selectItem = item;\n    }\n\n    public class ObjectValueOption\n    {\n        public string label { get; set; }\n        public string value { get; set; }\n        public int age { get; set; }\n\n    }\n}",
+        "Type": "Demos.Components.AutoComplete.demo.Performance",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 0,
         "Name": "basic",
         "Title": "基本",

@@ -75,6 +75,7 @@
   "Demos.Components.AutoComplete.demo.PopupContainer",
   "Demos.Components.AutoComplete.demo.Custom",
   "Demos.Components.AutoComplete.demo.UncertainCategory",
+  "Demos.Components.AutoComplete.demo.Performance",
   "Demos.Components.AutoComplete.demo.Basic",
   "Demos.Components.AutoComplete.demo.Options",
   "Demos.Components.AutoComplete.demo.NonCaseSensitive",
