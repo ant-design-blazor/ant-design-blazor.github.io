@@ -1,9 +1,9 @@
 [
   {
-    "Order": 0,
-    "Title": "Ant Design of Blazor",
+    "Order": 1,
+    "Title": "快速上手",
     "Type": "menuItem",
-    "Url": "docs/introduce"
+    "Url": "docs/getting-started"
   },
   {
     "Order": 4,
@@ -12,15 +12,15 @@
     "Url": "docs/i18n"
   },
   {
-    "Order": 1,
-    "Title": "快速上手",
-    "Type": "menuItem",
-    "Url": "docs/getting-started"
-  },
-  {
     "Order": 11,
     "Title": "贡献指南",
     "Type": "menuItem",
     "Url": "docs/contributing"
+  },
+  {
+    "Order": 0,
+    "Title": "Ant Design of Blazor",
+    "Type": "menuItem",
+    "Url": "docs/introduce"
   }
 ]
