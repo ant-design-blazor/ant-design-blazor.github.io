@@ -215,6 +215,7 @@
   "Demos.Components.Select.demo.BigData",
   "Demos.Components.Select.demo.ClearValues",
   "Demos.Components.Select.demo.Optgroup",
+  "Demos.Components.Select.demo.ShowInFormModal",
   "Demos.Components.Select.demo.Search",
   "Demos.Components.Select.demo.Multiple",
   "Demos.Components.Select.demo.CustomTagRender",
