@@ -1813,7 +1813,7 @@
         "Name": "value",
         "Title": "受控组件",
         "Description": "<p>value 和 onChange 需要配合使用。</p>\n",
-        "Code": "<TimePicker TValue=\"DateTime?\" Value=\"_value\" OnChange=\"OnChange\" />\n\n@code\n{\n    private DateTime _value = DateTime.Now;\n\n    private void OnChange(DateTime value, string dateString)\n    {\n        _value = value;\n    }\n}",
+        "Code": "<TimePicker TValue=\"DateTime?\" Value=\"_value\" OnChange=\"OnChange\" />\n\n@code\n{\n    private DateTime _value = DateTime.Now;\n\n    private void OnChange(DateTimeChangedEventArgs args)\n    {\n        _value = args.Date;\n    }\n}",
         "Type": "Demos.Components.TimePicker.demo.Value",
         "Style": "",
         "Debug": false
@@ -2094,7 +2094,7 @@
         "Name": "range-picker",
         "Title": "范围选择器",
         "Description": "<p>通过设置 <code>picker</code> 属性，指定范围选择器类型。</p>\n",
-        "Code": "<RangePicker TValue=\"DateTime?[]\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" ShowTime=\"@true\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Week\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Month\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Quarter\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Year\"/>",
+        "Code": "@using System.Text.Json;\n\n<RangePicker TValue=\"DateTime?[]\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" ShowTime=\"@true\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Week\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Month\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Year\" />\n\n<RangePicker TValue=\"DateTime?[]\" ShowTime='@(\"HH:mm\")' OnChange=\"OnTimeRangeChange\" />\n\n@code {\n    private void OnTimeRangeChange(DateRangeChangedEventArgs args)\n    {\n        Console.WriteLine($\"Selected Time: {JsonSerializer.Serialize(args.Dates)}\");\n        Console.WriteLine($\"Formatted Selected Time: {JsonSerializer.Serialize(args.DateStrings)}\");\n    }\n}",
         "Type": "Demos.Components.DatePicker.demo.RangePickerDemo",
         "Style": "",
         "Debug": false
@@ -2134,7 +2134,7 @@
         "Name": "time",
         "Title": "日期时间选择",
         "Description": "<p>增加选择时间功能，当 <code>showTime</code> 为一个对象时，其属性会传递给内建的 <code>TimePicker</code>。</p>\n",
-        "Code": "<DatePicker TValue=\"DateTime?\" ShowTime=\"@true\" OnChange=\"OnChange\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" ShowTime='@(\"HH:mm\")' OnChange=\"OnChange\"/>\n\n@code\n{\n    private void OnChange(DateTime value, string dateString)\n    {\n        Console.WriteLine($\"Selected Time: {value}\");\n        Console.WriteLine($\"Formatted Selected Time: {dateString}\");\n    }\n}",
+        "Code": "@using System.Text.Json;\n\n<DatePicker TValue=\"DateTime?\" ShowTime=\"@true\" OnChange=\"OnChange\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" ShowTime='@(\"HH:mm\")' OnChange=\"OnRangeChange\" />\n\n@code\n{\n    private void OnChange(DateTimeChangedEventArgs args)\n    {\n        Console.WriteLine($\"Selected Time: {args.Date}\");\n        Console.WriteLine($\"Formatted Selected Time: {args.DateString}\");\n    }\n\n    private void OnRangeChange(DateRangeChangedEventArgs args)\n    {\n        Console.WriteLine($\"Selected Time: {JsonSerializer.Serialize(args.Dates)}\");\n        Console.WriteLine($\"Formatted Selected Time: {JsonSerializer.Serialize(args.DateStrings)}\");\n    }\n}",
         "Type": "Demos.Components.DatePicker.demo.Time",
         "Style": "",
         "Debug": false
