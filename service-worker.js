@@ -46,5 +46,5 @@ async function onFetch(event) {
 
     return cachedResponse || fetch(event.request);
 }
-/* updated 2020-10-30 14:43:35 */
+/* updated 2020-10-31 02:46:08 */
 /* Manifest version: RJ++m1os */
