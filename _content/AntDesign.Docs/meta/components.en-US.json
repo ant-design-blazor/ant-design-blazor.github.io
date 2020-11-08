@@ -1598,6 +1598,16 @@
         "Debug": false
       },
       {
+        "Order": 14,
+        "Name": "expand",
+        "Title": "Expandable Row",
+        "Description": "<p>When there's too much information to show and the table can't display all at once.</p>\n",
+        "Code": "@using System.ComponentModel\n\n<Table DataSource=\"data\" RowExpandable=\"@((record)=>record.Data.Name!=\"Not Expandable\")\">\n    <ChildContent>\n        <Column @bind-Field=\"@context.Name\" />\n        <Column @bind-Field=\"@context.Age\" />\n        <Column @bind-Field=\"@context.Address\" />\n        <ActionColumn Title=\"Action\">\n            <a>Delete</a>\n        </ActionColumn>\n    </ChildContent>\n    <ExpandTemplate>\n        @context.Data.Description\n    </ExpandTemplate>\n</Table>\n\n@code {\n\n    Data[] data =\n    {\n        new Data()\n        {\n            Key = \"1\",\n            Name = \"John Brown\",\n            Age = 32,\n            Address = \"New York No. 1 Lake Park\",\n            Description = \"My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.\"\n        },\n        new Data()\n        {\n            Key = \"2\",\n            Name = \"Jim Green\",\n            Age = 42,\n            Address = \"London No. 1 Lake Park\",\n            Description = \"My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.\"\n        },\n        new Data(){\n            Key = \"3\",\n            Name = \"Not Expandable\",\n            Age = 29,\n            Address = \"Jiangsu No. 1 Lake Park\",\n            Description = \"This not expandable\",\n        },\n        new Data()\n        {\n            Key = \"4\",\n            Name = \"Joe Black\",\n            Age = 32,\n            Address = \"Sidney No. 1 Lake Park\",\n            Description = \"My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.\"\n        }\n    };\n\n    public class Data\n    {\n        [DisplayName(\"Key\")]\n        public string Key { get; set; }\n\n        [DisplayName(\"Name\")]\n        public string Name { get; set; }\n\n        [DisplayName(\"Age\")]\n        public int Age { get; set; }\n\n        [DisplayName(\"Address\")]\n        public string Address { get; set; }\n\n        [DisplayName(\"Description\")]\n        public string Description { get; set; }\n    }\n}\n",
+        "Type": "Demos.Components.Table.demo.Expand",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 18,
         "Name": "fixed-header",
         "Title": "Fixed Header",
