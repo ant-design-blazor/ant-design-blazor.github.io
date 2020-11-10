@@ -3553,7 +3553,7 @@
         "Name": "gradientline",
         "Title": "自定义进度条渐变色",
         "Description": "<p><code>linear-gradient</code> 的封装。推荐只传两种颜色。</p>\n",
-        "Code": "<div>\n    <Progress StrokeColor=_gradients Percent=99.9 />\n    <Progress StrokeColor=_gradients Percent=99.9 Status=ProgressStatus.Active />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=90 />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=100 />\n</div>\n\n@code{\n    private Dictionary<int, string> _gradients = new Dictionary<int, string>()\n{\n        { 0,\"#108ee9\"},\n        { 100,\"#87d068\"}\n    };\n}",
+        "Code": "<div>\n    <Progress StrokeColor=_gradients Percent=99.9 />\n    <Progress StrokeColor=_gradients Percent=99.9 Status=ProgressStatus.Active />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=90 />\n    <Progress Type=ProgressType.Circle StrokeColor=_gradients Percent=100 />\n</div>\n\n@code{\n    private Dictionary<string, string> _gradients = new()\n    {\n        { \"0%\", \"#108ee9\" },\n        { \"100%\", \"#87d068\" }\n    };\n}",
         "Type": "Demos.Components.Progress.demo.GradientLine",
         "Style": "",
         "Debug": false
