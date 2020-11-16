@@ -397,6 +397,7 @@
   "Demos.Components.Menu.demo.Inline",
   "Demos.Components.Menu.demo.Router",
   "Demos.Components.Menu.demo.Horizontal",
+  "Demos.Components.Menu.demo.SiderCurrent2",
   "Demos.Components.Menu.demo.SiderCurrent",
   "Demos.Components.Menu.demo.Theme",
   "Demos.Components.Menu.demo.SwitchMode",
