@@ -4156,7 +4156,7 @@
         "Name": "ribbon",
         "Title": "缎带",
         "Description": "<p>使用缎带型的徽标。</p>\n",
-        "Code": "<BadgeRibbon Text=\"Pushes open the window\">\n    <Card Bordered>And raises the spyglass.</Card>\n</BadgeRibbon>\n<br />\n<BadgeRibbon >\n    <TextTemplate>\n        <Icon Type=\"windows\" Theme=\"outline\" />Pushes open the window\n    </TextTemplate>\n    <ChildContent>\n        <Card Bordered>And raises the spyglass.</Card>\n    </ChildContent>\n</BadgeRibbon>",
+        "Code": "<BadgeRibbon Text=\"Pushes open the window\">\n    <Card Bordered>And raises the spyglass.</Card>\n</BadgeRibbon>\n<br />\n<BadgeRibbon Text=\"Pushes open the window\" Color=\"orange\">\n    <Card Bordered>And raises the spyglass.</Card>\n</BadgeRibbon>\n<br />\n<BadgeRibbon Text=\"Pushes open the window\" Color=\"#832\">\n    <Card Bordered>And raises the spyglass.</Card>\n</BadgeRibbon>\n<br />\n<BadgeRibbon >\n    <TextTemplate>\n        <Icon Type=\"windows\" Theme=\"outline\" />Pushes open the window\n    </TextTemplate>\n    <ChildContent>\n        <Card Bordered>And raises the spyglass.</Card>\n    </ChildContent>\n</BadgeRibbon>\n",
         "Type": "Demos.Components.Badge.demo.Ribbon",
         "Style": "",
         "Debug": false
