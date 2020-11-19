@@ -1,5 +1,145 @@
 [
   {
+    "Order": -2,
+    "Title": "Docs",
+    "Type": "itemGroup",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "Introduce",
+        "Type": "menuItem",
+        "Url": "charts/introduce"
+      }
+    ]
+  },
+  {
+    "Order": 8,
+    "Title": "Charts",
+    "Type": "itemGroup",
+    "Children": [
+      {
+        "Order": 0,
+        "Title": "Area",
+        "Type": "menuItem",
+        "Url": "charts/area"
+      },
+      {
+        "Order": 0,
+        "Title": "Bullet",
+        "Type": "menuItem",
+        "Url": "charts/bullet"
+      },
+      {
+        "Order": 0,
+        "Title": "Bubble",
+        "Type": "menuItem",
+        "Url": "charts/bubble"
+      },
+      {
+        "Order": 0,
+        "Title": "Bar",
+        "Type": "menuItem",
+        "Url": "charts/bar"
+      },
+      {
+        "Order": 0,
+        "Title": "Combo",
+        "Type": "menuItem",
+        "Url": "charts/combo"
+      },
+      {
+        "Order": 0,
+        "Title": "Column",
+        "Type": "menuItem",
+        "Url": "charts/column"
+      },
+      {
+        "Order": 0,
+        "Title": "CalendarChart",
+        "Type": "menuItem",
+        "Url": "charts/calendarchart"
+      },
+      {
+        "Order": 0,
+        "Title": "Funnel",
+        "Type": "menuItem",
+        "Url": "charts/funnel"
+      },
+      {
+        "Order": 0,
+        "Title": "GeneralConfigration",
+        "Type": "menuItem",
+        "Url": "charts/generalconfigration"
+      },
+      {
+        "Order": 0,
+        "Title": "Gauge",
+        "Type": "menuItem",
+        "Url": "charts/gauge"
+      },
+      {
+        "Order": 0,
+        "Title": "Heatmap",
+        "Type": "menuItem",
+        "Url": "charts/heatmap"
+      },
+      {
+        "Order": 0,
+        "Title": "Liquid",
+        "Type": "menuItem",
+        "Url": "charts/liquid"
+      },
+      {
+        "Order": 0,
+        "Title": "Line",
+        "Type": "menuItem",
+        "Url": "charts/line"
+      },
+      {
+        "Order": 0,
+        "Title": "Pie",
+        "Type": "menuItem",
+        "Url": "charts/pie"
+      },
+      {
+        "Order": 0,
+        "Title": "Rose",
+        "Type": "menuItem",
+        "Url": "charts/rose"
+      },
+      {
+        "Order": 0,
+        "Title": "Radar",
+        "Type": "menuItem",
+        "Url": "charts/radar"
+      },
+      {
+        "Order": 0,
+        "Title": "Step",
+        "Type": "menuItem",
+        "Url": "charts/step"
+      },
+      {
+        "Order": 0,
+        "Title": "Sparkline",
+        "Type": "menuItem",
+        "Url": "charts/sparkline"
+      },
+      {
+        "Order": 0,
+        "Title": "Scatter",
+        "Type": "menuItem",
+        "Url": "charts/scatter"
+      },
+      {
+        "Order": 0,
+        "Title": "Treemap",
+        "Type": "menuItem",
+        "Url": "charts/treemap"
+      }
+    ]
+  },
+  {
     "Order": -1,
     "Title": "Overview",
     "Type": "itemGroup",
@@ -478,146 +618,6 @@
         "Type": "menuItem",
         "Url": "components/backtop",
         "Cover": "https://gw.alipayobjects.com/zos/alicdn/tJZ5jbTwX/BackTop.svg"
-      }
-    ]
-  },
-  {
-    "Order": -2,
-    "Title": "Docs",
-    "Type": "itemGroup",
-    "Children": [
-      {
-        "Order": 0,
-        "Title": "Introduce",
-        "Type": "menuItem",
-        "Url": "charts/introduce"
-      }
-    ]
-  },
-  {
-    "Order": 8,
-    "Title": "Charts",
-    "Type": "itemGroup",
-    "Children": [
-      {
-        "Order": 0,
-        "Title": "Area",
-        "Type": "menuItem",
-        "Url": "charts/area"
-      },
-      {
-        "Order": 0,
-        "Title": "Bullet",
-        "Type": "menuItem",
-        "Url": "charts/bullet"
-      },
-      {
-        "Order": 0,
-        "Title": "Bubble",
-        "Type": "menuItem",
-        "Url": "charts/bubble"
-      },
-      {
-        "Order": 0,
-        "Title": "Bar",
-        "Type": "menuItem",
-        "Url": "charts/bar"
-      },
-      {
-        "Order": 0,
-        "Title": "Combo",
-        "Type": "menuItem",
-        "Url": "charts/combo"
-      },
-      {
-        "Order": 0,
-        "Title": "Column",
-        "Type": "menuItem",
-        "Url": "charts/column"
-      },
-      {
-        "Order": 0,
-        "Title": "CalendarChart",
-        "Type": "menuItem",
-        "Url": "charts/calendarchart"
-      },
-      {
-        "Order": 0,
-        "Title": "Funnel",
-        "Type": "menuItem",
-        "Url": "charts/funnel"
-      },
-      {
-        "Order": 0,
-        "Title": "GeneralConfigration",
-        "Type": "menuItem",
-        "Url": "charts/generalconfigration"
-      },
-      {
-        "Order": 0,
-        "Title": "Gauge",
-        "Type": "menuItem",
-        "Url": "charts/gauge"
-      },
-      {
-        "Order": 0,
-        "Title": "Heatmap",
-        "Type": "menuItem",
-        "Url": "charts/heatmap"
-      },
-      {
-        "Order": 0,
-        "Title": "Liquid",
-        "Type": "menuItem",
-        "Url": "charts/liquid"
-      },
-      {
-        "Order": 0,
-        "Title": "Line",
-        "Type": "menuItem",
-        "Url": "charts/line"
-      },
-      {
-        "Order": 0,
-        "Title": "Pie",
-        "Type": "menuItem",
-        "Url": "charts/pie"
-      },
-      {
-        "Order": 0,
-        "Title": "Rose",
-        "Type": "menuItem",
-        "Url": "charts/rose"
-      },
-      {
-        "Order": 0,
-        "Title": "Radar",
-        "Type": "menuItem",
-        "Url": "charts/radar"
-      },
-      {
-        "Order": 0,
-        "Title": "Step",
-        "Type": "menuItem",
-        "Url": "charts/step"
-      },
-      {
-        "Order": 0,
-        "Title": "Sparkline",
-        "Type": "menuItem",
-        "Url": "charts/sparkline"
-      },
-      {
-        "Order": 0,
-        "Title": "Scatter",
-        "Type": "menuItem",
-        "Url": "charts/scatter"
-      },
-      {
-        "Order": 0,
-        "Title": "Treemap",
-        "Type": "menuItem",
-        "Url": "charts/treemap"
       }
     ]
   }

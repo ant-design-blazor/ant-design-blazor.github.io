@@ -1,9 +1,9 @@
 [
   {
-    "Order": 1,
-    "Title": "快速上手",
+    "Order": 11,
+    "Title": "贡献指南",
     "Type": "menuItem",
-    "Url": "docs/getting-started"
+    "Url": "docs/contributing"
   },
   {
     "Order": 4,
@@ -12,10 +12,10 @@
     "Url": "docs/i18n"
   },
   {
-    "Order": 11,
-    "Title": "贡献指南",
+    "Order": 1,
+    "Title": "快速上手",
     "Type": "menuItem",
-    "Url": "docs/contributing"
+    "Url": "docs/getting-started"
   },
   {
     "Order": 0,
