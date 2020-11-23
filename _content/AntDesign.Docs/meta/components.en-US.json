@@ -2710,9 +2710,9 @@
       {
         "Order": 8,
         "Name": "context-menu",
-        "Title": "Context Menu TODO",
-        "Description": "<p>The default trigger mode is <code>hover</code>, you can change it to <code>contextMenu</code>.</p>\n",
-        "Code": "<Dropdown Trigger=\"new TriggerType[] { TriggerType.ContextMenu }\">\n    <Overlay>\n        <Menu>\n            <MenuItem>1st menu item</MenuItem>\n            <MenuItem>2nd menu item</MenuItem>\n            <MenuItem>3rd menu item</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <div style=\"text-align: center; width: 200px; height: 200px; line-height: 200px;background: #f7f7f7;color: #777;\">\n            Right Click on here (TODO)\n        </div>\n    </ChildContent>\n</Dropdown>",
+        "Title": "Context Menu(Full supported in NET5 right now)",
+        "Description": "<p>The default trigger mode is <code>hover</code>, you can change it to <code>contextMenu</code>.(Full supported in NET5 right now)</p>\n",
+        "Code": "<Dropdown Trigger=\"new TriggerType[] { TriggerType.ContextMenu }\">\n    <Overlay>\n        <Menu>\n            <MenuItem>1st menu item</MenuItem>\n            <MenuItem>2nd menu item</MenuItem>\n            <MenuItem>3rd menu item</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <div style=\"text-align: center; width: 200px; height: 200px; line-height: 200px;background: #f7f7f7;color: #777;\">\n            Right Click on here\n        </div>\n    </ChildContent>\n</Dropdown>",
         "Type": "Demos.Components.Dropdown.demo.ContextMenu",
         "Style": "",
         "Debug": false
