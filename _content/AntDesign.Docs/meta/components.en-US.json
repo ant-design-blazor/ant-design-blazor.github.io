@@ -3833,7 +3833,7 @@
         "Name": "extra-footer",
         "Title": "Extra Footer",
         "Description": "<p>Render extra footer in panel for customized requirements.</p>\n",
-        "Code": "<DatePicker TValue=\"DateTime?\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<DatePicker TValue=\"DateTime?\" ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<DatePicker TValue=\"DateTime?[]\" Picker=\"@DatePickerType.Month\" RenderExtraFooter=\"extraFooter\"/>\n\n@code {\n    private RenderFragment extraFooter =@<span>extra footer</span>;\n}\n",
+        "Code": "<DatePicker TValue=\"DateTime?\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<DatePicker TValue=\"DateTime?\" ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<RangePicker TValue=\"DateTime?[]\" RenderExtraFooter=\"extraFooter\" />\n<br />\n<RangePicker TValue=\"DateTime?[]\" ShowTime=\"@true\" RenderExtraFooter=\"extraFooter\"/>\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Month\" RenderExtraFooter=\"extraFooter\"/>\n\n@code {\n    private RenderFragment extraFooter =@<span>extra footer</span>;\n}\n",
         "Type": "Demos.Components.DatePicker.demo.ExtraFooter",
         "Style": "",
         "Debug": false
