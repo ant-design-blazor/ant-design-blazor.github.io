@@ -238,6 +238,7 @@
   "Demos.Components.Drawer.demo.Multiple",
   "Demos.Components.Drawer.demo.Formindrawer",
   "Demos.Components.Drawer.demo.Render_dom",
+  "Demos.Components.Drawer.demo.DropdownInDrawer",
   "Demos.Components.Drawer.demo.Userprofile",
   "Demos.Components.Drawer.demo.Drawer_event",
   "Demos.Components.Drawer.demo.Placement",
