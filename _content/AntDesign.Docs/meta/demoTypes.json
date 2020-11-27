@@ -130,6 +130,7 @@
   "Demos.Components.Select.demo.SelectUsers",
   "Demos.Components.Select.demo.LabelInValue",
   "Demos.Components.Select.demo.TrackItemChanges",
+  "Demos.Components.Select.demo.SimpleSelectDemo",
   "Demos.Components.Select.demo.CustomTagRender",
   "Demos.Components.Select.demo.SearchBox",
   "Demos.Components.Select.demo.Size",
