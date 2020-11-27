@@ -455,6 +455,7 @@
   "Demos.Components.Form.demo.ComplexFormControl",
   "Demos.Components.Form.demo.FormContext",
   "Demos.Components.Form.demo.Basic",
+  "Demos.Components.Form.demo.ColLayout",
   "Demos.Components.Skeleton.demo.Active",
   "Demos.Components.Skeleton.demo.Element",
   "Demos.Components.Skeleton.demo.Children",
