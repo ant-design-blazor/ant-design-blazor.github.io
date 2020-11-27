@@ -1651,16 +1651,6 @@
         "Debug": false
       },
       {
-        "Order": 0,
-        "Name": "simple-select",
-        "Title": "简单的封装",
-        "Description": "<p>由于泛型的写法有点复杂，所以封装了 <code>string</code> 类型的 <code>SimpleSelect</code>。还可以根据需求封装不同类型的 <code>Select</code> 组件。</p>\n<pre><code class=\"language-cs\">    public class SimpleSelect : Select&lt;string, string&gt; { }\n\n    public class SimpleSelectOption : SelectOption&lt;string, string&gt; { }\n</code></pre>\n",
-        "Code": "<SimpleSelect DefaultValue=\"lucy\" Style=\"width:120px;\" OnSelectedItemChanged=\"handleChange\">\n    <SelectOptions>\n        <SimpleSelectOption Value=\"jack\" Label=\"Jack\"></SimpleSelectOption>\n        <SimpleSelectOption Value=\"lucy\" Label=\"Lucy\"></SimpleSelectOption>\n        <SimpleSelectOption Value=\"disabled\" Label=\"Disabled\" Disabled></SimpleSelectOption>\n        <SimpleSelectOption Value=\"Yiminghe\" Label=\"yiminghe\"></SimpleSelectOption>\n    </SelectOptions>\n</SimpleSelect>\n\n<SimpleSelect DefaultValues=@(new[]{\"lucy\",\"jack\"}) Mode=\"multiple\" Style=\"width:200px;\" OnSelectedItemsChanged=\"handleItemsChange\">\n    <SelectOptions>\n        <SimpleSelectOption Value=\"jack\" Label=\"Jack\"></SimpleSelectOption>\n        <SimpleSelectOption Value=\"lucy\" Label=\"Lucy\"></SimpleSelectOption>\n        <SimpleSelectOption Value=\"disabled\" Label=\"Disabled\" Disabled></SimpleSelectOption>\n        <SimpleSelectOption Value=\"Yiminghe\" Label=\"yiminghe\"></SimpleSelectOption>\n    </SelectOptions>\n</SimpleSelect>\n\n@code{\n    void handleChange(string value)\n    {\n        Console.WriteLine(value);\n    }\n\n    void handleItemsChange(IEnumerable<string> value)\n    {\n        Console.WriteLine(value);\n    }\n}",
-        "Type": "Demos.Components.Select.demo.SimpleSelectDemo",
-        "Style": "",
-        "Debug": false
-      },
-      {
         "Order": 24,
         "Name": "custom-tag-render",
         "Title": "自定义选择标签",
