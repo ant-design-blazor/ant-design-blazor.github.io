@@ -453,6 +453,7 @@
   "Demos.Components.Form.demo.Layout",
   "Demos.Components.Form.demo.Size",
   "Demos.Components.Form.demo.Loading",
+  "Demos.Components.Form.demo.CustomizedFormValidator",
   "Demos.Components.Form.demo.ComplexFormControl",
   "Demos.Components.Form.demo.FormContext",
   "Demos.Components.Form.demo.Basic",

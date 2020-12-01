@@ -5287,6 +5287,16 @@
         "Debug": false
       },
       {
+        "Order": 7,
+        "Name": "customized-form-validator",
+        "Title": "自定义表单验证器",
+        "Description": "<p>使用Form Validator属性或<code>&lt;Validator&gt;</code>元素设置自定义验证器，会覆盖内置验证器。当不需要验证时，可以设置为 <code>null</code> 来提高表单的性能。</p>\n<p>注意：使用<code>&lt;Validator&gt;</code>元素设置验证器时，需要将Form内其他组件用<code>&lt;ChildContent&gt;</code>包起来。</p>\n<p>自定义验证组件开发见文档：<a href=\"https://docs.microsoft.com/zh-cn/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0#validator-components\">ASP.NET Core Blazor 窗体和验证 - 验证器组件</a></p>\n",
+        "Code": "@using System.ComponentModel.DataAnnotations;\n\n<Form Model=\"@model1\"\n      LabelColSpan=\"8\"\n      WrapperColSpan=\"16\"\n      Validator=\"null\">\n    <FormItem Label=\"No Validator\">\n        <AntDesign.InputNumber @bind-Value=\"@context.Number\"/>\n    </FormItem>\n</Form>\n<Form Model=\"@model2\"\n      LabelColSpan=\"8\"\n      WrapperColSpan=\"16\">\n    <Validator>\n        <CustomValidator/>\n    </Validator>\n    <ChildContent>\n        <FormItem Label=\"CustomValidator\">\n            <AntDesign.InputNumber @bind-Value=\"@context.Number\"/>\n        </FormItem>\n    </ChildContent>\n</Form>\n\n@code\n{\n    public class Model1\n    {\n        [Required]\n        public int Number { get; set; }\n    }\n\n    public class Model2\n    {\n        [Required]\n        public int Number { get; set; }\n    }\n\n    private Model1 model1 = new Model1();\n\n    private Model2 model2 = new Model2();\n\n    private RenderFragment validator = @<CustomValidator/>;\n}\n",
+        "Type": "Demos.Components.Form.demo.CustomizedFormValidator",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 6,
         "Name": "complex-form-control",
         "Title": "复杂一点的控件",

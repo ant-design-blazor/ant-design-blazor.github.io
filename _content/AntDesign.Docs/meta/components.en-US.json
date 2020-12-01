@@ -5214,6 +5214,16 @@
         "Debug": false
       },
       {
+        "Order": 7,
+        "Name": "customized-form-validator",
+        "Title": "Customized form validator",
+        "Description": "<p>Setting a custom validator using the Form Validator property or the <code>&lt;Validator&gt;</code> element overrides the built-in validator. When validation is not required, it can be set to NULL to improve performance.</p>\n<p>Note: When using the <code>&lt;Validator&gt;</code> element to set the validator, you need to wrap the other components within the Form with <code>&lt;ChildContent&gt;</code>.</p>\n<p>For custom validator development, see document: <a href=\"https://docs.microsoft.com/en-US/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0#validator-components\">ASP.NET Core Blazor forms and validation - Validator components</a></p>\n",
+        "Code": "@using System.ComponentModel.DataAnnotations;\n\n<Form Model=\"@model1\"\n      LabelColSpan=\"8\"\n      WrapperColSpan=\"16\"\n      Validator=\"null\">\n    <FormItem Label=\"No Validator\">\n        <AntDesign.InputNumber @bind-Value=\"@context.Number\"/>\n    </FormItem>\n</Form>\n<Form Model=\"@model2\"\n      LabelColSpan=\"8\"\n      WrapperColSpan=\"16\">\n    <Validator>\n        <CustomValidator/>\n    </Validator>\n    <ChildContent>\n        <FormItem Label=\"CustomValidator\">\n            <AntDesign.InputNumber @bind-Value=\"@context.Number\"/>\n        </FormItem>\n    </ChildContent>\n</Form>\n\n@code\n{\n    public class Model1\n    {\n        [Required]\n        public int Number { get; set; }\n    }\n\n    public class Model2\n    {\n        [Required]\n        public int Number { get; set; }\n    }\n\n    private Model1 model1 = new Model1();\n\n    private Model2 model2 = new Model2();\n\n    private RenderFragment validator = @<CustomValidator/>;\n}\n",
+        "Type": "Demos.Components.Form.demo.CustomizedFormValidator",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 6,
         "Name": "complex-form-control",
         "Title": "complex form control",
