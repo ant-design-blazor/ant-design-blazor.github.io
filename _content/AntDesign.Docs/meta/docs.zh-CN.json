@@ -12,15 +12,15 @@
     "Url": "docs/i18n"
   },
   {
-    "Order": 1,
-    "Title": "快速上手",
-    "Type": "menuItem",
-    "Url": "docs/getting-started"
-  },
-  {
     "Order": 0,
     "Title": "Ant Design of Blazor",
     "Type": "menuItem",
     "Url": "docs/introduce"
+  },
+  {
+    "Order": 1,
+    "Title": "快速上手",
+    "Type": "menuItem",
+    "Url": "docs/getting-started"
   }
 ]
