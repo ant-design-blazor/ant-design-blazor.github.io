@@ -69,11 +69,11 @@
       "url": "docs\/i18n.zh-CN.md"
     },
     {
-      "hash": "sha256-GqbWYAcxJLrW+OOaFYZiYM7dyBLd1zFmZGMYxRp9weM=",
+      "hash": "sha256-ps38imQW2+nx82mIHl7hLR7uTwbG834JNq+SChkSMHE=",
       "url": "docs\/introduce.en-US.md"
     },
     {
-      "hash": "sha256-1p3nsWGuZKuh9hXk\/PkTPvWtkdEK1TnUbQyPSfq48Xk=",
+      "hash": "sha256-vFDAdyWtnK3eb4dL\/GsB\/nOZA40k8hmRRM8HJXAD2PA=",
       "url": "docs\/introduce.zh-CN.md"
     },
     {
@@ -229,11 +229,11 @@
       "url": "_content\/AntDesign.Docs\/docs\/i18n.zh-CN.json"
     },
     {
-      "hash": "sha256-2u3coy1CclJaWhCCzfXuzKW9BVSiA2J6xyMJrxu1U4Q=",
+      "hash": "sha256-m4a9+YSP7Xp0jkeldA2pPljNMNFKwG722dnsitbFi10=",
       "url": "_content\/AntDesign.Docs\/docs\/introduce.en-US.json"
     },
     {
-      "hash": "sha256-K8TVfVrzdx4+Y7Z8Wy1XZptudr+rQNmf8hrmBA3rIWM=",
+      "hash": "sha256-n+otkiLkAKisGD+u0xYpBkwXHenJ8Jc4bkjnIKDg3sE=",
       "url": "_content\/AntDesign.Docs\/docs\/introduce.zh-CN.json"
     },
     {
@@ -1517,15 +1517,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-R7w48FYz2\/7NQi6d81wHgTev0\/XUPKoREsSJhEaeIYw=",
+      "hash": "sha256-egMq8UaMgGWpFkS1g1LcPnicIxQXKK1+6vn4B\/u4qG4=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-XoaCkyQHu3bljo5F\/Bm6AC88puoRupFiJXga48P+Pms=",
+      "hash": "sha256-hi1cYAl\/+BB3zPCae8nnPo7\/cBiSd\/HFUrt8UMYvXFY=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-WwnpHzNaUHOflp42i4p+BVFr+XQzOpYrEesLL0xF1J4=",
+      "hash": "sha256-sY6nFOahRw5rEJQHy9s3lITV5azFTt9PdzpIJ9xlhDo=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1641,7 +1641,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-lh7Ql\/Vhut60fd4N9dgN0pNdJ6KBs6mLhETnEcR9qR4=",
+      "hash": "sha256-n9rnPWxVtmvvawfi+u2\/M8aXm3jKpmxAmfApOwJupRw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1649,5 +1649,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "rwdPpeuT"
+  "version": "2u1SndgJ"
 };
