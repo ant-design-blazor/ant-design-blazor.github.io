@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
     <title>Ant Design of Blazor</title>
-    <base href="/" />
+    <base href="https://cdn.jsdelivr.net/gh/ant-design-blazor/ant-design-blazor.github.io/" />
     <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css" />
     <link href="_content/AntDesign.Docs/css/docs.css" rel="stylesheet">
@@ -228,14 +228,13 @@
     <script src="_content/AntDesign/js/ant-design-blazor.js"></script>
     <script src="_content/AntDesign.Docs/js/prism.js"></script>
     <!-- use compression via https://docs.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly?view=aspnetcore-5.0#compression -->
-    <script src="decode.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/brotli/js/decode.js"></script>
     <script src="_framework/blazor.webassembly.js" autostart="false"></script>
     <script>
         Blazor.start({
             loadBootResource: function (type, name, defaultUri, integrity) {
                 if (type !== 'dotnetjs' && location.hostname !== 'localhost') {
                     return (async function () {
-                        defaultUri = 'https://cdn.jsdelivr.net/gh/ant-design-blazor/ant-design-blazor.github.io/' + defaultUri;
                         const response = await fetch(defaultUri + '.br', { cache: 'no-cache' });
                         if (!response.ok) {
                             throw new Error(response.statusText);
