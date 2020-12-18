@@ -1,15 +1,9 @@
 [
   {
-    "Order": 11,
-    "Title": "贡献指南",
+    "Order": 1,
+    "Title": "快速上手",
     "Type": "menuItem",
-    "Url": "docs/contributing"
-  },
-  {
-    "Order": 4,
-    "Title": "国际化",
-    "Type": "menuItem",
-    "Url": "docs/i18n"
+    "Url": "docs/getting-started"
   },
   {
     "Order": 0,
@@ -18,9 +12,15 @@
     "Url": "docs/introduce"
   },
   {
-    "Order": 1,
-    "Title": "快速上手",
+    "Order": 4,
+    "Title": "国际化",
     "Type": "menuItem",
-    "Url": "docs/getting-started"
+    "Url": "docs/i18n"
+  },
+  {
+    "Order": 11,
+    "Title": "贡献指南",
+    "Type": "menuItem",
+    "Url": "docs/contributing"
   }
 ]
