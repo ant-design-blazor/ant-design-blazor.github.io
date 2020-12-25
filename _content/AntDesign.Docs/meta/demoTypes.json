@@ -235,6 +235,7 @@
   "Demos.Components.Form.demo.Basic",
   "Demos.Components.Form.demo.Loading",
   "Demos.Components.Form.demo.Layout",
+  "Demos.Components.Form.demo.ValidateOnChange",
   "Demos.Components.Form.demo.ComplexFormControl",
   "Demos.Components.Form.demo.FormContext",
   "Demos.Components.Form.demo.CustomizedFormValidator",

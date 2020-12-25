@@ -2760,6 +2760,16 @@
         "Debug": false
       },
       {
+        "Order": 20,
+        "Name": "validate-onchange",
+        "Title": "Enable validation when component values change",
+        "Description": "<p>(v0.5+) Validation is turned off by default for performance reasons. Validate only when <code>form.Validate ()</code> is called. It would be enabled by setting the 'ValidateOnChange' parameter.</p>\n",
+        "Code": "@using System.ComponentModel.DataAnnotations;\n\n<Switch @bind-Value=\"@auto\" CheckedChildren=\"True\" UnCheckedChildren=\"False\" />\n<Form @ref=\"form\"\n      ValidateOnChange=\"@auto\"\n      Model=\"@model\"\n      LabelColSpan=\"8\"\n      WrapperColSpan=\"16\">\n    <FormItem Label=\"Username\">\n        <Input @bind-Value=\"@context.Username\" />\n    </FormItem>\n    <FormItem Label=\"Password\">\n        <InputPassword @bind-Value=\"@context.Password\" />\n    </FormItem>\n    <FormItem WrapperColOffset=\"8\" WrapperColSpan=\"16\">\n        <Checkbox @bind-Value=\"context.RememberMe\">Remember me</Checkbox>\n    </FormItem>\n    <FormItem WrapperColOffset=\"8\" WrapperColSpan=\"16\">\n        <Button Type=\"@ButtonType.Primary\" OnClick=\"OnValidate\">\n            Validate\n        </Button>\n    </FormItem>\n</Form>\n@code\n{\n    public class Model\n    {\n        [Required]\n        public string Username { get; set; }\n        [Required]\n        public string Password { get; set; }\n        public bool RememberMe { get; set; } = true;\n    }\n\n    private Model model = new Model();\n\n    AntDesign.Form<Model> form;\n\n    private bool auto = false;\n\n    public void OnValidate()\n    {\n        form.Validate();\n    }\n}",
+        "Type": "Demos.Components.Form.demo.ValidateOnChange",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 6,
         "Name": "complex-form-control",
         "Title": "complex form control",
