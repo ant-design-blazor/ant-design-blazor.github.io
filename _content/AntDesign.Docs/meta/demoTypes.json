@@ -89,6 +89,7 @@
   "Demos.Components.Modal.demo.Locale",
   "Demos.Components.Modal.demo.Position",
   "Demos.Components.Modal.demo.Basic",
+  "Demos.Components.Modal.demo.OverrideLocale",
   "Demos.Components.Modal.demo.DropdownInModal",
   "Demos.Components.Modal.demo.Async",
   "Demos.Components.Modal.demo.Info",
