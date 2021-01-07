@@ -69,6 +69,7 @@
   "Demos.Components.Tree.demo.Property",
   "Demos.Components.Tree.demo.Line",
   "Demos.Components.Tree.demo.Event",
+  "Demos.Components.Tree.demo.Modify",
   "Demos.Components.Tree.demo.BasicControlled",
   "Demos.Components.Message.demo.Other",
   "Demos.Components.Message.demo.Update",
