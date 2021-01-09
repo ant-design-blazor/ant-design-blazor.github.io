@@ -438,6 +438,7 @@
   "Demos.Components.Table.demo.FixedColumns",
   "Demos.Components.Table.demo.TreeData",
   "Demos.Components.Table.demo.ColspanRowspan",
+  "Demos.Components.Table.demo.FixedColumnsHeader",
   "Demos.Components.Table.demo.Size",
   "Demos.Components.Table.demo.RowSelection_",
   "Demos.Components.Cascader.demo.Basic",
