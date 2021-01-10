@@ -27,9 +27,9 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-E1ZVZc8ppcbuan9B4K4NDw+BijA0pjKkIIwlnGerx9g=",
       "OneOf.dll": "sha256-DlJFmOEiKlnRV6pAQEg5pxuFkKtlCRCoS9UGMk0VT9Y=",
       "System.IO.Pipelines.dll": "sha256-CETD5tkXtiKEgbXyN\/lp0Ejf6LcHIhgeQIEyow2mhmY=",
-      "AntDesign.dll": "sha256-+LnBwhGbxnb+A3UQEuL+glNYP9Z5zC4LiQEgfIunA4g=",
-      "AntDesign.Docs.dll": "sha256-nJupr2r84+G7qpUrE6idQGmPkFFUrl0bjlnA7FSpkz0=",
-      "AntDesign.Docs.Wasm.dll": "sha256-Qi9bqW1w74+IhqohSohBwWztCLKYBBGaY7O3aP8GPLI=",
+      "AntDesign.dll": "sha256-hAdEcPZtsM0+q6mHFS4y1h+ZOMLl0SE1j2CfbhRtXmA=",
+      "AntDesign.Docs.dll": "sha256-K9Fn9Jfq9BAq8qufBdZQNeF0Myl5ryUuc02TghRTKc8=",
+      "AntDesign.Docs.Wasm.dll": "sha256-MtjkKOJ0Dj\/9O\/LfWEhmwRDi9L+LeezbiHz+hte2PvY=",
       "System.Collections.Concurrent.dll": "sha256-zHOABTQJuHK7Ql51FmsxO59YUYdxMuQKy\/3XbSa26xc=",
       "System.Collections.Immutable.dll": "sha256-8\/HGi\/CrGctozUXphxbttKCY1+UO9+jEGv4gM07zTsg=",
       "System.Collections.NonGeneric.dll": "sha256-8IO6PmMt1rS48xiTr92uM2MKLyB2urrceM5U\/R8kWM8=",
@@ -57,7 +57,7 @@
       "System.Text.Json.dll": "sha256-Ji\/u1O99aQJtBLxZMYLR9MJHU5XP6nkhEVWlI4PwjAg=",
       "System.Text.RegularExpressions.dll": "sha256-cUfCRdwLtFX6JjQ3\/+sxNKFxtfwpKj7nHk+g4Y\/yY8E=",
       "System.Web.HttpUtility.dll": "sha256-Y0obxbxqsjwerqzksbj0KS9rl8t5asBtrxrX\/cXAxG4=",
-      "System.Private.CoreLib.dll": "sha256-dQ0V8ajFJ67D0+3MJAO2h3FH\/Lp7HNtqu7FPJ8FqxEc="
+      "System.Private.CoreLib.dll": "sha256-+ANwpbIME9sJS0wjx66MOczXyVrubqRC0yJ2+SPHGj8="
     },
     "lazyAssembly": null,
     "pdb": null,
