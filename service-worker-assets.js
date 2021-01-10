@@ -181,7 +181,7 @@
       "url": "_content\/AntDesign.Docs\/chartsdata\/subsales.json"
     },
     {
-      "hash": "sha256-dhVwhMdyG5C3ApKVxZnWpyxRcU0+ooHMrKPdWAcgNJo=",
+      "hash": "sha256-66sL6HlFfige9cSGwokm0BmC8cCpYW5y+54FNRbhzVU=",
       "url": "_content\/AntDesign.Docs\/css\/docs.css"
     },
     {
@@ -285,7 +285,7 @@
       "url": "_content\/AntDesign.Docs\/meta\/menu.zh-CN.json"
     },
     {
-      "hash": "sha256-DhrRP61b04OFVpAssLrs1u+XmQCnwx7ac\/YeTJvKz74=",
+      "hash": "sha256-sXm1kUCFPCv8ZnHwdm4cUxiECkIceXVnIhoaTnNbXQU=",
       "url": "_content\/AntDesign\/css\/ant-design-blazor.css"
     },
     {
@@ -881,7 +881,7 @@
       "url": "_content\/AntDesign\/less\/notification\/style\/entry.less"
     },
     {
-      "hash": "sha256-TgMa9BWoBr3cFfxR24mXN8db+YfV9bHs\/dcjL4XP\/vQ=",
+      "hash": "sha256-halfSjcjYcC3JWOKsdrbVCEtrv63yyyxeVd83XA8PPk=",
       "url": "_content\/AntDesign\/less\/notification\/style\/index.less"
     },
     {
@@ -1517,15 +1517,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-hAdEcPZtsM0+q6mHFS4y1h+ZOMLl0SE1j2CfbhRtXmA=",
+      "hash": "sha256-bAXSZoooM\/ugbiRQ7kQ5A7bNNdAD1b1Rh6rb\/x3BZZY=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-K9Fn9Jfq9BAq8qufBdZQNeF0Myl5ryUuc02TghRTKc8=",
+      "hash": "sha256-\/goLXF5tSAj+L+3u2QJMR2L35v7e5oiVASfK0E560wo=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-MtjkKOJ0Dj\/9O\/LfWEhmwRDi9L+LeezbiHz+hte2PvY=",
+      "hash": "sha256-Q50UEDwCFoEXPWuyZIivyVYkGEEgMWQhbK\/jCgkSDQA=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1641,7 +1641,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-ubEf5D+QXWKEfv0tcSR2WQDA7yJmh8TGs8ukyKaw8PA=",
+      "hash": "sha256-bqYhFnzdqMgoQr8ixGbvvr9m9ZhaUFWrSyzpUdxv1tQ=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1649,5 +1649,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "iwR70Jp2"
+  "version": "gC1VW7JQ"
 };
