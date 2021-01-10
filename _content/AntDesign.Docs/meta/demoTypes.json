@@ -435,6 +435,7 @@
   "Demos.Components.Table.demo.Blazor",
   "Demos.Components.Table.demo.Bordered",
   "Demos.Components.Table.demo.Expand",
+  "Demos.Components.Table.demo.Ellipsis",
   "Demos.Components.Table.demo.FixedColumns",
   "Demos.Components.Table.demo.TreeData",
   "Demos.Components.Table.demo.ColspanRowspan",
