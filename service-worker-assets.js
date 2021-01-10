@@ -1517,15 +1517,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-V\/Q0SCwZ8MwMnEhPy+lGvS4U1bRPyjjf4E3AZ7fmtRs=",
+      "hash": "sha256-e5JG1u2RfTLd3OtODSGUCwO05fPOgqDNUCsOMQtGi3M=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-fSiGoahw\/PpnDrCF6Bn+9HgJLRh0dJQwspMDvAtoXCY=",
+      "hash": "sha256-Zma5l1aiv5mGI79N\/X\/qAJvjcn8lbFDG7SYiotExWd0=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-tnxv8VFFBfIxjIo9oE7xynnNv1xpzsyLo2Os9EMH9eQ=",
+      "hash": "sha256-apXeCYYiWMw6lvGOZktTLZTuTVkcYBcFKHlNICnlPCI=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1641,7 +1641,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-CB4WcMhiZuJUhg4\/N7YwuMaqLspXzXYn3sjQfvrw3fQ=",
+      "hash": "sha256-eBFnlSYsqSU\/WOXdQpwznJhstynTIJCV3bsPb3OE9+M=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1649,5 +1649,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "oV+zJBYB"
+  "version": "oZetCfKU"
 };
