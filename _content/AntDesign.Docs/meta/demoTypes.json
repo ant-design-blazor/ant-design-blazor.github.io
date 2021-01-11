@@ -432,6 +432,7 @@
   "Demos.Components.Table.demo.FixedHeader",
   "Demos.Components.Table.demo.RouterPagging",
   "Demos.Components.Table.demo.Basic",
+  "Demos.Components.Table.demo.Head_",
   "Demos.Components.Table.demo.Blazor",
   "Demos.Components.Table.demo.Bordered",
   "Demos.Components.Table.demo.Expand",
