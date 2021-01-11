@@ -249,11 +249,11 @@
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
     },
     {
-      "hash": "sha256-7FaqWd5byhMpUzsu2Dwpyk9YQqbSk9V1+KJq4TIz\/Is=",
+      "hash": "sha256-IaNT0bsMvyDmZYUW6QDjxfGPIWZo+ePm6\/NR4t4sQW8=",
       "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
     },
     {
-      "hash": "sha256-j30y9oB21TPoCtq8Yydv4qxqw7aHF2LGJzUhJUfWJ2E=",
+      "hash": "sha256-JbulhczX9\/LlubnURVe6x7JVr8stj2SQMTzcIUfhZy8=",
       "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
     },
     {
@@ -265,7 +265,7 @@
       "url": "_content\/AntDesign.Docs\/meta\/demos.zh-CN.json"
     },
     {
-      "hash": "sha256-7E2+LDvRbW39mtYUzqec42BFS\/hPs\/RPq8mykYuynnc=",
+      "hash": "sha256-2Kpp4H\/PzUPrSxvSXYAYVdzoa1bjg1Mqg9vTgPR4npc=",
       "url": "_content\/AntDesign.Docs\/meta\/demoTypes.json"
     },
     {
@@ -1517,15 +1517,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-7uncof6NJl2hNy+Xfu0mr5I87zfNeiZs9alVjKszqws=",
+      "hash": "sha256-lHl6DgTCqI4CfP9USShMXvaIYnfEmKs3OnWHqyijzsg=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-IQp45Nai3Vl1nutxKbu9tl34SNKNoNw7S3Kn8B6sP70=",
+      "hash": "sha256-RTk66nmMwC8jC2M0hfE9wTaMK8R\/eKt110eTgj5kZHk=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-mx4Hp5q1dpiG1r7eZrgP4a8\/i68Oo7cBGx8IPWFDiIM=",
+      "hash": "sha256-L1YTtPiHwDd6hUI5QjaJiMwia4wzjHlsnoUa1I3S9ZE=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1577,7 +1577,7 @@
       "url": "_framework\/System.Linq.Expressions.dll"
     },
     {
-      "hash": "sha256-Ugp2zXB78qc5gPLryql896ANY46ZvAYEAoFZV6nXeVU=",
+      "hash": "sha256-e8tsd8J6wzu2pdeh0fNnb4fHhnE4px6zDZbCnQ7f4+c=",
       "url": "_framework\/System.Linq.Queryable.dll"
     },
     {
@@ -1641,7 +1641,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-2\/5UqzBNKCCR3LzHCtCpKePExS+yu6YWtNPEAsomP50=",
+      "hash": "sha256-V5K\/1I0BVEs1uc7deaE0CxAYjSNS8qiUo9Te7Mn2Lls=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1649,5 +1649,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "Ij4tLDi1"
+  "version": "ILZp21eH"
 };
