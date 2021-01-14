@@ -700,7 +700,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>最简单的用法，在浮层中可以选择或者输入日期。</p>\n",
-        "Code": "@inject ILanguageService LS;\n\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Year\"/>\n<br />",
+        "Code": "@inject ILanguageService LS;\n\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Year\"/>\n<br />",
         "Type": "Demos.Components.DatePicker.demo.Basic",
         "Style": "",
         "Debug": false

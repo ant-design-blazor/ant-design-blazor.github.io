@@ -678,7 +678,7 @@
         "Name": "basic",
         "Title": "Basic",
         "Description": "<p>Basic use case. Users can select or input a date in panel.</p>\n",
-        "Code": "@inject ILanguageService LS;\n\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Year\"/>\n<br />",
+        "Code": "@inject ILanguageService LS;\n\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Date\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Week\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Month\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Quarter\" />\n<br />\n<DatePicker TValue=\"DateTime?\" Picker=\"@DatePickerType.Year\"/>\n<br />",
         "Type": "Demos.Components.DatePicker.demo.Basic",
         "Style": "",
         "Debug": false
