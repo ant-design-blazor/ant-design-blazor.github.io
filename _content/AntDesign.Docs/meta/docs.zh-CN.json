@@ -6,10 +6,10 @@
     "Url": "docs/getting-started"
   },
   {
-    "Order": 0,
-    "Title": "Ant Design of Blazor",
+    "Order": 11,
+    "Title": "贡献指南",
     "Type": "menuItem",
-    "Url": "docs/introduce"
+    "Url": "docs/contributing"
   },
   {
     "Order": 4,
@@ -18,9 +18,9 @@
     "Url": "docs/i18n"
   },
   {
-    "Order": 11,
-    "Title": "贡献指南",
+    "Order": 0,
+    "Title": "Ant Design of Blazor",
     "Type": "menuItem",
-    "Url": "docs/contributing"
+    "Url": "docs/introduce"
   }
 ]
