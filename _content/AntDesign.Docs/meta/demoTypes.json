@@ -217,6 +217,7 @@
   "Demos.Components.Table.demo.Basic",
   "Demos.Components.Table.demo.Size",
   "Demos.Components.Table.demo.RowSelection_",
+  "Demos.Components.Table.demo.DataIndex",
   "Demos.Components.Table.demo.RouterPagging",
   "Demos.Components.Table.demo.Bordered",
   "Demos.Components.Table.demo.FixedColumns",
