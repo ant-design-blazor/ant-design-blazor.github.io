@@ -1855,7 +1855,7 @@
         "Name": "Tooltip",
         "Title": "控制 ToolTip 的显示",
         "Description": "<p>当 <code>tooltipVisible</code> 为 true 时，将始终显示 ToolTip；反之则始终不显示，即使在拖动、移入时也是如此。</p>\n",
-        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"32\" TooltipPlacement=\"top\" TooltipVisible=\"true\" />\n</div>\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"32\" TooltipPlacement=\"@PlacementType.Top\" TooltipVisible=\"true\" />\n</div>\n",
         "Type": "Demos.Components.Slider.demo.Tooltip",
         "Style": "",
         "Debug": false
@@ -1895,7 +1895,7 @@
         "Name": "Customer",
         "Title": "自定义提示",
         "Description": "<p>使用 <code>tipFormatter</code> 可以格式化 <code>Tooltip</code> 的内容，设置 <code>tipFormatter=null</code>，则隐藏 Tooltip。</p>\n",
-        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"34\" Value=\"@value\" TipFormatter=\"tipFormatter\"  />\n</div>\n\n@code\n{\n\n    private int value { get; set; }\n\n    string tipFormatter()\n    {\n        return $\"{value}%\";\n    }\n}\n\n\n\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"34\" Value=\"@value\" TipFormatter=\"(d) => tipFormatter(d)\"  />\n</div>\n\n@code\n{\n\n    private int value { get; set; }\n\n    string tipFormatter(double currentEdgeValue)\n    {\n        return $\"{currentEdgeValue}%\";\n    }\n}\n\n\n\n",
         "Type": "Demos.Components.Slider.demo.Customer",
         "Style": "",
         "Debug": false
@@ -3482,7 +3482,7 @@
         "Name": "group",
         "Title": "Avatar.Group",
         "Description": "<p>头像组合展现。</p>\n",
-        "Code": "<AvatarGroup>\n    <Avatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <Avatar Style=\"background-color: #f56a00\">K</Avatar>\n    <Tooltip Title=@(\"Ant User\") Placement=\"PlacementType.Top\">\n        <Avatar Style=\"background-color: #87d068;\" Icon=\"user\" />\n    </Tooltip>\n    <Avatar Style=\"background-color: #1890ff;\" Icon=\"ant-design\" />\n</AvatarGroup>\n<Divider />\n<AvatarGroup MaxCount=\"2\" MaxStyle=\"color: #f56a00; background-color:#fde3cf;\">\n    <Avatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <Avatar Style=\"background-color: #f56a00\">K</Avatar>\n    <Tooltip Title=@(\"Ant User\") Placement=\"PlacementType.Top\">\n        <Avatar Style=\"background-color: #87d068;\" Icon=\"user\" />\n    </Tooltip>\n    <Avatar Style=\"background-color: #1890ff;\" Icon=\"ant-design\" />\n</AvatarGroup>",
+        "Code": "<AvatarGroup>\n    <Avatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <Avatar Style=\"background-color: #f56a00\">K</Avatar>\n    <Tooltip Title=@(\"Ant User\") Placement=\"PlacementType.Top\">\n        <Unbound>\n            <Avatar Style=\"background-color: #87d068;\" Icon=\"user\" RefBack=\"@context\"/>\n        </Unbound>\n    </Tooltip>\n    <Avatar Style=\"background-color: #1890ff;\" Icon=\"ant-design\" />\n</AvatarGroup>\n<Divider />\n<AvatarGroup MaxCount=\"2\" MaxStyle=\"color: #f56a00; background-color:#fde3cf;\">\n    <Avatar Src=\"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png\" />\n    <Avatar Style=\"background-color: #f56a00\">K</Avatar>\n    <Tooltip Title=@(\"Ant User\") Placement=\"PlacementType.Top\" >\n        <Unbound>\n            <Avatar Style=\"background-color: #87d068;\" Icon=\"user\" RefBack=\"@context\"/>\n        </Unbound>\n    </Tooltip>\n    <Avatar Style=\"background-color: #1890ff;\" Icon=\"ant-design\" />\n</AvatarGroup>",
         "Type": "Demos.Components.Avatar.demo.Group",
         "Style": "",
         "Debug": false
@@ -3652,7 +3652,7 @@
         "Name": "Basic",
         "Title": "基本使用",
         "Description": "<p>基本使用示例。</p>\n",
-        "Code": "<div>\n    <Input Placeholder=\"Basic usage\" Value=\"@txtValue\"  />\n    <br />\n    <br />\n    <Text>@txtValue</Text>\n</div>\n@code{\n    string txtValue { get; set; }\n}\n",
+        "Code": "<div>\n    <Input Placeholder=\"Basic usage\" @bind-Value=\"@txtValue\"  />\n    <br />\n    <br />\n    <Text>@txtValue</Text>\n</div>\n@code{\n    string txtValue { get; set; }\n}\n",
         "Type": "Demos.Components.Input.demo.Basic",
         "Style": "",
         "Debug": false
@@ -4286,7 +4286,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>最简单的用法。</p>\n",
-        "Code": "@inject MessageService _message\n\n<Popconfirm Title=\"Are you sure delete this task?\"\n            OnConfirm=\"Confirm\"\n            OnCancel=\"Cancel\"\n            OkText=\"Yes\"\n            CancelText=\"No\">\n    <a>Delete</a>\n</Popconfirm>\n\n@code{\n\n    private void Confirm()\n    {\n        _message.Success(\"Clicked on Yes\");\n    }\n\n    private void Cancel()\n    {\n        _message.Error(\"Clicked on No\");\n    }\n\n}",
+        "Code": "@inject MessageService _message\n\n<Popconfirm Title=\"Are you sure delete this task?\"\n            OnConfirm=\"Confirm\"\n            OnCancel=\"Cancel\"\n            OkText=\"Yes\"\n            CancelText=\"No\">\n    <a>Delete</a>\n</Popconfirm>\n<br />\n<Popconfirm Title=\"Are you sure delete this task?\"\n            OnConfirm=\"Confirm\"\n            OnCancel=\"Cancel\"\n            OkText=\"Yes\"\n            CancelText=\"No\">\n    <Unbound>\n        <a @ref=\"@context.Current\">Delete (unbound)</a>\n    </Unbound>\n</Popconfirm>\n\n@code{\n\n    private void Confirm()\n    {\n        _message.Success(\"Clicked on Yes\");\n    }\n\n    private void Cancel()\n    {\n        _message.Error(\"Clicked on No\");\n    }\n\n}",
         "Type": "Demos.Components.Popconfirm.demo.Basic",
         "Style": "",
         "Debug": false
@@ -4696,7 +4696,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>最简单的用法，浮层的大小由内容区域决定。</p>\n",
-        "Code": "<Popover ContentTemplate=\"@_content\" Title=\"Title\">\n    <Button type=\"primary\">Hover me</Button>\n</Popover>\n\n@code{\n    RenderFragment _content =\n    @<div>\n        <p>Content</p>\n        <p>Content</p>\n    </div>;\n}",
+        "Code": "<Popover ContentTemplate=\"@_content\" Title=\"Title\">\n    <Button type=\"primary\">Hover me</Button>\n</Popover>\n<br />\n<Popover ContentTemplate=\"@_content\" Title=\"Title\">\n    <Unbound>\n        <Button type=\"primary\" RefBack=\"@context\">Hover me (unbound)</Button>\n    </Unbound>\n</Popover>\n\n@code{\n    RenderFragment _content =\n    @<div>\n        <p>Content</p>\n        <p>Content</p>\n    </div>;\n}",
         "Type": "Demos.Components.Popover.demo.Basic",
         "Style": "\n.ant-popover-content p {\n  margin: 0;\n}\n\n",
         "Debug": false
@@ -5411,7 +5411,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>最简单的下拉菜单。</p>\n",
-        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <Icon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>",
+        "Code": "<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            Hover me <Icon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>\n<br />\n<Dropdown>\n    <Overlay>\n        <Menu>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.alipay.com/\">\n                    1st menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.taobao.com/\">\n                    2nd menu item\n                </a>\n            </MenuItem>\n            <MenuItem>\n                <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.tmall.com/\">\n                    3rd menu item\n                </a>\n            </MenuItem>\n        </Menu>\n    </Overlay>\n    <Unbound>\n        <a class=\"ant-dropdown-link\" @ref=\"@context.Current\" @onclick:preventDefault>\n            Hover me (unbounded) <Icon Type=\"down\" />\n        </a>\n    </Unbound>\n</Dropdown>",
         "Type": "Demos.Components.Dropdown.demo.Basic",
         "Style": "",
         "Debug": false
@@ -5625,7 +5625,7 @@
         "Name": "basic",
         "Title": "基本",
         "Description": "<p>最简单的用法。</p>\n",
-        "Code": "<Tooltip Title=\"@(\"prompt text\")\">\n    <span>Tooltip will show on mouse enter.</span>\n</Tooltip>",
+        "Code": "<Tooltip Title=\"@(\"prompt text (wrapped with div element)\")\">\n    <span>Tooltip will show on mouse enter.</span>\n</Tooltip>\n<br/>\n<Tooltip Title=\"@(\"prompt text (not wrapped)\")\">\n    <Unbound>\n        <span @ref=\"@context.Current\">Tooltip (unbounded) will show on mouse enter.</span>\n    </Unbound>\n</Tooltip>\n",
         "Type": "Demos.Components.Tooltip.demo.Basic",
         "Style": "",
         "Debug": false
