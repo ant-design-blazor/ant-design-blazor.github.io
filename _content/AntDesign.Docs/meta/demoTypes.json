@@ -441,6 +441,7 @@
   "Demos.Components.Table.demo.FixedColumns",
   "Demos.Components.Table.demo.CustomSort",
   "Demos.Components.Table.demo.TreeData",
+  "Demos.Components.Table.demo.MultipleSorter",
   "Demos.Components.Table.demo.ColspanRowspan",
   "Demos.Components.Table.demo.FixedColumnsHeader",
   "Demos.Components.Table.demo.Size",
