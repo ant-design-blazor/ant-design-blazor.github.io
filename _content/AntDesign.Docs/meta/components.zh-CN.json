@@ -5106,16 +5106,6 @@
         "Debug": false
       },
       {
-        "Order": 22,
-        "Name": "custom-row-style",
-        "Title": "�\u07B8�ÿ�е���ʽ",
-        "Description": "",
-        "Code": "@using System.ComponentModel\n@using AntDesign.TableModels\n\n<Table TItem=\"Data\" DataSource=\"@data\" OnRowClick=\"OnRowClick\" RowClassName=\"@(x => x.Data.RowClass)\">\n    <Column @bind-Field=\"@context.Name\">\n        <a>@context.Name</a>\n    </Column>\n    <Column @bind-Field=\"@context.Score\"></Column>\n</Table>\n\n<style>\n    .danger {\n        background-color: #fff1f0;\n    }\n</style>\n\n@code{\n    Data[] data = new Data[]\n    {\n        new()\n        {\n            Key = \"1\",\n            Name = \"John Brown\",\n            Score = 95,\n        },\n        new()\n        {\n            Key = \"2\",\n            Name = \"Jim Green\",\n            Score = 87,\n        },\n        new()\n        {\n            Key = \"3\",\n            Name = \"Joe Black\",\n            Score = 65,\n        }\n    };\n\n    public class Data\n    {\n        [DisplayName(\"Key\")]\n        public string Key { get; set; }\n\n        [DisplayName(\"Name\")]\n        public string Name { get; set; }\n\n        [DisplayName(\"Score\")]\n        public int Score { get; set; }\n\n        public string RowClass => Score < 70 ? \"danger\" : \"\";\n    }\n\n    void OnRowClick(RowData<Data> row)\n    {\n        Console.WriteLine($\"row {row.Data.Key} was clicked\");\n    }\n}",
-        "Type": "Demos.Components.Table.demo.CustomRowStyle",
-        "Style": "",
-        "Debug": false
-      },
-      {
         "Order": 17,
         "Name": "tree-data",
         "Title": "树形数据展示",
