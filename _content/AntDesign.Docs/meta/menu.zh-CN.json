@@ -567,6 +567,14 @@
           },
           {
             "Order": 0,
+            "Title": "Image",
+            "SubTitle": "图片",
+            "Type": "menuItem",
+            "Url": "components/image",
+            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/D1dXz9PZqa/image.svg"
+          },
+          {
+            "Order": 0,
             "Title": "List",
             "SubTitle": "列表",
             "Type": "menuItem",

@@ -506,6 +506,13 @@
           },
           {
             "Order": 0,
+            "Title": "Image",
+            "Type": "menuItem",
+            "Url": "components/image",
+            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/D1dXz9PZqa/image.svg"
+          },
+          {
+            "Order": 0,
             "Title": "List",
             "Type": "menuItem",
             "Url": "components/list",

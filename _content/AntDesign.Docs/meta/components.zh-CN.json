@@ -5633,6 +5633,47 @@
     ]
   },
   {
+    "Title": "Image",
+    "SubTitle": "图片",
+    "Type": "数据展示",
+    "Desc": "<p>可预览的图片。</p>\n<h2>何时使用</h2>\n<ul>\n<li>需要展示图片时使用。</li>\n<li>加载大图时显示 loading 或加载失败时容错处理。</li>\n</ul>\n",
+    "ApiDoc": "<h2 id=\"API\"><span>API</span><a href=\"zh-CN/components/image#API\" class=\"anchor\">#</a></h2>\n<table>\n<thead>\n<tr>\n<th>参数</th>\n<th>说明</th>\n<th>类型</th>\n<th>默认值</th>\n<th>版本</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>alt</td>\n<td>图像描述</td>\n<td>string</td>\n<td>-</td>\n<td>4.6.0</td>\n</tr>\n<tr>\n<td>fallback</td>\n<td>加载失败容错地址</td>\n<td>string</td>\n<td>-</td>\n<td>4.6.0</td>\n</tr>\n<tr>\n<td>height</td>\n<td>图像高度</td>\n<td>string | number</td>\n<td>-</td>\n<td>4.6.0</td>\n</tr>\n<tr>\n<td>placeholder</td>\n<td>加载占位, 为 <code>true</code> 时使用默认占位</td>\n<td>ReactNode</td>\n<td>-</td>\n<td>4.6.0</td>\n</tr>\n<tr>\n<td>preview</td>\n<td>预览参数，为 <code>false</code> 时禁用</td>\n<td>boolean | <a href=\"#previewType\">previewType</a></td>\n<td>true</td>\n<td>4.6.0 <a href=\"#previewType\">previewType</a>:4.7.0</td>\n</tr>\n<tr>\n<td>src</td>\n<td>图片地址</td>\n<td>string</td>\n<td>-</td>\n<td>4.6.0</td>\n</tr>\n<tr>\n<td>width</td>\n<td>图像宽度</td>\n<td>string | number</td>\n<td>-</td>\n<td>4.6.0</td>\n</tr>\n</tbody>\n</table>\n<h3>previewType</h3>\n<pre><code class=\"language-js\">{\n  visible?: boolean;\n  onVisibleChange?: (visible, prevVisible) =&gt; void;\n}\n</code></pre>\n<p>其他属性见 <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes\">&lt;img&gt;</a></p>\n",
+    "Cols": 2,
+    "Cover": "https://gw.alipayobjects.com/zos/antfincdn/D1dXz9PZqa/image.svg",
+    "DemoList": [
+      {
+        "Order": 0,
+        "Name": "basic",
+        "Title": "基本用法",
+        "Description": "<p>单击图像可以放大显示。</p>\n",
+        "Code": "<Image Width=\"200px\" Src=\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png\" />",
+        "Type": "Demos.Components.Image.demo.Basic",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 3,
+        "Name": "placeholder",
+        "Title": "渐进加载",
+        "Description": "<p>大图使用 placeholder 渐进加载。</p>\n",
+        "Code": "<Space Size=\"12px\">\n    <SpaceItem>\n        <Image Width=\"200px\" Src=\"@($\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?{random}\")\">\n            <Placeholder>\n                <Image Preview=\"false\" Src=\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200\" Width=\"200px\" />\n            </Placeholder>\n        </Image>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"primary\" OnClick=\"SetRandom\">\n            Reload\n        </Button>\n    </SpaceItem>\n</Space>\n\n@code{\n    long random;\n\n    private void SetRandom()\n    {\n        random = DateTime.Now.Ticks;\n    }\n}",
+        "Type": "Demos.Components.Image.demo.Placeholder",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 1,
+        "Name": "fallback",
+        "Title": "容错处理",
+        "Description": "<p>加载失败显示图像占位符。</p>\n",
+        "Code": "<Image Width=\"200px\"\n       Height=\"200px\"\n       Src=\"error\"\n       Fallback=\"data:image/png;base64,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\" />",
+        "Type": "Demos.Components.Image.demo.Fallback",
+        "Style": "",
+        "Debug": false
+      }
+    ]
+  },
+  {
     "Title": "Tooltip",
     "SubTitle": "文字提示",
     "Type": "数据展示",

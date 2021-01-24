@@ -181,7 +181,7 @@
       "url": "_content\/AntDesign.Docs\/chartsdata\/subsales.json"
     },
     {
-      "hash": "sha256-66sL6HlFfige9cSGwokm0BmC8cCpYW5y+54FNRbhzVU=",
+      "hash": "sha256-JgHDX+Gs7JJwkOlasAOAL7+IITFFZPM3Zp6efnfRCJk=",
       "url": "_content\/AntDesign.Docs\/css\/docs.css"
     },
     {
@@ -249,23 +249,23 @@
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
     },
     {
-      "hash": "sha256-8EE61NuHD\/iLj7OLEYe6\/6UNnEvH8o\/mm+HPQ5TNyxc=",
+      "hash": "sha256-jgJqD6eg+hYyuTg1\/DePHaG3WteLIUwkYlLLNl6Tv9c=",
       "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
     },
     {
-      "hash": "sha256-fGGkuPbD0kb2TkS1Ye4pIlWqy6heoeXa65u8RtEsF\/Y=",
+      "hash": "sha256-6ufjDgNPzW5onVM+WceKQ28pQgwq5glTYFcAlAoP2tQ=",
       "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
     },
     {
-      "hash": "sha256-IycruaP+yySR1Ar6AJ3O5nqXNNaXdR52ikYP5tHhn+w=",
+      "hash": "sha256-mZlGpD9Hmf9iB9dSQqLb7\/E\/5FgxRLwOFo4QiA9iyOo=",
       "url": "_content\/AntDesign.Docs\/meta\/demos.en-US.json"
     },
     {
-      "hash": "sha256-KIXa\/ZGIGqoEvEMFAjQ1TLhEFZYIdMRU2PdGVX4q+vw=",
+      "hash": "sha256-2eSIxrvqgvNR+AwbnOFMuArc0\/d3M9fpAvk4AQIUl7w=",
       "url": "_content\/AntDesign.Docs\/meta\/demos.zh-CN.json"
     },
     {
-      "hash": "sha256-TZlRe8N3hJfvspjcSyFQ6Bd2Fg6UtWkCOwt\/WGohbw4=",
+      "hash": "sha256-P6mJnezM68SMBdO+Ll71wC4srmoC1R5JGEcj2Sgw7iE=",
       "url": "_content\/AntDesign.Docs\/meta\/demoTypes.json"
     },
     {
@@ -277,15 +277,15 @@
       "url": "_content\/AntDesign.Docs\/meta\/docs.zh-CN.json"
     },
     {
-      "hash": "sha256-yT0kWis+8UrHOfgFhaNXnK9lBmQbes1O5fgJxWyMhIU=",
+      "hash": "sha256-OkgqZiiRAF+uoC+9Lj3c3OddLpyldI55h2GHXNemAgs=",
       "url": "_content\/AntDesign.Docs\/meta\/menu.en-US.json"
     },
     {
-      "hash": "sha256-vqxL2I3A5Wyn2bkRviaLC3c0v9f6dApff\/cxt\/suazY=",
+      "hash": "sha256-d0ygw8Pjhv4kIyziasqu\/DzFB4X2IqhcGcgZoJ340Wc=",
       "url": "_content\/AntDesign.Docs\/meta\/menu.zh-CN.json"
     },
     {
-      "hash": "sha256-sXm1kUCFPCv8ZnHwdm4cUxiECkIceXVnIhoaTnNbXQU=",
+      "hash": "sha256-mz0QPDr31eIRz74gRM8HLxGwViUcCKIYMDrkr\/9ghhs=",
       "url": "_content\/AntDesign\/css\/ant-design-blazor.css"
     },
     {
@@ -505,7 +505,7 @@
       "url": "_content\/AntDesign\/less\/comment\/style\/rtl.less"
     },
     {
-      "hash": "sha256-NybIMm6pMuwbMz97HG9LB2eoXJ\/gbmzzJfhwsBSM\/9k=",
+      "hash": "sha256-XGoWXb3EXsMsVJW9Qzy3VQcWVAr+2jYZZEWazBM1TgU=",
       "url": "_content\/AntDesign\/less\/components.less"
     },
     {
@@ -703,6 +703,10 @@
     {
       "hash": "sha256-94PGYptRzKURcJc1UdaVQlfYnsJaRIJ79RG2tP14Dkk=",
       "url": "_content\/AntDesign\/less\/icon\/style\/index.less"
+    },
+    {
+      "hash": "sha256-JVAs4UR39aDS+DkzKUq0FciwuwyQ\/ALfs0lJIMpDP\/Y=",
+      "url": "_content\/AntDesign\/less\/image\/style\/entry.less"
     },
     {
       "hash": "sha256-gvuYMqDdyWZ552Rj0Pv79WjnnL8XhYo5wgOJOZEkbBk=",
@@ -1517,15 +1521,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-vTbxU7rUe3tcocw48PYTdVJsrgrYc30xu\/t1jan52zA=",
+      "hash": "sha256-jzPQjqz2acSV7wUq6cJgrMmWz\/I1poUXhaOd3hdq5+4=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-9Qk2mJgjgHjWZogKWage7DV1AGhMR7OvIlcD5yDKCdg=",
+      "hash": "sha256-c12zam9nxORZsfp7N9lYy7XxJXd2pa\/xOA6RIZxFEsQ=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-\/0t7HX5QdO142UXGKhrMwqAXt09k5e2jOy53aqwMC1U=",
+      "hash": "sha256-0Qe4ri0kAJFE7T3pktQe\/feodgdHpaJrpeR6t\/EB5YU=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1641,7 +1645,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-FG08Cq4oxjEZfpi\/ImAUnEQiPCw1yaGsjiGXui\/oQrE=",
+      "hash": "sha256-PNgCInw11iomPnTvpMPKBhkVvSgPVPu0IGi2McspvIQ=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1649,5 +1653,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "Xf1+\/8Xv"
+  "version": "OHbEI\/0T"
 };
