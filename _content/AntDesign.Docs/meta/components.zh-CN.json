@@ -5040,7 +5040,7 @@
         "Name": "head",
         "Title": "筛选和排序",
         "Description": "<p><em>⚠注意: 排序方式设置 与 筛选 将在下个版本中提供</em></p>\n<p>对某一列数据进行筛选，使用列的 <code>filters</code> 属性来指定需要筛选菜单的列，<code>onFilter</code> 用于筛选当前数据，<code>filterMultiple</code> 用于指定多选和单选。</p>\n<p>对某一列数据进行排序，通过指定列的 <code>sorter</code> 函数即可启动排序按钮。<code>sorter: function(rowA, rowB) { ... }</code>， rowA、rowB 为比较的两个行数据。</p>\n<p><code>sortDirections: ['ascend' | 'descend']</code>改变每列可用的排序方式，切换排序时按数组内容依次切换，设置在 table props 上时对所有列生效。你可以通过设置 <code>['ascend', 'descend', 'ascend']</code> 禁止排序恢复到默认状态。</p>\n<p>使用 <code>defaultSortOrder</code> 属性，设置列的默认排序顺序。</p>\n",
-        "Code": "<Table DataSource=\"data\" OnChange=\"OnChange\" TItem=\"Column\">\n    <Column @bind-Field=\"@context.Name\" Width=\"150\" Sortable />\n    <Column @bind-Field=\"@context.Age\" Width=\"150\" Sortable />\n    <Column @bind-Field=\"@context.Address\" Sortable />\n</Table>\n\n\n@using AntDesign.TableModels;\n@using System.Text.Json; \n@code {\n    class Column\n    {\n        public string Name { get; set; }\n\n        public int Age { get; set; }\n\n        public string Address { get; set; }\n    }\n\n    Column[] data = new Column[]\n    {\n        new()\n        {\n            Name = \"John Brown\",\n            Age = 32,\n            Address = \"New York No. 1 Lake Park\"\n        },\n        new()\n        {\n            Name = \"Jim Green\",\n            Age = 42,\n            Address = \"London No. 1 Lake Park\"\n        },\n        new()\n        {\n            Name = \"Joe Black\",\n            Age = 32,\n            Address = \"Sidney No. 1 Lake Park\"\n        },\n        new()\n        {\n            Name = \"Jim Red\",\n            Age = 32,\n            Address = \"London No. 2 Lake Park\"\n        },\n    };\n\n    void OnChange(QueryModel<Column> query)\n    {\n        Console.WriteLine(JsonSerializer.Serialize(query));\n    }\n}\n",
+        "Code": "<Table DataSource=\"data\" OnChange=\"OnChange\" TItem=\"Column\">\n    <Column TData=\"string\" \n        DataIndex=\"@nameof(context.Name)\" \n        SorterCompare=\"@((a,b)=> a.Length - b.Length)\" \n        SortDirections=\"new[] { SortDirection.Descending }\"/>\n    <Column TData=\"int\" \n        DataIndex=\"@nameof(context.Age)\" \n        DefaultSortOrder=\"@SortDirection.Descending\"\n        SorterCompare=\"@((a,b)=> a - b)\"  />\n    <Column TData=\"string\" \n        DataIndex=\"@nameof(context.Address)\" \n        SorterCompare=\"@((a,b)=> a.Length - b.Length)\" \n        SortDirections=\"new[] { SortDirection.Descending, SortDirection.Ascending }\"\n        />\n</Table>\n\n\n@using AntDesign.TableModels;\n@using System.Text.Json;\n@code {\n\n    record Column(string Name, int Age, string Address);\n\n    Column[] data =\n    {\n        new(\"John Brown\",32,\"New York No. 1 Lake Park\"),\n        new(\"Jim Green\",42, \"London No. 1 Lake Park\"),\n        new(\"Joe Black\", 32,\"Sidney No. 1 Lake Park\"),\n        new(\"Jim Red\",32,\"London No. 2 Lake Park\"),\n    };\n\n    void OnChange(QueryModel<Column> query)\n    {\n        Console.WriteLine(JsonSerializer.Serialize(query));\n    }\n}\n",
         "Type": "Demos.Components.Table.demo.Head_",
         "Style": "",
         "Debug": false
@@ -5106,6 +5106,16 @@
         "Debug": false
       },
       {
+        "Order": 22,
+        "Name": "custom-row-style",
+        "Title": "�\u07B8�ÿ�е���ʽ",
+        "Description": "",
+        "Code": "@using System.ComponentModel\n@using AntDesign.TableModels\n\n<Table TItem=\"Data\" DataSource=\"@data\" OnRowClick=\"OnRowClick\" RowClassName=\"@(x => x.Data.RowClass)\">\n    <Column @bind-Field=\"@context.Name\">\n        <a>@context.Name</a>\n    </Column>\n    <Column @bind-Field=\"@context.Score\"></Column>\n</Table>\n\n<style>\n    .danger {\n        background-color: #fff1f0;\n    }\n</style>\n\n@code{\n    Data[] data = new Data[]\n    {\n        new()\n        {\n            Key = \"1\",\n            Name = \"John Brown\",\n            Score = 95,\n        },\n        new()\n        {\n            Key = \"2\",\n            Name = \"Jim Green\",\n            Score = 87,\n        },\n        new()\n        {\n            Key = \"3\",\n            Name = \"Joe Black\",\n            Score = 65,\n        }\n    };\n\n    public class Data\n    {\n        [DisplayName(\"Key\")]\n        public string Key { get; set; }\n\n        [DisplayName(\"Name\")]\n        public string Name { get; set; }\n\n        [DisplayName(\"Score\")]\n        public int Score { get; set; }\n\n        public string RowClass => Score < 70 ? \"danger\" : \"\";\n    }\n\n    void OnRowClick(RowData<Data> row)\n    {\n        Console.WriteLine($\"row {row.Data.Key} was clicked\");\n    }\n}",
+        "Type": "Demos.Components.Table.demo.CustomRowStyle",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 17,
         "Name": "tree-data",
         "Title": "树形数据展示",
@@ -5120,7 +5130,7 @@
         "Name": "multiple-sorter",
         "Title": "多列排序",
         "Description": "<p><code>Column</code> 支持 <code>SorterMultiple</code> 字段以配置多列排序优先级。通过 <code>SorterCompare</code> 配置排序逻辑，你可以通过不设置该函数只启动多列排序的交互形式。</p>\n",
-        "Code": "<Table DataSource=\"data\">\n    <Column Title=\"Name\" DataIndex=\"name\" TData=\"string\" />\n    <Column Title=\"Chinese Score\" DataIndex=\"chinese\" TData=\"int\" SorterMultiple=\"3\" SorterCompare=\"(a,b)=>a-b\"/>\n    <Column Title=\"Math Score\" DataIndex=\"math\" TData=\"int\" SorterMultiple=\"2\" SorterCompare=\"(a,b)=>a-b\"/>\n    <Column Title=\"English Score\" DataIndex=\"english\" TData=\"int\" SorterMultiple=\"1\" SorterCompare=\"(a,b)=>a-b\"/>\n</Table> \n@code {\n\n    public record Data(string Name,int Chinese,int Math,int English);\n\n    public Data[] data = new Data[]\n    {\n        new(\"John Brown\",98,60,70),\n        new(\"Jim Green\",98,66,89),\n        new(\"Joe Black\",98,90,70),\n        new(\"Jim Red\",88,99,89),\n    };\n}\n",
+        "Code": "<Table DataSource=\"data\">\n    <Column Title=\"Name\" DataIndex=\"name\" TData=\"string\" />\n    <Column Title=\"Chinese Score\" DataIndex=\"chinese\" TData=\"int\" SorterMultiple=\"3\" SorterCompare=\"(a,b)=>a-b\"/>\n    <Column Title=\"Math Score\" DataIndex=\"math\" TData=\"int\" SorterMultiple=\"2\" SorterCompare=\"(a,b)=>a-b\"/>\n    <Column Title=\"English Score\" DataIndex=\"english\" TData=\"int\" SorterMultiple=\"1\" SorterCompare=\"(a,b)=>a-b\"/>\n</Table> \n@code {\n\n    public record Data(string Name,int Chinese,int Math,int English);\n\n    public Data[] data =\n    {\n        new(\"John Brown\",98,60,70),\n        new(\"Jim Green\",98,66,89),\n        new(\"Joe Black\",98,90,70),\n        new(\"Jim Red\",88,99,89),\n    };\n}\n",
         "Type": "Demos.Components.Table.demo.MultipleSorter",
         "Style": "",
         "Debug": false
