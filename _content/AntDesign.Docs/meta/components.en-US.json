@@ -1792,7 +1792,7 @@
         "Name": "Basic",
         "Title": "Basic",
         "Description": "<p>Basic slider. When <code>range</code> is <code>true</code>, display as dual thumb mode. When <code>disable</code> is <code>true</code>, the slider will not be interactable.</p>\n",
-        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"35\" Disabled=\"@Diabled\"  />\n    <Slider TValue=\"(double, double)\" DefaultValue=\"(20, 50)\" Disabled=\"@Diabled\" />\n    Diabled: <Switch Size=\"small\" Checked=\"@Diabled\" OnChange=\"(e)=>OnSwitch(e)\" />\n</div>\n\n@code\n{\n\n    private bool Diabled;\n\n    private void OnSwitch(bool args)\n    {\n        Diabled = args;\n    }\n}\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"35\" Disabled=\"@_disabled\"  />\n    <Slider TValue=\"(double, double)\" DefaultValue=\"(20, 50)\" Disabled=\"@_disabled\" />\n    Disabled: <Switch Size=\"small\" Checked=\"@_disabled\" OnChange=\"(e)=>OnSwitch(e)\" />\n</div>\n\n@code\n{\n\n    private bool _disabled;\n\n    private void OnSwitch(bool args)\n    {\n        _disabled = args;\n    }\n}\n",
         "Type": "Demos.Components.Slider.demo.Basic",
         "Style": "",
         "Debug": false

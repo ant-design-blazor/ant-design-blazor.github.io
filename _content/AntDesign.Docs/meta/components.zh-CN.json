@@ -1825,7 +1825,7 @@
         "Name": "Basic",
         "Title": "基本",
         "Description": "<p>基本滑动条。当 <code>range</code> 为 <code>true</code> 时，渲染为双滑块。当 <code>disabled</code> 为 <code>true</code> 时，滑块处于不可用状态。</p>\n",
-        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"35\" Disabled=\"@Diabled\"  />\n    <Slider TValue=\"(double, double)\" DefaultValue=\"(20, 50)\" Disabled=\"@Diabled\" />\n    Diabled: <Switch Size=\"small\" Checked=\"@Diabled\" OnChange=\"(e)=>OnSwitch(e)\" />\n</div>\n\n@code\n{\n\n    private bool Diabled;\n\n    private void OnSwitch(bool args)\n    {\n        Diabled = args;\n    }\n}\n",
+        "Code": "<div>\n    <Slider TValue=\"double\" DefaultValue=\"35\" Disabled=\"@_disabled\"  />\n    <Slider TValue=\"(double, double)\" DefaultValue=\"(20, 50)\" Disabled=\"@_disabled\" />\n    Disabled: <Switch Size=\"small\" Checked=\"@_disabled\" OnChange=\"(e)=>OnSwitch(e)\" />\n</div>\n\n@code\n{\n\n    private bool _disabled;\n\n    private void OnSwitch(bool args)\n    {\n        _disabled = args;\n    }\n}\n",
         "Type": "Demos.Components.Slider.demo.Basic",
         "Style": "",
         "Debug": false
