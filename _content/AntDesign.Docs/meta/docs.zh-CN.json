@@ -1,5 +1,11 @@
 [
   {
+    "Order": 5,
+    "Title": "路径式属性访问",
+    "Type": "menuItem",
+    "Url": "docs/path-based-property-access"
+  },
+  {
     "Order": 4,
     "Title": "国际化",
     "Type": "menuItem",

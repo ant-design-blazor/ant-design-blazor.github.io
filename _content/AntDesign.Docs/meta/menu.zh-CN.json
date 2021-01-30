@@ -24,6 +24,12 @@
         "Url": "docs/i18n"
       },
       {
+        "Order": 5,
+        "Title": "路径式属性访问",
+        "Type": "menuItem",
+        "Url": "docs/path-based-property-access"
+      },
+      {
         "Order": 11,
         "Title": "贡献指南",
         "Type": "menuItem",

@@ -18,6 +18,12 @@
     "Url": "docs/i18n"
   },
   {
+    "Order": 5,
+    "Title": "Path-based property access",
+    "Type": "menuItem",
+    "Url": "docs/path-based-property-access"
+  },
+  {
     "Order": 1,
     "Title": "Getting Started",
     "Type": "menuItem",

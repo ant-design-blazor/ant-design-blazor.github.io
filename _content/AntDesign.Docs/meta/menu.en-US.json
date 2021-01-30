@@ -24,6 +24,12 @@
         "Url": "docs/i18n"
       },
       {
+        "Order": 5,
+        "Title": "Path-based property access",
+        "Type": "menuItem",
+        "Url": "docs/path-based-property-access"
+      },
+      {
         "Order": 11,
         "Title": "How to Contribute",
         "Type": "menuItem",
