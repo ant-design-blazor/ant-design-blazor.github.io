@@ -1,5 +1,11 @@
 [
   {
+    "Order": 4,
+    "Title": "国际化",
+    "Type": "menuItem",
+    "Url": "docs/i18n"
+  },
+  {
     "Order": 1,
     "Title": "快速上手",
     "Type": "menuItem",
@@ -10,12 +16,6 @@
     "Title": "Ant Design of Blazor",
     "Type": "menuItem",
     "Url": "docs/introduce"
-  },
-  {
-    "Order": 4,
-    "Title": "国际化",
-    "Type": "menuItem",
-    "Url": "docs/i18n"
   },
   {
     "Order": 11,
