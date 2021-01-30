@@ -1361,12 +1361,32 @@
         "Debug": false
       },
       {
+        "Order": 6,
+        "Name": "previewSrc",
+        "Title": "自定义预览图片",
+        "Description": "<p>可以设置不同的预览图片。</p>\n",
+        "Code": "<Image Width=\"200\"\n       Src=\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200\"\n       PreviewSrc=\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png\" />",
+        "Type": "Demos.Components.Image.demo.PreviewSrc",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 3,
         "Name": "placeholder",
         "Title": "渐进加载",
         "Description": "<p>大图使用 placeholder 渐进加载。</p>\n",
         "Code": "<Space Size=\"12px\">\n    <SpaceItem>\n        <Image Width=\"200px\" Src=\"@($\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?{random}\")\">\n            <Placeholder>\n                <Image Preview=\"false\" Src=\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200\" Width=\"200px\" />\n            </Placeholder>\n        </Image>\n    </SpaceItem>\n    <SpaceItem>\n        <Button Type=\"primary\" OnClick=\"SetRandom\">\n            Reload\n        </Button>\n    </SpaceItem>\n</Space>\n\n@code{\n    long random;\n\n    private void SetRandom()\n    {\n        random = DateTime.Now.Ticks;\n    }\n}",
         "Type": "Demos.Components.Image.demo.Placeholder",
+        "Style": "",
+        "Debug": false
+      },
+      {
+        "Order": 5,
+        "Name": "previewGroup",
+        "Title": "多张图片预览",
+        "Description": "<p>点击左右切换按钮可以预览多张图片。</p>\n",
+        "Code": "<ImagePreviewGroup>\n    <Image Width=\"200\" Src=\"https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg\" />\n    <Image Width=\"200\" Src=\"https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg\" />\n</ImagePreviewGroup>",
+        "Type": "Demos.Components.Image.demo.PreviewGroup",
         "Style": "",
         "Debug": false
       }
