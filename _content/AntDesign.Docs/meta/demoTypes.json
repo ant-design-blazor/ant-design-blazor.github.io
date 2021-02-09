@@ -238,6 +238,7 @@
   "Demos.Components.Dropdown.demo.SubMenuDemo",
   "Demos.Components.Dropdown.demo.DropdownButtonDemo",
   "Demos.Components.Dropdown.demo.ContextMenu",
+  "Demos.Components.Dropdown.demo.BoundaryAdjustMode",
   "Demos.Components.Dropdown.demo.OverlayVisible",
   "Demos.Components.Skeleton.demo.Basic",
   "Demos.Components.Skeleton.demo.List",

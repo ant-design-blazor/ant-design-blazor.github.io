@@ -2667,6 +2667,16 @@
         "Debug": false
       },
       {
+        "Order": 20,
+        "Name": "boundary-adjust-mode",
+        "Title": "boundary detection and orientation adjustment",
+        "Description": "<p>boundary detection and orientation adjustment.</p>\n",
+        "Code": "<Dropdown BoundaryAdjustMode=\"@TriggerBoundaryAdjustMode.None\">\n    <Overlay>\n        <Menu>\n            <MenuItem>1st menu item</MenuItem>\n            <MenuItem>2nd menu item</MenuItem>\n            <MenuItem>3rd menu item</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            None mode: Hover me <Icon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>\n<p />\n\n<Dropdown BoundaryAdjustMode=\"@TriggerBoundaryAdjustMode.InView\">\n    <Overlay>\n        <Menu>\n            <MenuItem>1st menu item</MenuItem>\n            <MenuItem>2nd menu item</MenuItem>\n            <MenuItem>3rd menu item</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            InView mode: Hover me <Icon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>\n<p />\n\n<Dropdown BoundaryAdjustMode=\"@TriggerBoundaryAdjustMode.InScroll\">\n    <Overlay>\n        <Menu>\n            <MenuItem>1st menu item</MenuItem>\n            <MenuItem>2nd menu item</MenuItem>\n            <MenuItem>3rd menu item</MenuItem>\n        </Menu>\n    </Overlay>\n    <ChildContent>\n        <a class=\"ant-dropdown-link\" @onclick:preventDefault>\n            InScroll mode: Hover me <Icon Type=\"down\" />\n        </a>\n    </ChildContent>\n</Dropdown>\n<br />",
+        "Type": "Demos.Components.Dropdown.demo.BoundaryAdjustMode",
+        "Style": "",
+        "Debug": false
+      },
+      {
         "Order": 7,
         "Name": "overlay-visible",
         "Title": "The way of hiding menu.",
