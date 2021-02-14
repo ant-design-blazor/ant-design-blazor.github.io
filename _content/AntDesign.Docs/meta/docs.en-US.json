@@ -1,5 +1,11 @@
 [
   {
+    "Order": 5,
+    "Title": "Path-based property access",
+    "Type": "menuItem",
+    "Url": "docs/path-based-property-access"
+  },
+  {
     "Order": 0,
     "Title": "Ant Design of Blazor",
     "Type": "menuItem",
@@ -16,12 +22,6 @@
     "Title": "Internationalization",
     "Type": "menuItem",
     "Url": "docs/i18n"
-  },
-  {
-    "Order": 5,
-    "Title": "Path-based property access",
-    "Type": "menuItem",
-    "Url": "docs/path-based-property-access"
   },
   {
     "Order": 1,
