@@ -85,7 +85,7 @@
       "url": "docs\/path-based-property-access.zh-CN.md"
     },
     {
-      "hash": "sha256-IFdslqmsOuh2pdXPkVXRhGDo1m\/zj3EWXjsfpjiFtwc=",
+      "hash": "sha256-+HO60qHs3YU5kIGoIVMR0DRnZlw2ZbBnVAAd3UZyf8A=",
       "url": "index.html"
     },
     {
@@ -265,11 +265,11 @@
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
     },
     {
-      "hash": "sha256-cGXDcCJiXqXPnb97GBx4+nhWVRzCJNxo+EEBLyt5A9M=",
+      "hash": "sha256-omOi\/yIu2Hg2V5hM0dgFAroT9x7Tc4GYcBGMBoO8ZfQ=",
       "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
     },
     {
-      "hash": "sha256-+rS8xS0\/S8hU0Yt4RoGoAkdTSyGofreY1VOWhGYWy2E=",
+      "hash": "sha256-6XCDg9jadRKOcelLzaQtd6y1O0fjI1\/8VRE5UhndZfA=",
       "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
     },
     {
@@ -281,7 +281,7 @@
       "url": "_content\/AntDesign.Docs\/meta\/demos.zh-CN.json"
     },
     {
-      "hash": "sha256-PUfKmZL3tzWnlbeiMsyFXOkZXIe3oTjzBZGybOpTUPg=",
+      "hash": "sha256-In\/t3UHbiiDaEEVU+3EzvhnviV1AnyAThxZfJ4kkUnA=",
       "url": "_content\/AntDesign.Docs\/meta\/demoTypes.json"
     },
     {
@@ -1537,15 +1537,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-qvZYgHHjgvQGvIlDgsapFdRfPzUmVwCT+cLnZELc5jI=",
+      "hash": "sha256-kDWppqLjHwxNl4iWQ6mVhlwtxxR81o+Ifxk97EQZOcM=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-1epR759d1NvtJYvkbPfqxxaKInAxTkK1qK\/6OLgJnFU=",
+      "hash": "sha256-Owp4VajNkST8tQAJ7w5TsxtZC0SYG6Kl3qRIvBhq9As=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-9dqhx3FVGGvipdDWVwd9VCzhXuOgu6eNj8MzRAjOV1M=",
+      "hash": "sha256-pbFCOToAV45Bi4xJkqHsYiWz2dmIrszKwve0BNvA2UM=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1661,7 +1661,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-h3tjfyRf6On73svlmQjRgLr7rt4pT6m1A5N1lEwpHWc=",
+      "hash": "sha256-DslsmqIh0\/bZGMlg7HX3UkzY9LjwXBjw99e3DBH3WNA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1669,5 +1669,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "LcKOnSjq"
+  "version": "qZEA4J9x"
 };
