@@ -85,7 +85,7 @@
       "url": "docs\/path-based-property-access.zh-CN.md"
     },
     {
-      "hash": "sha256-HR9PbYsIb+gMNcOK2TCqoP60PUptjyY4rRj3bZiVTmM=",
+      "hash": "sha256-Nrq2xexZc6Zc8XpsuAub7txEvi622XtX0iFHq\/U7WFA=",
       "url": "index.html"
     },
     {
@@ -1537,15 +1537,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-qR\/rCcwsgF0vlkQK1ZnhzfLnfcYDOEsybU0oNQDerxc=",
+      "hash": "sha256-ZjUXTiHi3Bfny0PFN8oPRJKdJGp5QxQS7THwzUE1k04=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-oERtv0Z8TFBvNvrlgYdF7fKo2lQqGAscpjSPjbKgQ7E=",
+      "hash": "sha256-VEwd7qjXoRB43o+lE0qdK7biNbjsO0CSF6QTNiJsL3w=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-OEZFCPQr4NwRVI27C63qIgdg2b84RY5zs4ZqWHT8iXk=",
+      "hash": "sha256-pqOXLF5HeT89wMIAT3ux0n3ScMSh\/HsmlKcdDbC+E8Y=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1593,7 +1593,7 @@
       "url": "_framework\/System.IO.FileSystem.dll"
     },
     {
-      "hash": "sha256-ai4D54xWSrha7hxJlbDP8h4+XM4kl0B80qWVv8ppMrY=",
+      "hash": "sha256-lCdspETcjUe7Yrj5V8S\/jmHiDMXkmIJ\/lae72bnMzCQ=",
       "url": "_framework\/System.Linq.Expressions.dll"
     },
     {
@@ -1661,7 +1661,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-ULntmiS3YI4c4\/WlKk9rdOGFgNFlV0jfsX8vI7kzuhs=",
+      "hash": "sha256-fJWK13bATtE5NIB3aYeF+C3qp9kYC5k\/cbN6CSs3a24=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1669,5 +1669,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "MmzxANqj"
+  "version": "B+2uByi1"
 };
