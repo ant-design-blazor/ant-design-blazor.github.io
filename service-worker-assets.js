@@ -25,18 +25,6 @@
       "url": "decode.js"
     },
     {
-      "hash": "sha256-dVcZI19emZk7RTuq\/ag0UKSlFPwkTJtW+6va7agEAtw=",
-      "url": "index.html"
-    },
-    {
-      "hash": "sha256-lpTcN73scrDHLApVILbzRMh8gI2\/DYL0GeApibMdcmA=",
-      "url": "logo.png"
-    },
-    {
-      "hash": "sha256-9BqfwMR2JXUrgDV55b1mzQrD74dp0TgS76ctWQHVplY=",
-      "url": "manifest.json"
-    },
-    {
       "hash": "sha256-RWvqG2KKLEd9\/EP0GcBjyfiew3zXNZbzWhuxGxVe8Ek=",
       "url": "docs\/assets\/blazor.svg"
     },
@@ -103,6 +91,18 @@
     {
       "hash": "sha256-4HgfWgB8735nyGQzgxp8i4GbXOo5QxN9HQhsWLTNSpE=",
       "url": "docs\/path-based-property-access.zh-CN.md"
+    },
+    {
+      "hash": "sha256-dVcZI19emZk7RTuq\/ag0UKSlFPwkTJtW+6va7agEAtw=",
+      "url": "index.html"
+    },
+    {
+      "hash": "sha256-lpTcN73scrDHLApVILbzRMh8gI2\/DYL0GeApibMdcmA=",
+      "url": "logo.png"
+    },
+    {
+      "hash": "sha256-9BqfwMR2JXUrgDV55b1mzQrD74dp0TgS76ctWQHVplY=",
+      "url": "manifest.json"
     },
     {
       "hash": "sha256-2ldEe2K8ARFKSIBsv+Hr3iNQzq9qh1H\/dwdu2r+AIyY=",
@@ -197,6 +197,10 @@
       "url": "_content\/AntDesign.Docs\/chartsdata\/subsales.json"
     },
     {
+      "hash": "sha256-1xYddLWYUp2+9NQ1BY7KQkbyUGYvVTmIz54zIZ5izsc=",
+      "url": "_content\/AntDesign.Docs\/css\/docs.css"
+    },
+    {
       "hash": "sha256-T1PNoYwrqgwDVLtfmj7L5e0Sq02OEbqHPC8RFhICuUU=",
       "url": "_content\/AntDesign.Docs\/data\/more-list.en-US.json"
     },
@@ -217,6 +221,54 @@
       "url": "_content\/AntDesign.Docs\/data\/recommend.zh-CN.json"
     },
     {
+      "hash": "sha256-fRhCivk4NcxA4Li0y7jtcGxqkdXcF8d9UwR2pHhqufk=",
+      "url": "_content\/AntDesign.Docs\/docs\/contributing.en-US.json"
+    },
+    {
+      "hash": "sha256-ra02m2s2\/JmviOb6FI5bYL\/X+fqUPCoCASEw9NJions=",
+      "url": "_content\/AntDesign.Docs\/docs\/contributing.zh-CN.json"
+    },
+    {
+      "hash": "sha256-lFd4v+bWjSE8A3zpFAzXsf10aKApoYArb3j6XfN4rUA=",
+      "url": "_content\/AntDesign.Docs\/docs\/getting-started.en-US.json"
+    },
+    {
+      "hash": "sha256-Ej03VHDxdbLrcjjRRKg+qsu16QPR2\/rS0tiHvBRU1XY=",
+      "url": "_content\/AntDesign.Docs\/docs\/getting-started.zh-CN.json"
+    },
+    {
+      "hash": "sha256-zzlSbX+wUINFVwgYJvwPlm2oXxyrJ7L2yTxX4uOSzj4=",
+      "url": "_content\/AntDesign.Docs\/docs\/i18n.en-US.json"
+    },
+    {
+      "hash": "sha256-aeZWjLJwMVgZl3nGGqDbbuxZRSmmSHH7NwBKgVt0e6g=",
+      "url": "_content\/AntDesign.Docs\/docs\/i18n.zh-CN.json"
+    },
+    {
+      "hash": "sha256-wG1qxNRQ638InzdlzylAvDKRROc+ZqlYRorUMX9APno=",
+      "url": "_content\/AntDesign.Docs\/docs\/introduce.en-US.json"
+    },
+    {
+      "hash": "sha256-E9kWMVJc54Anmz0gGJs6khoJHmU5z8GY71OQibNh7h4=",
+      "url": "_content\/AntDesign.Docs\/docs\/introduce.zh-CN.json"
+    },
+    {
+      "hash": "sha256-x7MBLRS6+OnXB2jESUZgua189mRWF342\/wn6TzqEsco=",
+      "url": "_content\/AntDesign.Docs\/docs\/nightly-build.en-US.json"
+    },
+    {
+      "hash": "sha256-BtCk6gu4\/AjhSupClxe2476LJTd58vZWRN5HLCBzv6k=",
+      "url": "_content\/AntDesign.Docs\/docs\/nightly-build.zh-CN.json"
+    },
+    {
+      "hash": "sha256-t9pHvX0lJonpR\/NdMX5SYiPyszgys8EKEQil1vlVLzQ=",
+      "url": "_content\/AntDesign.Docs\/docs\/path-based-property-access.en-US.json"
+    },
+    {
+      "hash": "sha256-KbOzXcgjlQeZQ3vDPjaD4h0PaIicy9V12fXkXC+7esk=",
+      "url": "_content\/AntDesign.Docs\/docs\/path-based-property-access.zh-CN.json"
+    },
+    {
       "hash": "sha256-VzC\/PgU\/0mipV5bF55k0A9R3PNytshZK4ihd+zfnkgw=",
       "url": "_content\/AntDesign.Docs\/home_bg.png"
     },
@@ -227,6 +279,42 @@
     {
       "hash": "sha256-nHcnj4EySk8UUjDABiY8nHKk\/XguZGXCKSNT+fTRQwM=",
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
+    },
+    {
+      "hash": "sha256-epcB3BjgjLE4bPhzYzfkj0yJv7VLBFKF5473bBypQek=",
+      "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
+    },
+    {
+      "hash": "sha256-jgFVin3WHfBM1DEiv2Kq6MEa68FfDAOcjDRBzAbHjOY=",
+      "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
+    },
+    {
+      "hash": "sha256-YdYiM6Ct+hG9y7E+lEdg2IYwBuHG+UWQORg4GiqnpMw=",
+      "url": "_content\/AntDesign.Docs\/meta\/demos.en-US.json"
+    },
+    {
+      "hash": "sha256-jr4WQ5v8tkwiyGYG0oUAKdR4GIdDkp3dcW4ic1qB0J8=",
+      "url": "_content\/AntDesign.Docs\/meta\/demos.zh-CN.json"
+    },
+    {
+      "hash": "sha256-1z9B+g6UtpFsri6AxTbjLjOqKaJVCb8xtSlwvQ8KEB0=",
+      "url": "_content\/AntDesign.Docs\/meta\/demoTypes.json"
+    },
+    {
+      "hash": "sha256-heD+3UcxKlxXTl3Uw5Ew8f6\/bWwz5EMIV8Q6x8JIRj8=",
+      "url": "_content\/AntDesign.Docs\/meta\/docs.en-US.json"
+    },
+    {
+      "hash": "sha256-HCCCho0JMOic5ex9FkRVRz2kmwKujZ5UEfrpKBZWKBo=",
+      "url": "_content\/AntDesign.Docs\/meta\/docs.zh-CN.json"
+    },
+    {
+      "hash": "sha256-Ex7R9fGuqkADHOVMT4ybU0pHzznugdNTm19ingfsr\/c=",
+      "url": "_content\/AntDesign.Docs\/meta\/menu.en-US.json"
+    },
+    {
+      "hash": "sha256-TJ+BhE3y9hbYrceaNaoATuzL1I6mawT4q4kGpChlAZU=",
+      "url": "_content\/AntDesign.Docs\/meta\/menu.zh-CN.json"
     },
     {
       "hash": "sha256-Tte6\/tjdURiGG+1rF+FjjRvWZReurr\/VUZUGSB0U8NM=",
@@ -1465,15 +1553,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-QjbBi9Htbs\/cFAhmRAW2vg3N1yeXrynAu4wO8ypV7QY=",
+      "hash": "sha256-rmrW2LNI92O2sC\/xBUSGXkww8c28fJLIuR8Y2CGNM44=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-h96Sr5+sNfnWgycejLkQr1x1fx5kzJGJULfKAF3\/Rmc=",
+      "hash": "sha256-CQR7lB8Nrd0mj9Dy8LCKTmveolD9pe0tvGMunXBtDfs=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-7wME18siLz2W5EHSKZbERZDgAsi4k95Hii5bYfZOl\/k=",
+      "hash": "sha256-bEbKdJhl5Vc0Q4DBdvcAs0vbWnbmOVbKYGO8RO7CgIk=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1589,7 +1677,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-a6jje4+0IMAGVic7lW5MR1hmkWVnsErerr0OmJrIjQA=",
+      "hash": "sha256-d3YuRE2c26oUYYC9ELQplOMukw2oUyzXX8rJba\/tdMQ=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1597,5 +1685,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "lfn4Y6x4"
+  "version": "vLFgneyB"
 };
