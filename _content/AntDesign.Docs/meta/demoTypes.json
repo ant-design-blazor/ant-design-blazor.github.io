@@ -172,6 +172,7 @@
   "Demos.Components.Progress.demo.LineMini",
   "Demos.Components.Progress.demo.CircleDynamic",
   "Demos.Components.Progress.demo.Circle",
+  "Demos.Components.Progress.demo.TrailColor",
   "Demos.Components.Progress.demo.Dynamic",
   "Demos.Components.Progress.demo.Line",
   "Demos.Components.Progress.demo.Segment",
