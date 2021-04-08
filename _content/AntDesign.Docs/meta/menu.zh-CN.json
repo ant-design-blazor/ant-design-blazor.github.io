@@ -31,6 +31,12 @@
       },
       {
         "Order": 6,
+        "Title": "更新日志",
+        "Type": "menuItem",
+        "Url": "docs/CHANGELOG"
+      },
+      {
+        "Order": 6,
         "Title": "获取每日构建",
         "Type": "menuItem",
         "Url": "docs/nightly-build"

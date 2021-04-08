@@ -1,9 +1,27 @@
 [
   {
-    "Order": 5,
-    "Title": "Path-based property access",
+    "Order": 4,
+    "Title": "Internationalization",
     "Type": "menuItem",
-    "Url": "docs/path-based-property-access"
+    "Url": "docs/i18n"
+  },
+  {
+    "Order": 6,
+    "Title": "Getting nightly builds",
+    "Type": "menuItem",
+    "Url": "docs/nightly-build"
+  },
+  {
+    "Order": 6,
+    "Title": "Change Log",
+    "Type": "menuItem",
+    "Url": "docs/CHANGELOG"
+  },
+  {
+    "Order": 11,
+    "Title": "How to Contribute",
+    "Type": "menuItem",
+    "Url": "docs/contributing"
   },
   {
     "Order": 0,
@@ -18,21 +36,9 @@
     "Url": "docs/getting-started"
   },
   {
-    "Order": 6,
-    "Title": "Getting nightly builds",
+    "Order": 5,
+    "Title": "Path-based property access",
     "Type": "menuItem",
-    "Url": "docs/nightly-build"
-  },
-  {
-    "Order": 4,
-    "Title": "Internationalization",
-    "Type": "menuItem",
-    "Url": "docs/i18n"
-  },
-  {
-    "Order": 11,
-    "Title": "How to Contribute",
-    "Type": "menuItem",
-    "Url": "docs/contributing"
+    "Url": "docs/path-based-property-access"
   }
 ]
