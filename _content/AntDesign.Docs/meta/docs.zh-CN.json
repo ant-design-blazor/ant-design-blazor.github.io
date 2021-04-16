@@ -40,5 +40,11 @@
     "Title": "Ant Design of Blazor",
     "Type": "menuItem",
     "Url": "docs/introduce"
+  },
+  {
+    "Order": 7,
+    "Title": "单元测试工具包",
+    "Type": "menuItem",
+    "Url": "docs/test-kit"
   }
 ]

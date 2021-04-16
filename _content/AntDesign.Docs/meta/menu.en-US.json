@@ -42,6 +42,12 @@
         "Url": "docs/CHANGELOG"
       },
       {
+        "Order": 7,
+        "Title": "TestKit",
+        "Type": "menuItem",
+        "Url": "docs/test-kit"
+      },
+      {
         "Order": 11,
         "Title": "How to Contribute",
         "Type": "menuItem",

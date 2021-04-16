@@ -40,5 +40,11 @@
     "Title": "Path-based property access",
     "Type": "menuItem",
     "Url": "docs/path-based-property-access"
+  },
+  {
+    "Order": 7,
+    "Title": "TestKit",
+    "Type": "menuItem",
+    "Url": "docs/test-kit"
   }
 ]

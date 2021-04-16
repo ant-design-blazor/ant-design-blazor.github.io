@@ -42,6 +42,12 @@
         "Url": "docs/nightly-build"
       },
       {
+        "Order": 7,
+        "Title": "单元测试工具包",
+        "Type": "menuItem",
+        "Url": "docs/test-kit"
+      },
+      {
         "Order": 11,
         "Title": "贡献指南",
         "Type": "menuItem",
