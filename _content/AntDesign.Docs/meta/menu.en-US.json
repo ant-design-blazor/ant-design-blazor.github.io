@@ -31,15 +31,15 @@
       },
       {
         "Order": 6,
-        "Title": "Getting nightly builds",
-        "Type": "menuItem",
-        "Url": "docs/nightly-build"
-      },
-      {
-        "Order": 6,
         "Title": "Change Log",
         "Type": "menuItem",
         "Url": "docs/CHANGELOG"
+      },
+      {
+        "Order": 6,
+        "Title": "Getting nightly builds",
+        "Type": "menuItem",
+        "Url": "docs/nightly-build"
       },
       {
         "Order": 7,
