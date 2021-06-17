@@ -31,15 +31,15 @@
       },
       {
         "Order": 6,
-        "Title": "Change Log",
-        "Type": "menuItem",
-        "Url": "docs/CHANGELOG"
-      },
-      {
-        "Order": 6,
         "Title": "Getting nightly builds",
         "Type": "menuItem",
         "Url": "docs/nightly-build"
+      },
+      {
+        "Order": 6,
+        "Title": "Change Log",
+        "Type": "menuItem",
+        "Url": "docs/CHANGELOG"
       },
       {
         "Order": 7,
@@ -52,154 +52,12 @@
         "Title": "How to Contribute",
         "Type": "menuItem",
         "Url": "docs/contributing"
-      }
-    ]
-  },
-  {
-    "Order": 2,
-    "Title": "Charts",
-    "Type": "subMenu",
-    "Url": "charts",
-    "Children": [
-      {
-        "Order": -2,
-        "Title": "Docs",
-        "Type": "itemGroup",
-        "Children": [
-          {
-            "Order": 0,
-            "Title": "Introduce",
-            "Type": "menuItem",
-            "Url": "charts/introduce"
-          }
-        ]
       },
       {
-        "Order": 8,
-        "Title": "Charts",
-        "Type": "itemGroup",
-        "Children": [
-          {
-            "Order": 0,
-            "Title": "Area",
-            "Type": "menuItem",
-            "Url": "charts/area"
-          },
-          {
-            "Order": 0,
-            "Title": "Bullet",
-            "Type": "menuItem",
-            "Url": "charts/bullet"
-          },
-          {
-            "Order": 0,
-            "Title": "Bubble",
-            "Type": "menuItem",
-            "Url": "charts/bubble"
-          },
-          {
-            "Order": 0,
-            "Title": "Bar",
-            "Type": "menuItem",
-            "Url": "charts/bar"
-          },
-          {
-            "Order": 0,
-            "Title": "Combo",
-            "Type": "menuItem",
-            "Url": "charts/combo"
-          },
-          {
-            "Order": 0,
-            "Title": "Column",
-            "Type": "menuItem",
-            "Url": "charts/column"
-          },
-          {
-            "Order": 0,
-            "Title": "CalendarChart",
-            "Type": "menuItem",
-            "Url": "charts/calendarchart"
-          },
-          {
-            "Order": 0,
-            "Title": "Funnel",
-            "Type": "menuItem",
-            "Url": "charts/funnel"
-          },
-          {
-            "Order": 0,
-            "Title": "GeneralConfigration",
-            "Type": "menuItem",
-            "Url": "charts/generalconfigration"
-          },
-          {
-            "Order": 0,
-            "Title": "Gauge",
-            "Type": "menuItem",
-            "Url": "charts/gauge"
-          },
-          {
-            "Order": 0,
-            "Title": "Heatmap",
-            "Type": "menuItem",
-            "Url": "charts/heatmap"
-          },
-          {
-            "Order": 0,
-            "Title": "Liquid",
-            "Type": "menuItem",
-            "Url": "charts/liquid"
-          },
-          {
-            "Order": 0,
-            "Title": "Line",
-            "Type": "menuItem",
-            "Url": "charts/line"
-          },
-          {
-            "Order": 0,
-            "Title": "Pie",
-            "Type": "menuItem",
-            "Url": "charts/pie"
-          },
-          {
-            "Order": 0,
-            "Title": "Rose",
-            "Type": "menuItem",
-            "Url": "charts/rose"
-          },
-          {
-            "Order": 0,
-            "Title": "Radar",
-            "Type": "menuItem",
-            "Url": "charts/radar"
-          },
-          {
-            "Order": 0,
-            "Title": "Step",
-            "Type": "menuItem",
-            "Url": "charts/step"
-          },
-          {
-            "Order": 0,
-            "Title": "Sparkline",
-            "Type": "menuItem",
-            "Url": "charts/sparkline"
-          },
-          {
-            "Order": 0,
-            "Title": "Scatter",
-            "Type": "menuItem",
-            "Url": "charts/scatter"
-          },
-          {
-            "Order": 0,
-            "Title": "Treemap",
-            "Type": "menuItem",
-            "Url": "charts/treemap"
-          }
-        ]
+        "Order": 11,
+        "Title": "FAQ",
+        "Type": "menuItem",
+        "Url": "docs/faq"
       }
     ]
   },
@@ -320,17 +178,17 @@
           },
           {
             "Order": 0,
-            "Title": "Pagination",
-            "Type": "menuItem",
-            "Url": "components/pagination",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/1vqv2bj68/Pagination.svg"
-          },
-          {
-            "Order": 0,
             "Title": "PageHeader",
             "Type": "menuItem",
             "Url": "components/pageheader",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/6bKE0Cq0R/PageHeader.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Pagination",
+            "Type": "menuItem",
+            "Url": "components/pagination",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/1vqv2bj68/Pagination.svg"
           },
           {
             "Order": 0,
@@ -355,17 +213,17 @@
           },
           {
             "Order": 0,
-            "Title": "Checkbox",
-            "Type": "menuItem",
-            "Url": "components/checkbox",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/8nbVbHEm_/CheckBox.svg"
-          },
-          {
-            "Order": 0,
             "Title": "Cascader",
             "Type": "menuItem",
             "Url": "components/cascader",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/UdS8y8xyZ/Cascader.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Checkbox",
+            "Type": "menuItem",
+            "Url": "components/checkbox",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/8nbVbHEm_/CheckBox.svg"
           },
           {
             "Order": 0,
@@ -383,17 +241,17 @@
           },
           {
             "Order": 0,
-            "Title": "InputNumber",
-            "Type": "menuItem",
-            "Url": "components/inputnumber",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/XOS8qZ0kU/InputNumber.svg"
-          },
-          {
-            "Order": 0,
             "Title": "Input",
             "Type": "menuItem",
             "Url": "components/input",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/xS9YEJhfe/Input.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "InputNumber",
+            "Type": "menuItem",
+            "Url": "components/inputnumber",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/XOS8qZ0kU/InputNumber.svg"
           },
           {
             "Order": 0,
@@ -404,13 +262,6 @@
           },
           {
             "Order": 0,
-            "Title": "Rate",
-            "Type": "menuItem",
-            "Url": "components/rate",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/R5uiIWmxe/Rate.svg"
-          },
-          {
-            "Order": 0,
             "Title": "Radio",
             "Type": "menuItem",
             "Url": "components/radio",
@@ -418,17 +269,10 @@
           },
           {
             "Order": 0,
-            "Title": "Switch",
+            "Title": "Rate",
             "Type": "menuItem",
-            "Url": "components/switch",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/zNdJQMhfm/Switch.svg"
-          },
-          {
-            "Order": 0,
-            "Title": "Slider",
-            "Type": "menuItem",
-            "Url": "components/slider",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/HZ3meFc6W/Silder.svg"
+            "Url": "components/rate",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/R5uiIWmxe/Rate.svg"
           },
           {
             "Order": 0,
@@ -439,10 +283,17 @@
           },
           {
             "Order": 0,
-            "Title": "Transfer",
+            "Title": "Slider",
             "Type": "menuItem",
-            "Url": "components/transfer",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/QAXskNI4G/Transfer.svg"
+            "Url": "components/slider",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/HZ3meFc6W/Silder.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Switch",
+            "Type": "menuItem",
+            "Url": "components/switch",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/zNdJQMhfm/Switch.svg"
           },
           {
             "Order": 0,
@@ -450,6 +301,13 @@
             "Type": "menuItem",
             "Url": "components/timepicker",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/h04Zsl98I/TimePicker.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Transfer",
+            "Type": "menuItem",
+            "Url": "components/transfer",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/QAXskNI4G/Transfer.svg"
           },
           {
             "Order": 0,
@@ -481,24 +339,10 @@
           },
           {
             "Order": 0,
-            "Title": "Comment",
+            "Title": "Calendar",
             "Type": "menuItem",
-            "Url": "components/comment",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/ILhxpGzBO/Comment.svg"
-          },
-          {
-            "Order": 0,
-            "Title": "Collapse",
-            "Type": "menuItem",
-            "Url": "components/collapse",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/IxH16B9RD/Collapse.svg"
-          },
-          {
-            "Order": 0,
-            "Title": "Carousel",
-            "Type": "menuItem",
-            "Url": "components/carousel",
-            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/%24C9tmj978R/Carousel.svg"
+            "Url": "components/calendar",
+            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/dPQmLq08DI/Calendar.svg"
           },
           {
             "Order": 0,
@@ -509,10 +353,24 @@
           },
           {
             "Order": 0,
-            "Title": "Calendar",
+            "Title": "Carousel",
             "Type": "menuItem",
-            "Url": "components/calendar",
-            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/dPQmLq08DI/Calendar.svg"
+            "Url": "components/carousel",
+            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/%24C9tmj978R/Carousel.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Collapse",
+            "Type": "menuItem",
+            "Url": "components/collapse",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/IxH16B9RD/Collapse.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Comment",
+            "Type": "menuItem",
+            "Url": "components/comment",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/ILhxpGzBO/Comment.svg"
           },
           {
             "Order": 0,
@@ -558,31 +416,10 @@
           },
           {
             "Order": 0,
-            "Title": "Tree",
+            "Title": "Table",
             "Type": "menuItem",
-            "Url": "components/tree",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/Xh-oWqg9k/Tree.svg"
-          },
-          {
-            "Order": 0,
-            "Title": "Tooltip",
-            "Type": "menuItem",
-            "Url": "components/tooltip",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/Vyyeu8jq2/Tooltp.svg"
-          },
-          {
-            "Order": 0,
-            "Title": "Timeline",
-            "Type": "menuItem",
-            "Url": "components/timeline",
-            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/vJmo00mmgR/Timeline.svg"
-          },
-          {
-            "Order": 0,
-            "Title": "Tag",
-            "Type": "menuItem",
-            "Url": "components/tag",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/cH1BOLfxC/Tag.svg"
+            "Url": "components/table",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/f-SbcX2Lx/Table.svg"
           },
           {
             "Order": 0,
@@ -593,10 +430,31 @@
           },
           {
             "Order": 0,
-            "Title": "Table",
+            "Title": "Tag",
             "Type": "menuItem",
-            "Url": "components/table",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/f-SbcX2Lx/Table.svg"
+            "Url": "components/tag",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/cH1BOLfxC/Tag.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Timeline",
+            "Type": "menuItem",
+            "Url": "components/timeline",
+            "Cover": "https://gw.alipayobjects.com/zos/antfincdn/vJmo00mmgR/Timeline.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Tooltip",
+            "Type": "menuItem",
+            "Url": "components/tooltip",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/Vyyeu8jq2/Tooltp.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Tree",
+            "Type": "menuItem",
+            "Url": "components/tree",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/Xh-oWqg9k/Tree.svg"
           }
         ]
       },
@@ -621,17 +479,17 @@
           },
           {
             "Order": 0,
-            "Title": "Modal",
-            "Type": "menuItem",
-            "Url": "components/modal",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg"
-          },
-          {
-            "Order": 0,
             "Title": "Message",
             "Type": "menuItem",
             "Url": "components/message",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/hAkKTIW0K/Message.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Modal",
+            "Type": "menuItem",
+            "Url": "components/modal",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg"
           },
           {
             "Order": 0,
@@ -642,17 +500,17 @@
           },
           {
             "Order": 0,
-            "Title": "Progress",
-            "Type": "menuItem",
-            "Url": "components/progress",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/xqsDu4ZyR/Progress.svg"
-          },
-          {
-            "Order": 0,
             "Title": "Popconfirm",
             "Type": "menuItem",
             "Url": "components/popconfirm",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/fjMCD9xRq/Popconfirm.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Progress",
+            "Type": "menuItem",
+            "Url": "components/progress",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/xqsDu4ZyR/Progress.svg"
           },
           {
             "Order": 0,
@@ -663,17 +521,17 @@
           },
           {
             "Order": 0,
-            "Title": "Spin",
-            "Type": "menuItem",
-            "Url": "components/spin",
-            "Cover": "https://gw.alipayobjects.com/zos/alicdn/LBcJqCPRv/Spin.svg"
-          },
-          {
-            "Order": 0,
             "Title": "Skeleton",
             "Type": "menuItem",
             "Url": "components/skeleton",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/KpcciCJgv/Skeleton.svg"
+          },
+          {
+            "Order": 0,
+            "Title": "Spin",
+            "Type": "menuItem",
+            "Url": "components/spin",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/LBcJqCPRv/Spin.svg"
           }
         ]
       },
@@ -695,6 +553,154 @@
             "Type": "menuItem",
             "Url": "components/backtop",
             "Cover": "https://gw.alipayobjects.com/zos/alicdn/tJZ5jbTwX/BackTop.svg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Order": 2,
+    "Title": "Charts",
+    "Type": "subMenu",
+    "Url": "charts",
+    "Children": [
+      {
+        "Order": -2,
+        "Title": "Docs",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Introduce",
+            "Type": "menuItem",
+            "Url": "charts/introduce"
+          }
+        ]
+      },
+      {
+        "Order": 8,
+        "Title": "Charts",
+        "Type": "itemGroup",
+        "Children": [
+          {
+            "Order": 0,
+            "Title": "Area",
+            "Type": "menuItem",
+            "Url": "charts/area"
+          },
+          {
+            "Order": 0,
+            "Title": "Bar",
+            "Type": "menuItem",
+            "Url": "charts/bar"
+          },
+          {
+            "Order": 0,
+            "Title": "Bubble",
+            "Type": "menuItem",
+            "Url": "charts/bubble"
+          },
+          {
+            "Order": 0,
+            "Title": "Bullet",
+            "Type": "menuItem",
+            "Url": "charts/bullet"
+          },
+          {
+            "Order": 0,
+            "Title": "CalendarChart",
+            "Type": "menuItem",
+            "Url": "charts/calendarchart"
+          },
+          {
+            "Order": 0,
+            "Title": "Column",
+            "Type": "menuItem",
+            "Url": "charts/column"
+          },
+          {
+            "Order": 0,
+            "Title": "Combo",
+            "Type": "menuItem",
+            "Url": "charts/combo"
+          },
+          {
+            "Order": 0,
+            "Title": "Funnel",
+            "Type": "menuItem",
+            "Url": "charts/funnel"
+          },
+          {
+            "Order": 0,
+            "Title": "Gauge",
+            "Type": "menuItem",
+            "Url": "charts/gauge"
+          },
+          {
+            "Order": 0,
+            "Title": "GeneralConfigration",
+            "Type": "menuItem",
+            "Url": "charts/generalconfigration"
+          },
+          {
+            "Order": 0,
+            "Title": "Heatmap",
+            "Type": "menuItem",
+            "Url": "charts/heatmap"
+          },
+          {
+            "Order": 0,
+            "Title": "Line",
+            "Type": "menuItem",
+            "Url": "charts/line"
+          },
+          {
+            "Order": 0,
+            "Title": "Liquid",
+            "Type": "menuItem",
+            "Url": "charts/liquid"
+          },
+          {
+            "Order": 0,
+            "Title": "Pie",
+            "Type": "menuItem",
+            "Url": "charts/pie"
+          },
+          {
+            "Order": 0,
+            "Title": "Radar",
+            "Type": "menuItem",
+            "Url": "charts/radar"
+          },
+          {
+            "Order": 0,
+            "Title": "Rose",
+            "Type": "menuItem",
+            "Url": "charts/rose"
+          },
+          {
+            "Order": 0,
+            "Title": "Scatter",
+            "Type": "menuItem",
+            "Url": "charts/scatter"
+          },
+          {
+            "Order": 0,
+            "Title": "Sparkline",
+            "Type": "menuItem",
+            "Url": "charts/sparkline"
+          },
+          {
+            "Order": 0,
+            "Title": "Step",
+            "Type": "menuItem",
+            "Url": "charts/step"
+          },
+          {
+            "Order": 0,
+            "Title": "Treemap",
+            "Type": "menuItem",
+            "Url": "charts/treemap"
           }
         ]
       }
