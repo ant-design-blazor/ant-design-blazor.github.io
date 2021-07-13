@@ -1,21 +1,9 @@
 [
   {
-    "Order": 6,
-    "Title": "获取每日构建",
+    "Order": 11,
+    "Title": "常见问题",
     "Type": "menuItem",
-    "Url": "docs/nightly-build"
-  },
-  {
-    "Order": 5,
-    "Title": "路径式属性访问",
-    "Type": "menuItem",
-    "Url": "docs/path-based-property-access"
-  },
-  {
-    "Order": 1,
-    "Title": "快速上手",
-    "Type": "menuItem",
-    "Url": "docs/getting-started"
+    "Url": "docs/faq"
   },
   {
     "Order": 0,
@@ -24,16 +12,28 @@
     "Url": "docs/introduce"
   },
   {
-    "Order": 11,
-    "Title": "常见问题",
+    "Order": 1,
+    "Title": "快速上手",
     "Type": "menuItem",
-    "Url": "docs/faq"
+    "Url": "docs/getting-started"
   },
   {
     "Order": 4,
     "Title": "国际化",
     "Type": "menuItem",
     "Url": "docs/i18n"
+  },
+  {
+    "Order": 11,
+    "Title": "贡献指南",
+    "Type": "menuItem",
+    "Url": "docs/contributing"
+  },
+  {
+    "Order": 5,
+    "Title": "路径式属性访问",
+    "Type": "menuItem",
+    "Url": "docs/path-based-property-access"
   },
   {
     "Order": 6,
@@ -48,9 +48,9 @@
     "Url": "docs/test-kit"
   },
   {
-    "Order": 11,
-    "Title": "贡献指南",
+    "Order": 6,
+    "Title": "获取每日构建",
     "Type": "menuItem",
-    "Url": "docs/contributing"
+    "Url": "docs/nightly-build"
   }
 ]

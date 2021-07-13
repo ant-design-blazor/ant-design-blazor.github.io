@@ -1,9 +1,15 @@
 [
   {
-    "Order": 11,
-    "Title": "How to Contribute",
+    "Order": 5,
+    "Title": "Path-based property access",
     "Type": "menuItem",
-    "Url": "docs/contributing"
+    "Url": "docs/path-based-property-access"
+  },
+  {
+    "Order": 6,
+    "Title": "Getting nightly builds",
+    "Type": "menuItem",
+    "Url": "docs/nightly-build"
   },
   {
     "Order": 1,
@@ -12,10 +18,16 @@
     "Url": "docs/getting-started"
   },
   {
-    "Order": 6,
-    "Title": "Getting nightly builds",
+    "Order": 11,
+    "Title": "FAQ",
     "Type": "menuItem",
-    "Url": "docs/nightly-build"
+    "Url": "docs/faq"
+  },
+  {
+    "Order": 7,
+    "Title": "TestKit",
+    "Type": "menuItem",
+    "Url": "docs/test-kit"
   },
   {
     "Order": 4,
@@ -25,21 +37,9 @@
   },
   {
     "Order": 11,
-    "Title": "FAQ",
+    "Title": "How to Contribute",
     "Type": "menuItem",
-    "Url": "docs/faq"
-  },
-  {
-    "Order": 6,
-    "Title": "Change Log",
-    "Type": "menuItem",
-    "Url": "docs/CHANGELOG"
-  },
-  {
-    "Order": 5,
-    "Title": "Path-based property access",
-    "Type": "menuItem",
-    "Url": "docs/path-based-property-access"
+    "Url": "docs/contributing"
   },
   {
     "Order": 0,
@@ -48,9 +48,9 @@
     "Url": "docs/introduce"
   },
   {
-    "Order": 7,
-    "Title": "TestKit",
+    "Order": 6,
+    "Title": "Change Log",
     "Type": "menuItem",
-    "Url": "docs/test-kit"
+    "Url": "docs/CHANGELOG"
   }
 ]
