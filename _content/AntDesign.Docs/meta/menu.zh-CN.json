@@ -25,9 +25,9 @@
       },
       {
         "Order": 5,
-        "Title": "路径式属性访问",
+        "Title": "成员路径助手",
         "Type": "menuItem",
-        "Url": "docs/path-based-property-access"
+        "Url": "docs/member-path-helper"
       },
       {
         "Order": 6,

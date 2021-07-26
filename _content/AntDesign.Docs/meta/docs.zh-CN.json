@@ -24,16 +24,16 @@
     "Url": "docs/i18n"
   },
   {
+    "Order": 5,
+    "Title": "成员路径助手",
+    "Type": "menuItem",
+    "Url": "docs/member-path-helper"
+  },
+  {
     "Order": 11,
     "Title": "贡献指南",
     "Type": "menuItem",
     "Url": "docs/contributing"
-  },
-  {
-    "Order": 5,
-    "Title": "路径式属性访问",
-    "Type": "menuItem",
-    "Url": "docs/path-based-property-access"
   },
   {
     "Order": 6,

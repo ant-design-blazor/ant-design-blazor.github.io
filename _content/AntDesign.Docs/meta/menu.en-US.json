@@ -25,9 +25,9 @@
       },
       {
         "Order": 5,
-        "Title": "Path-based property access",
+        "Title": "Member path helper",
         "Type": "menuItem",
-        "Url": "docs/path-based-property-access"
+        "Url": "docs/member-path-helper"
       },
       {
         "Order": 6,
