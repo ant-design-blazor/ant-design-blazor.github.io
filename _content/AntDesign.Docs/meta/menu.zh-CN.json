@@ -49,15 +49,15 @@
       },
       {
         "Order": 11,
-        "Title": "常见问题",
-        "Type": "menuItem",
-        "Url": "docs/faq"
-      },
-      {
-        "Order": 11,
         "Title": "贡献指南",
         "Type": "menuItem",
         "Url": "docs/contributing"
+      },
+      {
+        "Order": 11,
+        "Title": "常见问题",
+        "Type": "menuItem",
+        "Url": "docs/faq"
       }
     ]
   },

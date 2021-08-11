@@ -1,5 +1,35 @@
 [
   {
+    "Order": 6,
+    "Title": "更新日志",
+    "Type": "menuItem",
+    "Url": "docs/CHANGELOG"
+  },
+  {
+    "Order": 6,
+    "Title": "获取每日构建",
+    "Type": "menuItem",
+    "Url": "docs/nightly-build"
+  },
+  {
+    "Order": 11,
+    "Title": "贡献指南",
+    "Type": "menuItem",
+    "Url": "docs/contributing"
+  },
+  {
+    "Order": 5,
+    "Title": "成员路径助手",
+    "Type": "menuItem",
+    "Url": "docs/member-path-helper"
+  },
+  {
+    "Order": 7,
+    "Title": "单元测试工具包",
+    "Type": "menuItem",
+    "Url": "docs/test-kit"
+  },
+  {
     "Order": 11,
     "Title": "常见问题",
     "Type": "menuItem",
@@ -22,35 +52,5 @@
     "Title": "国际化",
     "Type": "menuItem",
     "Url": "docs/i18n"
-  },
-  {
-    "Order": 5,
-    "Title": "成员路径助手",
-    "Type": "menuItem",
-    "Url": "docs/member-path-helper"
-  },
-  {
-    "Order": 11,
-    "Title": "贡献指南",
-    "Type": "menuItem",
-    "Url": "docs/contributing"
-  },
-  {
-    "Order": 6,
-    "Title": "更新日志",
-    "Type": "menuItem",
-    "Url": "docs/CHANGELOG"
-  },
-  {
-    "Order": 7,
-    "Title": "单元测试工具包",
-    "Type": "menuItem",
-    "Url": "docs/test-kit"
-  },
-  {
-    "Order": 6,
-    "Title": "获取每日构建",
-    "Type": "menuItem",
-    "Url": "docs/nightly-build"
   }
 ]
