@@ -113,7 +113,7 @@
       "url": "docs\/test-kit.zh-CN.md"
     },
     {
-      "hash": "sha256-HPtlRPveG20GiUnKpY7ZNyr9O0dF8froRR9mJp+wy3Y=",
+      "hash": "sha256-02eSJjLAc\/\/oVVjh2BU2x\/Anht9iBIQmJSVpDLHMW9M=",
       "url": "index.html"
     },
     {
@@ -281,19 +281,19 @@
       "url": "_content\/AntDesign.Docs\/docs\/assets\/news\/reuse-tabs-demo.gif"
     },
     {
-      "hash": "sha256-aVdq8Uc8FhNmLj8eK5zDh4CnLW7wvcYpQ7TDl1q1PJQ=",
+      "hash": "sha256-TnQvheJw\/fpTvZ8cbbHj\/vfVHgur7E9nycOw+tPUljk=",
       "url": "_content\/AntDesign.Docs\/docs\/CHANGELOG.en-US.json"
     },
     {
-      "hash": "sha256-PXPQAY+pQs8qZdaa5Hwf7k1Dr6Wa9N5DLsIN4mCybzk=",
+      "hash": "sha256-d6Ndee08xxsSa2nRVOVfWhf1jg58Ed1\/1MkRMnU8TFY=",
       "url": "_content\/AntDesign.Docs\/docs\/CHANGELOG.en-US.md"
     },
     {
-      "hash": "sha256-r6Ih0tulnfwJ9blq1hNMzYDc3PkarVowQiTOqLJLokA=",
+      "hash": "sha256-zA2AaC4nXACsgq81W8HhaDaal57zl7tKwdE1K\/squVE=",
       "url": "_content\/AntDesign.Docs\/docs\/CHANGELOG.zh-CN.json"
     },
     {
-      "hash": "sha256-5+bZ1GWuIr9XxrCpvJLuh6UiBgVfPiGlTfi3LQ2NrSk=",
+      "hash": "sha256-gtZFAW\/m8MbNStd3mUUTne8lu\/U7cgQyTio72Qqybr4=",
       "url": "_content\/AntDesign.Docs\/docs\/CHANGELOG.zh-CN.md"
     },
     {
@@ -437,11 +437,11 @@
       "url": "_content\/AntDesign.Docs\/js\/prism.js"
     },
     {
-      "hash": "sha256-ISU4++l+qEX7SHRN4ETDl0cFdA14n1FQ+WsmbnCZXeE=",
+      "hash": "sha256-WW5lCntMmwzjPNjTWmIyHXwqeuJ\/IxrPFkMkuAI1ZC0=",
       "url": "_content\/AntDesign.Docs\/meta\/components.en-US.json"
     },
     {
-      "hash": "sha256-Jteo3QLqx9j+j67MNCnK9rynPhjfhv\/TSWaIhKFM22M=",
+      "hash": "sha256-BntAlOgI6XwwAgHn83QkcHeqZNakM1+TaPGbDfhQU0w=",
       "url": "_content\/AntDesign.Docs\/meta\/components.zh-CN.json"
     },
     {
@@ -1829,15 +1829,15 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-L6ylTGPS4Eq27ng9Kmall1J3T1MH17Fz+WmOeg7B\/n0=",
+      "hash": "sha256-AH4EjZBWiP0bOx1BG7P1Q1epoJF9uQB00s3hVvZy3oo=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-6PZk+rmfZm8n7awmyLmCrghSsn893rseWtP8RjBcgg0=",
+      "hash": "sha256-7dzmGIC4xK3rCwwgFe+TA7Q191HZaTR3QJsLpoMTqGk=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-ZIhNMqMlm1qCVwtUra10GkUFclbB1p29vreorYBwsDI=",
+      "hash": "sha256-XCOBNE1efRQHVyEPl1gWbwVPaTMsdhywqd4\/cNWPz0s=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -1953,7 +1953,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-bdUuEx7G1+p4G6yggQ4N7ipx7w+mwiM+3OhuduC3g1Y=",
+      "hash": "sha256-X7HCqHCsouH9u6m8tAG7dEPHy7Tmr\/G7Wtg0CAe86jA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1961,5 +1961,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "2gcZ1N\/X"
+  "version": "GkQAHXJw"
 };
