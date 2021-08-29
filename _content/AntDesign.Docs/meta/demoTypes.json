@@ -526,6 +526,7 @@
   "Demos.Components.Table.demo.RowSelection_",
   "Demos.Components.Table.demo.Bordered",
   "Demos.Components.Table.demo.ColspanRowspan",
+  "Demos.Components.Table.demo.NestedTable",
   "Demos.Components.Table.demo.Filter",
   "Demos.Components.Table.demo.Ajax",
   "Demos.Components.Table.demo.CustomRowStyle",
