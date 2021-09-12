@@ -12,8 +12,15 @@ export class manipulationHelper {
     static addElementTo(addElement, elementSelector) {
         let parent = domInfoHelper.get(elementSelector);
         if (parent && addElement) {
-            parent.appendChild(addElement);
+            if (parent instanceof Node && addElement instanceof Node) {
+                parent.appendChild(addElement);
+                return true;
+            }
+            else {
+                console.log("does not implement node", parent, addElement);
+            }
         }
+        return false;
     }
     static delElementFrom(delElement, elementSelector) {
         let parent = domInfoHelper.get(elementSelector);
@@ -87,18 +94,21 @@ export class manipulationHelper {
             dom.blur();
         }
     }
-    static scrollTo(selector) {
-        let element = domInfoHelper.get(selector);
-        if (element && element instanceof HTMLElement) {
+    static scrollTo(selector, parentElement) {
+        const element = domInfoHelper.get(selector);
+        if (parentElement && element && element instanceof HTMLElement) {
+            parentElement.scrollTop = element.offsetTop;
+        }
+        else if (element && element instanceof HTMLElement) {
             element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
         }
     }
     static slideTo(targetPageY) {
-        var timer = setInterval(function () {
-            var currentY = document.documentElement.scrollTop || document.body.scrollTop;
-            var distance = targetPageY > currentY ? targetPageY - currentY : currentY - targetPageY;
-            var speed = Math.ceil(distance / 10);
-            if (currentY == targetPageY) {
+        const timer = setInterval(function () {
+            const currentY = document.documentElement.scrollTop || document.body.scrollTop;
+            const distance = targetPageY > currentY ? targetPageY - currentY : currentY - targetPageY;
+            const speed = Math.ceil(distance / 10);
+            if (currentY === targetPageY) {
                 clearInterval(timer);
             }
             else {

@@ -45,12 +45,16 @@ export class inputHelper {
         state.eventCallbackRegistry[element.id + "input"] = null;
     }
     static resizeTextArea(element, minRows, maxRows) {
-        var dims = this.getTextAreaInfo(element);
-        var rowHeight = dims["lineHeight"];
-        var offsetHeight = dims["paddingTop"] + dims["paddingBottom"] + dims["borderTop"] + dims["borderBottom"];
-        var oldHeight = parseFloat(element.style.height);
+        let dims = this.getTextAreaInfo(element);
+        let rowHeight = dims["lineHeight"];
+        let offsetHeight = dims["paddingTop"] + dims["paddingBottom"] + dims["borderTop"] + dims["borderBottom"];
+        let oldHeight = parseFloat(element.style.height);
+        //use rows attribute to evaluate real scroll height
+        let oldRows = element.rows;
+        element.rows = minRows;
         element.style.height = 'auto';
         var rows = Math.trunc(element.scrollHeight / rowHeight);
+        element.rows = oldRows;
         rows = Math.max(minRows, rows);
         var newHeight = 0;
         if (rows > maxRows) {
@@ -66,7 +70,7 @@ export class inputHelper {
         }
         if (oldHeight !== newHeight) {
             let textAreaObj = state.objReferenceDict[element.id];
-            textAreaObj.invokeMethodAsync("ChangeSizeAsyncJs", parseFloat(element.scrollWidth), newHeight);
+            textAreaObj.invokeMethodAsync("ChangeSizeAsyncJs", element.scrollWidth, newHeight);
         }
     }
     static setSelectionStart(element, position) {
