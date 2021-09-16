@@ -341,6 +341,14 @@
           },
           {
             "Order": 0,
+            "Title": "TreeSelect",
+            "SubTitle": "树选择",
+            "Type": "menuItem",
+            "Url": "components/treeselect",
+            "Cover": "https://gw.alipayobjects.com/zos/alicdn/Ax4DA0njr/TreeSelect.svg"
+          },
+          {
+            "Order": 0,
             "Title": "Upload",
             "SubTitle": "上传",
             "Type": "menuItem",

@@ -243,6 +243,13 @@
       },
       {
         "Order": 0,
+        "Title": "TreeSelect",
+        "Type": "menuItem",
+        "Url": "components/treeselect",
+        "Cover": "https://gw.alipayobjects.com/zos/alicdn/Ax4DA0njr/TreeSelect.svg"
+      },
+      {
+        "Order": 0,
         "Title": "Upload",
         "Type": "menuItem",
         "Url": "components/upload",
