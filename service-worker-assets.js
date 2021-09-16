@@ -141,7 +141,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-zstVDcrx6OmfkPhFIcVe2AQcuBm+OxbFh5nmR2WvNLM=",
+      "hash": "sha256-7eZJdkzX\/qeJzNQ5se72yvkh0+Zs9AivwJmjp9wxXs4=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -149,15 +149,15 @@
       "url": "_framework\/AntDesign.Charts.dll"
     },
     {
-      "hash": "sha256-xqC8IPGA72wwQ4tAYC9baythq+tWvc\/Z59+nq4GE0D4=",
+      "hash": "sha256-8v88CnfpFcmbQb8UEByw1AP\/ng1nkIVauEyEUiVXvwc=",
       "url": "_framework\/AntDesign.dll"
     },
     {
-      "hash": "sha256-xgQ2jkFaV6KOXxsH849z7JAHSH+1bgmxGPAedECJEkE=",
+      "hash": "sha256-muQPxXzaVcqNhuMuSHwKrI5njC3jZO+LKtaioheOEJ0=",
       "url": "_framework\/AntDesign.Docs.dll"
     },
     {
-      "hash": "sha256-\/Ezm\/XTImQumcK9nytcb40JbQUYyZnYBD9Jvd441E8M=",
+      "hash": "sha256-oOL0vJYQXzxdnXW4EPUxC58msB7dLcMFSUT+\/0cGiNs=",
       "url": "_framework\/AntDesign.Docs.Wasm.dll"
     },
     {
@@ -377,7 +377,7 @@
       "url": "_framework\/dotnet.6.0.0-rc.1.21451.13.js"
     },
     {
-      "hash": "sha256-TLTs5hRazuoZJqCEijzylsmlC2+9d8ufEOHo9lHiHkM=",
+      "hash": "sha256-5a9k\/DIU1OVjNtIor6DtewUajUH\/c6PK961Mnq0m+HI=",
       "url": "_framework\/dotnet.wasm"
     },
     {
@@ -2001,5 +2001,5 @@
       "url": "_content\/AntDesign.Docs\/meta\/menu.zh-CN.json"
     }
   ],
-  "version": "TJS4fGXs"
+  "version": "qjn2yoqh"
 };
