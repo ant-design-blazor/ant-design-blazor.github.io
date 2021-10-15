@@ -18,12 +18,12 @@ export class overlayHelper {
         if (overlayTop || overlayLeft) {
             overlayPresets = { x: overlayLeft, y: overlayTop };
         }
-        let overlayConstraints = {
+        const overlayConstraints = {
             verticalOffset: verticalOffset,
             horizontalOffset: horizontalOffset,
             arrowPointAtCenter: arrowPointAtCenter
         };
-        let overlay = new Overlay(blazorId, overlayElement, containerElement, triggerElement, placement, triggerBoundyAdjustMode, triggerIsWrappedInDiv, triggerPrefixCls, overlayConstraints);
+        const overlay = new Overlay(blazorId, overlayElement, containerElement, triggerElement, placement, triggerBoundyAdjustMode, triggerIsWrappedInDiv, triggerPrefixCls, overlayConstraints);
         //register object in store, so it can be retrieved during update/dispose
         this.overlayRegistry[blazorId] = overlay;
         return overlay.calculatePosition(false, true, overlayPresets);
@@ -53,7 +53,7 @@ export class overlayHelper {
     }
     static addPreventEnterOnOverlayVisible(element, overlayElement) {
         if (element && overlayElement) {
-            let dom = domInfoHelper.get(element);
+            const dom = domInfoHelper.get(element);
             if (dom) {
                 state.eventCallbackRegistry[element.id + "keydown:Enter"] = (e) => eventHelper.preventKeyOnCondition(e, "enter", () => overlayElement.offsetParent !== null);
                 dom.addEventListener("keydown", state.eventCallbackRegistry[element.id + "keydown:Enter"], false);
@@ -62,7 +62,7 @@ export class overlayHelper {
     }
     static removePreventEnterOnOverlayVisible(element) {
         if (element) {
-            let dom = domInfoHelper.get(element);
+            const dom = domInfoHelper.get(element);
             if (dom) {
                 dom.removeEventListener("keydown", state.eventCallbackRegistry[element.id + "keydown:Enter"]);
                 state.eventCallbackRegistry[element.id + "keydown:Enter"] = null;
