@@ -31,15 +31,15 @@
       },
       {
         "Order": 6,
-        "Title": "更新日志",
-        "Type": "menuItem",
-        "Url": "docs/CHANGELOG"
-      },
-      {
-        "Order": 6,
         "Title": "获取每日构建",
         "Type": "menuItem",
         "Url": "docs/nightly-build"
+      },
+      {
+        "Order": 6,
+        "Title": "更新日志",
+        "Type": "menuItem",
+        "Url": "docs/CHANGELOG"
       },
       {
         "Order": 7,
@@ -49,15 +49,15 @@
       },
       {
         "Order": 11,
-        "Title": "贡献指南",
-        "Type": "menuItem",
-        "Url": "docs/contributing"
-      },
-      {
-        "Order": 11,
         "Title": "常见问题",
         "Type": "menuItem",
         "Url": "docs/faq"
+      },
+      {
+        "Order": 11,
+        "Title": "贡献指南",
+        "Type": "menuItem",
+        "Url": "docs/contributing"
       }
     ]
   },
