@@ -31,15 +31,15 @@
       },
       {
         "Order": 6,
-        "Title": "Change Log",
-        "Type": "menuItem",
-        "Url": "docs/CHANGELOG"
-      },
-      {
-        "Order": 6,
         "Title": "Getting nightly builds",
         "Type": "menuItem",
         "Url": "docs/nightly-build"
+      },
+      {
+        "Order": 6,
+        "Title": "Change Log",
+        "Type": "menuItem",
+        "Url": "docs/CHANGELOG"
       },
       {
         "Order": 7,
@@ -49,15 +49,15 @@
       },
       {
         "Order": 11,
-        "Title": "FAQ",
-        "Type": "menuItem",
-        "Url": "docs/faq"
-      },
-      {
-        "Order": 11,
         "Title": "How to Contribute",
         "Type": "menuItem",
         "Url": "docs/contributing"
+      },
+      {
+        "Order": 11,
+        "Title": "FAQ",
+        "Type": "menuItem",
+        "Url": "docs/faq"
       }
     ]
   },

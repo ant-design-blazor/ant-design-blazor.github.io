@@ -1,9 +1,15 @@
 [
   {
-    "Order": 11,
-    "Title": "常见问题",
+    "Order": 0,
+    "Title": "Ant Design of Blazor",
     "Type": "menuItem",
-    "Url": "docs/faq"
+    "Url": "docs/introduce"
+  },
+  {
+    "Order": 6,
+    "Title": "更新日志",
+    "Type": "menuItem",
+    "Url": "docs/CHANGELOG"
   },
   {
     "Order": 6,
@@ -18,22 +24,22 @@
     "Url": "docs/i18n"
   },
   {
-    "Order": 6,
-    "Title": "更新日志",
-    "Type": "menuItem",
-    "Url": "docs/CHANGELOG"
-  },
-  {
     "Order": 11,
     "Title": "贡献指南",
     "Type": "menuItem",
     "Url": "docs/contributing"
   },
   {
-    "Order": 0,
-    "Title": "Ant Design of Blazor",
+    "Order": 11,
+    "Title": "常见问题",
     "Type": "menuItem",
-    "Url": "docs/introduce"
+    "Url": "docs/faq"
+  },
+  {
+    "Order": 5,
+    "Title": "成员路径助手",
+    "Type": "menuItem",
+    "Url": "docs/member-path-helper"
   },
   {
     "Order": 1,
@@ -46,11 +52,5 @@
     "Title": "单元测试工具包",
     "Type": "menuItem",
     "Url": "docs/test-kit"
-  },
-  {
-    "Order": 5,
-    "Title": "成员路径助手",
-    "Type": "menuItem",
-    "Url": "docs/member-path-helper"
   }
 ]
