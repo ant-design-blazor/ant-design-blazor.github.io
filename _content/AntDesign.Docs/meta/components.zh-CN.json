@@ -5964,16 +5964,6 @@
       },
       {
         "Order": 0,
-        "Name": "editform",
-        "Title": "默认编辑表单",
-        "Description": "<p>当包装在“FormItem”控件中时，从“AntInputComponentBase”派生的控件可以用作替换项。</p>\n",
-        "Code": "@using System.ComponentModel.DataAnnotations;\n@using System.Text.Json;\n@using System.ComponentModel\n@using Microsoft.AspNetCore.Components.Forms\n\n    <Divider>Default EditForm Component</Divider>\n    <Microsoft.AspNetCore.Components.Forms.EditForm Model=\"this.model\" class=\"ant-form ant-form-horizontal\">\n        <DataAnnotationsValidator />\n        <FormItem>\n            <Input @bind-Value=\"@this.model.Username\" />\n        </FormItem>\n        <FormItem Label=\"Password\">\n            <InputPassword @bind-Value=\"@this.model.Password\" />\n        </FormItem>\n        <FormItem WrapperColOffset=\"8\" WrapperColSpan=\"16\">\n            <Checkbox @bind-Value=\"this.model.RememberMe\">Remember me</Checkbox>\n        </FormItem>\n        <FormItem WrapperColOffset=\"8\" WrapperColSpan=\"16\">\n            <Button Type=\"@ButtonType.Primary\" HtmlType=\"submit\">\n                Submit\n            </Button>\n        </FormItem>\n    </Microsoft.AspNetCore.Components.Forms.EditForm>       \n\n\n    <Divider>AntDesign Form Component</Divider>\n    <Form Model=\"@model\"\n          OnFinish=\"OnFinish\"\n          OnFinishFailed=\"OnFinishFailed\"\n          LabelColSpan=\"8\"\n          WrapperColSpan=\"16\">\n        <FormItem>\n            <Input @bind-Value=\"@context.Username\" />\n        </FormItem>\n        <FormItem Label=\"Password\">\n            <InputPassword @bind-Value=\"@context.Password\" />\n        </FormItem>\n        <FormItem WrapperColOffset=\"8\" WrapperColSpan=\"16\">\n            <Checkbox @bind-Value=\"context.RememberMe\">Remember me</Checkbox>\n        </FormItem>\n        <FormItem WrapperColOffset=\"8\" WrapperColSpan=\"16\">\n            <Button Type=\"@ButtonType.Primary\" HtmlType=\"submit\">\n                Submit\n            </Button>\n        </FormItem>\n    </Form>\n@code\n{\n    public class Model\n    {\n        [Required, DisplayName(\"User Name\"), MinLength(1)]\n        public string Username { get; set; }\n        [Required, MinLength(1)]\n        public string Password { get; set; }\n        public bool RememberMe { get; set; } = true;\n    }\n\n    private Model model = new Model();\n\n    private void OnFinish(EditContext editContext)\n    {\n        Console.WriteLine($\"Success:{JsonSerializer.Serialize(model)}\");\n    }\n\n    private void OnFinishFailed(EditContext editContext)\n    {\n        Console.WriteLine($\"Failed:{JsonSerializer.Serialize(model)}\");\n    }\n}",
-        "Type": "Demos.Components.Form.demo.EditForm",
-        "Style": "",
-        "Debug": false
-      },
-      {
-        "Order": 0,
         "Name": "basic",
         "Title": "基本使用",
         "Description": "<p>基本的表单数据域控制展示，包含布局、初始化、验证、提交。</p>\n",
