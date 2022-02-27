@@ -8,9 +8,9 @@
   "resources": {
     "assembly": {
       "AntDesign.Charts.dll": "sha256-6+tCT1cY4tdRz6r1nJhUBVqoCrunjnSWVWCdqHNsBVY=",
-      "AntDesign.dll": "sha256-pAG4HP62YNAVa6poIsNoIMkjcjlYapZSa6Y+hBJcgTs=",
-      "AntDesign.Docs.dll": "sha256-PGfHxXSjkj83D5xwgE5k5GLYaGE\/HDZEqVga6q1jNt4=",
-      "AntDesign.Docs.Wasm.dll": "sha256-fu5q+2PSY\/hR+rUTOwPmfUVHUfhUSTyJO8\/YGbe4PnE=",
+      "AntDesign.dll": "sha256-ngWIUxhu5c6sZTGs4d9LjjXsWfkkaa3BCxQ4wIpiORY=",
+      "AntDesign.Docs.dll": "sha256-jokeb2mdrtAew1DLJJni+mFom7TrUwVw+R7fSAAYhic=",
+      "AntDesign.Docs.Wasm.dll": "sha256-2as0WbcIFE9GH6MkbVWMVsKIpzOwYrcEMWey+mkTYuc=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-SJEKQF5o5vvWcYbZJ2Z71nlZnBoIKtyfM3\/aQsyO5uE=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-PdBv3LFjxV+dzn0BY6gzFiQbkCpTc2ShGAZtS0O72FE=",
       "Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll": "sha256-VGaB03HIjFg4jeK7BomIFzlhhY3vW5N+jWuRqZkbJsY=",
@@ -81,7 +81,7 @@
     "runtime": {
       "dotnet.6.0.2.bynp9dq639.js": "sha256-lcso5p++X+fzlbq+YwYYG\/DAuKN9Zq28weCL0EaB\/qQ=",
       "dotnet.timezones.blat": "sha256-9CBC8Dy2PSGOWOyYnxE7NSoyYzDDDcaexiBpkBhI80U=",
-      "dotnet.wasm": "sha256-jwNSDtptj0B4QBPgMZJaoZW689gt2fKhP+EKuUD9qnc=",
+      "dotnet.wasm": "sha256-wfbgkqWPpXj7rhqEne\/fHzUeF34eB9wnc3oamnocVj4=",
       "icudt_CJK.dat": "sha256-WPyI4hWDPnOw62Nr27FkzGjdbucZnQD+Ph+GOPhAedw=",
       "icudt_EFIGS.dat": "sha256-4RwaPx87Z4dvn77ie\/ro3\/QzyS+\/gGmO3Y\/0CSAXw4k=",
       "icudt_no_CJK.dat": "sha256-OxylFgLJlFqixsj+nLxYVsv5iZLvfIKMpLf9hrWaChA=",
