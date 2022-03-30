@@ -3637,7 +3637,7 @@
         "Name": "WithTooltip",
         "Title": "输入时格式化展示",
         "Description": "<p>结合 Tooltip 组件，实现一个数值输入框，方便内容超长时的全量展现。</p>\n",
-        "Code": "<Tooltip Title=\"@TooltipValue\">\n\t<Unbound>\n\t\t<Input RefBack=\"@context\" @bind-Value=_value Placeholder=\"Input a number\" MaxLength=\"25\" Style=\"width: 120px;\"/>\n\t</Unbound>\n</Tooltip>\n\n@code {\n\tstring _value;\n\n\tstring TooltipValue => ConvertValue();\n\n\tprivate string ConvertValue()\n\t{\n\t\tif (string.IsNullOrWhiteSpace(_value))\n\t\t\treturn string.Empty;\n\t\telse\n\t\t\treturn Convert.ToDecimal(_value).ToString(\"#,0.##############################\");\n\t}\n}",
+        "Code": "<Tooltip Title=\"@TooltipValue\">\n\t<Unbound>\n\t\t<Input RefBack=\"@context\" @bind-Value=_value Placeholder=\"Input a number\" MaxLength=\"25\" Style=\"width: 120px;\"/>\n\t</Unbound>\n</Tooltip>\n\n@code {\n\tstring _value;\n\n\tstring TooltipValue => ConvertValue();\n\n\tprivate string ConvertValue()\n\t{\n\t\tif (string.IsNullOrWhiteSpace(_value) || !decimal.TryParse(_value,out var decimalValue))\n\t\t\treturn string.Empty;\n\t\telse\n\t\t\treturn decimalValue.ToString(\"#,0.##############################\");\n\t}\n}",
         "Type": "Demos.Components.Input.demo.WithTooltip",
         "Style": "",
         "Debug": false
